@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer Organization on Peter LIU的个人Blog</title>
+    <link>https://peterliu-all.github.io/categories/computer-organization/</link>
+    <description>Recent content in Computer Organization on Peter LIU的个人Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 15 May 2022 16:44:12 +0800</lastBuildDate><atom:link href="https://peterliu-all.github.io/categories/computer-organization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机架构</title>
+      <link>https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/</link>
+      <pubDate>Sun, 15 May 2022 16:44:12 +0800</pubDate>
+      
+      <guid>https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/</guid>
+      <description>&lt;h1 id=&#34;computer-organization&#34;&gt;Computer Organization&lt;/h1&gt;
+&lt;h2 id=&#34;cpucentral-processing-unit&#34;&gt;CPU(central processing unit)&lt;/h2&gt;
+&lt;h3 id=&#34;aluarithmetic-logic-unit&#34;&gt;ALU(arithmetic logic unit)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;logic&lt;/li&gt;
+&lt;li&gt;shift&lt;/li&gt;
+&lt;li&gt;arithmetic operations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;control-unit&#34;&gt;&lt;strong&gt;control unit&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;contrl the operation of CPU&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;computer divided by instructions&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;CISC(complex instruction set computers)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;programmer&amp;rsquo;s works are easier&lt;/li&gt;
+&lt;li&gt;a large set of instructions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RISC(reduced instruction set computers)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;programmer&amp;rsquo;s works are more difficult&lt;/li&gt;
+&lt;li&gt;simple instructions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the process of computer program&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ways of processing&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;pipelining&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Parallel processing&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SISD&lt;/li&gt;
+&lt;li&gt;SIMD&lt;/li&gt;
+&lt;li&gt;MISD(JUST CONCEPT)&lt;/li&gt;
+&lt;li&gt;MIMD&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a cycle&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fetch&lt;/li&gt;
+&lt;li&gt;decode&lt;/li&gt;
+&lt;li&gt;execute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;a-set-of-registers&#34;&gt;a set of registers&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Data registers&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Instruction registers&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;instruction set&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;opcode&lt;/li&gt;
+&lt;li&gt;operand&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Program counter&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cache-memory&#34;&gt;Cache memory&lt;/h2&gt;
+&lt;h3 id=&#34;contains-a-copy-of-a-portion-of-main-memory&#34;&gt;contains a copy of a portion of main memory&lt;/h3&gt;
+&lt;h3 id=&#34;accelerate-the-process&#34;&gt;accelerate the process&lt;/h3&gt;
+&lt;h3 id=&#34;procedure&#34;&gt;procedure&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;CPU checks the cache&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if it&amp;rsquo;s in cache ,get it&lt;/li&gt;
+&lt;li&gt;if not, cache will go get it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;main-memory&#34;&gt;main memory&lt;/h2&gt;
+&lt;h3 id=&#34;address-space&#34;&gt;address space&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;adress&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;dataorganized-as-words&#34;&gt;Data(organized as words)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;RAM(random access memory)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;SRAM(static)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fast&lt;/li&gt;
+&lt;li&gt;expensive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DRAM(dynamic)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;slow&lt;/li&gt;
+&lt;li&gt;inexpensive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ROM(read-only) memory&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PROM(cannot erase)&lt;/li&gt;
+&lt;li&gt;EPROM(can erase by ultraviolet light)&lt;/li&gt;
+&lt;li&gt;EEPROM(can erase by electronic impulses)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ioinputoutput-subsystem&#34;&gt;I/O(input/output) subsystem&lt;/h2&gt;
+&lt;h3 id=&#34;input&#34;&gt;input&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;hard disk&lt;/li&gt;
+&lt;li&gt;USB&lt;/li&gt;
+&lt;li&gt;CD/DVD&lt;/li&gt;
+&lt;li&gt;keyboard&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;output&#34;&gt;output&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;monitor&lt;/li&gt;
+&lt;li&gt;printer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;catagories&#34;&gt;catagories&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Nonstorage devices&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Storage devices&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;magnetic&lt;/li&gt;
+&lt;li&gt;optical&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;adress&#34;&gt;adress&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;isolated I/O method&lt;/li&gt;
+&lt;li&gt;memory-mapped I/O method&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;connected-by-bus&#34;&gt;connected by bus&lt;/h2&gt;
+&lt;h3 id=&#34;data-bus&#34;&gt;data bus&lt;/h3&gt;
+&lt;h3 id=&#34;address-bus&#34;&gt;address bus&lt;/h3&gt;
+&lt;h3 id=&#34;control-bus&#34;&gt;control bus&lt;/h3&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

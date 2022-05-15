@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Peter LIU的个人Blog</title>
+    <link>https://peterliu-all.github.io/categories/</link>
+    <description>Recent content in Categories on Peter LIU的个人Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 15 May 2022 16:51:36 +0800</lastBuildDate><atom:link href="https://peterliu-all.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机导论原书笔记</title>
+      <link>https://peterliu-all.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E5%8E%9F%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 15 May 2022 16:51:36 +0800</pubDate>
+      
+      <guid>https://peterliu-all.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E5%8E%9F%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>计算机网络和因特网</title>
+      <link>https://peterliu-all.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91/</link>
+      <pubDate>Sun, 15 May 2022 16:51:36 +0800</pubDate>
+      
+      <guid>https://peterliu-all.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>switch and router</title>
+      <link>https://peterliu-all.github.io/categories/switch-and-router/</link>
+      <pubDate>Sun, 15 May 2022 16:45:55 +0800</pubDate>
+      
+      <guid>https://peterliu-all.github.io/categories/switch-and-router/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computer Organization</title>
+      <link>https://peterliu-all.github.io/categories/computer-organization/</link>
+      <pubDate>Sun, 15 May 2022 16:44:12 +0800</pubDate>
+      
+      <guid>https://peterliu-all.github.io/categories/computer-organization/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

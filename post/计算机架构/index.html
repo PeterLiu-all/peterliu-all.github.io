@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/peterliu-all.github.io\/",
+  "author": {
+    "@type": "Person",
+    "name": "Peter LIU",
+    
+    "image": "https://cdn.jsdelivr.net/gh/PeterLiu-all/image-hosting@master/20220515/rose.21u1vh67b7s0.webp"
+    
+  },
+  "name":"Peter LIU的个人Blog",
+  "description":"\u003ch1 id=\u0022computer-organization\u0022\u003eComputer Organization\u003c\/h1\u003e\n\u003ch2 id=\u0022cpucentral-processing-unit\u0022\u003eCPU(central processing unit)\u003c\/h2\u003e\n\u003ch3 id=\u0022aluarithmetic-logic-unit\u0022\u003eALU(arithmetic logic unit)\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003elogic\u003c\/li\u003e\n\u003cli\u003eshift\u003c\/li\u003e\n\u003cli\u003earithmetic operations\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch3 id=\u0022control-unit\u0022\u003e\u003cstrong\u003econtrol unit\u003c\/strong\u003e\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003econtrl the operation of CPU\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003ecomputer divided by instructions\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eCISC(complex instruction set computers)\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eprogrammer\u0026rsquo;s works are easier\u003c\/li\u003e\n\u003cli\u003ea large set of instructions\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003eRISC(reduced instruction set computers)\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eprogrammer\u0026rsquo;s works are more difficult\u003c\/li\u003e\n\u003cli\u003esimple instructions\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003ethe process of computer program\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eways of processing\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003epipelining\u003c\/p\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003eParallel processing\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eSISD\u003c\/li\u003e\n\u003cli\u003eSIMD\u003c\/li\u003e\n\u003cli\u003eMISD(JUST CONCEPT)\u003c\/li\u003e\n\u003cli\u003eMIMD\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003ea cycle\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003efetch\u003c\/li\u003e\n\u003cli\u003edecode\u003c\/li\u003e\n\u003cli\u003eexecute\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch3 id=\u0022a-set-of-registers\u0022\u003ea set of registers\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eData registers\u003c\/p\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eInstruction registers\u003c\/strong\u003e\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003einstruction set\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eopcode\u003c\/li\u003e\n\u003cli\u003eoperand\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003eProgram counter\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch2 id=\u0022cache-memory\u0022\u003eCache memory\u003c\/h2\u003e\n\u003ch3 id=\u0022contains-a-copy-of-a-portion-of-main-memory\u0022\u003econtains a copy of a portion of main memory\u003c\/h3\u003e\n\u003ch3 id=\u0022accelerate-the-process\u0022\u003eaccelerate the process\u003c\/h3\u003e\n\u003ch3 id=\u0022procedure\u0022\u003eprocedure\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eCPU checks the cache\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eif it\u0026rsquo;s in cache ,get it\u003c\/li\u003e\n\u003cli\u003eif not, cache will go get it\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch2 id=\u0022main-memory\u0022\u003emain memory\u003c\/h2\u003e\n\u003ch3 id=\u0022address-space\u0022\u003eaddress space\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003eadress\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch3 id=\u0022dataorganized-as-words\u0022\u003eData(organized as words)\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eRAM(random access memory)\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eSRAM(static)\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003efast\u003c\/li\u003e\n\u003cli\u003eexpensive\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003eDRAM(dynamic)\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eslow\u003c\/li\u003e\n\u003cli\u003einexpensive\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003eROM(read-only) memory\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003ePROM(cannot erase)\u003c\/li\u003e\n\u003cli\u003eEPROM(can erase by ultraviolet light)\u003c\/li\u003e\n\u003cli\u003eEEPROM(can erase by electronic impulses)\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch2 id=\u0022ioinputoutput-subsystem\u0022\u003eI\/O(input\/output) subsystem\u003c\/h2\u003e\n\u003ch3 id=\u0022input\u0022\u003einput\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003ehard disk\u003c\/li\u003e\n\u003cli\u003eUSB\u003c\/li\u003e\n\u003cli\u003eCD\/DVD\u003c\/li\u003e\n\u003cli\u003ekeyboard\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch3 id=\u0022output\u0022\u003eoutput\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003emonitor\u003c\/li\u003e\n\u003cli\u003eprinter\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch3 id=\u0022catagories\u0022\u003ecatagories\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eNonstorage devices\u003c\/p\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003eStorage devices\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003emagnetic\u003c\/li\u003e\n\u003cli\u003eoptical\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch3 id=\u0022adress\u0022\u003eadress\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003eisolated I\/O method\u003c\/li\u003e\n\u003cli\u003ememory-mapped I\/O method\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch2 id=\u0022connected-by-bus\u0022\u003econnected by bus\u003c\/h2\u003e\n\u003ch3 id=\u0022data-bus\u0022\u003edata bus\u003c\/h3\u003e\n\u003ch3 id=\u0022address-bus\u0022\u003eaddress bus\u003c\/h3\u003e\n\u003ch3 id=\u0022control-bus\u0022\u003econtrol bus\u003c\/h3\u003e",
+  "url":"https:\/\/peterliu-all.github.io\/post\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84\/",
+  "keywords":"[tech]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.99.0-DEV with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Peter LIU">
+<meta name="keywords" content="tech">
+<meta name="description" content="Computer Organization
+CPU(central processing unit)
+ALU(arithmetic logic unit)
+
+logic
+shift
+arithmetic operations
+
+control unit
+
+
+contrl the operation of CPU
+
+
+computer divided by instructions
+
+
+CISC(complex instruction set computers)
+
+programmer&rsquo;s works are easier
+a large set of instructions
+
+
+
+RISC(reduced instruction set computers)
+
+programmer&rsquo;s works are more difficult
+simple instructions
+
+
+
+
+
+the process of computer program
+
+
+ways of processing
+
+
+pipelining
+
+
+Parallel processing
+
+SISD
+SIMD
+MISD(JUST CONCEPT)
+MIMD
+
+
+
+
+
+a cycle
+
+fetch
+decode
+execute
+
+
+
+
+
+
+
+a set of registers
+
+
+Data registers
+
+
+Instruction registers
+
+
+instruction set
+
+opcode
+operand
+
+
+
+
+
+Program counter
+
+
+Cache memory
+contains a copy of a portion of main memory
+accelerate the process
+procedure
+
+
+CPU checks the cache
+
+if it&rsquo;s in cache ,get it
+if not, cache will go get it
+
+
+
+main memory
+address space
+
+adress
+
+Data(organized as words)
+
+
+RAM(random access memory)
+
+
+SRAM(static)
+
+fast
+expensive
+
+
+
+DRAM(dynamic)
+
+slow
+inexpensive
+
+
+
+
+
+ROM(read-only) memory
+
+PROM(cannot erase)
+EPROM(can erase by ultraviolet light)
+EEPROM(can erase by electronic impulses)
+
+
+
+I/O(input/output) subsystem
+input
+
+hard disk
+USB
+CD/DVD
+keyboard
+
+output
+
+monitor
+printer
+
+catagories
+
+
+Nonstorage devices
+
+
+Storage devices
+
+magnetic
+optical
+
+
+
+adress
+
+isolated I/O method
+memory-mapped I/O method
+
+connected by bus
+data bus
+address bus
+control bus">
+
+
+<meta property="og:description" content="Computer Organization
+CPU(central processing unit)
+ALU(arithmetic logic unit)
+
+logic
+shift
+arithmetic operations
+
+control unit
+
+
+contrl the operation of CPU
+
+
+computer divided by instructions
+
+
+CISC(complex instruction set computers)
+
+programmer&rsquo;s works are easier
+a large set of instructions
+
+
+
+RISC(reduced instruction set computers)
+
+programmer&rsquo;s works are more difficult
+simple instructions
+
+
+
+
+
+the process of computer program
+
+
+ways of processing
+
+
+pipelining
+
+
+Parallel processing
+
+SISD
+SIMD
+MISD(JUST CONCEPT)
+MIMD
+
+
+
+
+
+a cycle
+
+fetch
+decode
+execute
+
+
+
+
+
+
+
+a set of registers
+
+
+Data registers
+
+
+Instruction registers
+
+
+instruction set
+
+opcode
+operand
+
+
+
+
+
+Program counter
+
+
+Cache memory
+contains a copy of a portion of main memory
+accelerate the process
+procedure
+
+
+CPU checks the cache
+
+if it&rsquo;s in cache ,get it
+if not, cache will go get it
+
+
+
+main memory
+address space
+
+adress
+
+Data(organized as words)
+
+
+RAM(random access memory)
+
+
+SRAM(static)
+
+fast
+expensive
+
+
+
+DRAM(dynamic)
+
+slow
+inexpensive
+
+
+
+
+
+ROM(read-only) memory
+
+PROM(cannot erase)
+EPROM(can erase by ultraviolet light)
+EEPROM(can erase by electronic impulses)
+
+
+
+I/O(input/output) subsystem
+input
+
+hard disk
+USB
+CD/DVD
+keyboard
+
+output
+
+monitor
+printer
+
+catagories
+
+
+Nonstorage devices
+
+
+Storage devices
+
+magnetic
+optical
+
+
+
+adress
+
+isolated I/O method
+memory-mapped I/O method
+
+connected by bus
+data bus
+address bus
+control bus">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机架构">
+<meta name="twitter:title" content="计算机架构">
+<meta property="og:url" content="https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/">
+<meta property="twitter:url" content="https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/">
+<meta property="og:site_name" content="Peter LIU的个人Blog">
+<meta property="og:description" content="Computer Organization
+CPU(central processing unit)
+ALU(arithmetic logic unit)
+
+logic
+shift
+arithmetic operations
+
+control unit
+
+
+contrl the operation of CPU
+
+
+computer divided by instructions
+
+
+CISC(complex instruction set computers)
+
+programmer&rsquo;s works are easier
+a large set of instructions
+
+
+
+RISC(reduced instruction set computers)
+
+programmer&rsquo;s works are more difficult
+simple instructions
+
+
+
+
+
+the process of computer program
+
+
+ways of processing
+
+
+pipelining
+
+
+Parallel processing
+
+SISD
+SIMD
+MISD(JUST CONCEPT)
+MIMD
+
+
+
+
+
+a cycle
+
+fetch
+decode
+execute
+
+
+
+
+
+
+
+a set of registers
+
+
+Data registers
+
+
+Instruction registers
+
+
+instruction set
+
+opcode
+operand
+
+
+
+
+
+Program counter
+
+
+Cache memory
+contains a copy of a portion of main memory
+accelerate the process
+procedure
+
+
+CPU checks the cache
+
+if it&rsquo;s in cache ,get it
+if not, cache will go get it
+
+
+
+main memory
+address space
+
+adress
+
+Data(organized as words)
+
+
+RAM(random access memory)
+
+
+SRAM(static)
+
+fast
+expensive
+
+
+
+DRAM(dynamic)
+
+slow
+inexpensive
+
+
+
+
+
+ROM(read-only) memory
+
+PROM(cannot erase)
+EPROM(can erase by ultraviolet light)
+EEPROM(can erase by electronic impulses)
+
+
+
+I/O(input/output) subsystem
+input
+
+hard disk
+USB
+CD/DVD
+keyboard
+
+output
+
+monitor
+printer
+
+catagories
+
+
+Nonstorage devices
+
+
+Storage devices
+
+magnetic
+optical
+
+
+
+adress
+
+isolated I/O method
+memory-mapped I/O method
+
+connected by bus
+data bus
+address bus
+control bus">
+<meta name="twitter:description" content="Computer Organization
+CPU(central processing unit)
+ALU(arithmetic logic unit)
+
+logic
+shift
+arithmetic operations
+
+control unit
+
+
+contrl the operation of CPU
+
+
+computer divided by instructions
+
+
+CISC(complex instruction set computers)
+
+programmer&rsquo;s works are easier
+a large set of instructions
+
+
+
+RISC(reduced instruction set computers)
+
+programmer&rsquo;s works are more difficult
+simple instructions
+
+
+
+
+
+the process of computer program
+
+
+ways of processing
+
+
+pipelining
+
+
+Parallel processing
+
+SISD
+SIMD
+MISD(JUST CONCEPT)
+MIMD
+
+
+
+
+
+a cycle
+
+fetch
+decode
+execute
+
+
+
+
+
+
+
+a set of registers
+
+
+Data registers
+
+
+Instruction registers
+
+
+instruction set
+
+opcode
+operand
+
+
+
+
+
+Program counter
+
+
+Cache memory
+contains a copy of a portion of main memory
+accelerate the process
+procedure
+
+
+CPU checks the cache
+
+if it&rsquo;s in cache ,get it
+if not, cache will go get it
+
+
+
+main memory
+address space
+
+adress
+
+Data(organized as words)
+
+
+RAM(random access memory)
+
+
+SRAM(static)
+
+fast
+expensive
+
+
+
+DRAM(dynamic)
+
+slow
+inexpensive
+
+
+
+
+
+ROM(read-only) memory
+
+PROM(cannot erase)
+EPROM(can erase by ultraviolet light)
+EEPROM(can erase by electronic impulses)
+
+
+
+I/O(input/output) subsystem
+input
+
+hard disk
+USB
+CD/DVD
+keyboard
+
+output
+
+monitor
+printer
+
+catagories
+
+
+Nonstorage devices
+
+
+Storage devices
+
+magnetic
+optical
+
+
+
+adress
+
+isolated I/O method
+memory-mapped I/O method
+
+connected by bus
+data bus
+address bus
+control bus">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2022-05-15T16:44:12">
+  
+  
+    <meta property="article:modified_time" content="2022-05-15T16:44:12">
+  
+  
+  
+    
+      <meta property="article:section" content="计算机导论原书笔记">
+    
+      <meta property="article:section" content="Computer Organization">
+    
+  
+  
+    
+      <meta property="article:tag" content="计算机导论">
+    
+      <meta property="article:tag" content="英文笔记">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/PeterLiu-all/image-hosting@master/20220515/rose.21u1vh67b7s0.webp">
+  <meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/PeterLiu-all/image-hosting@master/20220515/rose.21u1vh67b7s0.webp">
+
+
+
+
+
+
+    <title>计算机架构</title>
+
+    <link rel="icon" href="https://peterliu-all.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://peterliu-all.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://peterliu-all.github.io/" aria-label="去首页">Peter LIU的个人Blog</a>
+  </div>
+  
+    
+      <a class="header-right-icon open-algolia-search"
+         href="https://peterliu-all.github.io/#search" aria-label="打开链接: /#search">
+    
+    
+      <i class="fa fa-lg fa-search"></i>
+    
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://peterliu-all.github.io/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="https://cdn.jsdelivr.net/gh/PeterLiu-all/image-hosting@master/20220515/rose.21u1vh67b7s0.webp" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Peter LIU</h4>
+        
+          <h5 class="sidebar-profile-bio"><strong>蚍蜉撼大树，鲤鱼跃龙门</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://peterliu-all.github.io/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://peterliu-all.github.io/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://peterliu-all.github.io/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://peterliu-all.github.io/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://peterliu-all.github.io/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kakawait" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      计算机架构
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-05-15T16:44:12&#43;08:00">
+        
+  五月 15, 2022
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://peterliu-all.github.io/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e5%af%bc%e8%ae%ba%e5%8e%9f%e4%b9%a6%e7%ac%94%e8%ae%b0">计算机导论原书笔记</a>, 
+    
+      <a class="category-link" href="https://peterliu-all.github.io/categories/computer-organization">Computer Organization</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <h1 id="computer-organization">Computer Organization</h1>
+<h2 id="cpucentral-processing-unit">CPU(central processing unit)</h2>
+<h3 id="aluarithmetic-logic-unit">ALU(arithmetic logic unit)</h3>
+<ul>
+<li>logic</li>
+<li>shift</li>
+<li>arithmetic operations</li>
+</ul>
+<h3 id="control-unit"><strong>control unit</strong></h3>
+<ul>
+<li>
+<p>contrl the operation of CPU</p>
+<ul>
+<li>
+<p>computer divided by instructions</p>
+<ul>
+<li>
+<p>CISC(complex instruction set computers)</p>
+<ul>
+<li>programmer&rsquo;s works are easier</li>
+<li>a large set of instructions</li>
+</ul>
+</li>
+<li>
+<p>RISC(reduced instruction set computers)</p>
+<ul>
+<li>programmer&rsquo;s works are more difficult</li>
+<li>simple instructions</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>the process of computer program</p>
+<ul>
+<li>
+<p>ways of processing</p>
+<ul>
+<li>
+<p>pipelining</p>
+</li>
+<li>
+<p>Parallel processing</p>
+<ul>
+<li>SISD</li>
+<li>SIMD</li>
+<li>MISD(JUST CONCEPT)</li>
+<li>MIMD</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>a cycle</p>
+<ul>
+<li>fetch</li>
+<li>decode</li>
+<li>execute</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="a-set-of-registers">a set of registers</h3>
+<ul>
+<li>
+<p>Data registers</p>
+</li>
+<li>
+<p><strong>Instruction registers</strong></p>
+<ul>
+<li>
+<p>instruction set</p>
+<ul>
+<li>opcode</li>
+<li>operand</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Program counter</p>
+</li>
+</ul>
+<h2 id="cache-memory">Cache memory</h2>
+<h3 id="contains-a-copy-of-a-portion-of-main-memory">contains a copy of a portion of main memory</h3>
+<h3 id="accelerate-the-process">accelerate the process</h3>
+<h3 id="procedure">procedure</h3>
+<ul>
+<li>
+<p>CPU checks the cache</p>
+<ul>
+<li>if it&rsquo;s in cache ,get it</li>
+<li>if not, cache will go get it</li>
+</ul>
+</li>
+</ul>
+<h2 id="main-memory">main memory</h2>
+<h3 id="address-space">address space</h3>
+<ul>
+<li>adress</li>
+</ul>
+<h3 id="dataorganized-as-words">Data(organized as words)</h3>
+<ul>
+<li>
+<p>RAM(random access memory)</p>
+<ul>
+<li>
+<p>SRAM(static)</p>
+<ul>
+<li>fast</li>
+<li>expensive</li>
+</ul>
+</li>
+<li>
+<p>DRAM(dynamic)</p>
+<ul>
+<li>slow</li>
+<li>inexpensive</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>ROM(read-only) memory</p>
+<ul>
+<li>PROM(cannot erase)</li>
+<li>EPROM(can erase by ultraviolet light)</li>
+<li>EEPROM(can erase by electronic impulses)</li>
+</ul>
+</li>
+</ul>
+<h2 id="ioinputoutput-subsystem">I/O(input/output) subsystem</h2>
+<h3 id="input">input</h3>
+<ul>
+<li>hard disk</li>
+<li>USB</li>
+<li>CD/DVD</li>
+<li>keyboard</li>
+</ul>
+<h3 id="output">output</h3>
+<ul>
+<li>monitor</li>
+<li>printer</li>
+</ul>
+<h3 id="catagories">catagories</h3>
+<ul>
+<li>
+<p>Nonstorage devices</p>
+</li>
+<li>
+<p>Storage devices</p>
+<ul>
+<li>magnetic</li>
+<li>optical</li>
+</ul>
+</li>
+</ul>
+<h3 id="adress">adress</h3>
+<ul>
+<li>isolated I/O method</li>
+<li>memory-mapped I/O method</li>
+</ul>
+<h2 id="connected-by-bus">connected by bus</h2>
+<h3 id="data-bus">data bus</h3>
+<h3 id="address-bus">address bus</h3>
+<h3 id="control-bus">control bus</h3>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://peterliu-all.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/">计算机导论</a>
+
+  <a class="tag tag--primary tag--small" href="https://peterliu-all.github.io/tags/%E8%8B%B1%E6%96%87%E7%AC%94%E8%AE%B0/">英文笔记</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://peterliu-all.github.io/post/difference_between_router_and_switch/" data-tooltip="Difference between Router and Switch" aria-label="下一篇: Difference between Router and Switch">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/" title="分享到 Facebook" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/" title="分享到 Twitter" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://wa.me/?text=https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/" title="分享到 Whatsapp" aria-label="分享到 Whatsapp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="发表评论">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/peterliu-all.github.io\/post\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84\/';
+        
+          this.page.identifier = '\/post\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'default';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 Peter LIU. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://peterliu-all.github.io/post/difference_between_router_and_switch/" data-tooltip="Difference between Router and Switch" aria-label="下一篇: Difference between Router and Switch">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/" title="分享到 Facebook" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/" title="分享到 Twitter" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://wa.me/?text=https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/" title="分享到 Whatsapp" aria-label="分享到 Whatsapp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="发表评论">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpeterliu-all.github.io%2Fpost%2F%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E6%259E%25B6%25E6%259E%2584%2F" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fpeterliu-all.github.io%2Fpost%2F%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E6%259E%25B6%25E6%259E%2584%2F" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://wa.me/?text=https%3A%2F%2Fpeterliu-all.github.io%2Fpost%2F%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E6%259E%25B6%25E6%259E%2584%2F" aria-label="分享到 Whatsapp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i><span>分享到 Whatsapp</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fpeterliu-all.github.io%2Fpost%2F%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E6%259E%25B6%25E6%259E%2584%2F" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>分享到 Linkedin</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://cdn.jsdelivr.net/gh/PeterLiu-all/image-hosting@master/20220515/rose.21u1vh67b7s0.webp" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Peter LIU</h4>
+    
+      <div id="about-card-bio"><strong>蚍蜉撼大树，鲤鱼跃龙门</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        学生
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        中国
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://cdn.pixabay.com/photo/2016/09/29/13/08/planet-1702788_1280.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://peterliu-all.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

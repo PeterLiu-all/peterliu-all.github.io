@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机导论原书笔记 on Peter LIU的个人Blog</title>
+    <link>https://peterliu-all.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E5%8E%9F%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 计算机导论原书笔记 on Peter LIU的个人Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 15 May 2022 16:51:36 +0800</lastBuildDate><atom:link href="https://peterliu-all.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E5%8E%9F%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is switch?</title>
+      <link>https://peterliu-all.github.io/post/whatisswitch/</link>
+      <pubDate>Sun, 15 May 2022 16:51:36 +0800</pubDate>
+      
+      <guid>https://peterliu-all.github.io/post/whatisswitch/</guid>
+      <description>&lt;h1 id=&#34;what-are-switches-in-computer-network&#34;&gt;What are Switches in Computer Network?&lt;/h1&gt;
+&lt;p&gt;A switch has many ports, to which computers are plugged in. When a data frame arrives at any port of a network switch, it examines the destination address, performs necessary checks and sends the frame to the corresponding device(s).It supports unicast, multicast as well as broadcast communications.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.tutorialspoint.com/assets/questions/media/40445/multicast_switches.jpg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;features-of-switches&#34;&gt;Features of Switches&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A switch operates in the layer 2, i.e. data link layer of the OSI model.&lt;/li&gt;
+&lt;li&gt;It is an intelligent network device that can be conceived as a multiport network bridge.&lt;/li&gt;
+&lt;li&gt;It uses MAC addresses (addresses of medium access control sublayer) to send data packets to selected destination ports.&lt;/li&gt;
+&lt;li&gt;It uses packet switching technique to receive and forward data packets from the source to the destination device.&lt;/li&gt;
+&lt;li&gt;It is supports unicast (one-to-one), multicast (one-to-many) and broadcast (one-to-all) communications.&lt;/li&gt;
+&lt;li&gt;Transmission mode is full duplex, i.e. communication in the channel occurs in both the directions at the same time. Due to this, collisions do not occur.&lt;/li&gt;
+&lt;li&gt;Switches are active devices, equipped with network software and network management capabilities.&lt;/li&gt;
+&lt;li&gt;Switches can perform some error checking before forwarding data to the destined port.&lt;/li&gt;
+&lt;li&gt;The number of ports is higher – 24/48.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;types-of-switches&#34;&gt;Types of Switches&lt;/h2&gt;
+&lt;p&gt;There are variety of switches that can be broadly categorised into 4 types −&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.tutorialspoint.com/assets/questions/media/40445/switches.jpg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Unmanaged Switch&lt;/strong&gt; − These are inexpensive switches commonly used in home networks and small businesses. They can be set up by simply plugging in to the network, after which they instantly start operating. When more devices needs to be added, more switches are simply added by this plug and play method. They are referred to as u managed since they do not require to be configured or monitored.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Managed Switch&lt;/strong&gt; − These are costly switches that are used in organisations with large and complex networks, since they can be customized to augment the functionalities of a standard switch. The augmented features may be QoS (Quality of Service) like higher security levels, better precision control and complete network management. Despite their cost, they are preferred in growing organizations due to their scalability and flexibility. Simple Network Management Protocol (SNMP) is used for configuring managed switches.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LAN Switch&lt;/strong&gt; − Local Area Network (LAN) switches connects devices in the internal LAN of an organization. They are also referred as Ethernet switches or data switches. These switches are particularly helpful in reducing network congestion or bottlenecks. They allocate bandwidth in a manner so that there is no overlapping of data packets in a network.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PoE Switch&lt;/strong&gt; − Power over Ethernet (PoE) switches are used in PoE Gogabit Ethernets. PoE technology combine data and power transmission over the same cable so that devices connected to it can receive both electricity as well as data over the same line. PoE switches offer greater flexibility and simplifies the cabling connections&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>计算机网络和因特网架构</title>
+      <link>https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91%E6%9E%B6%E6%9E%84/</link>
+      <pubDate>Sun, 15 May 2022 16:49:13 +0800</pubDate>
+      
+      <guid>https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91%E6%9E%B6%E6%9E%84/</guid>
+      <description>&lt;h1 id=&#34;计算机网络和因特网_笔记&#34;&gt;计算机网络和因特网_笔记&lt;/h1&gt;
+&lt;h2 id=&#34;网络&#34;&gt;网络&lt;/h2&gt;
+&lt;h3 id=&#34;网络是一系列可用于通信的设备相互连接构成的&#34;&gt;网络：是一系列可用于通信的设备相互连接构成的&lt;/h3&gt;
+&lt;h3 id=&#34;设备&#34;&gt;设备：&lt;/h3&gt;
+&lt;h4 id=&#34;主机终端&#34;&gt;主机（终端）&lt;/h4&gt;
+&lt;h4 id=&#34;连接设备&#34;&gt;连接设备&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;路由器：将一个网络与另一个网络相连接&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;交换机：讲不同设备连接在一起&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;调制调节器：可以改变数据形式&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;局域网lan&#34;&gt;局域网（LAN）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;私有网络&lt;/li&gt;
+&lt;li&gt;每台主机都有作为这台主机在局域网中唯一定义的&lt;strong&gt;一个标识和一个地址&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;一台主机向另一台主机发送的数据包中包括&lt;strong&gt;源主机&lt;/strong&gt;和&lt;strong&gt;目标主机&lt;/strong&gt;的地址&lt;/li&gt;
+&lt;li&gt;用交换机（switch）连接所有的主机&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;广域网wan&#34;&gt;广域网（WAN）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;地理跨度较LAN大得多&lt;/li&gt;
+&lt;li&gt;WAN将交换机、路由器（router）或调制调节器之类的连接设备互连&lt;/li&gt;
+&lt;li&gt;局域网为机构私有，而广域网则由通信公司创建并运营&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;点对点广域网&#34;&gt;点对点广域网&lt;/h3&gt;
+&lt;p&gt;@——@&lt;/p&gt;
+&lt;p&gt;通过传输媒介（电缆或无线）连接两个通信设备的网络&lt;/p&gt;
+&lt;h3 id=&#34;交换广域网&#34;&gt;交换广域网&lt;/h3&gt;
+&lt;p&gt;至少两个端的网络，交换广域网用于当今全球通信的骨干网，是几个点对点广域网通过交换机（switch）连接产生的结合体&lt;/p&gt;
+&lt;h2 id=&#34;互联网络internet-小写&#34;&gt;互联网络（internet ，小写）&lt;/h2&gt;
+&lt;p&gt;两个或多个（LAN&amp;amp;WAN）相互连接时，他们构成一个互联网络（网际网）&lt;/p&gt;
+&lt;h2 id=&#34;因特网internet大写&#34;&gt;因特网（Internet，大写）&lt;/h2&gt;
+&lt;p&gt;成千上万个互联网络组成因特网&lt;/p&gt;
+&lt;h3 id=&#34;骨干网&#34;&gt;骨干网&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;为通信公司拥有&lt;/li&gt;
+&lt;li&gt;通过网络对等汇点连接&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;供应商网络&#34;&gt;供应商网络&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;规模较小&lt;/li&gt;
+&lt;li&gt;付费使用骨干网上的一些服务&lt;/li&gt;
+&lt;li&gt;与骨干网相连，有时也连接其他供应商网络&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;客户网络&#34;&gt;客户网络&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;在边缘&lt;/li&gt;
+&lt;li&gt;真正使用基于因特网服务的网络&lt;/li&gt;
+&lt;li&gt;向供应商网络付费得到服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;骨干网和供应商网络并称为因特网服务供应商&#34;&gt;骨干网和供应商网络并称为因特网服务供应商&lt;/h3&gt;
+&lt;h3 id=&#34;骨干网被称为国际因特网服务供应商&#34;&gt;骨干网被称为国际因特网服务供应商&lt;/h3&gt;
+&lt;h3 id=&#34;供应商网络被称为国内或地域性因特网服务供应商&#34;&gt;供应商网络被称为国内或地域性因特网服务供应商&lt;/h3&gt;</description>
+    </item>
+    
+    <item>
+      <title>Difference between Router and Switch</title>
+      <link>https://peterliu-all.github.io/post/difference_between_router_and_switch/</link>
+      <pubDate>Sun, 15 May 2022 16:45:55 +0800</pubDate>
+      
+      <guid>https://peterliu-all.github.io/post/difference_between_router_and_switch/</guid>
+      <description>&lt;h1 id=&#34;difference-between-router-and-switch&#34;&gt;Difference between Router and Switch&lt;/h1&gt;
+&lt;p&gt;Router and Switch are both network connecting devices. Router works at network layer and is responsibe to find the shortest path for a packet whereas Switch connects various devices in a network. Router connects devices across multiple networks.&lt;/p&gt;
+&lt;p&gt;Following are the important differences between Router and Switch.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Sr. No.&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Key&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Router&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Switch&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Objective&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Router main objective is to connect various networks.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Switch main objective is to connect various devices in a network.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Layer&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Router works in Network Layer.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Switch works in Data Link Layer.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Usage&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Router is used in LAN and MAN.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Switch is used only in LAN.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Data Format&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Router sends data in form of packets.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Switch sends data in form of packets and frames.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Mode of Transmission&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Router follows duplex mode of transmission.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Switch also follows duplex mode of transmission.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Collision&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Less collision in case of Router.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;In full duplex mode, no collision happens in switch too.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NAT Compatability&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Compatible with NAT.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Not compatible with NAT.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Type&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Routing type is Adaptive and Non-adaptive routing.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Switching type is Circuit, Packet and Message switching.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    
+    <item>
+      <title>计算机架构</title>
+      <link>https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/</link>
+      <pubDate>Sun, 15 May 2022 16:44:12 +0800</pubDate>
+      
+      <guid>https://peterliu-all.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/</guid>
+      <description>&lt;h1 id=&#34;computer-organization&#34;&gt;Computer Organization&lt;/h1&gt;
+&lt;h2 id=&#34;cpucentral-processing-unit&#34;&gt;CPU(central processing unit)&lt;/h2&gt;
+&lt;h3 id=&#34;aluarithmetic-logic-unit&#34;&gt;ALU(arithmetic logic unit)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;logic&lt;/li&gt;
+&lt;li&gt;shift&lt;/li&gt;
+&lt;li&gt;arithmetic operations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;control-unit&#34;&gt;&lt;strong&gt;control unit&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;contrl the operation of CPU&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;computer divided by instructions&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;CISC(complex instruction set computers)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;programmer&amp;rsquo;s works are easier&lt;/li&gt;
+&lt;li&gt;a large set of instructions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RISC(reduced instruction set computers)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;programmer&amp;rsquo;s works are more difficult&lt;/li&gt;
+&lt;li&gt;simple instructions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the process of computer program&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ways of processing&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;pipelining&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Parallel processing&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SISD&lt;/li&gt;
+&lt;li&gt;SIMD&lt;/li&gt;
+&lt;li&gt;MISD(JUST CONCEPT)&lt;/li&gt;
+&lt;li&gt;MIMD&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a cycle&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fetch&lt;/li&gt;
+&lt;li&gt;decode&lt;/li&gt;
+&lt;li&gt;execute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;a-set-of-registers&#34;&gt;a set of registers&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Data registers&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Instruction registers&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;instruction set&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;opcode&lt;/li&gt;
+&lt;li&gt;operand&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Program counter&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cache-memory&#34;&gt;Cache memory&lt;/h2&gt;
+&lt;h3 id=&#34;contains-a-copy-of-a-portion-of-main-memory&#34;&gt;contains a copy of a portion of main memory&lt;/h3&gt;
+&lt;h3 id=&#34;accelerate-the-process&#34;&gt;accelerate the process&lt;/h3&gt;
+&lt;h3 id=&#34;procedure&#34;&gt;procedure&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;CPU checks the cache&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if it&amp;rsquo;s in cache ,get it&lt;/li&gt;
+&lt;li&gt;if not, cache will go get it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;main-memory&#34;&gt;main memory&lt;/h2&gt;
+&lt;h3 id=&#34;address-space&#34;&gt;address space&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;adress&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;dataorganized-as-words&#34;&gt;Data(organized as words)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;RAM(random access memory)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;SRAM(static)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fast&lt;/li&gt;
+&lt;li&gt;expensive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DRAM(dynamic)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;slow&lt;/li&gt;
+&lt;li&gt;inexpensive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ROM(read-only) memory&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PROM(cannot erase)&lt;/li&gt;
+&lt;li&gt;EPROM(can erase by ultraviolet light)&lt;/li&gt;
+&lt;li&gt;EEPROM(can erase by electronic impulses)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ioinputoutput-subsystem&#34;&gt;I/O(input/output) subsystem&lt;/h2&gt;
+&lt;h3 id=&#34;input&#34;&gt;input&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;hard disk&lt;/li&gt;
+&lt;li&gt;USB&lt;/li&gt;
+&lt;li&gt;CD/DVD&lt;/li&gt;
+&lt;li&gt;keyboard&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;output&#34;&gt;output&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;monitor&lt;/li&gt;
+&lt;li&gt;printer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;catagories&#34;&gt;catagories&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Nonstorage devices&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Storage devices&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;magnetic&lt;/li&gt;
+&lt;li&gt;optical&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;adress&#34;&gt;adress&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;isolated I/O method&lt;/li&gt;
+&lt;li&gt;memory-mapped I/O method&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;connected-by-bus&#34;&gt;connected by bus&lt;/h2&gt;
+&lt;h3 id=&#34;data-bus&#34;&gt;data bus&lt;/h3&gt;
+&lt;h3 id=&#34;address-bus&#34;&gt;address bus&lt;/h3&gt;
+&lt;h3 id=&#34;control-bus&#34;&gt;control bus&lt;/h3&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
