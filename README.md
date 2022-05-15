@@ -6,3 +6,6 @@
 **欢迎访问[博客网站](https://peterliu-all.github.io/)!**
 
 感谢[kakawait](https://github.com/kakawait)提供的[主题](https://github.com/kakawait/hugo-tranquilpeak-theme.git)!
+
+---
+欢迎阅读笔者写的[深度学习笔记](https://peterliu-all.github.io/DeepLearningNoteBook/)！
