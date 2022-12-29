@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础SROP on Peter Liu的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E5%9F%BA%E7%A1%80srop/</link>
+    <description>Recent content in 基础SROP on Peter Liu的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E5%9F%BA%E7%A1%80srop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【基础SROP】【sig_return】ciscn_s_3</title>
+      <link>https://peterliuzhi.top/writeup/%E5%9F%BA%E7%A1%80sropsig_returnciscn_s_3/</link>
+      <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/writeup/%E5%9F%BA%E7%A1%80sropsig_returnciscn_s_3/</guid>
+      <description>原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 完整exp checksec查看程序架构 $ checksec --file ciscn_s_3 [*] &amp;#39;/home/peterl/security/workspace/ciscn_s_3/ciscn_s_3&amp;#39; Arch: amd64-64-little RELRO: Partial RELRO Stack: No canary found NX: NX enabled PIE: No PIE (0x400000) i</description>
+    </item>
+    
+  </channel>
+</rss>

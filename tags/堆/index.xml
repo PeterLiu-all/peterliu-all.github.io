@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>堆 on Peter Liu的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E5%A0%86/</link>
+    <description>Recent content in 堆 on Peter Liu的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E5%A0%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【unlink】BUUCTF hitcontraining_unlink</title>
+      <link>https://peterliuzhi.top/writeup/unlinkbuuctf-hitcontraining_unlink/</link>
+      <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/writeup/unlinkbuuctf-hitcontraining_unlink/</guid>
+      <description>原题链接 checksec查看程序架构 ida查看伪代码 典型的堆菜单题 介绍一下unlink unlink其实就是很普通，很常规的一种从双向链表中取出节点的机</description>
+    </item>
+    
+  </channel>
+</rss>

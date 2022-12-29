@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>atoi on Peter Liu的个人博客</title>
+    <link>https://peterliuzhi.top/tags/atoi/</link>
+    <description>Recent content in atoi on Peter Liu的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Tue, 27 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/atoi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>绕过atoi前对首字符是否为负号的检查</title>
+      <link>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5/</link>
+      <pubDate>Tue, 27 Dec 2022 03:01:44 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5/</guid>
+      <description>先输入空格就好了，atoi会跳过空格</description>
+    </item>
+    
+  </channel>
+</rss>

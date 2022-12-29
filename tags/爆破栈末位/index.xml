@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>爆破栈末位 on Peter Liu的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8D/</link>
+    <description>Recent content in 爆破栈末位 on Peter Liu的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【爆破栈末位】xman_2019_format</title>
+      <link>https://peterliuzhi.top/writeup/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8Dxman_2019_format/</link>
+      <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/writeup/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8Dxman_2019_format/</guid>
+      <description>原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp ASLR对栈的影响 构建地址链 爆破 完整exp checksec查看程序架构 $ checksec xman_2019_format [*] &amp;#39;/home/giantbranch/share_files/security/workspace/xman_2019_format/xman_2019_format&amp;#39; Arch: i386-32-little</description>
+    </item>
+    
+  </channel>
+</rss>

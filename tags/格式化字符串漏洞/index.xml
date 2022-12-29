@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>格式化字符串漏洞 on Peter Liu的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/</link>
+    <description>Recent content in 格式化字符串漏洞 on Peter Liu的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【格式化字符串漏洞】jarvisoj_fmm</title>
+      <link>https://peterliuzhi.top/writeup/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9Ejarvisoj_fm/</link>
+      <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/writeup/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9Ejarvisoj_fm/</guid>
+      <description>原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 格式化字符串覆盖任意地址数据 完整exp checksec查看程序架构 $ checksec fm [*] &amp;#39;/home/peterl/security/workspace/fm/fm&amp;#39; Arch: i386-32-little RELRO: Partial</description>
+    </item>
+    
+  </channel>
+</rss>

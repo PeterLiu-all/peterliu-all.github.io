@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43;Pwn on Peter Liu的个人博客</title>
+    <link>https://peterliuzhi.top/tags/c&#43;&#43;pwn/</link>
+    <description>Recent content in C&#43;&#43;Pwn on Peter Liu的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/c++pwn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【C&#43;&#43;Pwn】[ZJCTF 2019]Login</title>
+      <link>https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/</link>
+      <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/</guid>
+      <description>原题链接 查看程序架构 ida伪代码 典型的C++语法，这里应该有两个类，Admin继承自User： 其中我们发现Admin::shell正是我们需要的后门函</description>
+    </item>
+    
+  </channel>
+</rss>

