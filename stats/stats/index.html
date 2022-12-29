@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>C内嵌汇编 - P3troL1er的个人博客</title>
+<title>P3troL1er的个人博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
@@ -98,46 +98,48 @@
   "itemListElement": [{
       "@type": "ListItem",
       "position": 1 ,
-      "name":"Tags",
-      "item":"https://peterliuzhi.top/tags/"},{
+      "name":"Stats",
+      "item":"https://peterliuzhi.top/stats/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"C内嵌汇编",
-      "item":"https://peterliuzhi.top/tags/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96/"}]
+      "name":"",
+      "item":"https://peterliuzhi.top/stats/stats/"}]
 }
 </script>
 
 
 
-
 <script type="application/ld+json">
 {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[{
-            "@type":"ListItem",
-            "position":  1 ,
-            "name": "【C内嵌汇编】others_shellcode",
-            "description": "BUUCTF others_shellcode的解析",
-            "url": "https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/"
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/stats/stats/"
+    },
+    "headline": "P3troL1er的个人博客","publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/selficon.jpg"
         }
-    ]
+        },
+    "description": "Eureka is a elegant and powerful theme for Hugo."
 }
-</script><meta property="og:title" content="C内嵌汇编 - P3troL1er的个人博客" />
-<meta property="og:type" content="website" />
+</script><meta property="og:title" content="P3troL1er的个人博客" />
+<meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
 
 
-<meta property="og:url" content="https://peterliuzhi.top/tags/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96/" />
+<meta property="og:url" content="https://peterliuzhi.top/stats/stats/" />
 
 
 
 
-
-<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
-
+<meta property="og:description" content="" />
 
 
 
@@ -154,14 +156,13 @@
 
 
 
-<meta property="og:updated_time" content="2022-12-29T03:01:44&#43;08:00" />
 
 
 
-<meta property="article:section" content="tags" />
+<meta property="article:section" content="stats" />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://peterliuzhi.top/tags/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96/index.xml" title="P3troL1er的个人博客" />
+
 
 
   <body class="flex min-h-screen flex-col">
@@ -209,7 +210,7 @@
             <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
             <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
             <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
-            <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Statistics</a>
         </div>
 
         <div class="flex">
@@ -274,69 +275,193 @@
     <main class="grow pt-16">
         <div class="pl-scrollbar">
           <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
-  <article class="prose mx-6 my-8">
-  <h1>C内嵌汇编</h1>
-  
-</article>
 
-  <div class="bg-secondary-bg rounded px-6">
-    <div class="overflow-hidden divide-y">
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" class="no-underline">
-    <h3 class="mt-0">【C内嵌汇编】others_shellcode</h3>
-  </a>
-  
-    BUUCTF others_shellcode的解析
-  
-
-  
+<style>
+.chart {
+  margin-top: 15px;
+  width: 100%;
+  height: 350px;
+}
+</style>
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Thursday, December 29, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>1分钟阅读时长</span>
-  </div>
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text"></h1>
 
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
-          >writeup</a
-        >
-      
+        <div class="flex flex-wrap flex-row items-center my-2 text-tertiary-text">
+          <div class="mr-6 my-2">
+              <i class="fas fa-calendar mr-1"></i>
+              <span>Monday, January 1, 0001</span>
+          </div>
+        </div>
+        
+        
+        
+
+        <div class="content">
+          
+        </div>
     </div>
-  
 
-  
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
+    
 </div>
 
 
-  </div>
-  
+
+
+<script src="https://lib.baomitu.com/echarts/5.0.0/echarts.min.js"></script>
+<script>
+const data =[{"count":13,"hour":"17","month":"2022-12","slug":"","title":"Hello","week":"Thursday","year":"2022"},{"count":393,"hour":"03","month":"2022-12","slug":"","title":"【32位系统传参】BUUCTF picoctf_2018_rop chain","week":"Thursday","year":"2022"},{"count":800,"hour":"03","month":"2022-12","slug":"","title":"【C++Pwn】[ZJCTF 2019]Login","week":"Thursday","year":"2022"},{"count":640,"hour":"03","month":"2022-12","slug":"","title":"【call32】【栈迁移】BUUCTF ciscn_2019_s_4","week":"Thursday","year":"2022"},{"count":403,"hour":"03","month":"2022-12","slug":"","title":"【C内嵌汇编】others_shellcode","week":"Thursday","year":"2022"},{"count":712,"hour":"03","month":"2022-12","slug":"","title":"【fmtstr_payload函数】BUUCTF axb_2019_fmt32","week":"Thursday","year":"2022"},{"count":977,"hour":"03","month":"2022-12","slug":"","title":"【HarekazeCTF2019】baby_rop","week":"Thursday","year":"2022"},{"count":1682,"hour":"03","month":"2022-12","slug":"","title":"【LibSearcher】ciscn_2019_en_2","week":"Thursday","year":"2022"},{"count":616,"hour":"03","month":"2022-12","slug":"","title":"【printf不刷新缓冲区】not_the_same_3dsctf_2016","week":"Thursday","year":"2022"},{"count":50,"hour":"03","month":"2022-12","slug":"","title":"【shell重定向】BUUCTF wustctf2020_closed","week":"Thursday","year":"2022"},{"count":2828,"hour":"03","month":"2022-12","slug":"","title":"【syscall】get_started_3dsctf_2016","week":"Thursday","year":"2022"},{"count":1216,"hour":"03","month":"2022-12","slug":"","title":"【unlink】BUUCTF hitcontraining_unlink","week":"Thursday","year":"2022"},{"count":1048,"hour":"03","month":"2022-12","slug":"","title":"【爆破栈末位】xman_2019_format","week":"Thursday","year":"2022"},{"count":940,"hour":"03","month":"2022-12","slug":"","title":"【符号位漏洞+ret2libc】pwn2_sctf_2016","week":"Thursday","year":"2022"},{"count":813,"hour":"03","month":"2022-12","slug":"","title":"【格式化字符串漏洞】jarvisoj_fmm","week":"Thursday","year":"2022"},{"count":638,"hour":"03","month":"2022-12","slug":"","title":"【基础SROP】【sig_return】ciscn_s_3","week":"Thursday","year":"2022"},{"count":930,"hour":"03","month":"2022-12","slug":"","title":"【利用int 80h】【利用mprotect函数】BUUCTF cmcc_simplerop","week":"Thursday","year":"2022"},{"count":1196,"hour":"03","month":"2022-12","slug":"","title":"【绕过堆溢出限制】BUUCTF babyfengshui_33c3_2016","week":"Thursday","year":"2022"},{"count":644,"hour":"03","month":"2022-12","slug":"","title":"【生成ORW shellcode】BUUCTF pwnable_orw","week":"Thursday","year":"2022"},{"count":2946,"hour":"03","month":"2022-12","slug":"","title":"【首道堆题】【fastbin attack】【unsorted bin main_arena leak】babyheap_0ctf_2017","week":"Thursday","year":"2022"},{"count":1502,"hour":"03","month":"2022-12","slug":"","title":"【栈迁移例题解析】ciscn_2019_es_2","week":"Thursday","year":"2022"},{"count":831,"hour":"03","month":"2022-12","slug":"","title":"BUUCTF ciscn_2019_ne_5","week":"Thursday","year":"2022"},{"count":664,"hour":"03","month":"2022-12","slug":"","title":"BUUCTF Jarvisoj_level2_x64","week":"Thursday","year":"2022"},{"count":7391,"hour":"03","month":"2022-12","slug":"","title":"暨南大学2022新生赛初赛 非官方WriteUp","week":"Thursday","year":"2022"},{"count":897,"hour":"03","month":"2022-12","slug":"","title":"使用ROPgadget、ropper工具构建ropchain","week":"Thursday","year":"2022"},{"count":108,"hour":"03","month":"2022-12","slug":"","title":"如何查看当前系统libc版本","week":"Wednesday","year":"2022"},{"count":18,"hour":"03","month":"2022-12","slug":"","title":"绕过atoi前对首字符是否为负号的检查","week":"Tuesday","year":"2022"},{"count":71,"hour":"03","month":"2022-12","slug":"","title":"绕过pyjail——一句话RCE","week":"Friday","year":"2022"},{"count":0,"hour":"00","month":"0001-01","slug":"","title":"","week":"Monday","year":"0001"},{"count":18,"hour":"00","month":"0001-01","slug":"","title":"","week":"Monday","year":"0001"},{"count":0,"hour":"00","month":"0001-01","slug":"","title":"","week":"Monday","year":"0001"},{"count":0,"hour":"00","month":"0001-01","slug":"search.html","title":"包含关键词 的文章","week":"Monday","year":"0001"}];
+function showChart(id, title, type, d) {
+  var chart = echarts.init(document.getElementById(id));
+  var xData = [];
+  var yData = [];
+  d.forEach(function(item) {
+      xData.push(item[0]);
+      yData.push(item[1]);
+  });
+  var option = {
+    title : { text : title },
+    tooltip : { trigger : 'axis' },
+    xAxis : [ { type : 'category', data : xData } ],
+    yAxis : [ { type : 'value' } ],
+    grid : { x : 35, y : 45, x2 : 35, y2 : 35 },
+    series : [ { 
+      type : 'bar',
+      name : type,
+      data : yData,
+      markLine : {
+        data : [ {
+          type : 'average',
+          name : '平均值'
+        }],
+        itemStyle : {
+          normal : {
+            color : '#4087bd'
+          }
+        }
+      },
+      itemStyle : {
+        normal : {
+          color : '#87cefa'
+        }
+      }
+    }]
+  };
+  chart.setOption(option);
+}
+
+window.addEventListener('load', function() {
+  basicInfo();
+  yearStats();
+  monthStats();
+  hourStats();
+  weekStats();
+});
+function basicInfo() {
+  const articles =  1 ;
+  const pages = data.length - articles;
+  const comments = data.reduce((count, article) => count + article.comments, 0);
+  const words = data.reduce((count, article) => count + article.count, 0);
+  document.querySelector('#basic-info').innerHTML = `
+    <span>文章：<strong><a href="/">${articles}</a></strong> 篇</span>；<span>页面：<strong><a href="/">${pages}</a></strong> 篇</span>；<span>总字数：<strong>${words}</strong></span>；
+  `;
+};
+
+function yearStats() {
+  const yearGroup = {};
+  data.forEach(article => {
+    const year = parseInt(article.year);
+    if(!yearGroup.hasOwnProperty(year)) {
+      yearGroup[year] = 0;
+    }
+    yearGroup[year] += 1;
+  });
+
+  const d = [];
+  for(let i = 2009; i <= (new Date().getFullYear()); i++) {
+    d.push([i, yearGroup[i] || 0]);
+  }
+  showChart('year-stat', '文章数 - 按年统计', '文章数', d);
+}
+function monthStats() {
+  const monthGroup = {};
+  data.forEach(article => {
+    if(!monthGroup.hasOwnProperty(article.month)) {
+      monthGroup[article.month] = 0;
+    }
+    monthGroup[article.month] += 1;
+  });
+  const d = [];
+  for(let year = 2009; year <= (new Date().getFullYear()); year++) {
+    for(let month = 1; month < 13; month++) {
+      const text = `${year}-${month < 10 ? '0' + month : month}`;
+      d.push([text, monthGroup[text] || 0]);
+    }
+  }
+  showChart('month-stat', '文章数 - 按月统计', '文章数', d);
+}
+function hourStats() {
+  const hourGroup = {};
+  data.forEach(article => {
+    const hour = parseInt(article.hour);
+    if(!hourGroup.hasOwnProperty(hour)) {
+      hourGroup[hour] = 0;
+    }
+    hourGroup[hour] += 1;
+  });
+  const d = [
+    ['00:00-01:00'],
+    ['01:00-02:00'],
+    ['02:00-03:00'],
+    ['03:00-04:00'],
+    ['04:00-05:00'],
+    ['05:00-06:00'],
+    ['06:00-07:00'],
+    ['07:00-08:00'],
+    ['08:00-09:00'],
+    ['09:00-10:00'],
+    ['10:00-11:00'],
+    ['11:00-12:00'],
+    ['12:00-13:00'],
+    ['13:00-14:00'],
+    ['14:00-15:00'],
+    ['15:00-16:00'],
+    ['16:00-17:00'],
+    ['17:00-18:00'],
+    ['18:00-19:00'],
+    ['19:00-20:00'],
+    ['20:00-21:00'],
+    ['21:00-22:00'],
+    ['22:00-23:00'],
+    ['23:00-24:00']
+  ].map((item, key) => {
+    item[1] = hourGroup[key] || 0;
+    return item;
+  });
+  showChart('hour-stat', '文章数 - 按时段统计', '文章数', d);
+}
+function weekStats() {
+  const weekGroup = {};
+  data.forEach(article => {
+    if(!weekGroup.hasOwnProperty(article.week)) {
+      weekGroup[article.week] = 0;
+    }
+    weekGroup[article.week] += 1;
+  });
+  const d = [
+    ['星期一', weekGroup.Monday],
+    ['星期二', weekGroup.Tuesday],
+    ['星期三', weekGroup.Wednesday],
+    ['星期四', weekGroup.Thursday],
+    ['星期五', weekGroup.Friday],
+    ['星期六', weekGroup.Saturday],
+    ['星期日', weekGroup.Sunday]
+  ];
+  showChart('weekday-stat', '文章数 - 按星期几统计', '文章数', d);
+}
+</script>
+
 
           </div>
         </div>
