@@ -443,21 +443,21 @@
 </span></span><span class="line"><span class="cl">    PIE:      PIE enabled
 </span></span></code></pre></div><h2 id="ida-查看程序伪代码">ida 查看程序伪代码</h2>
 <p>这个程序故意把<code>.symtab</code>节删掉了，所以没有函数名称，这里作者在 ida 中简单地重命名了一下</p>
-<p><img src="../../image/202209292103342022-09-29-21-03-35.png" alt="202209292103342022-09-29-21-03-35"></p>
+<p><img src="/image/202209292103342022-09-29-21-03-35.png" alt="202209292103342022-09-29-21-03-35"></p>
 <h3 id="allocate">allocate</h3>
-<p><img src="../../image/202209292105552022-09-29-21-05-56.png" alt="202209292105552022-09-29-21-05-56"></p>
+<p><img src="/image/202209292105552022-09-29-21-05-56.png" alt="202209292105552022-09-29-21-05-56"></p>
 <p>这个函数会分配一个大小小于 4096 的内存块（不存在符号位漏洞），而我们知道这个内存块会是从 top_chunk 中分割出来的：</p>
-<p><img src="../../image/202209292115172022-09-29-21-15-18.png" alt="202209292115172022-09-29-21-15-18"></p>
+<p><img src="/image/202209292115172022-09-29-21-15-18.png" alt="202209292115172022-09-29-21-15-18"></p>
 <p>然后，malloc 会返回指向 chunk 中<strong>size 的尾部，user_data 的首部，同时也是 fd 指针的首部的指针</strong>，而这个指针会存放在一个大数组中，而这个大数组是以三个单元为一个实体的，可以看作它是一个<strong>结构体数组</strong>，这个结构体数组的构造如下：</p>
-<p><img src="../../image/202209292123132022-09-29-21-23-14.png" alt="202209292123132022-09-29-21-23-14"></p>
+<p><img src="/image/202209292123132022-09-29-21-23-14.png" alt="202209292123132022-09-29-21-23-14"></p>
 <h3 id="fill">fill</h3>
-<p><img src="../../image/202209292106262022-09-29-21-06-27.png" alt="202209292106262022-09-29-21-06-27"></p>
+<p><img src="/image/202209292106262022-09-29-21-06-27.png" alt="202209292106262022-09-29-21-06-27"></p>
 <p>这个函数在检查内存是否可用（标志是否为 1）后会向对应索引的内存中填入任意大小的数据，这个数据<strong>长度是由用户随意指定的</strong>！！这里就出现了<strong>堆溢出漏洞</strong></p>
 <h3 id="free">Free</h3>
-<p><img src="../../image/202209292106572022-09-29-21-06-57.png" alt="202209292106572022-09-29-21-06-57"></p>
+<p><img src="/image/202209292106572022-09-29-21-06-57.png" alt="202209292106572022-09-29-21-06-57"></p>
 <p>在检查标志位是否为 1 后，它会将标识位、size 置零，并释放内存</p>
 <h3 id="dump">dump</h3>
-<p><img src="../../image/202209292107322022-09-29-21-07-32.png" alt="202209292107322022-09-29-21-07-32"></p>
+<p><img src="/image/202209292107322022-09-29-21-07-32.png" alt="202209292107322022-09-29-21-07-32"></p>
 <p>这个函数在检查标志位是否为 1 后，会将内存中的内容打印出来</p>
 <h3 id="基本思路">基本思路</h3>
 <p>我们想一下这么一件事：在我们的结构体数组中，理论上每一个结构体内的内存地址是不一样的，而且如果内存被释放，标志位也会被置零，从而也就无法访问。</p>
@@ -509,7 +509,7 @@
 <p>我们需要分配几个 chunk，其中有且仅有一个大小超过 fast bin 的限制，会被放进 unsorted bin 中</p>
 <p>然后我们会 allocate 两次，一次是正常的 fast bin 里面的内容，一次指向会被放入 unsorted bin 中的大 chunk。</p>
 <p>那么我们可以先划出 4 个 0x10 的 chunk（size 位=prev_size+size+prev_inuse+0x10=0x20），再划出一块 0x80 大小的 chunk 用以放进 unsorted bin 中：</p>
-<p><img src="../../image/tmp.drawio2022-09-30-15-48-51.png" alt="tmp.drawio2022-09-30-15-48-51"></p>
+<p><img src="/image/tmp.drawio2022-09-30-15-48-51.png" alt="tmp.drawio2022-09-30-15-48-51"></p>
 <p>因此我们可以初始分配五个 chunk：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x10</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x10</span><span class="p">)</span>
@@ -556,7 +556,7 @@
 </span></span></code></pre></div><h3 id="覆写任意地址的数据">覆写任意地址的数据</h3>
 <p>当我们通过覆写chunk 2的fd位的时候，我们应该已经发现了，通过这种方式，我们可以将fd位覆写为任意我们喜欢的地址</p>
 <p>我们可以通过覆写code段中的<code>__malloc_hook</code>函数来改变<code>malloc</code>的行为，这个函数的<a href="https://www.gnu.org/software/libc/manual/html_node/Hooks-for-Malloc.html">详细说明见此</a>，这里贴一段我们这个程序要用到的说明：</p>
-<p><img src="../../image/202210022048522022-10-02-20-48-53.png" alt="202210022048522022-10-02-20-48-53"></p>
+<p><img src="/image/202210022048522022-10-02-20-48-53.png" alt="202210022048522022-10-02-20-48-53"></p>
 <p>可以看到，<code>__malloc_hook</code>函数的值是<code>malloc</code>会在它被call的时候使用的函数指针，所以，我们只需要更改<code>__malloc_hook</code>的值，我们就能更改<code>malloc</code>的行为</p>
 <p><code>__malloc_hook</code>函数的偏移存在sym表中：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ readelf -aW libc-2.23.so <span class="p">|</span> grep hook

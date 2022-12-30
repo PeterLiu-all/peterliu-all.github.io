@@ -458,11 +458,11 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>首先我们找到了密码为administrator，然后我们看到下面的switch-case语句</p>
 <p>经过分析我们发现只有当case为1时能够输入128个字符：</p>
-<p><img src="../../image/202209251719142022-09-25-17-19-14.png" alt="202209251719142022-09-25-17-19-14"></p>
+<p><img src="/image/202209251719142022-09-25-17-19-14.png" alt="202209251719142022-09-25-17-19-14"></p>
 <p>但是保存输入的变量不在当前栈中，而且在原本的main函数中传入的参数也只是一个保存地址的4字节变量，因此对原本的main函数也构成不了溢出。</p>
 <p>但是我们又发现，我们在src变量所指的内存中保存的数据会被别的函数利用：</p>
-<p><img src="../../image/202209251722472022-09-25-17-22-47.png" alt="202209251722472022-09-25-17-22-47"></p>
-<p><img src="../../image/202209251723232022-09-25-17-23-24.png" alt="202209251723232022-09-25-17-23-24"></p>
+<p><img src="/image/202209251722472022-09-25-17-22-47.png" alt="202209251722472022-09-25-17-22-47"></p>
+<p><img src="/image/202209251723232022-09-25-17-23-24.png" alt="202209251723232022-09-25-17-23-24"></p>
 <p>同时我们发现plt表中有<code>system</code>：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ readelf -r ciscn_2019_ne_5
 </span></span><span class="line"><span class="cl">

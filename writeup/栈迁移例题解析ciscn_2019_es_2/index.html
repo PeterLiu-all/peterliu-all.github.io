@@ -411,14 +411,14 @@
 </span></span><span class="line"><span class="cl">    PIE:      No PIE <span class="o">(</span>0x8048000<span class="o">)</span>
 </span></span></code></pre></div><p>没啥特殊的，注意一下32位就可</p>
 <h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
-<p><img src="../../image/202209251439012022-09-25-14-39-01.png" alt="202209251439012022-09-25-14-39-01"></p>
-<p><img src="../../image/202209251439252022-09-25-14-39-26.png" alt="202209251439252022-09-25-14-39-26"></p>
+<p><img src="/image/202209251439012022-09-25-14-39-01.png" alt="202209251439012022-09-25-14-39-01"></p>
+<p><img src="/image/202209251439252022-09-25-14-39-26.png" alt="202209251439252022-09-25-14-39-26"></p>
 <p>看起来像是栈溢出，但是read函数限制了读入的字节数，我们看一下栈：</p>
-<p><img src="../../image/202209251440452022-09-25-14-40-46.png" alt="202209251440452022-09-25-14-40-46">
-<img src="../../image/202209251441052022-09-25-14-41-06.png" alt="202209251441052022-09-25-14-41-06"></p>
+<p><img src="/image/202209251440452022-09-25-14-40-46.png" alt="202209251440452022-09-25-14-40-46">
+<img src="/image/202209251441052022-09-25-14-41-06.png" alt="202209251441052022-09-25-14-41-06"></p>
 <p>我们发现这时候到return的位置只能溢出一个字，如果这时候程序有一个backdoor函数那就万事大吉。</p>
 <p>我们可以找一下，发现了一个hack函数，但这个hack函数完全就是糊弄人的，从中唯一得到的有用信息是system确乎存在于plt表中，这样就不用ret2libc了：</p>
-<p><img src="../../image/202209251443562022-09-25-14-43-56.png" alt="202209251443562022-09-25-14-43-56"></p>
+<p><img src="/image/202209251443562022-09-25-14-43-56.png" alt="202209251443562022-09-25-14-43-56"></p>
 <p>看一下源程序也没有格式化字符串漏洞，我们可以考虑栈迁移</p>
 <p>我们只要泄露出ebp，然后再通过第二次<code>leave;ret</code>就可以将esp更改到我们希望的地方</p>
 <h2 id="构建exp">构建exp</h2>
@@ -457,7 +457,7 @@
 </span></span><span class="line"><span class="cl"><span class="n">eip_addr</span> <span class="o">=</span> <span class="n">u32</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="开始栈迁移">开始栈迁移</h3>
 <p>我们用gdb调试一下，发现当恢复ebp备份值的时候，这个备份值比当时ebp的值刚好多0x10：</p>
-<p><img src="../../image/202209251543542022-09-25-15-43-54.png" alt="202209251543542022-09-25-15-43-54"></p>
+<p><img src="/image/202209251543542022-09-25-15-43-54.png" alt="202209251543542022-09-25-15-43-54"></p>
 <p>那么我们的payload就出来了：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">leave_ret</span> <span class="o">=</span> <span class="mh">0x080484b8</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># command也可以是cat flag</span>

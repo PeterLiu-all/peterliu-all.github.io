@@ -404,9 +404,9 @@
 </span></span><span class="line"><span class="cl">    PIE:      No PIE <span class="o">(</span>0x8048000<span class="o">)</span>
 </span></span></code></pre></div><p>有canary，那传统的栈溢出肯定不行了</p>
 <h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
-<p><img src="../../image/202209251637352022-09-25-16-37-36.png" alt="202209251637352022-09-25-16-37-36"></p>
+<p><img src="/image/202209251637352022-09-25-16-37-36.png" alt="202209251637352022-09-25-16-37-36"></p>
 <p>我们发现，如果我们想要运行<code>system(&quot;/bin/sh)</code>就必须让x等于4。但是我们点进x看一下，发现它是一个等于3的全局变量（要是保存在.rodata节就寄了）：</p>
-<p><img src="../../image/202209251641132022-09-25-16-41-14.png" alt="202209251641132022-09-25-16-41-14"></p>
+<p><img src="/image/202209251641132022-09-25-16-41-14.png" alt="202209251641132022-09-25-16-41-14"></p>
 <p>我们看一下程序代码，发现这么两行：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">read</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="mh">0x50u</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
@@ -419,8 +419,8 @@
 <li>%n可以使用</li>
 </ul>
 <p>我们首先要找到这个format字符串数据和esp的偏移，我们先输入一大串a，等到call printf的时候查看栈：</p>
-<p><img src="../../image/202209251650462022-09-25-16-50-46.png" alt="202209251650462022-09-25-16-50-46"></p>
-<p><img src="../../image/202209251650292022-09-25-16-50-30.png" alt="202209251650292022-09-25-16-50-30"></p>
+<p><img src="/image/202209251650462022-09-25-16-50-46.png" alt="202209251650462022-09-25-16-50-46"></p>
+<p><img src="/image/202209251650292022-09-25-16-50-30.png" alt="202209251650292022-09-25-16-50-30"></p>
 <p>我们看到栈顶前两个数据分别是format字符串和第1个参数，因此我们可以知道我们输入的字符串保存在第11个参数的位置，因此偏移就是11</p>
 <p>那么我们就可以构造我们的格式化字符串了：</p>
 <p>我们的目的是向我们输入的地址处写入数据4，而我们输入的地址是保存在第十一个参数的位置的，而且刚刚好32位的地址占用四个字节，所以：</p>

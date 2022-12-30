@@ -385,13 +385,13 @@
 
   <p><a href="https://buuoj.cn/challenges#picoctf_2018_rop%20chain">原题链接</a></p>
 <h2 id="checksec">checksec</h2>
-<p><img src="../../image/Pasted%20image%2020221107142949.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221107142949.png" alt=""></p>
 <h2 id="ida">ida</h2>
-<p><img src="../../image/Pasted%20image%2020221107143026.png" alt="">
-<img src="../../image/Pasted%20image%2020221107143046.png" alt="">
-<img src="../../image/Pasted%20image%2020221107143100.png" alt="">
-<img src="../../image/Pasted%20image%2020221107143119.png" alt="">
-<img src="../../image/Pasted%20image%2020221107143143.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221107143026.png" alt="">
+<img src="/image/Pasted%20image%2020221107143046.png" alt="">
+<img src="/image/Pasted%20image%2020221107143100.png" alt="">
+<img src="/image/Pasted%20image%2020221107143119.png" alt="">
+<img src="/image/Pasted%20image%2020221107143143.png" alt=""></p>
 <p>解题思路很简单，先后调用win_function1、winfunction2、flag函数即可，重要的是rop链的顺序，32位系统比较杂乱</p>
 <h2 id="exp">exp</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 自动生成头部</span>
@@ -457,10 +457,10 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">interactive_after_clean</span><span class="p">()</span>
 </span></span></code></pre></div><p>调用win1，因为没有参数，所以不用安排栈
-<img src="../../image/Pasted%20image%2020221107143854.png" alt="">
+<img src="/image/Pasted%20image%2020221107143854.png" alt="">
 等到win1结束时，有一条ret指令，会将win2弹入EIP</p>
 <p>而win2是一个有参数的函数，为了获取栈中参数，32位系统的方法是，使用<code>[ebp+8]</code>作为第一个参数，而ebp的值如下图所示：</p>
-<p><img src="../../image/Pasted%20image%2020221107144811.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221107144811.png" alt=""></p>
 <p>所以参数和指令之间要隔开</p>
 <p>flag函数同理</p>
 

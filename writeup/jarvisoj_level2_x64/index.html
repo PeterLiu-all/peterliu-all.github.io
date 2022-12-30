@@ -407,14 +407,14 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Hello World!
 </span></span></code></pre></div><p>看来有一个输入口，有机会栈溢出，我们用 ida 看看</p>
-<p><img src="../../image/202209081747592022-09-08-17-47-59.png" alt="202209081747592022-09-08-17-47-59"></p>
+<p><img src="/image/202209081747592022-09-08-17-47-59.png" alt="202209081747592022-09-08-17-47-59"></p>
 <p>这个<code>vulnerable_function</code>属实是有点大摇大摆了</p>
 <p>点进去康康：</p>
-<p><img src="../../image/202209081749192022-09-08-17-49-20.png" alt="202209081749192022-09-08-17-49-20"></p>
+<p><img src="/image/202209081749192022-09-08-17-49-20.png" alt="202209081749192022-09-08-17-49-20"></p>
 <p>这明摆着是要栈溢出然后调用 plt 表中的 system 函数</p>
 <h2 id="构建-exp">构建 exp</h2>
 <p>寻找 system 函数地址：</p>
-<p><img src="../../image/202209081801162022-09-08-18-01-16.png" alt="202209081801162022-09-08-18-01-16"></p>
+<p><img src="/image/202209081801162022-09-08-18-01-16.png" alt="202209081801162022-09-08-18-01-16"></p>
 <blockquote>
 <p>要注意的是，直接用<code>readelf -r level2_x64</code>命令读到的是.rela.plt 的符号表（涉及到延迟绑定机制，具体可以看<a href="https://zhuanlan.zhihu.com/p/77264742">这篇博文</a>）</p>
 </blockquote>

@@ -393,11 +393,11 @@
 
   <p><a href="https://buuoj.cn/challenges#cmcc_simplerop">题目链接</a></p>
 <h2 id="查看程序架构">查看程序架构</h2>
-<p><img src="../../image/Pasted%20image%2020221119221654.png" alt="">
-<img src="../../image/Pasted%20image%2020221119221826.png" alt="">
+<p><img src="/image/Pasted%20image%2020221119221654.png" alt="">
+<img src="/image/Pasted%20image%2020221119221826.png" alt="">
 不是动态链接程序</p>
 <h2 id="ida查看伪代码">ida查看伪代码</h2>
-<p><img src="../../image/Pasted%20image%2020221119222133.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221119222133.png" alt=""></p>
 <h2 id="解法一">解法一</h2>
 <p>该题没有<code>system</code>也没有<code>/bin/sh</code>，也不能ret2libc，也没有<code>syscall</code>，但是可以利用<code>int 80h</code>来原始地调用0xb号系统调用（execve）
 因为长度限制为100，所以无法利用ropper或ROPgadget自动生成的ropchain（太长了），所以需要手写ropchain来添加利用率更高的gadget</p>

@@ -400,18 +400,18 @@
   
 
   <h2 id="查看程序架构">查看程序架构</h2>
-<p><img src="../../image/Pasted%20image%2020221119223542.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221119223542.png" alt=""></p>
 <h2 id="ida伪代码">ida伪代码</h2>
-<p><img src="../../image/Pasted%20image%2020221119223658.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221119223658.png" alt=""></p>
 <h2 id="exp">exp</h2>
 <p>这题手工构造ropchain比较困难，但是我们可以利用ropper或者ROPgadget的ropchain功能来生成：</p>
 <h3 id="ropper">ropper</h3>
-<p><img src="../../image/Pasted%20image%2020221119223906.png" alt="">
-<img src="../../image/Pasted%20image%2020221119223920.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221119223906.png" alt="">
+<img src="/image/Pasted%20image%2020221119223920.png" alt=""></p>
 <h3 id="ropgadget">ROPgadget</h3>
-<p><img src="../../image/Pasted%20image%2020221119224106.png" alt="">
-<img src="../../image/Pasted%20image%2020221119224123.png" alt="">
-<img src="../../image/Pasted%20image%2020221119224200.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221119224106.png" alt="">
+<img src="/image/Pasted%20image%2020221119224123.png" alt="">
+<img src="/image/Pasted%20image%2020221119224200.png" alt=""></p>
 <h3 id="exp-1">exp</h3>
 <p>需要注意的是，工具生成的代码和我们日常使用的代码格式和风格上都有一定差距，从struct包中导入的pack函数也会和pwntools中的pack起冲突，如果一定要使用struct的pack，就在导入pwntools后再导入struct，这样就可以覆盖掉pack</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 自动生成头部</span>

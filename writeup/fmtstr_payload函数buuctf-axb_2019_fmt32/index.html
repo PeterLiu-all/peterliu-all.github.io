@@ -392,13 +392,13 @@
   
 
   <h2 id="查看程序架构">查看程序架构</h2>
-<p><img src="../../image/Pasted%20image%2020221121222240.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221121222240.png" alt=""></p>
 <h2 id="ida伪代码">ida伪代码</h2>
-<p><img src="../../image/Pasted%20image%2020221121222402.png" alt="">
+<p><img src="/image/Pasted%20image%2020221121222402.png" alt="">
 典型的格式化字符串漏洞，我们gdb到<code>printf(format);</code>那里看下栈：
-<img src="../../image/Pasted%20image%2020221121222648.png" alt="">
+<img src="/image/Pasted%20image%2020221121222648.png" alt="">
 可以看到格式化字符串在栈上储存要先吞掉一个字符才到第8个参数的位置
-<img src="../../image/Pasted%20image%2020221121222816.png" alt="">
+<img src="/image/Pasted%20image%2020221121222816.png" alt="">
 我们也可以看到在第0x97个参数的位置存储了<code>__libc_start_main+247</code>的值，我们可以用其计算出libc的基址
 那么答案就很简单了，改写printf的got值为system即可</p>
 <h2 id="exp">exp</h2>

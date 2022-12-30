@@ -385,18 +385,18 @@
 
   <p><a href="https://buuoj.cn/challenges#babyfengshui_33c3_2016">原题链接</a></p>
 <h2 id="查看程序架构">查看程序架构</h2>
-<p><img src="../../image/Pasted%20image%2020221119160647.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221119160647.png" alt=""></p>
 <h2 id="ida伪代码">ida伪代码</h2>
-<p><img src="../../image/Pasted%20image%2020221119160524.png" alt="">
-<img src="../../image/Pasted%20image%2020221119160547.png" alt="">
+<p><img src="/image/Pasted%20image%2020221119160524.png" alt="">
+<img src="/image/Pasted%20image%2020221119160547.png" alt="">
 可以看到是标准的菜单堆题</p>
 <h3 id="allocate">allocate</h3>
-<p><img src="../../image/Pasted%20image%2020221119160739.png" alt="">
+<p><img src="/image/Pasted%20image%2020221119160739.png" alt="">
 这里自定义了结构体
-<img src="../../image/Pasted%20image%2020221119160837.png" alt="">
+<img src="/image/Pasted%20image%2020221119160837.png" alt="">
 在ends处按d新建域，光标在具体的域上按d会清空
-<img src="../../image/Pasted%20image%2020221119161232.png" alt="">
-<img src="../../image/Pasted%20image%2020221119161211.png" alt=""></p>
+<img src="/image/Pasted%20image%2020221119161232.png" alt="">
+<img src="/image/Pasted%20image%2020221119161211.png" alt=""></p>
 <p>这个函数就是一个结构体申请了两片内存：</p>
 <ol>
 <li>结构体固有的0x80字节的内存，第一个域是存放第二片内存的指针，第二个域用于存放一个name</li>
@@ -405,13 +405,13 @@
 这里明显有一个漏洞，因为我们可以通过将两块内存free到unsorted bin中，再申请一块大小等于两块内存大小之和的内存作为ptr_content的地址，这样name申请的内存地址就会从top_chunk中切出，两者中间的一串chunk就都可以溢出了</li>
 </ol>
 <h3 id="remove">remove</h3>
-<p><img src="../../image/Pasted%20image%2020221119162018.png" alt="">
+<p><img src="/image/Pasted%20image%2020221119162018.png" alt="">
 用不了UAF，也不能通过free到unsorted bin中获取libc</p>
 <h3 id="show">show</h3>
-<p><img src="../../image/Pasted%20image%2020221119162120.png" alt="">
+<p><img src="/image/Pasted%20image%2020221119162120.png" alt="">
 可以将ptr_content的值改为free的got值，然后就能获得free的地址了</p>
 <h3 id="change">change</h3>
-<p><img src="../../image/Pasted%20image%2020221119162231.png" alt="">
+<p><img src="/image/Pasted%20image%2020221119162231.png" alt="">
 只更新ptr_content里的值</p>
 <h2 id="exp">exp</h2>
 <p>通过溢出改变ptr_content的值为free_got，然后show出free的地址，计算得到system地址，改变free_got值为system地址即可</p>

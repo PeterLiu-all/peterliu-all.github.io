@@ -387,7 +387,7 @@
 <p><a href="https://buuoj.cn/challenges#get_started_3dsctf_2016">原题链接</a></p>
 <blockquote>
 <p>在做题前，我先为其建立了一个专门的工作目录：
-<img src="../../image/202209062206042022-09-06-22-06-04.png" alt="202209062206042022-09-06-22-06-04"></p>
+<img src="/image/202209062206042022-09-06-22-06-04.png" alt="202209062206042022-09-06-22-06-04"></p>
 </blockquote>
 <ul>
 <li><a href="#syscallwrite-upbuuctf-get_started_3dsctf_2016">【syscall】【Write-up】BUUCTF Get_started_3dsctf_2016</a>
@@ -424,7 +424,7 @@
 </li>
 </ul>
 <h2 id="checksec-查看架构">checksec 查看架构</h2>
-<p><img src="../../image/202209062207232022-09-06-22-07-23.png" alt="202209062207232022-09-06-22-07-23"></p>
+<p><img src="/image/202209062207232022-09-06-22-07-23.png" alt="202209062207232022-09-06-22-07-23"></p>
 <p>看来是 32 位的程序。我们首先就要想到，32 位程序的参数传递方式和 64 位程序的是不一样的：</p>
 <ul>
 <li>32 位将参数从右到左先后压入栈中</li>
@@ -435,21 +435,21 @@
 <p>同时，我们要注意 32 位程序由于参数保存在栈中，call 的同时还会将【下一条指令的偏移】压入栈中，因此我们要为【下一条指令的偏移】预留出位置</p>
 <h2 id="ida-查看程序伪代码">ida 查看程序（伪）代码</h2>
 <h3 id="main-函数">main 函数</h3>
-<p><img src="../../image/202209062217032022-09-06-22-17-04.png" alt="202209062217032022-09-06-22-17-04"></p>
+<p><img src="/image/202209062217032022-09-06-22-17-04.png" alt="202209062217032022-09-06-22-17-04"></p>
 <p>看来是简单的栈溢出</p>
 <p>值得注意的是，这里有一个小坑，即 printf 和 puts 的区别。</p>
 <p>printf 在调用完后并不会马上打印出字符串，而是等待刷新缓冲区的指令之后才显示字符串。在这里就体现为，到 gets 函数向用户请求输入时，还没有任何字符串显示。</p>
 <p>因此，可能有人会在写 exp 的时候，一直等待字符串输出，看一直没反应还以为自己 payload 写错了（</p>
 <p>具体的 printf 和 puts 的区别可以看<a href="https://www.cnblogs.com/fanzhidongyzby/p/3519838.html">这位大佬的博文</a>，非常详细</p>
 <h3 id="后门函数">后门函数</h3>
-<p><img src="../../image/202209062232592022-09-06-22-32-59.png" alt="202209062232592022-09-06-22-32-59"></p>
+<p><img src="/image/202209062232592022-09-06-22-32-59.png" alt="202209062232592022-09-06-22-32-59"></p>
 <p>然后我们就发现了程序好心为我们提供的后门函数（</p>
 <p>只要我们传入参数分别为 814536271 和 425138641，那么我们就能得到 flag 的内容</p>
 <h2 id="构建-exp">构建 exp</h2>
 <h3 id="通过后门函数构建-exp">通过后门函数构建 exp</h3>
 <p>步骤如下：</p>
 <ol>
-<li>首先我们要找到 offset 溢出到 return 的栈地址，这通过 ida 很容易发现<img src="../../image/202209062236332022-09-06-22-36-34.png" alt="202209062236332022-09-06-22-36-34"></li>
+<li>首先我们要找到 offset 溢出到 return 的栈地址，这通过 ida 很容易发现<img src="/image/202209062236332022-09-06-22-36-34.png" alt="202209062236332022-09-06-22-36-34"></li>
 <li>然后我们就将后门函数地址和参数值填入栈中即可</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># pg = p32</span>
@@ -480,11 +480,11 @@
 <p><a href="https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md">全部中断程序编号见此</a></p>
 <p>这里我们只需要找到 59 号中断程序，向它传参即可</p>
 <p>64 位编号是 59，也就是 0x3b</p>
-<p><img src="../../image/202209062254342022-09-06-22-54-35.png" alt="202209062254342022-09-06-22-54-35"></p>
+<p><img src="/image/202209062254342022-09-06-22-54-35.png" alt="202209062254342022-09-06-22-54-35"></p>
 <p>32 位编号是 11，也就是 0xb。</p>
-<p><img src="../../image/202209062255302022-09-06-22-55-30.png" alt="202209062255302022-09-06-22-55-30"></p>
+<p><img src="/image/202209062255302022-09-06-22-55-30.png" alt="202209062255302022-09-06-22-55-30"></p>
 <p>同时，因为我们的程序是 32 位的，我们需要将编号传给 eax 寄存器，剩余参数分别传入 ecx,edx,esi,edi,ebp 中</p>
-<p><img src="../../image/202209062259352022-09-06-22-59-35.png" alt="202209062259352022-09-06-22-59-35"></p>
+<p><img src="/image/202209062259352022-09-06-22-59-35.png" alt="202209062259352022-09-06-22-59-35"></p>
 <p>然后，我们要找到这几个参数对应的值。execve 函数后两个参数可以不管设为 0，但是第一个参数应该是<code>/bin/sh</code>或者<code>sh</code></p>
 <p>为了将这几个参数送入寄存器中，我们还需要一个 gadget，不仅可以完成任务，还可以通过<code>ret</code>指令接着读下一条指令</p>
 <p>我们用<code>ROPgadget --binary get_started_3dsctf_2016 --only &quot;pop|ret&quot; | grep eax</code>找 gadget：</p>
@@ -540,7 +540,7 @@
 </span></span><span class="line"><span class="cl">0x080557ab : mov dword ptr <span class="o">[</span>edx<span class="o">]</span>, eax <span class="p">;</span> ret
 </span></span></code></pre></div><p>然后我们可以直接利用之前找到过的<code>pop edx;pop ecx;pop ebx;ret</code>将地址弹到 edx 中</p>
 <p>然后我们用 ida 找到一块闲置空间（一直滚到.data 段，最后有一小段重复的 db 0）</p>
-<p><img src="../../image/202209080117042022-09-08-01-17-04.png" alt="202209080117042022-09-08-01-17-04"></p>
+<p><img src="/image/202209080117042022-09-08-01-17-04.png" alt="202209080117042022-09-08-01-17-04"></p>
 <p>然后我们就可以完成我们的 payload 了：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pop_eax_ret</span> <span class="o">=</span> <span class="mh">0x080b91e6</span>
 </span></span><span class="line"><span class="cl"><span class="n">pop_edx_ecx_ebx_ret</span> <span class="o">=</span> <span class="mh">0x0806fc30</span>

@@ -385,27 +385,27 @@
 
   <p><a href="https://buuoj.cn/challenges#%5BZJCTF%202019%5DLogin">原题链接</a></p>
 <h2 id="查看程序架构">查看程序架构</h2>
-<p><img src="../../image/Pasted%20image%2020221119165644.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221119165644.png" alt=""></p>
 <h2 id="ida伪代码">ida伪代码</h2>
-<p><img src="../../image/Pasted%20image%2020221119170103.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221119170103.png" alt=""></p>
 <p>典型的C++语法，这里应该有两个类，Admin继承自User：
-<img src="../../image/Pasted%20image%2020221119170224.png" alt="">
+<img src="/image/Pasted%20image%2020221119170224.png" alt="">
 其中我们发现Admin::shell正是我们需要的后门函数：
-<img src="../../image/Pasted%20image%2020221119170306.png" alt="">
+<img src="/image/Pasted%20image%2020221119170306.png" alt="">
 那么我们只要想办法调用这个函数即可
 整个程序有两个输入点：
-<img src="../../image/Pasted%20image%2020221119170420.png" alt="">
+<img src="/image/Pasted%20image%2020221119170420.png" alt="">
 只要密码正确，程序就会调用v8指向的函数
-<img src="../../image/Pasted%20image%2020221119170625.png" alt="">
-<img src="../../image/Pasted%20image%2020221119170704.png" alt="">
+<img src="/image/Pasted%20image%2020221119170625.png" alt="">
+<img src="/image/Pasted%20image%2020221119170704.png" alt="">
 而v8又是什么呢？v8的值是v3的指针，这里就有一个致命漏洞，v2是一个栈指针而不是.bss节的指针。所以如果返回main函数后再调用其他函数，就可能把这个地址覆盖掉
-<img src="../../image/Pasted%20image%2020221119170832.png" alt="">
-<img src="../../image/Pasted%20image%2020221119170858.png" alt="">
+<img src="/image/Pasted%20image%2020221119170832.png" alt="">
+<img src="/image/Pasted%20image%2020221119170858.png" alt="">
 我们看看汇编代码这个栈指针在哪里
-<img src="../../image/Pasted%20image%2020221119172105.png" alt="">
+<img src="/image/Pasted%20image%2020221119172105.png" alt="">
 看来这个v2在<code>[rbp+var_18]</code>处，而这个值，我们在read_password中是可以覆盖的
-<img src="../../image/Pasted%20image%2020221119172340.png" alt="">
-<img src="../../image/Pasted%20image%2020221119172425.png" alt=""></p>
+<img src="/image/Pasted%20image%2020221119172340.png" alt="">
+<img src="/image/Pasted%20image%2020221119172425.png" alt=""></p>
 <p>这样我们就可以将其覆盖为Admin::shell了</p>
 <h2 id="exp">exp</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 自动生成头部</span>

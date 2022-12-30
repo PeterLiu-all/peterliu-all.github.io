@@ -393,17 +393,17 @@
 
   <p><a href="https://buuoj.cn/challenges#hitcontraining_unlink">原题链接</a></p>
 <h2 id="checksec查看程序架构">checksec查看程序架构</h2>
-<p><img src="../../image/Pasted%20image%2020221030235423.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221030235423.png" alt=""></p>
 <h2 id="ida查看伪代码">ida查看伪代码</h2>
-<p><img src="../../image/Pasted%20image%2020221030235441.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221030235441.png" alt=""></p>
 <p>典型的堆菜单题</p>
 <h2 id="介绍一下unlink">介绍一下unlink</h2>
 <p>unlink其实就是很普通，很常规的一种从双向链表中取出节点的机制</p>
 <p>当我们free掉一个chunk的时候，程序会查看相邻的chunk时候也被free掉了，如果也被free掉了，就把它从双向链表中取出来（注意fastbin是单向链表），执行unlink，与当前free的chunk合并，然后放入它应该去的bin中</p>
-<p><img src="../../image/Pasted%20image%2020221031001931.png" alt=""></p>
-<p><img src="../../image/Pasted%20image%2020221031001959.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221031001931.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221031001959.png" alt=""></p>
 <p>我们的chunk有fd和bk两个域，分别指向（链表中）前一个chunk和后一个chunk，也就是说，fd域里保存的是前一个chunk的地址，bk是后一个chunk的地址</p>
-<p><img src="../../image/Pasted%20image%2020221031003029.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221031003029.png" alt=""></p>
 <p>unlink会更改chunk0和chunk2的的fd和bk指针，也就是说</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">chunk0</span><span class="o">-&gt;</span><span class="n">bk</span> <span class="o">=</span> <span class="n">chunk2</span>
 </span></span><span class="line"><span class="cl"><span class="n">chunk2</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">=</span> <span class="n">chunk0</span>
@@ -411,12 +411,12 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="o">*</span><span class="p">(</span><span class="n">chunk0</span> <span class="o">+</span> <span class="mh">0x18</span><span class="p">)</span> <span class="o">=</span> <span class="n">chunk2</span>
 </span></span><span class="line"><span class="cl"><span class="o">*</span><span class="p">(</span><span class="n">chunk2</span> <span class="o">+</span> <span class="mh">0x10</span><span class="p">)</span> <span class="o">=</span> <span class="n">chunk0</span>
 </span></span></code></pre></div><p>而此时，如果我们要unlink的chunk的fd域和bk域，则上面的代码会产生这样的效果：
-<img src="../../image/Pasted%20image%2020221031001718.png" alt=""></p>
+<img src="/image/Pasted%20image%2020221031001718.png" alt=""></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="o">*</span><span class="p">(</span><span class="n">ptr1</span> <span class="o">+</span> <span class="mh">0x18</span><span class="p">)</span> <span class="o">=</span> <span class="n">ptr2</span>
 </span></span><span class="line"><span class="cl"><span class="o">*</span><span class="p">(</span><span class="n">ptr2</span> <span class="o">+</span> <span class="mh">0x10</span><span class="p">)</span> <span class="o">=</span> <span class="n">ptr1</span>
 </span></span></code></pre></div><p>那么，我们就可以更改ptr1下方0x10位置和0x18位置的值了！</p>
 <p>但是这个unlink机制还存在着一系列安全检查：</p>
-<p><img src="../../image/Pasted%20image%2020221031002145.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020221031002145.png" alt=""></p>
 <p>这些检查确保：</p>
 <ul>
 <li>要进行unlink的chunk的size位和当前被free的chunk的prev_size位相同，同时它的prev_inuse位要置零</li>
