@@ -8,7 +8,34 @@
     <language>zh</language>
     <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 02 Jan 2023 20:07:34 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Jan 2023 03:07:58 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>glibc source code源码</title>
+      <link>https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Tue, 03 Jan 2023 03:07:58 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/</guid>
+      <description>True happiness means forging a strong spirit that is undefeated, no matter how trying our circumstances. — Daisaku Ikeda Glibc source code (glibc-2.36.9000) - Bootlin，在线查看源码 Index of /gnu/glibc，直接从官网下载源码 GitHub - bminor/glibc: Unofficial mirror of sourceware glibc repository. Updated daily</description>
+    </item>
+    
+    <item>
+      <title>各平台syscall序号</title>
+      <link>https://peterliuzhi.top/tricks/%E5%90%84%E5%B9%B3%E5%8F%B0syscall%E5%BA%8F%E5%8F%B7/</link>
+      <pubDate>Tue, 03 Jan 2023 02:48:21 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E5%90%84%E5%B9%B3%E5%8F%B0syscall%E5%BA%8F%E5%8F%B7/</guid>
+      <description>Love is the attempt to form a friendship inspired by beauty. — Cicero Linux System Calls quick and easy，美化很不错 可搜索的syscall表，但目前只支持x86_64 Chromium OS Docs - Linux System Call Table，和Linux大致一</description>
+    </item>
+    
+    <item>
+      <title>常见的宏定义</title>
+      <link>https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
+      <pubDate>Tue, 03 Jan 2023 02:04:47 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
+      <description>The aim of life is self-development. To realize one&amp;rsquo;s nature perfectly - that is what each of us is here for. — Oscar Wilde /* This file [contains](https://so.csdn.net/so/search?q=contains&amp;amp;spm=1001.2101.3001.7020) definitions used by the Hex-Rays decompiler output. It has type definitions and convenience macros to make the output more readable. Copyright © 2007-2011 Hex-Rays */ #if defined(**GNUC**) typedef long long ll; typedef unsigned long long ull; #define __int64 long long #define __int32 int #define __int16 short #define</description>
+    </item>
+    
     <item>
       <title>调试arm程序</title>
       <link>https://peterliuzhi.top/tricks/%E8%B0%83%E8%AF%95arm%E7%A8%8B%E5%BA%8F/</link>
@@ -277,6 +304,69 @@
       
       <guid>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5/</guid>
       <description>Never give up, for that is just the place and time that the tide will turn. — Harriet Beecher Stowe 先输入空格就好了，atoi会跳过空格</description>
+    </item>
+    
+    <item>
+      <title>yolov1</title>
+      <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/yolo/yolov1/</link>
+      <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/yolo/yolov1/</guid>
+      <description>Coming together is a beginning; keeping together is progress; working together is success. — Edward Everett Hale YOLOv1 介绍 检测原理 神经网络设计 训练 激活函数 loss 函数 过拟合处理 介绍 You Only Look Once:Unified, Real-Time Object Detectio yolo 是统一、单阶段的，快速、即时的目标检测模型</description>
+    </item>
+    
+    <item>
+      <title>常见宏定义</title>
+      <link>https://peterliuzhi.top/principle/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
+      <pubDate>Sun, 30 Oct 2022 14:46:05 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
+      <description>All serious daring starts from within. — Harriet Beecher Stowe /* This file [contains](https://so.csdn.net/so/search?q=contains&amp;amp;spm=1001.2101.3001.7020) definitions used by the Hex-Rays decompiler output. It has type definitions and convenience macros to make the output more readable. Copyright © 2007-2011 Hex-Rays */ #if defined(**GNUC**) typedef long long ll; typedef unsigned long long ull; #define __int64 long long #define __int32 int #define __int16 short #define __int8 char #define MAKELL(num) num ## LL #define FMT_64 “ll” #elif</description>
+    </item>
+    
+    <item>
+      <title>ret2libc</title>
+      <link>https://peterliuzhi.top/principle/ret2libc/</link>
+      <pubDate>Wed, 26 Oct 2022 19:05:28 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/ret2libc/</guid>
+      <description>And as we let our own light shine, we unconsciously give other people permission to do the same. — Nelson Mandela return to libc(ret2libc) GOT&amp;amp;PLT 例题 分析 如何 leak 出基址？ 计算出 system 和&amp;quot;/bin/sh&amp;quot;的真实地址 构造第二个 payload 以获取系</description>
+    </item>
+    
+    <item>
+      <title>关于栈的一些基础知识</title>
+      <link>https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 26 Oct 2022 19:05:28 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>When we feel love and kindness toward others, it not only makes others feel loved and cared for, but it helps us also to develop inner happiness and peace. — Dalai Lama 关于栈的一些基础知识 pwndbg中显示的栈 最上方的rsp rbp栈帧指针 栈的高低区别 CA</description>
+    </item>
+    
+    <item>
+      <title>汇编版hello world</title>
+      <link>https://peterliuzhi.top/tricks/%E6%B1%87%E7%BC%96%E7%89%88hello-world/</link>
+      <pubDate>Wed, 26 Oct 2022 19:05:28 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E6%B1%87%E7%BC%96%E7%89%88hello-world/</guid>
+      <description>Prejudice is a burden that confuses the past, threatens the future and renders the present inaccessible. — Maya Angelou 一个非常简易的向用户读取输入姓名，将其显示在屏幕上，同时用hello world向其问候的程序在C语言中极其简便，</description>
+    </item>
+    
+    <item>
+      <title>汇编与寄存器</title>
+      <link>https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/</link>
+      <pubDate>Wed, 26 Oct 2022 19:05:28 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/</guid>
+      <description>Kindness is the language which the deaf can hear and the blind can see. — Mark Twain 汇编与寄存器 寄存器 在16位系统中（8086CPU） 数据寄存器 变址寄存器 指针寄存器 段寄存器 指针指令寄存器 在32位系统中</description>
+    </item>
+    
+    <item>
+      <title>ELF详解</title>
+      <link>https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Wed, 26 Oct 2022 14:48:56 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/</guid>
+      <description>Myths which are believed in tend to become true. — George Orwell ELF详解 什么是ELF 使用readelf命令读取elf文件 ELF文件类型 ELF程序头（描述段的头） PT_LOAD PT_DYNAMIC（动态</description>
     </item>
     
   </channel>

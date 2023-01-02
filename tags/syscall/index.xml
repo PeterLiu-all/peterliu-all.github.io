@@ -8,7 +8,16 @@
     <language>zh</language>
     <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/syscall/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Jan 2023 02:48:21 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/syscall/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>各平台syscall序号</title>
+      <link>https://peterliuzhi.top/tricks/%E5%90%84%E5%B9%B3%E5%8F%B0syscall%E5%BA%8F%E5%8F%B7/</link>
+      <pubDate>Tue, 03 Jan 2023 02:48:21 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/tricks/%E5%90%84%E5%B9%B3%E5%8F%B0syscall%E5%BA%8F%E5%8F%B7/</guid>
+      <description>Love is the attempt to form a friendship inspired by beauty. — Cicero Linux System Calls quick and easy，美化很不错 可搜索的syscall表，但目前只支持x86_64 Chromium OS Docs - Linux System Call Table，和Linux大致一</description>
+    </item>
+    
     <item>
       <title>【syscall】get_started_3dsctf_2016</title>
       <link>https://peterliuzhi.top/writeup/syscallget_started_3dsctf_2016/</link>

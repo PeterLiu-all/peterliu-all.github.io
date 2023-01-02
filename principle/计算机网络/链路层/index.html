@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>链路层 - P3troL1er的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/c.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cpp.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/armasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/mipsasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/vim.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/javascript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/typescript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/css.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://kit.fontawesome.com/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="链路层">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"链路层",
+      "item":"https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/"
+    },
+    "headline": "链路层 - P3troL1er的个人博客","datePublished": "2022-11-16T14:04:12+08:00",
+    "dateModified": "2022-11-16T14:04:12+08:00",
+    "wordCount":  9638 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/selficon.jpg"
+        }
+        },
+    "description": "链路层"
+}
+</script><meta property="og:title" content="链路层 - P3troL1er的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/" />
+
+
+
+<meta property="og:description" content="链路层" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-11-16T14:04:12&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-11-16T14:04:12&#43;08:00" />
+
+
+
+<meta property="article:section" content="principle" />
+
+
+<meta property="article:tag" content="计算机网络" />
+
+<meta property="article:tag" content="链路层" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/" />
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+        </div>
+
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">链路层</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, November 16, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>20分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
+          >计算机网络</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E9%93%BE%E8%B7%AF%E5%B1%82/" class="hover:text-eureka"
+          >链路层</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <blockquote>
+<p>To follow, without halt, one aim: There is the secret of success.
+— <cite>Anna Pavlova</cite></p>
+</blockquote>
+<blockquote>
+<p>计算机网络中的任何设备都需要实现链路层</p>
+</blockquote>
+<ul>
+<li><a href="#%E9%93%BE%E8%B7%AF%E5%B1%82">链路层</a>
+<ul>
+<li><a href="#%E4%B8%A4%E7%B1%BB%E4%BF%A1%E9%81%93">两类信道</a></li>
+<li><a href="#%E4%B8%A4%E4%B8%AA%E5%AD%90%E5%B1%82">两个子层</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">基本概念</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E6%8E%A7%E5%88%B6dlc">数据链路控制（DLC）</a>
+<ul>
+<li><a href="#%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E5%92%8C%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6">流量控制和差错控制</a></li>
+<li><a href="#%E4%B8%89%E4%B8%AA%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98">三个基本问题</a>
+<ul>
+<li><a href="#%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7">封装成帧</a>
+<ul>
+<li><a href="#%E9%9D%A2%E5%90%91%E5%AD%97%E7%AC%A6%E6%88%90%E5%B8%A7">面向字符成帧</a>
+<ul>
+<li><a href="#%E5%BD%93%E5%8F%91%E9%80%81%E5%87%BA%E5%B7%AE%E9%94%99%E6%97%B6">当发送出差错时</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9D%A2%E5%90%91%E4%BD%8D%E6%88%90%E5%B8%A7">面向位成帧</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93">透明传输</a></li>
+<li><a href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B">差错检测</a>
+<ul>
+<li><a href="#crc-%E6%A3%80%E9%94%99%E6%8A%80%E6%9C%AF">CRC 检错技术</a>
+<ul>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95">计算方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%BB%8B%E8%B4%A8%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6mac--%E4%B8%93%E7%94%A8%E4%BA%8E%E5%B9%BF%E6%92%AD%E4%BF%A1%E9%81%93">介质访问控制（MAC）&ndash;专用于广播信道</a>
+<ul>
+<li><a href="#%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AE">多路访问</a>
+<ul>
+<li><a href="#%E4%BF%A1%E9%81%93%E5%88%92%E5%88%86-channel-partitioning">信道划分 （channel partitioning）</a>
+<ul>
+<li><a href="#tdma">TDMA</a></li>
+<li><a href="#fdma">FDMA</a></li>
+<li><a href="#cdma">CDMA</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9A%8F%E6%9C%BA%E6%8E%A5%E5%85%A5-random-access">随机接入 （random access）</a>
+<ul>
+<li><a href="#aloha-%E5%8D%8F%E8%AE%AE%E6%9C%80%E6%97%A9%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AE%E6%96%B9%E6%B3%95">ALOHA 协议——最早的随机访问方法</a>
+<ul>
+<li><a href="#%E7%BA%AF-aloha">纯 ALOHA</a></li>
+<li><a href="#slotted-aloha">slotted ALOHA</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BD%BD%E6%B3%A2%E4%BE%A6%E5%90%AC%E5%A4%9A%E7%82%B9%E6%8E%A5%E5%85%A5%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8Bcsmacd">载波侦听多点接入/碰撞检测（CSMA/CD）</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%AD%96%E7%95%A5">基本策略</a></li>
+<li><a href="#%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B">碰撞检测</a></li>
+<li><a href="#%E9%87%8D%E4%BC%A0%E6%9C%BA%E5%88%B6">重传机制</a></li>
+<li><a href="#%E8%84%86%E5%BC%B1%E6%97%B6%E9%97%B4">脆弱时间</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9">优缺点</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%8F%97%E6%8E%A7%E6%8E%A5%E5%85%A5taking-turns">受控接入（taking turns）</a>
+<ul>
+<li><a href="#taking-turns-%E8%BD%AE%E6%B5%81%E6%8E%A5%E5%85%A5">Taking turns 轮流接入</a>
+<ul>
+<li><a href="#%E8%BD%AE%E8%AF%A2-polling">轮询 polling</a></li>
+<li><a href="#%E4%BB%A4%E7%89%8C%E4%BC%A0%E9%80%92-token-passing">令牌传递 token passing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AF%BB%E5%9D%80">链路层寻址</a>
+<ul>
+<li><a href="#48-%E4%BD%8D%E7%9A%84-mac-%E5%9C%B0%E5%9D%80-eui-48">48 位的 MAC 地址 EUI-48</a></li>
+<li><a href="#mac-%E5%9C%B0%E5%9D%80%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8">MAC 地址有什么用</a>
+<ul>
+<li><a href="#%E6%B7%B7%E6%9D%82%E6%96%B9%E5%BC%8Fpromiscuous-mode">混杂方式(promiscuous mode)</a></li>
+</ul>
+</li>
+<li><a href="#arp-%E5%8D%8F%E8%AE%AE--address-resolution-protocol">ARP 协议 – Address Resolution Protocol</a>
+<ul>
+<li><a href="#mac-%E5%B8%A7%E7%9A%84%E6%A0%BC%E5%BC%8F">MAC 帧的格式</a></li>
+<li><a href="#arp-%E8%A1%A8-%E8%BD%AC-ip-%E4%B8%BA-mac">ARP 表-转 IP 为 MAC</a>
+<ul>
+<li><a href="#%E5%9C%A8%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%AD%E5%AD%A6%E4%B9%A0-arp-%E8%A1%A8">在局域网中学习 ARP 表</a></li>
+<li><a href="#%E4%B8%8D%E5%9C%A8%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%AD%E5%AD%A6%E4%B9%A0-arp-%E8%A1%A8">不在局域网中学习 ARP 表</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%B1%80%E5%9F%9F%E7%BD%91--%E5%85%B8%E5%9E%8B%E5%B9%BF%E6%92%AD%E4%BF%A1%E9%81%93">局域网&ndash;典型广播信道</a></li>
+<li><a href="#%E4%BB%A5%E5%A4%AA%E7%BD%91">以太网</a>
+<ul>
+<li><a href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E7%9A%84%E7%89%A9%E7%90%86%E6%8B%93%E6%89%91physical-topology">以太网的物理拓扑（physical topology）</a></li>
+<li><a href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E7%9A%84%E5%B8%A7%E7%9A%84%E7%BB%93%E6%9E%84">以太网的帧的结构</a>
+<ul>
+<li><a href="#%E6%97%A0%E6%95%88%E7%9A%84%E5%B8%A7">无效的帧</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E7%9A%84%E7%89%B9%E5%BE%81%E9%93%BE%E8%B7%AF%E5%B1%82%E7%9A%84%E7%89%B9%E5%BE%81">以太网的特征（链路层的特征）</a></li>
+<li><a href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E7%9A%84%E4%BF%A1%E9%81%93%E5%88%A9%E7%94%A8%E7%8E%87">以太网的信道利用率</a></li>
+<li><a href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>
+<ul>
+<li><a href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AD%A6%E4%B9%A0%E4%BA%A4%E6%8D%A2%E8%A1%A8%E8%BD%AC%E5%8F%91%E8%A1%A8">交换机学习交换表/转发表</a></li>
+<li><a href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E8%87%AA%E5%AD%A6%E4%B9%A0%E4%BA%A7%E7%94%9F%E7%9A%84%E9%97%AE%E9%A2%98">交换机自学习产生的问题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91-vlan">虚拟局域网 VLAN</a>
+<ul>
+<li><a href="#%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E7%9A%84%E4%BC%98%E7%82%B9">虚拟局域网的优点</a></li>
+<li><a href="#%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95">虚拟局域网的实现方法</a>
+<ul>
+<li><a href="#%E5%9F%BA%E4%BA%8E%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%AB%AF%E5%8F%A3">基于交换机端口</a></li>
+<li><a href="#%E5%9F%BA%E4%BA%8E-mac-%E5%9C%B0%E5%9D%80">基于 MAC 地址</a></li>
+<li><a href="#%E5%9F%BA%E4%BA%8E%E5%8D%8F%E8%AE%AE%E7%B1%BB%E5%9E%8B">基于协议类型</a></li>
+<li><a href="#%E5%9F%BA%E4%BA%8E-ip-%E5%AD%90%E7%BD%91%E5%9C%B0%E5%9D%80">基于 IP 子网地址</a></li>
+<li><a href="#%E5%9F%BA%E4%BA%8E%E9%AB%98%E5%B1%82%E5%BA%94%E7%94%A8%E5%92%8C%E6%9C%8D%E5%8A%A1">基于高层应用和服务</a></li>
+</ul>
+</li>
+<li><a href="#vlan-%E7%9A%84%E5%B8%A7%E7%9A%84%E6%A0%BC%E5%BC%8F">VLAN 的帧的格式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/image/c68cb60ab4b00e49ddb45de848907f399d807eccef1b5a2b01dd40bdf51b5501.png" alt="图 10"></p>
+<h2 id="两类信道">两类信道</h2>
+<p>有两类不同的链路</p>
+<ul>
+<li>点对点信道：专供两台设备，现今少用</li>
+<li>广播信道：几对设备共享，现今多用</li>
+</ul>
+<h2 id="两个子层">两个子层</h2>
+<ul>
+<li>数据链路控制（DLC）：处理点对点信道和广播信道共有的问题，功能包括成帧、流量控制、差错控制（差错检测和差错纠正）</li>
+<li>介质访问控制（MAC）：只处理广播信道的问题</li>
+</ul>
+<p><img src="/image/dad6d8882bbf8d26e454dbb19c6a93bfb74bc39f719621cb28cfef7f64661e8d.png" alt="图 5"></p>
+<h2 id="基本概念">基本概念</h2>
+<p><img src="/image/23cbe062436e05f961dc9728e4221c5344e3edf2d584d02bdb499132090202e0.png" alt="图 11"></p>
+<ul>
+<li>链路(link)：从一个结点到相邻结点的一段物理线路（有线或无线）</li>
+<li>数据链路(data link)：当需要在一条线路上传送数据时，除了必须有一条物理线路外，还必须有一些必要的通信协议来控制这些数据的传输，把实现这些协议的硬件和软件加到链路上，就构成了数据链路</li>
+</ul>
+<p>通常，链路层实现为适配器（NIC、网卡）或者在芯片上实现</p>
+<p><img src="/image/e65bcdbe5c5c3b144c8feafda9866f443a697f7bdfc57bf22934347f425be120.png" alt="图 3"></p>
+<h2 id="数据链路控制dlc">数据链路控制（DLC）</h2>
+<h3 id="流量控制和差错控制">流量控制和差错控制</h3>
+<ul>
+<li>流量控制在接收确认前调整能够被发送的数据数量</li>
+<li>差错控制包括差错检测和差错纠正
+<ul>
+<li>在数据链路层中，差错控制是节点到节点的，只要有一个差错，就要求重传</li>
+</ul>
+</li>
+</ul>
+<h3 id="三个基本问题">三个基本问题</h3>
+<p>三个基本问题是封装成帧、透明传输和差错检测</p>
+<h4 id="封装成帧">封装成帧</h4>
+<ul>
+<li>封装成帧(framing)就是<strong>在一段数据的前后分别添加首部和尾部</strong>，这样就构成了一个帧。</li>
+<li>首部和尾部的一个重要作用就是进行<strong>帧定界</strong>（即确定帧的界限）</li>
+<li>在发送帧时，是<strong>从帧首部开始发送的</strong>。</li>
+<li>显然，为了提高帧的传输效率，应当使<strong>帧的数据部分长度尽可能地大于首部和尾部的长度</strong>。但是，每一种链路层<strong>协议都规定了所能传送的帧的数据部分长度上限</strong>—最大传送单元 MTU (Maximum Transfer Unit)</li>
+</ul>
+<blockquote>
+<p>如果直接将整个数据打包成一个帧，那么流量控制和差错控制将非常低效。如果这个数据中有一点错误，那么就可能要求整个数据重传。
+因此，要把一个报文拆成多个小的帧，这样错误只能影响比较小的一个部分</p>
+</blockquote>
+<p><img src="/image/8c13fc4add2a613504f827b15e6a3081750b7dfb53b60396ec033df24fc3b1cb.png" alt="图 1"></p>
+<h5 id="面向字符成帧">面向字符成帧</h5>
+<p><em>当数据是由可打印的 ASCII 码组成的文本文件时，帧定界可以使用特殊的帧定界符：</em></p>
+<ul>
+<li>控制字符 <strong>SOH (Start Of Header)</strong> 放在一帧的最前面，表示帧的首部开始。</li>
+<li>另一个控制字符 <strong>EOT (End Of Transmission)</strong> 表示帧的结束。</li>
+</ul>
+<p>这样，用两个标记我们区分了不同的帧</p>
+<p><img src="/image/43a629c2cb50f784d1dd12203cf8fedca06e556cf56692c5674186a44b4a4ebf.png" alt="图 6"></p>
+<blockquote>
+<p>头部携带源地址和目的地址等控制信息；尾部携带差错检测冗余位</p>
+</blockquote>
+<h6 id="当发送出差错时">当发送出差错时</h6>
+<blockquote>
+<p>假定发送端在尚未发送完一个帧时突然出故障，中断了发送。但随后很快又恢复正常，于是重新从头开始发送刚才未发
+送完的帧。</p>
+</blockquote>
+<ol>
+<li>由于使用了帧定界符，接收端就知道前面收到的数据是个不完整的帧（只有首部开始符 SOH 而没有传输结束符 EOT），<strong>必须丢弃</strong>。</li>
+<li>而后面收到的数据有明确的帧定界符（SOH 和 EOT），因此这是一个完整的帧，<strong>应当收下</strong>。</li>
+</ol>
+<h5 id="面向位成帧">面向位成帧</h5>
+<p>在发送非文本信息（图片、音频等）时，数据中可能会出现和 SOH\EOT 相同的字节，我们常常使用面向位成帧</p>
+<p><em>SOH\EOT → 0 111 111 0：</em></p>
+<p>这种方法也可能会产生和上面一样的问题，数据中也可能出现和标记相同的字节，这时候我们使用<strong>位填充</strong>：</p>
+<p>当发送方连续读取到一个 0 和五个 1 时（011111），就在后面插入一个 0。虽然有时候数据并构不成标记，但这种方法避免了传输数据中出现标记。</p>
+<p><img src="/image/3a97b4d88e2ad83a0b26c47028af90d5a5766ff9d5c455283f428747b9e15f82.png" alt="图 7"></p>
+<h4 id="透明传输">透明传输</h4>
+<blockquote>
+<p>由于帧的开始和结束的标记使用专门指明的控制字符，因此，所传输的数据中的<strong>任何 8 比特的组合一定不允许和用作帧定界的控制字符的比特编码一样</strong>，否则就会出现帧定界的错误。</p>
+</blockquote>
+<p><img src="/image/ac0d74449ae8c356219f88bdc1d77b8277c95fe8fea77cf3a1fb48815a5de2cb.png" alt="图 3"></p>
+<ul>
+<li>&ldquo;透明&quot;意味着：<strong>某一个实际存在的事物看起来却好像不存在一样</strong></li>
+<li>“在数据链路层透明传送数据”表示：<strong>无论什么样的比特组合的数据，都能够按照原样没有差错地通过这个数据链路层</strong>（数据链路层对这些数据来说是透明的）</li>
+</ul>
+<p><em>因此，必须设法使数据中可能出现的控制字符“SOH”和“EOT”在接收端不被解释为控制字符：</em></p>
+<p><strong>字节填充(byte stuffing)/字符填充(character stuffing)：</strong></p>
+<ul>
+<li>发送端的数据链路层在数据中出现控制字符“SOH”或“EOT”的<strong>前面插入一个转义字符“ESC”</strong></li>
+<li>在接收端的数据链路层在把数据送往网络层之前<strong>删除这个插入的转义字符</strong></li>
+<li>如果转义字符也出现在数据当中，那么解决方法仍然是在转义字符的前面插入一个转义字符（当接收端收到<strong>连续的两个转义字符时，就删除其中前面的一个</strong>）</li>
+</ul>
+<p><img src="/image/6d3ed940ba3703ccb01c26b9f0119f82974f76345a30fdf9f2108f96baa18574.png" alt="图 4"></p>
+<h4 id="差错检测">差错检测</h4>
+<p>1 可能会变成 0，而 0 也可能变成 1。这就叫做比特差错</p>
+<blockquote>
+<p>在信噪越小的情况下，误码率 BER (Bit Error Rate)越高</p>
+</blockquote>
+<p>相较于有线信道，无线网络会遇到像多个 WiFi 干扰等的情况，误码率比较高</p>
+<p>在链路层中，广泛使用循环冗余检验（CRC，Cyclic Redundancy Check）的检错技术</p>
+<h5 id="crc-检错技术">CRC 检错技术</h5>
+<p>CRC 运算就是在数据 M 的后面添加供差错检测用的 n 位冗余码，然后构成一个帧发送出去，一共发送$(k + n)$位，这种为了进行检错而添加的冗余码常称为<strong>帧检验序列 FCS (Frame Check Sequence)</strong></p>
+<h6 id="计算方法">计算方法</h6>
+<p>CRC 是基于模二运算的</p>
+<blockquote>
+<p>模二加法和模二减法相当于异或运算，他们是一回事
+<img src="/image/95cdd9ae559c4c3b968a8ce6d40ad68c3481e8d91070953842c6eb8848d5b415.png" alt="图 14"><br>
+<img src="/image/1c4ee16ea899c6600bd7310f325ef1c386682f1236f968d38859c9429d7036b4.png" alt="图 15"><br>
+模二乘法相当于且运算
+<img src="/image/6ce09f8c539920f22722b77a4aaf64a5d02fedab263aa3e249f1240dad2c90f7.png" alt="图 12"><br>
+模二除法相当于模二乘法的逆运算
+<img src="/image/eef74a1a6f74931f4a1351eccefc529ee0414dc28071e7436c3c39c477a6aba8.png" alt="图 13"><br>
+乘法和除法相当于多个加法和多个减法</p>
+</blockquote>
+<p><img src="/image/ab4a698b3ae6b215c0cd880d5d62013d2a2b478dc9cb0628f2b9a89b9a3b2478.png" alt="图 19"></p>
+<p><em>在发送端：</em>
+用二进制的模 2 运算进行$2^n$ 乘 M 的运算，这<strong>相当于在 M 后面添加 n 个 0</strong>。得到的$(k + n)$ 位的数除以<strong>收发双方事先商定的长度为 $(n + 1)$位的除数 P</strong>，得出商是 Q 而余数是 R（n 位，比 P 少一位），余数 R 就作为余码拼接在数据 M 的后面发送出去</p>
+<p><img src="/image/2840cfeeff41de6dec83e64bbdb72c98b5f6a82d4f1a7afeb800c8c20a66de62.png" alt="图 16"></p>
+<p><em>在接收端：</em>
+把收到的每一个帧都除以<strong>同样的除数 P</strong>（模 2 运算），然后<strong>检查得到的余数 R</strong>，如果在传输过程中无差错，那么经过 CRC 检验后得出的余数 R 肯定是 0，就接收；若余数 R ≠ 0（正确的概率很小很小），则判定这个帧有差错（但无法确定究竟是哪一位或哪几位出现了差错），就丢弃</p>
+<p><img src="/image/0716c75645a53d9cbf8d10edcaa1b3834e067b2a37ca21586ec72ffb50fc339b.png" alt="图 17"></p>
+<p>因为加法和减法是一回事，所以$2^nM=QP+R=QP+CRC$，但是发送的是$2^nM+CRC=QP+CRC+CRC=QP+CRC-CRC=QP$，所以如果没有错，那余数必为 0</p>
+<blockquote>
+<p>在数据链路层<strong>若仅仅使用循环冗余检验 CRC 差错检测技术，则只能做到对帧的无差错接受</strong>，即：“凡是接收端数据链路层接受的帧，我们都能以非常接近于 1 的概率认为这些帧在传输过程中没有产生差错”。
+接收端丢弃的帧虽然曾收到了，但最终还是因为有差错被丢弃，即没有被接受。以上所述的可以近似地表述为（通常都是这样认为）：“凡是接收端数据链路层接受的帧均无差错”</p>
+</blockquote>
+<p><em>注意事项：</em></p>
+<ul>
+<li>选择除数，可以随机选择，也可以按照既定标准选择（按照国际通行标准选择，最高位和最低为必须为 1）。除数往往也用多项式表示，所以 CRC 又称多项式编码方法，这个多项式也称为生成多项式 <img src="/image/7d831e546c335fd0fee6cc0a9bee24f106467e6914c9cef9c041913638b375ca.png" alt="图 20"></li>
+<li>余数的位数一定是比除数位数小一位，即使前面全是 0，也不要省略</li>
+<li>帧检验序列 FCS – Frame Check Sequence。这里的冗余码就称为 FCS，由其他的校验方法，也能得到对应的 FCS</li>
+<li>并不能做到可靠传输 ，必须加上确认和重传机制（其他层协议负责）</li>
+</ul>
+<h2 id="介质访问控制mac--专用于广播信道">介质访问控制（MAC）&ndash;专用于广播信道</h2>
+<h3 id="多路访问">多路访问</h3>
+<p>广播信道中，往往只有 1 条共享的广播信道 (single shared broadcast channel)，却有两个或多个节点，可能发生同时的数据传输</p>
+<p><strong>这会导致干涉的发生（或“碰撞 collision”）</strong>：如果一个 node 同时需要发送两个信号，或者多个 node 需要同时发送多个信号。</p>
+<p>如何使众多用户能够<strong>合理而方便地共享</strong>通信媒体资源，这在技术上有两种方法：</p>
+<ol>
+<li>静态划分信道：<a href="#fdma">频分复用</a>、<a href="#tdma">时分复用</a>、波分复用和<a href="#cdma">码分复用</a>等，不适合局域网</li>
+<li>动态媒体接入控制，又称为多点接入(multiple access)，包括<a href="#%E9%9A%8F%E6%9C%BA%E6%8E%A5%E5%85%A5-random-access">随机接入</a>和<a href="#%E5%8F%97%E6%8E%A7%E6%8E%A5%E5%85%A5taking-turns">受控接入</a></li>
+</ol>
+<p><img src="/image/1786c283eae0af8d7e7bcf15fa6c9eb1a3fa45124966a6517a86d333ffba6cea.png" alt="图 2"></p>
+<ul>
+<li>分布式算法 – 每个节点上分别决定是否应该发送信号</li>
+<li>“how nodes share channel”“何时可以发送信号”</li>
+<li>注意，所有的协议通信用到的也是该广播信道自身！即，没有额外的信道用于协调这些节点。</li>
+</ul>
+<p><em>共有三种信道复用的协议：</em></p>
+<h4 id="信道划分-channel-partitioning">信道划分 （channel partitioning）</h4>
+<ul>
+<li>将信道分为小块（例如分成 time slots、根据频率划分、采用不同的编码调制信号等）</li>
+<li>每一小块被一个节点独享</li>
+</ul>
+<h5 id="tdma">TDMA</h5>
+<p><strong>TDMA：time division multiple access 时分复用</strong></p>
+<p>节点分轮（in “rounds”）使用信道：每个节点在每一轮都会获得定长的 slot（通常 slot 的长度等于传输 packet 的时间）分配但未用的 slot 则保持闲置</p>
+<blockquote>
+<p>例：6 个节点，节点 1、3、4 发送数据，而节点 2、5、6 不发送数据
+<img src="/image/05413ea562d8d880cfea7d38bf625c810b6a0157f03b3a93e93d98b87a451de6.png" alt="图 21"></p>
+</blockquote>
+<h5 id="fdma">FDMA</h5>
+<p><strong>FDMA：frequency division multiple access 频分复用</strong></p>
+<p>信道的频谱划分为不同的频段,每个节点分配使用固定的频段发送数据,对于不发送数据的节点，对应的频段即为闲置状态</p>
+<p><img src="/image/fee6d43e1638a9bd0ebdc9cd667e7933b87ab7c7596c75809141cfdb90f9060b.png" alt="图 22"></p>
+<h5 id="cdma">CDMA</h5>
+<p><strong>CDMA：code division multiple access 码分复用</strong></p>
+<p>将需要发送的信号通过不同的编码进行调制，然后复用广播信道</p>
+<h4 id="随机接入-random-access">随机接入 （random access）</h4>
+<p><em>不划分信道，允许碰撞：</em></p>
+<ul>
+<li>如果恰巧有两个或更多的用户在同一时刻发送信息，那么在共享媒体上就要产生<strong>碰撞</strong>,使得这些用户的发送都失败</li>
+</ul>
+<p><em>问题在于：</em></p>
+<ul>
+<li>尝试从“碰撞”中“恢复”</li>
+<li>如何避免碰撞发生和碰撞发生怎么办</li>
+</ul>
+<h5 id="aloha-协议最早的随机访问方法">ALOHA 协议——最早的随机访问方法</h5>
+<h6 id="纯-aloha">纯 ALOHA</h6>
+<p>只要有站点需要发送帧，它就发送帧</p>
+<p><img src="/image/94112172bde926a88a889db5571ad6209fcb17cfd5064688fe36a2b800e10c36.png" alt="图 5"></p>
+<p>纯 ALOHA 依赖于接收方的确认，如果接收方确实收到了帧，它就会向发送方发送确认，<strong>只有当发送方收到该确认通知后，发送方才判定该帧成功发送，否则就要重发</strong></p>
+<p>但是，如果多个同时发送失败的站点同时重发，那么还是很可能发送失败。所以，为了避免再一次堵车，纯 ALOHA 指定站点重发之前<strong>随机等待一段时间（补偿时间 $T_{B}$ ）</strong>，相当于错峰开车</p>
+<p>同时，如果站点多次失败，站点就暂时躺平不发送了，等到以后再发送该帧，相当于摆烂</p>
+<p><img src="/image/598e1db9f5580d0d25ba1e2dde73fcd2701ee79a52ec8ae41acc15c9e3c06f4f.png" alt="图 6"></p>
+<p>我们程脆弱时间为可能碰撞的时间长度，则纯 ALOHA 虽弱时间为 2T</p>
+<p><img src="/image/f2a0c7b4024a4387fe887e7f16783dd94b7cfd948e983e7f796bd2bd7e18bf13.png" alt="图 1"></p>
+<h6 id="slotted-aloha">slotted ALOHA</h6>
+<ul>
+<li>时间轴<strong>划分为等长的时隙</strong>（slots），通常是传输一帧的时间，而且<strong>节点均只在时隙开始的时候传输</strong></li>
+<li>节点的行为是同步的</li>
+<li>如果超过两个节点在一个时隙同时传输，则<strong>所有节点能侦测到碰撞</strong></li>
+</ul>
+<p>所以时隙 ALOHA 是对纯 Aloha 的一种改进，其基本思想是<strong>把时间分成若干个相同的时间片</strong>，所有用户在时间片开始时刻<strong>同步接入网络信道</strong>，若发生冲突，则必须等到下一个时间片开始时刻再发送，这样就<strong>只有完全碰撞没有部分碰撞</strong>，脆弱时间从 2T 减少到 T</p>
+<p><img src="/image/5c53fab4d5f1bb1a32f5b7c43dcfb46eb284189f1789dfd2f4ea0d2811653d88.png" alt="图 2"></p>
+<p><em>步骤：</em></p>
+<p><img src="/image/e7ff3e2181803e249cf4a835194b6220065d78b7af68092dcf636b3b27ae5851.png" alt="图 4"></p>
+<ul>
+<li>当节点进入阅读器的识别范围后，节点自身携带的随机数发生器<strong>产生一随机数，节点按此随机数选择时隙</strong>，若查询时的时隙数与节点选择的时隙相匹配时节点即响应，并立即发送自身的数据信息</li>
+<li>若时隙内有碰撞时，<strong>阅读器将终止节点</strong>继续发送信息并令节点等待下一次查询，该节点在以后的每一个时隙均<strong>以概率 𝑝 进行重传，直至传输成功</strong></li>
+</ul>
+<p><img src="/image/0b05e99631c9f64a437f065b0169f1574867c505af166f6eb8cd80785084398b.png" alt="图 3"></p>
+<p>（C-collide,E-empty,S-success）</p>
+<p><em>优点：</em></p>
+<ul>
+<li>每个时隙中，<strong>都有一个节点可以一直以全速进行传输</strong>。</li>
+<li>高度分布式算法：只需把所有节点的<strong>时隙进行同步即可</strong>，其余全部是通过节点自行探测解决（不像纯 ALOHA 要收到一个确认，然后进行决策）</li>
+<li>算法十分简单</li>
+</ul>
+<p><em>缺点：</em></p>
+<ul>
+<li><strong>碰撞浪费了很多时隙</strong>，也会有<strong>很多时隙是闲置的</strong></li>
+<li><strong>需要一个时隙去侦测碰撞的发生</strong>。但事实上节点可能只需要更少的时间就可以侦测碰撞</li>
+<li>需要<strong>时钟同步</strong>（不然时隙的划分就没有用了）</li>
+<li>效率不高<img src="/image/6a99a4a69d2a47d04505c640f94dc927be4ab101ce7ac4db220510becfbc341a.png" alt="图 5"></li>
+</ul>
+<h5 id="载波侦听多点接入碰撞检测csmacd">载波侦听多点接入/碰撞检测（CSMA/CD）</h5>
+<h6 id="基本策略">基本策略</h6>
+<blockquote>
+<p>CSMA/CD 仅用于有线网络，不用于无线网络；无线网络使用 CSMA/CA</p>
+</blockquote>
+<p>发送数据前先<strong>监听广播信道</strong>，如果信道空闲，则发送整个帧；如果信道正忙，则延迟发送</p>
+<p>“碰撞检测”就是计算机<strong>边发送数据边检测信道上的信号电压大小</strong>，就是这个 CSMA 的侦听方式（节点同时在总线上发送数据时，总线上的信号电压摆动值将会增大（互相叠加））</p>
+<p>然后我们可以设置一个<strong>门限值</strong>，当电压超过门限值的时候，我们就判断它发生了碰撞</p>
+<blockquote>
+<p>因为有线网络中信号相对于噪声更明显，所以这种侦听方式比较有效；但在无线网络中太多噪声了，这种方式就不管用了</p>
+</blockquote>
+<p>一旦发现总线上出现了碰撞，总线上传输的信号就产生了严重的失真，<strong>无法从中恢复出有用的信息</strong>，就要立即停止发送，然后<strong>等待一段随机时间后再次发送</strong>。</p>
+<h6 id="碰撞检测">碰撞检测</h6>
+<ul>
+<li>最先发送数据帧的站，在发送数据帧后至多经过<strong>时间 2𝜏</strong>（两倍的端到端往返时延）就可知道发送的数据帧是否遭受了碰撞。
+<ul>
+<li>以太网的 <strong>端到端往返时延 2𝜏 称为争用期(contention period)</strong> ，又称为碰撞窗口(collision
+window)。</li>
+</ul>
+</li>
+<li>只有经过争用期这段时间还没有检测到碰撞，才能肯定这次发送不会发生碰撞。</li>
+</ul>
+<p><img src="/image/5d616a834113ebf8347204f2b31108722a8f57f7835ba0a7e005440489f8963e.png" alt="图 6"></p>
+<p>由上图易知：一个站不可能同时进行发送和接收（但必须边发送边监听信道），当 B 已经收到 A 发送的数据，就准备一直接收，也就是说，只有在争用期内，B 没有发送数据，B 才能顺利开始接收，A 才算通过了考验</p>
+<h6 id="重传机制">重传机制</h6>
+<p><strong>截断二进制指数退避(truncated binary exponential backoff)：</strong></p>
+<p>让发生碰撞的站在停止发送数据后，等待信道变为空闲后推迟（这叫做退避）一个随机的时间</p>
+<p>$k = Min[重传次数, 10]$
+$[0,1,…, 2^{k −1}]$中随机取一个数乘以争用期$τ$就是需要等待的时间</p>
+<blockquote>
+<p>当重传达 16 次仍不能成功时，则丢弃该帧，并向高层报告。</p>
+</blockquote>
+<p>使用上述退避算法可使<strong>重传需要推迟的平均时间随重传次数而增大（这也称为动态退避）</strong>，因而减小发生碰撞的概率，有利于整个系统的稳定</p>
+<h6 id="脆弱时间">脆弱时间</h6>
+<p><img src="/image/884e09edf0618524cecfab25550550be16b23187f4816ae50f0e3dc610a2bd23.png" alt="图 21"></p>
+<h6 id="优缺点">优缺点</h6>
+<p><em>优点：</em></p>
+<ul>
+<li>简单</li>
+<li>便宜</li>
+<li>完全去中心化</li>
+</ul>
+<p><em>缺点：</em></p>
+<ul>
+<li>使用 CSMA/CD 协议的以太网<strong>不能进行全双工通信而只能进行双向交替通信</strong>（半双工通信）。</li>
+<li>每个站在发送数据之后的一小段时间内，存在着遭遇碰撞的可能性（争用期）</li>
+</ul>
+<h4 id="受控接入taking-turns">受控接入（taking turns）</h4>
+<ul>
+<li>用户不能随机地发送信息而<strong>必须服从一定的控制</strong></li>
+<li>节点轮流发送信息</li>
+</ul>
+<p><em>典型代表有：</em></p>
+<ul>
+<li><strong>分散控制</strong>的令牌环局域网</li>
+<li><strong>集中控制</strong>的多点线路探询(polling)，或称为轮询</li>
+</ul>
+<h5 id="taking-turns-轮流接入">Taking turns 轮流接入</h5>
+<p>让受控的节点轮流发送就不会碰撞了</p>
+<h6 id="轮询-polling">轮询 polling</h6>
+<p><img src="/image/90e58dab49e2a19ab523671728730ec546671a25233aae7c572b46fb857bfda5.png" alt="图 7"></p>
+<p>主节点<strong>管理次节点，决定他们什么时候轮流发送数据</strong>（主节点需要具备一定智能，而次节点不需要），这种方法称为<strong>轮询</strong></p>
+<p><img src="/image/da09b12d165b84b304c760289c245ff301db8d28cd29a0fa032d940f3ac5ccf1.png" alt="图 8"></p>
+<p>存在轮询的开销、延迟、单点故障（即 master 节点）的问题</p>
+<h6 id="令牌传递-token-passing">令牌传递 token passing</h6>
+<p><img src="/image/8ea6404c4883762ee45abde896a20c201152a28117d79f4dd98f1266f6a5cd42.png" alt="图 9"></p>
+<p>受控的令牌从一个节点依次序传递到下一个节点，<strong>有令牌的节点即可发送帧</strong>（击鼓传花，传到花的就唱歌）</p>
+<p>节点之间不必物理地连成环，只要逻辑上每个节点都有前驱和后继即可</p>
+<p><img src="/image/9d8b4050ae876291f9da7713d088e8d272859c02725a1d928d44d29703caf082.png" alt="图 10"></p>
+<p>存在传递令牌的开销、延迟，单点故障（令牌本身）的问题</p>
+<h2 id="链路层寻址">链路层寻址</h2>
+<p>链路层地址：又称为链路地址、物理层地址、MAC 地址</p>
+<blockquote>
+<p>MAC 地址用于将一个帧传输到另一个接口
+used ‘locally” to get frame from one interface to another physically-connected interface (same network, in IP-addressing sense)</p>
+</blockquote>
+<p><img src="/image/3e317564f5f7932dd6c83ab52f5d74e6b6cb56bf514d874bafe6c3df4319fab3.png" alt="图 12"></p>
+<h3 id="48-位的-mac-地址-eui-48">48 位的 MAC 地址 EUI-48</h3>
+<ul>
+<li>IEEE 的注册管理机构 <strong>RA 负责向厂家分配地址字段 6 个字节中的前三个字节</strong> (即高位 24 位)，称为组织唯一标识符。</li>
+<li>地址字段 6 个字节中的后三个字节 (即低位 24 位) 由厂家自行指派，称为扩展唯一标识符，必须保证生产出的适配器没有重复地址。</li>
+</ul>
+<p>因此就保证了全世界<strong>每个适配器、每个接口/端口，有唯一的 MAC 地址</strong>（$2^{24}$个不同的地址），用这种方式得到的 48 位地址称为 EUI-48，这里 EUI 表示扩展的唯一标识符(Extended Unique Identifier)</p>
+<p>同时，MAC 地址不是等级化的（与上级其他设备无关），保证了可移植性（可以把网卡从这个局域网移动到另一个局域网使用）</p>
+<p><img src="/image/b773e0318de87357815cc7a6c59147a00ea26831ca3852b7e5f8f8ed9a6f1db0.png" alt="图 13"></p>
+<h3 id="mac-地址有什么用">MAC 地址有什么用</h3>
+<p>适配器从网络上每收到一个 MAC 帧就<strong>首先用硬件检查 MAC 帧中的 MAC 地址</strong></p>
+<ul>
+<li>如果是发往本站的帧则收下，然后再进行其他的处理。</li>
+<li>否则就将此帧丢弃，不再进行其他的处理。</li>
+</ul>
+<p><em>这里“发往本站的帧”包括：</em></p>
+<ol>
+<li><strong>单播(unicast)帧（一对一）</strong>：即收到的帧的 MAC 地址<strong>与本站的硬件地址相同</strong>。</li>
+<li><strong>广播(broadcast)帧（一对全体）</strong>：即发送给本局域<strong>网上所有站点</strong>的帧（全 1 地址）。</li>
+<li><strong>多播(multicast)帧（一对多）</strong>：即发送给本局域网上<strong>一部分站点</strong>的帧。</li>
+</ol>
+<h4 id="混杂方式promiscuous-mode">混杂方式(promiscuous mode)</h4>
+<blockquote>
+<p>嗅探器(Sniffer)就使用了设置为混杂方式的网络适配器</p>
+</blockquote>
+<p>适配器只要“听到”有帧在以太网上传输就都<strong>悄悄地接收下来</strong>，而不管这些帧是发往哪个站（抓包）</p>
+<h3 id="arp-协议--address-resolution-protocol">ARP 协议 – Address Resolution Protocol</h3>
+<h4 id="mac-帧的格式">MAC 帧的格式</h4>
+<p><img src="/image/6ea8beb7671b3221ae6f58dc71397b82020c11e67dc2f6a2b5ca2576265b5794.png" alt="图 14"></p>
+<p>类型意为收到该帧之后，应传送给网络层的何种协议（大部分为 IP 协议）</p>
+<h4 id="arp-表-转-ip-为-mac">ARP 表-转 IP 为 MAC</h4>
+<blockquote>
+<p>在实际工作时，不可能总是和与我们实际相邻的物理设备通信，我们往往会和离我们很远的主机通信，这样我们无法知道那个主机接口的 MAC 地址。这时候我们需要利用网络层的 IP 地址转为 MAC 地址
+IP 地址是在全球范围内标识一台主机的地址</p>
+</blockquote>
+<p><img src="/image/d1518bf6011debd81392692d3f2fd1cf054c08034ab7dd2e41a7558bcf1ffd15.png" alt="图 15"></p>
+<p>局域网中的每个节点（主机、路由器等）都有一张 ARP 表，存储了局域网中<strong>某些节点的 IP 地址/MAC 地址的映射关系</strong>（<code>&lt;IP address; MAC address; TTL（多久删除）&gt;</code>）</p>
+<p>只有找到接口的 MAC 地址，我们才能在物理相邻的网络中与其通信</p>
+<p><img src="/image/a7c3b0a95b6b3ed1f7ee24e4a94ee71a68feb4465471fa5a25f5bad82206c00c.png" alt="图 16"></p>
+<h5 id="在局域网中学习-arp-表">在局域网中学习 ARP 表</h5>
+<p><img src="/image/27be89465a412ea03d27810333862ce8463946196b88138e42de6d94b12fc90e.png" alt="图 18"></p>
+<p>由此可见，ARP 协议是“即插即用”的：节点创建自己的 ARP 表格，并<strong>不需要网络管理员的人工干涉</strong></p>
+<h5 id="不在局域网中学习-arp-表">不在局域网中学习 ARP 表</h5>
+<p>过程基本相同，但需要分开先<strong>从边缘路由器跳转</strong>，获得各自的 MAC 地址</p>
+<p>-&gt; 具体过程，需要先学习 IP 协议，此处不展开</p>
+<h2 id="局域网--典型广播信道">局域网&ndash;典型广播信道</h2>
+<blockquote>
+<p>因为局域网中的以太网过于优秀而被广泛使用，现在以太网几乎成为了局域网的同义词</p>
+</blockquote>
+<p>局域网最主要的特点是：网络为一个单位所拥有，且<strong>地理范围和站点数目均有限</strong>，每一台主机都是<strong>物理相邻的</strong></p>
+<p><img src="/image/ab15a31b40ac0a105386e361734fda96a546dae7c38709928f9cce8bdf33a923.png" alt="图 1"></p>
+<h2 id="以太网">以太网</h2>
+<blockquote>
+<p>以太网，是现在的事实上的主流有线局域网技术</p>
+</blockquote>
+<ul>
+<li>单一芯片，可以实现多种带宽（自适应带宽）</li>
+<li>第一个广泛采用的局域网技术</li>
+<li>简单、便宜、速度快</li>
+</ul>
+<h3 id="以太网的物理拓扑physical-topology">以太网的物理拓扑（physical topology）</h3>
+<ul>
+<li>总线拓扑（直至 90 年代中期）
+<ul>
+<li>所有节点处于同一碰撞域（可能互相发生碰撞）</li>
+</ul>
+</li>
+<li>星形拓扑（现今）
+<ul>
+<li>采用交换机（switch）</li>
+<li>每个“辐条”运行各自的以太网协议，各自组成碰撞域</li>
+</ul>
+</li>
+</ul>
+<p>星形环状拓扑结构有一个集线器充当连接线，站点通过两条电线连接集线器，这种结构<strong>即使一条链路失效了其他节点也能正常运行</strong>，因此不宜故障</p>
+<p><img src="/image/bbe2f86c6985d02cc295ecc038cba8d4c7f123f27617374110a1a01909e0f81f.png" alt="图 11"></p>
+<p><a href="#%E4%BB%A4%E7%89%8C%E4%BC%A0%E9%80%92-token-passing">星形拓扑也可用于受控接入</a></p>
+<h3 id="以太网的帧的结构">以太网的帧的结构</h3>
+<p><img src="/image/93f927afd260dd95459adac6b9a357e3802749bbf9e1a3b4a93c1044ac033b8a.png" alt="图 20"></p>
+<blockquote>
+<p>preamble 前同步码是不算以太网的帧的首部的，以太网的帧首部包括源地址、目的地址、类型，尾部为冗余码</p>
+</blockquote>
+<p>同见<a href="#mac-%E5%B8%A7%E7%9A%84%E6%A0%BC%E5%BC%8F">MAC 帧的结构</a></p>
+<p>一个以太网帧的长度一定要大于<a href="#%E8%BD%BD%E6%B3%A2%E4%BE%A6%E5%90%AC%E5%A4%9A%E7%82%B9%E6%8E%A5%E5%85%A5%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8Bcsmacd">争用期</a>，因传统规定，至少要大于 64 字节</p>
+<blockquote>
+<p>当数据字段的长度小于 46 字节时，应在数据字段的后面加入整数字节的填充字段，以保证以太网的 MAC 帧长不小于 64 字节。
+传统的$10M/s$以太网，争用期为$51.2μs$，最短帧长为 64bit；而对于$100M/s$的以太网（快速以太网），争用期为$5.12μs$，最短帧长仍为 64bit。<strong>争用期变化而最短帧长不变</strong></p>
+</blockquote>
+<h4 id="无效的帧">无效的帧</h4>
+<ul>
+<li>帧长度不是整数字节</li>
+<li>CRC 校验失败</li>
+<li>数据字段的长度不在 46~1500 字节之间（MAC 帧长度不在 64~1518 字节之间）</li>
+</ul>
+<p>对于检查出的无效 MAC 帧就<strong>简单地丢弃</strong>，以太网不负责重传丢弃的帧</p>
+<h3 id="以太网的特征链路层的特征">以太网的特征（链路层的特征）</h3>
+<ul>
+<li>无连接：发送的 NIC 和接收的 NIC 并不需要用握手来建立连接</li>
+<li>不可靠：接受方不需要发送确认
+<ul>
+<li>如果发错了就要靠上层协议修补；上层如果不管下层也不管，没发到就没发到</li>
+</ul>
+</li>
+</ul>
+<h3 id="以太网的信道利用率">以太网的信道利用率</h3>
+<p>在争用期内，各站点发送的帧可能碰撞，那它们碰撞之前花的时间就白费了，这样信道占用率就达不到 100%</p>
+<p>一个站在发送帧时出现了碰撞。经过一个争用期 2t 后（t 是以太网单程端到端传播时延），可能又出现了碰撞。这样<strong>经过若干个争用期</strong>后，一个站发送成功了。假定发送帧需要的时间是 $T_{0}$，<strong>总占用信道时间为$T_{0}+τ$</strong> （最后一个比特发出去后还要在信道上跑$τ$的时间）</p>
+<p><img src="/image/6c3ccab49fed10c423cb1d78cc562e5f4de969c34289d7795b1bab14ed58b8d2.png" alt="图 1"></p>
+<p>因此，要提高以太网的信道利用率，就<strong>必须减小$τ$与$T_{0}$之比</strong> ，我们可以将 <strong>这个比定义为 $a = \frac{τ}{T_{0}}$</strong> ，这样就可以知道，a 越小越好</p>
+<p>为了使得 a 更小，$τ$应尽可能小，而$T_{0}$应该大一点，这就是说，<strong>当数据率一定时，以太网的连线的长度受到限制，同时以太网的帧长不能太短</strong></p>
+<p>假设碰撞不会发生，那么信道利用率的极限就应该是$S_{max}=\frac{T_{0}}{T_{0}+τ}=\frac{1}{1+a}$，因此 a 应远小于 1</p>
+<h3 id="交换机">交换机</h3>
+<p>同见<a href="%E5%AF%BC%E8%AE%BA.md/#what-are-switches-in-computer-network">导论中的《交换机是什么》</a></p>
+<p>最初人们使用的是网桥(bridge)，后来用交换机(switch)取代了网桥</p>
+<blockquote>
+<p>为了在链路层扩展以太网，把不同网络连接在一起，我们就需要一个【链路层的专有设备】——交换机，通常也称为“第二层交换机”（L2 switch）
+有一种非主流的结构，在第三层也有交换机</p>
+</blockquote>
+<p><em>作用：</em></p>
+<ul>
+<li><strong>存储并转发</strong>以太网帧</li>
+<li>检查收到的帧的 MAC 地址，选择性地转发该帧到一个或多个链路（<strong>寻址</strong>）</li>
+</ul>
+<p><img src="/image/de269c178fe40740f540a3a6281492c5e16ffa282ff5b955ac730089046dc030.png" alt="图 1"></p>
+<p><em>特点：</em></p>
+<ul>
+<li>交换机是<strong>透明</strong>的：主机并不知道交换机的存在</li>
+<li><strong>即插即用、自学习</strong>：交换机不需要手动配置，它自动学习网络拓扑</li>
+<li><strong>接口多</strong>：每个接口都直接与一个单台主机或另一个交换机相连，并且一般都工作在<strong>全双工方式</strong>。</li>
+<li>并行性：能<strong>同时连通多对接口</strong>，使多对主机能同时通信。</li>
+<li>能缓存帧</li>
+<li>交换机使用了<strong>专用的交换结构芯片</strong>，<strong>用硬件转发</strong>，其转发速率非常高。</li>
+<li><strong>便宜好用</strong>：交换机的性能远远超过普通的集线器，而且价格并不贵。</li>
+</ul>
+<h4 id="交换机学习交换表转发表">交换机学习交换表/转发表</h4>
+<p>交换机通过<strong>自动学习</strong>知道通过哪个接口能够访问对应主机</p>
+<p><img src="/image/e5838178c6b8707eda7d06284b5e1a187e251c2c14b4739df7705ffa334f9a4d.png" alt="图 4"></p>
+<p>当交换机收到一个帧的时候，就<strong>记录源地址</strong>，然后根据目的地 MAC 地址，从交换表里面寻找对应条目</p>
+<ul>
+<li>如果找到了，就直接发送（若源地址==目的地址，直接丢弃该帧）</li>
+<li>如果没找到，就<strong>同时向剩下的几个接口同时发送帧</strong>（泛洪 flooding）</li>
+</ul>
+<p><img src="/image/2e687ac578a9e3db33d92f6fce420d4ffbd086d7c2b144da8f6c4147aec45a0d.png" alt="图 2"></p>
+<blockquote>
+<p>在交换机最初发明的时候，这个表是静态的，需要手动添加，虽然简单但是麻烦，而且表会变得很臃肿</p>
+</blockquote>
+<p>因此，只有当几台主机开始发送数据的时候，交换机才需要开始学习（没用的东西学来干嘛）</p>
+<h4 id="交换机自学习产生的问题">交换机自学习产生的问题</h4>
+<blockquote>
+<p>但有时为了增加网络的可靠性，在使用以太网交换机组网时，往往会<strong>增加一些冗余的链路</strong>。在这种情况下，自学习的过程就<strong>可能导致以太网帧在网络的某个环路中无限制地兜圈子</strong></p>
+</blockquote>
+<p><img src="/image/b36973a22b807775e2c89a89d29d2ee6dfbbbe9a1591f3c89f06df54b1b2a2fa.png" alt="图 3"></p>
+<p>如图，四个交换机的接口在自娱自乐</p>
+<p><em>解决方法：</em></p>
+<p>IEEE 的 802.1D 标准制定了一个生成树协议 STP</p>
+<p>要点是不改变网络的实际拓扑，但在逻辑上则切断某些链路，使得从一台主机到所有其他主机的<strong>路径是无环路的树状结构</strong></p>
+<p>简而言之，<strong>避免环路的出现</strong></p>
+<h2 id="虚拟局域网-vlan">虚拟局域网 VLAN</h2>
+<blockquote>
+<p>情景一：CS 系的学生到 EE 系后还想使用 CS 系的局域网，但是这样就要经过中间整个局域网，效率又低，又不安全
+情景二：如果公司中工程部门的两个工程师临时调去别的部门，然后又调回来，那就要在物理上重新布线两次</p>
+</blockquote>
+<p><img src="/image/d627e0d530c6447b5f95018313f0aef719460c7c3f819fecaa817ffb6bc357c9.png" alt="图 5"></p>
+<p><em>官方定义：虚拟局域网 VLAN 是由一些局域网网段构成的<strong>与物理位置无关</strong>的逻辑组，而这些网段<strong>具有某些共同的需求</strong>。每一个 VLAN 的<strong>帧都有一个明确的标识符</strong>，指明发送这个帧的计算机是属于哪一个 VLAN。</em></p>
+<p>因此-&gt;虚拟局域网其实<strong>只是局域网给用户提供的一种服务</strong>，而并不是一种新型局域网。</p>
+<p><img src="/image/08ded2b56653d6d3633b9a0440138614a6b79cd4b0b617b3497a87a4971374e9.png" alt="图 6"></p>
+<p>如图，虚拟局域网内各主机是<strong>逻辑上的同组</strong>，而不是物理上的同组</p>
+<p>比如 B3 向 B1 发送信息， 以太网交换机不向虚拟局域网以外的计算机传送 B1 的广播信息，这样消息就不会发给其他的主机（交换机可能泛洪），这样子流量也节省了，也更安全了（防止混杂模式）</p>
+<p>VLAN 限制了接收广播信息的工作站数，使得网络不会因传播过多的广播信息 (即 <strong>“广播风暴”</strong> ) 而引起性能恶化</p>
+<h3 id="虚拟局域网的优点">虚拟局域网的优点</h3>
+<ul>
+<li>改善了性能</li>
+<li>简化了管理</li>
+<li>降低了成本</li>
+<li>改善了安全性</li>
+</ul>
+<h3 id="虚拟局域网的实现方法">虚拟局域网的实现方法</h3>
+<h4 id="基于交换机端口">基于交换机端口</h4>
+<p>靠交换机的端口区分不同组的人，但这样就不能换端口，人员就不能移动</p>
+<p>属于在第一层划分虚拟局域网的方法</p>
+<h4 id="基于-mac-地址">基于 MAC 地址</h4>
+<p>根据<strong>MAC 地址</strong>划分组，但这样就需要手动维护一个表，比较<strong>麻烦</strong>。如果用户的 MAC 地址改变了，则需要管理员重新配置 VLAN。</p>
+<p>属于在第二层划分虚拟局域网的方法</p>
+<h4 id="基于协议类型">基于协议类型</h4>
+<p>根据以太网帧的<strong>第三个字段“类型”字段</strong>确定该类型的协议属于哪一个虚拟局域网</p>
+<p>属于在第二层划分虚拟局域网的方法</p>
+<h4 id="基于-ip-子网地址">基于 IP 子网地址</h4>
+<p>根据以太网帧的<strong>第三个字段“类型”字段和 IP 分组首部中的源 IP 地址字段</strong>确定该 IP 分组属于哪一个虚拟局域网</p>
+<p>属于在第三层划分虚拟局域网的方法</p>
+<h4 id="基于高层应用和服务">基于高层应用和服务</h4>
+<p>根据<strong>高层应用或服务、或者它们的组合</strong>划分虚拟局域网，灵活但复杂</p>
+<h3 id="vlan-的帧的格式">VLAN 的帧的格式</h3>
+<p>虚拟局域网协议允许在以太网的帧格式中插入一个 4 字节的标识符，称为<strong>VLAN 标记</strong> (tag)，用来指明该帧属于哪一个虚拟局域网</p>
+<p>相当于给物品打个标签</p>
+<p>插入 VLAN 标记得出的帧称为<strong>802.1Q 帧或带标记的以太网帧</strong></p>
+<p><img src="/image/838f62291822b62fdcc6e7651ddea9851f1e9148a6939c70b8ac8be12f1841c0.png" alt="图 7"></p>
+<p><img src="/image/390bf264d2fe3f075b7b14623e607f95ba79496842b81206019a296e4e2a2882.png" alt="图 8"></p>
+
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#计算机网络</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E9%93%BE%E8%B7%AF%E5%B1%82/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#链路层</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c/%e9%93%be%e8%b7%af%e5%b1%82.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/" class="block">概述</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/" class="block">网络层</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#两类信道">两类信道</a></li>
+        <li><a href="#两个子层">两个子层</a></li>
+        <li><a href="#基本概念">基本概念</a></li>
+        <li><a href="#数据链路控制dlc">数据链路控制（DLC）</a>
+          <ul>
+            <li><a href="#流量控制和差错控制">流量控制和差错控制</a></li>
+            <li><a href="#三个基本问题">三个基本问题</a>
+              <ul>
+                <li><a href="#封装成帧">封装成帧</a>
+                  <ul>
+                    <li><a href="#面向字符成帧">面向字符成帧</a>
+                      <ul>
+                        <li><a href="#当发送出差错时">当发送出差错时</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#面向位成帧">面向位成帧</a></li>
+                  </ul>
+                </li>
+                <li><a href="#透明传输">透明传输</a></li>
+                <li><a href="#差错检测">差错检测</a>
+                  <ul>
+                    <li><a href="#crc-检错技术">CRC 检错技术</a>
+                      <ul>
+                        <li><a href="#计算方法">计算方法</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#介质访问控制mac--专用于广播信道">介质访问控制（MAC）&ndash;专用于广播信道</a>
+          <ul>
+            <li><a href="#多路访问">多路访问</a>
+              <ul>
+                <li><a href="#信道划分-channel-partitioning">信道划分 （channel partitioning）</a>
+                  <ul>
+                    <li><a href="#tdma">TDMA</a></li>
+                    <li><a href="#fdma">FDMA</a></li>
+                    <li><a href="#cdma">CDMA</a></li>
+                  </ul>
+                </li>
+                <li><a href="#随机接入-random-access">随机接入 （random access）</a>
+                  <ul>
+                    <li><a href="#aloha-协议最早的随机访问方法">ALOHA 协议——最早的随机访问方法</a>
+                      <ul>
+                        <li><a href="#纯-aloha">纯 ALOHA</a></li>
+                        <li><a href="#slotted-aloha">slotted ALOHA</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#载波侦听多点接入碰撞检测csmacd">载波侦听多点接入/碰撞检测（CSMA/CD）</a>
+                      <ul>
+                        <li><a href="#基本策略">基本策略</a></li>
+                        <li><a href="#碰撞检测">碰撞检测</a></li>
+                        <li><a href="#重传机制">重传机制</a></li>
+                        <li><a href="#脆弱时间">脆弱时间</a></li>
+                        <li><a href="#优缺点">优缺点</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#受控接入taking-turns">受控接入（taking turns）</a>
+                  <ul>
+                    <li><a href="#taking-turns-轮流接入">Taking turns 轮流接入</a>
+                      <ul>
+                        <li><a href="#轮询-polling">轮询 polling</a></li>
+                        <li><a href="#令牌传递-token-passing">令牌传递 token passing</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#链路层寻址">链路层寻址</a>
+          <ul>
+            <li><a href="#48-位的-mac-地址-eui-48">48 位的 MAC 地址 EUI-48</a></li>
+            <li><a href="#mac-地址有什么用">MAC 地址有什么用</a>
+              <ul>
+                <li><a href="#混杂方式promiscuous-mode">混杂方式(promiscuous mode)</a></li>
+              </ul>
+            </li>
+            <li><a href="#arp-协议--address-resolution-protocol">ARP 协议 – Address Resolution Protocol</a>
+              <ul>
+                <li><a href="#mac-帧的格式">MAC 帧的格式</a></li>
+                <li><a href="#arp-表-转-ip-为-mac">ARP 表-转 IP 为 MAC</a>
+                  <ul>
+                    <li><a href="#在局域网中学习-arp-表">在局域网中学习 ARP 表</a></li>
+                    <li><a href="#不在局域网中学习-arp-表">不在局域网中学习 ARP 表</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#局域网--典型广播信道">局域网&ndash;典型广播信道</a></li>
+        <li><a href="#以太网">以太网</a>
+          <ul>
+            <li><a href="#以太网的物理拓扑physical-topology">以太网的物理拓扑（physical topology）</a></li>
+            <li><a href="#以太网的帧的结构">以太网的帧的结构</a>
+              <ul>
+                <li><a href="#无效的帧">无效的帧</a></li>
+              </ul>
+            </li>
+            <li><a href="#以太网的特征链路层的特征">以太网的特征（链路层的特征）</a></li>
+            <li><a href="#以太网的信道利用率">以太网的信道利用率</a></li>
+            <li><a href="#交换机">交换机</a>
+              <ul>
+                <li><a href="#交换机学习交换表转发表">交换机学习交换表/转发表</a></li>
+                <li><a href="#交换机自学习产生的问题">交换机自学习产生的问题</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#虚拟局域网-vlan">虚拟局域网 VLAN</a>
+          <ul>
+            <li><a href="#虚拟局域网的优点">虚拟局域网的优点</a></li>
+            <li><a href="#虚拟局域网的实现方法">虚拟局域网的实现方法</a>
+              <ul>
+                <li><a href="#基于交换机端口">基于交换机端口</a></li>
+                <li><a href="#基于-mac-地址">基于 MAC 地址</a></li>
+                <li><a href="#基于协议类型">基于协议类型</a></li>
+                <li><a href="#基于-ip-子网地址">基于 IP 子网地址</a></li>
+                <li><a href="#基于高层应用和服务">基于高层应用和服务</a></li>
+              </ul>
+            </li>
+            <li><a href="#vlan-的帧的格式">VLAN 的帧的格式</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/" class="no-underline">导论</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/" class="no-underline">概述</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/" class="no-underline">网络层</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script src="https://peterliuzhi.top/js/copy-btn.js"></script></div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>ELF详解 - P3troL1er的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/c.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cpp.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/armasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/mipsasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/vim.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/javascript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/typescript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/css.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://kit.fontawesome.com/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="ELF详解">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"ELF详解",
+      "item":"https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/"
+    },
+    "headline": "ELF详解 - P3troL1er的个人博客","datePublished": "2022-10-26T14:48:56+08:00",
+    "dateModified": "2022-10-26T14:48:56+08:00",
+    "wordCount":  5838 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/selficon.jpg"
+        }
+        },
+    "description": "ELF详解"
+}
+</script><meta property="og:title" content="ELF详解 - P3troL1er的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/" />
+
+
+
+<meta property="og:description" content="ELF详解" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-10-26T14:48:56&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-10-26T14:48:56&#43;08:00" />
+
+
+
+<meta property="article:section" content="principle" />
+
+
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="ELF" />
+
+
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+        </div>
+
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">ELF详解</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, October 26, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>12分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/elf/" class="hover:text-eureka"
+          >ELF</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <blockquote>
+<p>Myths which are believed in tend to become true.
+— <cite>George Orwell</cite></p>
+</blockquote>
+<ul>
+<li><a href="#elf%E8%AF%A6%E8%A7%A3">ELF详解</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFelf">什么是ELF</a>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8readelf%E5%91%BD%E4%BB%A4%E8%AF%BB%E5%8F%96elf%E6%96%87%E4%BB%B6">使用<code>readelf</code>命令读取elf文件</a></li>
+</ul>
+</li>
+<li><a href="#elf%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B">ELF文件类型</a></li>
+<li><a href="#elf%E7%A8%8B%E5%BA%8F%E5%A4%B4%E6%8F%8F%E8%BF%B0%E6%AE%B5%E7%9A%84%E5%A4%B4">ELF程序头（描述段的头）</a>
+<ul>
+<li><a href="#pt_load">PT_LOAD</a></li>
+<li><a href="#pt_dynamic%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E7%89%B9%E6%9C%89">PT_DYNAMIC（动态链接可执行文件特有）</a></li>
+<li><a href="#pt_note">PT_NOTE</a></li>
+<li><a href="#pt_interp">PT_INTERP</a></li>
+<li><a href="#pt_phdr">PT_PHDR</a></li>
+</ul>
+</li>
+<li><a href="#elf%E8%8A%82%E5%A4%B4section-header">ELF节头（section header）</a>
+<ul>
+<li><a href="#%E6%AE%B5%E5%92%8C%E8%8A%82%E7%9A%84%E5%8C%BA%E5%88%AB">段和节的区别</a></li>
+<li><a href="#%E8%8A%82%E5%A4%B4">节头</a>
+<ul>
+<li><a href="#text%E8%8A%82">.text节</a></li>
+<li><a href="#rodata%E8%8A%82">.rodata节</a></li>
+<li><a href="#data%E8%8A%82">.data节</a></li>
+<li><a href="#bss%E8%8A%82">.bss节</a></li>
+<li><a href="#plt%E8%8A%82">.plt节</a></li>
+<li><a href="#got%E4%B8%8Egotplt%E8%8A%82">.got与.got.plt节</a>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E4%BA%86plt%E8%BF%98%E8%A6%81%E6%9C%89got%E5%91%A2">为什么有了.plt还要有.got呢？</a></li>
+<li><a href="#got%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84">got表的结构</a></li>
+</ul>
+</li>
+<li><a href="#ctors%E5%92%8Cdtors%E8%8A%82">.ctors和.dtors节</a></li>
+<li><a href="#elf%E7%AC%A6%E5%8F%B7">ELF符号</a>
+<ul>
+<li><a href="#symtab%E8%8A%82">.symtab节</a></li>
+<li><a href="#strtab%E8%8A%82">.strtab节</a></li>
+<li><a href="#dynsym%E8%8A%82">.dynsym节</a></li>
+<li><a href="#dynstr%E8%8A%82">.dynstr节</a></li>
+<li><a href="#rel%E8%8A%82">.rel.*节</a></li>
+<li><a href="#hash%E8%8A%82">.hash节</a></li>
+<li><a href="#shstrtab%E8%8A%82">.shstrtab节</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#elf%E9%87%8D%E5%AE%9A%E4%BD%8D-relocation">ELF重定位 Relocation</a>
+<ul>
+<li><a href="#%E5%9F%BA%E4%BA%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BF%AE%E8%A1%A5%E7%9A%84%E9%87%8D%E5%AE%9A%E4%BD%8D%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5">基于二进制修补的重定位代码注入</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="什么是elf">什么是ELF</h2>
+<p>ELF（Executable and Linkable Format）是一种用于二进制文件、可执行文件、目标代码、共享库和核心转储格式文件的文件格式，目前已经成为Unix和类Unix操作系统的<strong>标准二进制格式</strong>，目前常见的Linux、Android可执行文件、共享库（.so）、目标文件（ .o）以及Core 文件均为此格式</p>
+<h3 id="使用readelf命令读取elf文件">使用<code>readelf</code>命令读取elf文件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">readelf -S  查询节头表
+</span></span><span class="line"><span class="cl">        -l  查询程序头表
+</span></span><span class="line"><span class="cl">        -s  查询符号表
+</span></span><span class="line"><span class="cl">        -e  查询ELF文件头数据
+</span></span><span class="line"><span class="cl">        -r  查询重定位入口
+</span></span><span class="line"><span class="cl">        -d  查询动态段
+</span></span></code></pre></div><h2 id="elf文件类型">ELF文件类型</h2>
+<p>使用ELF格式的文件可以被标记为以下五种格式：</p>
+<ul>
+<li>未知类型ET_NONE</li>
+<li>重定位文件ET_REL，通常是还没有经过链接的一段独立代码，也就是.o文件</li>
+<li>可执行文件ET_EXEC，这个就不用说了~</li>
+<li>共享目标文件ET_DYN，就是动态链接库</li>
+<li>核心文件ET_CORE，程序崩溃或产生SIGSEGV信号的时候会在此文件中记录整个进程的镜像信息，从而被GDB读取复盘</li>
+</ul>
+<p>我们可以通过<code>readelf -h</code>命令来查看原始的ELF文件头：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ readelf -h babyrop
+</span></span><span class="line"><span class="cl">ELF 头：
+</span></span><span class="line"><span class="cl">  Magic：   7f <span class="m">45</span> 4c <span class="m">46</span> <span class="m">02</span> <span class="m">01</span> <span class="m">01</span> <span class="m">00</span> <span class="m">00</span> <span class="m">00</span> <span class="m">00</span> <span class="m">00</span> <span class="m">00</span> <span class="m">00</span> <span class="m">00</span> <span class="m">00</span>
+</span></span><span class="line"><span class="cl">  类别:                              ELF64
+</span></span><span class="line"><span class="cl">  数据:                              <span class="m">2</span> 补码，小端序 <span class="o">(</span>little endian<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  Version:                           <span class="m">1</span> <span class="o">(</span>current<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  OS/ABI:                            UNIX - System V
+</span></span><span class="line"><span class="cl">  ABI 版本:                          <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  类型:                              EXEC <span class="o">(</span>可执行文件<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  系统架构:                          Advanced Micro Devices X86-64
+</span></span><span class="line"><span class="cl">  版本:                              0x1
+</span></span><span class="line"><span class="cl">  入口点地址：               0x4004e0
+</span></span><span class="line"><span class="cl">  程序头起点：          <span class="m">64</span> <span class="o">(</span>bytes into file<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  Start of section headers:          <span class="m">6768</span> <span class="o">(</span>bytes into file<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  标志：             0x0
+</span></span><span class="line"><span class="cl">  Size of this header:               <span class="m">64</span> <span class="o">(</span>bytes<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  Size of program headers:           <span class="m">56</span> <span class="o">(</span>bytes<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  Number of program headers:         <span class="m">9</span>
+</span></span><span class="line"><span class="cl">  Size of section headers:           <span class="m">64</span> <span class="o">(</span>bytes<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  Number of section headers:         <span class="m">31</span>
+</span></span><span class="line"><span class="cl">  Section header string table index: <span class="m">28</span>
+</span></span></code></pre></div><p><code>readelf</code>是怎么找到ELF头在哪里呢？答案就是<strong>ELF头从二进制文件的0号地址，也就是文件的开头开始</strong>，就好像一篇论文在一开始会对整个论文做概述一样，<strong>ELF文件头是对剩余部分的一个映射</strong></p>
+<p>ELF文件头告诉了我们：</p>
+<ul>
+<li>这个文件是啥类型的文件</li>
+<li>这个文件的结构</li>
+<li>程序开始执行的入口地址</li>
+<li>其他ELF头（节头、程序头）的地址（偏移量）</li>
+</ul>
+<h2 id="elf程序头描述段的头">ELF程序头（描述段的头）</h2>
+<p>在原始的ELF头中我们记录了ELF程序头的地址（e_phoff），这样我们就能得到程序头表</p>
+<p>ELF程序头是对二进制文件中<strong>段的描述，是程序必需的一部分</strong>。</p>
+<p>我们知道，一个程序想要运行，首先要把它装载到内存上，而这个ELF程序头就相当于一本程序装载的说明书，告诉你每个段是怎样的。</p>
+<p>我们可以通过<code>readelf -l</code>来查询程序头表：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ readelf -l babyrop
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Elf 文件类型为 EXEC <span class="o">(</span>可执行文件<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Entry point 0x4004e0
+</span></span><span class="line"><span class="cl">There are <span class="m">9</span> program headers, starting at offset <span class="m">64</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">程序头：
+</span></span><span class="line"><span class="cl">  Type           Offset             VirtAddr           PhysAddr
+</span></span><span class="line"><span class="cl">                 FileSiz            MemSiz              Flags  Align
+</span></span><span class="line"><span class="cl">  PHDR           0x0000000000000040 0x0000000000400040 0x0000000000400040
+</span></span><span class="line"><span class="cl">                 0x00000000000001f8 0x00000000000001f8  R E    0x8
+</span></span><span class="line"><span class="cl">  INTERP         0x0000000000000238 0x0000000000400238 0x0000000000400238
+</span></span><span class="line"><span class="cl">                 0x000000000000001c 0x000000000000001c  R      0x1
+</span></span><span class="line"><span class="cl">      <span class="o">[</span>Requesting program interpreter: /lib64/ld-linux-x86-64.so.2<span class="o">]</span>
+</span></span><span class="line"><span class="cl">  LOAD           0x0000000000000000 0x0000000000400000 0x0000000000400000
+</span></span><span class="line"><span class="cl">                 0x0000000000000814 0x0000000000000814  R E    0x200000
+</span></span><span class="line"><span class="cl">  LOAD           0x0000000000000e10 0x0000000000600e10 0x0000000000600e10
+</span></span><span class="line"><span class="cl">                 0x0000000000000240 0x0000000000000248  RW     0x200000
+</span></span><span class="line"><span class="cl">  DYNAMIC        0x0000000000000e28 0x0000000000600e28 0x0000000000600e28
+</span></span><span class="line"><span class="cl">                 0x00000000000001d0 0x00000000000001d0  RW     0x8
+</span></span><span class="line"><span class="cl">  NOTE           0x0000000000000254 0x0000000000400254 0x0000000000400254
+</span></span><span class="line"><span class="cl">                 0x0000000000000044 0x0000000000000044  R      0x4
+</span></span><span class="line"><span class="cl">  GNU_EH_FRAME   0x00000000000006e8 0x00000000004006e8 0x00000000004006e8
+</span></span><span class="line"><span class="cl">                 0x0000000000000034 0x0000000000000034  R      0x4
+</span></span><span class="line"><span class="cl">  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000
+</span></span><span class="line"><span class="cl">                 0x0000000000000000 0x0000000000000000  RW     0x10
+</span></span><span class="line"><span class="cl">  GNU_RELRO      0x0000000000000e10 0x0000000000600e10 0x0000000000600e10
+</span></span><span class="line"><span class="cl">                 0x00000000000001f0 0x00000000000001f0  R      0x1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> Section to Segment mapping:
+</span></span><span class="line"><span class="cl">  段节...
+</span></span><span class="line"><span class="cl">   <span class="m">00</span>
+</span></span><span class="line"><span class="cl">   <span class="m">01</span>     .interp
+</span></span><span class="line"><span class="cl">   <span class="m">02</span>     .interp .note.ABI-tag .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt .init .plt .plt.got .text .fini .rodata .eh_frame_hdr .eh_frame
+</span></span><span class="line"><span class="cl">   <span class="m">03</span>     .init_array .fini_array .jcr .dynamic .got .got.plt .data .bss
+</span></span><span class="line"><span class="cl">   <span class="m">04</span>     .dynamic
+</span></span><span class="line"><span class="cl">   <span class="m">05</span>     .note.ABI-tag .note.gnu.build-id
+</span></span><span class="line"><span class="cl">   <span class="m">06</span>     .eh_frame_hdr
+</span></span><span class="line"><span class="cl">   <span class="m">07</span>
+</span></span><span class="line"><span class="cl">   <span class="m">08</span>     .init_array .fini_array .jcr .dynamic .got
+</span></span></code></pre></div><p>ELF程序头有一些常见的类型，下面我们来介绍一下它们</p>
+<h3 id="pt_load">PT_LOAD</h3>
+<p>这类程序头描述的是可以被装载的段，根据这个头，我们将需要的段装载/映射到内存中</p>
+<p>一个动态链接的ELF可执行文件通常包括：</p>
+<ul>
+<li>text段：存放程序代码（通常可读可执行PF_R|PF_X）</li>
+<li>data段：全局变量和动态链接信息（通常可读可写PF_R|PF_W）</li>
+</ul>
+<blockquote>
+<p>我们可以更改程序头中p_flags处增加PF_W标记来修改text段权限，从而扭曲原本的代码</p>
+</blockquote>
+<h3 id="pt_dynamic动态链接可执行文件特有">PT_DYNAMIC（动态链接可执行文件特有）</h3>
+<p>它包括了：</p>
+<ul>
+<li>动态链接的库列表
+<ul>
+<li>DT_NEEDED：共享库名的字符串表的偏移量</li>
+</ul>
+</li>
+<li>GOT表的地址
+<ul>
+<li>DT_PLTGOT：全局偏移表（GOT）的地址</li>
+</ul>
+</li>
+<li>重定位条目的相关信息
+<ul>
+<li>DT_SYMTAB：动态符号表的地址，对应.dynsym节</li>
+<li>DT_HASH：符号散列表的地址，对应.hash节</li>
+<li>DT_STRTAB：符号字符串表的地址，对应.dynstr节</li>
+</ul>
+</li>
+<li>&hellip;</li>
+</ul>
+<h3 id="pt_note">PT_NOTE</h3>
+<p>特定供应商/系统相关的附加信息</p>
+<p>实际上这一段只保存了操作系统的规范信息，在运行的时候是不需要它的</p>
+<p>还有一种note段的攻击，但作者实在是没找到相关资料，如果各位读者有相关资料可以参考，烦请在评论区给出链接，感谢您的付出！</p>
+<h3 id="pt_interp">PT_INTERP</h3>
+<p>对程序解释器位置的描述，如，<code>/lib/linux-ld.so.2</code>一般指动态连接器的位置，也即程序解释器的位置（.so.2文件不是.so文件）</p>
+<h3 id="pt_phdr">PT_PHDR</h3>
+<p>保存了程序头表本身的位置和大小，phdr为program header的缩写</p>
+<h2 id="elf节头section-header">ELF节头（section header）</h2>
+<p>我们可以使用<code>readelf -S</code>命令查看节头表：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ readelf -S babyrop
+</span></span><span class="line"><span class="cl">There are <span class="m">31</span> section headers, starting at offset 0x1a70:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">节头：
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>号<span class="o">]</span> 名称              类型             地址              偏移量
+</span></span><span class="line"><span class="cl">       大小              全体大小          旗标   链接   信息   对齐
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> 0<span class="o">]</span>                   NULL             <span class="m">0000000000000000</span>  <span class="m">00000000</span>
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000000</span>  <span class="m">0000000000000000</span>           <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> 1<span class="o">]</span> .interp           PROGBITS         <span class="m">0000000000400238</span>  <span class="m">00000238</span>
+</span></span><span class="line"><span class="cl">       000000000000001c  <span class="m">0000000000000000</span>   A       <span class="m">0</span>     <span class="m">0</span>     <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> 2<span class="o">]</span> .note.ABI-tag     NOTE             <span class="m">0000000000400254</span>  <span class="m">00000254</span>
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000020</span>  <span class="m">0000000000000000</span>   A       <span class="m">0</span>     <span class="m">0</span>     <span class="m">4</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> 3<span class="o">]</span> .note.gnu.bu<span class="o">[</span>...<span class="o">]</span> NOTE             <span class="m">0000000000400274</span>  <span class="m">00000274</span>
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000024</span>  <span class="m">0000000000000000</span>   A       <span class="m">0</span>     <span class="m">0</span>     <span class="m">4</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> 4<span class="o">]</span> .gnu.hash         GNU_HASH         <span class="m">0000000000400298</span>  <span class="m">00000298</span>
+</span></span><span class="line"><span class="cl">       000000000000001c  <span class="m">0000000000000000</span>   A       <span class="m">5</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> 5<span class="o">]</span> .dynsym           DYNSYM           00000000004002b8  000002b8
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000090</span>  <span class="m">0000000000000018</span>   A       <span class="m">6</span>     <span class="m">1</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> 6<span class="o">]</span> .dynstr           STRTAB           <span class="m">0000000000400348</span>  <span class="m">00000348</span>
+</span></span><span class="line"><span class="cl">       000000000000005f  <span class="m">0000000000000000</span>   A       <span class="m">0</span>     <span class="m">0</span>     <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> 7<span class="o">]</span> .gnu.version      VERSYM           00000000004003a8  000003a8
+</span></span><span class="line"><span class="cl">       000000000000000c  <span class="m">0000000000000002</span>   A       <span class="m">5</span>     <span class="m">0</span>     <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> 8<span class="o">]</span> .gnu.version_r    VERNEED          00000000004003b8  000003b8
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000030</span>  <span class="m">0000000000000000</span>   A       <span class="m">6</span>     <span class="m">1</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> 9<span class="o">]</span> .rela.dyn         RELA             00000000004003e8  000003e8
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000018</span>  <span class="m">0000000000000018</span>   A       <span class="m">5</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>10<span class="o">]</span> .rela.plt         RELA             <span class="m">0000000000400400</span>  <span class="m">00000400</span>
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000060</span>  <span class="m">0000000000000018</span>  AI       <span class="m">5</span>    <span class="m">24</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>11<span class="o">]</span> .init             PROGBITS         <span class="m">0000000000400460</span>  <span class="m">00000460</span>
+</span></span><span class="line"><span class="cl">       000000000000001a  <span class="m">0000000000000000</span>  AX       <span class="m">0</span>     <span class="m">0</span>     <span class="m">4</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>12<span class="o">]</span> .plt              PROGBITS         <span class="m">0000000000400480</span>  <span class="m">00000480</span>
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000050</span>  <span class="m">0000000000000010</span>  AX       <span class="m">0</span>     <span class="m">0</span>     <span class="m">16</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>13<span class="o">]</span> .plt.got          PROGBITS         00000000004004d0  000004d0
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000008</span>  <span class="m">0000000000000000</span>  AX       <span class="m">0</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>14<span class="o">]</span> .text             PROGBITS         00000000004004e0  000004e0
+</span></span><span class="line"><span class="cl">       00000000000001b2  <span class="m">0000000000000000</span>  AX       <span class="m">0</span>     <span class="m">0</span>     <span class="m">16</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>15<span class="o">]</span> .fini             PROGBITS         <span class="m">0000000000400694</span>  <span class="m">00000694</span>
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000009</span>  <span class="m">0000000000000000</span>  AX       <span class="m">0</span>     <span class="m">0</span>     <span class="m">4</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>16<span class="o">]</span> .rodata           PROGBITS         00000000004006a0  000006a0
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000047</span>  <span class="m">0000000000000000</span>   A       <span class="m">0</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>17<span class="o">]</span> .eh_frame_hdr     PROGBITS         00000000004006e8  000006e8
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000034</span>  <span class="m">0000000000000000</span>   A       <span class="m">0</span>     <span class="m">0</span>     <span class="m">4</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>18<span class="o">]</span> .eh_frame         PROGBITS         <span class="m">0000000000400720</span>  <span class="m">00000720</span>
+</span></span><span class="line"><span class="cl">       00000000000000f4  <span class="m">0000000000000000</span>   A       <span class="m">0</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>19<span class="o">]</span> .init_array       INIT_ARRAY       0000000000600e10  00000e10
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000008</span>  <span class="m">0000000000000000</span>  WA       <span class="m">0</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>20<span class="o">]</span> .fini_array       FINI_ARRAY       0000000000600e18  00000e18
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000008</span>  <span class="m">0000000000000000</span>  WA       <span class="m">0</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>21<span class="o">]</span> .jcr              PROGBITS         0000000000600e20  00000e20
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000008</span>  <span class="m">0000000000000000</span>  WA       <span class="m">0</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>22<span class="o">]</span> .dynamic          DYNAMIC          0000000000600e28  00000e28
+</span></span><span class="line"><span class="cl">       00000000000001d0  <span class="m">0000000000000010</span>  WA       <span class="m">6</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>23<span class="o">]</span> .got              PROGBITS         0000000000600ff8  00000ff8
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000008</span>  <span class="m">0000000000000008</span>  WA       <span class="m">0</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>24<span class="o">]</span> .got.plt          PROGBITS         <span class="m">0000000000601000</span>  <span class="m">00001000</span>
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000038</span>  <span class="m">0000000000000008</span>  WA       <span class="m">0</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>25<span class="o">]</span> .data             PROGBITS         <span class="m">0000000000601038</span>  <span class="m">00001038</span>
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000018</span>  <span class="m">0000000000000000</span>  WA       <span class="m">0</span>     <span class="m">0</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>26<span class="o">]</span> .bss              NOBITS           <span class="m">0000000000601050</span>  <span class="m">00001050</span>
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000008</span>  <span class="m">0000000000000000</span>  WA       <span class="m">0</span>     <span class="m">0</span>     <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>27<span class="o">]</span> .comment          PROGBITS         <span class="m">0000000000000000</span>  <span class="m">00001050</span>
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000035</span>  <span class="m">0000000000000001</span>  MS       <span class="m">0</span>     <span class="m">0</span>     <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>28<span class="o">]</span> .shstrtab         STRTAB           <span class="m">0000000000000000</span>  <span class="m">00001964</span>
+</span></span><span class="line"><span class="cl">       000000000000010c  <span class="m">0000000000000000</span>           <span class="m">0</span>     <span class="m">0</span>     <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>29<span class="o">]</span> .symtab           SYMTAB           <span class="m">0000000000000000</span>  <span class="m">00001088</span>
+</span></span><span class="line"><span class="cl">       <span class="m">0000000000000690</span>  <span class="m">0000000000000018</span>          <span class="m">30</span>    <span class="m">47</span>     <span class="m">8</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>30<span class="o">]</span> .strtab           STRTAB           <span class="m">0000000000000000</span>  <span class="m">00001718</span>
+</span></span><span class="line"><span class="cl">       000000000000024c  <span class="m">0000000000000000</span>           <span class="m">0</span>     <span class="m">0</span>     <span class="m">1</span>
+</span></span><span class="line"><span class="cl">Key to Flags:
+</span></span><span class="line"><span class="cl">  W <span class="o">(</span>write<span class="o">)</span>, A <span class="o">(</span>alloc<span class="o">)</span>, X <span class="o">(</span>execute<span class="o">)</span>, M <span class="o">(</span>merge<span class="o">)</span>, S <span class="o">(</span>strings<span class="o">)</span>, I <span class="o">(</span>info<span class="o">)</span>,
+</span></span><span class="line"><span class="cl">  L <span class="o">(</span>link order<span class="o">)</span>, O <span class="o">(</span>extra OS processing required<span class="o">)</span>, G <span class="o">(</span>group<span class="o">)</span>, T <span class="o">(</span>TLS<span class="o">)</span>,
+</span></span><span class="line"><span class="cl">  C <span class="o">(</span>compressed<span class="o">)</span>, x <span class="o">(</span>unknown<span class="o">)</span>, o <span class="o">(</span>OS specific<span class="o">)</span>, E <span class="o">(</span>exclude<span class="o">)</span>,
+</span></span><span class="line"><span class="cl">  D <span class="o">(</span>mbind<span class="o">)</span>, l <span class="o">(</span>large<span class="o">)</span>, p <span class="o">(</span>processor specific<span class="o">)</span>
+</span></span></code></pre></div><p>这里面我们可以注意一下每个节的旗标（flag），如果<strong>被标记为A，那么说明该节会在程序运行时分配并装载进内存</strong>。有一些节在运行时不是必需的，就不会被装载。比如.symtab节，有时候为了节省空间会把它删掉</p>
+<h3 id="段和节的区别">段和节的区别</h3>
+<ul>
+<li>段是程序执行的必要组成部分</li>
+<li>节是段中代码或数据的划分</li>
+</ul>
+<p>段是房子的房间，节是房间中的屏风隔断</p>
+<p>而所谓节头表就是对这些节的位置和大小的描述（主要用于链接和调试，没有它程序可以正常运行）</p>
+<h3 id="节头">节头</h3>
+<blockquote>
+<p>如果程序中<strong>缺少了节头，并不意味着节消失了</strong>；就好像电话簿上某人的号码消失了，并不代表某人的号码不存在了。我们只是<strong>不能再通过节头引用节了而已</strong>
+因此，我们<strong>可以人为地删除节头</strong>，程序仍然可以正常运行
+但是如果没有节头，<strong>gdb和objdump这种工具就没用了</strong></p>
+</blockquote>
+<h4 id="text节">.text节</h4>
+<p>保存了程序代码指令，一般存在text段中</p>
+<h4 id="rodata节">.rodata节</h4>
+<p>rodata为read-only data的缩写，意为只读数据，这个节因为数据只读，因此不存在data段中，而是在text段中</p>
+<h4 id="data节">.data节</h4>
+<p>.data节保存了<strong>初始化的</strong>全局变量等数据，存在data段中</p>
+<h4 id="bss节">.bss节</h4>
+<p><img src="202209161425002022-09-16-14-25-01.png" alt="202209161425002022-09-16-14-25-01"></p>
+<p><img src="202209161433152022-09-16-14-33-15.png" alt="202209161433152022-09-16-14-33-15"></p>
+<p>.bss节中保存了</p>
+<ul>
+<li>未初始化的全局变量和静态变量</li>
+<li>在代码中没有明确初始化的全局变量和静态变量</li>
+</ul>
+<p>它存在data段中，一般来说它会被初始化为0，但是在运行期间它的值是可能改变的</p>
+<p>它为什么被称为<code>bss</code>呢？请看下图：</p>
+<p><img src="202209161427262022-09-16-14-27-27.png" alt="202209161427262022-09-16-14-27-27"></p>
+<p>bss原本是指 block storage start 块状存储起点（渣翻请勿在意），但是为了和.data节区分，可以记作 better save space 更优保存空间</p>
+<p>可以参考<a href="https://www.cnblogs.com/idorax/p/6400210.html">这篇博文</a></p>
+<h4 id="plt节">.plt节</h4>
+<p>plt表，意为procedure linkage table 过程链接表，包含了动态链接器调用从共享库导入的函数所必需的相关代码，保存在text段中</p>
+<h4 id="got与gotplt节">.got与.got.plt节</h4>
+<p>got意为Global Offsets Table，保存了全局偏移表，保存在text段中，和.plt节一起提供了对导入的共享库函数的访问入口，由动态链接器在运行时进行修改。</p>
+<p>.got和.plt的关系类似于：</p>
+<p><img src="GOT&amp;PLT.drawio2022-09-16-14-57-36.png" alt="GOT&amp;PLT.drawio2022-09-16-14-57-36"></p>
+<p>.got中<strong>存储的是一块空间的地址</strong>，这块空间中一开始保存了一个offset用于与.plt中的地址进行计算得到真实地址，然后就会把这个真实地址存入.got指向的那块空间之中</p>
+<blockquote>
+<p>Got.plt is actually <strong>smaller subset</strong> of the .got section. Think of pointing to the tail end of an array of slots. Conceptually it sort of looks like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="n">got</span><span class="p">;</span> <span class="kt">int</span><span class="o">*</span> <span class="n">gotplt</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">got</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+</span></span></code></pre></div></blockquote>
+<p>而.got.plt节是.got的一个子集，</p>
+<blockquote>
+<p>Got section <strong>basically can contain addresses of Global variables and functions</strong>. All the global variables are in the first couple of slots and suffix is all pointers to functions. gotplt is the first slot .got that <strong>contains only the addresses of function</strong>.</p>
+</blockquote>
+<p>.got表中包含了全局变量和函数的地址，但.got.plt中只有函数</p>
+<blockquote>
+<p>Eventually after <strong>function addresses are resolved via means of plt</strong>. The resolved address goes into .gotplt which btw is <strong>inside .got</strong> as I mentioned earlier.</p>
+</blockquote>
+<p>最终由于.plt表的存在，运行的时候.got.plt中的地址会被转化，而这个.got.plt仍然在.got中</p>
+<p>更多请查看<a href="https://stackoverflow.com/questions/52061782/what-is-got-section-in-elf">此问题</a></p>
+<h5 id="为什么有了plt还要有got呢">为什么有了.plt还要有.got呢？</h5>
+<p>因为单纯由plt表没法找到函数的真实地址，我们需要通过got表才能真正地调用函数。</p>
+<p>既然如此，为什么不一开始就保存函数的真实地址呢？</p>
+<p>因为动态链接器采用默认的延迟链接方式时，不会在第一次调用时就对地址进行解析，这样可以提高装载时的性能</p>
+<h5 id="got表的结构">got表的结构</h5>
+<p><img src="got.drawio2022-09-16-17-46-18.png" alt="got.drawio2022-09-16-17-46-18"></p>
+<h4 id="ctors和dtors节">.ctors和.dtors节</h4>
+<ul>
+<li>ctors -&gt; Constructor 构造器，是在main函数之前需要执行的函数</li>
+<li>dtors -&gt; Destructor 析构器，是在main函数之后需要执行的函数</li>
+</ul>
+<p>它们保存了构造函数和析构函数的指针</p>
+<h4 id="elf符号">ELF符号</h4>
+<p>符号是对某些类型的数据或者代码的符号引用，实际上就是一个结构体，可以用于链接、重定位、反汇编和调试</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="k">struct</span> <span class="n">elf64_sym</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">Elf64_Word</span> <span class="n">st_name</span><span class="p">;</span>          
+</span></span><span class="line"><span class="cl">  <span class="cm">/* 
+</span></span></span><span class="line"><span class="cl"><span class="cm">  符号名称，字符串表中的索引
+</span></span></span><span class="line"><span class="cl"><span class="cm">  STT_OBJECT  表示符号关联到一个数据对象，如变量、数组或指针；
+</span></span></span><span class="line"><span class="cl"><span class="cm">  STT_FUNC    表示符号关联到一个函数；
+</span></span></span><span class="line"><span class="cl"><span class="cm">  STT_SECTION 表示符号关联到节
+</span></span></span><span class="line"><span class="cl"><span class="cm">  STT_NOTYPE  表示符号类型未指定，用于未定义引用
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">st_info</span><span class="p">;</span>         
+</span></span><span class="line"><span class="cl">  <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">  类型和绑定属性：
+</span></span></span><span class="line"><span class="cl"><span class="cm">  STB_LOCAL   本地符号在目标文件之外时不可见的
+</span></span></span><span class="line"><span class="cl"><span class="cm">  STB_GLOBAL  对于所有要合并的目标文件都可见
+</span></span></span><span class="line"><span class="cl"><span class="cm">  STB_WEAK    类似于STB_GLOBAL，不过优先级较弱，可能会被为标记为STB_WEAK的同名符号覆盖
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">st_other</span><span class="p">;</span>      <span class="c1">// 语义未定义，0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">Elf64_Half</span> <span class="n">st_shndx</span><span class="p">;</span>           <span class="c1">// 相关节的索引，符号将绑定到该节，此外SHN_ABS指定符号是绝对值，不因重定位而改变，SHN_UNDEF标识未定义符号。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">Elf64_Addr</span> <span class="n">st_value</span><span class="p">;</span>           <span class="c1">// 符号的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">Elf64_Xword</span> <span class="n">st_size</span><span class="p">;</span>          <span class="c1">// 符号的长度，如一个指针的长度或struct对象中包含的字节数。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="n">Elf64_Sym</span><span class="p">;</span>
+</span></span></code></pre></div><p>我们可以使用<code>readelf -s</code>命令查看程序符号表：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ readelf -s babyrop
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Symbol table <span class="s1">&#39;.dynsym&#39;</span> contains <span class="m">6</span> entries:
+</span></span><span class="line"><span class="cl">   Num:    Value          Size Type    Bind   Vis      Ndx Name
+</span></span><span class="line"><span class="cl">     0: <span class="m">0000000000000000</span>     <span class="m">0</span> NOTYPE  LOCAL  DEFAULT  UND
+</span></span><span class="line"><span class="cl">     1: <span class="m">0000000000000000</span>     <span class="m">0</span> FUNC    GLOBAL DEFAULT  UND <span class="o">[</span>...<span class="o">]</span>@GLIBC_2.2.5 <span class="o">(</span>2<span class="o">)</span>
+</span></span><span class="line"><span class="cl">     2: <span class="m">0000000000000000</span>     <span class="m">0</span> FUNC    GLOBAL DEFAULT  UND <span class="o">[</span>...<span class="o">]</span>@GLIBC_2.2.5 <span class="o">(</span>2<span class="o">)</span>
+</span></span><span class="line"><span class="cl">     3: <span class="m">0000000000000000</span>     <span class="m">0</span> FUNC    GLOBAL DEFAULT  UND <span class="o">[</span>...<span class="o">]</span>@GLIBC_2.2.5 <span class="o">(</span>2<span class="o">)</span>
+</span></span><span class="line"><span class="cl">     4: <span class="m">0000000000000000</span>     <span class="m">0</span> NOTYPE  WEAK   DEFAULT  UND __gmon_start__
+</span></span><span class="line"><span class="cl">     5: <span class="m">0000000000000000</span>     <span class="m">0</span> FUNC    GLOBAL DEFAULT  UND __<span class="o">[</span>...<span class="o">]</span>@GLIBC_2.7 <span class="o">(</span>3<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Symbol table <span class="s1">&#39;.symtab&#39;</span> contains <span class="m">70</span> entries:
+</span></span><span class="line"><span class="cl">   Num:    Value          Size Type    Bind   Vis      Ndx Name
+</span></span><span class="line"><span class="cl">     0: <span class="m">0000000000000000</span>     <span class="m">0</span> NOTYPE  LOCAL  DEFAULT  UND
+</span></span><span class="line"><span class="cl">     1: <span class="m">0000000000400238</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT    <span class="m">1</span> .interp
+</span></span><span class="line"><span class="cl">     2: <span class="m">0000000000400254</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT    <span class="m">2</span> .note.ABI-tag
+</span></span><span class="line"><span class="cl">     3: <span class="m">0000000000400274</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT    <span class="m">3</span> .note.gnu.build-id
+</span></span><span class="line"><span class="cl">     4: <span class="m">0000000000400298</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT    <span class="m">4</span> .gnu.hash
+</span></span><span class="line"><span class="cl">     5: 00000000004002b8     <span class="m">0</span> SECTION LOCAL  DEFAULT    <span class="m">5</span> .dynsym
+</span></span><span class="line"><span class="cl">     6: <span class="m">0000000000400348</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT    <span class="m">6</span> .dynstr
+</span></span><span class="line"><span class="cl">     7: 00000000004003a8     <span class="m">0</span> SECTION LOCAL  DEFAULT    <span class="m">7</span> .gnu.version
+</span></span><span class="line"><span class="cl">     8: 00000000004003b8     <span class="m">0</span> SECTION LOCAL  DEFAULT    <span class="m">8</span> .gnu.version_r
+</span></span><span class="line"><span class="cl">     9: 00000000004003e8     <span class="m">0</span> SECTION LOCAL  DEFAULT    <span class="m">9</span> .rela.dyn
+</span></span><span class="line"><span class="cl">    10: <span class="m">0000000000400400</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">10</span> .rela.plt
+</span></span><span class="line"><span class="cl">    11: <span class="m">0000000000400460</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">11</span> .init
+</span></span><span class="line"><span class="cl">    12: <span class="m">0000000000400480</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">12</span> .plt
+</span></span><span class="line"><span class="cl">    13: 00000000004004d0     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">13</span> .plt.got
+</span></span><span class="line"><span class="cl">    14: 00000000004004e0     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">14</span> .text
+</span></span><span class="line"><span class="cl">    15: <span class="m">0000000000400694</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">15</span> .fini
+</span></span><span class="line"><span class="cl">    16: 00000000004006a0     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">16</span> .rodata
+</span></span><span class="line"><span class="cl">    17: 00000000004006e8     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">17</span> .eh_frame_hdr
+</span></span><span class="line"><span class="cl">    18: <span class="m">0000000000400720</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">18</span> .eh_frame
+</span></span><span class="line"><span class="cl">    19: 0000000000600e10     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">19</span> .init_array
+</span></span><span class="line"><span class="cl">    20: 0000000000600e18     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">20</span> .fini_array
+</span></span><span class="line"><span class="cl">    21: 0000000000600e20     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">21</span> .jcr
+</span></span><span class="line"><span class="cl">    22: 0000000000600e28     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">22</span> .dynamic
+</span></span><span class="line"><span class="cl">    23: 0000000000600ff8     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">23</span> .got
+</span></span><span class="line"><span class="cl">    24: <span class="m">0000000000601000</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">24</span> .got.plt
+</span></span><span class="line"><span class="cl">    25: <span class="m">0000000000601038</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">25</span> .data
+</span></span><span class="line"><span class="cl">    26: <span class="m">0000000000601050</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">26</span> .bss
+</span></span><span class="line"><span class="cl">    27: <span class="m">0000000000000000</span>     <span class="m">0</span> SECTION LOCAL  DEFAULT   <span class="m">27</span> .comment
+</span></span><span class="line"><span class="cl">    28: <span class="m">0000000000000000</span>     <span class="m">0</span> FILE    LOCAL  DEFAULT  ABS crtstuff.c
+</span></span><span class="line"><span class="cl">    29: 0000000000600e20     <span class="m">0</span> OBJECT  LOCAL  DEFAULT   <span class="m">21</span> __JCR_LIST__
+</span></span><span class="line"><span class="cl">    30: <span class="m">0000000000400510</span>     <span class="m">0</span> FUNC    LOCAL  DEFAULT   <span class="m">14</span> deregister_tm_clones
+</span></span><span class="line"><span class="cl">    31: <span class="m">0000000000400550</span>     <span class="m">0</span> FUNC    LOCAL  DEFAULT   <span class="m">14</span> register_tm_clones
+</span></span><span class="line"><span class="cl">    32: <span class="m">0000000000400590</span>     <span class="m">0</span> FUNC    LOCAL  DEFAULT   <span class="m">14</span> __do_global_dtors_aux
+</span></span><span class="line"><span class="cl">    33: <span class="m">0000000000601050</span>     <span class="m">1</span> OBJECT  LOCAL  DEFAULT   <span class="m">26</span> completed.7594
+</span></span><span class="line"><span class="cl">    34: 0000000000600e18     <span class="m">0</span> OBJECT  LOCAL  DEFAULT   <span class="m">20</span> __do_global_dtor<span class="o">[</span>...<span class="o">]</span>
+</span></span><span class="line"><span class="cl">    35: 00000000004005b0     <span class="m">0</span> FUNC    LOCAL  DEFAULT   <span class="m">14</span> frame_dummy
+</span></span><span class="line"><span class="cl">    36: 0000000000600e10     <span class="m">0</span> OBJECT  LOCAL  DEFAULT   <span class="m">19</span> __frame_dummy_in<span class="o">[</span>...<span class="o">]</span>
+</span></span><span class="line"><span class="cl">    37: <span class="m">0000000000000000</span>     <span class="m">0</span> FILE    LOCAL  DEFAULT  ABS babyrop.c
+</span></span><span class="line"><span class="cl">    38: <span class="m">0000000000000000</span>     <span class="m">0</span> FILE    LOCAL  DEFAULT  ABS crtstuff.c
+</span></span><span class="line"><span class="cl">    39: <span class="m">0000000000400810</span>     <span class="m">0</span> OBJECT  LOCAL  DEFAULT   <span class="m">18</span> __FRAME_END__
+</span></span><span class="line"><span class="cl">    40: 0000000000600e20     <span class="m">0</span> OBJECT  LOCAL  DEFAULT   <span class="m">21</span> __JCR_END__
+</span></span><span class="line"><span class="cl">    41: <span class="m">0000000000000000</span>     <span class="m">0</span> FILE    LOCAL  DEFAULT  ABS
+</span></span><span class="line"><span class="cl">    42: 0000000000600e18     <span class="m">0</span> NOTYPE  LOCAL  DEFAULT   <span class="m">19</span> __init_array_end
+</span></span><span class="line"><span class="cl">    43: 0000000000600e28     <span class="m">0</span> OBJECT  LOCAL  DEFAULT   <span class="m">22</span> _DYNAMIC
+</span></span><span class="line"><span class="cl">    44: 0000000000600e10     <span class="m">0</span> NOTYPE  LOCAL  DEFAULT   <span class="m">19</span> __init_array_start
+</span></span><span class="line"><span class="cl">    45: 00000000004006e8     <span class="m">0</span> NOTYPE  LOCAL  DEFAULT   <span class="m">17</span> __GNU_EH_FRAME_HDR
+</span></span><span class="line"><span class="cl">    46: <span class="m">0000000000601000</span>     <span class="m">0</span> OBJECT  LOCAL  DEFAULT   <span class="m">24</span> _GLOBAL_OFFSET_TABLE_
+</span></span><span class="line"><span class="cl">    47: <span class="m">0000000000400690</span>     <span class="m">2</span> FUNC    GLOBAL DEFAULT   <span class="m">14</span> __libc_csu_fini
+</span></span><span class="line"><span class="cl">    48: <span class="m">0000000000000000</span>     <span class="m">0</span> NOTYPE  WEAK   DEFAULT  UND _ITM_deregisterT<span class="o">[</span>...<span class="o">]</span>
+</span></span><span class="line"><span class="cl">    49: <span class="m">0000000000601038</span>     <span class="m">0</span> NOTYPE  WEAK   DEFAULT   <span class="m">25</span> data_start
+</span></span><span class="line"><span class="cl">    50: <span class="m">0000000000601050</span>     <span class="m">0</span> NOTYPE  GLOBAL DEFAULT   <span class="m">25</span> _edata
+</span></span><span class="line"><span class="cl">    51: <span class="m">0000000000400694</span>     <span class="m">0</span> FUNC    GLOBAL DEFAULT   <span class="m">15</span> _fini
+</span></span><span class="line"><span class="cl">    52: <span class="m">0000000000000000</span>     <span class="m">0</span> FUNC    GLOBAL DEFAULT  UND system@@GLIBC_2.2.5
+</span></span><span class="line"><span class="cl">    53: <span class="m">0000000000000000</span>     <span class="m">0</span> FUNC    GLOBAL DEFAULT  UND printf@@GLIBC_2.2.5
+</span></span><span class="line"><span class="cl">    54: <span class="m">0000000000601048</span>     <span class="m">8</span> OBJECT  GLOBAL DEFAULT   <span class="m">25</span> binsh
+</span></span><span class="line"><span class="cl">    55: <span class="m">0000000000000000</span>     <span class="m">0</span> FUNC    GLOBAL DEFAULT  UND __libc_start_mai<span class="o">[</span>...<span class="o">]</span>
+</span></span><span class="line"><span class="cl">    56: <span class="m">0000000000601038</span>     <span class="m">0</span> NOTYPE  GLOBAL DEFAULT   <span class="m">25</span> __data_start
+</span></span><span class="line"><span class="cl">    57: <span class="m">0000000000000000</span>     <span class="m">0</span> NOTYPE  WEAK   DEFAULT  UND __gmon_start__
+</span></span><span class="line"><span class="cl">    58: <span class="m">0000000000601040</span>     <span class="m">0</span> OBJECT  GLOBAL HIDDEN    <span class="m">25</span> __dso_handle
+</span></span><span class="line"><span class="cl">    59: 00000000004006a0     <span class="m">4</span> OBJECT  GLOBAL DEFAULT   <span class="m">16</span> _IO_stdin_used
+</span></span><span class="line"><span class="cl">    60: <span class="m">0000000000400620</span>   <span class="m">101</span> FUNC    GLOBAL DEFAULT   <span class="m">14</span> __libc_csu_init
+</span></span><span class="line"><span class="cl">    61: <span class="m">0000000000601058</span>     <span class="m">0</span> NOTYPE  GLOBAL DEFAULT   <span class="m">26</span> _end
+</span></span><span class="line"><span class="cl">    62: 00000000004004e0    <span class="m">42</span> FUNC    GLOBAL DEFAULT   <span class="m">14</span> _start
+</span></span><span class="line"><span class="cl">    63: <span class="m">0000000000601050</span>     <span class="m">0</span> NOTYPE  GLOBAL DEFAULT   <span class="m">26</span> __bss_start
+</span></span><span class="line"><span class="cl">    64: 00000000004005d6    <span class="m">69</span> FUNC    GLOBAL DEFAULT   <span class="m">14</span> main
+</span></span><span class="line"><span class="cl">    65: <span class="m">0000000000000000</span>     <span class="m">0</span> NOTYPE  WEAK   DEFAULT  UND _Jv_RegisterClasses
+</span></span><span class="line"><span class="cl">    66: <span class="m">0000000000000000</span>     <span class="m">0</span> FUNC    GLOBAL DEFAULT  UND __isoc99_scanf@@<span class="o">[</span>...<span class="o">]</span>
+</span></span><span class="line"><span class="cl">    67: <span class="m">0000000000601050</span>     <span class="m">0</span> OBJECT  GLOBAL HIDDEN    <span class="m">25</span> __TMC_END__
+</span></span><span class="line"><span class="cl">    68: <span class="m">0000000000000000</span>     <span class="m">0</span> NOTYPE  WEAK   DEFAULT  UND _ITM_registerTMC<span class="o">[</span>...<span class="o">]</span>
+</span></span><span class="line"><span class="cl">    69: <span class="m">0000000000400460</span>     <span class="m">0</span> FUNC    GLOBAL DEFAULT   <span class="m">11</span> _init
+</span></span></code></pre></div><p>我们可以看到.symtab节中保存了节、数据对象、包括main在内的函数等，这些对我们的调试、反汇编都是非常重要的。</p>
+<p>当我们使用<code>objdump</code>时，每一段代码前面会有一个标注，如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ objdump -d babyrop
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">babyrop：     文件格式 elf64-x86-64
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Disassembly of section .init:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">0000000000400460</span> &lt;_init&gt;:
+</span></span><span class="line"><span class="cl">  400460:       <span class="m">48</span> <span class="m">83</span> ec <span class="m">08</span>             sub    <span class="nv">$0</span>x8,%rsp
+</span></span><span class="line"><span class="cl">  400464:       <span class="m">48</span> 8b <span class="m">05</span> 8d 0b <span class="m">20</span> <span class="m">00</span>    mov    0x200b8d<span class="o">(</span>%rip<span class="o">)</span>,%rax        <span class="c1"># 600ff8 &lt;__gmon_start__&gt;</span>
+</span></span><span class="line"><span class="cl">  40046b:       <span class="m">48</span> <span class="m">85</span> c0                <span class="nb">test</span>   %rax,%rax
+</span></span><span class="line"><span class="cl">  40046e:       <span class="m">74</span> <span class="m">05</span>                   je     <span class="m">400475</span> &lt;_init+0x15&gt;
+</span></span><span class="line"><span class="cl">  400470:       e8 5b <span class="m">00</span> <span class="m">00</span> <span class="m">00</span>          call   4004d0 &lt;__gmon_start__@plt&gt;
+</span></span><span class="line"><span class="cl">  400475:       <span class="m">48</span> <span class="m">83</span> c4 <span class="m">08</span>             add    <span class="nv">$0</span>x8,%rsp
+</span></span><span class="line"><span class="cl">  400479:       c3                      ret
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></div><p>过程入口是每个函数的起点，因此通过检测过程序言（procedure prologue）可以帮助我们找到一个新韩淑的起始位置</p>
+<p>如果段是公司中不同的部门，节就是部门中的各小组，而符号表就是一张登记表，把各小组及其成员都登记在表上，如果没有符号表，老板就不知道谁是谁了</p>
+<h5 id="symtab节">.symtab节</h5>
+<p>保存了符号信息，用于调试和链接，保存了可执行文件的本地符号（全局变量、本地函数等）</p>
+<p>.symtab中保存了所有的符号，有很多都是很重要的，如果把他们去掉，虽然严格意义上不会妨碍程序的运行，但是对人来说就难读了很多</p>
+<h5 id="strtab节">.strtab节</h5>
+<p>保存了符号字符串表，该内容会被.symtab结构引用</p>
+<h5 id="dynsym节">.dynsym节</h5>
+<p>dynsym，dynamic symbols，保存了<strong>从共享库导入的动态符号信息</strong>，保存在text段中</p>
+<p>它是 <strong>.symtab的子集</strong>，它只保存动态/全局符号</p>
+<p>与symtab不同的是，动态链接的二进制文件运行时不能缺少它；symtab可以删掉但它不能。但是如果是静态链接程序，用<code>strip</code>命令清理后就不会有符号表（dynsym也变成非必需的了）</p>
+<h5 id="dynstr节">.dynstr节</h5>
+<p>保存了动态符号字符串表，就是动态符号的名字</p>
+<h5 id="rel节">.rel.*节</h5>
+<p>rel-&gt;reacation，重定位节，保存了重定位相关的信息，这些信息描述了<strong>如何在链接或运行过程中对部分内容或进程镜像进行补充或修改</strong></p>
+<h5 id="hash节">.hash节</h5>
+<p>保存了一个用于查找符号的哈希表（散列表）</p>
+<h5 id="shstrtab节">.shstrtab节</h5>
+<p>保存了节头字符串表，也就是每个节头的名字</p>
+<h2 id="elf重定位-relocation">ELF重定位 Relocation</h2>
+<p>重定位就是将符号定义和符号引用进行连接的过程。</p>
+<p>在重定位文件中，重定位记录保存了如何对给定的符号对应代码进行补充的相关信息，实际上是一种给二进制文件打补丁的机制。</p>
+<p>例如，1.o的代码中引用了2.o中的代码，当链接的时候就会对1.o中的重定位记录进行分析，目标文件中的代码会被重定位到可执行文件的段中一个给定的地址，符号引用被解析成了符号定义。</p>
+<p>对于共享库的函数，由于延迟链接，只有当一个函数真正被调用时，才会进行GOT重定位</p>
+<h3 id="基于二进制修补的重定位代码注入">基于二进制修补的重定位代码注入</h3>
+<p>既然重定位是将符号引用实现的过程，那么我们可以更改可执行文件的符号表，让其指向我们给定的目标文件让其重定位，这样我们的代码就变成了可执行文件的一部分</p>
+<hr>
+<p>更多的资料敬请阅读<a href="https://man7.org/linux/man-pages/man5/elf.5.html">Linux ELF 手册</a></p>
+
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+    <a href="https://peterliuzhi.top/tags/elf/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#ELF</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/ELF%e8%af%a6%e8%a7%a3.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/" class="block">汇编与寄存器</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什么是elf">什么是ELF</a>
+          <ul>
+            <li><a href="#使用readelf命令读取elf文件">使用<code>readelf</code>命令读取elf文件</a></li>
+          </ul>
+        </li>
+        <li><a href="#elf文件类型">ELF文件类型</a></li>
+        <li><a href="#elf程序头描述段的头">ELF程序头（描述段的头）</a>
+          <ul>
+            <li><a href="#pt_load">PT_LOAD</a></li>
+            <li><a href="#pt_dynamic动态链接可执行文件特有">PT_DYNAMIC（动态链接可执行文件特有）</a></li>
+            <li><a href="#pt_note">PT_NOTE</a></li>
+            <li><a href="#pt_interp">PT_INTERP</a></li>
+            <li><a href="#pt_phdr">PT_PHDR</a></li>
+          </ul>
+        </li>
+        <li><a href="#elf节头section-header">ELF节头（section header）</a>
+          <ul>
+            <li><a href="#段和节的区别">段和节的区别</a></li>
+            <li><a href="#节头">节头</a>
+              <ul>
+                <li><a href="#text节">.text节</a></li>
+                <li><a href="#rodata节">.rodata节</a></li>
+                <li><a href="#data节">.data节</a></li>
+                <li><a href="#bss节">.bss节</a></li>
+                <li><a href="#plt节">.plt节</a></li>
+                <li><a href="#got与gotplt节">.got与.got.plt节</a>
+                  <ul>
+                    <li><a href="#为什么有了plt还要有got呢">为什么有了.plt还要有.got呢？</a></li>
+                    <li><a href="#got表的结构">got表的结构</a></li>
+                  </ul>
+                </li>
+                <li><a href="#ctors和dtors节">.ctors和.dtors节</a></li>
+                <li><a href="#elf符号">ELF符号</a>
+                  <ul>
+                    <li><a href="#symtab节">.symtab节</a></li>
+                    <li><a href="#strtab节">.strtab节</a></li>
+                    <li><a href="#dynsym节">.dynsym节</a></li>
+                    <li><a href="#dynstr节">.dynstr节</a></li>
+                    <li><a href="#rel节">.rel.*节</a></li>
+                    <li><a href="#hash节">.hash节</a></li>
+                    <li><a href="#shstrtab节">.shstrtab节</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#elf重定位-relocation">ELF重定位 Relocation</a>
+          <ul>
+            <li><a href="#基于二进制修补的重定位代码注入">基于二进制修补的重定位代码注入</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script src="https://peterliuzhi.top/js/copy-btn.js"></script></div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>概述 - P3troL1er的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/c.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cpp.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/armasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/mipsasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/vim.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/javascript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/typescript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/css.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://kit.fontawesome.com/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="计算机网络概述">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"概述",
+      "item":"https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/"
+    },
+    "headline": "概述 - P3troL1er的个人博客","datePublished": "2022-11-16T14:04:12+08:00",
+    "dateModified": "2022-11-16T14:04:12+08:00",
+    "wordCount":  5618 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/selficon.jpg"
+        }
+        },
+    "description": "计算机网络概述"
+}
+</script><meta property="og:title" content="概述 - P3troL1er的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/" />
+
+
+
+<meta property="og:description" content="计算机网络概述" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-11-16T14:04:12&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-11-16T14:04:12&#43;08:00" />
+
+
+
+<meta property="article:section" content="principle" />
+
+
+<meta property="article:tag" content="计算机网络" />
+
+<meta property="article:tag" content="概述" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/" />
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+        </div>
+
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">概述</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, November 16, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>12分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
+          >计算机网络</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E6%A6%82%E8%BF%B0/" class="hover:text-eureka"
+          >概述</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <blockquote>
+<p>Lord, make me an instrument of thy peace. Where there is hatred, let me sow love.
+— <cite>Francis of Assisi</cite></p>
+</blockquote>
+<ul>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%92%E8%81%94%E7%BD%91">什么是互联网</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%8F%E8%AE%AE">什么是协议</a></li>
+<li><a href="#%E8%BE%B9%E7%BC%98%E9%83%A8%E5%88%86%E5%92%8C%E6%A0%B8%E5%BF%83%E9%83%A8%E5%88%86">边缘部分和核心部分</a>
+<ul>
+<li><a href="#%E8%BE%B9%E7%BC%98%E9%83%A8%E5%88%86-%E4%B8%BB%E6%9C%BA">边缘部分-主机</a>
+<ul>
+<li><a href="#%E4%B8%BB%E6%9C%BA%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F-cs%E5%AE%A2%E6%88%B7-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%96%B9%E5%BC%8F">主机通信方式-C/S：客户-服务器方式</a></li>
+<li><a href="#%E4%B8%BB%E6%9C%BA%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F-p2p%E5%AF%B9%E7%AD%89%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F">主机通信方式-P2P：对等连接方式</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A0%B8%E5%BF%83%E9%83%A8%E5%88%86">核心部分</a>
+<ul>
+<li><a href="#%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2">电路交换</a></li>
+<li><a href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2-packet-switching">分组交换 Packet Switching</a></li>
+<li><a href="#%E4%B8%89%E7%A7%8D%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F%E6%AF%94%E8%BE%83">三种交换方式比较</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E7%BB%93%E6%9E%84">互联网的结构</a></li>
+<li><a href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E6%80%A7%E8%83%BD">互联网的性能</a>
+<ul>
+<li><a href="#%E9%80%9F%E7%8E%87-%E6%AF%94%E7%89%B9-bit">速率-比特 bit</a></li>
+<li><a href="#%E6%89%BF%E8%BD%BD%E8%83%BD%E5%8A%9B-%E5%B8%A6%E5%AE%BD">承载能力-带宽</a></li>
+<li><a href="#%E5%AE%9E%E9%99%85%E6%95%B0%E6%8D%AE%E9%87%8F-%E5%90%9E%E5%90%90%E9%87%8F">实际数据量-吞吐量</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F-%E6%97%B6%E5%BB%B6">网络延迟-时延</a></li>
+<li><a href="#%E6%97%B6%E5%BB%B6%E5%B8%A6%E5%AE%BD%E7%A7%AF">时延带宽积</a></li>
+<li><a href="#%E5%BE%80%E8%BF%94%E6%97%B6%E9%97%B4-rtt">往返时间 RTT</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8%E7%8E%87">利用率</a></li>
+<li><a href="#%E9%9D%9E%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87">非性能指标</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%86%E5%B1%82%E6%A8%A1%E5%9E%8B">分层模型</a>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%86%E5%B1%82">为什么要分层</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%88%86%E5%B1%82%E6%A8%A1%E5%9E%8B">计算机网络的分层模型</a>
+<ul>
+<li><a href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%92%8C%E5%A4%9A%E8%B7%AF%E5%88%86%E8%A7%A3">多路复用和多路分解</a></li>
+<li><a href="#osi-%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B">OSI 七层模型</a></li>
+<li><a href="#%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5">一些概念</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="什么是互联网">什么是互联网</h2>
+<p><strong>计算机网络（简称网络）</strong> 由若干结点和连接这些结点的链路组成</p>
+<p>互联网是</p>
+<ul>
+<li>数以亿计的计算设备连接在一起的网络</li>
+<li>将各种网络（无数的异构网络）连接在一起的网络</li>
+</ul>
+<p><img src="/image/42f22448e64b6137b3901daf1cdd236f06bb28523484ea9e77e352c1946a2f68.png" alt="图 1"></p>
+<p><strong>网络把许多计算机连接在一起，而互联网则把许多网络通过路由器连接在一起。与网络相连的计算机常称为主机（host）或者终端系统（end system）</strong></p>
+<blockquote>
+<p>该如何发送/接收信息，就要用到协议</p>
+</blockquote>
+<h2 id="什么是协议">什么是协议</h2>
+<p><strong>协议定义了消息格式、发送和接受消息的顺序、以及发出或收到指定消息之后所采取的行为。</strong></p>
+<p><img src="/image/4f96fcb1d3e04a528fc5ee6fc6d89fa283831ae30b796f569d06cdce4201d787.png" alt="图 2"></p>
+<h2 id="边缘部分和核心部分">边缘部分和核心部分</h2>
+<ul>
+<li>边缘部分 由<strong>所有连接在互联网上的主机组成</strong>。这部分是<strong>用户直接使用</strong>的，用来进行通信（传送数据、音频或视频）和资源共享。</li>
+<li>核心部分 由<strong>大量网络和连接这些网络的路由器组成</strong>。这部分是<strong>为边缘部分提供服务</strong>的（提供连通性和交换）</li>
+</ul>
+<p><img src="/image/35f5323ddb2e6e4273ea4cdc6668c2d066a3e0a0cea3c5c6adb58da44a3beff0.png" alt="图 3"></p>
+<h3 id="边缘部分-主机">边缘部分-主机</h3>
+<p>我们说：“主机 A 和主机 B 进行通信”，实际上是指：“<strong>运行在主机 A 上的某个程序和运行在主机 B 上的另一个程序进通信</strong>”。由于“进程”就是“运行着的程序”，因此这也就是指：“<strong>主机 A 的某个进程和主机 B 上的另一个进程进行通信</strong>”，简称为“<strong>计算机之间通信</strong>”。</p>
+<h4 id="主机通信方式-cs客户-服务器方式">主机通信方式-C/S：客户-服务器方式</h4>
+<ul>
+<li>客户 (client) 和服务器 (server) 都是指通信中所涉及的<strong>两个应用进程</strong>。</li>
+<li>客户 – 服务器方式所描述的是进程之间<strong>服务和被服务的关系</strong>。</li>
+<li>客户是服务的请求方，服务器是服务的提供方。</li>
+<li>客户和服务器间的通信，<strong>往往是需要经过互联网的核心部分的</strong></li>
+</ul>
+<p><img src="/image/c1ea207a14621c47144bb3e922f65d0f6e45d2b866cebbe7b56a912007031a55.png" alt="图 4"></p>
+<p><em>客户程序：</em></p>
+<ol>
+<li>被用户调用后运行，在通信时<strong>主动向远地服务器发起通信（请求服务）</strong>。因此，客户程序<strong>必须知道服务器程序的地址</strong>。</li>
+<li>不需要特殊的硬件和很复杂的操作系统。</li>
+</ol>
+<p><em>服务器程序：</em></p>
+<ol>
+<li>是一种专门用来提供某种服务的程序，可<strong>同时处理多个远地或本地客户的请求</strong>。</li>
+<li>系统启动后即自动调用并<strong>一直不断地运行着</strong>，被动地等待并接受来自各地的客户的通信请求。因此，服务器程序不需要知道客户程序的地址。</li>
+<li>一般需要有<strong>强大的硬件和高级的操作系统支持</strong>。</li>
+</ol>
+<blockquote>
+<p>客户与服务器的通信关系建立后，通信可以是双向的，<strong>客户和服务器都可发送和接收数据。</strong></p>
+</blockquote>
+<blockquote>
+<p>客户和服务器本来都指的是计算机进程（软件），但在许多国外文献中，经常也把运行客户程序的机器称为 client（在这种情况下也可把 client 译为“客户机”），把运行服务器程序的机器称为 server。</p>
+</blockquote>
+<h4 id="主机通信方式-p2p对等连接方式">主机通信方式-P2P：对等连接方式</h4>
+<ul>
+<li>对等连接 (peer-to-peer，简写为 P2P) 是指两个主机在通信时<strong>并不区分哪一个是服务请求方还是服务提供方</strong>。</li>
+<li>只要两个主机都运行了对等连接软件 (P2P 软件) ，它们就可以进行<strong>平等的、对等连接通信</strong>。</li>
+<li>可以<strong>减轻服务器压力</strong>，<strong>提高主机资源的利用率</strong>。</li>
+<li>可能经过核心部分，也<strong>可能仅在边缘部分完成</strong>。</li>
+</ul>
+<p><img src="/image/10bd27c843d141d699febe78554e64148c88bcd5aa84688727d90e418ee1212b.png" alt="图 5"></p>
+<h3 id="核心部分">核心部分</h3>
+<ul>
+<li>互联网的核心部分由互联的路由器/交换机组成（interconnected routers）</li>
+<li>网络中的核心部分要<strong>向网络边缘中的大量主机提供连通性</strong>，使边缘部分中的<strong>任何一个主机都能够向其他主机通信</strong>（即传送或接收各种形式的数据）。</li>
+<li>在网络核心部分起特殊作用的是路由器 (router)。路由器是实现分组交换 (packet switching) 的关键构件，其任务是<strong>转发收到的分组，这是网络核心部分最重要的功能</strong>。</li>
+</ul>
+<blockquote>
+<p>主要的通信方式：电路交换（circuit switching）和分组交换（packet switching，用于互联网中）</p>
+</blockquote>
+<h4 id="电路交换">电路交换</h4>
+<p>通过建立专用链路来实现通信。譬如打电话，将一个电话和其他所有电话都建立链路是不可能的。因此在打电话之前使
+用电话交换机将这些电话连接起来，为两者建立专用链路。</p>
+<p><img src="/image/d3f532001d18b716bb27e65650b880dcb0bdb6a93335bd2882735a78df084d68.png" alt="图 7"></p>
+<p><strong>这种必须经过“建立连接（占用通信资源）→ 通话（一直占用通信资源）→ 释放连接（归还通信资源）”三个步骤的交换方式称为电路交换。</strong></p>
+<p><img src="/image/8e1ba5332d40f3b8804754d988ec3adf1ec3fd8cfc293202880e89ffb0b327f2.png" alt="图 6"></p>
+<p><em>优点：</em></p>
+<ul>
+<li>资源专用，无共享，保证了性能和体验</li>
+<li>传统电话网络中采用。</li>
+</ul>
+<p><em>缺点：</em>
+<strong>电路交换是不适合互联网的，因为互联网具有突发性，通信量可能突然增大，导致我们很难去涉及电路的容量（若设计通信链路时按照峰值的数据量设计，则在平时通信链路的利用率很低）。</strong></p>
+<blockquote>
+<p>当使用电路交换来传送计算机数据时，其线路的传输效率往往很低。这是因为计算机数据是突发式地出现在传输线路上的，因此线路上真正用来传送数据的时间往往不到 10%甚至 1%。已被用户占用的通信线路资源在绝大部分时间里都是空闲的。</p>
+</blockquote>
+<h4 id="分组交换-packet-switching">分组交换 Packet Switching</h4>
+<blockquote>
+<p>分组交换则采用存储转发技术</p>
+</blockquote>
+<p>我们把要发送的整块数据称为一个<strong>报文(message)</strong>，把较长的报文划分成为一个个更小的<strong>等长数据段</strong>，每一个数据段前面，加上一些<strong>由必要的控制信息组成的首部(header)<strong>后，就</strong>构成了一个分组(packet)</strong>。分组又称为“包”，而分组的首部也可称为“包头”。
+<img src="/image/1d195df72efc3433df01873c8ecea4248e955ed98caf2f5b42bc19c64df28c20.png" alt="图 8"></p>
+<p><strong>因此，在分组交换中没有专用的链路，相当于把所有信息都切分并打包成一个个包，再同一发送给接收方</strong></p>
+<p><img src="/image/e4e5db8ce5700d719a51f9067f07b68b2bd1616f865e87d063c0112d9f6e560d.png" alt="图 10"></p>
+<p>分组交换的过程：
+<img src="/image/855483ae7bc37739438c45997d5929403a778b8e644923ba574672565b7b146f.png" alt="图 9"><br>
+<img src="/image/3ab39feb34794b1f51a5f37c0102d6bcaf60201a8a0bd70207314ee75cc5b60f.png" alt="图 11"></p>
+<blockquote>
+<p>位于网络边缘的主机和位于网络核心部分的路由器都是计算机，但它们的作用却很不一样。
+主机是<strong>为用户进行信息处理的</strong>，并且可以和其他主机通过网络交换信息。
+路由器则是<strong>用来转发分组的</strong>，即进行分组交换的。路由器收到一个分组，先<strong>暂时存储一下，检查其首部，查找转发表，按照首部中的目的地址，找到合适的接口转发出去，把分组交给下一个路由器</strong>。这样一步一步地（有时会经过几十个不同的路由器）以存储转发的方式，把分组交付最终的目的主机。
+各路由器之间<strong>必须经常交换彼此掌握的路由信息</strong>，以便<strong>创建和动态维护路由器中的转发表</strong>，使得转发表能够在整个网络拓扑发生变化时及时更新。</p>
+</blockquote>
+<p><em>分组交换的缺点：</em></p>
+<ul>
+<li>分组在各路由器存储转发时需要排队，这就会造成一定的时延。分组交换并没有“专用”链路，因此可能发生拥塞</li>
+<li>首部的开销</li>
+<li>如果路由的缓存已满，则分组可能会被丢弃，信息可能会丢失，造成丢包</li>
+</ul>
+<p><em>分组交换的优点：</em>
+<img src="/image/bcb83e03a7835cd1107bd60fdb1c868c7b9cc0c9c95ee3adb8ae2c05eee6467c.png" alt="图 12"></p>
+<h4 id="三种交换方式比较">三种交换方式比较</h4>
+<p>三种交换方式在数据传送阶段的主要特点：</p>
+<ul>
+<li>电路交换—整个报文的比特流连续地从源点直达终点，好像<strong>在一个管道中传送</strong>。</li>
+<li>报文交换—<strong>整个报文先传送到相邻结点</strong>，全部存储下来后查找转发表，转发到下一个结点。</li>
+<li>分组交换—单个分组（这<strong>只是整个报文的一部分</strong>）传送到相邻结点，存储下来后查找转发表，转发到下一个结点</li>
+</ul>
+<p><img src="/image/d49ba57b6b3a923a6edc0d0e907919d774ba6e1192404fb03552f9fc0a0d4548.png" alt="图 13"></p>
+<p><img src="/image/ec04012ba4414c631c456490a0d0b8b57f04b15c130a4efed712e5da02afe96f.png" alt="图 14"></p>
+<p><strong>因为用户不是时刻在进行交互，所以分组交换可以更好地将计算机的资源利用起来</strong></p>
+<h2 id="互联网的结构">互联网的结构</h2>
+<blockquote>
+<p>端系统/主机，通过连接 access ISP（Internet Service Providers）接入互联网（小区、公司、或大学，都可视为 access ISP 的例子），Access ISP 也需要互相连接，由此任意的两个主机才可以互相发送分组，由此构成非常复杂的互联网 – network of networks</p>
+</blockquote>
+<ol>
+<li>不可能将每一个 access net 都通过链路连接起来=》使用路由器交换，构建全球 ISP</li>
+<li>但是可能会有不同公司构建 ISP，形成竞争=》使用网络交换节点 IXP 在 ISP 之间交互</li>
+<li>同一个区域属于一层=》使用 regional net 区域网络将同一区域的请求一起上传</li>
+<li>之后 Google 等网络服务供应商就可以在这个网络上构建自己的服务</li>
+</ol>
+<p><img src="/image/623ecb58b3726cf45374d04c2bf79f734681a9045c8c97874ea588a87fa08940.png" alt="图 15"></p>
+<h2 id="互联网的性能">互联网的性能</h2>
+<h3 id="速率-比特-bit">速率-比特 bit</h3>
+<ul>
+<li>比特（bit）是计算机中数据量的单位，也是信息论中使用的信息量的单位。</li>
+<li>比特（bit）来源于 binary digit，意思是一个“二进制数字”，因此一个比特就是二进制数字中的一个 1 或 0。</li>
+<li>速率是计算机网络中最重要的一个性能指标，指的是数据的传送速率，它也称为数据率 (data rate) 或比特率 (bit rate)。</li>
+<li>速率的单位是 bit/s，或 kbit/s、Mbit/s、 Gbit/s 等。速率往往是指额定速率或标称速率，非实际运行速率。</li>
+</ul>
+<h3 id="承载能力-带宽">承载能力-带宽</h3>
+<p><em>两种不同意义：</em></p>
+<ol>
+<li>“带宽”(bandwidth) 本来是指信号具有的频带宽度，其单位是赫（或千赫、兆赫、吉赫等）。</li>
+<li>在计算机网络中，带宽用来表示<strong>网络中某通道传送数据的能力</strong>。表示在单位时间内网络中的某信道所能通过的“最高数据率”。单位是 bit/s，即 “比特每秒”。</li>
+</ol>
+<blockquote>
+<p>在“带宽”的上述两种表述中，前者为频域称谓，而后者为时域称谓，其本质是相同的。也就是说，一条通信链路的“带宽”越宽，其所能传输的“最高数据率”也越高。</p>
+</blockquote>
+<h3 id="实际数据量-吞吐量">实际数据量-吞吐量</h3>
+<ul>
+<li>吞吐量 (throughput) 表示在<strong>单位时间内通过某个网络（或信道、接口）的数据量</strong>。</li>
+<li>吞吐量更经常地用于<strong>对现实世界中的网络的一种测量</strong>，以便知道实际上到底有多少数据量能够通过网络。</li>
+<li>吞吐量<strong>受网络的带宽或网络的额定速率的限制</strong>。</li>
+</ul>
+<h3 id="网络延迟-时延">网络延迟-时延</h3>
+<p>时延 (delay 或 latency) 是指数据（一个报文或分组，甚至比特）从网络（或链路）的<strong>一端传送到另一端所需的时间</strong>。有时也称为延迟或迟延。</p>
+<p><em>网络中的时延由以下几个不同的部分组成：</em></p>
+<ul>
+<li>发送时延（Transmission delay）：主机或路由器<strong>发送数据帧所需要的时间</strong><img src="/image/4530383ee7ddc82d6c7a4e9076f6f645f185fee30a9372edfd0d9a1eca924074.png" alt="图 18"></li>
+<li>传播时延（Propagation delay）：<strong>电磁波在信道中传播一定的距离需要花费的时间</strong>（1000 km 长的光纤线路产生的传播时延大约为 5 ms）<img src="/image/4119465bfca4312ab9fd962b4614497c34d8b0892524f3c2d11006d17a5ca892.png" alt="图 16"></li>
+<li>处理时延（Processing delay）：主机或路由器在收到<strong>分组时要花费一定的时间</strong>进行处理</li>
+<li>排队时延（Queueing delay）分组在经过网络传输时，要经过许多路由器。但分组在进入路由器后要先在输入队列中<strong>排队等待处理</strong>（当网络的通信量很大时会发生队列溢出，使分组丢失，这相当于排队时延为无穷大）</li>
+</ul>
+<p><img src="/image/c84f97e5f3162f6aa40441c36d10ddddebc8f08d8c8dca820b23a11a194c5f04.png" alt="图 17"></p>
+<blockquote>
+<p>对于高速网络链路，我们提高的仅仅是数据的发送速率而不是比特在链路上的传播速率，提高链路带宽减小了数据的发送时延。传播速率由链路的物理介质决定，例如将铜导线换成光纤。
+<img src="/image/eb20d9b3aba24d960003dfe06c508d5073fa38e69bba6acbaa1104436f7cee9c.png" alt="图 19"></p>
+</blockquote>
+<h3 id="时延带宽积">时延带宽积</h3>
+<p>链路的时延带宽积又称为以比特为单位的链路长度。</p>
+<p><img src="/image/683817f48f08a09f401e4db2e2b73a73d6c68e79f40d87c9a5ad619d2a4c327b.png" alt="图 20"></p>
+<h3 id="往返时间-rtt">往返时间 RTT</h3>
+<p>往返时间 RTT (round-trip time) 表示<strong>从发送方发送数据开始，到发送方收到来自接收方的确认，总共经历的时间</strong>。</p>
+<blockquote>
+<p>互联网上的信息不仅仅单方向传输，而是<strong>双向交互的</strong>。因此，有时很需要知道双向交互一次所需的时间。
+在互联网中，<strong>往返时间还包括各中间结点的处理时延、排队时延以及转发数据时的发送时延</strong>。
+当使用<strong>卫星通信时</strong>，往返时间 RTT 相对较长，是<strong>很重要</strong>的一个性能指标。</p>
+</blockquote>
+<h3 id="利用率">利用率</h3>
+<p><em>分为信道利用率和网络利用率。</em>
+信道利用率指出<strong>某信道有百分之几的时间是被利用的</strong>（有数据通过），完全空闲的信道的利用率是零。</p>
+<ul>
+<li>网络利用率则是<strong>全网络的信道利用率的加权平均值</strong>。</li>
+<li><strong>信道利用率并非越高越好</strong>。当某信道的利用率增大时，会导致分组排队，该信道引起的时延也就迅速增加。（当高速公路上的<em>车流量很大时，由于在公路上的某些地方会出现堵塞，因此行车所需的时间就会变长</em>）<img src="/image/c5fceaa855da1af7e23d1171b84ffe3fa4b97452fb4ab989d8c33a76139dc476.png" alt="图 22"></li>
+</ul>
+<blockquote>
+<p>令 D0 表示网络空闲时的时延，D 表示网络当前的时延，那么在适当的假定条件下，可以用下面的简单公式(1-5)来表示 D，D0 和利用率 U 之间的关系：
+<img src="/image/7f7b18b89c2ea969a0c539c20b5c4bbc937814f9d34408a6d498505d3b6e0786.png" alt="图 21"></p>
+</blockquote>
+<h3 id="非性能指标">非性能指标</h3>
+<p>一些非性能特征也很重要。它们与前面介绍的性能指标有很大的关系。主要包括：</p>
+<ul>
+<li>费用</li>
+<li>可靠性</li>
+<li>质量</li>
+<li>可扩展性和可升级性</li>
+<li>标准化</li>
+<li>易于管理、可维护性</li>
+</ul>
+<p>这些指标的重要性，不亚于性能评价指标。</p>
+<h2 id="分层模型">分层模型</h2>
+<h3 id="为什么要分层">为什么要分层</h3>
+<p>对于复杂系统</p>
+<ul>
+<li>分层模型<strong>容易理解</strong>，容易厘清复杂系统中不同部分的关系</li>
+<li>分层模型也<strong>有利于维护和系统更新</strong></li>
+<li>改变某一层服务的内容和实现方式，对于其他层毫无影响，<strong>层与层之间互不干扰</strong>
+<ul>
+<li>仍以飞机飞行为例，改变安检口的登机规则对系统其他部分毫无影响</li>
+</ul>
+</li>
+</ul>
+<p><em>优点：</em></p>
+<ul>
+<li>各层独立</li>
+<li>灵活性好</li>
+<li>结构可分割</li>
+<li>易于实现和维护</li>
+<li>能促进标准化</li>
+</ul>
+<p><em>缺点：</em></p>
+<ul>
+<li>降低了效率</li>
+<li>产生额外、重复的开销。</li>
+</ul>
+<h3 id="计算机网络的分层模型">计算机网络的分层模型</h3>
+<p>类似的，对于互联网，我们也采用分层模型。</p>
+<p><img src="/image/84a177421be7dd5329d59570f1d70a6a9ac916063051c87bf1c2361d669fda3e.png" alt="图 1"></p>
+<p><img src="/image/e60eb132ac51d3d1614b62771d6c70f1ebe8fbabeafe5cad518b11a7c850247d.png" alt="图 2"></p>
+<ul>
+<li>应用层
+<ul>
+<li>应用层的任务是<strong>通过应用进程间的交互来完成特定网络应用</strong></li>
+<li>对于<strong>不同的网络应用需要有不同的应用层协议</strong></li>
+</ul>
+</li>
+<li>传输层
+<ul>
+<li>运输层的任务就是负责向两台主机中进程之间的通信<strong>提供通用的数据传输服务</strong></li>
+<li>并<strong>不针对某个特定网络应用</strong>，而是多种应用可以使用同一个运输层服务</li>
+<li>主要使用<strong>传输控制协议 TCP (Transmission Control Protocol)</strong> 和 <strong>用户数据报协议 UDP (User Datagram Protocol)</strong></li>
+</ul>
+</li>
+<li>网络层
+<ul>
+<li>网络层负责为分组交换网上的<strong>不同主机提供通信服务</strong></li>
+<li>把运输层产生的报文段或用户数据报<strong>封装成分组或包</strong>进行传送</li>
+<li>TCP/IP 体系中，由于网络层使用 IP 协议，因此分组也叫做 IP 数据报，或简称为数据报</li>
+</ul>
+</li>
+<li>链路层
+<ul>
+<li><strong>两台主机之间的数据传输</strong>，总是在一段一段的链路上传送的，这就需要使用专门的链路层的协议</li>
+<li>数据链路层将网络层交下来的 IP 数据报组装成帧(framing)，<strong>在两个相邻结点间的链路上传送帧</strong>(frame)。每一帧包括数据和必要的控制信息（如同步信息、地址信息、差错控制等）</li>
+</ul>
+</li>
+<li>物理层
+<ul>
+<li>在物理层上所传数据的单位是比特，<strong>物理层要考虑用多大的电压代表“1”或“0”</strong>，以及接收方如何识别出发送方所发送的比特。物理层还要确定连接电缆的插头应当有多少根引脚以及各引脚应如何连接。</li>
+<li>传递信息所利用的一些<strong>物理媒体，如双绞线、同轴电缆、光缆、无线信道等，并不在物理层协议之内而是在物理层协议的下面</strong></li>
+</ul>
+</li>
+</ul>
+<p><img src="/image/fc29314730f9e35e9391cde1c71f937d6ce0470f5c5f3d1eb3e7723a5b43e684.png" alt="图 4"></p>
+<blockquote>
+<p>在互联网所使用的各种协议中，最重要的和最著名的就是 TCP 和 IP 两个协议。现在人们经常提到的 TCP/IP 并不一定是单指 TCP 和 IP 这两个具体的协议，而往往是表示互联网所使用的整个 <strong>TCP/IP 协议族(protocol suite)</strong> &gt; <img src="/image/7f40d36997cc72f4a65cab3a3ec083add4df127b784d09bcabba8826531781b6.png" alt="图 9"><br>
+OSI 参考模型把对等层次之间传送的数据单位称为该层的 <strong>协议数据单元 PDU (Protocol Data Unit)</strong> 。这个名词现已被许多非 OSI 标准采用。</p>
+</blockquote>
+<p>每一层都要负责不同的任务，但每一层都会为数据加上首部或尾部，因此虽然独立灵活，但产生了额外的开销</p>
+<h4 id="多路复用和多路分解">多路复用和多路分解</h4>
+<p><img src="/image/66cf1f4dec7629d32c06cb3b9f54fb696e54e788ae686f75f963975b90b0c409.png" alt="图 7"></p>
+<p>TCP/IP 协议族在一些层使用多个协议，因此在发送时要将他们合并（封装），接收时要将他们分解</p>
+<p>当发送时要为不同的协议使用不同的头部字段，这样在接收时就能分开分解</p>
+<h4 id="osi-七层模型">OSI 七层模型</h4>
+<p><img src="/image/4c9581b4c7030bf23c6d47b155d4365d724ea595bf5226637545170ac11224e7.png" alt="图 5"></p>
+<blockquote>
+<p><img src="/image/fab0616b5a1a800d8024a4e623791bfb0676a5f3d158c2ae79abf9f9983f0643.png" alt="图 6"></p>
+</blockquote>
+<h4 id="一些概念">一些概念</h4>
+<ul>
+<li>
+<p><strong>对等层次之间传送的数据单位称为该层的协议数据单元 PDU</strong> (Protocol Data Unit)。</p>
+</li>
+<li>
+<p>任何两个同样的层次把数据（即数据单元加上控制信息）通过水平虚线（<strong>逻辑上的水平</strong>）直接传递给对方。这就是所谓的“<strong>对等层</strong>”(peer layers)之间的通信。</p>
+<ul>
+<li><img src="/image/c918c07b2bb0696b2aa585510f429f4e92da66117bc042c3b200bb82001763c6.png" alt="图 8"></li>
+</ul>
+</li>
+<li>
+<p>实体 (entity) 表示<strong>任何可发送或接收信息的硬件或软件进程</strong></p>
+</li>
+<li>
+<p>协议是控制<strong>两个对等实体进行通信的规则的集合</strong>。在协议的控制下，两个对等实体间的通信使得本层能够向上一层提供服务</p>
+</li>
+<li>
+<p>要实现本层协议，还需要使用下层所提供的服务。（上层依赖下层）</p>
+</li>
+<li>
+<p>协议必须把所有不利的条件事先都估计到，而<strong>不能假定一切都是正常的和非常理想的</strong>，必须非常仔细地检查这个协议能否应付各种异常情况</p>
+</li>
+</ul>
+<p>![[Pasted image 20220831220725.png]]</p>
+
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#计算机网络</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E6%A6%82%E8%BF%B0/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#概述</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c/%e6%a6%82%e8%bf%b0.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/" class="block">导论</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/" class="block">链路层</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什么是互联网">什么是互联网</a></li>
+        <li><a href="#什么是协议">什么是协议</a></li>
+        <li><a href="#边缘部分和核心部分">边缘部分和核心部分</a>
+          <ul>
+            <li><a href="#边缘部分-主机">边缘部分-主机</a>
+              <ul>
+                <li><a href="#主机通信方式-cs客户-服务器方式">主机通信方式-C/S：客户-服务器方式</a></li>
+                <li><a href="#主机通信方式-p2p对等连接方式">主机通信方式-P2P：对等连接方式</a></li>
+              </ul>
+            </li>
+            <li><a href="#核心部分">核心部分</a>
+              <ul>
+                <li><a href="#电路交换">电路交换</a></li>
+                <li><a href="#分组交换-packet-switching">分组交换 Packet Switching</a></li>
+                <li><a href="#三种交换方式比较">三种交换方式比较</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#互联网的结构">互联网的结构</a></li>
+        <li><a href="#互联网的性能">互联网的性能</a>
+          <ul>
+            <li><a href="#速率-比特-bit">速率-比特 bit</a></li>
+            <li><a href="#承载能力-带宽">承载能力-带宽</a></li>
+            <li><a href="#实际数据量-吞吐量">实际数据量-吞吐量</a></li>
+            <li><a href="#网络延迟-时延">网络延迟-时延</a></li>
+            <li><a href="#时延带宽积">时延带宽积</a></li>
+            <li><a href="#往返时间-rtt">往返时间 RTT</a></li>
+            <li><a href="#利用率">利用率</a></li>
+            <li><a href="#非性能指标">非性能指标</a></li>
+          </ul>
+        </li>
+        <li><a href="#分层模型">分层模型</a>
+          <ul>
+            <li><a href="#为什么要分层">为什么要分层</a></li>
+            <li><a href="#计算机网络的分层模型">计算机网络的分层模型</a>
+              <ul>
+                <li><a href="#多路复用和多路分解">多路复用和多路分解</a></li>
+                <li><a href="#osi-七层模型">OSI 七层模型</a></li>
+                <li><a href="#一些概念">一些概念</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/" class="no-underline">导论</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/" class="no-underline">网络层</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/" class="no-underline">链路层</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script src="https://peterliuzhi.top/js/copy-btn.js"></script></div>
+    </footer>
+  </body>
+</html>

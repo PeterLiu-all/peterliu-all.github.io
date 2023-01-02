@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pytorch on P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/tags/pytorch/</link>
+    <description>Recent content in pytorch on P3troL1er的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 16 Nov 2022 14:13:51 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>线性回归优化实现-利用pytorch</title>
+      <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/</link>
+      <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/</guid>
+      <description>You&amp;rsquo;re not obligated to win. You&amp;rsquo;re obligated to keep trying to do the best you can every day. — Marian Wright Edelman 我们之前的程序有时兼顾了太多的细节，pytorch的库里有许多优雅而方便的方法，我们可以利用它们来优化我们</description>
+    </item>
+    
+  </channel>
+</rss>

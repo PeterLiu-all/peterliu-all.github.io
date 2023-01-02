@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>链路层 on P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E9%93%BE%E8%B7%AF%E5%B1%82/</link>
+    <description>Recent content in 链路层 on P3troL1er的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 16 Nov 2022 14:04:12 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E9%93%BE%E8%B7%AF%E5%B1%82/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>链路层</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/</link>
+      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/</guid>
+      <description>To follow, without halt, one aim: There is the secret of success. — Anna Pavlova 计算机网络中的任何设备都需要实现链路层 链路层 两类信道 两个子层 基本概念 数据链路控制（DLC） 流量控制和差错控制 三个基本问题</description>
+    </item>
+    
+  </channel>
+</rss>

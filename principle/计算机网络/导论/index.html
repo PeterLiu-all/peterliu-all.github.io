@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>导论 - P3troL1er的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/c.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cpp.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/armasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/mipsasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/vim.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/javascript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/typescript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/css.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://kit.fontawesome.com/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="计算机网络和因特网笔记">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"导论",
+      "item":"https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/"
+    },
+    "headline": "导论 - P3troL1er的个人博客","datePublished": "2022-11-16T14:04:12+08:00",
+    "dateModified": "2022-11-16T14:04:12+08:00",
+    "wordCount":  1755 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/selficon.jpg"
+        }
+        },
+    "description": "计算机网络和因特网笔记"
+}
+</script><meta property="og:title" content="导论 - P3troL1er的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/" />
+
+
+
+<meta property="og:description" content="计算机网络和因特网笔记" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-11-16T14:04:12&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-11-16T14:04:12&#43;08:00" />
+
+
+
+<meta property="article:section" content="principle" />
+
+
+<meta property="article:tag" content="计算机网络" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/" />
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+        </div>
+
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">导论</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, November 16, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>4分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
+          >计算机网络</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <blockquote>
+<p>Computers are like bikinis. They save people a lot of guesswork.
+— <cite>Sam Ewing</cite></p>
+</blockquote>
+<blockquote>
+<p>本笔记是笔者在阅读计算机科学导论时的随记</p>
+</blockquote>
+<ul>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91_%E7%AC%94%E8%AE%B0">计算机网络和因特网_笔记</a>
+<ul>
+<li><a href="#%E7%BD%91%E7%BB%9C">网络</a>
+<ul>
+<li><a href="#%E7%BD%91%E7%BB%9C%E6%98%AF%E4%B8%80%E7%B3%BB%E5%88%97%E5%8F%AF%E7%94%A8%E4%BA%8E%E9%80%9A%E4%BF%A1%E7%9A%84%E8%AE%BE%E5%A4%87%E7%9B%B8%E4%BA%92%E8%BF%9E%E6%8E%A5%E6%9E%84%E6%88%90%E7%9A%84">网络：是一系列可用于通信的设备相互连接构成的</a></li>
+<li><a href="#%E8%AE%BE%E5%A4%87">设备：</a>
+<ul>
+<li><a href="#%E4%B8%BB%E6%9C%BA%E7%BB%88%E7%AB%AF">主机（终端）</a></li>
+<li><a href="#%E8%BF%9E%E6%8E%A5%E8%AE%BE%E5%A4%87">连接设备</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%B1%80%E5%9F%9F%E7%BD%91lan">局域网（LAN）</a></li>
+<li><a href="#%E5%B9%BF%E5%9F%9F%E7%BD%91wan">广域网（WAN）</a>
+<ul>
+<li><a href="#%E7%82%B9%E5%AF%B9%E7%82%B9%E5%B9%BF%E5%9F%9F%E7%BD%91">点对点广域网</a></li>
+<li><a href="#%E4%BA%A4%E6%8D%A2%E5%B9%BF%E5%9F%9F%E7%BD%91">交换广域网</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%BB%9Cinternet-%E5%B0%8F%E5%86%99">互联网络（internet ，小写）</a></li>
+<li><a href="#%E5%9B%A0%E7%89%B9%E7%BD%91internet%E5%A4%A7%E5%86%99">因特网（Internet，大写）</a>
+<ul>
+<li><a href="#%E9%AA%A8%E5%B9%B2%E7%BD%91">骨干网</a></li>
+<li><a href="#%E4%BE%9B%E5%BA%94%E5%95%86%E7%BD%91%E7%BB%9C">供应商网络</a></li>
+<li><a href="#%E5%AE%A2%E6%88%B7%E7%BD%91%E7%BB%9C">客户网络</a></li>
+<li><a href="#%E9%AA%A8%E5%B9%B2%E7%BD%91%E5%92%8C%E4%BE%9B%E5%BA%94%E5%95%86%E7%BD%91%E7%BB%9C%E5%B9%B6%E7%A7%B0%E4%B8%BA%E5%9B%A0%E7%89%B9%E7%BD%91%E6%9C%8D%E5%8A%A1%E4%BE%9B%E5%BA%94%E5%95%86">骨干网和供应商网络并称为因特网服务供应商</a></li>
+<li><a href="#%E9%AA%A8%E5%B9%B2%E7%BD%91%E8%A2%AB%E7%A7%B0%E4%B8%BA%E5%9B%BD%E9%99%85%E5%9B%A0%E7%89%B9%E7%BD%91%E6%9C%8D%E5%8A%A1%E4%BE%9B%E5%BA%94%E5%95%86">骨干网被称为国际因特网服务供应商</a></li>
+<li><a href="#%E4%BE%9B%E5%BA%94%E5%95%86%E7%BD%91%E7%BB%9C%E8%A2%AB%E7%A7%B0%E4%B8%BA%E5%9B%BD%E5%86%85%E6%88%96%E5%9C%B0%E5%9F%9F%E6%80%A7%E5%9B%A0%E7%89%B9%E7%BD%91%E6%9C%8D%E5%8A%A1%E4%BE%9B%E5%BA%94%E5%95%86">供应商网络被称为国内或地域性因特网服务供应商</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#computer-organization">Computer Organization</a>
+<ul>
+<li><a href="#cpucentral-processing-unit">CPU(central processing unit)</a>
+<ul>
+<li><a href="#aluarithmetic-logic-unit">ALU(arithmetic logic unit)</a></li>
+<li><a href="#control-unit"><strong>control unit</strong></a></li>
+<li><a href="#a-set-of-registers">a set of registers</a></li>
+</ul>
+</li>
+<li><a href="#cache-memory">Cache memory</a>
+<ul>
+<li><a href="#contains-a-copy-of-a-portion-of-main-memory">contains a copy of a portion of main memory</a></li>
+<li><a href="#accelerate-the-process">accelerate the process</a></li>
+<li><a href="#procedure">procedure</a></li>
+</ul>
+</li>
+<li><a href="#main-memory">main memory</a>
+<ul>
+<li><a href="#address-space">address space</a></li>
+<li><a href="#dataorganized-as-words">Data(organized as words)</a></li>
+</ul>
+</li>
+<li><a href="#ioinputoutput-subsystem">I/O(input/output) subsystem</a>
+<ul>
+<li><a href="#input">input</a></li>
+<li><a href="#output">output</a></li>
+<li><a href="#catagories">catagories</a></li>
+<li><a href="#adress">adress</a></li>
+</ul>
+</li>
+<li><a href="#connected-by-bus">connected by bus</a>
+<ul>
+<li><a href="#data-bus">data bus</a></li>
+<li><a href="#address-bus">address bus</a></li>
+<li><a href="#control-bus">control bus</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#difference-between-router-and-switch">Difference between Router and Switch</a></li>
+<li><a href="#what-are-switches-in-computer-network">What are Switches in Computer Network?</a>
+<ul>
+<li><a href="#features-of-switches">Features of Switches</a></li>
+<li><a href="#types-of-switches">Types of Switches</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="网络">网络</h2>
+<h3 id="网络是一系列可用于通信的设备相互连接构成的">网络：是一系列可用于通信的设备相互连接构成的</h3>
+<h3 id="设备">设备：</h3>
+<h4 id="主机终端">主机（终端）</h4>
+<h4 id="连接设备">连接设备</h4>
+<ul>
+<li>
+<p>路由器：将一个网络与另一个网络相连接</p>
+</li>
+<li>
+<p>交换机：讲不同设备连接在一起</p>
+</li>
+<li>
+<p>调制调节器：可以改变数据形式</p>
+</li>
+</ul>
+<h2 id="局域网lan">局域网（LAN）</h2>
+<ul>
+<li>私有网络</li>
+<li>每台主机都有作为这台主机在局域网中唯一定义的<strong>一个标识和一个地址</strong></li>
+<li>一台主机向另一台主机发送的数据包中包括<strong>源主机</strong>和<strong>目标主机</strong>的地址</li>
+<li>用交换机（switch）连接所有的主机</li>
+</ul>
+<h2 id="广域网wan">广域网（WAN）</h2>
+<ul>
+<li>地理跨度较 LAN 大得多</li>
+<li>WAN 将交换机、路由器（router）或调制调节器之类的连接设备互连</li>
+<li>局域网为机构私有，而广域网则由通信公司创建并运营</li>
+</ul>
+<h3 id="点对点广域网">点对点广域网</h3>
+<p>@——@</p>
+<p>通过传输媒介（电缆或无线）连接两个通信设备的网络</p>
+<h3 id="交换广域网">交换广域网</h3>
+<p>至少两个端的网络，交换广域网用于当今全球通信的骨干网，是几个点对点广域网通过交换机（switch）连接产生的结合体</p>
+<h2 id="互联网络internet-小写">互联网络（internet ，小写）</h2>
+<p>两个或多个（LAN&amp;WAN）相互连接时，他们构成一个互联网络（网际网）</p>
+<h2 id="因特网internet大写">因特网（Internet，大写）</h2>
+<p>成千上万个互联网络组成因特网</p>
+<h3 id="骨干网">骨干网</h3>
+<ul>
+<li>为通信公司拥有</li>
+<li>通过网络对等汇点连接</li>
+</ul>
+<h3 id="供应商网络">供应商网络</h3>
+<ul>
+<li>规模较小</li>
+<li>付费使用骨干网上的一些服务</li>
+<li>与骨干网相连，有时也连接其他供应商网络</li>
+</ul>
+<h3 id="客户网络">客户网络</h3>
+<ul>
+<li>在边缘</li>
+<li>真正使用基于因特网服务的网络</li>
+<li>向供应商网络付费得到服务</li>
+</ul>
+<h3 id="骨干网和供应商网络并称为因特网服务供应商">骨干网和供应商网络并称为因特网服务供应商</h3>
+<h3 id="骨干网被称为国际因特网服务供应商">骨干网被称为国际因特网服务供应商</h3>
+<h3 id="供应商网络被称为国内或地域性因特网服务供应商">供应商网络被称为国内或地域性因特网服务供应商</h3>
+<blockquote>
+<p>下面是当时找到的一些参考资料（还有一些笔者自己写的英语笔记，但是是那篇已经忘了），原网址找不到了，如有侵犯作者权益，笔者一定删除</p>
+</blockquote>
+<h1 id="computer-organization">Computer Organization</h1>
+<h2 id="cpucentral-processing-unit">CPU(central processing unit)</h2>
+<h3 id="aluarithmetic-logic-unit">ALU(arithmetic logic unit)</h3>
+<ul>
+<li>logic</li>
+<li>shift</li>
+<li>arithmetic operations</li>
+</ul>
+<h3 id="control-unit"><strong>control unit</strong></h3>
+<ul>
+<li>
+<p>contrl the operation of CPU</p>
+<ul>
+<li>
+<p>computer divided by instructions</p>
+<ul>
+<li>
+<p>CISC(complex instruction set computers)</p>
+<ul>
+<li>programmer&rsquo;s works are easier</li>
+<li>a large set of instructions</li>
+</ul>
+</li>
+<li>
+<p>RISC(reduced instruction set computers)</p>
+<ul>
+<li>programmer&rsquo;s works are more difficult</li>
+<li>simple instructions</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>the process of computer program</p>
+<ul>
+<li>
+<p>ways of processing</p>
+<ul>
+<li>
+<p>pipelining</p>
+</li>
+<li>
+<p>Parallel processing</p>
+<ul>
+<li>SISD</li>
+<li>SIMD</li>
+<li>MISD(JUST CONCEPT)</li>
+<li>MIMD</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>a cycle</p>
+<ul>
+<li>fetch</li>
+<li>decode</li>
+<li>execute</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="a-set-of-registers">a set of registers</h3>
+<ul>
+<li>
+<p>Data registers</p>
+</li>
+<li>
+<p><strong>Instruction registers</strong></p>
+<ul>
+<li>
+<p>instruction set</p>
+<ul>
+<li>opcode</li>
+<li>operand</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Program counter</p>
+</li>
+</ul>
+<h2 id="cache-memory">Cache memory</h2>
+<h3 id="contains-a-copy-of-a-portion-of-main-memory">contains a copy of a portion of main memory</h3>
+<h3 id="accelerate-the-process">accelerate the process</h3>
+<h3 id="procedure">procedure</h3>
+<ul>
+<li>
+<p>CPU checks the cache</p>
+<ul>
+<li>if it&rsquo;s in cache ,get it</li>
+<li>if not, cache will go get it</li>
+</ul>
+</li>
+</ul>
+<h2 id="main-memory">main memory</h2>
+<h3 id="address-space">address space</h3>
+<ul>
+<li>adress</li>
+</ul>
+<h3 id="dataorganized-as-words">Data(organized as words)</h3>
+<ul>
+<li>
+<p>RAM(random access memory)</p>
+<ul>
+<li>
+<p>SRAM(static)</p>
+<ul>
+<li>fast</li>
+<li>expensive</li>
+</ul>
+</li>
+<li>
+<p>DRAM(dynamic)</p>
+<ul>
+<li>slow</li>
+<li>inexpensive</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>ROM(read-only) memory</p>
+<ul>
+<li>PROM(cannot erase)</li>
+<li>EPROM(can erase by ultraviolet light)</li>
+<li>EEPROM(can erase by electronic impulses)</li>
+</ul>
+</li>
+</ul>
+<h2 id="ioinputoutput-subsystem">I/O(input/output) subsystem</h2>
+<h3 id="input">input</h3>
+<ul>
+<li>hard disk</li>
+<li>USB</li>
+<li>CD/DVD</li>
+<li>keyboard</li>
+</ul>
+<h3 id="output">output</h3>
+<ul>
+<li>monitor</li>
+<li>printer</li>
+</ul>
+<h3 id="catagories">catagories</h3>
+<ul>
+<li>
+<p>Nonstorage devices</p>
+</li>
+<li>
+<p>Storage devices</p>
+<ul>
+<li>magnetic</li>
+<li>optical</li>
+</ul>
+</li>
+</ul>
+<h3 id="adress">adress</h3>
+<ul>
+<li>isolated I/O method</li>
+<li>memory-mapped I/O method</li>
+</ul>
+<h2 id="connected-by-bus">connected by bus</h2>
+<h3 id="data-bus">data bus</h3>
+<h3 id="address-bus">address bus</h3>
+<h3 id="control-bus">control bus</h3>
+<h1 id="difference-between-router-and-switch">Difference between Router and Switch</h1>
+<p>Router and Switch are both network connecting devices. Router works at network layer and is responsibe to find the shortest path for a packet whereas Switch connects various devices in a network. Router connects devices across multiple networks.</p>
+<p>Following are the important differences between Router and Switch.</p>
+<table>
+<thead>
+<tr>
+<th>Sr. No.</th>
+<th style="text-align:center">Key</th>
+<th style="text-align:center">Router</th>
+<th style="text-align:center">Switch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">Objective</td>
+<td style="text-align:center">Router main objective is to connect various networks.</td>
+<td style="text-align:center">Switch main objective is to connect various devices in a network.</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">Layer</td>
+<td style="text-align:center">Router works in Network Layer.</td>
+<td style="text-align:center">Switch works in Data Link Layer.</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">Usage</td>
+<td style="text-align:center">Router is used in LAN and MAN.</td>
+<td style="text-align:center">Switch is used only in LAN.</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:center">Data Format</td>
+<td style="text-align:center">Router sends data in form of packets.</td>
+<td style="text-align:center">Switch sends data in form of packets and frames.</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:center">Mode of Transmission</td>
+<td style="text-align:center">Router follows duplex mode of transmission.</td>
+<td style="text-align:center">Switch also follows duplex mode of transmission.</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:center">Collision</td>
+<td style="text-align:center">Less collision in case of Router.</td>
+<td style="text-align:center">In full duplex mode, no collision happens in switch too.</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:center">NAT Compatability</td>
+<td style="text-align:center">Compatible with NAT.</td>
+<td style="text-align:center">Not compatible with NAT.</td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align:center">Type</td>
+<td style="text-align:center">Routing type is Adaptive and Non-adaptive routing.</td>
+<td style="text-align:center">Switching type is Circuit, Packet and Message switching.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="what-are-switches-in-computer-network">What are Switches in Computer Network?</h1>
+<p>A switch has many ports, to which computers are plugged in. When a data frame arrives at any port of a network switch, it examines the destination address, performs necessary checks and sends the frame to the corresponding device(s).It supports unicast, multicast as well as broadcast communications.</p>
+<p><img src="https://www.tutorialspoint.com/assets/questions/media/40445/multicast_switches.jpg" alt="img"></p>
+<h2 id="features-of-switches">Features of Switches</h2>
+<ul>
+<li>A switch operates in the layer 2, i.e. data link layer of the OSI model.</li>
+<li>It is an intelligent network device that can be conceived as a multiport network bridge.</li>
+<li>It uses MAC addresses (addresses of medium access control sublayer) to send data packets to selected destination ports.</li>
+<li>It uses packet switching technique to receive and forward data packets from the source to the destination device.</li>
+<li>It is supports unicast (one-to-one), multicast (one-to-many) and broadcast (one-to-all) communications.</li>
+<li>Transmission mode is full duplex, i.e. communication in the channel occurs in both the directions at the same time. Due to this, collisions do not occur.</li>
+<li>Switches are active devices, equipped with network software and network management capabilities.</li>
+<li>Switches can perform some error checking before forwarding data to the destined port.</li>
+<li>The number of ports is higher – 24/48.</li>
+</ul>
+<h2 id="types-of-switches">Types of Switches</h2>
+<p>There are variety of switches that can be broadly categorised into 4 types −</p>
+<p><img src="https://www.tutorialspoint.com/assets/questions/media/40445/switches.jpg" alt="img"></p>
+<ul>
+<li><strong>Unmanaged Switch</strong> − These are inexpensive switches commonly used in home networks and small businesses. They can be set up by simply plugging in to the network, after which they instantly start operating. When more devices needs to be added, more switches are simply added by this plug and play method. They are referred to as u managed since they do not require to be configured or monitored.</li>
+<li><strong>Managed Switch</strong> − These are costly switches that are used in organisations with large and complex networks, since they can be customized to augment the functionalities of a standard switch. The augmented features may be QoS (Quality of Service) like higher security levels, better precision control and complete network management. Despite their cost, they are preferred in growing organizations due to their scalability and flexibility. Simple Network Management Protocol (SNMP) is used for configuring managed switches.</li>
+<li><strong>LAN Switch</strong> − Local Area Network (LAN) switches connects devices in the internal LAN of an organization. They are also referred as Ethernet switches or data switches. These switches are particularly helpful in reducing network congestion or bottlenecks. They allocate bandwidth in a manner so that there is no overlapping of data packets in a network.</li>
+<li><strong>PoE Switch</strong> − Power over Ethernet (PoE) switches are used in PoE Gogabit Ethernets. PoE technology combine data and power transmission over the same cable so that devices connected to it can receive both electricity as well as data over the same line. PoE switches offer greater flexibility and simplifies the cabling connections</li>
+</ul>
+
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#计算机网络</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c/%e5%af%bc%e8%ae%ba.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/" class="block">线性回归优化实现-利用pytorch</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/" class="block">概述</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#网络">网络</a>
+          <ul>
+            <li><a href="#网络是一系列可用于通信的设备相互连接构成的">网络：是一系列可用于通信的设备相互连接构成的</a></li>
+            <li><a href="#设备">设备：</a>
+              <ul>
+                <li><a href="#主机终端">主机（终端）</a></li>
+                <li><a href="#连接设备">连接设备</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#局域网lan">局域网（LAN）</a></li>
+        <li><a href="#广域网wan">广域网（WAN）</a>
+          <ul>
+            <li><a href="#点对点广域网">点对点广域网</a></li>
+            <li><a href="#交换广域网">交换广域网</a></li>
+          </ul>
+        </li>
+        <li><a href="#互联网络internet-小写">互联网络（internet ，小写）</a></li>
+        <li><a href="#因特网internet大写">因特网（Internet，大写）</a>
+          <ul>
+            <li><a href="#骨干网">骨干网</a></li>
+            <li><a href="#供应商网络">供应商网络</a></li>
+            <li><a href="#客户网络">客户网络</a></li>
+            <li><a href="#骨干网和供应商网络并称为因特网服务供应商">骨干网和供应商网络并称为因特网服务供应商</a></li>
+            <li><a href="#骨干网被称为国际因特网服务供应商">骨干网被称为国际因特网服务供应商</a></li>
+            <li><a href="#供应商网络被称为国内或地域性因特网服务供应商">供应商网络被称为国内或地域性因特网服务供应商</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#computer-organization">Computer Organization</a>
+      <ul>
+        <li><a href="#cpucentral-processing-unit">CPU(central processing unit)</a>
+          <ul>
+            <li><a href="#aluarithmetic-logic-unit">ALU(arithmetic logic unit)</a></li>
+            <li><a href="#control-unit"><strong>control unit</strong></a></li>
+            <li><a href="#a-set-of-registers">a set of registers</a></li>
+          </ul>
+        </li>
+        <li><a href="#cache-memory">Cache memory</a>
+          <ul>
+            <li><a href="#contains-a-copy-of-a-portion-of-main-memory">contains a copy of a portion of main memory</a></li>
+            <li><a href="#accelerate-the-process">accelerate the process</a></li>
+            <li><a href="#procedure">procedure</a></li>
+          </ul>
+        </li>
+        <li><a href="#main-memory">main memory</a>
+          <ul>
+            <li><a href="#address-space">address space</a></li>
+            <li><a href="#dataorganized-as-words">Data(organized as words)</a></li>
+          </ul>
+        </li>
+        <li><a href="#ioinputoutput-subsystem">I/O(input/output) subsystem</a>
+          <ul>
+            <li><a href="#input">input</a></li>
+            <li><a href="#output">output</a></li>
+            <li><a href="#catagories">catagories</a></li>
+            <li><a href="#adress">adress</a></li>
+          </ul>
+        </li>
+        <li><a href="#connected-by-bus">connected by bus</a>
+          <ul>
+            <li><a href="#data-bus">data bus</a></li>
+            <li><a href="#address-bus">address bus</a></li>
+            <li><a href="#control-bus">control bus</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#difference-between-router-and-switch">Difference between Router and Switch</a></li>
+    <li><a href="#what-are-switches-in-computer-network">What are Switches in Computer Network?</a>
+      <ul>
+        <li><a href="#features-of-switches">Features of Switches</a></li>
+        <li><a href="#types-of-switches">Types of Switches</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/" class="no-underline">概述</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/" class="no-underline">网络层</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/" class="no-underline">链路层</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script src="https://peterliuzhi.top/js/copy-btn.js"></script></div>
+    </footer>
+  </body>
+</html>

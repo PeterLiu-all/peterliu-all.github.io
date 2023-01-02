@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机网络 on P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 计算机网络 on P3troL1er的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 16 Nov 2022 14:04:12 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>导论</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/</link>
+      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/</guid>
+      <description>Computers are like bikinis. They save people a lot of guesswork. — Sam Ewing 本笔记是笔者在阅读计算机科学导论时的随记 计算机网络和因特网_笔记 网络 网络：是一系列可用于通信的设备相互连接构成的 设备： 主机</description>
+    </item>
+    
+    <item>
+      <title>概述</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/</guid>
+      <description>Lord, make me an instrument of thy peace. Where there is hatred, let me sow love. — Francis of Assisi 概述 什么是互联网 什么是协议 边缘部分和核心部分 边缘部分-主机 主机通信方式-C/S：客户-服务器方式 主机通信方式-</description>
+    </item>
+    
+    <item>
+      <title>链路层</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/</link>
+      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/</guid>
+      <description>To follow, without halt, one aim: There is the secret of success. — Anna Pavlova 计算机网络中的任何设备都需要实现链路层 链路层 两类信道 两个子层 基本概念 数据链路控制（DLC） 流量控制和差错控制 三个基本问题</description>
+    </item>
+    
+    <item>
+      <title>网络层</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/</link>
+      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/</guid>
+      <description>It isn&amp;rsquo;t where you come from, it&amp;rsquo;s where you&amp;rsquo;re going that counts. — Ella Fitzgerald 链路层干的事情是局部的，网络层干的事情是全局的 网络层 概述 网络层提供的服务 路由和转发 网络层提供的两种分组交换的方法 数据报方</description>
+    </item>
+    
+  </channel>
+</rss>

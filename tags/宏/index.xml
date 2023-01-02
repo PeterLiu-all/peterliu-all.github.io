@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>宏 on P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E5%AE%8F/</link>
+    <description>Recent content in 宏 on P3troL1er的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Sun, 30 Oct 2022 14:46:05 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E5%AE%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常见宏定义</title>
+      <link>https://peterliuzhi.top/principle/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
+      <pubDate>Sun, 30 Oct 2022 14:46:05 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
+      <description>All serious daring starts from within. — Harriet Beecher Stowe /* This file [contains](https://so.csdn.net/so/search?q=contains&amp;amp;spm=1001.2101.3001.7020) definitions used by the Hex-Rays decompiler output. It has type definitions and convenience macros to make the output more readable. Copyright © 2007-2011 Hex-Rays */ #if defined(**GNUC**) typedef long long ll; typedef unsigned long long ull; #define __int64 long long #define __int32 int #define __int16 short #define __int8 char #define MAKELL(num) num ## LL #define FMT_64 “ll” #elif</description>
+    </item>
+    
+  </channel>
+</rss>

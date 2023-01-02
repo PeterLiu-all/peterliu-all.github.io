@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ELF on P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/tags/elf/</link>
+    <description>Recent content in ELF on P3troL1er的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 26 Oct 2022 14:48:56 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/elf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ELF详解</title>
+      <link>https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Wed, 26 Oct 2022 14:48:56 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/</guid>
+      <description>Myths which are believed in tend to become true. — George Orwell ELF详解 什么是ELF 使用readelf命令读取elf文件 ELF文件类型 ELF程序头（描述段的头） PT_LOAD PT_DYNAMIC（动态</description>
+    </item>
+    
+  </channel>
+</rss>

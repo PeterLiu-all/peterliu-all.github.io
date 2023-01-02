@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>汇编与寄存器 - P3troL1er的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/c.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cpp.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/armasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/mipsasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/vim.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/javascript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/typescript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/css.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://kit.fontawesome.com/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="汇编与寄存器相关理论">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"汇编与寄存器",
+      "item":"https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/"
+    },
+    "headline": "汇编与寄存器 - P3troL1er的个人博客","datePublished": "2022-10-26T19:05:28+08:00",
+    "dateModified": "2022-10-26T19:05:28+08:00",
+    "wordCount":  2051 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/selficon.jpg"
+        }
+        },
+    "description": "汇编与寄存器相关理论"
+}
+</script><meta property="og:title" content="汇编与寄存器 - P3troL1er的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/" />
+
+
+
+<meta property="og:description" content="汇编与寄存器相关理论" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-10-26T19:05:28&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-10-26T19:05:28&#43;08:00" />
+
+
+
+<meta property="article:section" content="principle" />
+
+
+<meta property="article:tag" content="pwn" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/ret2libc/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/%E6%B1%87%E7%BC%96%E7%89%88hello-world/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/" />
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+        </div>
+
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">汇编与寄存器</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, October 26, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>5分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <blockquote>
+<p>Kindness is the language which the deaf can hear and the blind can see.
+— <cite>Mark Twain</cite></p>
+</blockquote>
+<ul>
+<li><a href="#%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8">汇编与寄存器</a>
+<ul>
+<li><a href="#%E5%AF%84%E5%AD%98%E5%99%A8">寄存器</a>
+<ul>
+<li><a href="#%E5%9C%A816%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%B8%AD8086cpu">在16位系统中（8086CPU）</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%AF%84%E5%AD%98%E5%99%A8">数据寄存器</a></li>
+<li><a href="#%E5%8F%98%E5%9D%80%E5%AF%84%E5%AD%98%E5%99%A8">变址寄存器</a></li>
+<li><a href="#%E6%8C%87%E9%92%88%E5%AF%84%E5%AD%98%E5%99%A8">指针寄存器</a></li>
+<li><a href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8">段寄存器</a></li>
+<li><a href="#%E6%8C%87%E9%92%88%E6%8C%87%E4%BB%A4%E5%AF%84%E5%AD%98%E5%99%A8">指针指令寄存器</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9C%A832%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%B8%ADi386">在32位系统中（i386）</a></li>
+<li><a href="#%E5%9C%A864%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%B8%ADamd64">在64位系统中（amd64）</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B1%87%E7%BC%96">汇编</a>
+<ul>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81">系统如何执行汇编代码</a></li>
+<li><a href="#%E5%B0%86%E5%AF%B9%E5%BA%94%E6%8C%87%E9%92%88%E5%AF%84%E5%AD%98%E5%99%A8%E6%8C%87%E5%90%91%E5%AF%B9%E5%BA%94%E6%AE%B5">将对应指针寄存器指向对应段</a>
+<ul>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+<li><a href="#%E6%A0%88">栈</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE">数据</a></li>
+</ul>
+</li>
+<li><a href="#push%E6%8C%87%E4%BB%A4%E5%92%8Cpop%E6%8C%87%E4%BB%A4">PUSH指令和POP指令</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="寄存器">寄存器</h2>
+<h3 id="在16位系统中8086cpu">在16位系统中（8086CPU）</h3>
+<h4 id="数据寄存器">数据寄存器</h4>
+<p>用于暂存数据的寄存器有AX、BX、CX、DX，这些寄存器可以起到暂存16位的数据的作用。每一个又可以分成高八位和低八位，如AX寄存器，高八位为AH，低八位为AL，将超出八位的数据存入AH或AL不会自动将数据填入AX的剩下空间，而是会溢出，产生数据丢失</p>
+<ul>
+<li>寄存器AX和AL通常称为累加器(Accumulator)，<strong>用累加器进行的加减乘除耗时更少</strong></li>
+<li>寄存器BX称为基地址寄存器(Base Register)，可作为<strong>存储器指针</strong>来使用</li>
+<li>寄存器CX称为计数寄存器(Count Register)。在循环和字符串操作时，要用它来<strong>控制循环次数</strong>（循环的次数保存在CX中，每循环一次CX就减一，直至0循环停止）</li>
+<li>寄存器DX称为数据寄存器(Data Register)。在进行乘、除运算时，它可<strong>作为默认的操作数参与运算</strong>，也可用于<strong>存放I/O的端口地址</strong></li>
+</ul>
+<h4 id="变址寄存器">变址寄存器</h4>
+<p>SI和DI称为变址寄存器，用于<strong>存放存储单元在段内的偏移量</strong>，SI储存源地址（source index），DI储存目的地址（destination index）</p>
+<h4 id="指针寄存器">指针寄存器</h4>
+<p>BP、SP称为指针寄存器，SP是堆栈指针（stack pointer），<strong>存放栈顶地址</strong>；BP是基址指针（base pointer），存放堆栈基址偏移，<strong>相当于为最开始的SP做备份</strong>（见上节RBP和RSP的讲解）</p>
+<h4 id="段寄存器">段寄存器</h4>
+<p>CS、DS、SS、ES被称为段寄存器，<strong>用于储存段地址，需要和偏移量一起使用才能查找到内存中的数据</strong>。</p>
+<ul>
+<li>CS为代码段（code segment），和<a href="#%E6%8C%87%E9%92%88%E6%8C%87%E4%BB%A4%E5%AF%84%E5%AD%98%E5%99%A8">IP寄存器</a>一起使用，<strong>用于确定下一条指令的地址</strong></li>
+<li>DS为数据段（stack segment），用于<strong>存储数据所在的段地址</strong>，和诸如[0]一类的表达一起使用，如果没有特别说明，[0]==DS:[0]</li>
+<li>SS为堆栈段（stack segment），和<a href="#%E6%8C%87%E9%92%88%E5%AF%84%E5%AD%98%E5%99%A8">SP寄存器</a>一起使用，用于<strong>确定堆栈的位置</strong>，长期指向栈顶</li>
+<li>ES为扩展段(extend segment)，为扩展的段寄存器</li>
+</ul>
+<h4 id="指针指令寄存器">指针指令寄存器</h4>
+<p>IP被称作指针指令寄存器，储存相对于段寄存器CS的偏移量，在内存中找到CS:IP处的指令并执行</p>
+<h3 id="在32位系统中i386">在32位系统中（i386）</h3>
+<p>在AX、BX、CX、DX等<strong>前面加E</strong>，变成了EAX、EBX、ECX、EDX等，而原本的AX、BX、CX、DX等成为了其低16位，而存取它的高十六位可以通过移位操作进行（向左移16位），或者通过<code>bswap EAX</code>进行（交换EAX的高、低位）</p>
+<blockquote>
+<p>在16位CPU中，AX、BX、CX和DX不能作为基址和变址寄存器来存放存储单元的地址，但在32位CPU中，其32位寄存器EAX、EBX、ECX和EDX不仅可传送数据、暂存数据保存算术逻辑运算结果，而且也可作为指针寄存器，所以，这些32位寄存器更具有通用性</p>
+</blockquote>
+<h3 id="在64位系统中amd64">在64位系统中（amd64）</h3>
+<p>将32位中的<strong>E前缀改为了R前缀</strong>，而原本32位中的名称用来代指64位中寄存器的低位，同时64位系统增加了8个通用寄存器，命名为R8~R15，在其后加上d，w，b指定长度（d最长，b最短）</p>
+<p><em>因此64位系统中的寄存器比32位要多8个</em></p>
+<blockquote>
+<p>✨ 32位系统中，函数的传递参数保存在栈帧中，而64位系统保存在寄存器中，分别用RDI,RSI,RDX,RCX,R8,R9作为第1-6个参数，用RAX保存返回值</p>
+</blockquote>
+<h2 id="汇编">汇编</h2>
+<h3 id="系统如何执行汇编代码">系统如何执行汇编代码</h3>
+<p>当我们执行一个exe文件时，系统会将这个exe文件载入内存，并且将（R\E）CS:（R\E）IP指向这块内存的最低地址，每执行一句IP就自动增加（长度不固定），而所要执行的这一段代码在汇编内称为代码段。</p>
+<p>同时，exe文件还会有它的栈段和数据段，这两段地址在内存中用汇编指令<code>dw</code>(define word)声明，<code>dw 0</code>就是声明一个为0的字（两个字节），<code>dw 0,0</code>就是声明两个字</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">data segment
+</span></span><span class="line"><span class="cl">    dw 0123h, 0456h, 0789h, 0abch, 0defh, 0fedh, 0cbah, 0987h
+</span></span><span class="line"><span class="cl">data ends
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">stack segment
+</span></span><span class="line"><span class="cl">    dw 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</span></span><span class="line"><span class="cl">stack ends
+</span></span></code></pre></div><h3 id="将对应指针寄存器指向对应段">将对应指针寄存器指向对应段</h3>
+<p>我们的栈、数据、代码在哪里完全取决于对应的段寄存器和指针寄存器、指针指令寄存器指向哪里</p>
+<p>因此，我们需要改变对应寄存器的值</p>
+<h4 id="代码">代码</h4>
+<p>我们需要设置CS:IP，使其指向代码被载入的内存处</p>
+<p>在汇编中，只需要在需要执行的代码前加上<code>start:</code>，最后<code>end start</code>即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">code segment
+</span></span><span class="line"><span class="cl">start:
+</span></span><span class="line"><span class="cl">    mov ax, stack
+</span></span><span class="line"><span class="cl">    mov ss, ax
+</span></span><span class="line"><span class="cl">    mov sp, 100h  ;初始化栈指针
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    mov ax, data
+</span></span><span class="line"><span class="cl">    mov ds,ax   ;初始化内存指针
+</span></span><span class="line"><span class="cl">code ends
+</span></span><span class="line"><span class="cl">end start
+</span></span></code></pre></div><h4 id="栈">栈</h4>
+<p>需要将SS指向栈段，并设置SP指向栈底（一开始栈为空）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mov ax, stack
+</span></span><span class="line"><span class="cl">mov ss, ax
+</span></span><span class="line"><span class="cl">mov sp, 100h  ;初始化栈指针
+</span></span></code></pre></div><h4 id="数据">数据</h4>
+<p>将DS指向数据段，就可以用<code>[0]</code>式的表达式存取数据了</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mov ax, data
+</span></span><span class="line"><span class="cl">mov ds,ax   ;初始化内存指针
+</span></span></code></pre></div><h3 id="push指令和pop指令">PUSH指令和POP指令</h3>
+<p>PUSH指令和POP指令均不会变更原来的数据，而是变更目的地的数据。</p>
+<ul>
+<li><code>push ds:[0]</code>就是把数据段中<code>ds:[0]</code>处的数据推入栈中，相当于<code>mov ss:sp ds:[0]</code></li>
+<li><code>pop ds:[0]</code>就是把栈顶的数据弹入<code>ds:[0]</code>中，相当于<code>mov ds:[0] ss:sp</code></li>
+</ul>
+
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/%e6%b1%87%e7%bc%96%e4%b8%8e%e5%af%84%e5%ad%98%e5%99%a8.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="block">关于栈的一些基础知识</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/" class="block">ELF详解</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#寄存器">寄存器</a>
+          <ul>
+            <li><a href="#在16位系统中8086cpu">在16位系统中（8086CPU）</a>
+              <ul>
+                <li><a href="#数据寄存器">数据寄存器</a></li>
+                <li><a href="#变址寄存器">变址寄存器</a></li>
+                <li><a href="#指针寄存器">指针寄存器</a></li>
+                <li><a href="#段寄存器">段寄存器</a></li>
+                <li><a href="#指针指令寄存器">指针指令寄存器</a></li>
+              </ul>
+            </li>
+            <li><a href="#在32位系统中i386">在32位系统中（i386）</a></li>
+            <li><a href="#在64位系统中amd64">在64位系统中（amd64）</a></li>
+          </ul>
+        </li>
+        <li><a href="#汇编">汇编</a>
+          <ul>
+            <li><a href="#系统如何执行汇编代码">系统如何执行汇编代码</a></li>
+            <li><a href="#将对应指针寄存器指向对应段">将对应指针寄存器指向对应段</a>
+              <ul>
+                <li><a href="#代码">代码</a></li>
+                <li><a href="#栈">栈</a></li>
+                <li><a href="#数据">数据</a></li>
+              </ul>
+            </li>
+            <li><a href="#push指令和pop指令">PUSH指令和POP指令</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/principle/ret2libc/" class="no-underline">ret2libc</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">关于栈的一些基础知识</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/tricks/%E6%B1%87%E7%BC%96%E7%89%88hello-world/" class="no-underline">汇编版hello world</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/" class="no-underline">ELF详解</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script src="https://peterliuzhi.top/js/copy-btn.js"></script></div>
+    </footer>
+  </body>
+</html>
