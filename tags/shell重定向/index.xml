@@ -15,7 +15,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/shell%E9%87%8D%E5%AE%9A%E5%90%91buuctf-wustctf2020_closed/</guid>
-      <description>原题链接 直接给了shell，但是把输出流关了 这时候我们可以用shell重定向输出流到输入流： exec 1&amp;gt;&amp;amp;0 cat flag</description>
+      <description>The most formidable weapon against errors of every kind is reason. — Thomas Paine 原题链接 直接给了shell，但是把输出流关了 这时候我们可以用shell重定向输出流到输入流： exec 1&amp;gt;&amp;amp;0 cat flag</description>
     </item>
     
   </channel>

@@ -15,7 +15,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E7%94%9F%E6%88%90orw-shellcodebuuctf-pwnable_orw/</guid>
-      <description>原题链接 exp # 自动生成头部 from pwn import * from pwn import p64, p32, u32, u64, p8 from LibcSearcher import LibcSearcher import ctypes pss: bool = True fn: str = &amp;#34;./orw&amp;#34; libc_name:str = &amp;#34;&amp;#34; port: str = &amp;#34;26851&amp;#34; if_32: bool = True if_debug:bool = False pg = p32 if if_32 else p64 ug = u32 if if_32 else u64 context(log_level=&amp;#34;debug&amp;#34;, arch=&amp;#34;i386&amp;#34; if if_32 else &amp;#34;amd64&amp;#34;, os=&amp;#34;linux&amp;#34;) context.terminal =</description>
+      <description>Never mistake activity for achievement. — John Wooden 原题链接 exp # 自动生成头部 from pwn import * from pwn import p64, p32, u32, u64, p8 from LibcSearcher import LibcSearcher import ctypes pss: bool = True fn: str = &amp;#34;./orw&amp;#34; libc_name:str = &amp;#34;&amp;#34; port: str = &amp;#34;26851&amp;#34; if_32: bool = True if_debug:bool = False pg = p32 if if_32 else p64 ug = u32 if if_32 else u64 context(log_level=&amp;#34;debug&amp;#34;,</description>
     </item>
     
   </channel>

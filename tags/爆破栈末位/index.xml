@@ -15,7 +15,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8Dxman_2019_format/</guid>
-      <description>原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp ASLR对栈的影响 构建地址链 爆破 完整exp checksec查看程序架构 $ checksec xman_2019_format [*] &amp;#39;/home/giantbranch/share_files/security/workspace/xman_2019_format/xman_2019_format&amp;#39; Arch: i386-32-little</description>
+      <description>The longer we dwell on our misfortunes, the greater is their power to harm us. — Voltaire 原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp ASLR对栈的影响 构建地址链 爆破 完整exp chec</description>
     </item>
     
   </channel>

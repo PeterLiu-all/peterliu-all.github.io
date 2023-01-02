@@ -15,7 +15,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/</guid>
-      <description>原题链接 checksec ida 解题思路很简单，先后调用win_function1、winfunction2、flag函数即可，重要的是rop链的顺序，32位系统比较杂乱</description>
+      <description>Sometimes being a friend means mastering the art of timing. There is a time for silence. A time to let go and allow people to hurl themselves into their own destiny. And a time to prepare to pick up the pieces when it&amp;rsquo;s all over. — Octavia E. Butler 原题链接 checksec ida 解题思路很简单，先后调用win_func</description>
     </item>
     
   </channel>

@@ -15,7 +15,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/</guid>
-      <description>原题链接 查看程序架构 ida伪代码 典型的C++语法，这里应该有两个类，Admin继承自User： 其中我们发现Admin::shell正是我们需要的后门函</description>
+      <description>Our shared values define us more than our differences. And acknowledging those shared values can see us through our challenges today if we have the wisdom to trust in them again. — John McCain 原题链接 查看程序架构 ida伪代码 典型的C++语法，这里应该有两个类，Admin继承</description>
     </item>
     
   </channel>

@@ -15,7 +15,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E7%BB%95%E8%BF%87%E5%A0%86%E6%BA%A2%E5%87%BA%E9%99%90%E5%88%B6buuctf-babyfengshui_33c3_2016/</guid>
-      <description>原题链接 查看程序架构 ida伪代码 可以看到是标准的菜单堆题 allocate 这里自定义了结构体 在ends处按d新建域，光标在具体的域上按d会清空 这个函数就是一个结构体申</description>
+      <description>In times of change, learners inherit the earth, while the learned find themselves beautifully equipped to deal with a world that no longer exists. — Eric Hoffer 原题链接 查看程序架构 ida伪代码 可以看到是标准的菜单堆题 allocate 这里自定义了结构体 在ends处按d新建</description>
     </item>
     
   </channel>

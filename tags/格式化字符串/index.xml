@@ -15,7 +15,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/fmtstr_payload%E5%87%BD%E6%95%B0buuctf-axb_2019_fmt32/</guid>
-      <description>查看程序架构 ida伪代码 典型的格式化字符串漏洞，我们gdb到printf(format);那里看下栈： 可以看到格式化字符串在栈上储存要先吞掉一个字符才</description>
+      <description>Love is blind; friendship closes its eyes. — Friedrich Nietzsche 查看程序架构 ida伪代码 典型的格式化字符串漏洞，我们gdb到printf(format);那里看下栈： 可以看到格式化字符串在栈上储</description>
     </item>
     
   </channel>

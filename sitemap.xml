@@ -2,10 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://peterliuzhi.top/posts/hello/</loc>
-    <lastmod>2022-12-29T17:36:19+08:00</lastmod>
+    <loc>https://peterliuzhi.top/categories/</loc>
+    <lastmod>2023-01-02T20:07:34+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/</loc>
+    <lastmod>2023-01-02T20:07:34+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/pwn/</loc>
+    <lastmod>2023-01-02T20:07:34+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/</loc>
+    <lastmod>2023-01-02T20:07:34+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/categories/tricks/</loc>
+    <lastmod>2023-01-02T20:07:34+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tricks/</loc>
+    <lastmod>2023-01-02T20:07:34+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tricks/%E8%B0%83%E8%AF%95arm%E7%A8%8B%E5%BA%8F/</loc>
+    <lastmod>2023-01-02T20:07:34+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tricks/%E8%BE%83%E4%B8%BA%E7%AE%80%E7%9F%AD%E7%9A%84shellcode/</loc>
+    <lastmod>2023-01-02T19:49:12+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/patchelf/</loc>
+    <lastmod>2023-01-02T19:11:04+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tricks/patchelf%E6%9B%B4%E6%94%B9libc%E8%84%9A%E6%9C%AC/</loc>
+    <lastmod>2023-01-02T19:11:04+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/categories/scripts/</loc>
+    <lastmod>2023-01-02T19:11:04+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/writeup/ciscn_2019_n_3/</loc>
+    <lastmod>2023-01-02T16:09:02+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/lifo%E9%94%99%E4%BD%8D/</loc>
+    <lastmod>2023-01-02T16:09:02+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/uaf/</loc>
+    <lastmod>2023-01-02T16:09:02+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/categories/writeup/</loc>
+    <lastmod>2023-01-02T16:09:02+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/writeup/</loc>
+    <lastmod>2023-01-02T16:09:02+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/%E6%9B%B4%E6%94%B9chunk%E5%86%85%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/</loc>
+    <lastmod>2023-01-02T16:09:02+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/posts/hello/</loc>
     <lastmod>2022-12-29T17:36:19+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/posts/</loc>
@@ -89,9 +137,6 @@
     <loc>https://peterliuzhi.top/tags/c&#43;&#43;pwn/</loc>
     <lastmod>2022-12-29T03:01:44+08:00</lastmod>
   </url><url>
-    <loc>https://peterliuzhi.top/categories/</loc>
-    <lastmod>2022-12-29T03:01:44+08:00</lastmod>
-  </url><url>
     <loc>https://peterliuzhi.top/tags/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96/</loc>
     <lastmod>2022-12-29T03:01:44+08:00</lastmod>
   </url><url>
@@ -105,9 +150,6 @@
     <lastmod>2022-12-29T03:01:44+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/printf%E4%B8%8D%E5%88%B7%E6%96%B0%E7%BC%93%E5%86%B2%E5%8C%BA/</loc>
-    <lastmod>2022-12-29T03:01:44+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/tags/pwn/</loc>
     <lastmod>2022-12-29T03:01:44+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/ret2libc/</loc>
@@ -134,25 +176,10 @@
     <loc>https://peterliuzhi.top/tags/syscall/</loc>
     <lastmod>2022-12-29T03:01:44+08:00</lastmod>
   </url><url>
-    <loc>https://peterliuzhi.top/tags/</loc>
-    <lastmod>2022-12-29T03:01:44+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/categories/tricks/</loc>
-    <lastmod>2022-12-29T03:01:44+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/tricks/</loc>
-    <lastmod>2022-12-29T03:01:44+08:00</lastmod>
-  </url><url>
     <loc>https://peterliuzhi.top/tags/unlink/</loc>
     <lastmod>2022-12-29T03:01:44+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/unsorted-bin-main_arena-leak/</loc>
-    <lastmod>2022-12-29T03:01:44+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/categories/writeup/</loc>
-    <lastmod>2022-12-29T03:01:44+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/writeup/</loc>
     <lastmod>2022-12-29T03:01:44+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8D/</loc>
@@ -219,6 +246,9 @@
     <lastmod>2022-12-27T03:01:44+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/pyjail/</loc>
+    <lastmod>2022-12-23T03:01:44+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/web/</loc>
     <lastmod>2022-12-23T03:01:44+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87pyjail%E4%B8%80%E5%8F%A5%E8%AF%9Drce/</loc>

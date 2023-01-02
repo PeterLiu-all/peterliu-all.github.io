@@ -15,7 +15,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/</guid>
-      <description>原题链接 查看程序架构 ida伪代码 限制溢出的字符到ret只能有一个地址，没有后门函数，典型栈迁移 exp # 自动生成头部 from pwn import * from pwn import p64, p32, u32, u64, p8 from LibcSearcher import LibcSearcher import ctypes pss: bool</description>
+      <description>If you change the way you look at things, the things you look at change. — Wayne Dyer 原题链接 查看程序架构 ida伪代码 限制溢出的字符到ret只能有一个地址，没有后门函数，典型栈迁移 exp # 自动生成头部 from pwn</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E6%A0%88%E8%BF%81%E7%A7%BB%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90ciscn_2019_es_2/</guid>
-      <description>【栈迁移例题解析】【Write-up】BUUCTF ciscn_2019_es_2 原题链接 【栈迁移例题解析】【Write-up】BUUCTF ciscn_2019_es_2 checksec查看程序架构 ida查看</description>
+      <description>Self-trust is the first secret of success. — Ralph Waldo Emerson 原题链接 【栈迁移例题解析】【Write-up】BUUCTF ciscn_2019_es_2 checksec查看程序架构 ida查看程序伪代码 构建exp 栈迁移的基</description>
     </item>
     
   </channel>

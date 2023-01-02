@@ -15,7 +15,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E&#43;ret2libcpwn2_sctf_2016/</guid>
-      <description>原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 符号位溢出 ret2libc 完整exp checksec查看程序架构 $ checksec --file ./pwn2_sctf_2016 [*] &amp;#39;/home/peterl/security/workspace/pwn2_sctf_2016/pwn2_sctf_2016&amp;#39; Arch: i386-32-little RELRO: Partial RELRO Stack: No canary found NX: NX</description>
+      <description>Follow effective action with quiet reflection. From the quiet reflection will come even more effective action. — Peter Drucker 原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 符号位溢出 ret2libc 完整exp checksec查看程序</description>
     </item>
     
   </channel>

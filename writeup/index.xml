@@ -8,14 +8,23 @@
     <language>zh</language>
     <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/writeup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Jan 2023 16:09:02 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/writeup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ciscn_2019_n_3</title>
+      <link>https://peterliuzhi.top/writeup/ciscn_2019_n_3/</link>
+      <pubDate>Mon, 02 Jan 2023 16:09:02 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/writeup/ciscn_2019_n_3/</guid>
+      <description>Courage is going from failure to failure without losing enthusiasm. — Winston Churchill 原题链接 checksec查看程序架构 ida查看伪C代码 菜单堆题，只有三个功能，分配空间，释放空间，显示内容，无法在分配了空间</description>
+    </item>
+    
     <item>
       <title>【32位系统传参】BUUCTF picoctf_2018_rop chain</title>
       <link>https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/</guid>
-      <description>原题链接 checksec ida 解题思路很简单，先后调用win_function1、winfunction2、flag函数即可，重要的是rop链的顺序，32位系统比较杂乱</description>
+      <description>Sometimes being a friend means mastering the art of timing. There is a time for silence. A time to let go and allow people to hurl themselves into their own destiny. And a time to prepare to pick up the pieces when it&amp;rsquo;s all over. — Octavia E. Butler 原题链接 checksec ida 解题思路很简单，先后调用win_func</description>
     </item>
     
     <item>
@@ -24,7 +33,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/</guid>
-      <description>原题链接 查看程序架构 ida伪代码 典型的C++语法，这里应该有两个类，Admin继承自User： 其中我们发现Admin::shell正是我们需要的后门函</description>
+      <description>Our shared values define us more than our differences. And acknowledging those shared values can see us through our challenges today if we have the wisdom to trust in them again. — John McCain 原题链接 查看程序架构 ida伪代码 典型的C++语法，这里应该有两个类，Admin继承</description>
     </item>
     
     <item>
@@ -33,7 +42,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/</guid>
-      <description>原题链接 查看程序架构 ida伪代码 限制溢出的字符到ret只能有一个地址，没有后门函数，典型栈迁移 exp # 自动生成头部 from pwn import * from pwn import p64, p32, u32, u64, p8 from LibcSearcher import LibcSearcher import ctypes pss: bool</description>
+      <description>If you change the way you look at things, the things you look at change. — Wayne Dyer 原题链接 查看程序架构 ida伪代码 限制溢出的字符到ret只能有一个地址，没有后门函数，典型栈迁移 exp # 自动生成头部 from pwn</description>
     </item>
     
     <item>
@@ -42,7 +51,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/</guid>
-      <description>【Write-up】BUUCTF others_shellcode 原题链接 【Write-up】BUUCTF others_shellcode checksec 查看程序架构 ida 查看程序伪代码 构建 exp checksec 查看程序架构 $ checksec --file shell_asm [*] &amp;#39;/home/peterl/security/workspace/shell_asm/shell_asm&amp;#39; Arch: i386-32-little RELRO: Partial RELRO Stack:</description>
+      <description>I have an everyday religion that works for me. Love yourself first, and everything else falls into line. — Lucille Ball 【Write-up】BUUCTF others_shellcode 原题链接 【Write-up】BUUCTF others_shellcode checksec 查看程序架构 ida 查看程序伪代码 构</description>
     </item>
     
     <item>
@@ -51,7 +60,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/fmtstr_payload%E5%87%BD%E6%95%B0buuctf-axb_2019_fmt32/</guid>
-      <description>查看程序架构 ida伪代码 典型的格式化字符串漏洞，我们gdb到printf(format);那里看下栈： 可以看到格式化字符串在栈上储存要先吞掉一个字符才</description>
+      <description>Love is blind; friendship closes its eyes. — Friedrich Nietzsche 查看程序架构 ida伪代码 典型的格式化字符串漏洞，我们gdb到printf(format);那里看下栈： 可以看到格式化字符串在栈上储</description>
     </item>
     
     <item>
@@ -60,7 +69,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/harekazectf2019baby_rop/</guid>
-      <description>【Write-up】BUUCTF 【HarekazeCTF2019】baby_rop 原题链接 【Write-up】BUUCTF 【HarekazeCTF20</description>
+      <description>We respect our elders. There is wisdom that comes from experience, and I am not going to stop learning from wise counsel. — Marcia Fudge 原题链接 【Write-up】BUUCTF 【HarekazeCTF2019】baby_rop checksec 查看程序</description>
     </item>
     
     <item>
@@ -69,7 +78,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/libsearcherciscn_2019_en_2/</guid>
-      <description>【Write-up】BUUCTF ciscn_2019_en_2 原题链接和这道题是一道题，一模一样的 【Write-up】BUUCTF ciscn_2019_en_2 checksec 查看程序架构 ida 查看程序伪代码 构建 exp 完整 exp checksec 查</description>
+      <description>Do you want to know who you are? Don&amp;rsquo;t ask. Act! Action will delineate and define you. — Thomas Jefferson 原题链接和这道题是一道题，一模一样的 【Write-up】BUUCTF ciscn_2019_en_2 checksec 查看程序架构 ida 查看程序伪代码 构建 exp 完整</description>
     </item>
     
     <item>
@@ -78,7 +87,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/printf%E4%B8%8D%E5%88%B7%E6%96%B0%E7%BC%93%E5%86%B2%E5%8C%BAnot_the_same_3dsctf_2016/</guid>
-      <description>&amp;ldquo;【Write-up】BUUCTF not_the_same_3dsctf_2016 原题链接 &amp;quot;【Write-up】BUUCTF not_the_same_3dsctf_2016 checksec查看程序架构 ida查看程序伪代码</description>
+      <description>People ask me what I do in winter when there&amp;rsquo;s no baseball. I&amp;rsquo;ll tell you what I do. I stare out the window and wait for spring. — Rogers Hornsby 原题链接 &amp;quot;【Write-up】BUUCTF not_the_same_3dsctf_2016 checksec查看程序架构 ida查</description>
     </item>
     
     <item>
@@ -87,7 +96,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/shell%E9%87%8D%E5%AE%9A%E5%90%91buuctf-wustctf2020_closed/</guid>
-      <description>原题链接 直接给了shell，但是把输出流关了 这时候我们可以用shell重定向输出流到输入流： exec 1&amp;gt;&amp;amp;0 cat flag</description>
+      <description>The most formidable weapon against errors of every kind is reason. — Thomas Paine 原题链接 直接给了shell，但是把输出流关了 这时候我们可以用shell重定向输出流到输入流： exec 1&amp;gt;&amp;amp;0 cat flag</description>
     </item>
     
     <item>
@@ -96,7 +105,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/syscallget_started_3dsctf_2016/</guid>
-      <description>【syscall】【Write-up】BUUCTF Get_started_3dsctf_2016 原题链接 在做题前，我先为其建立了一个专门的工作目录： 【syscall】【Write-up】BUUC</description>
+      <description>We are shaped by our thoughts; we become what we think. When the mind is pure, joy follows like a shadow that never leaves. — Buddha 原题链接 在做题前，我先为其建立了一个专门的工作目录： 【syscall】【Write-up】BUUC</description>
     </item>
     
     <item>
@@ -105,7 +114,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/unlinkbuuctf-hitcontraining_unlink/</guid>
-      <description>原题链接 checksec查看程序架构 ida查看伪代码 典型的堆菜单题 介绍一下unlink unlink其实就是很普通，很常规的一种从双向链表中取出节点的机</description>
+      <description>Friendship always benefits; love sometimes injures. — Seneca the Younger 原题链接 checksec查看程序架构 ida查看伪代码 典型的堆菜单题 介绍一下unlink unlink其实就是很普通，很常规的一种从双</description>
     </item>
     
     <item>
@@ -114,7 +123,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8Dxman_2019_format/</guid>
-      <description>原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp ASLR对栈的影响 构建地址链 爆破 完整exp checksec查看程序架构 $ checksec xman_2019_format [*] &amp;#39;/home/giantbranch/share_files/security/workspace/xman_2019_format/xman_2019_format&amp;#39; Arch: i386-32-little</description>
+      <description>The longer we dwell on our misfortunes, the greater is their power to harm us. — Voltaire 原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp ASLR对栈的影响 构建地址链 爆破 完整exp chec</description>
     </item>
     
     <item>
@@ -123,7 +132,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E&#43;ret2libcpwn2_sctf_2016/</guid>
-      <description>原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 符号位溢出 ret2libc 完整exp checksec查看程序架构 $ checksec --file ./pwn2_sctf_2016 [*] &amp;#39;/home/peterl/security/workspace/pwn2_sctf_2016/pwn2_sctf_2016&amp;#39; Arch: i386-32-little RELRO: Partial RELRO Stack: No canary found NX: NX</description>
+      <description>Follow effective action with quiet reflection. From the quiet reflection will come even more effective action. — Peter Drucker 原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 符号位溢出 ret2libc 完整exp checksec查看程序</description>
     </item>
     
     <item>
@@ -132,7 +141,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9Ejarvisoj_fm/</guid>
-      <description>原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 格式化字符串覆盖任意地址数据 完整exp checksec查看程序架构 $ checksec fm [*] &amp;#39;/home/peterl/security/workspace/fm/fm&amp;#39; Arch: i386-32-little RELRO: Partial</description>
+      <description>Never complain and never explain. — Benjamin Disraeli 原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 格式化字符串覆盖任意地址数据 完整exp checksec查看程序架构 $</description>
     </item>
     
     <item>
@@ -141,7 +150,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E5%9F%BA%E7%A1%80sropsig_returnciscn_s_3/</guid>
-      <description>原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 完整exp checksec查看程序架构 $ checksec --file ciscn_s_3 [*] &amp;#39;/home/peterl/security/workspace/ciscn_s_3/ciscn_s_3&amp;#39; Arch: amd64-64-little RELRO: Partial RELRO Stack: No canary found NX: NX enabled PIE: No PIE (0x400000) i</description>
+      <description>Men in general judge more from appearances than from reality. All men have eyes, but few have the gift of penetration. — Niccolò Machiavelli 原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 完整exp checkse</description>
     </item>
     
     <item>
@@ -150,7 +159,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E5%88%A9%E7%94%A8int-80h%E5%88%A9%E7%94%A8mprotect%E5%87%BD%E6%95%B0buuctf-cmcc_simplerop/</guid>
-      <description>题目链接 查看程序架构 不是动态链接程序 ida查看伪代码 解法一 该题没有system也没有/bin/sh，也不能ret2libc，也没有syscall，但是</description>
+      <description>You can&amp;rsquo;t choose up sides on a round world. — Wayne Dyer 题目链接 查看程序架构 不是动态链接程序 ida查看伪代码 解法一 该题没有system也没有/bin/sh，也不能ret2libc，也</description>
     </item>
     
     <item>
@@ -159,7 +168,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E7%BB%95%E8%BF%87%E5%A0%86%E6%BA%A2%E5%87%BA%E9%99%90%E5%88%B6buuctf-babyfengshui_33c3_2016/</guid>
-      <description>原题链接 查看程序架构 ida伪代码 可以看到是标准的菜单堆题 allocate 这里自定义了结构体 在ends处按d新建域，光标在具体的域上按d会清空 这个函数就是一个结构体申</description>
+      <description>In times of change, learners inherit the earth, while the learned find themselves beautifully equipped to deal with a world that no longer exists. — Eric Hoffer 原题链接 查看程序架构 ida伪代码 可以看到是标准的菜单堆题 allocate 这里自定义了结构体 在ends处按d新建</description>
     </item>
     
     <item>
@@ -168,7 +177,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E7%94%9F%E6%88%90orw-shellcodebuuctf-pwnable_orw/</guid>
-      <description>原题链接 exp # 自动生成头部 from pwn import * from pwn import p64, p32, u32, u64, p8 from LibcSearcher import LibcSearcher import ctypes pss: bool = True fn: str = &amp;#34;./orw&amp;#34; libc_name:str = &amp;#34;&amp;#34; port: str = &amp;#34;26851&amp;#34; if_32: bool = True if_debug:bool = False pg = p32 if if_32 else p64 ug = u32 if if_32 else u64 context(log_level=&amp;#34;debug&amp;#34;, arch=&amp;#34;i386&amp;#34; if if_32 else &amp;#34;amd64&amp;#34;, os=&amp;#34;linux&amp;#34;) context.terminal =</description>
+      <description>Never mistake activity for achievement. — John Wooden 原题链接 exp # 自动生成头部 from pwn import * from pwn import p64, p32, u32, u64, p8 from LibcSearcher import LibcSearcher import ctypes pss: bool = True fn: str = &amp;#34;./orw&amp;#34; libc_name:str = &amp;#34;&amp;#34; port: str = &amp;#34;26851&amp;#34; if_32: bool = True if_debug:bool = False pg = p32 if if_32 else p64 ug = u32 if if_32 else u64 context(log_level=&amp;#34;debug&amp;#34;,</description>
     </item>
     
     <item>
@@ -177,7 +186,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E9%A6%96%E9%81%93%E5%A0%86%E9%A2%98fastbin-attackunsorted-bin-main_arena-leakbabyheap_0ctf_2017/</guid>
-      <description>原题链接 这一题是作者的第一道堆题，给作者的第一感受就是神乎其神，在参考了网络上的一些 WP 后写下自己的 WP，如有错误烦请斧正 参考文章 checksec 查看程序架构 ida 查看程</description>
+      <description>It is only when the mind and character slumber that the dress can be seen. — Ralph Waldo Emerson 原题链接 这一题是作者的第一道堆题，给作者的第一感受就是神乎其神，在参考了网络上的一些 WP 后写下自己的 WP，如有错误</description>
     </item>
     
     <item>
@@ -186,7 +195,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E6%A0%88%E8%BF%81%E7%A7%BB%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90ciscn_2019_es_2/</guid>
-      <description>【栈迁移例题解析】【Write-up】BUUCTF ciscn_2019_es_2 原题链接 【栈迁移例题解析】【Write-up】BUUCTF ciscn_2019_es_2 checksec查看程序架构 ida查看</description>
+      <description>Self-trust is the first secret of success. — Ralph Waldo Emerson 原题链接 【栈迁移例题解析】【Write-up】BUUCTF ciscn_2019_es_2 checksec查看程序架构 ida查看程序伪代码 构建exp 栈迁移的基</description>
     </item>
     
     <item>
@@ -195,7 +204,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/ciscn_2019_ne_5/</guid>
-      <description>【Write-up】BUUCTF ciscn_2019_ne_5 原题链接 【Write-up】BUUCTF ciscn_2019_ne_5 checksec查看程序架构 ida查看程序伪代码 构建exp checksec</description>
+      <description>You may say I&amp;rsquo;m a dreamer, but I&amp;rsquo;m not the only one, I hope someday you will join us, and the world will live as one. — John Lennon 原题链接 【Write-up】BUUCTF ciscn_2019_ne_5 checksec查看程序架构 ida查看程序伪代码 构</description>
     </item>
     
     <item>
@@ -204,7 +213,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/jarvisoj_level2_x64/</guid>
-      <description>【Write-up】BUUCTF Jarvisoj_level2_x64 原题链接 【Write-up】BUUCTF Jarvisoj_level2_x64 checksec 查看架构 ida 查看伪代码 构建 exp 完整 exp checksec 查看架构 $ checksec --file level2_x64 [*] &amp;#39;/home/peterl/security/workspace/level2_x64/level2_x64&amp;#39; Arch: amd64-64-little RELRO: No RELRO Stack: No canary found</description>
+      <description>I believe that we are fundamentally the same and have the same basic potential. — Dalai Lama 原题链接 【Write-up】BUUCTF Jarvisoj_level2_x64 checksec 查看架构 ida 查看伪代码 构建 exp 完整 exp checksec 查看架构 $ checksec --file level2_x64 [*] &amp;#39;/home/peterl/security/workspace/level2_x64/level2_x64&amp;#39; Arch: amd64-64-little RELRO: No RELRO Stack: No canary found</description>
     </item>
     
     <item>
@@ -213,7 +222,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/%E6%9A%A8%E5%8D%97%E5%A4%A7%E5%AD%A62022%E6%96%B0%E7%94%9F%E8%B5%9B%E5%88%9D%E8%B5%9B-%E9%9D%9E%E5%AE%98%E6%96%B9writeup/</guid>
-      <description>原题链接 EasyEasyEasy 因为读入的是一个有符号数，所以当输入-1 的时候也是合法的 而我们知道，-1%256 也是-1，而v5[-1]意为*(v5-1)，指向 v5 前面一个数</description>
+      <description>It is not so much our friends&amp;rsquo; help that helps us, as the confidence of their help. — Epicurus 原题链接 EasyEasyEasy 因为读入的是一个有符号数，所以当输入-1 的时候也是合法的 而我们知道，-1%256 也是-1，而v5[-1</description>
     </item>
     
   </channel>

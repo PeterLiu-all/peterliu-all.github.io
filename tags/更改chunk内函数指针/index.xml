@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>更改chunk内函数指针 on P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E6%9B%B4%E6%94%B9chunk%E5%86%85%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/</link>
+    <description>Recent content in 更改chunk内函数指针 on P3troL1er的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Mon, 02 Jan 2023 16:09:02 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E6%9B%B4%E6%94%B9chunk%E5%86%85%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ciscn_2019_n_3</title>
+      <link>https://peterliuzhi.top/writeup/ciscn_2019_n_3/</link>
+      <pubDate>Mon, 02 Jan 2023 16:09:02 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/writeup/ciscn_2019_n_3/</guid>
+      <description>Courage is going from failure to failure without losing enthusiasm. — Winston Churchill 原题链接 checksec查看程序架构 ida查看伪C代码 菜单堆题，只有三个功能，分配空间，释放空间，显示内容，无法在分配了空间</description>
+    </item>
+    
+  </channel>
+</rss>

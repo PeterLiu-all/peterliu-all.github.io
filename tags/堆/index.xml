@@ -15,7 +15,7 @@
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/writeup/unlinkbuuctf-hitcontraining_unlink/</guid>
-      <description>原题链接 checksec查看程序架构 ida查看伪代码 典型的堆菜单题 介绍一下unlink unlink其实就是很普通，很常规的一种从双向链表中取出节点的机</description>
+      <description>Friendship always benefits; love sometimes injures. — Seneca the Younger 原题链接 checksec查看程序架构 ida查看伪代码 典型的堆菜单题 介绍一下unlink unlink其实就是很普通，很常规的一种从双</description>
     </item>
     
   </channel>
