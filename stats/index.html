@@ -394,7 +394,7 @@ function yearStats() {
   });
 
   const d = [];
-  for(let i = 2009; i <= (new Date().getFullYear()); i++) {
+  for(let i = 2020; i <= (new Date().getFullYear()); i++) {
     d.push([i, yearGroup[i] || 0]);
   }
   showChart('year-stat', '文章数 - 按年统计', '文章数', d);
@@ -408,7 +408,7 @@ function monthStats() {
     monthGroup[article.month] += 1;
   });
   const d = [];
-  for(let year = 2009; year <= (new Date().getFullYear()); year++) {
+  for(let year = 2020; year <= (new Date().getFullYear()); year++) {
     for(let month = 1; month < 13; month++) {
       const text = `${year}-${month < 10 ? '0' + month : month}`;
       d.push([text, monthGroup[text] || 0]);
