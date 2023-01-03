@@ -91,6 +91,15 @@
     </item>
     
     <item>
+      <title>搜索结果</title>
+      <link>https://peterliuzhi.top/search.html/</link>
+      <pubDate>Thu, 29 Dec 2022 05:02:20 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/search.html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>【32位系统传参】BUUCTF picoctf_2018_rop chain</title>
       <link>https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
@@ -513,15 +522,6 @@
       <description>==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 %%
 Drawing {&amp;#34;type&amp;#34;:&amp;#34;excalidraw&amp;#34;,&amp;#34;version&amp;#34;:2,&amp;#34;source&amp;#34;:&amp;#34;https://excalidraw.com&amp;#34;,&amp;#34;elements&amp;#34;:[],&amp;#34;appState&amp;#34;:{&amp;#34;gridSize&amp;#34;:null,&amp;#34;viewBackgroundColor&amp;#34;:&amp;#34;#ffffff&amp;#34;}} %%</description>
-    </item>
-    
-    <item>
-      <title>包含关键词 的文章</title>
-      <link>https://peterliuzhi.top/search.html/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://peterliuzhi.top/search.html/</guid>
-      <description></description>
     </item>
     
   </channel>
