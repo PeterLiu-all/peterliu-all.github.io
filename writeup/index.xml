@@ -8,7 +8,16 @@
     <language>zh</language>
     <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 02 Jan 2023 16:09:02 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/writeup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Jan 2023 22:34:23 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/writeup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hitcontraining_heapcreator</title>
+      <link>https://peterliuzhi.top/writeup/hitcontraining_heapcreator/</link>
+      <pubDate>Tue, 03 Jan 2023 22:34:23 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/writeup/hitcontraining_heapcreator/</guid>
+      <description>No man is free who is not master of himself. — Epictetus 原题链接 checksec查看程序架构 ida查看伪C代码 create_heap 分配的chunk结构体包括一个保存size的int，和一个指向其他内存</description>
+    </item>
+    
     <item>
       <title>ciscn_2019_n_3</title>
       <link>https://peterliuzhi.top/writeup/ciscn_2019_n_3/</link>

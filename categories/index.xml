@@ -8,7 +8,16 @@
     <language>zh</language>
     <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Tue, 03 Jan 2023 03:07:58 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Jan 2023 22:34:23 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>writeup</title>
+      <link>https://peterliuzhi.top/categories/writeup/</link>
+      <pubDate>Tue, 03 Jan 2023 22:34:23 +0800</pubDate>
+      
+      <guid>https://peterliuzhi.top/categories/writeup/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>tricks</title>
       <link>https://peterliuzhi.top/categories/tricks/</link>
@@ -33,15 +42,6 @@
       <pubDate>Mon, 02 Jan 2023 19:11:04 +0800</pubDate>
       
       <guid>https://peterliuzhi.top/categories/scripts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>writeup</title>
-      <link>https://peterliuzhi.top/categories/writeup/</link>
-      <pubDate>Mon, 02 Jan 2023 16:09:02 +0800</pubDate>
-      
-      <guid>https://peterliuzhi.top/categories/writeup/</guid>
       <description></description>
     </item>
     
