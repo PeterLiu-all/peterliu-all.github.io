@@ -2,8 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/</loc>
+    <lastmod>2023-01-04T17:09:58+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/categories/bsides-mumbai/</loc>
+    <lastmod>2023-01-04T17:09:58+08:00</lastmod>
+  </url><url>
     <loc>https://peterliuzhi.top/categories/</loc>
-    <lastmod>2023-01-03T22:34:23+08:00</lastmod>
+    <lastmod>2023-01-04T17:09:58+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/</loc>
+    <lastmod>2023-01-04T17:09:58+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/pwn/</loc>
+    <lastmod>2023-01-04T17:09:58+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/</loc>
+    <lastmod>2023-01-04T17:09:58+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/categories/writeup/</loc>
+    <lastmod>2023-01-04T17:09:58+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/writeup/</loc>
+    <lastmod>2023-01-04T17:09:58+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/chunk-overlap/</loc>
     <lastmod>2023-01-03T22:34:23+08:00</lastmod>
@@ -12,21 +33,6 @@
     <lastmod>2023-01-03T22:34:23+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/off-by-one/</loc>
-    <lastmod>2023-01-03T22:34:23+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/</loc>
-    <lastmod>2023-01-03T22:34:23+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/tags/pwn/</loc>
-    <lastmod>2023-01-03T22:34:23+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/tags/</loc>
-    <lastmod>2023-01-03T22:34:23+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/categories/writeup/</loc>
-    <lastmod>2023-01-03T22:34:23+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/writeup/</loc>
     <lastmod>2023-01-03T22:34:23+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/glibc/</loc>

