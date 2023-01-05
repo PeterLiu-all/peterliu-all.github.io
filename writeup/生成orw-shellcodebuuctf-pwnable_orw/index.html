@@ -145,7 +145,7 @@
     },
     "headline": "【生成ORW shellcode】BUUCTF pwnable_orw - P3troL1er的个人博客","datePublished": "2022-12-29T03:01:44+08:00",
     "dateModified": "2022-12-29T03:01:44+08:00",
-    "wordCount":  652 ,
+    "wordCount":  642 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -537,8 +537,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">formula</span><span class="p">)),</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="o">...</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">shellcode</span> <span class="o">=</span> <span class="mh">0x804A060</span>
-</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="n">shellcode</span> <span class="o">+</span> <span class="mh">0x30</span> <span class="o">+</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 需要自行设定offset</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 生成orw的shellcode</span>
 </span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">([</span>
