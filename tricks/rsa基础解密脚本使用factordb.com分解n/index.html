@@ -145,7 +145,7 @@
     },
     "headline": "RSA基础解密脚本（使用factordb.com分解n） - P3troL1er的个人博客","datePublished": "2023-01-06T02:10:16+08:00",
     "dateModified": "2023-01-06T02:10:16+08:00",
-    "wordCount":  396 ,
+    "wordCount":  434 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -386,8 +386,11 @@
 </span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[+]n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">p_q</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 一般来说需要代理才能连上网络，有些代理加速器也不用这样配置</span>
+</span></span><span class="line"><span class="cl"><span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;http&#34;</span><span class="p">:</span> <span class="s2">&#34;http://?.?.?.?:?&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;https&#34;</span><span class="p">:</span> <span class="s2">&#34;http://?.?.?.?:?&#34;</span><span class="p">,</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://factordb.com/index.php?&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">html_doc</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;query&#34;</span><span class="p">:</span> <span class="n">n</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="n">html_doc</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;query&#34;</span><span class="p">:</span> <span class="n">n</span><span class="p">},</span> <span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 创建一个BeautifulSoup解析对象</span>
 </span></span><span class="line"><span class="cl"><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_doc</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">&#34;html.parser&#34;</span><span class="p">,</span> <span class="n">from_encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 获取所有的链接</span>
