@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>BSides Mumbai on P3troL1er的个人博客</title>
+    <title>BSides Mumbai | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/categories/bsides-mumbai/</link>
-    <description>Recent content in BSides Mumbai on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Wed, 04 Jan 2023 17:09:58 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/categories/bsides-mumbai/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/categories/bsides-mumbai/index.xml" rel="self" type="application/rss+xml" />
+    <description>BSides Mumbai</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 04 Jan 2023 17:09:58 +0800</lastBuildDate>
     <item>
       <title>【BSides Mumbai 2022 PWN】Warmup</title>
       <link>https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/</link>
       <pubDate>Wed, 04 Jan 2023 17:09:58 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/</guid>
-      <description>When I let go of what I am, I become what I might be. — Laozi [附件程序: 【BSides Mumbai 2022 PWN】Warmup](/appendix/【BSides Mumbai 2022 PWN】Warmup) ch</description>
+      
+      <description>关于【BSides Mumbai 2022 PWN】Warmup的解析</description>
+      
     </item>
     
   </channel>

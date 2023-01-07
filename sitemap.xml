@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://peterliuzhi.top/</loc>
+    <lastmod>2023-01-07T17:06:54+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/subscribe/</loc>
+    <lastmod>2023-01-07T17:06:54+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/subscribe/subscribe/</loc>
+    <lastmod>2023-01-07T17:06:54+08:00</lastmod>
+  </url><url>
     <loc>https://peterliuzhi.top/categories/</loc>
     <lastmod>2023-01-06T02:10:16+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/crypto/</loc>
-    <lastmod>2023-01-06T02:10:16+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/</loc>
     <lastmod>2023-01-06T02:10:16+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tricks/rsa%E5%9F%BA%E7%A1%80%E8%A7%A3%E5%AF%86%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8factordb.com%E5%88%86%E8%A7%A3n/</loc>
@@ -398,13 +404,7 @@
   </url><url>
     <loc>https://peterliuzhi.top/homepage/</loc>
   </url><url>
-    <loc>https://peterliuzhi.top/image/drawing-2022-10-27-16.58.09.excalidraw/</loc>
-  </url><url>
     <loc>https://peterliuzhi.top/authors/</loc>
-  </url><url>
-    <loc>https://peterliuzhi.top/tags/excalidraw/</loc>
-  </url><url>
-    <loc>https://peterliuzhi.top/image/</loc>
   </url><url>
     <loc>https://peterliuzhi.top/series/</loc>
   </url>

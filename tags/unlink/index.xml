@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>unlink on P3troL1er的个人博客</title>
+    <title>unlink | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/unlink/</link>
-    <description>Recent content in unlink on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/unlink/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/unlink/index.xml" rel="self" type="application/rss+xml" />
+    <description>unlink</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate>
     <item>
       <title>【unlink】BUUCTF hitcontraining_unlink</title>
       <link>https://peterliuzhi.top/writeup/unlinkbuuctf-hitcontraining_unlink/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/unlinkbuuctf-hitcontraining_unlink/</guid>
-      <description>Friendship always benefits; love sometimes injures. — Seneca the Younger 原题链接 checksec查看程序架构 ida查看伪代码 典型的堆菜单题 介绍一下unlink unlink其实就是很普通，很常规的一种从双</description>
+      
+      <description>BUUCTF hitcontraining_unlink的解析</description>
+      
     </item>
     
   </channel>

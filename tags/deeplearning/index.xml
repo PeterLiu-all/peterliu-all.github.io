@@ -1,66 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>deeplearning on P3troL1er的个人博客</title>
+    <title>deeplearning | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/deeplearning/</link>
-    <description>Recent content in deeplearning on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Wed, 16 Nov 2022 14:13:51 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/deeplearning/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/deeplearning/index.xml" rel="self" type="application/rss+xml" />
+    <description>deeplearning</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 16 Nov 2022 14:13:51 +0800</lastBuildDate>
     <item>
       <title>DeepLearning介绍</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/introduction/deeplearning%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/introduction/deeplearning%E4%BB%8B%E7%BB%8D/</guid>
-      <description>Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars to change the world. — Harriet Tubman DeepLearning 基本框架 梯度:下山最快的方向 Loss函数 梯度到底是啥? 基本框架 整个神经网络就是一个函</description>
+      
+      <description>DeepLearning介绍</description>
+      
     </item>
     
     <item>
       <title>LinearRegression</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression/</guid>
-      <description>The attempt to combine wisdom and power has only rarely been successful and then only for a short while. — Albert Einstein 线性回归的简单实现 定义函数 定义模型函数(X*W+b) 定义 Loss 函数1/2(y_hat - y)^2，计算网络所得结</description>
+      
+      <description>线性回归的简单实现</description>
+      
     </item>
     
     <item>
       <title>softmax intro</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax-intro/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax-intro/</guid>
-      <description>Imagination is more important than knowledge. For while knowledge defines all we currently know and understand, imagination points to all we might yet discover and create. — Albert Einstein softmax 回归概述 softmax 回归是什么 Softmax 公式 Softmax 回归的 Loss 函数——交叉熵损失函数 softmax 回归是什么 有时候我们的输出值不</description>
+      
+      <description>softmax 回归概述</description>
+      
     </item>
     
     <item>
       <title>softmax简单实现</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</guid>
-      <description>True friendship is like sound health; the value of it is seldom known until it is lost. — Charles Caleb Colton softmax 简单实现 需要导入的库 定义需要的函数 定义模型函数 定义交叉熵损失函数 定义准确率 定义优化算法 定义数据分批的函数 训</description>
+      
+      <description>softmax简单实现</description>
+      
     </item>
     
     <item>
       <title>图像识别intro</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%ABintro/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%ABintro/</guid>
-      <description>It always seems impossible until it&amp;rsquo;s done. — Nelson Mandela 使用 torchvision 库 图像识别 从 MNIST 获取数据 定义画图函数 将数据集里的 labels 映射为字符串 打印 features 和 labels import matplotlib.pyplot as plt import numpy as np import torchvision import torchvision.transforms as transforms 从 MNIST 获取数据 # 获得的是Mn</description>
+      
+      <description>图像识别intro</description>
+      
     </item>
     
     <item>
       <title>线性回归优化实现-利用pytorch</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/</guid>
-      <description>You&amp;rsquo;re not obligated to win. You&amp;rsquo;re obligated to keep trying to do the best you can every day. — Marian Wright Edelman 我们之前的程序有时兼顾了太多的细节，pytorch的库里有许多优雅而方便的方法，我们可以利用它们来优化我们</description>
+      
+      <description>线性回归优化实现-利用pytorch</description>
+      
     </item>
     
   </channel>

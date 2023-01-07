@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>生成ORW shellcode on P3troL1er的个人博客</title>
+    <title>生成ORW shellcode | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/%E7%94%9F%E6%88%90orw-shellcode/</link>
-    <description>Recent content in 生成ORW shellcode on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E7%94%9F%E6%88%90orw-shellcode/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/%E7%94%9F%E6%88%90orw-shellcode/index.xml" rel="self" type="application/rss+xml" />
+    <description>生成ORW shellcode</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate>
     <item>
       <title>【生成ORW shellcode】BUUCTF pwnable_orw</title>
       <link>https://peterliuzhi.top/writeup/%E7%94%9F%E6%88%90orw-shellcodebuuctf-pwnable_orw/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E7%94%9F%E6%88%90orw-shellcodebuuctf-pwnable_orw/</guid>
-      <description>Never mistake activity for achievement. — John Wooden 原题链接 exp # 自动生成头部 from pwn import * from pwn import p64, p32, u32, u64, p8 from LibcSearcher import LibcSearcher import ctypes pss: bool = True fn: str = &amp;#34;./orw&amp;#34; libc_name:str = &amp;#34;&amp;#34; port: str = &amp;#34;26851&amp;#34; if_32: bool = True if_debug:bool = False pg = p32 if if_32 else p64 ug = u32 if if_32 else u64 context(log_level=&amp;#34;debug&amp;#34;,</description>
+      
+      <description>BUUCTF pwnable_orw的解析</description>
+      
     </item>
     
   </channel>

@@ -1,30 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>softmax on P3troL1er的个人博客</title>
+    <title>softmax | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/softmax/</link>
-    <description>Recent content in softmax on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Wed, 16 Nov 2022 14:13:51 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/softmax/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/softmax/index.xml" rel="self" type="application/rss+xml" />
+    <description>softmax</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 16 Nov 2022 14:13:51 +0800</lastBuildDate>
     <item>
       <title>softmax intro</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax-intro/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax-intro/</guid>
-      <description>Imagination is more important than knowledge. For while knowledge defines all we currently know and understand, imagination points to all we might yet discover and create. — Albert Einstein softmax 回归概述 softmax 回归是什么 Softmax 公式 Softmax 回归的 Loss 函数——交叉熵损失函数 softmax 回归是什么 有时候我们的输出值不</description>
+      
+      <description>softmax 回归概述</description>
+      
     </item>
     
     <item>
       <title>softmax简单实现</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</guid>
-      <description>True friendship is like sound health; the value of it is seldom known until it is lost. — Charles Caleb Colton softmax 简单实现 需要导入的库 定义需要的函数 定义模型函数 定义交叉熵损失函数 定义准确率 定义优化算法 定义数据分批的函数 训</description>
+      
+      <description>softmax简单实现</description>
+      
     </item>
     
   </channel>

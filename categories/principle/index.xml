@@ -1,156 +1,169 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>principle on P3troL1er的个人博客</title>
+    <title>principle | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/categories/principle/</link>
-    <description>Recent content in principle on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Wed, 16 Nov 2022 14:13:51 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/categories/principle/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/categories/principle/index.xml" rel="self" type="application/rss+xml" />
+    <description>principle</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 16 Nov 2022 14:13:51 +0800</lastBuildDate>
     <item>
       <title>DeepLearning介绍</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/introduction/deeplearning%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/introduction/deeplearning%E4%BB%8B%E7%BB%8D/</guid>
-      <description>Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars to change the world. — Harriet Tubman DeepLearning 基本框架 梯度:下山最快的方向 Loss函数 梯度到底是啥? 基本框架 整个神经网络就是一个函</description>
+      
+      <description>DeepLearning介绍</description>
+      
     </item>
     
     <item>
       <title>LinearRegression</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression/</guid>
-      <description>The attempt to combine wisdom and power has only rarely been successful and then only for a short while. — Albert Einstein 线性回归的简单实现 定义函数 定义模型函数(X*W+b) 定义 Loss 函数1/2(y_hat - y)^2，计算网络所得结</description>
+      
+      <description>线性回归的简单实现</description>
+      
     </item>
     
     <item>
       <title>softmax intro</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax-intro/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax-intro/</guid>
-      <description>Imagination is more important than knowledge. For while knowledge defines all we currently know and understand, imagination points to all we might yet discover and create. — Albert Einstein softmax 回归概述 softmax 回归是什么 Softmax 公式 Softmax 回归的 Loss 函数——交叉熵损失函数 softmax 回归是什么 有时候我们的输出值不</description>
+      
+      <description>softmax 回归概述</description>
+      
     </item>
     
     <item>
       <title>softmax简单实现</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</guid>
-      <description>True friendship is like sound health; the value of it is seldom known until it is lost. — Charles Caleb Colton softmax 简单实现 需要导入的库 定义需要的函数 定义模型函数 定义交叉熵损失函数 定义准确率 定义优化算法 定义数据分批的函数 训</description>
+      
+      <description>softmax简单实现</description>
+      
     </item>
     
     <item>
       <title>yolov1</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/yolo/yolov1/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/yolo/yolov1/</guid>
-      <description>Coming together is a beginning; keeping together is progress; working together is success. — Edward Everett Hale YOLOv1 介绍 检测原理 神经网络设计 训练 激活函数 loss 函数 过拟合处理 介绍 You Only Look Once:Unified, Real-Time Object Detectio yolo 是统一、单阶段的，快速、即时的目标检测模型</description>
+      
+      <description>yolov1模型概述</description>
+      
     </item>
     
     <item>
       <title>图像识别intro</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%ABintro/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%ABintro/</guid>
-      <description>It always seems impossible until it&amp;rsquo;s done. — Nelson Mandela 使用 torchvision 库 图像识别 从 MNIST 获取数据 定义画图函数 将数据集里的 labels 映射为字符串 打印 features 和 labels import matplotlib.pyplot as plt import numpy as np import torchvision import torchvision.transforms as transforms 从 MNIST 获取数据 # 获得的是Mn</description>
+      
+      <description>图像识别intro</description>
+      
     </item>
     
     <item>
       <title>线性回归优化实现-利用pytorch</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/</link>
       <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/</guid>
-      <description>You&amp;rsquo;re not obligated to win. You&amp;rsquo;re obligated to keep trying to do the best you can every day. — Marian Wright Edelman 我们之前的程序有时兼顾了太多的细节，pytorch的库里有许多优雅而方便的方法，我们可以利用它们来优化我们</description>
+      
+      <description>线性回归优化实现-利用pytorch</description>
+      
     </item>
     
     <item>
       <title>导论</title>
       <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/</link>
       <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/</guid>
-      <description>Computers are like bikinis. They save people a lot of guesswork. — Sam Ewing 本笔记是笔者在阅读计算机科学导论时的随记 计算机网络和因特网_笔记 网络 网络：是一系列可用于通信的设备相互连接构成的 设备： 主机</description>
+      
+      <description>计算机网络和因特网笔记</description>
+      
     </item>
     
     <item>
       <title>概述</title>
       <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/</link>
       <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/</guid>
-      <description>Lord, make me an instrument of thy peace. Where there is hatred, let me sow love. — Francis of Assisi 概述 什么是互联网 什么是协议 边缘部分和核心部分 边缘部分-主机 主机通信方式-C/S：客户-服务器方式 主机通信方式-</description>
+      
+      <description>计算机网络概述</description>
+      
     </item>
     
     <item>
       <title>链路层</title>
       <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/</link>
       <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/</guid>
-      <description>To follow, without halt, one aim: There is the secret of success. — Anna Pavlova 计算机网络中的任何设备都需要实现链路层 链路层 两类信道 两个子层 基本概念 数据链路控制（DLC） 流量控制和差错控制 三个基本问题</description>
+      
+      <description>链路层</description>
+      
     </item>
     
     <item>
       <title>网络层</title>
       <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/</link>
       <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/</guid>
-      <description>It isn&amp;rsquo;t where you come from, it&amp;rsquo;s where you&amp;rsquo;re going that counts. — Ella Fitzgerald 链路层干的事情是局部的，网络层干的事情是全局的 网络层 概述 网络层提供的服务 路由和转发 网络层提供的两种分组交换的方法 数据报方</description>
+      
+      <description>网络层</description>
+      
     </item>
     
     <item>
       <title>常见宏定义</title>
       <link>https://peterliuzhi.top/principle/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Sun, 30 Oct 2022 14:46:05 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
-      <description>All serious daring starts from within. — Harriet Beecher Stowe /* This file [contains](https://so.csdn.net/so/search?q=contains&amp;amp;spm=1001.2101.3001.7020) definitions used by the Hex-Rays decompiler output. It has type definitions and convenience macros to make the output more readable. Copyright © 2007-2011 Hex-Rays */ #if defined(**GNUC**) typedef long long ll; typedef unsigned long long ull; #define __int64 long long #define __int32 int #define __int16 short #define __int8 char #define MAKELL(num) num ## LL #define FMT_64 “ll” #elif</description>
+      
+      <description>ida常见宏定义</description>
+      
     </item>
     
     <item>
       <title>ret2libc</title>
       <link>https://peterliuzhi.top/principle/ret2libc/</link>
       <pubDate>Wed, 26 Oct 2022 19:05:28 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/ret2libc/</guid>
-      <description>And as we let our own light shine, we unconsciously give other people permission to do the same. — Nelson Mandela return to libc(ret2libc) GOT&amp;amp;PLT 例题 分析 如何 leak 出基址？ 计算出 system 和&amp;quot;/bin/sh&amp;quot;的真实地址 构造第二个 payload 以获取系</description>
+      
+      <description>return to libc(ret2libc)</description>
+      
     </item>
     
     <item>
       <title>关于栈的一些基础知识</title>
       <link>https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
       <pubDate>Wed, 26 Oct 2022 19:05:28 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
-      <description>When we feel love and kindness toward others, it not only makes others feel loved and cared for, but it helps us also to develop inner happiness and peace. — Dalai Lama 关于栈的一些基础知识 pwndbg中显示的栈 最上方的rsp rbp栈帧指针 栈的高低区别 CA</description>
+      
+      <description>关于栈的一些基础知识</description>
+      
     </item>
     
     <item>
       <title>汇编与寄存器</title>
       <link>https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/</link>
       <pubDate>Wed, 26 Oct 2022 19:05:28 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/</guid>
-      <description>Kindness is the language which the deaf can hear and the blind can see. — Mark Twain 汇编与寄存器 寄存器 在16位系统中（8086CPU） 数据寄存器 变址寄存器 指针寄存器 段寄存器 指针指令寄存器 在32位系统中</description>
+      
+      <description>汇编与寄存器相关理论</description>
+      
     </item>
     
     <item>
       <title>ELF详解</title>
       <link>https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/</link>
       <pubDate>Wed, 26 Oct 2022 14:48:56 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/</guid>
-      <description>Myths which are believed in tend to become true. — George Orwell ELF详解 什么是ELF 使用readelf命令读取elf文件 ELF文件类型 ELF程序头（描述段的头） PT_LOAD PT_DYNAMIC（动态</description>
+      
+      <description>ELF详解</description>
+      
     </item>
     
   </channel>

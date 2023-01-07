@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>基础SROP on P3troL1er的个人博客</title>
+    <title>基础SROP | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/%E5%9F%BA%E7%A1%80srop/</link>
-    <description>Recent content in 基础SROP on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E5%9F%BA%E7%A1%80srop/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/%E5%9F%BA%E7%A1%80srop/index.xml" rel="self" type="application/rss+xml" />
+    <description>基础SROP</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate>
     <item>
       <title>【基础SROP】【sig_return】ciscn_s_3</title>
       <link>https://peterliuzhi.top/writeup/%E5%9F%BA%E7%A1%80sropsig_returnciscn_s_3/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E5%9F%BA%E7%A1%80sropsig_returnciscn_s_3/</guid>
-      <description>Men in general judge more from appearances than from reality. All men have eyes, but few have the gift of penetration. — Niccolò Machiavelli 原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 完整exp checkse</description>
+      
+      <description>BUUCTF ciscn_s_3的解析</description>
+      
     </item>
     
   </channel>

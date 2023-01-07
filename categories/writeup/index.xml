@@ -1,246 +1,269 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>writeup on P3troL1er的个人博客</title>
+    <title>writeup | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/categories/writeup/</link>
-    <description>Recent content in writeup on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Wed, 04 Jan 2023 17:09:58 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/categories/writeup/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/categories/writeup/index.xml" rel="self" type="application/rss+xml" />
+    <description>writeup</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 04 Jan 2023 17:09:58 +0800</lastBuildDate>
     <item>
       <title>【BSides Mumbai 2022 PWN】Warmup</title>
       <link>https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/</link>
       <pubDate>Wed, 04 Jan 2023 17:09:58 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/</guid>
-      <description>When I let go of what I am, I become what I might be. — Laozi [附件程序: 【BSides Mumbai 2022 PWN】Warmup](/appendix/【BSides Mumbai 2022 PWN】Warmup) ch</description>
+      
+      <description>关于【BSides Mumbai 2022 PWN】Warmup的解析</description>
+      
     </item>
     
     <item>
       <title>hitcontraining_heapcreator</title>
       <link>https://peterliuzhi.top/writeup/hitcontraining_heapcreator/</link>
       <pubDate>Tue, 03 Jan 2023 22:34:23 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/hitcontraining_heapcreator/</guid>
-      <description>No man is free who is not master of himself. — Epictetus 原题链接 checksec查看程序架构 ida查看伪C代码 create_heap 分配的chunk结构体包括一个保存size的int，和一个指向其他内存</description>
+      
+      <description>关于BUUCTF hitcontraining_heapcreator的解析</description>
+      
     </item>
     
     <item>
       <title>ciscn_2019_n_3</title>
       <link>https://peterliuzhi.top/writeup/ciscn_2019_n_3/</link>
       <pubDate>Mon, 02 Jan 2023 16:09:02 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/ciscn_2019_n_3/</guid>
-      <description>Courage is going from failure to failure without losing enthusiasm. — Winston Churchill 原题链接 checksec查看程序架构 ida查看伪C代码 菜单堆题，只有三个功能，分配空间，释放空间，显示内容，无法在分配了空间</description>
+      
+      <description>关于BUUCTF ciscn_2019_n_3的解析</description>
+      
     </item>
     
     <item>
       <title>【32位系统传参】BUUCTF picoctf_2018_rop chain</title>
       <link>https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E4%BC%A0%E5%8F%82buuctf-picoctf_2018_rop-chain/</guid>
-      <description>Sometimes being a friend means mastering the art of timing. There is a time for silence. A time to let go and allow people to hurl themselves into their own destiny. And a time to prepare to pick up the pieces when it&amp;rsquo;s all over. — Octavia E. Butler 原题链接 checksec ida 解题思路很简单，先后调用win_func</description>
+      
+      <description>BUUCTF picoctf_2018_rop chain的解析</description>
+      
     </item>
     
     <item>
       <title>【C&#43;&#43;Pwn】[ZJCTF 2019]Login</title>
       <link>https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/</guid>
-      <description>Our shared values define us more than our differences. And acknowledging those shared values can see us through our challenges today if we have the wisdom to trust in them again. — John McCain 原题链接 查看程序架构 ida伪代码 典型的C++语法，这里应该有两个类，Admin继承</description>
+      
+      <description>BUUCTF [ZJCTF 2019]Login的解析</description>
+      
     </item>
     
     <item>
       <title>【call32】【栈迁移】BUUCTF ciscn_2019_s_4</title>
       <link>https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/</guid>
-      <description>If you change the way you look at things, the things you look at change. — Wayne Dyer 原题链接 查看程序架构 ida伪代码 限制溢出的字符到ret只能有一个地址，没有后门函数，典型栈迁移 exp # 自动生成头部 from pwn</description>
+      
+      <description>BUUCTF ciscn_2019_s_4的解析</description>
+      
     </item>
     
     <item>
       <title>【C内嵌汇编】others_shellcode</title>
       <link>https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/</guid>
-      <description>I have an everyday religion that works for me. Love yourself first, and everything else falls into line. — Lucille Ball 【Write-up】BUUCTF others_shellcode 原题链接 【Write-up】BUUCTF others_shellcode checksec 查看程序架构 ida 查看程序伪代码 构</description>
+      
+      <description>BUUCTF others_shellcode的解析</description>
+      
     </item>
     
     <item>
       <title>【fmtstr_payload函数】BUUCTF axb_2019_fmt32</title>
       <link>https://peterliuzhi.top/writeup/fmtstr_payload%E5%87%BD%E6%95%B0buuctf-axb_2019_fmt32/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/fmtstr_payload%E5%87%BD%E6%95%B0buuctf-axb_2019_fmt32/</guid>
-      <description>Love is blind; friendship closes its eyes. — Friedrich Nietzsche 查看程序架构 ida伪代码 典型的格式化字符串漏洞，我们gdb到printf(format);那里看下栈： 可以看到格式化字符串在栈上储</description>
+      
+      <description>BUUCTF axb_2019_fmt32的解析</description>
+      
     </item>
     
     <item>
       <title>【HarekazeCTF2019】baby_rop</title>
       <link>https://peterliuzhi.top/writeup/harekazectf2019baby_rop/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/harekazectf2019baby_rop/</guid>
-      <description>We respect our elders. There is wisdom that comes from experience, and I am not going to stop learning from wise counsel. — Marcia Fudge 原题链接 【Write-up】BUUCTF 【HarekazeCTF2019】baby_rop checksec 查看程序</description>
+      
+      <description>BUUCTF 【HarekazeCTF2019】baby_rop的解析</description>
+      
     </item>
     
     <item>
       <title>【LibSearcher】ciscn_2019_en_2</title>
       <link>https://peterliuzhi.top/writeup/libsearcherciscn_2019_en_2/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/libsearcherciscn_2019_en_2/</guid>
-      <description>Do you want to know who you are? Don&amp;rsquo;t ask. Act! Action will delineate and define you. — Thomas Jefferson 原题链接和这道题是一道题，一模一样的 【Write-up】BUUCTF ciscn_2019_en_2 checksec 查看程序架构 ida 查看程序伪代码 构建 exp 完整</description>
+      
+      <description>BUUCTF ciscn_2019_en_2的解析</description>
+      
     </item>
     
     <item>
       <title>【printf不刷新缓冲区】not_the_same_3dsctf_2016</title>
       <link>https://peterliuzhi.top/writeup/printf%E4%B8%8D%E5%88%B7%E6%96%B0%E7%BC%93%E5%86%B2%E5%8C%BAnot_the_same_3dsctf_2016/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/printf%E4%B8%8D%E5%88%B7%E6%96%B0%E7%BC%93%E5%86%B2%E5%8C%BAnot_the_same_3dsctf_2016/</guid>
-      <description>People ask me what I do in winter when there&amp;rsquo;s no baseball. I&amp;rsquo;ll tell you what I do. I stare out the window and wait for spring. — Rogers Hornsby 原题链接 &amp;quot;【Write-up】BUUCTF not_the_same_3dsctf_2016 checksec查看程序架构 ida查</description>
+      
+      <description>BUUCTF not_the_same_3dsctf_2016的解析</description>
+      
     </item>
     
     <item>
       <title>【shell重定向】BUUCTF wustctf2020_closed</title>
       <link>https://peterliuzhi.top/writeup/shell%E9%87%8D%E5%AE%9A%E5%90%91buuctf-wustctf2020_closed/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/shell%E9%87%8D%E5%AE%9A%E5%90%91buuctf-wustctf2020_closed/</guid>
-      <description>The most formidable weapon against errors of every kind is reason. — Thomas Paine 原题链接 直接给了shell，但是把输出流关了 这时候我们可以用shell重定向输出流到输入流： exec 1&amp;gt;&amp;amp;0 cat flag</description>
+      
+      <description>BUUCTF wustctf2020_closed的解析</description>
+      
     </item>
     
     <item>
       <title>【syscall】get_started_3dsctf_2016</title>
       <link>https://peterliuzhi.top/writeup/syscallget_started_3dsctf_2016/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/syscallget_started_3dsctf_2016/</guid>
-      <description>We are shaped by our thoughts; we become what we think. When the mind is pure, joy follows like a shadow that never leaves. — Buddha 原题链接 在做题前，我先为其建立了一个专门的工作目录： 【syscall】【Write-up】BUUC</description>
+      
+      <description>BUUCTF get_started_3dsctf_2016的解析</description>
+      
     </item>
     
     <item>
       <title>【unlink】BUUCTF hitcontraining_unlink</title>
       <link>https://peterliuzhi.top/writeup/unlinkbuuctf-hitcontraining_unlink/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/unlinkbuuctf-hitcontraining_unlink/</guid>
-      <description>Friendship always benefits; love sometimes injures. — Seneca the Younger 原题链接 checksec查看程序架构 ida查看伪代码 典型的堆菜单题 介绍一下unlink unlink其实就是很普通，很常规的一种从双</description>
+      
+      <description>BUUCTF hitcontraining_unlink的解析</description>
+      
     </item>
     
     <item>
       <title>【爆破栈末位】xman_2019_format</title>
       <link>https://peterliuzhi.top/writeup/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8Dxman_2019_format/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E7%88%86%E7%A0%B4%E6%A0%88%E6%9C%AB%E4%BD%8Dxman_2019_format/</guid>
-      <description>The longer we dwell on our misfortunes, the greater is their power to harm us. — Voltaire 原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp ASLR对栈的影响 构建地址链 爆破 完整exp chec</description>
+      
+      <description>BUUCTF xman_2019_format的解析</description>
+      
     </item>
     
     <item>
       <title>【符号位漏洞&#43;ret2libc】pwn2_sctf_2016</title>
       <link>https://peterliuzhi.top/writeup/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E&#43;ret2libcpwn2_sctf_2016/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E&#43;ret2libcpwn2_sctf_2016/</guid>
-      <description>Follow effective action with quiet reflection. From the quiet reflection will come even more effective action. — Peter Drucker 原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 符号位溢出 ret2libc 完整exp checksec查看程序</description>
+      
+      <description>BUUCTF pwn2_sctf_2016的解析</description>
+      
     </item>
     
     <item>
       <title>【格式化字符串漏洞】jarvisoj_fmm</title>
       <link>https://peterliuzhi.top/writeup/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9Ejarvisoj_fm/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9Ejarvisoj_fm/</guid>
-      <description>Never complain and never explain. — Benjamin Disraeli 原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 格式化字符串覆盖任意地址数据 完整exp checksec查看程序架构 $</description>
+      
+      <description>BUUCTF jarvisoj_fm的解析</description>
+      
     </item>
     
     <item>
       <title>【基础SROP】【sig_return】ciscn_s_3</title>
       <link>https://peterliuzhi.top/writeup/%E5%9F%BA%E7%A1%80sropsig_returnciscn_s_3/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E5%9F%BA%E7%A1%80sropsig_returnciscn_s_3/</guid>
-      <description>Men in general judge more from appearances than from reality. All men have eyes, but few have the gift of penetration. — Niccolò Machiavelli 原题链接 checksec查看程序架构 ida查看程序伪代码 构建exp 完整exp checkse</description>
+      
+      <description>BUUCTF ciscn_s_3的解析</description>
+      
     </item>
     
     <item>
       <title>【利用int 80h】【利用mprotect函数】BUUCTF cmcc_simplerop</title>
       <link>https://peterliuzhi.top/writeup/%E5%88%A9%E7%94%A8int-80h%E5%88%A9%E7%94%A8mprotect%E5%87%BD%E6%95%B0buuctf-cmcc_simplerop/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E5%88%A9%E7%94%A8int-80h%E5%88%A9%E7%94%A8mprotect%E5%87%BD%E6%95%B0buuctf-cmcc_simplerop/</guid>
-      <description>You can&amp;rsquo;t choose up sides on a round world. — Wayne Dyer 题目链接 查看程序架构 不是动态链接程序 ida查看伪代码 解法一 该题没有system也没有/bin/sh，也不能ret2libc，也</description>
+      
+      <description>BUUCTF cmcc_simplerop的解析</description>
+      
     </item>
     
     <item>
       <title>【绕过堆溢出限制】BUUCTF babyfengshui_33c3_2016</title>
       <link>https://peterliuzhi.top/writeup/%E7%BB%95%E8%BF%87%E5%A0%86%E6%BA%A2%E5%87%BA%E9%99%90%E5%88%B6buuctf-babyfengshui_33c3_2016/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E7%BB%95%E8%BF%87%E5%A0%86%E6%BA%A2%E5%87%BA%E9%99%90%E5%88%B6buuctf-babyfengshui_33c3_2016/</guid>
-      <description>In times of change, learners inherit the earth, while the learned find themselves beautifully equipped to deal with a world that no longer exists. — Eric Hoffer 原题链接 查看程序架构 ida伪代码 可以看到是标准的菜单堆题 allocate 这里自定义了结构体 在ends处按d新建</description>
+      
+      <description>BUUCTF babyfengshui_33c3_2016的解析</description>
+      
     </item>
     
     <item>
       <title>【生成ORW shellcode】BUUCTF pwnable_orw</title>
       <link>https://peterliuzhi.top/writeup/%E7%94%9F%E6%88%90orw-shellcodebuuctf-pwnable_orw/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E7%94%9F%E6%88%90orw-shellcodebuuctf-pwnable_orw/</guid>
-      <description>Never mistake activity for achievement. — John Wooden 原题链接 exp # 自动生成头部 from pwn import * from pwn import p64, p32, u32, u64, p8 from LibcSearcher import LibcSearcher import ctypes pss: bool = True fn: str = &amp;#34;./orw&amp;#34; libc_name:str = &amp;#34;&amp;#34; port: str = &amp;#34;26851&amp;#34; if_32: bool = True if_debug:bool = False pg = p32 if if_32 else p64 ug = u32 if if_32 else u64 context(log_level=&amp;#34;debug&amp;#34;,</description>
+      
+      <description>BUUCTF pwnable_orw的解析</description>
+      
     </item>
     
     <item>
       <title>【首道堆题】【fastbin attack】【unsorted bin main_arena leak】babyheap_0ctf_2017</title>
       <link>https://peterliuzhi.top/writeup/%E9%A6%96%E9%81%93%E5%A0%86%E9%A2%98fastbin-attackunsorted-bin-main_arena-leakbabyheap_0ctf_2017/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E9%A6%96%E9%81%93%E5%A0%86%E9%A2%98fastbin-attackunsorted-bin-main_arena-leakbabyheap_0ctf_2017/</guid>
-      <description>It is only when the mind and character slumber that the dress can be seen. — Ralph Waldo Emerson 原题链接 这一题是作者的第一道堆题，给作者的第一感受就是神乎其神，在参考了网络上的一些 WP 后写下自己的 WP，如有错误</description>
+      
+      <description>BUUCTF babyheap_0ctf_2017的解析</description>
+      
     </item>
     
     <item>
       <title>【栈迁移例题解析】ciscn_2019_es_2</title>
       <link>https://peterliuzhi.top/writeup/%E6%A0%88%E8%BF%81%E7%A7%BB%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90ciscn_2019_es_2/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E6%A0%88%E8%BF%81%E7%A7%BB%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90ciscn_2019_es_2/</guid>
-      <description>Self-trust is the first secret of success. — Ralph Waldo Emerson 原题链接 【栈迁移例题解析】【Write-up】BUUCTF ciscn_2019_es_2 checksec查看程序架构 ida查看程序伪代码 构建exp 栈迁移的基</description>
+      
+      <description>BUUCTF ciscn_2019_es_2的解析</description>
+      
     </item>
     
     <item>
       <title>BUUCTF ciscn_2019_ne_5</title>
       <link>https://peterliuzhi.top/writeup/ciscn_2019_ne_5/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/ciscn_2019_ne_5/</guid>
-      <description>You may say I&amp;rsquo;m a dreamer, but I&amp;rsquo;m not the only one, I hope someday you will join us, and the world will live as one. — John Lennon 原题链接 【Write-up】BUUCTF ciscn_2019_ne_5 checksec查看程序架构 ida查看程序伪代码 构</description>
+      
+      <description>BUUCTF ciscn_2019_ne_5的解析</description>
+      
     </item>
     
     <item>
       <title>BUUCTF Jarvisoj_level2_x64</title>
       <link>https://peterliuzhi.top/writeup/jarvisoj_level2_x64/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/jarvisoj_level2_x64/</guid>
-      <description>I believe that we are fundamentally the same and have the same basic potential. — Dalai Lama 原题链接 【Write-up】BUUCTF Jarvisoj_level2_x64 checksec 查看架构 ida 查看伪代码 构建 exp 完整 exp checksec 查看架构 $ checksec --file level2_x64 [*] &amp;#39;/home/peterl/security/workspace/level2_x64/level2_x64&amp;#39; Arch: amd64-64-little RELRO: No RELRO Stack: No canary found</description>
+      
+      <description>BUUCTF Jarvisoj_level2_x64的解析</description>
+      
     </item>
     
     <item>
       <title>暨南大学2022新生赛初赛 非官方WriteUp</title>
       <link>https://peterliuzhi.top/writeup/%E6%9A%A8%E5%8D%97%E5%A4%A7%E5%AD%A62022%E6%96%B0%E7%94%9F%E8%B5%9B%E5%88%9D%E8%B5%9B-%E9%9D%9E%E5%AE%98%E6%96%B9writeup/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E6%9A%A8%E5%8D%97%E5%A4%A7%E5%AD%A62022%E6%96%B0%E7%94%9F%E8%B5%9B%E5%88%9D%E8%B5%9B-%E9%9D%9E%E5%AE%98%E6%96%B9writeup/</guid>
-      <description>It is not so much our friends&amp;rsquo; help that helps us, as the confidence of their help. — Epicurus 原题链接 EasyEasyEasy 因为读入的是一个有符号数，所以当输入-1 的时候也是合法的 而我们知道，-1%256 也是-1，而v5[-1</description>
+      
+      <description>苯人参加暨南大学2022新生赛初赛后写的WriteUp</description>
+      
     </item>
     
   </channel>

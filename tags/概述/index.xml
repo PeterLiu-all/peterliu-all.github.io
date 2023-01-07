@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>概述 on P3troL1er的个人博客</title>
+    <title>概述 | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/%E6%A6%82%E8%BF%B0/</link>
-    <description>Recent content in 概述 on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Wed, 16 Nov 2022 14:04:12 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E6%A6%82%E8%BF%B0/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/%E6%A6%82%E8%BF%B0/index.xml" rel="self" type="application/rss+xml" />
+    <description>概述</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 16 Nov 2022 14:04:12 +0800</lastBuildDate>
     <item>
       <title>概述</title>
       <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/</link>
       <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/</guid>
-      <description>Lord, make me an instrument of thy peace. Where there is hatred, let me sow love. — Francis of Assisi 概述 什么是互联网 什么是协议 边缘部分和核心部分 边缘部分-主机 主机通信方式-C/S：客户-服务器方式 主机通信方式-</description>
+      
+      <description>计算机网络概述</description>
+      
     </item>
     
   </channel>

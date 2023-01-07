@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ropper on P3troL1er的个人博客</title>
+    <title>ropper | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/ropper/</link>
-    <description>Recent content in ropper on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/ropper/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/ropper/index.xml" rel="self" type="application/rss+xml" />
+    <description>ropper</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate>
     <item>
       <title>使用ROPgadget、ropper工具构建ropchain</title>
       <link>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8ropgadgetropper%E5%B7%A5%E5%85%B7%E6%9E%84%E5%BB%BAropchain/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8ropgadgetropper%E5%B7%A5%E5%85%B7%E6%9E%84%E5%BB%BAropchain/</guid>
-      <description>The extreme limit of wisdom, that&amp;rsquo;s what the public calls madness. — Jean Cocteau 查看程序架构 ida伪代码 exp 这题手工构造ropchain比较困难，但是我们可以利用ropper或者ROPgadget的rop</description>
+      
+      <description>使用工具构建ropchain</description>
+      
     </item>
     
   </channel>

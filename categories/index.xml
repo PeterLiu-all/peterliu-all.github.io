@@ -1,67 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on P3troL1er的个人博客</title>
+    <title>Categories | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/categories/</link>
-    <description>Recent content in Categories on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Fri, 06 Jan 2023 02:10:16 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>scripts</title>
-      <link>https://peterliuzhi.top/categories/scripts/</link>
-      <pubDate>Fri, 06 Jan 2023 02:10:16 +0800</pubDate>
-      
-      <guid>https://peterliuzhi.top/categories/scripts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tricks</title>
-      <link>https://peterliuzhi.top/categories/tricks/</link>
-      <pubDate>Fri, 06 Jan 2023 02:10:16 +0800</pubDate>
-      
-      <guid>https://peterliuzhi.top/categories/tricks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>BSides Mumbai</title>
-      <link>https://peterliuzhi.top/categories/bsides-mumbai/</link>
-      <pubDate>Wed, 04 Jan 2023 17:09:58 +0800</pubDate>
-      
-      <guid>https://peterliuzhi.top/categories/bsides-mumbai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>writeup</title>
-      <link>https://peterliuzhi.top/categories/writeup/</link>
-      <pubDate>Wed, 04 Jan 2023 17:09:58 +0800</pubDate>
-      
-      <guid>https://peterliuzhi.top/categories/writeup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>链接集锦</title>
-      <link>https://peterliuzhi.top/categories/%E9%93%BE%E6%8E%A5%E9%9B%86%E9%94%A6/</link>
-      <pubDate>Tue, 03 Jan 2023 03:07:58 +0800</pubDate>
-      
-      <guid>https://peterliuzhi.top/categories/%E9%93%BE%E6%8E%A5%E9%9B%86%E9%94%A6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>principle</title>
-      <link>https://peterliuzhi.top/categories/principle/</link>
-      <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
-      
-      <guid>https://peterliuzhi.top/categories/principle/</guid>
-      <description></description>
-    </item>
-    
+      <atom:link href="https://peterliuzhi.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Fri, 06 Jan 2023 02:10:16 +0800</lastBuildDate>
   </channel>
 </rss>

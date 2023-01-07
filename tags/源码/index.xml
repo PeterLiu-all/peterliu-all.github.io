@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>源码 on P3troL1er的个人博客</title>
+    <title>源码 | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/%E6%BA%90%E7%A0%81/</link>
-    <description>Recent content in 源码 on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Tue, 03 Jan 2023 03:07:58 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E6%BA%90%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/%E6%BA%90%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <description>源码</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Tue, 03 Jan 2023 03:07:58 +0800</lastBuildDate>
     <item>
       <title>glibc source code源码</title>
       <link>https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/</link>
       <pubDate>Tue, 03 Jan 2023 03:07:58 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/</guid>
-      <description>True happiness means forging a strong spirit that is undefeated, no matter how trying our circumstances. — Daisaku Ikeda Glibc source code (glibc-2.36.9000) - Bootlin，在线查看源码 Index of /gnu/glibc，直接从官网下载源码 GitHub - bminor/glibc: Unofficial mirror of sourceware glibc repository. Updated daily</description>
+      
+      <description>链接集锦：glibc source code</description>
+      
     </item>
     
   </channel>

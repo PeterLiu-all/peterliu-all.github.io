@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>栈 on P3troL1er的个人博客</title>
+    <title>栈 | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/%E6%A0%88/</link>
-    <description>Recent content in 栈 on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Wed, 26 Oct 2022 19:05:28 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E6%A0%88/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/%E6%A0%88/index.xml" rel="self" type="application/rss+xml" />
+    <description>栈</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 26 Oct 2022 19:05:28 +0800</lastBuildDate>
     <item>
       <title>关于栈的一些基础知识</title>
       <link>https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
       <pubDate>Wed, 26 Oct 2022 19:05:28 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
-      <description>When we feel love and kindness toward others, it not only makes others feel loved and cared for, but it helps us also to develop inner happiness and peace. — Dalai Lama 关于栈的一些基础知识 pwndbg中显示的栈 最上方的rsp rbp栈帧指针 栈的高低区别 CA</description>
+      
+      <description>关于栈的一些基础知识</description>
+      
     </item>
     
   </channel>

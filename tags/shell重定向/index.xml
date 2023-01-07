@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shell重定向 on P3troL1er的个人博客</title>
+    <title>shell重定向 | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/shell%E9%87%8D%E5%AE%9A%E5%90%91/</link>
-    <description>Recent content in shell重定向 on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/shell%E9%87%8D%E5%AE%9A%E5%90%91/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/shell%E9%87%8D%E5%AE%9A%E5%90%91/index.xml" rel="self" type="application/rss+xml" />
+    <description>shell重定向</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate>
     <item>
       <title>【shell重定向】BUUCTF wustctf2020_closed</title>
       <link>https://peterliuzhi.top/writeup/shell%E9%87%8D%E5%AE%9A%E5%90%91buuctf-wustctf2020_closed/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/shell%E9%87%8D%E5%AE%9A%E5%90%91buuctf-wustctf2020_closed/</guid>
-      <description>The most formidable weapon against errors of every kind is reason. — Thomas Paine 原题链接 直接给了shell，但是把输出流关了 这时候我们可以用shell重定向输出流到输入流： exec 1&amp;gt;&amp;amp;0 cat flag</description>
+      
+      <description>BUUCTF wustctf2020_closed的解析</description>
+      
     </item>
     
   </channel>

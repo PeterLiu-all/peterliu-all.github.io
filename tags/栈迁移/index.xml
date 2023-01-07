@@ -1,30 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>栈迁移 on P3troL1er的个人博客</title>
+    <title>栈迁移 | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/%E6%A0%88%E8%BF%81%E7%A7%BB/</link>
-    <description>Recent content in 栈迁移 on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/%E6%A0%88%E8%BF%81%E7%A7%BB/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/%E6%A0%88%E8%BF%81%E7%A7%BB/index.xml" rel="self" type="application/rss+xml" />
+    <description>栈迁移</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate>
     <item>
       <title>【call32】【栈迁移】BUUCTF ciscn_2019_s_4</title>
       <link>https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/</guid>
-      <description>If you change the way you look at things, the things you look at change. — Wayne Dyer 原题链接 查看程序架构 ida伪代码 限制溢出的字符到ret只能有一个地址，没有后门函数，典型栈迁移 exp # 自动生成头部 from pwn</description>
+      
+      <description>BUUCTF ciscn_2019_s_4的解析</description>
+      
     </item>
     
     <item>
       <title>【栈迁移例题解析】ciscn_2019_es_2</title>
       <link>https://peterliuzhi.top/writeup/%E6%A0%88%E8%BF%81%E7%A7%BB%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90ciscn_2019_es_2/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/%E6%A0%88%E8%BF%81%E7%A7%BB%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90ciscn_2019_es_2/</guid>
-      <description>Self-trust is the first secret of success. — Ralph Waldo Emerson 原题链接 【栈迁移例题解析】【Write-up】BUUCTF ciscn_2019_es_2 checksec查看程序架构 ida查看程序伪代码 构建exp 栈迁移的基</description>
+      
+      <description>BUUCTF ciscn_2019_es_2的解析</description>
+      
     </item>
     
   </channel>

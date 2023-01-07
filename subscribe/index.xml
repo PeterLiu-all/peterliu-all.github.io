@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Subscribes | P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/subscribe/</link>
+      <atom:link href="https://peterliuzhi.top/subscribe/index.xml" rel="self" type="application/rss+xml" />
+    <description>Subscribes</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sat, 07 Jan 2023 17:06:54 +0800</lastBuildDate>
+    <item>
+      <title>订阅</title>
+      <link>https://peterliuzhi.top/subscribe/subscribe/</link>
+      <pubDate>Sat, 07 Jan 2023 17:06:54 +0800</pubDate>
+      <guid>https://peterliuzhi.top/subscribe/subscribe/</guid>
+      
+      
+      <description></description>
+      
+      
+    </item>
+    
+  </channel>
+</rss>

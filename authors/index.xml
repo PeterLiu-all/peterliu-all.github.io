@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors on P3troL1er的个人博客</title>
+    <title>Authors | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/authors/</link>
-    <description>Recent content in Authors on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright><atom:link href="https://peterliuzhi.top/authors/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright>
   </channel>
 </rss>

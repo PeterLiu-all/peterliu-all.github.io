@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C内嵌汇编 on P3troL1er的个人博客</title>
+    <title>C内嵌汇编 | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96/</link>
-    <description>Recent content in C内嵌汇编 on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96/index.xml" rel="self" type="application/rss+xml" />
+    <description>C内嵌汇编</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate>
     <item>
       <title>【C内嵌汇编】others_shellcode</title>
       <link>https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/</guid>
-      <description>I have an everyday religion that works for me. Love yourself first, and everything else falls into line. — Lucille Ball 【Write-up】BUUCTF others_shellcode 原题链接 【Write-up】BUUCTF others_shellcode checksec 查看程序架构 ida 查看程序伪代码 构</description>
+      
+      <description>BUUCTF others_shellcode的解析</description>
+      
     </item>
     
   </channel>

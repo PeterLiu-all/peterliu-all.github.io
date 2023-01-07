@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>patchelf on P3troL1er的个人博客</title>
+    <title>patchelf | P3troL1er的个人博客</title>
     <link>https://peterliuzhi.top/tags/patchelf/</link>
-    <description>Recent content in patchelf on P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2023 &lt;a href=&#34;https://github.com/PeterLiu-all&#34;&gt;Peter Liu&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Mon, 02 Jan 2023 19:11:04 +0800</lastBuildDate><atom:link href="https://peterliuzhi.top/tags/patchelf/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://peterliuzhi.top/tags/patchelf/index.xml" rel="self" type="application/rss+xml" />
+    <description>patchelf</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 02 Jan 2023 19:11:04 +0800</lastBuildDate>
     <item>
       <title>patchelf更改libc脚本</title>
       <link>https://peterliuzhi.top/tricks/patchelf%E6%9B%B4%E6%94%B9libc%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Mon, 02 Jan 2023 19:11:04 +0800</pubDate>
-      
       <guid>https://peterliuzhi.top/tricks/patchelf%E6%9B%B4%E6%94%B9libc%E8%84%9A%E6%9C%AC/</guid>
-      <description>A true friend freely, advises justly, assists readily, adventures boldly, takes all patiently, defends courageously, and continues a friend unchangeably. — William C. Menninger 使用方法 changelibc 程序文件名 ld名字 libc路径 ld名字和libc路径如果不想改变可以用0、$、?、:四个分隔</description>
+      
+      <description>小技巧：自动化更改libc脚本</description>
+      
     </item>
     
   </channel>
