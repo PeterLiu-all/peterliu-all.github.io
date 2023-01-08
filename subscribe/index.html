@@ -65,7 +65,10 @@
             }
             .container:hover{
                 transform: translate(-10px, -15px);
-                filter: drop-shadow(16px 16px 20px rgba(130, 119, 119, 0.178));
+                
+                -moz-box-shadow: 0 2px 12px rgba(0, 0, 0, .32);
+                -webkit-box-shadow: 0 2px 12px rgba(0, 0, 0, .32);
+                box-shadow: 0 2px 12px rgba(0, 0, 0, .32);
             }
             .clear {
                 clear: both;
@@ -99,6 +102,7 @@
                 border-radius: 4px;
                 font-size: 14px;
                 box-shadow: none;
+                font-family: 宋体;
             }
             .email-group .button {
                 width: 30%;
@@ -190,7 +194,7 @@
 
             
                 body {
-                    background-image: url(https://peterliuzhi.top/images/bird.jpg);
+                    background-image: url(https://peterliuzhi.top/images/sky.jpg);
                 }
             
 
@@ -390,6 +394,13 @@
         max-height: 1.13em !important;
         font-family: 'Comic Sans MS', cursive;
     }
+
+    .email-input{
+        
+    }
+    .email-input:hover{
+
+    }
             </style>
 
         
@@ -401,7 +412,7 @@
                     <h1 class="title">P3troL1er的个人技术博客</h1>
                     <span class="byline">by P3troL1er</span>
                 </div>
-                <div class="description">输入您的邮箱以获取新资讯</div>
+                <div class="description" style="font-family: 宋体;">输入您的邮箱以获取新资讯</div>
                 <div class="view-messages">
                     
                 </div>
