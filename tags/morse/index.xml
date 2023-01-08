@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>morse | P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/tags/morse/</link>
+      <atom:link href="https://peterliuzhi.top/tags/morse/index.xml" rel="self" type="application/rss+xml" />
+    <description>morse</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 09 Jan 2023 00:53:31 +0800</lastBuildDate>
+    <item>
+      <title>摩斯电码的解码</title>
+      <link>https://peterliuzhi.top/tricks/%E6%91%A9%E6%96%AF%E7%94%B5%E7%A0%81%E7%9A%84%E8%A7%A3%E7%A0%81/</link>
+      <pubDate>Mon, 09 Jan 2023 00:53:31 +0800</pubDate>
+      <guid>https://peterliuzhi.top/tricks/%E6%91%A9%E6%96%AF%E7%94%B5%E7%A0%81%E7%9A%84%E8%A7%A3%E7%A0%81/</guid>
+      
+      <description>小技巧：摩斯电码的解码</description>
+      
+    </item>
+    
+  </channel>
+</rss>

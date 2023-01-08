@@ -3,21 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://peterliuzhi.top/categories/</loc>
-    <lastmod>2023-01-08T14:51:51+08:00</lastmod>
+    <lastmod>2023-01-09T00:53:31+08:00</lastmod>
   </url><url>
-    <loc>https://peterliuzhi.top/tags/hugo/</loc>
-    <lastmod>2023-01-08T14:51:51+08:00</lastmod>
+    <loc>https://peterliuzhi.top/tags/misc/</loc>
+    <lastmod>2023-01-09T00:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/morse/</loc>
+    <lastmod>2023-01-09T00:53:31+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/</loc>
+    <lastmod>2023-01-09T00:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/</loc>
+    <lastmod>2023-01-09T00:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/categories/tricks/</loc>
+    <lastmod>2023-01-09T00:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tricks/</loc>
+    <lastmod>2023-01-09T00:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tricks/%E6%91%A9%E6%96%AF%E7%94%B5%E7%A0%81%E7%9A%84%E8%A7%A3%E7%A0%81/</loc>
+    <lastmod>2023-01-09T00:53:31+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/hugo/</loc>
     <lastmod>2023-01-08T14:51:51+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/categories/posts/</loc>
     <lastmod>2023-01-08T14:51:51+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/posts/</loc>
-    <lastmod>2023-01-08T14:51:51+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/tags/</loc>
     <lastmod>2023-01-08T14:51:51+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/posts/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/</loc>
@@ -42,12 +57,6 @@
     <lastmod>2023-01-06T02:10:16+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/categories/scripts/</loc>
-    <lastmod>2023-01-06T02:10:16+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/categories/tricks/</loc>
-    <lastmod>2023-01-06T02:10:16+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/tricks/</loc>
     <lastmod>2023-01-06T02:10:16+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/</loc>
