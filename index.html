@@ -7,7 +7,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
 <title>P3troL1er的个人博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -198,7 +197,6 @@
     <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
         <i class="fas fa-bars"></i>
     </button>
-
     <div id="target"
         class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
@@ -210,7 +208,36 @@
             <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
             <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
         </div>
-
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
         <div class="flex">
             <div class="search-container relative pt-4 md:pt-0">
                 <div class="search">
@@ -224,7 +251,6 @@
                     </form>
                 </div>
             </div>
-
         <div class="flex">
             <div class="relative pt-4 md:pt-0">
                 <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
@@ -333,11 +359,16 @@
   
     
       
-      <div class="mb-12 flex flex-col items-center justify-center md:flex-row">
+      <style>
+  .dark .avatar{
+    filter: invert(100%);
+  }
+</style>
+<div class="mb-12 flex flex-col items-center justify-center md:flex-row">
   
   
     <div class="md:ms-0 md:me-8 md:pe-8 md:border-e mx-auto w-48 flex-none">
-      <img src="https://peterliuzhi.top/images/avatar.png" class="rounded-full" alt="Avatar" />
+      <img src="https://peterliuzhi.top/images/avatar.png" class="rounded-full avatar" alt="Avatar" />
     </div>
   
   <div class="mt-4 w-full grow md:mt-0">
@@ -395,15 +426,34 @@
         <a href="https://follow.it/p3trol1er?pub"><i class="fa-solid fa-rss"></i></a>
       </div>
     
-      
-      
-      
-      
-      
-      <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-regular fa-bell"></i></a>
-      </div>
-    
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
   </div>
 </div>
 <div class="prose">
@@ -440,9 +490,45 @@
             -webkit-font-smoothing: antialiased;
             font-smoothing: antialiased;
         }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
 </style>
-<p><a href="/subscribe/"><button class="button">订阅P3troL1er的个人博客</button></a> <br /> <br>
-<a href="https://follow.it/p3trol1er?leanpub"><button class="button">现在开始关注P3troL1er</button></a></p>
+<p><a href="/subscribe/"><button class="button">订阅P3troL1er的个人博客</button></a> <br /></p>
 
 </div>
 
@@ -605,6 +691,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   </div>
@@ -676,6 +765,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   </div>
@@ -753,6 +845,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   </div>
@@ -818,6 +913,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   </div>
@@ -834,11 +932,11 @@
   
   
   <div class="prose px-6 pt-6 pb-4">
-    <a href="https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/" class="no-underline">
-      <h3 class="mt-0">【C&#43;&#43;Pwn】[ZJCTF 2019]Login</h3>
+    <a href="https://peterliuzhi.top/writeup/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E&#43;ret2libcpwn2_sctf_2016/" class="no-underline">
+      <h3 class="mt-0">【符号位漏洞&#43;ret2libc】pwn2_sctf_2016</h3>
     </a>
     
-      BUUCTF [ZJCTF 2019]Login的解析
+      BUUCTF pwn2_sctf_2016的解析
     
     <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -875,14 +973,23 @@
       
         
           <span>, </span>
-        <a href="https://peterliuzhi.top/tags/c&#43;&#43;pwn/" class="hover:text-eureka"
-          >C&#43;&#43;Pwn</a
+        <a href="https://peterliuzhi.top/tags/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E/" class="hover:text-eureka"
+          >符号位漏洞</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/ret2libc/" class="hover:text-eureka"
+          >ret2libc</a
         >
       
     </div>
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   </div>
@@ -1072,6 +1179,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   </div>
@@ -1149,6 +1259,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   </div>
@@ -1220,6 +1333,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   </div>
@@ -1371,7 +1487,7 @@
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>16分钟阅读时长</span>
+    <span>17分钟阅读时长</span>
   </div>
 
   
@@ -1409,6 +1525,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   
@@ -1454,6 +1573,9 @@
     
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   
@@ -1641,6 +1763,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   
@@ -1716,6 +1841,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   
@@ -1785,6 +1913,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   
@@ -1929,6 +2060,9 @@
     
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   
@@ -2070,6 +2204,9 @@
     
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   

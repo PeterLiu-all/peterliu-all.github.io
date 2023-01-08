@@ -7,7 +7,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
 <title>pwn - P3troL1er的个人博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -161,27 +160,27 @@
         },{
             "@type":"ListItem",
             "position":  4 ,
+            "name": "【符号位漏洞+ret2libc】pwn2_sctf_2016",
+            "description": "BUUCTF pwn2_sctf_2016的解析",
+            "url": "https://peterliuzhi.top/writeup/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E+ret2libcpwn2_sctf_2016/"
+        },{
+            "@type":"ListItem",
+            "position":  5 ,
+            "name": "【生成ORW shellcode】BUUCTF pwnable_orw",
+            "description": "BUUCTF pwnable_orw的解析",
+            "url": "https://peterliuzhi.top/writeup/%E7%94%9F%E6%88%90orw-shellcodebuuctf-pwnable_orw/"
+        },{
+            "@type":"ListItem",
+            "position":  6 ,
             "name": "【C++Pwn】[ZJCTF 2019]Login",
             "description": "BUUCTF [ZJCTF 2019]Login的解析",
             "url": "https://peterliuzhi.top/writeup/c++pwnzjctf-2019login/"
         },{
             "@type":"ListItem",
-            "position":  5 ,
+            "position":  7 ,
             "name": "【call32】【栈迁移】BUUCTF ciscn_2019_s_4",
             "description": "BUUCTF ciscn_2019_s_4的解析",
             "url": "https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/"
-        },{
-            "@type":"ListItem",
-            "position":  6 ,
-            "name": "【C内嵌汇编】others_shellcode",
-            "description": "BUUCTF others_shellcode的解析",
-            "url": "https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/"
-        },{
-            "@type":"ListItem",
-            "position":  7 ,
-            "name": "【fmtstr_payload函数】BUUCTF axb_2019_fmt32",
-            "description": "BUUCTF axb_2019_fmt32的解析",
-            "url": "https://peterliuzhi.top/writeup/fmtstr_payload%E5%87%BD%E6%95%B0buuctf-axb_2019_fmt32/"
         }
     ]
 }
@@ -263,7 +262,6 @@
     <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
         <i class="fas fa-bars"></i>
     </button>
-
     <div id="target"
         class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
@@ -275,7 +273,36 @@
             <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
             <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
         </div>
-
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
         <div class="flex">
             <div class="search-container relative pt-4 md:pt-0">
                 <div class="search">
@@ -289,7 +316,6 @@
                     </form>
                 </div>
             </div>
-
         <div class="flex">
             <div class="relative pt-4 md:pt-0">
                 <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
@@ -408,6 +434,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   
@@ -487,6 +516,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   
@@ -554,6 +586,155 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://peterliuzhi.top/writeup/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E&#43;ret2libcpwn2_sctf_2016/" class="no-underline">
+    <h3 class="mt-0">【符号位漏洞&#43;ret2libc】pwn2_sctf_2016</h3>
+  </a>
+  
+    BUUCTF pwn2_sctf_2016的解析
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, December 29, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E/" class="hover:text-eureka"
+          >符号位漏洞</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/ret2libc/" class="hover:text-eureka"
+          >ret2libc</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://peterliuzhi.top/writeup/%E7%94%9F%E6%88%90orw-shellcodebuuctf-pwnable_orw/" class="no-underline">
+    <h3 class="mt-0">【生成ORW shellcode】BUUCTF pwnable_orw</h3>
+  </a>
+  
+    BUUCTF pwnable_orw的解析
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, December 29, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E7%94%9F%E6%88%90orw-shellcode/" class="hover:text-eureka"
+          >生成ORW shellcode</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   
@@ -621,6 +802,9 @@
   
 
   
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   
@@ -694,146 +878,9 @@
   
 
   
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/" class="no-underline">
-    <h3 class="mt-0">【C内嵌汇编】others_shellcode</h3>
-  </a>
-  
-    BUUCTF others_shellcode的解析
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Thursday, December 29, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>1分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
-          >writeup</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96/" class="hover:text-eureka"
-          >C内嵌汇编</a
-        >
-      
-    </div>
-  
-
-  
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/writeup/fmtstr_payload%E5%87%BD%E6%95%B0buuctf-axb_2019_fmt32/" class="no-underline">
-    <h3 class="mt-0">【fmtstr_payload函数】BUUCTF axb_2019_fmt32</h3>
-  </a>
-  
-    BUUCTF axb_2019_fmt32的解析
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Thursday, December 29, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>2分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
-          >writeup</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/fmtstr_payload%E5%87%BD%E6%95%B0/" class="hover:text-eureka"
-          >fmtstr_payload函数</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="hover:text-eureka"
-          >格式化字符串</a
-        >
-      
-    </div>
-  
-
-  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
 </div>
 
   
