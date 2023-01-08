@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>保姆级教程——搭建Hugo博客 - P3troL1er的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/c.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cpp.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/armasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/mipsasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/vim.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/javascript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/typescript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/css.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="保姆级教程——搭建Hugo博客">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://peterliuzhi.top/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"保姆级教程——搭建Hugo博客",
+      "item":"https://peterliuzhi.top/posts/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/posts/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/"
+    },
+    "headline": "保姆级教程——搭建Hugo博客 - P3troL1er的个人博客","datePublished": "2023-01-08T14:51:51+08:00",
+    "dateModified": "2023-01-08T14:51:51+08:00",
+    "wordCount":  7884 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "保姆级教程——搭建Hugo博客"
+}
+</script><meta property="og:title" content="保姆级教程——搭建Hugo博客 - P3troL1er的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/posts/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<meta property="og:description" content="保姆级教程——搭建Hugo博客" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2023-01-08T14:51:51&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-01-08T14:51:51&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="杂谈" />
+
+<meta property="article:tag" content="hugo" />
+
+<meta property="article:tag" content="博客" />
+
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+        </div>
+
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">保姆级教程——搭建Hugo博客</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Sunday, January 8, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>16分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/posts/" class="hover:text-eureka"
+          >posts</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="hover:text-eureka"
+          >杂谈</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/hugo/" class="hover:text-eureka"
+          >hugo</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E5%8D%9A%E5%AE%A2/" class="hover:text-eureka"
+          >博客</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <blockquote>
+<p>Serious sport has nothing to do with fair play. It is bound up with hatred, jealousy, boastfulness, disregard of all rules and sadistic pleasure in witnessing violence. In other words, it is war minus the shooting.
+— <cite>George Orwell</cite></p>
+</blockquote>
+<h1 id="安装-hugo">安装 hugo</h1>
+<p><a href="https://www.gohugo.org/">hugo 中文文档</a></p>
+<p>在<a href="https://github.com/gohugoio/hugo/releases">releases 界面</a>下载 hugo 的 exe 文件（windows可以使用<a href="https://chocolatey.org/install">choco安装</a>），mac 用户可以使用<code>brew install hugo</code></p>
+<blockquote>
+<p>如果要更新 hugo 的所有依赖库，使用命令<code>go get -u -v github.com/gohugoio/hugo</code>，注意，hugo 中文文档中给出的 GitHub 地址是已经过期的，运行后会叫你从这个地址下载（可以试试）</p>
+</blockquote>
+<h1 id="使用-hugo-生成站点与文章并在本地查看">使用 hugo 生成站点与文章，并在本地查看</h1>
+<p>使用命令<code>hugo new site MyBlog</code>生成一个博客文件夹</p>
+<p>使用命令<code>hugo new posts\intro.md</code>，这个命令会在本来为空的 content 文件夹下新建 posts 文件夹，并在 posts 文件夹内新建 intro.md 文件。如果你不喜欢 posts 这个名字，也可以自定义。</p>
+<h1 id="安装-hugo-主题美化你的博客">安装 hugo 主题，美化你的博客</h1>
+<p>hugo 有一个 themes 文件夹，使用<code>cd themes</code>进入该文件夹，在<a href="https://www.gohugo.org/theme/">hugo 官方皮肤网站</a>挑选一个喜欢的主题，使用 git 下载</p>
+<p>这里我使用的是<a href="https://github.com/wangchucheng">wangchucheng</a>提供的<a href="https://www.wangchucheng.com/zh/docs/hugo-eureka/getting-started/">Eureka主题</a>，页面简洁美观，有些功能很完善，但是有些功能没有，本教程会在后面说明增加方法</p>
+<p>请仔细阅读<a href="https://www.wangchucheng.com/zh/docs/hugo-eureka/getting-started/">入门 - Hugo Eureka | WANG Chucheng</a>下载安装该主题，本教程之后都是围绕该主题进行，如果你喜欢其他主题，可以查阅它的官方文档</p>
+<h1 id="使用-github-的-pages-功能发布你的网页">使用 GitHub 的 pages 功能发布你的网页</h1>
+<p>这时候我们想看一下博客的效果，我们可以使用<code>hugo -D server</code>命令在本地查看。-D 选项默认在 public 文件夹生成页面，如果你想在 docs/文件夹生成页面，就使用<code>hugo -d docs</code>再<code>hugo server</code></p>
+<p>这时候终端会蹦出一个类似<code>//localhost:1313/</code>的地址，在浏览器中输入该地址就能看到本地生成的博客啦</p>
+<p><img src="/image/Pasted%20image%2020230108000613.png" alt=""></p>
+<p>如果想停止本地服务器就<code>ctrl+c</code>即可</p>
+<p>但是我们的博客不可能只给我们自己看啊，我们希望让互联网上的大家都看到。这时候我们有几个选择：</p>
+<ul>
+<li>购买自己的云服务器，价格比较昂贵，但是也有新人福利，能实现更多功能，酌情考虑</li>
+<li>使用 GitHub 的 pages 服务，作者用的就是这个</li>
+<li>使用 gitee 的 pages 服务，在国内会快一点，但是需要上传各种敏感信息，比如手持身份证照片，而且需要审核，酌情选择</li>
+</ul>
+<h2 id="注册-github-账号">注册 GitHub 账号</h2>
+<p>谷歌 GitHub 按指引注册即可</p>
+<h2 id="创建一个新的仓库repository">创建一个新的仓库（repository）</h2>
+<p><img src="/image/202209041753382022-09-04-17-53-38.png" alt="202209041753382022-09-04-17-53-38"></p>
+<p>仓库名最好是&lt;你的用户名&gt;.github.io，比如我就是 peterliu-all.github.io，如果不是这个名字可能会有一些未知的错误。</p>
+<p>description 随便写一下，一定要设置为 pubic，一开始先不要加别的文件（不要点下面的 add readme、license 等），让仓库为空</p>
+<p>然后复制一下仓库的 https 地址</p>
+<p><img src="/image/202209041757132022-09-04-17-57-13.png" alt="202209041757132022-09-04-17-57-13"></p>
+<p>然后返回我们的终端，在你的博客根目录下输入<code>hugo</code>，这会忽略frontmatter标记<code>draft: true</code>，如果不想忽略草稿，就输入<code>hugo -D</code></p>
+<p>然后我们进入 public 文件夹（或者你指定的生成页面的文件夹，比如 docs），输入下列命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init  &lt;br&gt;
+</span></span><span class="line"><span class="cl">git remote add origin &lt;你复制的github给的https链接&gt;
+</span></span><span class="line"><span class="cl">git add -A .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;first commit&#34;</span>
+</span></span><span class="line"><span class="cl">git push -u origin master
+</span></span></code></pre></div><p>然后等一会（可以进入仓库-&gt;action 查看进度）就进入我们的仓库-&gt;settings-&gt;pages 就可以看到我们的页面网址是<code>https://&lt;用户名&gt;.github.io/</code>啦</p>
+<blockquote>
+<p>在它build完前查看或者build完马上查看可能会出现无样式的情况</p>
+</blockquote>
+<p>以后就可以只使用以下命令啦</p>
+<p>将下面的命令保存为<code>upload.ps1</code>脚本（Windows 下的 powershell 使用）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="c"># 这是作者自定义的预处理文章的python脚本</span>
+</span></span><span class="line"><span class="cl"><span class="c"># python dispose_image.py</span>
+</span></span><span class="line"><span class="cl"><span class="n">hugo</span> <span class="n">-v</span> <span class="p">-</span><span class="n">-log</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">public</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">add</span> <span class="n">-A</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="k">If</span> <span class="p">([</span><span class="no">String</span><span class="p">]::</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="s2">&#34;</span><span class="nv">$args</span><span class="s2">&#34;</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="n">date</span><span class="p">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">&#34;</span><span class="nv">$args</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">master</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">cd </span><span class="p">..</span>
+</span></span></code></pre></div><p>以后就可以只使用<code>.\upload.ps1 &quot;&lt;更新message&gt;&quot;</code>来上传啦</p>
+<h1 id="图片上传问题">图片上传问题</h1>
+<p>我们可以购买阿里云等服务供应商的图床服务（OSS服务），也可以使用GitHub保存图片</p>
+<p>Eureka主题提供了<a href="https://www.wangchucheng.com/zh/docs/hugo-eureka/content-management/#%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87">一系列的上传图片的方法</a>，详情见文档</p>
+<p>现在只需要知道两点：</p>
+<ul>
+<li>图片可以保存在/assets/images中，调用图片的时候markdown语法类似于<code>![](/images/example.png)</code></li>
+<li>图片可以保存在/content/image中，调用图片的时候markdown语法类似于<code>![](/image/example.png)</code></li>
+</ul>
+<p>总之存放图片/附件的文件夹在build的时候会被移动到根目录</p>
+<p>因此我们可以根据这点使用obsidian进行无缝衔接</p>
+<p>我们将仓库设在content文件夹，设置粘贴图片时的链接为相对仓库根目录的绝对路径：</p>
+<p><img src="/image/Pasted%20image%2020230108002154.png" alt=""></p>
+<p>这样粘贴example.png的时候生成的图片链接就是<code>![](image/example.png)</code>，但是如果image前没有&quot;/&quot;，那么这个链接会被浏览器识别为相对链接，不会指向根目录下的image文件夹，如果手动更改为<code>![](/image/example.png)</code>，会发现obsidian和浏览器都能正确找到图片并展示，那么该怎么自动化实现这点呢？</p>
+<p>作者的方案是使用一个python脚本自动解析并替换所有的图片链接和附件链接，将下列代码保存为<code>dispose_image.py</code>并对<a href="#%E4%BD%BF%E7%94%A8%20GitHub%20%E7%9A%84%20pages%20%E5%8A%9F%E8%83%BD%E5%8F%91%E5%B8%83%E4%BD%A0%E7%9A%84%E7%BD%91%E9%A1%B5">上面给的代码</a>中的<code>python dispose_image.py</code>取消注释</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 忽略的文件夹和文件名字，注意，只能识别路径中最后一个名字</span>
+</span></span><span class="line"><span class="cl"><span class="n">ignore</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;image&#34;</span><span class="p">,</span> <span class="s2">&#34;model&#34;</span><span class="p">,</span> <span class="s2">&#34;archive&#34;</span><span class="p">,</span> <span class="s2">&#34;stats&#34;</span><span class="p">,</span> <span class="s2">&#34;search.md&#34;</span><span class="p">,</span> <span class="s2">&#34;Chromium OS Docs - Linux System Call Table&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># image: True表示image文件夹是一个保存图片的文件夹，False表示保存附件</span>
+</span></span><span class="line"><span class="cl"><span class="n">check_folder</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;image&#34;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&#34;appendix&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">all_pat</span> <span class="o">=</span> <span class="p">{</span><span class="n">folder</span><span class="p">:</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;!\[(.*)\]\(</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">(.*)\)&#34;</span><span class="p">)</span> <span class="k">if</span> <span class="n">jud</span> 
+</span></span><span class="line"><span class="cl">           <span class="k">else</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;\[(.*)\]\(</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">(.*)\)&#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">           <span class="k">for</span> <span class="n">folder</span><span class="p">,</span> <span class="n">jud</span> <span class="ow">in</span> <span class="n">check_folder</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># D:\database_BooksAndFiles\Blog\fnlblog\test\test.md</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 递归地处理文件夹下的内容，包括子文件夹的内容</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dispose</span><span class="p">(</span><span class="n">folder</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">ignore</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dirs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">dirs</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;.&#34;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">ignore</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[+]</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fullpath</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="n">folder</span><span class="p">),</span> <span class="n">file</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">isfile</span><span class="p">(</span><span class="n">fullpath</span><span class="p">)</span> <span class="ow">and</span> <span class="n">splitext</span><span class="p">(</span><span class="n">file</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&#34; </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&#34;.md&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">                <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">                <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fullpath</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">font_matter</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()):</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&#34;---&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">if</span> <span class="n">font_matter</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">font_matter</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">start</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">elif</span> <span class="n">font_matter</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">font_matter</span> <span class="o">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">elif</span> <span class="n">font_matter</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">opt</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">if</span> <span class="n">opt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&#34;dispose&#34;</span> <span class="ow">and</span> <span class="s2">&#34;true&#34;</span> <span class="ow">in</span> <span class="n">opt</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                                <span class="c1"># 如果frontmatter中存在dispose: true，那么就不处理该文件</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">                                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;dispose=True，已经过处理&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">elif</span> <span class="n">font_matter</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">for</span> <span class="n">folder</span><span class="p">,</span> <span class="n">pat</span> <span class="ow">in</span> <span class="n">all_pat</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                                <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">pat</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                                    <span class="n">line</span> <span class="o">=</span> <span class="n">pat</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                                        <span class="sa">f</span><span class="s2">&#34;![</span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">](/</span><span class="si">{</span><span class="n">folder</span><span class="si">}{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span> \
+</span></span><span class="line"><span class="cl">                                        <span class="k">if</span> <span class="n">check_folder</span><span class="p">[</span><span class="n">folder</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span> \
+</span></span><span class="line"><span class="cl">                                        <span class="k">else</span> <span class="sa">f</span><span class="s2">&#34;[</span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">](/</span><span class="si">{</span><span class="n">folder</span><span class="si">}{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">)&#34;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">flag</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fullpath</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">[:</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                        <span class="c1"># 处理过的文件会在frontmatter中加上dispose: true</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;dispose: true</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">isdir</span><span class="p">(</span><span class="n">fullpath</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dispose</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dispose</span><span class="p">(</span><span class="s2">&#34;content&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h1 id="fontawesome小插图无法显示的问题">fontawesome小插图无法显示的问题</h1>
+<p>hugo中很多时候都会用到fontswesome的小插图，但是Eureka中好像有bug无法显示</p>
+<p>解决方法就是<a href="https://fontawesome.com/start">注册一下fontswesome</a>并点击获取kit code代替/themes/eureka/layouts/partials/head.html中原本的链接：</p>
+<p><img src="/image/Pasted%20image%2020230108003436.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020230108003611.png" alt=""></p>
+<h1 id="使用-disqus-添加评论功能">使用 disqus 添加评论功能</h1>
+<p>Eureka中实现这点非常简单，你只需要注册disqus并获取shortname，填在params.yaml中就行：
+<img src="/image/Pasted%20image%2020230108003846.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020230108003909.png" alt=""></p>
+<p>相关阅读：</p>
+<p><a href="https://marvinsblog.net/post/2017-04-20-hugo-with-disqus/">给Hugo添加disqus评论服务 | Marvin&rsquo;s Blog【程式人生】</a></p>
+<h1 id="在代码旁增加复制按钮">在代码旁增加复制按钮</h1>
+<p>在根目录 /static/css/ 和 /static/js/ 分别创建 copy-btn.css 和 copy-btn.js，分别写入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">highlight</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">highlight</span> <span class="nt">td</span><span class="p">:</span><span class="nd">first-child</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">user-select</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">highlight</span> <span class="nt">pre</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding-right</span><span class="p">:</span> <span class="mi">75</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/* background-color: #f8f8f8 !important; */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">highlight-copy-btn</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">top</span><span class="p">:</span> <span class="mi">7</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">right</span><span class="p">:</span> <span class="mi">7</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mf">0.8</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/* color: #fff;
+</span></span></span><span class="line"><span class="cl"><span class="c">    background-color: #777;  */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">min-width</span><span class="p">:</span> <span class="mi">55</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">transition</span><span class="p">:</span> <span class="mf">0.1</span><span class="kt">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">opacity</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">highlight-copy-btn</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">opacity</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">filter</span><span class="p">:</span> <span class="nb">drop-shadow</span><span class="p">(</span><span class="mi">16</span><span class="kt">px</span> <span class="mi">16</span><span class="kt">px</span> <span class="mi">20</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">163</span><span class="p">,</span> <span class="mi">163</span><span class="p">,</span> <span class="mi">163</span><span class="p">,</span> <span class="mf">0.178</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// add-copy-btn.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;use strict&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">queryCommandSupported</span><span class="p">(</span><span class="s2">&#34;copy&#34;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">flashCopyMessage</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">el</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">el</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">&#34;Copy&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">selectText</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">selection</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getSelection</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">range</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createRange</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">range</span><span class="p">.</span><span class="nx">selectNodeContents</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">selection</span><span class="p">.</span><span class="nx">removeAllRanges</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">selection</span><span class="p">.</span><span class="nx">addRange</span><span class="p">(</span><span class="nx">range</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">selection</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">addCopyButton</span><span class="p">(</span><span class="nx">containerEl</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">copyBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;button&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">copyBtn</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&#34;highlight-copy-btn&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">copyBtn</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">&#34;Copy&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">codeEl</span> <span class="o">=</span> <span class="nx">containerEl</span><span class="p">.</span><span class="nx">firstElementChild</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">copyBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;click&#34;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">selection</span> <span class="o">=</span> <span class="nx">selectText</span><span class="p">(</span><span class="nx">codeEl</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">document</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&#34;copy&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">selection</span><span class="p">.</span><span class="nx">removeAllRanges</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">flashCopyMessage</span><span class="p">(</span><span class="nx">copyBtn</span><span class="p">,</span> <span class="s2">&#34;Copied!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span> <span class="o">&amp;&amp;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">flashCopyMessage</span><span class="p">(</span><span class="nx">copyBtn</span><span class="p">,</span> <span class="s2">&#34;Failed :&#39;(&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">containerEl</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">copyBtn</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Add copy button to code blocks
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">var</span> <span class="nx">highlightBlocks</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">&#34;highlight&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">highlightBlocks</span><span class="p">,</span> <span class="nx">addCopyButton</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">})();</span>
+</span></span></code></pre></div><p>然后在/themes/eureka/layouts/partials/footer.html末尾加上：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{.Site.BaseURL}}css/copy-btn.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{.Site.BaseURL}}js/copy-btn.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>需要注意的是，Eureka主题还需更改config.yaml文件中markup-&gt;highlight：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">markup</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># Do not modify markup.highlight</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">highlight</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">codeFences</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">noClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">guessSyntax </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">lineNoStart </span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">tabWidth </span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">anchorLineNos </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">lineAnchors </span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">noHl </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span></code></pre></div><p>可能需要更改<code>themes/eureka/assets/css/highlightjs.css</code>为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* hljs.js */</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">hljs</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="kc">transparent</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">tertiary</span><span class="o">-</span><span class="kc">text</span><span class="p">)</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>效果如图：</p>
+<p><img src="/image/Pasted%20image%2020230108004328.png" alt=""></p>
+<h1 id="在文章列表中显示tag">在文章列表中显示tag</h1>
+<p>覆盖themes/eureka/layouts/partials/components/post-metadata.html为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span>
+</span></span><span class="line"><span class="cl">  <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;me-6 my-2&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fas fa-calendar me-1&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&gt;</span>{{ .Date.Format (.Site.Params.dateFormat | default &#34;2006-01-02&#34;) }}<span class="p">&lt;/</span><span class="nt">span</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;me-6 my-2&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fas fa-clock me-1&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{ i18n &#34;readingTime&#34; .ReadingTime }}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  {{ with .GetTerms &#34;categories&#34; }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;me-6 my-2&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fas fa-folder me-1&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ range $index, $value := . }}
+</span></span><span class="line"><span class="cl">        {{ if gt $index 0 }}
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>, <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        {{ end -}}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;hover:text-eureka&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&gt;</span>{{ .LinkTitle }}<span class="p">&lt;/</span><span class="nt">a</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ end }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  {{ end }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    {{ with .GetTerms &#34;tags&#34; }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;me-6 my-2&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa-solid fa-tag&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ range $index, $value := . }}
+</span></span><span class="line"><span class="cl">        {{ if gt $index 0 }}
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>, <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        {{ end -}}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;hover:text-eureka&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&gt;</span>{{ .LinkTitle }}<span class="p">&lt;/</span><span class="nt">a</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ end }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  {{ end }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  {{ with .GetTerms &#34;series&#34; }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;me-6 my-2&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fas fa-th-list me-1&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ range $index, $value := . }}
+</span></span><span class="line"><span class="cl">        {{ if gt $index 0 }}
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>, <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        {{ end -}}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;hover:text-eureka&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&gt;</span>{{ .LinkTitle }}<span class="p">&lt;/</span><span class="nt">a</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ end }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  {{ end }}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h1 id="使用obsidian模板自动生成文章头部">使用obsidian模板自动生成文章头部</h1>
+<p>需要下载插件<a href="https://github.com/SilentVoid13/Templater">Templater</a>，请阅读其<a href="https://silentvoid13.github.io/Templater/">官方文档</a>中模板的写法（网上有些博客的教程是旧版的，现在已经不能用了）</p>
+<p>示例如下：</p>
+<p><img src="/image/Pasted%20image%2020230108005032.png" alt=""></p>
+<p>使用时按<code>Alt+E</code>就行</p>
+<p>需要注意的是，为了避免hugo解析content文件夹中存放模板的model文件夹（模板文件夹必须存放在obsidian仓库内），我们需要在comfig.yaml中指定ignore的pattern：</p>
+<p><img src="/image/Pasted%20image%2020230108005235.png" alt=""></p>
+<p>具体详见<a href="https://gohugo.io/getting-started/configuration/#ignore-content-and-data-files-when-rendering">Configure Hugo |Hugo</a></p>
+<h1 id="增强内容">增强内容</h1>
+<p>下面会用到的<a href="/appendix/all_js.zip">外部js代码请下载此附件</a></p>
+<p>下载解压后放在/static/js中</p>
+<h2 id="增加归档页">增加归档页</h2>
+<blockquote>
+<p>请务必下载<a href="#%E5%A2%9E%E5%BC%BA%E5%86%85%E5%AE%B9">外部js代码</a>！</p>
+</blockquote>
+<p>在<code>/themes/eureka/layouts/_default/</code>文件夹下新建archive.html，并填入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{/* layouts/_default/archive.html */}}
+</span></span><span class="line"><span class="cl">{{ define &#34;main&#34; }}
+</span></span><span class="line"><span class="cl">{{ $hasToc := and (in .TableOfContents &#34;<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>&#34; ) (.Params.toc) }}
+</span></span><span class="line"><span class="cl">  {{ $hasSidebar := or ($hasToc) (.Params.series) }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-span-2 {{ if not $hasSidebar }} {{- print &#34;</span> <span class="na">lg:col-start-2</span><span class="err">&#34;</span> <span class="na">-</span><span class="err">}}</span> <span class="err">{{</span> <span class="na">end</span> <span class="err">}}</span> <span class="na">lg:col-span-6</span>
+</span></span><span class="line"><span class="cl">      <span class="na">bg-secondary-bg</span> <span class="na">rounded</span> <span class="na">px-6</span> <span class="na">py-8</span><span class="err">&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="c">&lt;!-- &lt;h1 class=&#34;font-bold text-3xl text-primary-text&#34;&gt;{{ .Title }}&lt;/h1&gt; --&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-bold text-3xl text-primary-text&#34;</span><span class="p">&gt;</span>归档<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;flex flex-wrap flex-row items-center my-2 text-tertiary-text&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mr-6 my-2&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fas fa-calendar mr-1&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{ .Date.Format (.Site.Params.dateFormat | default &#34;2006-01-02&#34;) }}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      {{ $featured := partial &#34;utils/get-featured.html&#34; . }}
+</span></span><span class="line"><span class="cl">      {{ with $featured }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;my-4&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        {{ . }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ end }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text/javascript&#39;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{.Site.BaseURL}}js/jquery.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">.</span><span class="nc">car-collapse</span> <span class="p">.</span><span class="nc">car-yearmonth</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">cursor</span><span class="p">:</span> <span class="kc">s-resize</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="cm">/* &lt;![CDATA[ */</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;.car-collapse&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.car-monthlisting&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;.car-collapse&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.car-monthlisting:first&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;.car-collapse&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.car-yearmonth&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">).</span><span class="nx">slideToggle</span><span class="p">(</span><span class="s1">&#39;fast&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">});</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;.car-collapse&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.car-toggler&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;展开全部&#39;</span> <span class="o">==</span> <span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">parent</span><span class="p">(</span><span class="s1">&#39;.car-container&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.car-monthlisting&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;折叠全部&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}</span>
+</span></span><span class="line"><span class="cl">              <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">parent</span><span class="p">(</span><span class="s1">&#39;.car-container&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.car-monthlisting&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;展开全部&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}</span>
+</span></span><span class="line"><span class="cl">              <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">});</span>
+</span></span><span class="line"><span class="cl">          <span class="p">});</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* ]]&gt; */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;car-container car-collapse&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;car-toggler&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color: darkgray;&#34;</span><span class="p">&gt;</span>展开全部<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;car-list&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              {{ range (.Site.RegularPages.GroupByDate &#34;2006年 01月&#34;) }}
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;car-yearmonth&#34;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color: rgba(255, 105, 105, 0.737);font-weight: bold;&#34;</span><span class="p">&gt;</span>{{ .Key }}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">span</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Post Count&#34;</span><span class="p">&gt;</span> 共{{ len .Pages }}篇<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;car-monthlisting&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;display: block;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                  {{ range .Pages }}
+</span></span><span class="line"><span class="cl">                  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;text-indent:2em;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color: rgb(100, 100, 100);&#34;</span><span class="p">&gt;</span>{{ .Date.Format &#34;02日&#34;}} <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;margin-left: 1em;&#34;</span><span class="p">&gt;</span>{{ .Title }} <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="c">&lt;!-- &lt;span title=&#34;Comment Count&#34;&gt;(0)&lt;/span&gt; --&gt;</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                  {{ end }}
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              {{ end }}
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  {{ end }}
+</span></span></code></pre></div><p>然后新建content/archive/archive.md并填入frontmatter：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">layout: archive
+</span></span><span class="line"><span class="cl">title: &#34;归档&#34;
+</span></span><span class="line"><span class="cl">date: 2022-12-29T3:01:44+08:00
+</span></span><span class="line"><span class="cl">draft: false
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></div><p>最后在menu.yaml加上对它的索引就好了：</p>
+<p><img src="/image/Pasted%20image%2020230108010500.png" alt=""></p>
+<p>来源见<a href="https://imnerd.org/custom-hugo-theme-eureka.html#%E5%BD%92%E6%A1%A3">Hugo 主题 Eureka 自定义 | 怡红院落</a></p>
+<h2 id="增加统计页">增加统计页</h2>
+<blockquote>
+<p>请务必下载<a href="#%E5%A2%9E%E5%BC%BA%E5%86%85%E5%AE%B9">外部js代码</a>！</p>
+</blockquote>
+<p>在<code>/themes/eureka/layouts/_default/</code>文件夹下新建stats.html，并填入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{/* layouts/_default/stats.html */}}
+</span></span><span class="line"><span class="cl">{{ define &#34;main&#34; }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{{- $.Scratch.Add &#34;stats&#34; slice -}}
+</span></span><span class="line"><span class="cl">{{- range .Site.RegularPages -}}
+</span></span><span class="line"><span class="cl">    {{- $.Scratch.Add &#34;stats&#34; (dict &#34;title&#34; .Title &#34;slug&#34; .Slug &#34;year&#34; (.Date.Format &#34;2006&#34;) &#34;month&#34; (.Date.Format &#34;2006-01&#34;) &#34;hour&#34; (.Date.Format &#34;15&#34;) &#34;week&#34; (.Date.Format &#34;Monday&#34;) &#34;count&#34; .WordCount) -}}
+</span></span><span class="line"><span class="cl">{{- end -}}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{{ $hasToc := and (in .TableOfContents &#34;<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>&#34; ) (.Params.toc) }}
+</span></span><span class="line"><span class="cl">{{ $hasSidebar := or ($hasToc) (.Params.series) }}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">chart</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin-top</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">350</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span>
+</span></span><span class="line"><span class="cl">        <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-span-2 {{ if not $hasSidebar }} {{- print &#34;</span><span class="na">lg:col-start-2</span><span class="err">&#34;</span> <span class="na">-</span><span class="err">}}</span> <span class="err">{{</span> <span class="na">end</span> <span class="err">}}</span> <span class="na">lg:col-span-6</span> <span class="na">bg-secondary-bg</span> <span class="na">rounded</span> <span class="na">px-6</span> <span class="na">py-8</span><span class="err">&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- &lt;h1 class=&#34;font-bold text-3xl text-primary-text&#34;&gt;{{ .Title }}&lt;/h1&gt; --&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-bold text-3xl text-primary-text&#34;</span><span class="p">&gt;</span>统计<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;flex flex-wrap flex-row items-center my-2 text-tertiary-text&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mr-6 my-2&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fas fa-calendar mr-1&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{ .Date.Format (.Site.Params.dateFormat | default &#34;2006-01-02&#34;) }}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        {{ $featured := partial &#34;utils/get-featured&#34; . }}
+</span></span><span class="line"><span class="cl">        {{ with $featured }}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;my-4&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            {{ . }}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        {{ end }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;basic-info&#34;</span><span class="p">&gt;&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa-solid fa-spinner&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>加载中...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;文章数统计&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;year-stat&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;month-stat&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;时间段统计&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;hour-stat&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;weekday-stat&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    {{ if $hasSidebar}}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-span-2&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        {{ if .GetTerms &#34;series&#34; }}
+</span></span><span class="line"><span class="cl">        {{ partial &#34;components/post-series.html&#34; . }}
+</span></span><span class="line"><span class="cl">        {{ end }}
+</span></span><span class="line"><span class="cl">        {{ if $hasToc }}
+</span></span><span class="line"><span class="cl">        {{ partial &#34;components/post-toc.html&#34; . }}
+</span></span><span class="line"><span class="cl">        {{ end }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{.Site.BaseURL}}js/echarts.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{{</span><span class="o">-</span> <span class="nx">$</span><span class="p">.</span><span class="nx">Scratch</span><span class="p">.</span><span class="nx">Get</span> <span class="s2">&#34;stats&#34;</span> <span class="o">-</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">showChart</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">echarts</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">xData</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">yData</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">d</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">xData</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">yData</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">option</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">text</span> <span class="o">:</span> <span class="nx">title</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">tooltip</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">trigger</span> <span class="o">:</span> <span class="s1">&#39;axis&#39;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">xAxis</span> <span class="o">:</span> <span class="p">[</span> <span class="p">{</span> <span class="nx">type</span> <span class="o">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="nx">data</span> <span class="o">:</span> <span class="nx">xData</span> <span class="p">}</span> <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">yAxis</span> <span class="o">:</span> <span class="p">[</span> <span class="p">{</span> <span class="nx">type</span> <span class="o">:</span> <span class="s1">&#39;value&#39;</span> <span class="p">}</span> <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">grid</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">x</span> <span class="o">:</span> <span class="mi">35</span><span class="p">,</span> <span class="nx">y</span> <span class="o">:</span> <span class="mi">45</span><span class="p">,</span> <span class="nx">x2</span> <span class="o">:</span> <span class="mi">35</span><span class="p">,</span> <span class="nx">y2</span> <span class="o">:</span> <span class="mi">35</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">series</span> <span class="o">:</span> <span class="p">[</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">      <span class="nx">type</span> <span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">name</span> <span class="o">:</span> <span class="nx">type</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">data</span> <span class="o">:</span> <span class="nx">yData</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">markLine</span> <span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">data</span> <span class="o">:</span> <span class="p">[</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">type</span> <span class="o">:</span> <span class="s1">&#39;average&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;平均值&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">itemStyle</span> <span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">normal</span> <span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">color</span> <span class="o">:</span> <span class="s1">&#39;#4087bd&#39;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">itemStyle</span> <span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">normal</span> <span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">color</span> <span class="o">:</span> <span class="s1">&#39;#87cefa&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">chart</span><span class="p">.</span><span class="nx">setOption</span><span class="p">(</span><span class="nx">option</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">basicInfo</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">yearStats</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">monthStats</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">hourStats</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">weekStats</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">basicInfo</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">articles</span> <span class="o">=</span> <span class="p">{{</span> <span class="nx">len</span> <span class="p">(</span><span class="nx">where</span> <span class="p">.</span><span class="nx">Site</span><span class="p">.</span><span class="nx">RegularPages</span> <span class="s2">&#34;Section&#34;</span> <span class="s2">&#34;posts&#34;</span><span class="p">)</span> <span class="p">}};</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">writeup</span> <span class="o">=</span> <span class="p">{{</span> <span class="nx">len</span> <span class="p">(</span><span class="nx">where</span> <span class="p">.</span><span class="nx">Site</span><span class="p">.</span><span class="nx">RegularPages</span> <span class="s2">&#34;Section&#34;</span> <span class="s2">&#34;writeup&#34;</span><span class="p">)</span> <span class="p">}};</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">principle</span> <span class="o">=</span> <span class="p">{{</span> <span class="nx">len</span> <span class="p">(</span><span class="nx">where</span> <span class="p">.</span><span class="nx">Site</span><span class="p">.</span><span class="nx">RegularPages</span> <span class="s2">&#34;Section&#34;</span> <span class="s2">&#34;principle&#34;</span><span class="p">)</span> <span class="p">}};</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">tricks</span> <span class="o">=</span> <span class="p">{{</span> <span class="nx">len</span> <span class="p">(</span><span class="nx">where</span> <span class="p">.</span><span class="nx">Site</span><span class="p">.</span><span class="nx">RegularPages</span> <span class="s2">&#34;Section&#34;</span> <span class="s2">&#34;tricks&#34;</span><span class="p">)</span> <span class="p">}};</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">pages</span> <span class="o">=</span> <span class="nx">articles</span> <span class="o">+</span> <span class="nx">writeup</span> <span class="o">+</span> <span class="nx">principle</span> <span class="o">+</span> <span class="nx">tricks</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//const comments = data.reduce((count, article) =&gt; count + article.comments, 0);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">count</span><span class="p">,</span> <span class="nx">article</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">count</span> <span class="o">+</span> <span class="nx">article</span><span class="p">.</span><span class="nx">count</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#basic-info&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;span&gt;总文章数：&lt;strong&gt;&lt;a href=&#34;/&#34;&gt;</span><span class="si">${</span><span class="nx">pages</span><span class="si">}</span><span class="sb">&lt;/a&gt;&lt;/strong&gt; 篇&lt;/span&gt;；
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;span&gt;Posts：&lt;strong&gt;&lt;a href=&#34;/posts/&#34;&gt;</span><span class="si">${</span><span class="nx">articles</span><span class="si">}</span><span class="sb">&lt;/a&gt;&lt;/strong&gt; 篇&lt;/span&gt;；
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;span&gt;WriteUps：&lt;strong&gt;&lt;a href=&#34;/writeup/&#34;&gt;</span><span class="si">${</span><span class="nx">writeup</span><span class="si">}</span><span class="sb">&lt;/a&gt;&lt;/strong&gt; 篇&lt;/span&gt;；
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;span&gt;Tricks：&lt;strong&gt;&lt;a href=&#34;/tricks/&#34;&gt;</span><span class="si">${</span><span class="nx">tricks</span><span class="si">}</span><span class="sb">&lt;/a&gt;&lt;/strong&gt; 篇&lt;/span&gt;；
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;span&gt;Principle：&lt;strong&gt;&lt;a href=&#34;/principle/&#34;&gt;</span><span class="si">${</span><span class="nx">principle</span><span class="si">}</span><span class="sb">&lt;/a&gt;&lt;/strong&gt; 篇&lt;/span&gt;；
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;span&gt;总字数：&lt;strong&gt;</span><span class="si">${</span><span class="nx">words</span><span class="si">}</span><span class="sb">&lt;/strong&gt;&lt;/span&gt;；
+</span></span></span><span class="line"><span class="cl"><span class="sb">  `</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">yearStats</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">yearGroup</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">article</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">year</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">article</span><span class="p">.</span><span class="nx">year</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">yearGroup</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">year</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">yearGroup</span><span class="p">[</span><span class="nx">year</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">yearGroup</span><span class="p">[</span><span class="nx">year</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">2022</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getFullYear</span><span class="p">());</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">d</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">i</span><span class="p">,</span> <span class="nx">yearGroup</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">||</span> <span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">showChart</span><span class="p">(</span><span class="s1">&#39;year-stat&#39;</span><span class="p">,</span> <span class="s1">&#39;文章数 - 按年统计&#39;</span><span class="p">,</span> <span class="s1">&#39;文章数&#39;</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">monthStats</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">monthGroup</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">article</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">monthGroup</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">article</span><span class="p">.</span><span class="nx">month</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">monthGroup</span><span class="p">[</span><span class="nx">article</span><span class="p">.</span><span class="nx">month</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">monthGroup</span><span class="p">[</span><span class="nx">article</span><span class="p">.</span><span class="nx">month</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">year</span> <span class="o">=</span> <span class="mi">2022</span><span class="p">;</span> <span class="nx">year</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getFullYear</span><span class="p">());</span> <span class="nx">year</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">month</span> <span class="o">&lt;</span> <span class="mi">13</span><span class="p">;</span> <span class="nx">month</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="nx">year</span><span class="si">}</span><span class="sb">-</span><span class="si">${</span><span class="nx">month</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">?</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="nx">month</span> <span class="o">:</span> <span class="nx">month</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">d</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">text</span><span class="p">,</span> <span class="nx">monthGroup</span><span class="p">[</span><span class="nx">text</span><span class="p">]</span> <span class="o">||</span> <span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">showChart</span><span class="p">(</span><span class="s1">&#39;month-stat&#39;</span><span class="p">,</span> <span class="s1">&#39;文章数 - 按月统计&#39;</span><span class="p">,</span> <span class="s1">&#39;文章数&#39;</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">hourStats</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">hourGroup</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">article</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">hour</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">article</span><span class="p">.</span><span class="nx">hour</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">hourGroup</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">hour</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">hourGroup</span><span class="p">[</span><span class="nx">hour</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">hourGroup</span><span class="p">[</span><span class="nx">hour</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;00:00-01:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;01:00-02:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;02:00-03:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;03:00-04:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;04:00-05:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;05:00-06:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;06:00-07:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;07:00-08:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;08:00-09:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;09:00-10:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;10:00-11:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;11:00-12:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;12:00-13:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;13:00-14:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;14:00-15:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;15:00-16:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;16:00-17:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;17:00-18:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;18:00-19:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;19:00-20:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;20:00-21:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;21:00-22:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;22:00-23:00&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;23:00-24:00&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">hourGroup</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">||</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">item</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">showChart</span><span class="p">(</span><span class="s1">&#39;hour-stat&#39;</span><span class="p">,</span> <span class="s1">&#39;文章数 - 按时段统计&#39;</span><span class="p">,</span> <span class="s1">&#39;文章数&#39;</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">weekStats</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">weekGroup</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">article</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">weekGroup</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">article</span><span class="p">.</span><span class="nx">week</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">weekGroup</span><span class="p">[</span><span class="nx">article</span><span class="p">.</span><span class="nx">week</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weekGroup</span><span class="p">[</span><span class="nx">article</span><span class="p">.</span><span class="nx">week</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;星期一&#39;</span><span class="p">,</span> <span class="nx">weekGroup</span><span class="p">.</span><span class="nx">Monday</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;星期二&#39;</span><span class="p">,</span> <span class="nx">weekGroup</span><span class="p">.</span><span class="nx">Tuesday</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;星期三&#39;</span><span class="p">,</span> <span class="nx">weekGroup</span><span class="p">.</span><span class="nx">Wednesday</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;星期四&#39;</span><span class="p">,</span> <span class="nx">weekGroup</span><span class="p">.</span><span class="nx">Thursday</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;星期五&#39;</span><span class="p">,</span> <span class="nx">weekGroup</span><span class="p">.</span><span class="nx">Friday</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;星期六&#39;</span><span class="p">,</span> <span class="nx">weekGroup</span><span class="p">.</span><span class="nx">Saturday</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s1">&#39;星期日&#39;</span><span class="p">,</span> <span class="nx">weekGroup</span><span class="p">.</span><span class="nx">Sunday</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">showChart</span><span class="p">(</span><span class="s1">&#39;weekday-stat&#39;</span><span class="p">,</span> <span class="s1">&#39;文章数 - 按星期几统计&#39;</span><span class="p">,</span> <span class="s1">&#39;文章数&#39;</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></div><p>其中函数<code>basicInfo</code>可自定义显示的模块信息</p>
+<p>然后新建content/stats/stats.md并填入frontmatter：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">layout: stats
+</span></span><span class="line"><span class="cl">title: &#34;统计&#34;
+</span></span><span class="line"><span class="cl">date: 2022-12-29T3:01:44+08:00
+</span></span><span class="line"><span class="cl">draft: false
+</span></span><span class="line"><span class="cl">slug: &#34;stats&#34;
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></div><p>来源：<a href="https://imnerd.org/custom-hugo-theme-eureka.html#%E7%BB%9F%E8%AE%A1">Hugo 主题 Eureka 自定义 | 怡红院落</a></p>
+<h2 id="增加搜索功能">增加搜索功能</h2>
+<blockquote>
+<p>请务必下载<a href="#%E5%A2%9E%E5%BC%BA%E5%86%85%E5%AE%B9">外部js代码</a>！</p>
+</blockquote>
+<p>在config.yaml中加上：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">outputs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">home</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s2">&#34;HTML&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s2">&#34;RSS&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s2">&#34;JSON&#34;</span><span class="w">
+</span></span></span></code></pre></div><p>然后新建themes/eureka/layouts/index.json填入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{</span><span class="o">-</span> <span class="err">$</span><span class="p">.</span><span class="nx">Scratch</span><span class="p">.</span><span class="nx">Add</span> <span class="s">&#34;index&#34;</span> <span class="nx">slice</span> <span class="o">-</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="o">-</span> <span class="k">range</span> <span class="p">.</span><span class="nx">Site</span><span class="p">.</span><span class="nx">RegularPages</span> <span class="o">-</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{{</span><span class="o">-</span> <span class="err">$</span><span class="p">.</span><span class="nx">Scratch</span><span class="p">.</span><span class="nx">Add</span> <span class="s">&#34;index&#34;</span> <span class="p">(</span><span class="nx">dict</span> <span class="s">&#34;title&#34;</span> <span class="p">.</span><span class="nx">Title</span> <span class="s">&#34;tags&#34;</span> <span class="p">.</span><span class="nx">Params</span><span class="p">.</span><span class="nx">tags</span> <span class="s">&#34;categories&#34;</span> <span class="p">.</span><span class="nx">Params</span><span class="p">.</span><span class="nx">categories</span> <span class="s">&#34;contents&#34;</span> <span class="p">.</span><span class="nx">Plain</span> <span class="s">&#34;summary&#34;</span> <span class="p">.</span><span class="nx">Summary</span> <span class="s">&#34;permalink&#34;</span> <span class="p">.</span><span class="nx">Permalink</span> <span class="s">&#34;date&#34;</span> <span class="p">(.</span><span class="nx">Date</span><span class="p">.</span><span class="nx">Format</span> <span class="s">&#34;2006年01月02日&#34;</span><span class="p">)</span> <span class="s">&#34;section&#34;</span> <span class="p">.</span><span class="nx">Section</span><span class="p">)</span> <span class="o">-</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="o">-</span> <span class="nx">end</span> <span class="o">-</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="o">-</span> <span class="err">$</span><span class="p">.</span><span class="nx">Scratch</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;index&#34;</span> <span class="p">|</span> <span class="nx">jsonify</span> <span class="o">-</span><span class="p">}}</span>
+</span></span></code></pre></div><p>参见<a href="https://imnerd.org/hugo-start.html#%E6%90%9C%E7%B4%A2">Hugo 之旅 | 怡红院落</a></p>
+<p>在<code>themes/eureka/layouts/partials/header.html</code>中找到有很多个div元素并列的地方，并加上：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;flex&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;search-container relative pt-4 md:pt-0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;search&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;search&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;search-form&#34;</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;/search.html&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;get&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;q&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;搜索 ...&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;search-field&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fa-solid fa-magnifying-glass&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>然后在文件最上面加上：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">search-container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin-top</span><span class="p">:</span> <span class="mf">-0.3</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin-right</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">search-container</span> <span class="p">.</span><span class="nc">search</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#e2e8f0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">search-container</span> <span class="nt">input</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding-left</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">line-height</span><span class="p">:</span> <span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">outline</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="kc">transparent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">search-container</span> <span class="nt">button</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-size</span><span class="p">:</span> <span class="mf">0.8</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin-right</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#e2e8f0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>然后新建<code>themes/eureka/layouts/_default/search.html</code>，内容如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{/* layouts/_default/search.html */}}
+</span></span><span class="line"><span class="cl">{{ define &#34;main&#34; }}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mx-6 my-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;search-count&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-bold text-3xl text-primary-text&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;search-result&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;bg-secondary-bg rounded overflow-hidden px-4 divide-y&#34;</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{.Site.BaseURL}}js/fuse.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- &lt;script src=&#34;https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js&#34;&gt;&lt;/script&gt; --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;DOMContentLoaded&#39;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">qs</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">searchResult</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#search-result&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">searchCount</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#search-count&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">fuseOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">shouldSort</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">includeMatches</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">threshold</span><span class="o">:</span> <span class="mf">0.6</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">tokenize</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">location</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">distance</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">maxPatternLength</span><span class="o">:</span> <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">minMatchCharLength</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">findAllMatches</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">useExtendedSearch</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">keys</span><span class="o">:</span> <span class="p">[{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;title&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">weight</span><span class="o">:</span> <span class="mf">0.8</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;summary&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">weight</span><span class="o">:</span> <span class="mf">0.2</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;tags&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">weight</span><span class="o">:</span> <span class="mf">0.6</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;catagories&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">weight</span><span class="o">:</span> <span class="mf">0.2</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;date&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">weight</span><span class="o">:</span> <span class="mf">0.3</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">fuse</span> <span class="o">=</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">async</span> <span class="kd">function</span> <span class="nx">getFuse</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">fuse</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;/index.json&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">indexData</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">fuse</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fuse</span><span class="p">(</span><span class="nx">indexData</span><span class="p">,</span> <span class="nx">fuseOptions</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">fuse</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">function</span> <span class="nx">render</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">item</span> <span class="o">=</span> <span class="nx">item</span><span class="p">.</span><span class="nx">item</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sb">`
+</span></span></span><span class="line"><span class="cl"><span class="sb">&lt;div class=&#34;px-2 py-6&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">  &lt;div class=&#34;flex flex-col-reverse lg:flex-row justify-between&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;div class=&#34;w-full lg:w-2/3&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">      &lt;div class=&#34;my-2&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;div class=&#34;mb-4&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">          &lt;a href=&#34;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">permalink</span><span class="si">}</span><span class="sb">&#34; class=&#34;font-bold text-xl hover:text-eureka&#34;&gt;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">&lt;/a&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;div class=&#34;content&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">          </span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">summary</span><span class="si">}</span><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">          &lt;p class=&#34;more&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">            &lt;a href=&#34;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">permalink</span><span class="si">}</span><span class="sb">&#34; title=&#34;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">&#34;&gt;阅读全文&lt;span class=&#34;meta-nav&#34;&gt;→&lt;/span&gt;&lt;/a&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">          &lt;/p&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">      &lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">      &lt;div class=&#34;flex flex-wrap flex-row items-center my-2 text-tertiary-text&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;div class=&#34;mr-6 my-2&#34; style=&#34;margin: 10px;&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">          &lt;i class=&#34;fas fa-calendar mr-1&#34;&gt;&lt;/i&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">          &lt;span&gt;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">date</span><span class="si">}</span><span class="sb">&lt;/span&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;div class=&#34;mr-6 my-2&#34; style=&#34;margin: 10px;&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">          &lt;a href=&#34;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">permalink</span><span class="si">}</span><span class="sb">#waline-comments&#34; title=&#34;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">            &lt;i class=&#34;fas fa-comment mr-1&#34;&gt;&lt;/i&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">            &lt;span&gt;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">comments</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nx">item</span><span class="p">.</span><span class="nx">comments</span> <span class="o">+</span> <span class="s1">&#39; 条评论&#39;</span> <span class="o">:</span> <span class="s1">&#39;暂无评论&#39;</span><span class="si">}</span><span class="sb">&lt;/span&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">          &lt;/a&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;div class=&#34;mr-6 my-2&#34; style=&#34;margin: 10px;&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">          &lt;i class=&#34;fa-solid fa-folder-open&#34;&gt;&lt;/i&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">          &lt;span&gt;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">categories</span><span class="si">}</span><span class="sb">&lt;/span&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;div class=&#34;mr-6 my-2&#34; style=&#34;margin: 10px;&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">          &lt;i class=&#34;fa-solid fa-tags&#34;&gt;&lt;/i&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">          &lt;span&gt;&lt;b&gt;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">tags</span><span class="si">}</span><span class="sb">&lt;/b&gt;&lt;/span&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        &lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">        
+</span></span></span><span class="line"><span class="cl"><span class="sb">      &lt;/div&gt;  
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;div class=&#34;w-full lg:w-1/3 mb-4 lg:mb-0 lg:ml-8&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">      </span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">featuredImage</span> <span class="o">?</span> <span class="sb">`&lt;img src=&#34;</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">featuredImage</span><span class="si">}</span><span class="sb">&#34; class=&#34;w-full&#34; alt=&#34;Featured Image&#34;&gt;`</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="si">}</span><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">  &lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">&lt;/div&gt;`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">function</span> <span class="nx">updateDOM</span><span class="p">(</span><span class="nx">html</span><span class="p">,</span> <span class="nx">keyword</span><span class="p">,</span> <span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/包含关键词.*?文章/</span><span class="p">,</span> <span class="sb">`包含关键词 </span><span class="si">${</span><span class="nx">keyword</span><span class="si">}</span><span class="sb"> 的文章`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">searchResult</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">searchCount</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`共查询到 </span><span class="si">${</span><span class="nx">number</span><span class="si">}</span><span class="sb"> 篇文章`</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">async</span> <span class="kd">function</span> <span class="nx">search</span><span class="p">(</span><span class="nx">searchString</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">searchString</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span><span class="p">(</span><span class="nx">searchString</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">fuse</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">getFuse</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">result</span> <span class="o">=</span> <span class="nx">fuse</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">searchString</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">html</span> <span class="o">=</span> <span class="nx">render</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">updateDOM</span><span class="p">(</span><span class="nx">html</span><span class="p">,</span> <span class="nx">searchString</span><span class="p">,</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;input[name=&#34;q&#34;]&#39;</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">el</span> <span class="p">=&gt;</span> <span class="nx">el</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">qs</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">search</span><span class="p">(</span><span class="nx">qs</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">window</span><span class="p">.</span><span class="nx">blogSearch</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">keyword</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">keyword</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nx">history</span><span class="p">.</span><span class="nx">pushState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span> <span class="o">+</span> <span class="s1">&#39;?q=&#39;</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">keyword</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;input[name=&#34;q&#34;]&#39;</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">el</span> <span class="p">=&gt;</span> <span class="nx">el</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">keyword</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">search</span><span class="p">(</span><span class="nx">keyword</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></div><p>然后新建content/search.md填入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;搜索结果&#34;
+</span></span><span class="line"><span class="cl">sitemap:
+</span></span><span class="line"><span class="cl">  priority : 0.1
+</span></span><span class="line"><span class="cl">layout: &#34;search&#34;
+</span></span><span class="line"><span class="cl">date: &#34;2022-12-29T05:02:20+08:00&#34;
+</span></span><span class="line"><span class="cl">slug: &#34;search.html&#34;
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></div><p>来源：<a href="https://imnerd.org/custom-hugo-theme-eureka.html#%E6%90%9C%E7%B4%A2%E6%A1%86">Hugo 主题 Eureka 自定义 | 怡红院落</a></p>
+<h2 id="自定义rss文件">自定义RSS文件</h2>
+<blockquote>
+<p>请务必下载<a href="#%E5%A2%9E%E5%BC%BA%E5%86%85%E5%AE%B9">外部js代码</a>！</p>
+</blockquote>
+<p>新建<code>themes/eureka/layouts/_default/rss.xml</code>，然后可以填入go模板，下面是一个示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{- $page_context := cond .IsHome site . -}}
+</span></span><span class="line"><span class="cl">{{- $pages := $page_context.RegularPages -}}
+</span></span><span class="line"><span class="cl">{{- $limit := site.Config.Services.RSS.Limit -}}
+</span></span><span class="line"><span class="cl">{{- if ge $limit 1 -}}
+</span></span><span class="line"><span class="cl">  {{- $pages = $pages | first $limit -}}
+</span></span><span class="line"><span class="cl">{{- end -}}
+</span></span><span class="line"><span class="cl">{{- printf &#34;<span class="cp">&lt;?xml version=\&#34;1.0\&#34; encoding=\&#34;utf-8\&#34; standalone=\&#34;yes\&#34; ?&gt;</span>&#34; | safeHTML }}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">rss</span> <span class="na">version</span><span class="o">=</span><span class="s">&#34;2.0&#34;</span> <span class="na">xmlns:atom</span><span class="o">=</span><span class="s">&#34;http://www.w3.org/2005/Atom&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">channel</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ if ne .Title site.Title }}{{ with .Title }}{{.}} | {{ end }}{{end}}{{ site.Title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">link</span><span class="p">&gt;</span>{{ .Permalink }}<span class="p">&lt;/</span><span class="nt">link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{- with .OutputFormats.Get &#34;RSS&#34; }}
+</span></span><span class="line"><span class="cl">      {{ printf &#34;<span class="p">&lt;</span><span class="nt">atom:link</span> <span class="na">href</span><span class="o">=</span><span class="s">%q</span> <span class="na">rel</span><span class="o">=</span><span class="s">\&#34;self\&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">%q</span> <span class="p">/&gt;</span>&#34; .Permalink .MediaType | safeHTML }}
+</span></span><span class="line"><span class="cl">    {{ end -}}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">description</span><span class="p">&gt;</span>{{ .Title | default site.Title }}<span class="p">&lt;/</span><span class="nt">description</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">generator</span><span class="p">&gt;</span>Hugo -- gohugo.io AND <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://github.com/wangchucheng/hugo-eureka/&#34;</span><span class="p">&gt;</span>Eureka<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">generator</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{- with site.LanguageCode }}<span class="p">&lt;</span><span class="nt">language</span><span class="p">&gt;</span>{{.}}<span class="p">&lt;/</span><span class="nt">language</span><span class="p">&gt;</span>{{end -}}
+</span></span><span class="line"><span class="cl">    {{- with site.Copyright }}<span class="p">&lt;</span><span class="nt">copyright</span><span class="p">&gt;</span>{{ replace (replace . &#34;{year}&#34; now.Year) &#34;<span class="ni">&amp;copy;</span>&#34; &#34;©&#34; | plainify }}<span class="p">&lt;/</span><span class="nt">copyright</span><span class="p">&gt;</span>{{end -}}
+</span></span><span class="line"><span class="cl">    {{- if not .Date.IsZero }}<span class="p">&lt;</span><span class="nt">lastBuildDate</span><span class="p">&gt;</span>{{ .Date.Format &#34;Mon, 02 Jan 2006 15:04:05 -0700&#34; | safeHTML }}<span class="p">&lt;/</span><span class="nt">lastBuildDate</span><span class="p">&gt;</span>{{ end -}}
+</span></span><span class="line"><span class="cl">    {{ range $pages }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">item</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ .Title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">link</span><span class="p">&gt;</span>{{ .Permalink }}<span class="p">&lt;/</span><span class="nt">link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">pubDate</span><span class="p">&gt;</span>{{ .Date.Format &#34;Mon, 02 Jan 2006 15:04:05 -0700&#34; | safeHTML }}<span class="p">&lt;/</span><span class="nt">pubDate</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">guid</span><span class="p">&gt;</span>{{ .Permalink }}<span class="p">&lt;/</span><span class="nt">guid</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ with .Description }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">description</span><span class="p">&gt;</span>{{ . }}<span class="p">&lt;/</span><span class="nt">description</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ else }}
+</span></span><span class="line"><span class="cl">      {{if .IsPage}}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">description</span><span class="p">&gt;</span>{{ .Summary }}<span class="p">&lt;/</span><span class="nt">description</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ else }}
+</span></span><span class="line"><span class="cl">      {{ with .Site.Params.Description }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">description</span><span class="p">&gt;</span>{{ . }}<span class="p">&lt;/</span><span class="nt">description</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ end }}
+</span></span><span class="line"><span class="cl">      {{ end }}
+</span></span><span class="line"><span class="cl">      {{ end }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">item</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">channel</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">rss</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h2 id="增加订阅功能">增加订阅功能</h2>
+<blockquote>
+<p>请务必下载<a href="#%E5%A2%9E%E5%BC%BA%E5%86%85%E5%AE%B9">外部js代码</a>！</p>
+</blockquote>
+<p>首先，此功能要求网站有一个RSS文件，一般会自动生成为index.xml</p>
+<p>然后作者使用的是<a href="http://tinyletter.com/">TinyLetter</a>的获取订阅者服务+<a href="https://zapier.com/app/dashboard">Zapier</a>的自动发信服务，具体步骤详见<a href="https://backendology.com/2018/08/31/hugo-newsletter/">Newsletter for Hugo Blog - Backendology - A study of backend web development by Jared Ririe</a></p>
+<p>记得在自己的博客内部增加一个进入订阅页面的入口，可以把订阅页面(<a href="https://tinyletter.com/">https://tinyletter.com/</a>&lt;你的名字&gt;)下载下来（可以自定义样式），放在<code>themes/eureka/layouts/_default</code>并重命名为subscribe.html，然后新建/content/subscribe/subscribe.md并填入frontmatter：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">layout: subscribe
+</span></span><span class="line"><span class="cl">title: &#34;订阅&#34;
+</span></span><span class="line"><span class="cl">date: 2023-01-07T17:06:54+08:00
+</span></span><span class="line"><span class="cl">draft: false
+</span></span><span class="line"><span class="cl">slug: &#34;subscribe&#34;
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></div><p>然后在about页加一个小按钮：</p>
+<p><img src="/image/Pasted%20image%2020230108013851.png" alt=""></p>
+<p>具体代码示例如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">button</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-family</span><span class="p">:</span> <span class="err">宋体</span><span class="p">,</span><span class="s1">&#39;Comic Sans MS&#39;</span><span class="p">,</span> <span class="kc">cursive</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#FFFFFF</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-color</span><span class="p">:</span> <span class="mh">#333333</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">display</span><span class="p">:</span> <span class="kc">inline-block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">white-space</span><span class="p">:</span> <span class="kc">nowrap</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">height</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">line-height</span><span class="p">:</span> <span class="mi">42</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">22</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* text-transform: uppercase; */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-weight</span><span class="p">:</span> <span class="kc">medium</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-style</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">border</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kp">-moz-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kp">-webkit-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">vertical-align</span><span class="p">:</span> <span class="kc">top</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kp">-webkit-</span><span class="n">font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/subscribe/&#34;</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;button&#34;</span><span class="p">&gt;</span>立即订阅个人博客<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>    
+</span></span></code></pre></div><h1 id="让你的博客能被google等搜索引擎找到">让你的博客能被google等搜索引擎找到</h1>
+<p>google可以使用<a href="https://search.google.com/search-console">Google Search Console</a>，详见<a href="https://zoharandroid.github.io/2019-08-03-%E8%AE%A9%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">让Google搜索到自己的博客</a></p>
+<p>bing可以使用<a href="https://www.bing.com/webmasters/">Bing Webmaster Tools</a>，详见<a href="https://xiaoxiang.blog/wordpress-bing-index/">如何讓你的 WordPress 網站能被 Bing 索引？ | 小翔教你SEO</a>，注意bing是可以导入google search console的数据的，因此建议先设置google</p>
+<p>百度同理，使用<a href="https://ziyuan.baidu.com/linksubmit">普通收录_加快网站内容抓取，快速提交数据工具_站长工具_网站支持_百度搜索资源平台</a></p>
+<p>更多阅读：</p>
+<ul>
+<li><a href="https://ywang-wnlo.github.io/posts/abac0c46.html">Hexo 配置主流搜索引擎收录流程记录 | 乐园</a></li>
+</ul>
+<hr>
+<p>目前来说，作者就添加了这么点功能，要是以后探索到更多有趣的功能，会更新这篇文章，所以，愿意订阅我的博客吗？</p>
+<style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+            /* text-transform: uppercase; */
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+</style>
+<p><a href="/subscribe/"><button class="button">我已经迫不及待要订阅啦！</button></a></p>
+
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#杂谈</a>
+    
+    <a href="https://peterliuzhi.top/tags/hugo/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#hugo</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E5%8D%9A%E5%AE%A2/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#博客</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/%e4%bf%9d%e5%a7%86%e7%ba%a7%e6%95%99%e7%a8%8b%e2%80%94%e2%80%94%e6%90%ad%e5%bb%baHugo%e5%8d%9a%e5%ae%a2.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/posts/hello/" class="block">Hello</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装-hugo">安装 hugo</a></li>
+    <li><a href="#使用-hugo-生成站点与文章并在本地查看">使用 hugo 生成站点与文章，并在本地查看</a></li>
+    <li><a href="#安装-hugo-主题美化你的博客">安装 hugo 主题，美化你的博客</a></li>
+    <li><a href="#使用-github-的-pages-功能发布你的网页">使用 GitHub 的 pages 功能发布你的网页</a>
+      <ul>
+        <li><a href="#注册-github-账号">注册 GitHub 账号</a></li>
+        <li><a href="#创建一个新的仓库repository">创建一个新的仓库（repository）</a></li>
+      </ul>
+    </li>
+    <li><a href="#图片上传问题">图片上传问题</a></li>
+    <li><a href="#fontawesome小插图无法显示的问题">fontawesome小插图无法显示的问题</a></li>
+    <li><a href="#使用-disqus-添加评论功能">使用 disqus 添加评论功能</a></li>
+    <li><a href="#在代码旁增加复制按钮">在代码旁增加复制按钮</a></li>
+    <li><a href="#在文章列表中显示tag">在文章列表中显示tag</a></li>
+    <li><a href="#使用obsidian模板自动生成文章头部">使用obsidian模板自动生成文章头部</a></li>
+    <li><a href="#增强内容">增强内容</a>
+      <ul>
+        <li><a href="#增加归档页">增加归档页</a></li>
+        <li><a href="#增加统计页">增加统计页</a></li>
+        <li><a href="#增加搜索功能">增加搜索功能</a></li>
+        <li><a href="#自定义rss文件">自定义RSS文件</a></li>
+        <li><a href="#增加订阅功能">增加订阅功能</a></li>
+      </ul>
+    </li>
+    <li><a href="#让你的博客能被google等搜索引擎找到">让你的博客能被google等搜索引擎找到</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script src="https://peterliuzhi.top/js/copy-btn.js"></script></div>
+    </footer>
+  </body>
+</html>
