@@ -144,7 +144,7 @@
     },
     "headline": "【爆破栈末位】xman_2019_format - P3troL1er的个人博客","datePublished": "2022-12-29T03:01:44+08:00",
     "dateModified": "2022-12-29T03:01:44+08:00",
-    "wordCount":  1065 ,
+    "wordCount":  999 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -374,7 +374,7 @@
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
+    <span>2分钟阅读时长</span>
   </div>
 
   
@@ -442,24 +442,11 @@
 </span></span><span class="line"><span class="cl">    <span class="n">PIE</span><span class="p">:</span>      <span class="n">No</span> <span class="n">PIE</span> <span class="p">(</span><span class="mh">0x8048000</span><span class="p">)</span>
 </span></span></code></pre></div><h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
 <p>整个程序反编译出来逻辑非常混乱，但重要的只有三个函数：
-<img src="/image/https://peterliu-picbed.oss-cn-guangzhou.aliyuncs.com/img/202210122208112022-10-12-22-08-12.png" alt="202210122208112022-10-12-22-08-12"></p>
+<img src="/image/202210122208112022-10-12-22-08-12.png" alt="202210122208112022-10-12-22-08-12"></p>
 <p>有一个后门函数</p>
-<p><img src="/image/https://peterliu-picbed.oss-cn-guangzhou.aliyuncs.com/img/202210122157492022-10-12-21-57-50.png" alt="202210122157492022-10-12-21-57-50">【HarekazeCTF2019】baby_rop.md
-babyheap_0ctf_2017.md
-ciscn_2019_en_2.md
-ciscn_2019_es_2.md
-ciscn_2019_ne_5.md
-ciscn_s_3.md
-get_started_3dsctf_2016.md
-jarvisoj_fm.md
-jarvisoj_level2_x64.md
-not_the_same_3dsctf_2016.md
-others_shellcode.md
-pwn2_sctf_2016.md
-xman_2019_format.md
-暨南大学2022新生赛初赛 非官方WriteUp.md</p>
+<p><img src="/image/202210122157492022-10-12-21-57-50.png" alt="202210122157492022-10-12-21-57-50"></p>
 <p>这个函数说明了buf也就是保存字符串的地址在堆中</p>
-<p><img src="/image/https://peterliu-picbed.oss-cn-guangzhou.aliyuncs.com/img/202210122159042022-10-12-21-59-04.png" alt="202210122159042022-10-12-21-59-04"></p>
+<p><img src="/image/202210122159042022-10-12-21-59-04.png" alt="202210122159042022-10-12-21-59-04"></p>
 <p>这个函数说明会将buf中的字符串以<code>|</code>为分割符分割成多个子字符串并打印</p>
 <p>这个程序因为只有一次输入的机会，而且无法更改ret值，所以获取shell权限要一次到位地完成，因此虽然可以泄露栈地址却难以加以利用。</p>
 <p>因此如果我们要更改栈地址，就需要用到爆破</p>

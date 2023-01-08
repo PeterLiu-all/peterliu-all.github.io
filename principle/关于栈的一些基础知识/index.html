@@ -144,7 +144,7 @@
     },
     "headline": "关于栈的一些基础知识 - P3troL1er的个人博客","datePublished": "2022-10-26T19:05:28+08:00",
     "dateModified": "2022-10-26T19:05:28+08:00",
-    "wordCount":  3120 ,
+    "wordCount":  3110 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -416,8 +416,6 @@
 — <cite>Dalai Lama</cite></p>
 </blockquote>
 <ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86">关于栈的一些基础知识</a>
-<ul>
 <li><a href="#pwndbg%E4%B8%AD%E6%98%BE%E7%A4%BA%E7%9A%84%E6%A0%88">pwndbg中显示的栈</a>
 <ul>
 <li><a href="#%E6%9C%80%E4%B8%8A%E6%96%B9%E7%9A%84rsp">最上方的rsp</a></li>
@@ -437,8 +435,6 @@
 </li>
 <li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
 </ul>
-</li>
-</ul>
 <h2 id="pwndbg中显示的栈">pwndbg中显示的栈</h2>
 <p><img src="/image/stack1.png" alt="stack1"></p>
 <blockquote>
@@ -455,11 +451,13 @@
 <p style="font-weight: bold;font-family:楷体;">
 这些小箭头可以理解为指针的意思，如果是'→'，表示该地址的这个位置存储的是一个地址，如果是'←'，表示存储的是数据，<br>
 <f style="color: rgba(237, 230, 83, 1);">黄色</f>表示是栈上地址，<f style="color: red;">红色</f>上色表示代码段，黑色为数据，<br>
-有些数据还会有箭头指向别的数据，这些是“该位置存储的地址的位置存储的数据”<br>
-for example:<br>
-<img src="../image/stack4.png"><br>
-表示0x7fffffffde50这个位置存储的数据是0x7fffffffdf78,同时0x7fffffffdf78这个位置存储的数据是0x7fffffffe2da,0x7fffffffe2da这个位置存储的数据是"/home/linux/0/pwn/30"<br>
-<img src="../image/stack5.png"><br>
+有些数据还会有箭头指向别的数据，这些是“该位置存储的地址的位置存储的数据”<br></p>
+for example:
+<p><img src="/image/stack4.png" alt=""></p>
+<p style="font-weight: bold;font-family:楷体;">
+表示0x7fffffffde50这个位置存储的数据是0x7fffffffdf78,同时0x7fffffffdf78这个位置存储的数据是0x7fffffffe2da,0x7fffffffe2da这个位置存储的数据是"/home/linux/0/pwn/30"</p>
+<p><img src="/image/stack5.png" alt=""></p>
+<p style="font-weight: bold;font-family:楷体;">
 而这种寄存器符号在左边的标识，表示当前r12的值为0x7fffffffdf78，每次pop就会从栈顶弹出一个数据到对应的寄存器中，同时rsp会+8,也就是显示为往下移一行。
 </p>
 <h3 id="rbp栈帧指针">rbp栈帧指针</h3>
