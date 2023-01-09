@@ -57,10 +57,10 @@
     </item>
     
     <item>
-      <title>调试arm程序</title>
-      <link>https://peterliuzhi.top/tricks/%E8%B0%83%E8%AF%95arm%E7%A8%8B%E5%BA%8F/</link>
+      <title>PWN中调试arm程序</title>
+      <link>https://peterliuzhi.top/tricks/pwn%E4%B8%AD%E8%B0%83%E8%AF%95arm%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Mon, 02 Jan 2023 20:07:34 +0800</pubDate>
-      <guid>https://peterliuzhi.top/tricks/%E8%B0%83%E8%AF%95arm%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>https://peterliuzhi.top/tricks/pwn%E4%B8%AD%E8%B0%83%E8%AF%95arm%E7%A8%8B%E5%BA%8F/</guid>
       
       <description>小技巧：使用qemu调试arm程序</description>
       

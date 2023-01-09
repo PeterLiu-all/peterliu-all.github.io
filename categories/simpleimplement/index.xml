@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SimpleImplement | P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/categories/simpleimplement/</link>
+      <atom:link href="https://peterliuzhi.top/categories/simpleimplement/index.xml" rel="self" type="application/rss+xml" />
+    <description>SimpleImplement</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 16 Nov 2022 14:13:51 +0800</lastBuildDate>
+    <item>
+      <title>LinearRegression</title>
+      <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression/</link>
+      <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression/</guid>
+      
+      <description>线性回归的简单实现</description>
+      
+    </item>
+    
+    <item>
+      <title>线性回归优化实现-利用pytorch</title>
+      <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/</link>
+      <pubDate>Wed, 16 Nov 2022 14:13:51 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/</guid>
+      
+      <description>线性回归优化实现-利用pytorch</description>
+      
+    </item>
+    
+  </channel>
+</rss>

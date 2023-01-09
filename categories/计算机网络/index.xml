@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机网络 | P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+      <atom:link href="https://peterliuzhi.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <description>计算机网络</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 16 Nov 2022 14:04:12 +0800</lastBuildDate>
+    <item>
+      <title>导论</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/</link>
+      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/</guid>
+      
+      <description>计算机网络和因特网笔记</description>
+      
+    </item>
+    
+    <item>
+      <title>概述</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/</guid>
+      
+      <description>计算机网络概述</description>
+      
+    </item>
+    
+    <item>
+      <title>链路层</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/</link>
+      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/</guid>
+      
+      <description>链路层</description>
+      
+    </item>
+    
+    <item>
+      <title>网络层</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/</link>
+      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/</guid>
+      
+      <description>网络层</description>
+      
+    </item>
+    
+  </channel>
+</rss>
