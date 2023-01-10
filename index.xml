@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/</link>
       <atom:link href="https://peterliuzhi.top/index.xml" rel="self" type="application/rss+xml" />
     <description>P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 09 Jan 2023 00:53:31 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 09 Jan 2023 17:42:16 +0800</lastBuildDate>
+    <item>
+      <title>0ctf_2017_babyheap</title>
+      <link>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</link>
+      <pubDate>Mon, 09 Jan 2023 17:42:16 +0800</pubDate>
+      <guid>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</guid>
+      
+      <description>关于BUUCTF 0ctf_2017_babyheap的解析</description>
+      
+    </item>
+    
     <item>
       <title>摩斯电码的解码</title>
       <link>https://peterliuzhi.top/tricks/%E6%91%A9%E6%96%AF%E7%94%B5%E7%A0%81%E7%9A%84%E8%A7%A3%E7%A0%81/</link>

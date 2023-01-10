@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/categories/writeup/</link>
       <atom:link href="https://peterliuzhi.top/categories/writeup/index.xml" rel="self" type="application/rss+xml" />
     <description>writeup</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 04 Jan 2023 17:09:58 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 09 Jan 2023 17:42:16 +0800</lastBuildDate>
+    <item>
+      <title>0ctf_2017_babyheap</title>
+      <link>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</link>
+      <pubDate>Mon, 09 Jan 2023 17:42:16 +0800</pubDate>
+      <guid>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</guid>
+      
+      <description>关于BUUCTF 0ctf_2017_babyheap的解析</description>
+      
+    </item>
+    
     <item>
       <title>【BSides Mumbai 2022 PWN】Warmup</title>
       <link>https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/</link>

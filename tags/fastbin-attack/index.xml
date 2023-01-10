@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/tags/fastbin-attack/</link>
       <atom:link href="https://peterliuzhi.top/tags/fastbin-attack/index.xml" rel="self" type="application/rss+xml" />
     <description>fastbin attack</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 29 Dec 2022 03:01:44 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 09 Jan 2023 17:42:16 +0800</lastBuildDate>
+    <item>
+      <title>0ctf_2017_babyheap</title>
+      <link>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</link>
+      <pubDate>Mon, 09 Jan 2023 17:42:16 +0800</pubDate>
+      <guid>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</guid>
+      
+      <description>关于BUUCTF 0ctf_2017_babyheap的解析</description>
+      
+    </item>
+    
     <item>
       <title>【首道堆题】【fastbin attack】【unsorted bin main_arena leak】babyheap_0ctf_2017</title>
       <link>https://peterliuzhi.top/writeup/%E9%A6%96%E9%81%93%E5%A0%86%E9%A2%98fastbin-attackunsorted-bin-main_arena-leakbabyheap_0ctf_2017/</link>

