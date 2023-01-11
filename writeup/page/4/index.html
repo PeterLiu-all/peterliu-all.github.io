@@ -2,10 +2,19 @@
 <html
   lang="zh"
   dir="ltr"
+   class="light"
   
 ><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+</style>
 
 <title>P3troL1er的个人博客</title>
 
@@ -67,6 +76,26 @@
   <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js"
      crossorigin></script>
   <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/css.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/powershell.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/shell.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/markdown.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/json.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/yaml.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/xml.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/sql.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cmake.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/makefile.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/matlab.min.js"
      crossorigin></script>
 <link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
 
@@ -807,7 +836,64 @@
  &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
 </div>
 <link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
-<script src="https://peterliuzhi.top/js/copy-btn.js"></script></div>
+<script src="https://peterliuzhi.top/js/copy-btn.js"></script>
+<style>
+.black-circle{
+    height: 45px;
+    width: 45px;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position:fixed;
+    right:0px;
+    bottom:0px;
+    z-index: 100;
+    background: transparent;
+}
+.black-circle:hover{
+    transform: translateY(-10px);
+}
+</style>
+<script>
+function goTop(acceleration, time) {
+    acceleration = acceleration || 0.1;
+    time = time || 16;
+
+    var x1 = 0;
+    var y1 = 0;
+    var x2 = 0;
+    var y2 = 0;
+    var x3 = 0;
+    var y3 = 0;
+
+    if (document.documentElement) {
+        x1 = document.documentElement.scrollLeft || 0;
+        y1 = document.documentElement.scrollTop || 0;
+    }
+    if (document.body) {
+        x2 = document.body.scrollLeft || 0;
+        y2 = document.body.scrollTop || 0;
+    }
+    var x3 = window.scrollX || 0;
+    var y3 = window.scrollY || 0;
+
+    
+    var x = Math.max(x1, Math.max(x2, x3));
+    
+    var y = Math.max(y1, Math.max(y2, y3));
+
+    
+    var speed = 1 + acceleration;
+    window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+    
+    if(x > 0 || y > 0) {
+        var invokeFunction = goTop( acceleration , time );
+        window.setTimeout(invokeFunction, time);
+    }
+}
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a></div>
     </footer>
   </body>
 </html>
