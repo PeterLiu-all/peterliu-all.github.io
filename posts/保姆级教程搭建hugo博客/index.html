@@ -173,7 +173,7 @@
     },
     "headline": "保姆级教程——搭建Hugo博客 - P3troL1er的个人博客","datePublished": "2023-01-08T14:51:51+08:00",
     "dateModified": "2023-01-08T14:51:51+08:00",
-    "wordCount":  9280 ,
+    "wordCount":  9431 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -485,7 +485,7 @@
 <blockquote>
 <p>在它build完前查看或者build完马上查看可能会出现无样式的情况</p>
 </blockquote>
-<p>以后就可以只使用以下命令啦</p>
+<h2 id="自动build后上传脚本">自动build后上传脚本</h2>
 <p>将下面的命令保存为<code>upload.ps1</code>脚本（Windows 下的 powershell 使用）</p>
 <p>其中的python脚本见<a href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98">图片上传问题</a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$others</span> <span class="p">=</span> <span class="nv">$args</span><span class="p">[</span><span class="mf">1</span><span class="p">..(</span><span class="nv">$args</span><span class="p">.</span><span class="py">Length</span> <span class="p">-</span> <span class="mf">1</span><span class="p">)]</span>
@@ -510,7 +510,24 @@
 </span></span></code></pre></div><p>其中第一个命令行参数会传递给python脚本，值为true或false，具体见<a href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98">图片上传问题</a></p>
 <p>第二个参数就是<code>git commit</code>的更新信息</p>
 <p>以后就可以使用<code>.\upload.ps1 false &quot;&lt;更新message&gt;&quot;</code>来上传啦</p>
-<p>本地渲染我也写了一个脚本，名为<code>.\local.ps1</code>：</p>
+<p>其他平台可以使用<code>upload.py</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;python dispose_image.py false&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;python dispose_image.py </span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;hugo -v --log&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&#34;public&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;git add -A .&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;git commit -m &#34;</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%S+08:00&#34;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">())</span><span class="si">}</span><span class="s1">&#34;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;git commit -m &#34;</span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="si">}</span><span class="s1">&#34;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;git push origin master&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>本地渲染我也写了一个脚本，名为<code>.\local.ps1</code>：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="k">If</span> <span class="p">([</span><span class="no">String</span><span class="p">]::</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="nv">$args</span><span class="p">[</span><span class="mf">0</span><span class="p">]))</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">python</span> <span class="n">dispose_image</span><span class="p">.</span><span class="py">py</span> <span class="n">false</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -520,7 +537,23 @@
 </span></span><span class="line"><span class="cl"><span class="n">hugo</span> <span class="n">-v</span> <span class="p">-</span><span class="n">-log</span>
 </span></span><span class="line"><span class="cl"><span class="n">hugo</span> <span class="n">server</span> <span class="p">-</span><span class="n">-disableFastRender</span>
 </span></span></code></pre></div><p>使用方法是<code>.\local.ps1</code>或<code>.\local.ps1 true</code>来进行本地渲染了</p>
-<h1 id="图片上传问题">图片上传问题</h1>
+<p>其他平台可以使用<code>local.py</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;python dispose_image.py false&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;python dispose_image.py </span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;hugo -v --log&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;hugo server --disableFastRender&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;已退出&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;出现错误：</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h1 id="图片上传问题">图片上传问题</h1>
 <p>我们可以购买阿里云等服务供应商的图床服务（OSS服务），也可以使用GitHub保存图片</p>
 <p>Eureka主题提供了<a href="https://www.wangchucheng.com/zh/docs/hugo-eureka/content-management/#%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87">一系列的上传图片的方法</a>，详情见文档</p>
 <p>现在只需要知道两点：</p>
@@ -1706,6 +1739,7 @@
       <ul>
         <li><a href="#注册-github-账号">注册 GitHub 账号</a></li>
         <li><a href="#创建一个新的仓库repository">创建一个新的仓库（repository）</a></li>
+        <li><a href="#自动build后上传脚本">自动build后上传脚本</a></li>
       </ul>
     </li>
     <li><a href="#图片上传问题">图片上传问题</a></li>
