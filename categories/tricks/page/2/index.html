@@ -144,9 +144,43 @@
 <script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
 
 
-
-
-
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
 <link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
 
@@ -178,36 +212,30 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "patchelf更改libc脚本",
-            "description": "小技巧：自动化更改libc脚本",
-            "url": "https://peterliuzhi.top/tricks/patchelf%E6%9B%B4%E6%94%B9libc%E8%84%9A%E6%9C%AC/"
-        },{
-            "@type":"ListItem",
-            "position":  2 ,
             "name": "使用ROPgadget、ropper工具构建ropchain",
             "description": "使用工具构建ropchain",
             "url": "https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8ropgadgetropper%E5%B7%A5%E5%85%B7%E6%9E%84%E5%BB%BAropchain/"
         },{
             "@type":"ListItem",
-            "position":  3 ,
+            "position":  2 ,
             "name": "如何查看当前系统libc版本",
             "description": "用脚本查看当前系统libc版本",
             "url": "https://peterliuzhi.top/tricks/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9Flibc%E7%89%88%E6%9C%AC/"
         },{
             "@type":"ListItem",
-            "position":  4 ,
+            "position":  3 ,
             "name": "绕过atoi前对首字符是否为负号的检查",
             "description": "绕过atoi小技巧",
             "url": "https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5/"
         },{
             "@type":"ListItem",
-            "position":  5 ,
+            "position":  4 ,
             "name": "绕过pyjail——一句话RCE",
             "description": "一句话RCE",
             "url": "https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87pyjail%E4%B8%80%E5%8F%A5%E8%AF%9Drce/"
         },{
             "@type":"ListItem",
-            "position":  6 ,
+            "position":  5 ,
             "name": "汇编版hello world",
             "description": "玩具：汇编版hello world",
             "url": "https://peterliuzhi.top/tricks/%E6%B1%87%E7%BC%96%E7%89%88hello-world/"
@@ -253,6 +281,7 @@
 
 
 <link rel="alternate" type="application/rss+xml" href="https://peterliuzhi.top/categories/tricks/index.xml" title="P3troL1er的个人博客" />
+
 </head>
 
 
@@ -401,87 +430,6 @@
 
   <div class="bg-secondary-bg rounded px-6">
     <div class="overflow-hidden divide-y">
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/tricks/patchelf%E6%9B%B4%E6%94%B9libc%E8%84%9A%E6%9C%AC/" class="no-underline">
-    <h3 class="mt-0">patchelf更改libc脚本</h3>
-  </a>
-  
-    小技巧：自动化更改libc脚本
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Monday, January 2, 2023</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共792字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>2分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/tricks/" class="hover:text-eureka"
-          >tricks</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/categories/scripts/" class="hover:text-eureka"
-          >scripts</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/patchelf/" class="hover:text-eureka"
-          >patchelf</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="https://peterliuzhi.top/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
   
   <div class="py-6">
     <div class="flex flex-col-reverse lg:flex-row justify-between">
@@ -897,70 +845,71 @@
     <footer class="pl-scrollbar">
       <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
     <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
- &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
 </div>
 <link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
-<script src="https://peterliuzhi.top/js/copy-btn.js"></script>
-
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/copy-btn.js"></script>
 <style>
-.black-circle{
-    height: 45px;
-    width: 45px;
-    display: block;
-    font-size: 30px;
-    transition: all 1.5s;
-    position:fixed;
-    right:0px;
-    bottom:0px;
-    z-index: 100;
-    background: transparent;
-}
-.black-circle:hover{
-    transform: translateY(-10px);
-}
+    .black-circle {
+        height: 45px;
+        width: 45px;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
 </style>
 <script>
-function goTop(acceleration, time) {
-    acceleration = acceleration || 0.1;
-    time = time || 16;
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
 
-    var x1 = 0;
-    var y1 = 0;
-    var x2 = 0;
-    var y2 = 0;
-    var x3 = 0;
-    var y3 = 0;
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
 
-    if (document.documentElement) {
-        x1 = document.documentElement.scrollLeft || 0;
-        y1 = document.documentElement.scrollTop || 0;
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
     }
-    if (document.body) {
-        x2 = document.body.scrollLeft || 0;
-        y2 = document.body.scrollTop || 0;
-    }
-    var x3 = window.scrollX || 0;
-    var y3 = window.scrollY || 0;
-
-    
-    var x = Math.max(x1, Math.max(x2, x3));
-    
-    var y = Math.max(y1, Math.max(y2, y3));
-
-    
-    var speed = 1 + acceleration;
-    window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
-
-    
-    if(x > 0 || y > 0) {
-        var invokeFunction = goTop( acceleration , time );
-        window.setTimeout(invokeFunction, time);
-    }
-}
 </script>
-<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
-
-</div>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a></div>
     </footer>
   </body>
 </html>

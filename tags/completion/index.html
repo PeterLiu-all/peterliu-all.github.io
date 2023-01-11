@@ -144,9 +144,43 @@
 <script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
 
 
-
-
-
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
 <link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
 
@@ -235,6 +269,7 @@
 
 
 <link rel="alternate" type="application/rss+xml" href="https://peterliuzhi.top/tags/completion/index.xml" title="P3troL1er的个人博客" />
+
 </head>
 
 
@@ -664,70 +699,71 @@
     <footer class="pl-scrollbar">
       <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
     <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
- &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
 </div>
 <link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
-<script src="https://peterliuzhi.top/js/copy-btn.js"></script>
-
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/copy-btn.js"></script>
 <style>
-.black-circle{
-    height: 45px;
-    width: 45px;
-    display: block;
-    font-size: 30px;
-    transition: all 1.5s;
-    position:fixed;
-    right:0px;
-    bottom:0px;
-    z-index: 100;
-    background: transparent;
-}
-.black-circle:hover{
-    transform: translateY(-10px);
-}
+    .black-circle {
+        height: 45px;
+        width: 45px;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
 </style>
 <script>
-function goTop(acceleration, time) {
-    acceleration = acceleration || 0.1;
-    time = time || 16;
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
 
-    var x1 = 0;
-    var y1 = 0;
-    var x2 = 0;
-    var y2 = 0;
-    var x3 = 0;
-    var y3 = 0;
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
 
-    if (document.documentElement) {
-        x1 = document.documentElement.scrollLeft || 0;
-        y1 = document.documentElement.scrollTop || 0;
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
     }
-    if (document.body) {
-        x2 = document.body.scrollLeft || 0;
-        y2 = document.body.scrollTop || 0;
-    }
-    var x3 = window.scrollX || 0;
-    var y3 = window.scrollY || 0;
-
-    
-    var x = Math.max(x1, Math.max(x2, x3));
-    
-    var y = Math.max(y1, Math.max(y2, y3));
-
-    
-    var speed = 1 + acceleration;
-    window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
-
-    
-    if(x > 0 || y > 0) {
-        var invokeFunction = goTop( acceleration , time );
-        window.setTimeout(invokeFunction, time);
-    }
-}
 </script>
-<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
-
-</div>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a></div>
     </footer>
   </body>
 </html>

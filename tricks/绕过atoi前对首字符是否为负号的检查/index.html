@@ -144,9 +144,43 @@
 <script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
 
 
-
-
-
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
 <link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
 
@@ -238,7 +272,7 @@
 
 <meta property="og:see_also" content="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/yolo/yolov1/" />
 
-<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/" />
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/" />
 
 <meta property="og:see_also" content="https://peterliuzhi.top/principle/ret2libc/" />
 
@@ -247,6 +281,7 @@
 <meta property="og:see_also" content="https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/" />
 
 <meta property="og:see_also" content="https://peterliuzhi.top/tricks/%E6%B1%87%E7%BC%96%E7%89%88hello-world/" />
+
 
 
 </head>
@@ -455,7 +490,9 @@
 
   
   
-  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5/">https://peterliuzhi.top/</a>。未经允许，请勿转载！</p></b>
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5/">https://peterliuzhi.top/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+
   <blockquote>
 <p>Never give up, for that is just the place and time that the tide will turn.
 — <cite>Harriet Beecher Stowe</cite></p>
@@ -550,7 +587,7 @@
           <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/yolo/yolov1/" class="no-underline">yolov1</a>
           <br />
         
-          <a href="https://peterliuzhi.top/principle/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/" class="no-underline">常见宏定义</a>
+          <a href="https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/" class="no-underline">常见宏定义</a>
           <br />
         
           <a href="https://peterliuzhi.top/principle/ret2libc/" class="no-underline">ret2libc</a>
@@ -583,70 +620,71 @@
     <footer class="pl-scrollbar">
       <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
     <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
- &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
 </div>
 <link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
-<script src="https://peterliuzhi.top/js/copy-btn.js"></script>
-
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/copy-btn.js"></script>
 <style>
-.black-circle{
-    height: 45px;
-    width: 45px;
-    display: block;
-    font-size: 30px;
-    transition: all 1.5s;
-    position:fixed;
-    right:0px;
-    bottom:0px;
-    z-index: 100;
-    background: transparent;
-}
-.black-circle:hover{
-    transform: translateY(-10px);
-}
+    .black-circle {
+        height: 45px;
+        width: 45px;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
 </style>
 <script>
-function goTop(acceleration, time) {
-    acceleration = acceleration || 0.1;
-    time = time || 16;
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
 
-    var x1 = 0;
-    var y1 = 0;
-    var x2 = 0;
-    var y2 = 0;
-    var x3 = 0;
-    var y3 = 0;
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
 
-    if (document.documentElement) {
-        x1 = document.documentElement.scrollLeft || 0;
-        y1 = document.documentElement.scrollTop || 0;
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
     }
-    if (document.body) {
-        x2 = document.body.scrollLeft || 0;
-        y2 = document.body.scrollTop || 0;
-    }
-    var x3 = window.scrollX || 0;
-    var y3 = window.scrollY || 0;
-
-    
-    var x = Math.max(x1, Math.max(x2, x3));
-    
-    var y = Math.max(y1, Math.max(y2, y3));
-
-    
-    var speed = 1 + acceleration;
-    window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
-
-    
-    if(x > 0 || y > 0) {
-        var invokeFunction = goTop( acceleration , time );
-        window.setTimeout(invokeFunction, time);
-    }
-}
 </script>
-<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
-
-</div>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a></div>
     </footer>
   </body>
 </html>
