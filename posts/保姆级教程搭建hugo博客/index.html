@@ -144,7 +144,7 @@
     },
     "headline": "保姆级教程——搭建Hugo博客 - P3troL1er的个人博客","datePublished": "2023-01-08T14:51:51+08:00",
     "dateModified": "2023-01-08T14:51:51+08:00",
-    "wordCount":  8382 ,
+    "wordCount":  8383 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -484,7 +484,7 @@
 <p>因此我们可以根据这点使用obsidian进行无缝衔接</p>
 <p>我们将仓库设在content文件夹，设置粘贴图片时的链接为相对仓库根目录的绝对路径：</p>
 <p><img src="/image/Pasted%20image%2020230108002154.png" alt=""></p>
-<p>这样粘贴example.png的时候生成的图片链接就是<code>![](image/example.png)</code>，但是如果image前没有&quot;/&quot;，那么这个链接会被浏览器识别为相对链接，不会指向根目录下的image文件夹，如果手动更改为<code>![](/image/example.png)</code>，会发现obsidian和浏览器都能正确找到图片并展示，那么该怎么自动化实现这点呢？</p>
+<p>这样粘贴example.png的时候生成的图片链接就是<code>![](/image/example.png)</code>，但是如果image前没有&quot;/&quot;，那么这个链接会被浏览器识别为相对链接，不会指向根目录下的image文件夹，如果手动更改为<code>![](/image/example.png)</code>，会发现obsidian和浏览器都能正确找到图片并展示，那么该怎么自动化实现这点呢？</p>
 <p>作者的方案是使用一个python脚本自动解析并替换所有的图片链接和附件链接，将下列代码保存为<code>dispose_image.py</code>并对<a href="#%E4%BD%BF%E7%94%A8%20GitHub%20%E7%9A%84%20pages%20%E5%8A%9F%E8%83%BD%E5%8F%91%E5%B8%83%E4%BD%A0%E7%9A%84%E7%BD%91%E9%A1%B5">上面给的代码</a>中的<code>python dispose_image.py</code>取消注释</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
@@ -1390,7 +1390,7 @@
 <h1 id="使黑色图片在深色模式下反转为白色图片">使黑色图片在深色模式下反转为白色图片</h1>
 <p>下面提供一个示例。</p>
 <p>比如我在about.md中定义的头像是黑色透明背景的，在深色模式下就完全看不清图片：</p>
-<p><img src="image/Pasted%20image%2020230108231937.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020230108231937.png" alt=""></p>
 <p>我们可以在themes/eureka/layouts/partials/widgets/about.html文件头部加上：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">avatar</span><span class="p">{</span>
@@ -1398,10 +1398,10 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>然后给<code>alt=&quot;Avatar&quot;</code>的img标签加上avatar类：</p>
-<p><img src="image/Pasted%20image%2020230108231741.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020230108231741.png" alt=""></p>
 <p>效果：</p>
-<p><img src="image/Pasted%20image%2020230108232003.png" alt=""></p>
-<p><img src="image/Pasted%20image%2020230108232025.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020230108232003.png" alt=""></p>
+<p><img src="/image/Pasted%20image%2020230108232025.png" alt=""></p>
 <hr>
 <p>目前来说，作者就添加了这么点功能，要是以后探索到更多有趣的功能，会更新这篇文章，所以，愿意订阅我的博客吗？</p>
 <style>
@@ -1412,6 +1412,7 @@
             display: inline-block;
             white-space: nowrap;
             height: 40px;
+            min-width: 230px;
             line-height: 42px;
             margin: 0 5px 0 0;
             padding: 0 22px;
@@ -1430,8 +1431,45 @@
             -webkit-font-smoothing: antialiased;
             font-smoothing: antialiased;
         }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
 </style>
-<p><a href="/subscribe/"><button class="button">我已经迫不及待要订阅啦！</button></a></p>
+<p><a href="/subscribe/"><button class="button">我已经迫不及待要订阅啦！</button></a> <br /></p>
 
 </article>
 
