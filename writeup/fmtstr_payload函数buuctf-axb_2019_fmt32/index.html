@@ -516,21 +516,21 @@
         <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020221121222402.png">
             <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020221121222402.png" />
         </a>
-    
-典型的格式化字符串漏洞，我们gdb到<code>printf(format);</code>那里看下栈：
-
+    </p>
+<p>典型的格式化字符串漏洞，我们gdb到<code>printf(format);</code>那里看下栈：</p>
+<p>
         <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020221121222648.png">
             <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020221121222648.png" />
         </a>
-    
-可以看到格式化字符串在栈上储存要先吞掉一个字符才到第8个参数的位置
-
+    </p>
+<p>可以看到格式化字符串在栈上储存要先吞掉一个字符才到第8个参数的位置</p>
+<p>
         <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020221121222816.png">
             <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020221121222816.png" />
         </a>
-    
-我们也可以看到在第0x97个参数的位置存储了<code>__libc_start_main+247</code>的值，我们可以用其计算出libc的基址
-那么答案就很简单了，改写printf的got值为system即可</p>
+    </p>
+<p>我们也可以看到在第0x97个参数的位置存储了<code>__libc_start_main+247</code>的值，我们可以用其计算出libc的基址</p>
+<p>那么答案就很简单了，改写printf的got值为system即可</p>
 <h2 id="exp">exp</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 自动生成头部</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>

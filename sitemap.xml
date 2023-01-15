@@ -71,6 +71,30 @@
     <loc>https://peterliuzhi.top/subscribe/subscribe/</loc>
     <lastmod>2023-01-07T17:06:54+08:00</lastmod>
   </url><url>
+    <loc>https://peterliuzhi.top/categories/hgame/</loc>
+    <lastmod>2023-01-10T19:40:10+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/</loc>
+    <lastmod>2023-01-10T19:40:10+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/nop%E6%BB%91%E6%9D%BF/</loc>
+    <lastmod>2023-01-10T19:40:10+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/orw/</loc>
+    <lastmod>2023-01-10T19:40:10+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/shellcraft%E7%94%9F%E6%88%90orw%E7%9A%84shellcode/</loc>
+    <lastmod>2023-01-10T19:40:10+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/%E6%9B%B4%E6%94%B9got%E8%A1%A8/</loc>
+    <lastmod>2023-01-10T19:40:10+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/%E6%A0%88%E8%BF%81%E7%A7%BB/</loc>
+    <lastmod>2023-01-10T19:40:10+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/%E8%BD%AC%E7%A7%BB%E7%A8%8B%E5%BA%8F/</loc>
+    <lastmod>2023-01-10T19:40:10+08:00</lastmod>
+  </url><url>
     <loc>https://peterliuzhi.top/tags/crypto/</loc>
     <lastmod>2023-01-06T02:10:16+08:00</lastmod>
   </url><url>
@@ -304,9 +328,6 @@
     <lastmod>2022-12-29T03:01:44+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/%E6%97%A0%E5%9B%9E%E6%98%BE/</loc>
-    <lastmod>2022-12-29T03:01:44+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/tags/%E6%A0%88%E8%BF%81%E7%A7%BB/</loc>
     <lastmod>2022-12-29T03:01:44+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/libc/</loc>
