@@ -799,7 +799,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nx">copyBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;click&#34;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">selection</span> <span class="o">=</span> <span class="nx">selectText</span><span class="p">(</span><span class="nx">codeEl</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">document</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&#34;copy&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">navigator</span><span class="p">.</span><span class="nx">clipboard</span><span class="p">.</span><span class="nx">writeText</span><span class="p">(</span><span class="nx">selection</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">selection</span><span class="p">.</span><span class="nx">removeAllRanges</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">flashCopyMessage</span><span class="p">(</span><span class="nx">copyBtn</span><span class="p">,</span> <span class="s2">&#34;Copied!&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
@@ -2040,7 +2040,7 @@
             class="hover:text-eureka">Hugo</a></p>
 </div>
 <link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
-<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/copy-btn.js"></script>
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
 <style>
     .black-circle {
         height: 45px;
