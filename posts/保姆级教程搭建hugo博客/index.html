@@ -307,20 +307,20 @@
     }
 </script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
-    <a href="https://peterliuzhi.top/" class="me-6 text-primary-text text-xl font-bold">P3troL1er的个人博客</a>
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er的个人博客</a>
     <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
         <i class="fas fa-bars"></i>
     </button>
     <div id="target"
         class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
-            <a href="https://peterliuzhi.top/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
-            <a href="https://peterliuzhi.top/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
-            <a href="https://peterliuzhi.top/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
-            <a href="https://peterliuzhi.top/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
-            <a href="https://peterliuzhi.top/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
-            <a href="https://peterliuzhi.top/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
-            <a href="https://peterliuzhi.top/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
+            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
         </div>
     <style>
 	.ld {
@@ -349,13 +349,13 @@
     </style>
         <div class="flex" style="margin-right: 20px; margin-left: 20px;">
                 <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-                    <a href="https://peterliuzhi.top/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
                 </div>
         </div>
         <div class="flex">
             <div class="search-container relative pt-4 md:pt-0">
                 <div class="search">
-                    <form role="search" class="search-form" action="https://peterliuzhi.top/search.html" method="get">
+                    <form role="search" class="search-form" action="/search.html" method="get">
                     <label>
                         <input name="q" type="text" placeholder="搜索 ..." class="search-field">
                     </label>
@@ -477,7 +477,7 @@
 
   
   <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="https://peterliuzhi.top/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
       </div>
 </div>
 
@@ -508,8 +508,8 @@
 <p>这时候我们想看一下博客的效果，我们可以使用<code>hugo -D server</code>命令在本地查看。-D 选项默认在 public 文件夹生成页面，如果你想在 docs/文件夹生成页面，就使用<code>hugo -d docs</code>再<code>hugo server</code></p>
 <p>这时候终端会蹦出一个类似<code>//localhost:1313/</code>的地址，在浏览器中输入该地址就能看到本地生成的博客啦</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108000613.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108000613.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108000613.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108000613.png" />
         </a>
     </p>
 <p>如果想停止本地服务器就<code>ctrl+c</code>即可</p>
@@ -523,16 +523,16 @@
 <p>谷歌 GitHub 按指引注册即可</p>
 <h2 id="创建一个新的仓库repository">创建一个新的仓库（repository）</h2>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/202209041753382022-09-04-17-53-38.png">
-            <img class="mx-auto" alt="202209041753382022-09-04-17-53-38" src="https://peterliuzhi.top/image/202209041753382022-09-04-17-53-38.png" />
+        <a data-fancybox="gallery" href="/image/202209041753382022-09-04-17-53-38.png">
+            <img class="mx-auto" alt="202209041753382022-09-04-17-53-38" src="/image/202209041753382022-09-04-17-53-38.png" />
         </a>
     </p>
 <p>仓库名最好是&lt;你的用户名&gt;.github.io，比如我就是 peterliu-all.github.io，如果不是这个名字可能会有一些未知的错误。</p>
 <p>description 随便写一下，一定要设置为 pubic，一开始先不要加别的文件（不要点下面的 add readme、license 等），让仓库为空</p>
 <p>然后复制一下仓库的 https 地址</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/202209041757132022-09-04-17-57-13.png">
-            <img class="mx-auto" alt="202209041757132022-09-04-17-57-13" src="https://peterliuzhi.top/image/202209041757132022-09-04-17-57-13.png" />
+        <a data-fancybox="gallery" href="/image/202209041757132022-09-04-17-57-13.png">
+            <img class="mx-auto" alt="202209041757132022-09-04-17-57-13" src="/image/202209041757132022-09-04-17-57-13.png" />
         </a>
     </p>
 <p>然后返回我们的终端，在你的博客根目录下输入<code>hugo</code>，这会忽略frontmatter标记<code>draft: true</code>，如果不想忽略草稿，就输入<code>hugo -D</code></p>
@@ -626,8 +626,8 @@
 <p>因此我们可以根据这点使用obsidian进行无缝衔接</p>
 <p>我们将仓库设在content文件夹，设置粘贴图片时的链接为相对仓库根目录的绝对路径：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108002154.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108002154.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108002154.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108002154.png" />
         </a>
     </p>
 <p>这样粘贴example.png的时候生成的图片链接就是<code>![](/image/example.png)</code>，但是如果image前没有&quot;/&quot;，那么这个链接会被浏览器识别为相对链接，不会指向根目录下的image文件夹，如果手动更改为<code>![](/image/example.png)</code>，会发现obsidian和浏览器都能正确找到图片并展示，那么该怎么自动化实现这点呢？</p>
@@ -707,25 +707,25 @@
 <p>hugo中很多时候都会用到fontswesome的小插图，但是Eureka中好像有bug无法显示</p>
 <p>解决方法就是<a href="https://fontawesome.com/start">注册一下fontswesome</a>并点击获取kit code代替/themes/eureka/layouts/partials/head.html中原本的链接：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108003436.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108003436.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108003436.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108003436.png" />
         </a>
     </p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108003611.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108003611.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108003611.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108003611.png" />
         </a>
     </p>
 <h1 id="使用-disqus-添加评论功能">使用 disqus 添加评论功能</h1>
 <p>Eureka中实现这点非常简单，你只需要注册disqus并获取shortname，填在params.yaml中就行：
 
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108003846.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108003846.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108003846.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108003846.png" />
         </a>
     </p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108003909.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108003909.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108003909.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108003909.png" />
         </a>
     </p>
 <p>相关阅读：</p>
@@ -842,8 +842,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>效果如图：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108004328.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108004328.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108004328.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108004328.png" />
         </a>
     </p>
 <h1 id="在文章列表中显示tag">在文章列表中显示tag</h1>
@@ -913,28 +913,28 @@
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>也就是这里：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230111210554.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230111210554.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230111210554.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230111210554.png" />
         </a>
     </p>
 <h1 id="使用obsidian模板自动生成文章头部">使用obsidian模板自动生成文章头部</h1>
 <p>需要下载插件<a href="https://github.com/SilentVoid13/Templater">Templater</a>，请阅读其<a href="https://silentvoid13.github.io/Templater/">官方文档</a>中模板的写法（网上有些博客的教程是旧版的，现在已经不能用了）</p>
 <p>示例如下：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108005032.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108005032.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108005032.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108005032.png" />
         </a>
     </p>
 <p>使用时按<code>Alt+E</code>就行</p>
 <p>需要注意的是，为了避免hugo解析content文件夹中存放模板的model文件夹（模板文件夹必须存放在obsidian仓库内），我们需要在comfig.yaml中指定ignore的pattern：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108005235.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108005235.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108005235.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108005235.png" />
         </a>
     </p>
 <p>具体详见<a href="https://gohugo.io/getting-started/configuration/#ignore-content-and-data-files-when-rendering">Configure Hugo |Hugo</a></p>
 <h1 id="增强内容">增强内容</h1>
-<p>下面会用到的<a href="https://peterliuzhi.top/appendix/all_js.zip">外部js代码请下载此附件</a></p>
+<p>下面会用到的<a href="/appendix/all_js.zip">外部js代码请下载此附件</a></p>
 <p>下载解压后放在/static/js中</p>
 <h2 id="增加归档页">增加归档页</h2>
 <blockquote>
@@ -1026,8 +1026,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
 </span></span></span></code></pre></div><p>最后在menu.yaml加上对它的索引就好了：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108010500.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108010500.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108010500.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108010500.png" />
         </a>
     </p>
 <p>来源见<a href="https://imnerd.org/custom-hugo-theme-eureka.html#%E5%BD%92%E6%A1%A3">Hugo 主题 Eureka 自定义 | 怡红院落</a></p>
@@ -1549,8 +1549,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
 </span></span></span></code></pre></div><p>然后在about页加一个小按钮：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108013851.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108013851.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108013851.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108013851.png" />
         </a>
     </p>
 <p>具体代码示例如下：</p>
@@ -1595,8 +1595,8 @@
 <p>下面提供一个示例。</p>
 <p>比如我在about.md中定义的头像是黑色透明背景的，在深色模式下就完全看不清图片：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108231937.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108231937.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108231937.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108231937.png" />
         </a>
     </p>
 <p>我们可以在themes/eureka/layouts/partials/widgets/about.html文件头部加上：</p>
@@ -1607,19 +1607,19 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>然后给<code>alt=&quot;Avatar&quot;</code>的img标签加上avatar类：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108231741.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108231741.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108231741.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108231741.png" />
         </a>
     </p>
 <p>效果：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108232003.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108232003.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108232003.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108232003.png" />
         </a>
     </p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230108232025.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230108232025.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108232025.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108232025.png" />
         </a>
     </p>
 <h1 id="让深浅颜色变换更平滑">让深浅颜色变换更平滑</h1>
@@ -1633,8 +1633,8 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230111165535.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230111165535.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230111165535.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230111165535.png" />
         </a>
     </p>
 <p>然后因为eureka主题实现深浅变化是根据有没有dark类来区分的，所以没有light类，因此我们需要更改<code>themes/eureka/layouts/_default/baseof.html</code>中的html标签：</p>
@@ -1646,8 +1646,8 @@
 </span></span><span class="line"><span class="cl">  <span class="err">{{</span> <span class="na">end</span> <span class="err">}}</span>
 </span></span><span class="line"><span class="cl"><span class="p">&gt;</span>
 </span></span></code></pre></div><p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230111165804.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230111165804.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230111165804.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230111165804.png" />
         </a>
     </p>
 <p>这样在深浅主题变化的时候，颜色过渡就会平滑一点了，具体成果见<a href="https://peterliuzhi.top">我的博客</a></p>
@@ -1713,8 +1713,8 @@
 </span></span></code></pre></div><p>感谢<a href="https://www.cnblogs.com/laogai/p/3402121.html">关于top按钮的网页设置 - zhunaoke - 博客园</a>中提供的代码</p>
 <p>具体效果：</p>
 <p>
-        <a data-fancybox="gallery" href="https://peterliuzhi.top/image/Pasted%20image%2020230111170210.png">
-            <img class="mx-auto" alt="" src="https://peterliuzhi.top/image/Pasted%20image%2020230111170210.png" />
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230111170210.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230111170210.png" />
         </a>
     </p>
 <h1 id="增加图片放大查看功能">增加图片放大查看功能</h1>
@@ -1876,7 +1876,7 @@
         }
     }
 </style>
-<a href="https://peterliuzhi.top/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> <br />  
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> <br />  
 </article>
 
 

@@ -30,9 +30,7 @@
     copyBtn.addEventListener("click", function () {
       try {
         var selection = selectText(codeEl);
-        var clipboardData = new ClipboardData();
-        clipboardData.setData("text/plain", selection);
-        navigator.clipboard.write([clipboardData]);
+        document.execCommand("copy");
         selection.removeAllRanges();
         flashCopyMessage(copyBtn, "Copied!");
       } catch (e) {
