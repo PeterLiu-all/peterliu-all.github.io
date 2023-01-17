@@ -214,7 +214,7 @@
     },
     "headline": "保姆级教程——搭建Hugo博客 - P3troL1er的个人博客","datePublished": "2023-01-08T14:51:51+08:00",
     "dateModified": "2023-01-08T14:51:51+08:00",
-    "wordCount":  11264 ,
+    "wordCount":  11257 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -433,7 +433,7 @@
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共11264字</span>
+    <span>本文共11257字</span>
   </div>
 
   <div class="me-6 my-2">
@@ -799,9 +799,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nx">copyBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;click&#34;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">selection</span> <span class="o">=</span> <span class="nx">selectText</span><span class="p">(</span><span class="nx">codeEl</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">clipboardData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClipboardData</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">clipboardData</span><span class="p">.</span><span class="nx">setData</span><span class="p">(</span><span class="s2">&#34;text/plain&#34;</span><span class="p">,</span> <span class="nx">selection</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">navigator</span><span class="p">.</span><span class="nx">clipboard</span><span class="p">.</span><span class="nx">write</span><span class="p">([</span><span class="nx">clipboardData</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">document</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&#34;copy&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">selection</span><span class="p">.</span><span class="nx">removeAllRanges</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">flashCopyMessage</span><span class="p">(</span><span class="nx">copyBtn</span><span class="p">,</span> <span class="s2">&#34;Copied!&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
