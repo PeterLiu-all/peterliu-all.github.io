@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /image/
+Disallow: /images/
+Disallow: /archive/
+Disallow: /search.html/
+Disallow: /stats/
+Disallow: /js/
+Disallow: /css/
+Disallow: /index.json
