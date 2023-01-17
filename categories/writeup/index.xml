@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/categories/writeup/</link>
       <atom:link href="https://peterliuzhi.top/categories/writeup/index.xml" rel="self" type="application/rss+xml" />
     <description>writeup</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 09 Jan 2023 17:42:16 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 18 Jan 2023 00:50:54 +0800</lastBuildDate>
+    <item>
+      <title>HGame Week1 PWN WriteUp</title>
+      <link>https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/</link>
+      <pubDate>Wed, 18 Jan 2023 00:50:54 +0800</pubDate>
+      <guid>https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/</guid>
+      
+      <description>HGame Week1 PWN unofficial WriteUp</description>
+      
+    </item>
+    
     <item>
       <title>0ctf_2017_babyheap</title>
       <link>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</link>
@@ -13,16 +23,6 @@
       <guid>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</guid>
       
       <description>关于BUUCTF 0ctf_2017_babyheap的解析</description>
-      
-    </item>
-    
-    <item>
-      <title>HGame Week1 PWN WriteUp</title>
-      <link>https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/</link>
-      <pubDate>Fri, 06 Jan 2023 22:58:54 +0800</pubDate>
-      <guid>https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/</guid>
-      
-      <description>HGame Week1 PWN unofficial WriteUp</description>
       
     </item>
     

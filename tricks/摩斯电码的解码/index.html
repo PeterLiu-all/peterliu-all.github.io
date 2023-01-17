@@ -214,7 +214,7 @@
     },
     "headline": "摩斯电码的解码 - P3troL1er的个人博客","datePublished": "2023-01-09T00:53:31+08:00",
     "dateModified": "2023-01-09T00:53:31+08:00",
-    "wordCount":  353 ,
+    "wordCount":  418 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -431,7 +431,7 @@
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共353字</span>
+    <span>本文共418字</span>
   </div>
 
   <div class="me-6 my-2">
@@ -485,6 +485,7 @@
 </blockquote>
 <h1 id="从音频到英文单词">从音频到英文单词</h1>
 <p><a href="https://morsecode.world/international/decoder/audio-decoder-adaptive.html">Morse Code Adaptive Audio Decoder | Morse Code World</a>这个网站可以解析莫斯电码音频</p>
+<p>或者使用<a href="https://databorder.com/transfer/morse-sound-receiver/">DataBorder Morse Code Sound &amp; Vibration Listener</a>，可以设置阈限值，可以识别出下划线（但是表示为#）</p>
 <p>解析摩斯电码音频需要用到AI（非AI需要手工调试阈限值），网站能搞就用网站搞吧，方便点</p>
 <h1 id="从英文单词到摩斯电码">从英文单词到摩斯电码</h1>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">morse_code_dict</span> <span class="o">=</span> <span class="p">{</span>
@@ -508,13 +509,79 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">latin_string</span> <span class="o">=</span> <span class="s1">&#39;0 2 2 3 E P R I I B L Y H O N W A J M G H F G K C Q A O Q T M F R&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">encode_morse</span><span class="p">(</span><span class="n">latin_string</span><span class="p">))</span>
-</span></span></code></pre></div><p>也可以使用<a href="http://www.zhongguosou.com/zonghe/moersicodeconverter.aspx">网站</a></p>
+</span></span></code></pre></div><p>也可以使用<a href="http://www.zhongguosou.com/zonghe/moersicodeconverter.aspx">网站</a>或者<a href="https://codebeautify.org/morse-code-translator">Best Morse Code Translator Online with Audio Play</a></p>
 <p>或者使用<a href="https://github.com/HestStudio/MorseCoder">GitHub - HestStudio/MorseCoder: 一个关于摩斯密码解密与加密的库 / A library about encoding and decoding Morse code.</a></p>
 <p>相关阅读：</p>
 <ul>
 <li><a href="https://blog.csdn.net/Rabbit_Gray/article/details/106177458">利用python自动解析摩斯电码音频文件_Rabbit_Gray的博客-CSDN博客_如何从音频中提取摩斯密码</a></li>
 </ul>
 
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+</style>
+<a href="https://peterliuzhi.top/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> <br />  
 </article>
 
 
@@ -547,6 +614,11 @@
     class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
   >
     <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/tricks/pwntools%E8%B0%83%E7%94%A8gdb%E8%B0%83%E8%AF%95%E6%97%B6%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8binsheap%E7%AD%89%E5%91%BD%E4%BB%A4/" class="block">pwntools调用gdb调试时无法使用bins、heap等命令</a>
       
     </div>
     <div class="mt-4 md:mt-0 md:text-right">

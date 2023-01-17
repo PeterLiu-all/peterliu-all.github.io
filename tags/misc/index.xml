@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/tags/misc/</link>
       <atom:link href="https://peterliuzhi.top/tags/misc/index.xml" rel="self" type="application/rss+xml" />
     <description>misc</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 09 Jan 2023 00:53:31 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 18 Jan 2023 00:56:21 +0800</lastBuildDate>
+    <item>
+      <title>使用pwntools与远程交互解misc数学题</title>
+      <link>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8pwntools%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%BA%A4%E4%BA%92%E8%A7%A3misc%E6%95%B0%E5%AD%A6%E9%A2%98/</link>
+      <pubDate>Wed, 18 Jan 2023 00:56:21 +0800</pubDate>
+      <guid>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8pwntools%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%BA%A4%E4%BA%92%E8%A7%A3misc%E6%95%B0%E5%AD%A6%E9%A2%98/</guid>
+      
+      <description>小技巧：使用pwntools与远程交互解misc数学题</description>
+      
+    </item>
+    
     <item>
       <title>摩斯电码的解码</title>
       <link>https://peterliuzhi.top/tricks/%E6%91%A9%E6%96%AF%E7%94%B5%E7%A0%81%E7%9A%84%E8%A7%A3%E7%A0%81/</link>

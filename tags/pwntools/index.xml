@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pwntools | P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/tags/pwntools/</link>
+      <atom:link href="https://peterliuzhi.top/tags/pwntools/index.xml" rel="self" type="application/rss+xml" />
+    <description>pwntools</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 18 Jan 2023 00:56:21 +0800</lastBuildDate>
+    <item>
+      <title>使用pwntools与远程交互解misc数学题</title>
+      <link>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8pwntools%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%BA%A4%E4%BA%92%E8%A7%A3misc%E6%95%B0%E5%AD%A6%E9%A2%98/</link>
+      <pubDate>Wed, 18 Jan 2023 00:56:21 +0800</pubDate>
+      <guid>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8pwntools%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%BA%A4%E4%BA%92%E8%A7%A3misc%E6%95%B0%E5%AD%A6%E9%A2%98/</guid>
+      
+      <description>小技巧：使用pwntools与远程交互解misc数学题</description>
+      
+    </item>
+    
+  </channel>
+</rss>
