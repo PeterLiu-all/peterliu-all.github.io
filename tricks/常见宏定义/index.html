@@ -144,43 +144,7 @@
 <script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
 
 
-<script language="javascript">
-    function setClipboardText(event) {
-        event.preventDefault();
-        var node = document.createElement('div');
-        
-        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
-        
-        var htmlData =
-            "<div>" +
-            node.innerHTML +
-            "<br /><br />著作权归作者P3troL1er所有。<br />" +
-            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
-            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
-            "</div>";
-        var textData = ""
-        if (window.getSelection().anchorNode.parentElement.className == "highlight")
-            textData =
-                window.getSelection().getRangeAt(0)
-        else
-            textData =
-                window.getSelection().getRangeAt(0) +
-                "\n\n著作权归作者所有。\n" +
-                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
-                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
-        if (event.clipboardData) {
-            event.clipboardData.setData("text/html", htmlData);
-            
-            event.clipboardData.setData("text/plain", textData);
-        } else if (window.clipboardData) {
-            
-            return window.clipboardData.setData("text", textData);
-        }
-    }
-    document.addEventListener("copy", function (e) {
-        setClipboardText(e);
-    });
-</script>
+  
 <link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
 
@@ -331,8 +295,9 @@
             <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
             <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Tricks</a>
             <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
-            <a href="/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
-            <a href="/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
         </div>
     <style>
 	.ld {

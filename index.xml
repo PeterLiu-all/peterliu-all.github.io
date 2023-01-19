@@ -5,7 +5,19 @@
     <link>https://peterliuzhi.top/</link>
       <atom:link href="https://peterliuzhi.top/index.xml" rel="self" type="application/rss+xml" />
     <description>P3troL1er的个人博客</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 18 Jan 2023 00:56:21 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 19 Jan 2023 21:51:25 +0800</lastBuildDate>
+    <item>
+      <title>Links</title>
+      <link>https://peterliuzhi.top/friend/links/</link>
+      <pubDate>Thu, 19 Jan 2023 21:51:25 +0800</pubDate>
+      <guid>https://peterliuzhi.top/friend/links/</guid>
+      
+      
+      <description>隔壁老井的隔壁的博客 a weber&#39;s blog Para-L1las的博客 A WEB SECURITY BLOG</description>
+      
+      
+    </item>
+    
     <item>
       <title>使用pwntools与远程交互解misc数学题</title>
       <link>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8pwntools%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%BA%A4%E4%BA%92%E8%A7%A3misc%E6%95%B0%E5%AD%A6%E9%A2%98/</link>
@@ -412,9 +424,9 @@
     
     <item>
       <title>归档</title>
-      <link>https://peterliuzhi.top/archive/%E6%97%A5%E5%BF%97/</link>
+      <link>https://peterliuzhi.top/archive/archive/</link>
       <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
-      <guid>https://peterliuzhi.top/archive/%E6%97%A5%E5%BF%97/</guid>
+      <guid>https://peterliuzhi.top/archive/archive/</guid>
       
       
       <description></description>

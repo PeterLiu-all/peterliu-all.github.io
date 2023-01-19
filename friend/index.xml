@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Friends | P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/friend/</link>
+      <atom:link href="https://peterliuzhi.top/friend/index.xml" rel="self" type="application/rss+xml" />
+    <description>Friends</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 19 Jan 2023 21:51:25 +0800</lastBuildDate>
+    <item>
+      <title>Links</title>
+      <link>https://peterliuzhi.top/friend/links/</link>
+      <pubDate>Thu, 19 Jan 2023 21:51:25 +0800</pubDate>
+      <guid>https://peterliuzhi.top/friend/links/</guid>
+      
+      
+      <description>隔壁老井的隔壁的博客 a weber&#39;s blog Para-L1las的博客 A WEB SECURITY BLOG</description>
+      
+      
+    </item>
+    
+  </channel>
+</rss>
