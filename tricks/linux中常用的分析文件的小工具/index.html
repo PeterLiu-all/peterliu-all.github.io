@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+</style>
+
+<title>Linux中常用的分析文件的小工具 - P3troL1er的个人博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/c.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cpp.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/armasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/mipsasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/vim.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/javascript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/typescript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/css.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/powershell.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/shell.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/markdown.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/json.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/yaml.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/xml.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/sql.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cmake.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/makefile.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/matlab.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="概述Linux中常用的分析文件的小工具">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Tricks",
+      "item":"https://peterliuzhi.top/tricks/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Linux中常用的分析文件的小工具",
+      "item":"https://peterliuzhi.top/tricks/linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/tricks/linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/"
+    },
+    "headline": "Linux中常用的分析文件的小工具 - P3troL1er的个人博客","datePublished": "2023-01-19T22:42:23+08:00",
+    "dateModified": "2023-01-19T22:42:23+08:00",
+    "wordCount":  3632 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "概述Linux中常用的分析文件的小工具"
+}
+</script><meta property="og:title" content="Linux中常用的分析文件的小工具 - P3troL1er的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/tricks/linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/" />
+
+
+
+<meta property="og:description" content="概述Linux中常用的分析文件的小工具" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2023-01-19T22:42:23&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-01-19T22:42:23&#43;08:00" />
+
+
+
+<meta property="article:section" content="tricks" />
+
+
+<meta property="article:tag" content="re" />
+
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="tools" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/pwntools%E8%B0%83%E7%94%A8gdb%E8%B0%83%E8%AF%95%E6%97%B6%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8binsheap%E7%AD%89%E5%91%BD%E4%BB%A4/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/0ctf_2017_babyheap/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/hitcontraining_heapcreator/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">Linux中常用的分析文件的小工具</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, January 19, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共3632字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>8分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/tricks/" class="hover:text-eureka"
+          >tricks</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/re/" class="hover:text-eureka"
+          >re</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/tools/" class="hover:text-eureka"
+          >tools</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/tricks/linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/">https://peterliuzhi.top/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+
+  <blockquote>
+<p>Action is the foundational key to all success.
+— <cite>Pablo Picasso</cite></p>
+</blockquote>
+<p>💡如需使用本文中介绍的大部分命令，请确保系统安装了binutils，如未安装，请使用如下命令安装：<code>sudo apt-get install binutils</code></p>
+<h1 id="file">file</h1>
+<p>我们对一个文件使用该命令看一下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">file login
+</span></span></code></pre></div><p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121163603.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121163603.png" />
+        </a>
+    </p>
+<p>我们能够看到，这个文件是一个64位的ELF文件，他运行在x86-64平台上，并且他的符号表没有被删除（not stripped）</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121165634.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121165634.png" />
+        </a>
+    </p>
+<p>我们对一个文本文档试一下：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121163736.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121163736.png" />
+        </a>
+    </p>
+<p>我们发现file命令能识别出它是一个python脚本，同时识别出了它是一个UTF-8编码的文件，而且标出他是一个文本可执行文件（text executable），对应上面的LSB executable，Linux标准基础（Linux Standards Base，简称LSB）可执行文件</p>
+<p>如果我们去除.py扩展名，它是否还能识别出来它是一个python脚本呢？</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164244.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164244.png" />
+        </a>
+    </p>
+<p>仍然可以识别，说明file命令会根据文件内容进行判断</p>
+<p>我们新建一个tmp文件，看看能识别出什么：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164337.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164337.png" />
+        </a>
+    </p>
+<p>得到结果是empty</p>
+<p>如果我们加上一个shebang：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164426.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164426.png" />
+        </a>
+    
+
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164437.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164437.png" />
+        </a>
+    </p>
+<p>发现它此时不能判断它是一个python文件，但是通过shebang判断出了它的解释器</p>
+<p>如果我们加上一句python语句：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164600.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164600.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164549.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164549.png" />
+        </a>
+    </p>
+<p>如果我们加上C语言代码：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164728.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164728.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164743.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164743.png" />
+        </a>
+    </p>
+<p>它仍然判断为python脚本，说明<strong>file给出的结果不一定是正确的</strong>，需要具体问题具体分析。file命令也可以根据幻数判断文件类型，然而这时候可能会导致file的判断出现差错</p>
+<blockquote>
+<p>如果一个文件碰巧包含了某种文件格式的标记，file等工具很可能会错误地识别这个文件。你可以使用一个十六进制文件编辑器将任何文件的前 4 字节修改为 Java 的幻数序列 CA FE BA BE，自己证实一下上述情况。这时，file 会将这个新修改的文件错误地识别为已编译的 Java 类数据。同样，一个仅包含 MZ 这两个字符的文本文件会被误认为是一个 MS-DOS 可执行文件。</p>
+</blockquote>
+<p>如果我们去掉shebang，就可以发现它是一个C语言源文件：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164902.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164902.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164912.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164912.png" />
+        </a>
+    </p>
+<p>我们还可以通过通配符对特定一批文件进行分析：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121165226.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121165226.png" />
+        </a>
+    </p>
+<p>可以使用grep选择：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121165344.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121165344.png" />
+        </a>
+    </p>
+<p>file还有一系列选项，但一般来说这已经够了</p>
+<p>如果我们希望在Windows上使用，可以安装Cygwin</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121165601.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121165601.png" />
+        </a>
+    </p>
+<h1 id="nm">nm</h1>
+<p>虽然名字有些让人浮想联翩，但是它确实在某些情况挺好用的</p>
+<p>nm是一个分析文件中的符号的命令，它可以将可执行文件中的函数符号分类列出：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121170135.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121170135.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121170148.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121170148.png" />
+        </a>
+    </p>
+<p>我们发现它是一个C++可执行文件，并且它的符号都被分类列出了（以下翻译自man nm）：</p>
+<blockquote>
+<p>大写字母表示全局符号，小写字母则表示局部符号。但有一些小写字母表示特殊的含义（&ldquo;u&rdquo;, &ldquo;v&rdquo; , &ldquo;w&rdquo;）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>类型标志</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>符号的值是绝对的，不会因为进一步的链接而改变。</td>
+</tr>
+<tr>
+<td>B</td>
+<td>见下</td>
+</tr>
+<tr>
+<td>b</td>
+<td>符号在BSS数据部分。 这个部分通常包含零初始化或未初始化的数据。尽管具体行为取决于系统。</td>
+</tr>
+<tr>
+<td>C</td>
+<td>见下</td>
+</tr>
+<tr>
+<td>c</td>
+<td>符号是普通的。 通用符号是未初始化的数据。 在链接时，多个公共符号可能会出现相同的名称。 如果该符号在任何地方被定义，公共符号会被当作未定义的引用。当符号位于小公文的特殊部分时，小写的c字符被使用。</td>
+</tr>
+<tr>
+<td>D</td>
+<td>见下</td>
+</tr>
+<tr>
+<td>d</td>
+<td>符号在初始化数据部分。</td>
+</tr>
+<tr>
+<td>G</td>
+<td>见下</td>
+</tr>
+<tr>
+<td>g</td>
+<td>符号在小对象的初始化数据部分。一些对象文件格式允许更有效地访问小的数据对象，例如一个全局int变量，而不是一个大的全局数组。</td>
+</tr>
+<tr>
+<td>i</td>
+<td>对于PE格式的文件，这表示该符号在一个特定的DLLs实现部分。对于ELF格式文件，这表示该符号是一个间接函数。 这是一个GNU对符号类型的GNU扩展。 它表示一个符号，如果被重定位引用，不会评估到其地址，而是必须在运行时调用。 运行时的执行将返回用于重定位的值在重定位中使用的值。注意 - GNU间接符号的实际符号显示由 &ndash;ifunc-chars 命令行选项控制。如果提供了这个选项，那么字符串中的第一个字符将被用于全局间接函数符号。 如果字符串中包含第二个字符，那么它将被用于本地间接函数符号。</td>
+</tr>
+<tr>
+<td>I</td>
+<td>符号是对另一个符号的间接引用。</td>
+</tr>
+<tr>
+<td>N</td>
+<td>该符号是一个调试符号。</td>
+</tr>
+<tr>
+<td>n</td>
+<td>符号在只读数据部分。</td>
+</tr>
+<tr>
+<td>p</td>
+<td>该符号在堆栈解压部分。</td>
+</tr>
+<tr>
+<td>R</td>
+<td>见下</td>
+</tr>
+<tr>
+<td>r</td>
+<td>符号在只读数据部分。</td>
+</tr>
+<tr>
+<td>S</td>
+<td>见下</td>
+</tr>
+<tr>
+<td>s</td>
+<td>符号在未初始化或零初始化的小对象的数据段中。</td>
+</tr>
+<tr>
+<td>T</td>
+<td>见下</td>
+</tr>
+<tr>
+<td>t</td>
+<td>符号在文本（代码）部分。</td>
+</tr>
+<tr>
+<td>U</td>
+<td>符号是未定义的。</td>
+</tr>
+<tr>
+<td>u</td>
+<td>该符号是一个唯一的全局符号。 这是一个GNU对ELF符号绑定标准集的扩展。 对于符号，动态链接器将确保在整个过程中，只有一个具有此名称和类型的符号在使用。和类型的符号在使用。</td>
+</tr>
+<tr>
+<td>V</td>
+<td>见下</td>
+</tr>
+<tr>
+<td>v</td>
+<td>符号是一个弱对象。 当一个弱定义的符号与一个正常定义的符号连接时，正常定义的符号被使用，没有任何错误。 当一个弱的未定义的符号被链接并且该符号未被定义时，弱的符号的值会变成零，并且没有错误。符号的值变成了零，没有任何错误。 在某些系统中，大写字母表示默认值已被指定。</td>
+</tr>
+<tr>
+<td>W</td>
+<td>见下</td>
+</tr>
+<tr>
+<td>w</td>
+<td>该符号是一个弱符号，没有被特别标记为弱对象符号。 当一个弱定义的符号与正常定义的符号相连接时，正常定义的符号被使用，没有任何错误。 当一个弱的符号被链接，并且该符号没有被定义，那么该符号的值将以系统特定的方式确定，而不会出现错误。符号的值以系统特定的方式确定，没有错误。 在某些系统上，大写字母表示已经指定了一个默认值。</td>
+</tr>
+<tr>
+<td>-</td>
+<td>符号是a.out对象文件中的stabs符号。 在这种情况下，接下来打印的值是stabs other字段，stabs desc字段，以及stab类型。 stabs符号是用来保存调试信息的。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>符号类型未知，或对象文件格式特定。</td>
+</tr>
+</tbody>
+</table>
+<p>我们也可以用<code>nm -D login</code>只打印出动态链接的符号：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121172413.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121172413.png" />
+        </a>
+    </p>
+<p>我们也可以向使用file一样使用通配符批量解析文件</p>
+<p>更多选项见<code>nm --help</code>或<code>man nm</code></p>
+<h1 id="cfilt">c++filt</h1>
+<p>这个命令可以协同nm命令使用。因为C++中有模板、重载等，因为要唯一标志一个同名函数，所以编译出来的函数名会非常奇怪，难以阅读</p>
+<p>我们可以使用c++filt来重命名这些函数</p>
+<p>注意，C++filt的重命名有可能因程序使用的编译器不同而失败，也可能丢失一些信息</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nm login <span class="p">|</span> c++filt
+</span></span></code></pre></div><p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121172953.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121172953.png" />
+        </a>
+    </p>
+<p>我们可以看到，这时候函数名就类似于编写C++程序时使用的函数名了</p>
+<p>我们还可以更改这个呈现函数的形式：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121173135.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121173135.png" />
+        </a>
+    </p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nm login <span class="p">|</span> c++filt -s java
+</span></span></code></pre></div><p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121173214.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121173214.png" />
+        </a>
+    </p>
+<h1 id="ldd">ldd</h1>
+<p>这个命令很常用，是用来查看动态链接程序所使用的动态库的：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121174325.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121174325.png" />
+        </a>
+    </p>
+<p>可以加上-v来查看更多信息</p>
+<p>ldd命令可以在我们对一个程序使用patchelf命令更换动态库的时候提供向导</p>
+<h1 id="objdump">objdump</h1>
+<p>使用线性反汇编对程序进行静态分析</p>
+<p>我们可以查看程序的头部（起到和file命令类似的作用）：</p>
+<p>查看file header的总览：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121174855.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121174855.png" />
+        </a>
+    </p>
+<p>查看file header的简化版本：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121174943.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121174943.png" />
+        </a>
+    </p>
+<p>显示特定对象格式的文件头内容：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121175054.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121175054.png" />
+        </a>
+    </p>
+<p>也可以单独查看节头：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121175208.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121175208.png" />
+        </a>
+    </p>
+<p>可以直接查看所有header：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121175530.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121175530.png" />
+        </a>
+    </p>
+<p>可以查看程序的调试信息：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121175615.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121175615.png" />
+        </a>
+    </p>
+<p>可以不加分析地查看所有节头的二进制信息：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121175722.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121175722.png" />
+        </a>
+    </p>
+<p>可以只查看可执行节的反汇编结果：</p>
+<blockquote>
+<p>这样的文本文件叫做反汇编死代码清单（dead listing），尽管这些文件可用于实施逆向工程，但它们很难有效导航，也无法以一致且无错的方式被修改。</p>
+</blockquote>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121180026.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121180026.png" />
+        </a>
+    </p>
+<p>但是它的反汇编结果是AT&amp;T风格的，我们可以更换为Intel风格：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121180156.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121180156.png" />
+        </a>
+    </p>
+<p>还有更多用法可以查看<code>objdump --help</code>或<code>man objdump</code></p>
+<h1 id="strings">strings</h1>
+<p>strings可以搜索至少包含 4 个连续可打印 ASCII 字符的字符串，并将结果在控制台打印出来（程序虽然包含这样的字符串，但是并不代表程序会使用），有一些字符串是程序实际使用的，有一些是程序的函数名等</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121180630.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121180630.png" />
+        </a>
+    </p>
+<p>我们可以只打印.data节中的字符串：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121180730.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121180730.png" />
+        </a>
+    </p>
+<p>我们可以指定包含多少个连续可打印字符的字符串会被输出：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121180850.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121180850.png" />
+        </a>
+    </p>
+<h1 id="readelf">readelf</h1>
+<p>readelf与objdump大体相同，主要区别在于 readelf 并不依赖 libbfd</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">readelf -S  查询节头表
+</span></span><span class="line"><span class="cl">        -l  查询程序头表
+</span></span><span class="line"><span class="cl">        -s  查询符号表
+</span></span><span class="line"><span class="cl">        -e  查询ELF文件头数据
+</span></span><span class="line"><span class="cl">        -r  查询重定位入口
+</span></span><span class="line"><span class="cl">        -d  查询动态段
+</span></span></code></pre></div><p>对ELF的具体解读请阅读<a href="/principle/elf%E8%AF%A6%E8%A7%A3/">我写的ELF详解</a></p>
+<h1 id="ndisasm">ndisasm</h1>
+<p>ndisasm是Netwide Assembler（NASM）提供的流式反汇编器</p>
+<p>我们选择架构为64位intel指令集，并将反汇编结果输入到一个文件中：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121181154.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121181154.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121181234.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121181234.png" />
+        </a>
+    </p>
+<blockquote>
+<p>由于流式反汇编非常灵活，因此它的用途相当广泛。例如，在分析网络数据包中可能包含shellcode 的计算机网络攻击时，就可以采用流式反汇编器来反汇编数据包中包含 shellcode 的部分，以分析恶意负载的行为。另外一种情况是分析那些不包含布局参考的 ROM 镜像。ROM 中有些部分是数据，其他部分则为代码，可以使用流式反汇编器来反汇编镜像中的代码</p>
+</blockquote>
+<h1 id="objcopy">objcopy</h1>
+<p>objcopy用于将object的部分获全部内容拷贝到另一个object，这里的object通常是可执行文件</p>
+<p>我们可以将调试信息分离：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203227.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203227.png" />
+        </a>
+    </p>
+<p>可以剥离调试信息：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203303.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203303.png" />
+        </a>
+    </p>
+<p>注意，这里只是剥离了调试信息，并不代表符号表被剥离了：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203414.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203414.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203430.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203430.png" />
+        </a>
+    </p>
+<p>可以将调试信息加回去：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203534.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203534.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203547.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203547.png" />
+        </a>
+    </p>
+<p>更多阅读：</p>
+<ul>
+<li><a href="https://blog.csdn.net/crystony/article/details/5669830">objcopy的使用_crystony的博客-CSDN博客_objcopy 获取某个section</a></li>
+<li><a href="https://blog.csdn.net/k346k346/article/details/92708016">Linux 命令（69）—— objcopy 命令_恋喵大鲤鱼的博客-CSDN博客_objcopy</a></li>
+<li><a href="https://blog.csdn.net/linux12121/article/details/82932535">GNU Objcopy语法和使用_StudyTaoo的博客-CSDN博客_objcopy</a></li>
+</ul>
+<h1 id="strip">strip</h1>
+<p>我们在做ctf题目的过程中，常常会有一些善良的出题者将符号表删除，导致ida解析出来的函数列表没有名字，极其难懂</p>
+<p>那么，我们要如何做到这一点呢？答案是使用strip命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">strip &lt;程序名&gt;
+</span></span></code></pre></div><p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121204627.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121204627.png" />
+        </a>
+    </p>
+<p>然后就只剩下.dynsym了：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121204717.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121204717.png" />
+        </a>
+    </p>
+<p>这样也不影响程序运行，达到了给程序瘦身的目的，只是不利于反编译🤭</p>
+<h1 id="size">size</h1>
+<p>用于列出目标文件或库文件的section大小</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121205406.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121205406.png" />
+        </a>
+    </p>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> <br />  
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/re/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#re</a>
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+    <a href="https://peterliuzhi.top/tags/tools/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#tools</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/tricks/Linux%e4%b8%ad%e5%b8%b8%e7%94%a8%e7%9a%84%e5%88%86%e6%9e%90%e6%96%87%e4%bb%b6%e7%9a%84%e5%b0%8f%e5%b7%a5%e5%85%b7.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8pwntools%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%BA%A4%E4%BA%92%E8%A7%A3misc%E6%95%B0%E5%AD%A6%E9%A2%98/" class="block">使用pwntools与远程交互解misc数学题</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#file">file</a></li>
+    <li><a href="#nm">nm</a></li>
+    <li><a href="#cfilt">c++filt</a></li>
+    <li><a href="#ldd">ldd</a></li>
+    <li><a href="#objdump">objdump</a></li>
+    <li><a href="#strings">strings</a></li>
+    <li><a href="#readelf">readelf</a></li>
+    <li><a href="#ndisasm">ndisasm</a></li>
+    <li><a href="#objcopy">objcopy</a></li>
+    <li><a href="#strip">strip</a></li>
+    <li><a href="#size">size</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/" class="no-underline">HGame Week1 PWN WriteUp</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/tricks/pwntools%E8%B0%83%E7%94%A8gdb%E8%B0%83%E8%AF%95%E6%97%B6%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8binsheap%E7%AD%89%E5%91%BD%E4%BB%A4/" class="no-underline">pwntools调用gdb调试时无法使用bins、heap等命令</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/0ctf_2017_babyheap/" class="no-underline">0ctf_2017_babyheap</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/bsides-mumbai-2022-pwnwarmup/" class="no-underline">【BSides Mumbai 2022 PWN】Warmup</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/hitcontraining_heapcreator/" class="no-underline">hitcontraining_heapcreator</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/tricks/glibc-source-code%E6%BA%90%E7%A0%81/" class="no-underline">glibc source code源码</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 45px;
+        width: 45px;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a></div>
+    </footer>
+  </body>
+</html>
