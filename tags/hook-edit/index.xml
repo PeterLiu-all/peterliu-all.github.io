@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>main_arena leak | P3troL1er的个人博客</title>
-    <link>https://peterliuzhi.top/tags/main_arena-leak/</link>
-      <atom:link href="https://peterliuzhi.top/tags/main_arena-leak/index.xml" rel="self" type="application/rss+xml" />
-    <description>main_arena leak</description>
+    <title>hook edit | P3troL1er的个人博客</title>
+    <link>https://peterliuzhi.top/tags/hook-edit/</link>
+      <atom:link href="https://peterliuzhi.top/tags/hook-edit/index.xml" rel="self" type="application/rss+xml" />
+    <description>hook edit</description>
     <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sat, 21 Jan 2023 10:02:15 +0800</lastBuildDate>
     <item>
       <title>HGame Week2 PWN WriteUp</title>
@@ -13,16 +13,6 @@
       <guid>https://peterliuzhi.top/writeup/hgame-week2-pwn-writeup/</guid>
       
       <description>关于BUUCTF HGame Week2 PWN WriteUp的解析</description>
-      
-    </item>
-    
-    <item>
-      <title>0ctf_2017_babyheap</title>
-      <link>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</link>
-      <pubDate>Mon, 09 Jan 2023 17:42:16 +0800</pubDate>
-      <guid>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</guid>
-      
-      <description>关于BUUCTF 0ctf_2017_babyheap的解析</description>
       
     </item>
     

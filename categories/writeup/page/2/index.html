@@ -241,45 +241,45 @@ body::-webkit-scrollbar-thumb:hover {
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
+            "name": "【符号位漏洞+ret2libc】pwn2_sctf_2016",
+            "description": "BUUCTF pwn2_sctf_2016的解析",
+            "url": "https://peterliuzhi.top/writeup/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E+ret2libcpwn2_sctf_2016/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
             "name": "【生成ORW shellcode】BUUCTF pwnable_orw",
             "description": "BUUCTF pwnable_orw的解析",
             "url": "https://peterliuzhi.top/writeup/%E7%94%9F%E6%88%90orw-shellcodebuuctf-pwnable_orw/"
         },{
             "@type":"ListItem",
-            "position":  2 ,
+            "position":  3 ,
             "name": "【C++Pwn】[ZJCTF 2019]Login",
             "description": "BUUCTF [ZJCTF 2019]Login的解析",
             "url": "https://peterliuzhi.top/writeup/c++pwnzjctf-2019login/"
         },{
             "@type":"ListItem",
-            "position":  3 ,
+            "position":  4 ,
             "name": "【call32】【栈迁移】BUUCTF ciscn_2019_s_4",
             "description": "BUUCTF ciscn_2019_s_4的解析",
             "url": "https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/"
         },{
             "@type":"ListItem",
-            "position":  4 ,
+            "position":  5 ,
             "name": "【C内嵌汇编】others_shellcode",
             "description": "BUUCTF others_shellcode的解析",
             "url": "https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/"
         },{
             "@type":"ListItem",
-            "position":  5 ,
+            "position":  6 ,
             "name": "【fmtstr_payload函数】BUUCTF axb_2019_fmt32",
             "description": "BUUCTF axb_2019_fmt32的解析",
             "url": "https://peterliuzhi.top/writeup/fmtstr_payload%E5%87%BD%E6%95%B0buuctf-axb_2019_fmt32/"
         },{
             "@type":"ListItem",
-            "position":  6 ,
+            "position":  7 ,
             "name": "【HarekazeCTF2019】baby_rop",
             "description": "BUUCTF 【HarekazeCTF2019】baby_rop的解析",
             "url": "https://peterliuzhi.top/writeup/harekazectf2019baby_rop/"
-        },{
-            "@type":"ListItem",
-            "position":  7 ,
-            "name": "【LibSearcher】ciscn_2019_en_2",
-            "description": "BUUCTF ciscn_2019_en_2的解析",
-            "url": "https://peterliuzhi.top/writeup/libsearcherciscn_2019_en_2/"
         }
     ]
 }
@@ -314,7 +314,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-<meta property="og:updated_time" content="2023-01-18T00:50:54&#43;08:00" />
+<meta property="og:updated_time" content="2023-01-21T10:02:15&#43;08:00" />
 
 
 
@@ -472,6 +472,87 @@ body::-webkit-scrollbar-thumb:hover {
 
   <div class="bg-secondary-bg rounded px-6">
     <div class="overflow-hidden divide-y">
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://peterliuzhi.top/writeup/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E&#43;ret2libcpwn2_sctf_2016/" class="no-underline">
+    <h3 class="mt-0">【符号位漏洞&#43;ret2libc】pwn2_sctf_2016</h3>
+  </a>
+  
+    BUUCTF pwn2_sctf_2016的解析
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, December 29, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共959字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E7%AC%A6%E5%8F%B7%E4%BD%8D%E6%BC%8F%E6%B4%9E/" class="hover:text-eureka"
+          >符号位漏洞</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/ret2libc/" class="hover:text-eureka"
+          >ret2libc</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
   
   <div class="py-6">
     <div class="flex flex-col-reverse lg:flex-row justify-between">
@@ -929,81 +1010,6 @@ body::-webkit-scrollbar-thumb:hover {
 </div>
   </div>
   
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/writeup/libsearcherciscn_2019_en_2/" class="no-underline">
-    <h3 class="mt-0">【LibSearcher】ciscn_2019_en_2</h3>
-  </a>
-  
-    BUUCTF ciscn_2019_en_2的解析
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Thursday, December 29, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1685字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>4分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
-          >writeup</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/libsearcher/" class="hover:text-eureka"
-          >LibSearcher</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
 </div>
 
 
@@ -1029,10 +1035,13 @@ body::-webkit-scrollbar-thumb:hover {
         <a href="/categories/writeup/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
       </li>
       <li class="page-item">
+        <a href="/categories/writeup/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
+      </li>
+      <li class="page-item">
         <a href="/categories/writeup/page/3/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/categories/writeup/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/categories/writeup/page/5/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
 
