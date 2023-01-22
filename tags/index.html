@@ -2,7 +2,7 @@
 <html
   lang="zh"
   dir="ltr"
-   class="light"
+  class="dark"
   
 ><head>
 <meta charset="utf-8">
@@ -249,7 +249,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-<meta property="og:updated_time" content="2023-01-21T10:02:15&#43;08:00" />
+<meta property="og:updated_time" content="2023-01-22T11:02:14&#43;08:00" />
 
 
 
@@ -288,8 +288,8 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 <script>
     let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
     }
 </script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
@@ -355,7 +355,7 @@ body::-webkit-scrollbar-thumb:hover {
         <div class="flex">
             <div class="relative pt-4 md:pt-0">
                 <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
-                    <i class="fas fa-adjust"></i>
+                    <i class="fas fa-moon"></i>
                 </div>
                 <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
                 </div>
@@ -376,18 +376,17 @@ body::-webkit-scrollbar-thumb:hover {
 <script>
     
     let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
         document.addEventListener('DOMContentLoaded', () => {
             window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
         })
     } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.classList.remove('fa-moon')
         element.firstElementChild.setAttribute("data-icon", 'sun')
         element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -408,6 +407,42 @@ body::-webkit-scrollbar-thumb:hover {
   <div class="bg-secondary-bg rounded px-6 py-8">
     
       <h2 class="text-primary-text my-2 text-lg">
+        <a href="https://peterliuzhi.top/tags/c&#43;&#43;pwn/" class="text-eureka hover:underline"
+          >C&#43;&#43;pwn</a
+        >
+      </h2>
+    
+      <h2 class="text-primary-text my-2 text-lg">
+        <a href="https://peterliuzhi.top/tags/pwn/" class="text-eureka hover:underline"
+          >pwn</a
+        >
+      </h2>
+    
+      <h2 class="text-primary-text my-2 text-lg">
+        <a href="https://peterliuzhi.top/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/" class="text-eureka hover:underline"
+          >格式化字符串漏洞</a
+        >
+      </h2>
+    
+      <h2 class="text-primary-text my-2 text-lg">
+        <a href="https://peterliuzhi.top/tags/%E7%9B%B8%E9%82%BB%E6%A0%88%E4%BA%A4%E4%BA%92/" class="text-eureka hover:underline"
+          >相邻栈交互</a
+        >
+      </h2>
+    
+      <h2 class="text-primary-text my-2 text-lg">
+        <a href="https://peterliuzhi.top/tags/re/" class="text-eureka hover:underline"
+          >re</a
+        >
+      </h2>
+    
+      <h2 class="text-primary-text my-2 text-lg">
+        <a href="https://peterliuzhi.top/tags/tools/" class="text-eureka hover:underline"
+          >tools</a
+        >
+      </h2>
+    
+      <h2 class="text-primary-text my-2 text-lg">
         <a href="https://peterliuzhi.top/tags/fastbin-attack/" class="text-eureka hover:underline"
           >fastbin attack</a
         >
@@ -426,32 +461,8 @@ body::-webkit-scrollbar-thumb:hover {
       </h2>
     
       <h2 class="text-primary-text my-2 text-lg">
-        <a href="https://peterliuzhi.top/tags/pwn/" class="text-eureka hover:underline"
-          >pwn</a
-        >
-      </h2>
-    
-      <h2 class="text-primary-text my-2 text-lg">
         <a href="https://peterliuzhi.top/tags/tcache-attack/" class="text-eureka hover:underline"
           >tcache attack</a
-        >
-      </h2>
-    
-      <h2 class="text-primary-text my-2 text-lg">
-        <a href="https://peterliuzhi.top/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/" class="text-eureka hover:underline"
-          >格式化字符串漏洞</a
-        >
-      </h2>
-    
-      <h2 class="text-primary-text my-2 text-lg">
-        <a href="https://peterliuzhi.top/tags/re/" class="text-eureka hover:underline"
-          >re</a
-        >
-      </h2>
-    
-      <h2 class="text-primary-text my-2 text-lg">
-        <a href="https://peterliuzhi.top/tags/tools/" class="text-eureka hover:underline"
-          >tools</a
         >
       </h2>
     
@@ -620,12 +631,6 @@ body::-webkit-scrollbar-thumb:hover {
       <h2 class="text-primary-text my-2 text-lg">
         <a href="https://peterliuzhi.top/tags/32%E4%BD%8D%E7%B3%BB%E7%BB%9Fcall/" class="text-eureka hover:underline"
           >32位系统call</a
-        >
-      </h2>
-    
-      <h2 class="text-primary-text my-2 text-lg">
-        <a href="https://peterliuzhi.top/tags/c&#43;&#43;pwn/" class="text-eureka hover:underline"
-          >C&#43;&#43;Pwn</a
         >
       </h2>
     

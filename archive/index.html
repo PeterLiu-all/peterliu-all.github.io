@@ -2,7 +2,7 @@
 <html
   lang="zh"
   dir="ltr"
-   class="light"
+  class="dark"
   
 ><head>
 <meta charset="utf-8">
@@ -302,8 +302,8 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 <script>
     let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
     }
 </script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
@@ -369,7 +369,7 @@ body::-webkit-scrollbar-thumb:hover {
         <div class="flex">
             <div class="relative pt-4 md:pt-0">
                 <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
-                    <i class="fas fa-adjust"></i>
+                    <i class="fas fa-moon"></i>
                 </div>
                 <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
                 </div>
@@ -390,18 +390,17 @@ body::-webkit-scrollbar-thumb:hover {
 <script>
     
     let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
         document.addEventListener('DOMContentLoaded', () => {
             window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
         })
     } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.classList.remove('fa-moon')
         element.firstElementChild.setAttribute("data-icon", 'sun')
         element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -466,16 +465,21 @@ body::-webkit-scrollbar-thumb:hover {
             <ul class="car-list">
               
               <li>
-                <span class="car-yearmonth"><span style="color: rgba(255, 105, 105, 0.737);font-weight: bold;">2023年 01月</span> <span title="Post Count"> 共19篇</span></span>
+                <span class="car-yearmonth"><span style="color: rgba(255, 105, 105, 0.737);font-weight: bold;">2023年 01月</span> <span title="Post Count"> 共20篇</span></span>
                 <ul class="car-monthlisting" style="display: block;">
                   
                   <li style="text-indent:2em;">
-                    <span style="color: rgb(100, 100, 100);">21日 </span><b><a href="https://peterliuzhi.top/writeup/hgame-week2-pwn-writeup/" style="margin-left: 1em;">HGame Week2 PWN WriteUp </a></b>
+                    <span style="color: rgb(100, 100, 100);">22日 </span><b><a href="https://peterliuzhi.top/writeup/sictf-pwn-writeup/" style="margin-left: 1em;">SICTF PWN WriteUp </a></b>
                     
                   </li>
                   
                   <li style="text-indent:2em;">
-                    <span style="color: rgb(100, 100, 100);">19日 </span><b><a href="https://peterliuzhi.top/tricks/linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/" style="margin-left: 1em;">Linux中常用的分析文件的小工具 </a></b>
+                    <span style="color: rgb(100, 100, 100);">22日 </span><b><a href="https://peterliuzhi.top/tricks/linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/" style="margin-left: 1em;">Linux中常用的分析文件的小工具 </a></b>
+                    
+                  </li>
+                  
+                  <li style="text-indent:2em;">
+                    <span style="color: rgb(100, 100, 100);">21日 </span><b><a href="https://peterliuzhi.top/writeup/hgame-week2-pwn-writeup/" style="margin-left: 1em;">HGame Week2 PWN WriteUp </a></b>
                     
                   </li>
                   

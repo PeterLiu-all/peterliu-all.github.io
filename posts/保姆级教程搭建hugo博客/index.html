@@ -2,7 +2,7 @@
 <html
   lang="zh"
   dir="ltr"
-   class="light"
+  class="dark"
   
 ><head>
 <meta charset="utf-8">
@@ -243,7 +243,7 @@ body::-webkit-scrollbar-thumb:hover {
     },
     "headline": "保姆级教程——搭建Hugo博客 - P3troL1er的个人博客","datePublished": "2023-01-08T14:51:51+08:00",
     "dateModified": "2023-01-08T14:51:51+08:00",
-    "wordCount":  11851 ,
+    "wordCount":  12085 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -331,8 +331,8 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 <script>
     let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
     }
 </script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
@@ -398,7 +398,7 @@ body::-webkit-scrollbar-thumb:hover {
         <div class="flex">
             <div class="relative pt-4 md:pt-0">
                 <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
-                    <i class="fas fa-adjust"></i>
+                    <i class="fas fa-moon"></i>
                 </div>
                 <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
                 </div>
@@ -419,18 +419,17 @@ body::-webkit-scrollbar-thumb:hover {
 <script>
     
     let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
         document.addEventListener('DOMContentLoaded', () => {
             window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
         })
     } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.classList.remove('fa-moon')
         element.firstElementChild.setAttribute("data-icon", 'sun')
         element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -463,12 +462,12 @@ body::-webkit-scrollbar-thumb:hover {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共11851字</span>
+    <span>本文共12085字</span>
   </div>
 
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>24分钟阅读时长</span>
+    <span>25分钟阅读时长</span>
   </div>
 
   
@@ -661,7 +660,7 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108002154.png" />
         </a>
     </p>
-<p>这样粘贴example.png的时候生成的图片链接就是<code>![](/image/example.png)</code>，但是如果image前没有&quot;/&quot;，那么这个链接会被浏览器识别为相对链接，不会指向根目录下的image文件夹，如果手动更改为<code>![](/image/example.png)</code>，会发现obsidian和浏览器都能正确找到图片并展示，那么该怎么自动化实现这点呢？</p>
+<p>这样粘贴example.png的时候生成的图片链接就是![]<code>(image/example.png)</code>，但是如果image前没有&quot;/&quot;，那么这个链接会被浏览器识别为相对链接，不会指向根目录下的image文件夹，如果手动更改为![]<code>(/image/example.png)</code>，会发现obsidian和浏览器都能正确找到图片并展示，那么该怎么自动化实现这点呢？</p>
 <p>作者的方案是使用一个python脚本自动解析并替换所有的图片链接和附件链接，将下列代码保存为<code>dispose_image.py</code>并对<a href="#%E4%BD%BF%E7%94%A8%20GitHub%20%E7%9A%84%20pages%20%E5%8A%9F%E8%83%BD%E5%8F%91%E5%B8%83%E4%BD%A0%E7%9A%84%E7%BD%91%E9%A1%B5">上面给的代码</a>中的<code>python dispose_image.py</code>取消注释</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
@@ -1562,11 +1561,14 @@ body::-webkit-scrollbar-thumb:hover {
 <p>首先，此功能要求网站有一个RSS文件，一般会自动生成为index.xml</p>
 <h3 id="法一tinyletterzapier">法一：TinyLetter+Zapier</h3>
 <p>使用<a href="http://tinyletter.com/">TinyLetter</a>的获取订阅者服务+<a href="https://zapier.com/app/dashboard">Zapier</a>的自动发信服务，具体步骤详见<a href="https://backendology.com/2018/08/31/hugo-newsletter/">Newsletter for Hugo Blog - Backendology - A study of backend web development by Jared Ririe</a></p>
+<p>注意，TinyLetter是免费的，但是Zapier似乎是付费的（有试用期）</p>
+<p>不建议使用TinyLetter，功能简陋，且搞自动化发邮件容易被系统ban掉</p>
 <h3 id="法二使用followit">法二：使用follow.it</h3>
 <p>我们还可以使用更自动化、更便捷的<a href="https://follow.it/">follow.it | Feedburner Alternative - Get more readers</a>，有免费计划也有付费计划，付费计划价格也较低</p>
-<p>直接根据官网的指引走就好了，然后它就会自动解析你的RSS页面中最近发表的文章，前提是你要有RSS。</p>
+<p>直接根据官网的指引走就好了，然后它就会自动解析你的RSS页面（前提是你要有RSS）中最近发表的文章，并将24小时内更新的文章以邮件形式发送给订阅者，同时它还有一个类似于展览一样的东西，读者可以直接从它的网站发现你的网站并进行订阅。</p>
 <p>follow.it分两种发信方式，一种是NewsPaper，在每天的固定时间向订阅者推送消息或邮件；另一种是single email，会在检测到新文章后自动生成邮件发送</p>
-<p>follow.it还自带RSS阅读器，这样我们的RSS页面可以变的更美观，效果见<a href="https://follow.it/p3trol1er?pub">我的RSS页面</a></p>
+<p>follow.it还自带RSS阅读器，这样我们的RSS页面可以变的更美观，但是不建议用这个页面代替我们的RSS页面，因为我们的RSS页面的信息可能被别的网站采集并获取最新消息，所以不建议换掉这个页面</p>
+<p>follow.it的缺点是有时候对RSS的变化响应不够迅速，还有免费版功能比较简陋</p>
 <h3 id="在博客内部某个地方添加订阅入口">在博客内部某个地方添加订阅入口</h3>
 <p>记得在自己的博客内部增加一个进入订阅页面的入口，可以把订阅页面(<a href="https://tinyletter.com/">https://tinyletter.com/</a>&lt;你的名字&gt;)下载下来（可以自定义样式），放在<code>themes/eureka/layouts/_default</code>并重命名为subscribe.html，然后新建/content/subscribe/subscribe.md并填入frontmatter：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">

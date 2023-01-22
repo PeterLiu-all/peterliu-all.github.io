@@ -2,7 +2,7 @@
 <html
   lang="zh"
   dir="ltr"
-   class="light"
+  class="dark"
   
 ><head>
 <meta charset="utf-8">
@@ -43,7 +43,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 </style>
 
-<title>C&#43;&#43;Pwn - P3troL1er的个人博客</title>
+<title>C&#43;&#43;pwn - P3troL1er的个人博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
@@ -226,7 +226,7 @@ body::-webkit-scrollbar-thumb:hover {
       "item":"https://peterliuzhi.top/tags/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"C++Pwn",
+      "name":"C++pwn",
       "item":"https://peterliuzhi.top/tags/c++pwn/"}]
 }
 </script>
@@ -241,13 +241,19 @@ body::-webkit-scrollbar-thumb:hover {
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
+            "name": "SICTF PWN WriteUp",
+            "description": "关于BUUCTF SICTF PWN WriteUp的解析",
+            "url": "https://peterliuzhi.top/writeup/sictf-pwn-writeup/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
             "name": "【C++Pwn】[ZJCTF 2019]Login",
             "description": "BUUCTF [ZJCTF 2019]Login的解析",
             "url": "https://peterliuzhi.top/writeup/c++pwnzjctf-2019login/"
         }
     ]
 }
-</script><meta property="og:title" content="C&#43;&#43;Pwn - P3troL1er的个人博客" />
+</script><meta property="og:title" content="C&#43;&#43;pwn - P3troL1er的个人博客" />
 <meta property="og:type" content="website" />
 
 
@@ -278,7 +284,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-<meta property="og:updated_time" content="2022-12-29T03:01:44&#43;08:00" />
+<meta property="og:updated_time" content="2023-01-22T11:02:14&#43;08:00" />
 
 
 
@@ -317,8 +323,8 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 <script>
     let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
     }
 </script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
@@ -384,7 +390,7 @@ body::-webkit-scrollbar-thumb:hover {
         <div class="flex">
             <div class="relative pt-4 md:pt-0">
                 <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
-                    <i class="fas fa-adjust"></i>
+                    <i class="fas fa-moon"></i>
                 </div>
                 <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
                 </div>
@@ -405,18 +411,17 @@ body::-webkit-scrollbar-thumb:hover {
 <script>
     
     let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
         document.addEventListener('DOMContentLoaded', () => {
             window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
         })
     } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.classList.remove('fa-moon')
         element.firstElementChild.setAttribute("data-icon", 'sun')
         element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -430,12 +435,99 @@ body::-webkit-scrollbar-thumb:hover {
         <div class="pl-scrollbar">
           <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
   <article class="prose mx-6 my-8">
-  <h1>C&#43;&#43;Pwn</h1>
+  <h1>C&#43;&#43;pwn</h1>
   
 </article>
 
   <div class="bg-secondary-bg rounded px-6">
     <div class="overflow-hidden divide-y">
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://peterliuzhi.top/writeup/sictf-pwn-writeup/" class="no-underline">
+    <h3 class="mt-0">SICTF PWN WriteUp</h3>
+  </a>
+  
+    关于BUUCTF SICTF PWN WriteUp的解析
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Sunday, January 22, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共3800字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>8分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/" class="hover:text-eureka"
+          >格式化字符串漏洞</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/c&#43;&#43;pwn/" class="hover:text-eureka"
+          >C&#43;&#43;pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E7%9B%B8%E9%82%BB%E6%A0%88%E4%BA%A4%E4%BA%92/" class="hover:text-eureka"
+          >相邻栈交互</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
   
   <div class="py-6">
     <div class="flex flex-col-reverse lg:flex-row justify-between">
@@ -491,7 +583,7 @@ body::-webkit-scrollbar-thumb:hover {
         
           <span>, </span>
         <a href="https://peterliuzhi.top/tags/c&#43;&#43;pwn/" class="hover:text-eureka"
-          >C&#43;&#43;Pwn</a
+          >C&#43;&#43;pwn</a
         >
       
     </div>

@@ -2,7 +2,7 @@
 <html
   lang="zh"
   dir="ltr"
-   class="light"
+  class="dark"
   
 ><head>
 <meta charset="utf-8">
@@ -249,7 +249,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-<meta property="og:updated_time" content="2023-01-21T10:02:15&#43;08:00" />
+<meta property="og:updated_time" content="2023-01-22T11:02:14&#43;08:00" />
 
 
 
@@ -288,8 +288,8 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 <script>
     let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
     }
 </script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
@@ -355,7 +355,7 @@ body::-webkit-scrollbar-thumb:hover {
         <div class="flex">
             <div class="relative pt-4 md:pt-0">
                 <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
-                    <i class="fas fa-adjust"></i>
+                    <i class="fas fa-moon"></i>
                 </div>
                 <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
                 </div>
@@ -376,18 +376,17 @@ body::-webkit-scrollbar-thumb:hover {
 <script>
     
     let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
         document.addEventListener('DOMContentLoaded', () => {
             window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
         })
     } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.classList.remove('fa-moon')
         element.firstElementChild.setAttribute("data-icon", 'sun')
         element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -524,7 +523,7 @@ body::-webkit-scrollbar-thumb:hover {
       
       
       <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="https://follow.it/p3trol1er?pub"><i class="fa-solid fa-rss"></i></a>
+        <a href="https://peterliuzhi.top/index.xml"><i class="fa-solid fa-rss"></i></a>
       </div>
     
     <style>
@@ -734,6 +733,91 @@ body::-webkit-scrollbar-thumb:hover {
   </div>
   
   <div class="masonry grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+  
+  <div class="item">
+    <div class="grid-content">
+      <div
+  class="bg-secondary-bg dark:border-tertiary-bg overflow-hidden rounded border transition duration-200 ease-in-out hover:shadow-lg"
+>
+  
+  
+  <div class="prose px-6 pt-6 pb-4">
+    <a href="https://peterliuzhi.top/writeup/sictf-pwn-writeup/" class="no-underline">
+      <h3 class="mt-0">SICTF PWN WriteUp</h3>
+    </a>
+    
+      关于BUUCTF SICTF PWN WriteUp的解析
+    
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Sunday, January 22, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共3800字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>8分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/" class="hover:text-eureka"
+          >格式化字符串漏洞</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/c&#43;&#43;pwn/" class="hover:text-eureka"
+          >C&#43;&#43;pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E7%9B%B8%E9%82%BB%E6%A0%88%E4%BA%A4%E4%BA%92/" class="hover:text-eureka"
+          >相邻栈交互</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  </div>
+</div>
+
+    </div>
+  </div>
   
   <div class="item">
     <div class="grid-content">
@@ -1105,85 +1189,6 @@ body::-webkit-scrollbar-thumb:hover {
     </div>
   </div>
   
-  <div class="item">
-    <div class="grid-content">
-      <div
-  class="bg-secondary-bg dark:border-tertiary-bg overflow-hidden rounded border transition duration-200 ease-in-out hover:shadow-lg"
->
-  
-  
-  <div class="prose px-6 pt-6 pb-4">
-    <a href="https://peterliuzhi.top/writeup/hitcontraining_heapcreator/" class="no-underline">
-      <h3 class="mt-0">hitcontraining_heapcreator</h3>
-    </a>
-    
-      关于BUUCTF hitcontraining_heapcreator的解析
-    
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Tuesday, January 3, 2023</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1074字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
-          >writeup</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/chunk-overlap/" class="hover:text-eureka"
-          >chunk overlap</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/off-by-one/" class="hover:text-eureka"
-          >off by one</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  </div>
-</div>
-
-    </div>
-  </div>
-  
 
 </div>
 <script>
@@ -1328,7 +1333,7 @@ body::-webkit-scrollbar-thumb:hover {
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >Thursday, January 19, 2023</span
+      >Sunday, January 22, 2023</span
     >
   </div>
   <div class="me-6 my-2">
@@ -1676,12 +1681,12 @@ body::-webkit-scrollbar-thumb:hover {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共11851字</span>
+    <span>本文共12085字</span>
   </div>
 
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>24分钟阅读时长</span>
+    <span>25分钟阅读时长</span>
   </div>
 
   
