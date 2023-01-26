@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>P3troL1er的个人博客</title>
+    <title>P3troL1er 的个人博客</title>
     <link>https://peterliuzhi.top/</link>
       <atom:link href="https://peterliuzhi.top/index.xml" rel="self" type="application/rss+xml" />
-    <description>P3troL1er的个人博客</description>
+    <description>P3troL1er 的个人博客</description>
     <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 22 Jan 2023 11:02:14 +0800</lastBuildDate>
     <item>
       <title>SICTF PWN WriteUp</title>
@@ -693,18 +693,6 @@
       <guid>https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/</guid>
       
       <description>ELF详解</description>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://peterliuzhi.top/homepage/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://peterliuzhi.top/homepage/</guid>
-      
-      
-      <description></description>
-      
       
     </item>
     
