@@ -248,7 +248,7 @@ body::-webkit-scrollbar-thumb:hover {
     },
     "headline": "C\u002b\u002b中inline函数最终造成了什么效果？ - P3troL1er 的个人博客","datePublished": "2023-02-07T17:01:52+08:00",
     "dateModified": "2023-02-07T17:58:18+08:00",
-    "wordCount":  733 ,
+    "wordCount":  1570 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -465,12 +465,12 @@ body::-webkit-scrollbar-thumb:hover {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共733字</span>
+    <span>本文共1570字</span>
   </div>
 
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>2分钟阅读时长</span>
+    <span>4分钟阅读时长</span>
   </div>
 
   
@@ -610,15 +610,96 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207175319.png" />
         </a>
     </p>
-<p>而这里sub_1004016B0函数也不再是我们写的内联函数，而是变成了basic_string中的一个函数（应该就是我们在内联函数中调用的at函数）：</p>
+<p>而这里sub_1004016B0函数也不再是我们写的内联函数，而是变成了混合了basic_string中的一个函数（应该就是我们在内联函数中调用的at函数）的函数，或者说，它将at函数嵌入到了我们的函数中：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207175457.png">
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207175457.png" />
         </a>
     </p>
-<p>这时候内联才真正的发生了。</p>
+<p>而同时我们可以查看at的源代码：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207230749.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207230749.png" />
+        </a>
+    </p>
+<p>会发现这个函数的返回值是被constexpr修饰的，说明这是一个在编译器确定的常量</p>
+<p>如果我们将get_one确定为constexpr返回值的函数，则它一定会在编译期进行计算，就算加上-g：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207231423.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207231423.png" />
+        </a>
+    </p>
+<h2 id="与非内联函数对比">与非内联函数对比</h2>
+<p>我们试着与非内联函数对比：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207231934.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207231934.png" />
+        </a>
+    </p>
+<p>在-g的时候并没有区别：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207232052.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207232052.png" />
+        </a>
+    </p>
+<p>然后我们再看下-O2的时候：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207232224.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207232224.png" />
+        </a>
+    </p>
+<p>这完全没差嘛！所以说如果你自己都不知道内联会怎么发生，就不要期望内联真正起效了。</p>
+<p>如果我们将代码中的复杂返回逻辑改掉，我们会发现内联&quot;发生&quot;了：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207232951.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207232951.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207232941.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207232941.png" />
+        </a>
+    </p>
+<p>这看上去好像没有发生内联，但是我们查看sub_1004016B0函数会发现，由于内联函数内调用了另一个函数，因此我们得到的最终结果还是一个函数。</p>
+<p>但是由于优化开启，所以就算是普通函数也会变成这样，并没有什么差别。也就是说，这样的内联并无意义（因为不开启优化内联不会发生）</p>
+<p>因此，不要在内联函数内进行嵌套调用（或者递归）</p>
+<h2 id="内联函数嵌套调用内联函数">内联函数嵌套调用内联函数</h2>
+<p>那如果我嵌套调用的是一个内联函数呢，情况会不会发生变化？</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207233844.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207233844.png" />
+        </a>
+    </p>
+<p>答案是确定的，优化开启的情况下，编译器直接计算出了结果：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207233831.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207233831.png" />
+        </a>
+    </p>
+<p>而在-g的情况下，编译器甚至连这种常量结果都没有计算出来：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207234242.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207234242.png" />
+        </a>
+    </p>
+<p>或许你会问，如果返回值不是一个字面常量呢？就像下面这样：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207234334.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207234334.png" />
+        </a>
+    </p>
+<p>显然内联发生了：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207234637.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207234637.png" />
+        </a>
+    </p>
+<p>因此，<strong>一个返回逻辑简单的内联函数调用另一个返回逻辑简单的内联函数在优化开启的情况下确实是会发生内联的</strong></p>
 <h1 id="结论">结论</h1>
-<p>因此，我们通过这些简略的事实能够得到一个粗糙的结论：内联函数在编译器优化之前和普通函数并无差别</p>
+<p>因此，我们通过这些简略的事实能够得到一个粗糙的结论：</p>
+<p>内联函数在编译器优化之前和普通函数并无差别，在优化之后一些具有较复杂返回逻辑的内联函数也无法内联。同时就算返回逻辑简单，也要避免嵌套非内联函数，因为这在优化开启的情况下并无意义。</p>
+<p>因此，如果函数返回的值是一个在编译期能够确定的常值，尽量使用constexpr修饰返回值；不要嵌套非内联函数，不要复杂化内联函数的返回逻辑</p>
+<p>可见，内联函数的实现较为复杂，如果期望通过内联函数优化程序，一定要谨慎行事，因为虽然内联函数至少不会让程序性能降低，但是会给代码阅读者造成困惑并将他们的思路引导向错误的方向，某种意义上来说，它让代码文字的“效率”降低了</p>
 <p>✍️作者还是C++初学者，因对内联函数的行为有所疑惑才试图用自己笨拙的方式探寻真相，如果错漏，敬请见谅🙏</p>
 
   <style>
@@ -777,7 +858,12 @@ body::-webkit-scrollbar-thumb:hover {
     <li><a href="#引入">引入</a></li>
     <li><a href="#查看预编译结果">查看预编译结果</a></li>
     <li><a href="#查看普通编译链接结果">查看普通编译链接结果</a></li>
-    <li><a href="#优化编译链接结果">优化编译链接结果</a></li>
+    <li><a href="#优化编译链接结果">优化编译链接结果</a>
+      <ul>
+        <li><a href="#与非内联函数对比">与非内联函数对比</a></li>
+        <li><a href="#内联函数嵌套调用内联函数">内联函数嵌套调用内联函数</a></li>
+      </ul>
+    </li>
     <li><a href="#结论">结论</a></li>
   </ul>
 </nav>
