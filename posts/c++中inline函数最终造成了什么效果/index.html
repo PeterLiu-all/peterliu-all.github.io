@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 
 
-<title>P3troL1er 的个人博客</title>
+<title>C&#43;&#43;中inline函数最终造成了什么效果？ - P3troL1er 的个人博客</title>
 
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -218,53 +218,59 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 <meta name="description"
-  content="P3troL1er的个人技术博客">
+  content="C&#43;&#43;中inline函数最终造成了什么效果？">
 
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://peterliuzhi.top/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"C++中inline函数最终造成了什么效果？",
+      "item":"https://peterliuzhi.top/posts/c++%E4%B8%ADinline%E5%87%BD%E6%95%B0%E6%9C%80%E7%BB%88%E9%80%A0%E6%88%90%E4%BA%86%E4%BB%80%E4%B9%88%E6%95%88%E6%9E%9C/"}]
+}
+</script>
 
 
 
 <script type="application/ld+json">
 {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[{
-            "@type":"ListItem",
-            "position":  1 ,
-            "name": "C++中inline函数最终造成了什么效果？",
-            "description": "C++中inline函数最终造成了什么效果？",
-            "url": "https://peterliuzhi.top/posts/c++%E4%B8%ADinline%E5%87%BD%E6%95%B0%E6%9C%80%E7%BB%88%E9%80%A0%E6%88%90%E4%BA%86%E4%BB%80%E4%B9%88%E6%95%88%E6%9E%9C/"
-        },{
-            "@type":"ListItem",
-            "position":  2 ,
-            "name": "保姆级教程——搭建Hugo博客",
-            "description": "保姆级教程——搭建Hugo博客",
-            "url": "https://peterliuzhi.top/posts/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/"
-        },{
-            "@type":"ListItem",
-            "position":  3 ,
-            "name": "Hello",
-            "description": "本栏目用于收集各种杂项随笔",
-            "url": "https://peterliuzhi.top/posts/hello/"
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/posts/c++%E4%B8%ADinline%E5%87%BD%E6%95%B0%E6%9C%80%E7%BB%88%E9%80%A0%E6%88%90%E4%BA%86%E4%BB%80%E4%B9%88%E6%95%88%E6%9E%9C/"
+    },
+    "headline": "C\u002b\u002b中inline函数最终造成了什么效果？ - P3troL1er 的个人博客","datePublished": "2023-02-07T17:01:52+08:00",
+    "dateModified": "2023-02-07T17:58:18+08:00",
+    "wordCount":  733 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
         }
-    ]
+        },
+    "description": "C\u002b\u002b中inline函数最终造成了什么效果？"
 }
-</script><meta property="og:title" content="P3troL1er 的个人博客" />
-<meta property="og:type" content="website" />
+</script><meta property="og:title" content="C&#43;&#43;中inline函数最终造成了什么效果？ - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
 
 
-<meta property="og:url" content="https://peterliuzhi.top/posts/" />
+<meta property="og:url" content="https://peterliuzhi.top/posts/c&#43;&#43;%E4%B8%ADinline%E5%87%BD%E6%95%B0%E6%9C%80%E7%BB%88%E9%80%A0%E6%88%90%E4%BA%86%E4%BB%80%E4%B9%88%E6%95%88%E6%9E%9C/" />
 
 
 
-
-
-<meta property="og:description" content="P3troL1er的个人技术博客" />
-
-
+<meta property="og:description" content="C&#43;&#43;中inline函数最终造成了什么效果？" />
 
 
 
@@ -280,14 +286,23 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-<meta property="og:updated_time" content="2023-02-07T17:01:52&#43;08:00" />
+<meta property="article:published_time" content="2023-02-07T17:01:52&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-02-07T17:58:18&#43;08:00" />
 
 
 
 <meta property="article:section" content="posts" />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://peterliuzhi.top/posts/index.xml" title="P3troL1er 的个人博客" />
+<meta property="article:tag" content="C&#43;&#43;" />
+
+<meta property="article:tag" content="inline" />
+
+
+
+
 
 </head>
 
@@ -430,28 +445,16 @@ body::-webkit-scrollbar-thumb:hover {
     <main class="grow pt-16">
         <div class="pl-scrollbar">
           <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
-  <article class="prose mx-6 my-8">
-  <h1>Posts</h1>
   
-</article>
-
-  <div class="bg-secondary-bg rounded px-6">
-    <div class="overflow-hidden divide-y">
   
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/posts/c&#43;&#43;%E4%B8%ADinline%E5%87%BD%E6%95%B0%E6%9C%80%E7%BB%88%E9%80%A0%E6%88%90%E4%BA%86%E4%BB%80%E4%B9%88%E6%95%88%E6%9E%9C/" class="no-underline">
-    <h3 class="mt-0">C&#43;&#43;中inline函数最终造成了什么效果？</h3>
-  </a>
-  
-    C&#43;&#43;中inline函数最终造成了什么效果？
-  
-
-  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
     <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">C&#43;&#43;中inline函数最终造成了什么效果？</h1>
+
+  <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
 >
   <div class="me-6 my-2">
@@ -516,152 +519,289 @@ body::-webkit-scrollbar-thumb:hover {
       </div>
 </div>
 
-  
-</div>
-
-  </div>
 
   
-</div>
-  </div>
   
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
   
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/posts/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/" class="no-underline">
-    <h3 class="mt-0">保姆级教程——搭建Hugo博客</h3>
-  </a>
-  
-    保姆级教程——搭建Hugo博客
-  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/posts/c&#43;&#43;%E4%B8%ADinline%E5%87%BD%E6%95%B0%E6%9C%80%E7%BB%88%E9%80%A0%E6%88%90%E4%BA%86%E4%BB%80%E4%B9%88%E6%95%88%E6%9E%9C/">https://peterliuzhi.top/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
 
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Sunday, January 8, 2023</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共12085字</span>
-  </div>
+  <blockquote>
+<p>Numberless are the worlds wonders, but none more wonderful than man.
+— <cite>Sophocles</cite></p>
+</blockquote>
+<h1 id="引入">引入</h1>
+<p>在C++中我们经常使用inline内联函数来代替宏，而宏是在预编译阶段进行简单的替换，那内联函数会产生什么效果呢？</p>
+<p>我写了一个简单的小程序来验证这个问题：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define ONE 1
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">inline</span> <span class="kt">char</span> <span class="nf">_IndexFromEnd</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">num_str</span><span class="p">,</span> <span class="kt">char</span> <span class="n">position</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 如果越界，返回&#39;0&#39;，在StringNumAddOrSub中计算会得到0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">position</span> <span class="o">&gt;=</span> <span class="n">num_str</span><span class="p">.</span><span class="n">length</span><span class="p">())</span> <span class="k">return</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 从后往前数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">return</span> <span class="n">num_str</span><span class="p">.</span><span class="n">at</span><span class="p">((</span><span class="n">num_str</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">position</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">inline</span> <span class="kt">char</span> <span class="nf">get_one</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ONE</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span>	<span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">num</span> <span class="o">=</span> <span class="s">&#34;123456&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="n">_IndexFromEnd</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">b</span> <span class="o">=</span> <span class="n">_IndexFromEnd</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">get_one</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">putchar</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">putchar</span><span class="p">(</span><span class="sc">&#39; &#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">putchar</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">putchar</span><span class="p">(</span><span class="sc">&#39; &#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">putchar</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>然后得到了预编译结果、普通编译链接结果、优化编译链接结果：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174547.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174547.png" />
+        </a>
+    </p>
+<h1 id="查看预编译结果">查看预编译结果</h1>
+<p>预编译器将include的头文件简单地复制到了我们代码中include的位置，因此最后我们得到的预编译结果中，我们自己写的代码位于六万多行的位置：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174202.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174202.png" />
+        </a>
+    </p>
+<p>可以看到，我们define的宏ONE已经被简单地替换掉了，但是inline函数并没有进行替换</p>
+<h1 id="查看普通编译链接结果">查看普通编译链接结果</h1>
+<p>我们使用ida进行反编译后可以看到这里内联函数并没有嵌入到主函数之中，而是像一个普通的函数一样被调用</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174407.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174407.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174855.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174855.png" />
+        </a>
+    </p>
+<p>而且同样有传参的操作：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174927.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174927.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174944.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174944.png" />
+        </a>
+    </p>
+<p>或许这就是内联函数能够被调试的原因——在调试版本的程序中，它和普通函数并没有什么区别</p>
+<h1 id="优化编译链接结果">优化编译链接结果</h1>
+<p>优化后我们发现主函数已经变成了我们不认识的样子：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207175211.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207175211.png" />
+        </a>
+    </p>
+<p>而其中那个只是返回了1的内联函数直接消失了，变成了常量值被打印出来：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207175319.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207175319.png" />
+        </a>
+    </p>
+<p>而这里sub_1004016B0函数也不再是我们写的内联函数，而是变成了basic_string中的一个函数（应该就是我们在内联函数中调用的at函数）：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207175457.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207175457.png" />
+        </a>
+    </p>
+<p>这时候内联才真正的发生了。</p>
+<h1 id="结论">结论</h1>
+<p>因此，我们通过这些简略的事实能够得到一个粗糙的结论：内联函数在编译器优化之前和普通函数并无差别</p>
+<p>✍️作者还是C++初学者，因对内联函数的行为有所疑惑才试图用自己笨拙的方式探寻真相，如果错漏，敬请见谅🙏</p>
 
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>25分钟阅读时长</span>
-  </div>
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> <br />  
+</article>
 
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
+
       
-        <a href="https://peterliuzhi.top/categories/posts/" class="hover:text-eureka"
-          >posts</a
-        >
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/c&#43;&#43;/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#C&#43;&#43;</a>
+    
+    <a href="https://peterliuzhi.top/tags/inline/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#inline</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/C&#43;&#43;%e4%b8%adinline%e5%87%bd%e6%95%b0%e6%9c%80%e7%bb%88%e9%80%a0%e6%88%90%e4%ba%86%e4%bb%80%e4%b9%88%e6%95%88%e6%9e%9c%ef%bc%9f.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
       
     </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
+    <div class="mt-4 md:mt-0 md:text-right">
       
-        <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="hover:text-eureka"
-          >杂谈</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/hugo/" class="hover:text-eureka"
-          >hugo</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/%E5%8D%9A%E5%AE%A2/" class="hover:text-eureka"
-          >博客</a
-        >
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/posts/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/" class="block">保姆级教程——搭建Hugo博客</a>
       
     </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
   </div>
 
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/posts/hello/" class="no-underline">
-    <h3 class="mt-0">Hello</h3>
-  </a>
-  
-    本栏目用于收集各种杂项随笔
-  
+
+      
+
+
 
   
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
 >
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Thursday, December 29, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共33字</span>
-  </div>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#引入">引入</a></li>
+    <li><a href="#查看预编译结果">查看预编译结果</a></li>
+    <li><a href="#查看普通编译链接结果">查看普通编译链接结果</a></li>
+    <li><a href="#优化编译链接结果">优化编译链接结果</a></li>
+    <li><a href="#结论">结论</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
 
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>1分钟阅读时长</span>
-  </div>
-
-  
-
+        
+      </div>
     
 
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
+    
+    
   </div>
 
   
-</div>
-  </div>
-  
-</div>
-
-
-  </div>
-  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
 
           </div>
         </div>
