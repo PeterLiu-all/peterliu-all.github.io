@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/tags/pwn/</link>
       <atom:link href="https://peterliuzhi.top/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
     <description>pwn</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 22 Jan 2023 11:02:14 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 20 Feb 2023 22:30:15 +0800</lastBuildDate>
+    <item>
+      <title>Largebin_Attack</title>
+      <link>https://peterliuzhi.top/principle/largebin_attack/</link>
+      <pubDate>Mon, 20 Feb 2023 22:30:15 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/largebin_attack/</guid>
+      
+      <description>基本的Large bin Attack攻击手法</description>
+      
+    </item>
+    
     <item>
       <title>SICTF PWN WriteUp</title>
       <link>https://peterliuzhi.top/writeup/sictf-pwn-writeup/</link>

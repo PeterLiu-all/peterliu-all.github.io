@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/principle/</link>
       <atom:link href="https://peterliuzhi.top/principle/index.xml" rel="self" type="application/rss+xml" />
     <description>Principles</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 16 Nov 2022 14:13:51 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 20 Feb 2023 22:30:15 +0800</lastBuildDate>
+    <item>
+      <title>Largebin_Attack</title>
+      <link>https://peterliuzhi.top/principle/largebin_attack/</link>
+      <pubDate>Mon, 20 Feb 2023 22:30:15 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/largebin_attack/</guid>
+      
+      <description>基本的Large bin Attack攻击手法</description>
+      
+    </item>
+    
     <item>
       <title>DeepLearning介绍</title>
       <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/introduction/deeplearning%E4%BB%8B%E7%BB%8D/</link>

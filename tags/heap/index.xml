@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>heap | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/heap/</link>
+      <atom:link href="https://peterliuzhi.top/tags/heap/index.xml" rel="self" type="application/rss+xml" />
+    <description>heap</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 20 Feb 2023 22:30:15 +0800</lastBuildDate>
+    <item>
+      <title>Largebin_Attack</title>
+      <link>https://peterliuzhi.top/principle/largebin_attack/</link>
+      <pubDate>Mon, 20 Feb 2023 22:30:15 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/largebin_attack/</guid>
+      
+      <description>基本的Large bin Attack攻击手法</description>
+      
+    </item>
+    
+  </channel>
+</rss>
