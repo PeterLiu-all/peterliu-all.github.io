@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C&#43;&#43; | P3troL1er 的个人博客</title>
-    <link>https://peterliuzhi.top/tags/c&#43;&#43;/</link>
-      <atom:link href="https://peterliuzhi.top/tags/c++/index.xml" rel="self" type="application/rss+xml" />
-    <description>C&#43;&#43;</description>
+    <title>算数 | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E7%AE%97%E6%95%B0/</link>
+      <atom:link href="https://peterliuzhi.top/tags/%E7%AE%97%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    <description>算数</description>
     <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Tue, 21 Feb 2023 22:53:01 +0800</lastBuildDate>
     <item>
       <title>【整活】C&#43;&#43;不用加减乘除模运算符实现加减乘除模</title>
@@ -13,16 +13,6 @@
       <guid>https://peterliuzhi.top/posts/%E6%95%B4%E6%B4%BBc&#43;&#43;%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1%E8%BF%90%E7%AE%97%E7%AC%A6%E5%AE%9E%E7%8E%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1/</guid>
       
       <description>【整活】C&#43;&#43;不用加减乘除模运算符实现加减乘除模</description>
-      
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;中inline函数最终造成了什么效果？</title>
-      <link>https://peterliuzhi.top/posts/c&#43;&#43;%E4%B8%ADinline%E5%87%BD%E6%95%B0%E6%9C%80%E7%BB%88%E9%80%A0%E6%88%90%E4%BA%86%E4%BB%80%E4%B9%88%E6%95%88%E6%9E%9C/</link>
-      <pubDate>Tue, 07 Feb 2023 17:01:52 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/c&#43;&#43;%E4%B8%ADinline%E5%87%BD%E6%95%B0%E6%9C%80%E7%BB%88%E9%80%A0%E6%88%90%E4%BA%86%E4%BB%80%E4%B9%88%E6%95%88%E6%9E%9C/</guid>
-      
-      <description>C&#43;&#43;中inline函数最终造成了什么效果？</description>
       
     </item>
     

@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/</link>
       <atom:link href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
     <description>杂谈</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 08 Jan 2023 14:51:51 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Tue, 21 Feb 2023 22:53:01 +0800</lastBuildDate>
+    <item>
+      <title>【整活】C&#43;&#43;不用加减乘除模运算符实现加减乘除模</title>
+      <link>https://peterliuzhi.top/posts/%E6%95%B4%E6%B4%BBc&#43;&#43;%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1%E8%BF%90%E7%AE%97%E7%AC%A6%E5%AE%9E%E7%8E%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1/</link>
+      <pubDate>Tue, 21 Feb 2023 22:53:01 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E6%95%B4%E6%B4%BBc&#43;&#43;%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1%E8%BF%90%E7%AE%97%E7%AC%A6%E5%AE%9E%E7%8E%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1/</guid>
+      
+      <description>【整活】C&#43;&#43;不用加减乘除模运算符实现加减乘除模</description>
+      
+    </item>
+    
     <item>
       <title>保姆级教程——搭建Hugo博客</title>
       <link>https://peterliuzhi.top/posts/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/</link>
