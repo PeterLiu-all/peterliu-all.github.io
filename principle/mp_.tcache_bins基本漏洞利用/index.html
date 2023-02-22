@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 
 
-<title>pwn - P3troL1er 的个人博客</title>
+<title>mp_.tcache_bins基本漏洞利用 - P3troL1er 的个人博客</title>
 
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -218,7 +218,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 <meta name="description"
-  content="P3troL1er的个人技术博客-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜">
+  content="mp_.tcache_bins基本漏洞利用-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜">
 
 <script type="application/ld+json">
 {
@@ -227,83 +227,50 @@ body::-webkit-scrollbar-thumb:hover {
   "itemListElement": [{
       "@type": "ListItem",
       "position": 1 ,
-      "name":"Tags",
-      "item":"https://peterliuzhi.top/tags/"},{
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"pwn",
-      "item":"https://peterliuzhi.top/tags/pwn/"}]
+      "name":"mp_.tcache_bins基本漏洞利用",
+      "item":"https://peterliuzhi.top/principle/mp_.tcache_bins%E5%9F%BA%E6%9C%AC%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"}]
 }
 </script>
 
 
 
-
 <script type="application/ld+json">
 {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[{
-            "@type":"ListItem",
-            "position":  1 ,
-            "name": "yolov1",
-            "description": "yolov1模型概述",
-            "url": "https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/yolo/yolov1/"
-        },{
-            "@type":"ListItem",
-            "position":  2 ,
-            "name": "常见宏定义",
-            "description": "ida常见宏定义",
-            "url": "https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/"
-        },{
-            "@type":"ListItem",
-            "position":  3 ,
-            "name": "ret2libc",
-            "description": "return to libc(ret2libc)",
-            "url": "https://peterliuzhi.top/principle/ret2libc/"
-        },{
-            "@type":"ListItem",
-            "position":  4 ,
-            "name": "关于栈的一些基础知识",
-            "description": "关于栈的一些基础知识",
-            "url": "https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
-        },{
-            "@type":"ListItem",
-            "position":  5 ,
-            "name": "汇编版hello world",
-            "description": "玩具：汇编版hello world",
-            "url": "https://peterliuzhi.top/tricks/%E6%B1%87%E7%BC%96%E7%89%88hello-world/"
-        },{
-            "@type":"ListItem",
-            "position":  6 ,
-            "name": "汇编与寄存器",
-            "description": "汇编与寄存器相关理论",
-            "url": "https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/"
-        },{
-            "@type":"ListItem",
-            "position":  7 ,
-            "name": "ELF详解",
-            "description": "ELF详解",
-            "url": "https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/"
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/mp_.tcache_bins%E5%9F%BA%E6%9C%AC%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"
+    },
+    "headline": "mp_.tcache_bins基本漏洞利用 - P3troL1er 的个人博客","datePublished": "2023-02-23T00:32:38+08:00",
+    "dateModified": "2023-02-23T00:32:38+08:00",
+    "wordCount":  1253 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
         }
-    ]
+        },
+    "description": "mp_.tcache_bins基本漏洞利用"
 }
-</script><meta property="og:title" content="pwn - P3troL1er 的个人博客" />
-<meta property="og:type" content="website" />
+</script><meta property="og:title" content="mp_.tcache_bins基本漏洞利用 - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
 
 
-<meta property="og:url" content="https://peterliuzhi.top/tags/pwn/" />
+<meta property="og:url" content="https://peterliuzhi.top/principle/mp_.tcache_bins%E5%9F%BA%E6%9C%AC%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" />
 
 
 
-
-
-<meta property="og:description" content="P3troL1er的个人技术博客" />
-
-
+<meta property="og:description" content="mp_.tcache_bins基本漏洞利用" />
 
 
 
@@ -319,14 +286,37 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-<meta property="og:updated_time" content="2023-02-23T00:32:38&#43;08:00" />
+<meta property="article:published_time" content="2023-02-23T00:32:38&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-02-23T00:32:38&#43;08:00" />
 
 
 
-<meta property="article:section" content="tags" />
+<meta property="article:section" content="principle" />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://peterliuzhi.top/tags/pwn/index.xml" title="P3troL1er 的个人博客" />
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="mp_.tcache_bins" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/largebin_attack/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/sictf-pwn-writeup/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/hgame-week2-pwn-writeup/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/pwntools%E8%B0%83%E7%94%A8gdb%E8%B0%83%E8%AF%95%E6%97%B6%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8binsheap%E7%AD%89%E5%91%BD%E4%BB%A4/" />
+
+
 
 </head>
 
@@ -374,7 +364,7 @@ body::-webkit-scrollbar-thumb:hover {
             <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
             <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
             <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
-            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
             <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
             <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
             <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
@@ -469,555 +459,380 @@ body::-webkit-scrollbar-thumb:hover {
     <main class="grow pt-16">
         <div class="pl-scrollbar">
           <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
-  <article class="prose mx-6 my-8">
-  <h1>pwn</h1>
   
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">mp_.tcache_bins基本漏洞利用</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, February 23, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共1253字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>3分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/mp_.tcache_bins/" class="hover:text-eureka"
+          >mp_.tcache_bins</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/principle/mp_.tcache_bins%E5%9F%BA%E6%9C%AC%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/">https://peterliuzhi.top/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+
+  <blockquote>
+<p>It&rsquo;s not what you look at that matters, it&rsquo;s what you see.
+— <cite>Henry David Thoreau</cite></p>
+</blockquote>
+<h2 id="什么是mp_结构体">什么是mp_结构体？</h2>
+<p>我们可以在<a href="https://elixir.bootlin.com/glibc/glibc-2.37/C/ident/">identifier - Glibc source code (glibc-2.37) - Bootlin</a>搜索mp_，会发现它是一个内部链接的全局变量，类型是malloc_par结构体：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223003854.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223003854.png" />
+        </a>
+    </p>
+<p>这说明它不会出现在libc的符号表中，需要通过gdb调试获取偏移：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223004140.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223004140.png" />
+        </a>
+    </p>
+<p>而通过它的名字和赋值我们也可以很清晰地猜测到，这个tcache_bins域是用来记录tcache bin的最大索引值的，超过这个索引值的堆块都不属于tcache bin。</p>
+<p>这个索引值是通过堆块的大小计算的。之所以要计算这个索引值，是因为所有的bin存在一个大小为136的数组里面，tcache bin、large bin等都管理一定范围内的bin。通过大小计算这个索引可以很方便地判断一个堆块应属哪个bin</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223005457.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223005457.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223005549.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223005549.png" />
+        </a>
+    </p>
+<h2 id="mp_tcache_bins有什么用">mp_.tcache_bins有什么用？</h2>
+<p>那么这个mp_.tcache_bins有什么用呢？</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223005607.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223005607.png" />
+        </a>
+    </p>
+<p>可以看到，如果我们想要伪造一个大chunk，让它以tcache的方式被获取（这样就可以使用与tcache相关的攻击手段攻击），我们需要伪造以下两个值：</p>
+<ol>
+<li>mp_.tcache_bins足够大。可以通过unsorted bin attack（高版本不可用）或者large bin attack等方式向mp_.tcache_bins内写入一个足够大的值实现</li>
+<li>tcache-&gt;counts[tc_idx] &gt; 0。</li>
+</ol>
+<p>第二点如何实现呢？我们如何更改这个counts值呢？</p>
+<p>因为tcache结构体是存放在堆上的（通常是第一个堆块），当然可以使用其他方式覆写counts值，但在这里其实可以利用tcache bin本身的漏洞。</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223010509.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223010509.png" />
+        </a>
+    </p>
+<p>当mp_.tcache_bins足够大的时候，我们是可以将一个大chunk放进tcache bin中的，只是由于tcache分配在堆上，这个索引值又太大，所以这个大chunk的地址（链表头）会被放进相邻的chunk中</p>
+<p>
+        <a data-fancybox="gallery" href="/image/2023%e5%b9%b42%e6%9c%8823%e6%97%a5.drawio.png">
+            <img class="mx-auto" alt="" src="/image/2023%e5%b9%b42%e6%9c%8823%e6%97%a5.drawio.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223011428.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223011428.png" />
+        </a>
+    </p>
+<p>同时，tcache_get里也没有对越界的检查：</p>
+<blockquote>
+<p>PS. 其中，<code>if (__glibc_unlikely (!aligned_OK (e)))malloc_printerr (&quot;malloc(): unaligned tcache chunk detected&quot;);</code>这段代码的作用是检查从tcache中获取的内存块的地址是否按照指定的对齐方式对齐（<code>__glibc_unlikely</code>用于编译器优化），这些都和越界无关</p>
+</blockquote>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223012956.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223012956.png" />
+        </a>
+    </p>
+<p>同时，tcache_put也允许我们放入一个大chunk，甚至链表头都是不加密的</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223013206.png">
+            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223013206.png" />
+        </a>
+    </p>
+<p>因此，如果我们可以控制相邻堆块，那么我们释放的大堆块所属的链表头也是可控的。</p>
+<h2 id="具体应该如何操作">具体应该如何操作？</h2>
+<p>以上这一通操作能够实现的前提是mp_.tcache_bins通过unsorted bin attack或者large bin attack等方式增大</p>
+<p>然后我们要释放一个大小为N的大堆块p1进入tcache bin，然后记下它的地址（可以通过下断点到free那里查看，也可以通过heap等命令查看堆分布获取）</p>
+<p>
+        <a data-fancybox="gallery" href="/image/QQ%e5%9b%be%e7%89%8720230223012250.png">
+            <img class="mx-auto" alt="" src="/image/QQ%e5%9b%be%e7%89%8720230223012250.png" />
+        </a>
+    </p>
+<p>然后通过x/150gx或者tele命令找到这个地址存放的位置和我们可控的相邻chunk头部的差值</p>
+<p>
+        <a data-fancybox="gallery" href="/image/QQ%e5%9b%be%e7%89%8720230223012441.png">
+            <img class="mx-auto" alt="" src="/image/QQ%e5%9b%be%e7%89%8720230223012441.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/QQ%e5%9b%be%e7%89%8720230223012458.jpg">
+            <img class="mx-auto" alt="" src="/image/QQ%e5%9b%be%e7%89%8720230223012458.jpg" />
+        </a>
+    </p>
+<p>这里感谢群里L0tus和h4kuy4等师傅的耐心指导，这三张图也是来自他们~</p>
+<p>然后我们就可以将链表头地址覆盖为__free_hook等，实现getshell。</p>
+<p>如果有什么问题或者建议，欢迎在评论区评论指出~</p>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> <br />  
 </article>
 
-  <div class="bg-secondary-bg rounded px-6">
-    <div class="overflow-hidden divide-y">
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/yolo/yolov1/" class="no-underline">
-    <h3 class="mt-0">yolov1</h3>
-  </a>
-  
-    yolov1模型概述
-  
 
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Wednesday, November 16, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共588字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>2分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
       
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-    </div>
-  
-
+        <div class="my-4">
     
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/" class="no-underline">
-    <h3 class="mt-0">常见宏定义</h3>
-  </a>
-  
-    ida常见宏定义
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Sunday, October 30, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1341字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-    </div>
-  
-
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
     
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
+    <a href="https://peterliuzhi.top/tags/mp_.tcache_bins/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#mp_.tcache_bins</a>
+    
+</div>
       
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
+
       
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/mp_.tcache_bins%e5%9f%ba%e6%9c%ac%e6%bc%8f%e6%b4%9e%e5%88%a9%e7%94%a8.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/principle/largebin_attack/" class="block">Largebin_Attack</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+      <div class="col-span-2">
         
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/ida/" class="hover:text-eureka"
-          >ida</a
-        >
-      
         
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/%E5%AE%8F/" class="hover:text-eureka"
-          >宏</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/principle/ret2libc/" class="no-underline">
-    <h3 class="mt-0">ret2libc</h3>
-  </a>
-  
-    return to libc(ret2libc)
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
 >
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Wednesday, October 26, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1272字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
+  <h3>本页内容</h3>
 </div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">
-    <h3 class="mt-0">关于栈的一些基础知识</h3>
-  </a>
-  
-    关于栈的一些基础知识
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
 >
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Wednesday, October 26, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共3110字</span>
-  </div>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什么是mp_结构体">什么是mp_结构体？</a></li>
+        <li><a href="#mp_tcache_bins有什么用">mp_.tcache_bins有什么用？</a></li>
+        <li><a href="#具体应该如何操作">具体应该如何操作？</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
 
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>7分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
         
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/%E6%A0%88/" class="hover:text-eureka"
-          >栈</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
       </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/tricks/%E6%B1%87%E7%BC%96%E7%89%88hello-world/" class="no-underline">
-    <h3 class="mt-0">汇编版hello world</h3>
-  </a>
-  
-    玩具：汇编版hello world
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Wednesday, October 26, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1087字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/tricks/" class="hover:text-eureka"
-          >tricks</a
-        >
-      
-    </div>
-  
+    
 
     
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/" class="no-underline">
-    <h3 class="mt-0">汇编与寄存器</h3>
-  </a>
-  
-    汇编与寄存器相关理论
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Wednesday, October 26, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共2051字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>5分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-    </div>
-  
-
     
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/" class="no-underline">
-    <h3 class="mt-0">ELF详解</h3>
-  </a>
-  
-    ELF详解
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Wednesday, October 26, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共5838字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>12分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
         
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/elf/" class="hover:text-eureka"
-          >ELF</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+          <a href="https://peterliuzhi.top/principle/largebin_attack/" class="no-underline">Largebin_Attack</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/sictf-pwn-writeup/" class="no-underline">SICTF PWN WriteUp</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/tricks/linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/" class="no-underline">Linux中常用的分析文件的小工具</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/hgame-week2-pwn-writeup/" class="no-underline">HGame Week2 PWN WriteUp</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/" class="no-underline">HGame Week1 PWN WriteUp</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/tricks/pwntools%E8%B0%83%E7%94%A8gdb%E8%B0%83%E8%AF%95%E6%97%B6%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8binsheap%E7%AD%89%E5%91%BD%E4%BB%A4/" class="no-underline">pwntools调用gdb调试时无法使用bins、heap等命令</a>
+          <br />
+        
       </div>
-</div>
-
-  
-</div>
-
+    
   </div>
 
   
-</div>
-  </div>
-  
-</div>
-
-
-  </div>
-  
-    <ul class="pagination pagination-default">
-      <li class="page-item">
-        <a href="/tags/pwn/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/pwn/page/6/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/pwn/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/pwn/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/pwn/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/pwn/page/6/" aria-label="Page 6" class="page-link" role="button">6</a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 7" class="page-link" role="button">7</a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
 
           </div>
         </div>
