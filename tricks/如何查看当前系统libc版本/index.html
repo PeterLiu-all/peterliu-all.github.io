@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 
 
-<title>如何查看当前系统libc版本 - P3troL1er 的个人博客</title>
+<title>如何查看当前系统libc版本 - P3troL1er 的个人博客-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜</title>
 
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -531,7 +531,7 @@ body::-webkit-scrollbar-thumb:hover {
 <p>Kindness is the golden chain by which society is bound together.
 — <cite>Johann Wolfgang von Goethe</cite></p>
 </blockquote>
-<h1 id="如何查看当前系统libc版本">如何查看当前系统libc版本</h1>
+<h2 id="如何查看当前系统libc版本">如何查看当前系统libc版本</h2>
 <ul>
 <li><a href="#%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9Flibc%E7%89%88%E6%9C%AC">如何查看当前系统libc版本</a>
 <ul>
@@ -540,9 +540,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 </li>
 </ul>
-<h2 id="查看当前系统的libc版本">查看当前系统的libc版本</h2>
+<h3 id="查看当前系统的libc版本">查看当前系统的libc版本</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">strings /lib/x86_64-linux-gnu/libc.so.6 <span class="p">|</span> grep <span class="s2">&#34;GNU C Library&#34;</span>
-</span></span></code></pre></div><h2 id="自动化脚本">自动化脚本</h2>
+</span></span></code></pre></div><h3 id="自动化脚本">自动化脚本</h3>
 <p>使用命令行参数指定libc</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$*</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span>
@@ -551,7 +551,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl"><span class="k">else</span>
 </span></span><span class="line"><span class="cl">    strings <span class="nv">$@</span> <span class="p">|</span> grep <span class="s2">&#34;GNU C Library&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
-</span></span></code></pre></div><h2 id="查看程序当前默认使用的libc版本">查看程序当前默认使用的libc版本</h2>
+</span></span></code></pre></div><h3 id="查看程序当前默认使用的libc版本">查看程序当前默认使用的libc版本</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ldd -v &lt;程序名&gt;
 </span></span></code></pre></div>
   <style>
@@ -712,11 +712,15 @@ body::-webkit-scrollbar-thumb:hover {
 >
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#如何查看当前系统libc版本">如何查看当前系统libc版本</a>
+    <li>
       <ul>
-        <li><a href="#查看当前系统的libc版本">查看当前系统的libc版本</a></li>
-        <li><a href="#自动化脚本">自动化脚本</a></li>
-        <li><a href="#查看程序当前默认使用的libc版本">查看程序当前默认使用的libc版本</a></li>
+        <li><a href="#如何查看当前系统libc版本">如何查看当前系统libc版本</a>
+          <ul>
+            <li><a href="#查看当前系统的libc版本">查看当前系统的libc版本</a></li>
+            <li><a href="#自动化脚本">自动化脚本</a></li>
+            <li><a href="#查看程序当前默认使用的libc版本">查看程序当前默认使用的libc版本</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>

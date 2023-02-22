@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 
 
-<title>摩斯电码的解码 - P3troL1er 的个人博客</title>
+<title>摩斯电码的解码 - P3troL1er 的个人博客-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜</title>
 
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -517,11 +517,11 @@ body::-webkit-scrollbar-thumb:hover {
 <p>Strong beliefs win strong men, and then make them stronger.
 — <cite>Richard Bach</cite></p>
 </blockquote>
-<h1 id="从音频到英文单词">从音频到英文单词</h1>
+<h2 id="从音频到英文单词">从音频到英文单词</h2>
 <p><a href="https://morsecode.world/international/decoder/audio-decoder-adaptive.html">Morse Code Adaptive Audio Decoder | Morse Code World</a>这个网站可以解析莫斯电码音频</p>
 <p>或者使用<a href="https://databorder.com/transfer/morse-sound-receiver/">DataBorder Morse Code Sound &amp; Vibration Listener</a>，可以设置阈限值，可以识别出下划线（但是表示为#）</p>
 <p>解析摩斯电码音频需要用到AI（非AI需要手工调试阈限值），网站能搞就用网站搞吧，方便点</p>
-<h1 id="从英文单词到摩斯电码">从英文单词到摩斯电码</h1>
+<h2 id="从英文单词到摩斯电码">从英文单词到摩斯电码</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">morse_code_dict</span> <span class="o">=</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;-...&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;-.-.&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="s1">&#39;-..&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="s1">&#39;..-.&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="s1">&#39;--.&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="s1">&#39;....&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">:</span> <span class="s1">&#39;.---&#39;</span><span class="p">,</span>
@@ -534,7 +534,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encode_morse</span><span class="p">(</span><span class="n">latin_string</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 将拉丁文字符串转换为摩尔斯电码</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">## 将拉丁文字符串转换为摩尔斯电码</span>
 </span></span><span class="line"><span class="cl">    <span class="n">morse_code</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">latin_string</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="n">morse_code</span> <span class="o">+=</span> <span class="n">morse_code_dict</span><span class="p">[</span><span class="n">char</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span>
@@ -708,8 +708,12 @@ body::-webkit-scrollbar-thumb:hover {
 >
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#从音频到英文单词">从音频到英文单词</a></li>
-    <li><a href="#从英文单词到摩斯电码">从英文单词到摩斯电码</a></li>
+    <li>
+      <ul>
+        <li><a href="#从音频到英文单词">从音频到英文单词</a></li>
+        <li><a href="#从英文单词到摩斯电码">从英文单词到摩斯电码</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>

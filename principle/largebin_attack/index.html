@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 
 
-<title>Largebin_Attack - P3troL1er 的个人博客</title>
+<title>Largebin_Attack - P3troL1er 的个人博客-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜</title>
 
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -539,8 +539,8 @@ body::-webkit-scrollbar-thumb:hover {
 <p>When you begin to touch your heart or let your heart be touched, you begin to discover that it&rsquo;s bottomless.
 — <cite>Pema Chödrön</cite></p>
 </blockquote>
-<h1 id="large-bin的数据结构">Large bin的数据结构</h1>
-<h2 id="何时会进入large-bin中">何时会进入large bin中？</h2>
+<h2 id="large-bin的数据结构">Large bin的数据结构</h2>
+<h3 id="何时会进入large-bin中">何时会进入large bin中？</h3>
 <p>Large bin用来储存释放掉的大chunk。</p>
 <ol>
 <li>当释放一个大chunk的时候，会先进入unsorted bin。</li>
@@ -558,7 +558,7 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/img_v2_3a9f2664-fc97-4a6d-8a0b-a65d6295693g.png" />
         </a>
     </p>
-<h3 id="测试程序1">测试程序1</h3>
+<h4 id="测试程序1">测试程序1</h4>
 <p>调试以下程序可以发现，glibc在查找到一个可以分割的chunk的时候不会退出查找：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span> 
@@ -596,7 +596,7 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220002252.png" />
         </a>
     </p>
-<h3 id="调试程序2">调试程序2</h3>
+<h4 id="调试程序2">调试程序2</h4>
 <p>调试以下程序可以发现，程序在遇到大小刚刚好的chunk的时候会直接退出查找，同时也印证了可以分割的chunk会先进入large bin或small bin：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span> 
@@ -653,7 +653,7 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220212041.png" />
         </a>
     </p>
-<h2 id="large-bin的结构">large bin的结构？</h2>
+<h3 id="large-bin的结构">large bin的结构？</h3>
 <p>一共有136个bin，fast bin是一个单独的数组，其中有10个bin，剩下的126个bin是另一个数组，这126个bin中序号1是unsorted bin，序号2到序号63是small bin，64到126是large bin，当chunk大于512Byte（64位下是1024Byte）</p>
 <p>那么large bin的这63个bin是如何组织的呢？</p>
 <table>
@@ -780,11 +780,11 @@ body::-webkit-scrollbar-thumb:hover {
 </li>
 </ul>
 <p>一般空闲的 large chunk 在 fd 的遍历顺序中，按照由大到小的顺序排列（也就是说，fd指向变小的方向）。这样做可以避免在寻找合适 chunk 时挨个遍历。</p>
-<h1 id="large-bin-attack基本原理概述">Large bin Attack基本原理概述</h1>
+<h2 id="large-bin-attack基本原理概述">Large bin Attack基本原理概述</h2>
 <p>基本原理是，当chunk插入large bin中的时候，会改变原有chunk的fd、bk等，而如果我们在这几个域中填入我们自定义的数据，就可以改变某处的数据为此时插入chunk的指针值。</p>
 <p>有一点类似于unlink的原理，但是利用方法截然不同。large bin attack可以更改两个位置上的值为p3的指针，这个值往往挺大的，可以更改一些东西的阈限值，比如增大tcache的最大大小以使用tcache poison等。</p>
 <p>和unsorted bin attack一样可以打辅助，但是它更强的一点是我们可以知道填入的数据是一个什么样的值。</p>
-<h1 id="例子解释230以前">例子解释（2.30以前）</h1>
+<h2 id="例子解释230以前">例子解释（2.30以前）</h2>
 <p>使用<a href="https://github.com/shellphish/how2heap/blob/master/glibc_2.23/large_bin_attack.c">how2heap/large_bin_attack.c at master · shellphish/how2heap · GitHub</a>作为例子：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/*
 </span></span></span><span class="line"><span class="cl"><span class="cm">
@@ -946,7 +946,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="n">bck</span> <span class="o">=</span> <span class="n">P2</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">;</span> <span class="c1">//bck等于P2的bk
 </span></span></span></code></pre></div><p>这里存在一个大小的判断，具体的解析见<a href="https://blog.csdn.net/qq_41202237/article/details/112825556">好好说话之Large Bin Attack_hollk的博客-CSDN博客</a></p>
-<h1 id="例子解释230以后">例子解释（2.30以后）</h1>
+<h2 id="例子解释230以后">例子解释（2.30以后）</h2>
 <p>在2.30以后，glibc为large bin attack新增了两个检查，这里以<a href="https://github.com/shellphish/how2heap/blob/master/glibc_2.36/large_bin_attack.c">how2heap/large_bin_attack.c at master · shellphish/how2heap · GitHub</a>为例：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
@@ -1067,7 +1067,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>因此，当我们将一个更小的chunk插入有一个chunk的large bin（两者的index一样）时，相当于反向地进行传统的large bin attack</p>
 <p>其中，<code>victim-&gt;bk_nextsize-&gt;fd_nextsize = victim</code>就相当于<code>fwd-&gt;fd-&gt;bk_nextsize-&gt;fd_nextsize = victim</code>相当于<code>p1-&gt;bk_nextsize-&gt;fd_nexsize = victim</code>，而<code>p1-&gt;bk_nextsize</code>被我们修改成了<code>(size_t)((&amp;target)-4)</code>，因此此时就会把target修改成victim，也就是p2的指针</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">p1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">size_t</span><span class="p">)((</span><span class="o">&amp;</span><span class="n">target</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="p">);</span>
-</span></span></code></pre></div><h1 id="相关源码">相关源码</h1>
+</span></span></code></pre></div><h2 id="相关源码">相关源码</h2>
 <p>以下源码注释来自chatgpt</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nf">in_smallbin_range</span> <span class="p">(</span><span class="n">size</span><span class="p">))</span> <span class="c1">// 如果请求大小在 small bin 的范围内
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
@@ -1299,21 +1299,25 @@ body::-webkit-scrollbar-thumb:hover {
 >
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#large-bin的数据结构">Large bin的数据结构</a>
+    <li>
       <ul>
-        <li><a href="#何时会进入large-bin中">何时会进入large bin中？</a>
+        <li><a href="#large-bin的数据结构">Large bin的数据结构</a>
           <ul>
-            <li><a href="#测试程序1">测试程序1</a></li>
-            <li><a href="#调试程序2">调试程序2</a></li>
+            <li><a href="#何时会进入large-bin中">何时会进入large bin中？</a>
+              <ul>
+                <li><a href="#测试程序1">测试程序1</a></li>
+                <li><a href="#调试程序2">调试程序2</a></li>
+              </ul>
+            </li>
+            <li><a href="#large-bin的结构">large bin的结构？</a></li>
           </ul>
         </li>
-        <li><a href="#large-bin的结构">large bin的结构？</a></li>
+        <li><a href="#large-bin-attack基本原理概述">Large bin Attack基本原理概述</a></li>
+        <li><a href="#例子解释230以前">例子解释（2.30以前）</a></li>
+        <li><a href="#例子解释230以后">例子解释（2.30以后）</a></li>
+        <li><a href="#相关源码">相关源码</a></li>
       </ul>
     </li>
-    <li><a href="#large-bin-attack基本原理概述">Large bin Attack基本原理概述</a></li>
-    <li><a href="#例子解释230以前">例子解释（2.30以前）</a></li>
-    <li><a href="#例子解释230以后">例子解释（2.30以后）</a></li>
-    <li><a href="#相关源码">相关源码</a></li>
   </ul>
 </nav>
 </div>

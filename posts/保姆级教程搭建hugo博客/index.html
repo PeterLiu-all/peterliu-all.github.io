@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 
 
-<title>保姆级教程——搭建Hugo博客 - P3troL1er 的个人博客</title>
+<title>保姆级教程——搭建Hugo博客 - P3troL1er 的个人博客-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜</title>
 
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -525,21 +525,21 @@ body::-webkit-scrollbar-thumb:hover {
 <p>Serious sport has nothing to do with fair play. It is bound up with hatred, jealousy, boastfulness, disregard of all rules and sadistic pleasure in witnessing violence. In other words, it is war minus the shooting.
 — <cite>George Orwell</cite></p>
 </blockquote>
-<h1 id="安装-hugo">安装 hugo</h1>
+<h2 id="安装-hugo">安装 hugo</h2>
 <p><a href="https://www.gohugo.org/">hugo 中文文档</a></p>
 <p>在<a href="https://github.com/gohugoio/hugo/releases">releases 界面</a>下载 hugo 的 exe 文件（windows可以使用<a href="https://chocolatey.org/install">choco安装</a>），mac 用户可以使用<code>brew install hugo</code></p>
 <blockquote>
 <p>如果要更新 hugo 的所有依赖库，使用命令<code>go get -u -v github.com/gohugoio/hugo</code>，注意，hugo 中文文档中给出的 GitHub 地址是已经过期的，运行后会叫你从这个地址下载（可以试试）</p>
 </blockquote>
-<h1 id="使用-hugo-生成站点与文章并在本地查看">使用 hugo 生成站点与文章，并在本地查看</h1>
+<h2 id="使用-hugo-生成站点与文章并在本地查看">使用 hugo 生成站点与文章，并在本地查看</h2>
 <p>使用命令<code>hugo new site MyBlog</code>生成一个博客文件夹</p>
 <p>使用命令<code>hugo new posts\intro.md</code>，这个命令会在本来为空的 content 文件夹下新建 posts 文件夹，并在 posts 文件夹内新建 intro.md 文件。如果你不喜欢 posts 这个名字，也可以自定义。</p>
-<h1 id="安装-hugo-主题美化你的博客">安装 hugo 主题，美化你的博客</h1>
+<h2 id="安装-hugo-主题美化你的博客">安装 hugo 主题，美化你的博客</h2>
 <p>hugo 有一个 themes 文件夹，使用<code>cd themes</code>进入该文件夹，在<a href="https://www.gohugo.org/theme/">hugo 官方皮肤网站</a>挑选一个喜欢的主题，使用 git 下载</p>
 <p>这里我使用的是<a href="https://github.com/wangchucheng">wangchucheng</a>提供的<a href="https://www.wangchucheng.com/zh/docs/hugo-eureka/getting-started/">Eureka主题</a>，页面简洁美观，有些功能很完善，但是有些功能没有，本教程会在后面说明增加方法</p>
 <p>请仔细阅读<a href="https://www.wangchucheng.com/zh/docs/hugo-eureka/getting-started/">入门 - Hugo Eureka | WANG Chucheng</a>下载安装该主题，本教程之后都是围绕该主题进行，如果你喜欢其他主题，可以查阅它的官方文档</p>
 <p><strong>💡请阅读完主题文档再向下阅读，以下内容基本都是进阶内容</strong></p>
-<h1 id="使用-github-的-pages-功能发布你的网页">使用 GitHub 的 pages 功能发布你的网页</h1>
+<h2 id="使用-github-的-pages-功能发布你的网页">使用 GitHub 的 pages 功能发布你的网页</h2>
 <p>这时候我们想看一下博客的效果，我们可以使用<code>hugo -D server</code>命令在本地查看。-D 选项默认在 public 文件夹生成页面，如果你想在 docs/文件夹生成页面，就使用<code>hugo -d docs</code>再<code>hugo server</code></p>
 <p>这时候终端会蹦出一个类似<code>//localhost:1313/</code>的地址，在浏览器中输入该地址就能看到本地生成的博客啦</p>
 <p>
@@ -554,9 +554,9 @@ body::-webkit-scrollbar-thumb:hover {
 <li>使用 GitHub 的 pages 服务，作者用的就是这个</li>
 <li>使用 gitee 的 pages 服务，在国内会快一点，但是需要上传各种敏感信息，比如手持身份证照片，而且需要审核，酌情选择</li>
 </ul>
-<h2 id="注册-github-账号">注册 GitHub 账号</h2>
+<h3 id="注册-github-账号">注册 GitHub 账号</h3>
 <p>谷歌 GitHub 按指引注册即可</p>
-<h2 id="创建一个新的仓库repository">创建一个新的仓库（repository）</h2>
+<h3 id="创建一个新的仓库repository">创建一个新的仓库（repository）</h3>
 <p>
         <a data-fancybox="gallery" href="/image/202209041753382022-09-04-17-53-38.png">
             <img class="mx-auto" alt="202209041753382022-09-04-17-53-38" src="/image/202209041753382022-09-04-17-53-38.png" />
@@ -581,12 +581,12 @@ body::-webkit-scrollbar-thumb:hover {
 <blockquote>
 <p>在它build完前查看或者build完马上查看可能会出现无样式的情况</p>
 </blockquote>
-<h2 id="自动build后上传脚本">自动build后上传脚本</h2>
+<h3 id="自动build后上传脚本">自动build后上传脚本</h3>
 <p>将下面的命令保存为<code>upload.ps1</code>脚本（Windows 下的 powershell 使用）</p>
 <p>其中的python脚本见<a href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98">图片上传问题</a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$others</span> <span class="p">=</span> <span class="nv">$args</span><span class="p">[</span><span class="mf">1</span><span class="p">..(</span><span class="nv">$args</span><span class="p">.</span><span class="py">Length</span> <span class="p">-</span> <span class="mf">1</span><span class="p">)]</span>
 </span></span><span class="line"><span class="cl"><span class="k">If</span> <span class="p">([</span><span class="no">String</span><span class="p">]::</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="nv">$args</span><span class="p">[</span><span class="mf">0</span><span class="p">]))</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c"># 这是作者自定义的预处理文章的python脚本</span>
+</span></span><span class="line"><span class="cl">	<span class="c">## 这是作者自定义的预处理文章的python脚本</span>
 </span></span><span class="line"><span class="cl">    <span class="n">python</span> <span class="n">dispose_image</span><span class="p">.</span><span class="py">py</span> <span class="n">false</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="p">{</span>
@@ -649,7 +649,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;已退出&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;出现错误：</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><h1 id="图片上传问题">图片上传问题</h1>
+</span></span></code></pre></div><h2 id="图片上传问题">图片上传问题</h2>
 <p>我们可以购买阿里云等服务供应商的图床服务（OSS服务），也可以使用GitHub保存图片</p>
 <p>Eureka主题提供了<a href="https://www.wangchucheng.com/zh/docs/hugo-eureka/content-management/#%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87">一系列的上传图片的方法</a>，详情见文档</p>
 <p>现在只需要知道两点：</p>
@@ -675,20 +675,20 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl"><span class="n">redispose</span> <span class="o">=</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="cl"><span class="n">redispose</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;true&#34;</span> <span class="k">else</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 忽略的文件夹和文件名字，注意，只能识别路径中最后一个名字</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 忽略的文件夹和文件名字，注意，只能识别路径中最后一个名字</span>
 </span></span><span class="line"><span class="cl"><span class="n">ignore</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;image&#34;</span><span class="p">,</span> <span class="s2">&#34;model&#34;</span><span class="p">,</span> <span class="s2">&#34;archive&#34;</span><span class="p">,</span> <span class="s2">&#34;stats&#34;</span><span class="p">,</span> <span class="s2">&#34;search.md&#34;</span><span class="p">,</span> <span class="s2">&#34;Excalidraw&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">          <span class="s2">&#34;draw.io&#34;</span><span class="p">,</span> <span class="s2">&#34;appendix&#34;</span>
 </span></span><span class="line"><span class="cl">          <span class="s2">&#34;Chromium OS Docs - Linux System Call Table&#34;</span><span class="p">,</span> <span class="s2">&#34;subscribe&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># image: True表示image文件夹是一个保存图片的文件夹，False表示保存附件</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## image: True表示image文件夹是一个保存图片的文件夹，False表示保存附件</span>
 </span></span><span class="line"><span class="cl"><span class="n">check_folder</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;image&#34;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&#34;appendix&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="n">all_pat</span> <span class="o">=</span> <span class="p">{</span><span class="n">folder</span><span class="p">:</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;!\[(.*)\]\(</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">(.*)\)&#34;</span><span class="p">)</span> <span class="k">if</span> <span class="n">jud</span> 
 </span></span><span class="line"><span class="cl">           <span class="k">else</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;\[(.*)\]\(</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">(.*)\)&#34;</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl">           <span class="k">for</span> <span class="n">folder</span><span class="p">,</span> <span class="n">jud</span> <span class="ow">in</span> <span class="n">check_folder</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># D:\database_BooksAndFiles\Blog\fnlblog\test\test.md</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## D:\database_BooksAndFiles\Blog\fnlblog\test\test.md</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 递归地处理文件夹下的内容，包括子文件夹的内容</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 递归地处理文件夹下的内容，包括子文件夹的内容</span>
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dispose</span><span class="p">(</span><span class="n">folder</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">ignore</span>
 </span></span><span class="line"><span class="cl">    <span class="n">dirs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
@@ -712,7 +712,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl">                        <span class="k">elif</span> <span class="n">font_matter</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">redispose</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">                            <span class="n">opt</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;:&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                            <span class="k">if</span> <span class="n">opt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&#34;dispose&#34;</span> <span class="ow">and</span> <span class="s2">&#34;true&#34;</span> <span class="ow">in</span> <span class="n">opt</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
-</span></span><span class="line"><span class="cl">                                <span class="c1"># 如果frontmatter中存在dispose: true，那么就不处理该文件</span>
+</span></span><span class="line"><span class="cl">                                <span class="c1">## 如果frontmatter中存在dispose: true，那么就不处理该文件</span>
 </span></span><span class="line"><span class="cl">                                <span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="cl">                                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;dispose=True，已经过处理&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                                <span class="k">break</span>
@@ -729,7 +729,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl">                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fullpath</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">                        <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">[:</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">                        <span class="k">if</span> <span class="ow">not</span> <span class="n">redispose</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                            <span class="c1"># 处理过的文件会在frontmatter中加上dispose: true</span>
+</span></span><span class="line"><span class="cl">                            <span class="c1">## 处理过的文件会在frontmatter中加上dispose: true</span>
 </span></span><span class="line"><span class="cl">                            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;dispose: true</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                        <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
 </span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">isdir</span><span class="p">(</span><span class="n">fullpath</span><span class="p">):</span>
@@ -738,7 +738,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">dispose</span><span class="p">(</span><span class="s2">&#34;content&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>这个脚本会解析它的命令行参数，如果传入<code>sys.argv[1] == &quot;true&quot;</code>，那么它就不会管frontmatter中<code>dispose: true</code>项，一视同仁地对所有文件进行解析，但这可能会浪费时间，所以建议传入false或者什么都不传入，这样程序会不解析frontmatter中有<code>dispose: true</code>项的文件</p>
-<h1 id="fontawesome小插图无法显示的问题">fontawesome小插图无法显示的问题</h1>
+<h2 id="fontawesome小插图无法显示的问题">fontawesome小插图无法显示的问题</h2>
 <p>hugo中很多时候都会用到fontswesome的小插图，但是Eureka中好像有bug无法显示</p>
 <p>解决方法就是<a href="https://fontawesome.com/start">注册一下fontswesome</a>并点击获取kit code代替/themes/eureka/layouts/partials/head.html中原本的链接：</p>
 <p>
@@ -751,7 +751,7 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108003611.png" />
         </a>
     </p>
-<h1 id="使用-disqus-添加评论功能">使用 disqus 添加评论功能</h1>
+<h2 id="使用-disqus-添加评论功能">使用 disqus 添加评论功能</h2>
 <p>Eureka中实现这点非常简单，你只需要注册disqus并获取shortname，填在params.yaml中就行：
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108003846.png">
@@ -765,7 +765,7 @@ body::-webkit-scrollbar-thumb:hover {
     </p>
 <p>相关阅读：</p>
 <p><a href="https://marvinsblog.net/post/2017-04-20-hugo-with-disqus/">给Hugo添加disqus评论服务 | Marvin&rsquo;s Blog【程式人生】</a></p>
-<h1 id="在代码旁增加复制按钮">在代码旁增加复制按钮</h1>
+<h2 id="在代码旁增加复制按钮">在代码旁增加复制按钮</h2>
 <p>在根目录 /static/css/ 和 /static/js/ 分别创建 copy-btn.css 和 copy-btn.js，分别写入：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">highlight</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
@@ -855,7 +855,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{.Site.BaseURL}}js/copy-btn.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>需要注意的是，Eureka主题还需更改config.yaml文件中markup-&gt;highlight：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">markup</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># Do not modify markup.highlight</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c">## Do not modify markup.highlight</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">highlight</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">codeFences</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">noClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -879,7 +879,7 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108004328.png" />
         </a>
     </p>
-<h1 id="在文章列表中显示tag">在文章列表中显示tag</h1>
+<h2 id="在文章列表中显示tag">在文章列表中显示tag</h2>
 <p>覆盖themes/eureka/layouts/partials/components/post-metadata.html为：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span>
 </span></span><span class="line"><span class="cl">  <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center&#34;</span>
@@ -937,7 +937,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  {{ end }}
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span></code></pre></div><h1 id="在文章开头显示字数">在文章开头显示字数</h1>
+</span></span></code></pre></div><h2 id="在文章开头显示字数">在文章开头显示字数</h2>
 <p>Eureka默认只显示阅读用时，这有时候非常蛋疼，因为机器的阅读用时和我们人差距很大，没法直观地体现出文章有多长</p>
 <p>我们可以在themes/eureka/layouts/partials/components/post-metadata.html中阅读用时那个div前面增加：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;me-6 my-2&#34;</span><span class="p">&gt;</span>
@@ -950,7 +950,7 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230111210554.png" />
         </a>
     </p>
-<h1 id="使用obsidian模板自动生成文章头部">使用obsidian模板自动生成文章头部</h1>
+<h2 id="使用obsidian模板自动生成文章头部">使用obsidian模板自动生成文章头部</h2>
 <p>需要下载插件<a href="https://github.com/SilentVoid13/Templater">Templater</a>，请阅读其<a href="https://silentvoid13.github.io/Templater/">官方文档</a>中模板的写法（网上有些博客的教程是旧版的，现在已经不能用了）</p>
 <p>示例如下：</p>
 <p>
@@ -966,10 +966,10 @@ body::-webkit-scrollbar-thumb:hover {
         </a>
     </p>
 <p>具体详见<a href="https://gohugo.io/getting-started/configuration/#ignore-content-and-data-files-when-rendering">Configure Hugo |Hugo</a></p>
-<h1 id="增强内容">增强内容</h1>
+<h2 id="增强内容">增强内容</h2>
 <p>下面会用到的<a href="/appendix/all_js.zip">外部js代码请下载此附件</a></p>
 <p>下载解压后放在/static/js中</p>
-<h2 id="增加归档页">增加归档页</h2>
+<h3 id="增加归档页">增加归档页</h3>
 <blockquote>
 <p>请务必下载<a href="#%E5%A2%9E%E5%BC%BA%E5%86%85%E5%AE%B9">外部js代码</a>！</p>
 </blockquote>
@@ -1064,7 +1064,7 @@ body::-webkit-scrollbar-thumb:hover {
         </a>
     </p>
 <p>来源见<a href="https://imnerd.org/custom-hugo-theme-eureka.html#%E5%BD%92%E6%A1%A3">Hugo 主题 Eureka 自定义 | 怡红院落</a></p>
-<h2 id="增加统计页">增加统计页</h2>
+<h3 id="增加统计页">增加统计页</h3>
 <blockquote>
 <p>请务必下载<a href="#%E5%A2%9E%E5%BC%BA%E5%86%85%E5%AE%B9">外部js代码</a>！</p>
 </blockquote>
@@ -1303,7 +1303,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;stats&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
 </span></span></span></code></pre></div><p>来源：<a href="https://imnerd.org/custom-hugo-theme-eureka.html#%E7%BB%9F%E8%AE%A1">Hugo 主题 Eureka 自定义 | 怡红院落</a></p>
-<h2 id="增加搜索功能">增加搜索功能</h2>
+<h3 id="增加搜索功能">增加搜索功能</h3>
 <blockquote>
 <p>请务必下载<a href="#%E5%A2%9E%E5%BC%BA%E5%86%85%E5%AE%B9">外部js代码</a>！</p>
 </blockquote>
@@ -1514,7 +1514,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;search.html&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
 </span></span></span></code></pre></div><p>来源：<a href="https://imnerd.org/custom-hugo-theme-eureka.html#%E6%90%9C%E7%B4%A2%E6%A1%86">Hugo 主题 Eureka 自定义 | 怡红院落</a></p>
-<h2 id="自定义rss文件">自定义RSS文件</h2>
+<h3 id="自定义rss文件">自定义RSS文件</h3>
 <blockquote>
 <p>请务必下载<a href="#%E5%A2%9E%E5%BC%BA%E5%86%85%E5%AE%B9">外部js代码</a>！</p>
 </blockquote>
@@ -1559,22 +1559,22 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl">    {{ end }}
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">channel</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">rss</span><span class="p">&gt;</span>
-</span></span></code></pre></div><h3 id="增加订阅功能">增加订阅功能</h3>
+</span></span></code></pre></div><h4 id="增加订阅功能">增加订阅功能</h4>
 <blockquote>
 <p>请务必下载<a href="#%E5%A2%9E%E5%BC%BA%E5%86%85%E5%AE%B9">外部js代码</a>！</p>
 </blockquote>
 <p>首先，此功能要求网站有一个RSS文件，一般会自动生成为index.xml</p>
-<h3 id="法一tinyletterzapier">法一：TinyLetter+Zapier</h3>
+<h4 id="法一tinyletterzapier">法一：TinyLetter+Zapier</h4>
 <p>使用<a href="http://tinyletter.com/">TinyLetter</a>的获取订阅者服务+<a href="https://zapier.com/app/dashboard">Zapier</a>的自动发信服务，具体步骤详见<a href="https://backendology.com/2018/08/31/hugo-newsletter/">Newsletter for Hugo Blog - Backendology - A study of backend web development by Jared Ririe</a></p>
 <p>注意，TinyLetter是免费的，但是Zapier似乎是付费的（有试用期）</p>
 <p>不建议使用TinyLetter，功能简陋，且搞自动化发邮件容易被系统ban掉</p>
-<h3 id="法二使用followit">法二：使用follow.it</h3>
+<h4 id="法二使用followit">法二：使用follow.it</h4>
 <p>我们还可以使用更自动化、更便捷的<a href="https://follow.it/">follow.it | Feedburner Alternative - Get more readers</a>，有免费计划也有付费计划，付费计划价格也较低</p>
 <p>直接根据官网的指引走就好了，然后它就会自动解析你的RSS页面（前提是你要有RSS）中最近发表的文章，并将24小时内更新的文章以邮件形式发送给订阅者，同时它还有一个类似于展览一样的东西，读者可以直接从它的网站发现你的网站并进行订阅。</p>
 <p>follow.it分两种发信方式，一种是NewsPaper，在每天的固定时间向订阅者推送消息或邮件；另一种是single email，会在检测到新文章后自动生成邮件发送</p>
 <p>follow.it还自带RSS阅读器，这样我们的RSS页面可以变的更美观，但是不建议用这个页面代替我们的RSS页面，因为我们的RSS页面的信息可能被别的网站采集并获取最新消息，所以不建议换掉这个页面</p>
 <p>follow.it的缺点是有时候对RSS的变化响应不够迅速，还有免费版功能比较简陋</p>
-<h3 id="在博客内部某个地方添加订阅入口">在博客内部某个地方添加订阅入口</h3>
+<h4 id="在博客内部某个地方添加订阅入口">在博客内部某个地方添加订阅入口</h4>
 <p>记得在自己的博客内部增加一个进入订阅页面的入口，可以把订阅页面(<a href="https://tinyletter.com/">https://tinyletter.com/</a>&lt;你的名字&gt;)下载下来（可以自定义样式），放在<code>themes/eureka/layouts/_default</code>并重命名为subscribe.html，然后新建/content/subscribe/subscribe.md并填入frontmatter：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l">subscribe</span><span class="w">
@@ -1619,7 +1619,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/subscribe/&#34;</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;button&#34;</span><span class="p">&gt;</span>立即订阅个人博客<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>    
 </span></span></code></pre></div><p>还可以在各种地方添加一个小铃铛图片，这样用户更容易找到你的订阅入口，而不用返回到主页</p>
-<h1 id="让你的博客能被google等搜索引擎找到">让你的博客能被google等搜索引擎找到</h1>
+<h2 id="让你的博客能被google等搜索引擎找到">让你的博客能被google等搜索引擎找到</h2>
 <p>google可以使用<a href="https://search.google.com/search-console">Google Search Console</a>，详见<a href="https://zoharandroid.github.io/2019-08-03-%E8%AE%A9%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">让Google搜索到自己的博客</a></p>
 <p>bing可以使用<a href="https://www.bing.com/webmasters/">Bing Webmaster Tools</a>，详见<a href="https://xiaoxiang.blog/wordpress-bing-index/">如何讓你的 WordPress 網站能被 Bing 索引？ | 小翔教你SEO</a>，注意bing是可以导入google search console的数据的，因此建议先设置google</p>
 <p>百度同理，使用<a href="https://ziyuan.baidu.com/linksubmit">普通收录_加快网站内容抓取，快速提交数据工具_站长工具_网站支持_百度搜索资源平台</a></p>
@@ -1627,7 +1627,7 @@ body::-webkit-scrollbar-thumb:hover {
 <ul>
 <li><a href="https://ywang-wnlo.github.io/posts/abac0c46.html">Hexo 配置主流搜索引擎收录流程记录 | 乐园</a></li>
 </ul>
-<h1 id="使黑色图片在深色模式下反转为白色图片">使黑色图片在深色模式下反转为白色图片</h1>
+<h2 id="使黑色图片在深色模式下反转为白色图片">使黑色图片在深色模式下反转为白色图片</h2>
 <p>下面提供一个示例。</p>
 <p>比如我在about.md中定义的头像是黑色透明背景的，在深色模式下就完全看不清图片：</p>
 <p>
@@ -1658,7 +1658,7 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108232025.png" />
         </a>
     </p>
-<h1 id="让深浅颜色变换更平滑">让深浅颜色变换更平滑</h1>
+<h2 id="让深浅颜色变换更平滑">让深浅颜色变换更平滑</h2>
 <p>在themes/eureka/layouts/partials/head.html中增加：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">dark</span><span class="p">{</span>
@@ -1687,7 +1687,7 @@ body::-webkit-scrollbar-thumb:hover {
         </a>
     </p>
 <p>这样在深浅主题变化的时候，颜色过渡就会平滑一点了，具体成果见<a href="https://peterliuzhi.top">我的博客</a></p>
-<h1 id="增加回到开头按钮">增加回到开头按钮</h1>
+<h2 id="增加回到开头按钮">增加回到开头按钮</h2>
 <p>在末尾增加：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">black-circle</span><span class="p">{</span>
@@ -1753,7 +1753,7 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230111170210.png" />
         </a>
     </p>
-<h1 id="增加图片放大查看功能">增加图片放大查看功能</h1>
+<h2 id="增加图片放大查看功能">增加图片放大查看功能</h2>
 <p>本部分灵感来自于<a href="https://atpx.com/hugo-fancybox/">Hugo 使用 Fancybox 实现图片灯箱/放大功能 - atpX</a>，其作者灵感来自于<a href="https://github.com/flysnow-org/maupassant-hugo/blob/master/layouts/_default/_markup/render-image.html">maupassant-hugo/render-image.html at master · flysnow-org/maupassant-hugo · GitHub</a>，但是该文作者的方法似乎有误，我更改了以后在我的页面上终于可以使用了</p>
 <p>在params.yaml添加：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">fancybox </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
@@ -1800,12 +1800,12 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">{{ end }}
 </span></span></code></pre></div><p>以后如果不想要图片放大功能了，只用更改<code>fancybox</code>的值就可以了</p>
-<h1 id="在文章开头增加版权声明">在文章开头增加版权声明</h1>
+<h2 id="在文章开头增加版权声明">在文章开头增加版权声明</h2>
 <p>我们希望在自己原创的文章开头放一个版权声明，但是在自己转载的文章开头又不放，我们可以在<code>themes/eureka/layouts/partials/components/post-article.html</code>内的<code>{{ .Content }}</code>上方加上：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ if (or  (not .Params.reprint) ( not ( in &#34;true&#34; .Params.reprint )) )  }}
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>⚠️本文是<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://github.com/PeterLiu-all&#34;</span><span class="p">&gt;</span>作者P3troL1er<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>原创，首发于<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>{{ .Site.BaseURL }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>。商业转载请联系作者获得授权，非商业转载请注明出处！<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">{{ end }}
-</span></span></code></pre></div><h1 id="复制内容自动增加版权信息">复制内容自动增加版权信息</h1>
+</span></span></code></pre></div><h2 id="复制内容自动增加版权信息">复制内容自动增加版权信息</h2>
 <p>我们希望所有复制的文字和html都在末尾附上版权信息还有自己网站的链接，但是按copy按钮复制的代码却不希望加上信息（这样会很麻烦），于是我更改了<a href="https://blog.csdn.net/u010071211/article/details/82900159">复制网页内容自动添加版权信息的方法_idjl的博客-CSDN博客</a>的代码，在<code>themes/eureka/layouts/partials/custom-head.html</code>末尾加上：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">function</span> <span class="nx">setClipboardText</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
@@ -1844,7 +1844,7 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl">        <span class="nx">setClipboardText</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">});</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span></span></code></pre></div><h1 id="增加友链页面">增加友链页面</h1>
+</span></span></code></pre></div><h2 id="增加友链页面">增加友链页面</h2>
 <p>新建layouts/shortcodes/friend.html（包括文件夹），写入：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{- if .IsNamedParams -}}
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">{{</span> <span class="err">.</span><span class="na">Get</span> <span class="err">&#34;</span><span class="na">url</span><span class="err">&#34;</span> <span class="err">}}</span> <span class="na">title</span><span class="o">=</span><span class="s">{{</span> <span class="err">.</span><span class="na">Get</span> <span class="err">&#34;</span><span class="na">name</span><span class="err">&#34;</span> <span class="err">}}</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;friendurl&#34;</span><span class="p">&gt;</span>
@@ -2151,46 +2151,50 @@ body::-webkit-scrollbar-thumb:hover {
 >
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#安装-hugo">安装 hugo</a></li>
-    <li><a href="#使用-hugo-生成站点与文章并在本地查看">使用 hugo 生成站点与文章，并在本地查看</a></li>
-    <li><a href="#安装-hugo-主题美化你的博客">安装 hugo 主题，美化你的博客</a></li>
-    <li><a href="#使用-github-的-pages-功能发布你的网页">使用 GitHub 的 pages 功能发布你的网页</a>
+    <li>
       <ul>
-        <li><a href="#注册-github-账号">注册 GitHub 账号</a></li>
-        <li><a href="#创建一个新的仓库repository">创建一个新的仓库（repository）</a></li>
-        <li><a href="#自动build后上传脚本">自动build后上传脚本</a></li>
-      </ul>
-    </li>
-    <li><a href="#图片上传问题">图片上传问题</a></li>
-    <li><a href="#fontawesome小插图无法显示的问题">fontawesome小插图无法显示的问题</a></li>
-    <li><a href="#使用-disqus-添加评论功能">使用 disqus 添加评论功能</a></li>
-    <li><a href="#在代码旁增加复制按钮">在代码旁增加复制按钮</a></li>
-    <li><a href="#在文章列表中显示tag">在文章列表中显示tag</a></li>
-    <li><a href="#在文章开头显示字数">在文章开头显示字数</a></li>
-    <li><a href="#使用obsidian模板自动生成文章头部">使用obsidian模板自动生成文章头部</a></li>
-    <li><a href="#增强内容">增强内容</a>
-      <ul>
-        <li><a href="#增加归档页">增加归档页</a></li>
-        <li><a href="#增加统计页">增加统计页</a></li>
-        <li><a href="#增加搜索功能">增加搜索功能</a></li>
-        <li><a href="#自定义rss文件">自定义RSS文件</a>
+        <li><a href="#安装-hugo">安装 hugo</a></li>
+        <li><a href="#使用-hugo-生成站点与文章并在本地查看">使用 hugo 生成站点与文章，并在本地查看</a></li>
+        <li><a href="#安装-hugo-主题美化你的博客">安装 hugo 主题，美化你的博客</a></li>
+        <li><a href="#使用-github-的-pages-功能发布你的网页">使用 GitHub 的 pages 功能发布你的网页</a>
           <ul>
-            <li><a href="#增加订阅功能">增加订阅功能</a></li>
-            <li><a href="#法一tinyletterzapier">法一：TinyLetter+Zapier</a></li>
-            <li><a href="#法二使用followit">法二：使用follow.it</a></li>
-            <li><a href="#在博客内部某个地方添加订阅入口">在博客内部某个地方添加订阅入口</a></li>
+            <li><a href="#注册-github-账号">注册 GitHub 账号</a></li>
+            <li><a href="#创建一个新的仓库repository">创建一个新的仓库（repository）</a></li>
+            <li><a href="#自动build后上传脚本">自动build后上传脚本</a></li>
           </ul>
         </li>
+        <li><a href="#图片上传问题">图片上传问题</a></li>
+        <li><a href="#fontawesome小插图无法显示的问题">fontawesome小插图无法显示的问题</a></li>
+        <li><a href="#使用-disqus-添加评论功能">使用 disqus 添加评论功能</a></li>
+        <li><a href="#在代码旁增加复制按钮">在代码旁增加复制按钮</a></li>
+        <li><a href="#在文章列表中显示tag">在文章列表中显示tag</a></li>
+        <li><a href="#在文章开头显示字数">在文章开头显示字数</a></li>
+        <li><a href="#使用obsidian模板自动生成文章头部">使用obsidian模板自动生成文章头部</a></li>
+        <li><a href="#增强内容">增强内容</a>
+          <ul>
+            <li><a href="#增加归档页">增加归档页</a></li>
+            <li><a href="#增加统计页">增加统计页</a></li>
+            <li><a href="#增加搜索功能">增加搜索功能</a></li>
+            <li><a href="#自定义rss文件">自定义RSS文件</a>
+              <ul>
+                <li><a href="#增加订阅功能">增加订阅功能</a></li>
+                <li><a href="#法一tinyletterzapier">法一：TinyLetter+Zapier</a></li>
+                <li><a href="#法二使用followit">法二：使用follow.it</a></li>
+                <li><a href="#在博客内部某个地方添加订阅入口">在博客内部某个地方添加订阅入口</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#让你的博客能被google等搜索引擎找到">让你的博客能被google等搜索引擎找到</a></li>
+        <li><a href="#使黑色图片在深色模式下反转为白色图片">使黑色图片在深色模式下反转为白色图片</a></li>
+        <li><a href="#让深浅颜色变换更平滑">让深浅颜色变换更平滑</a></li>
+        <li><a href="#增加回到开头按钮">增加回到开头按钮</a></li>
+        <li><a href="#增加图片放大查看功能">增加图片放大查看功能</a></li>
+        <li><a href="#在文章开头增加版权声明">在文章开头增加版权声明</a></li>
+        <li><a href="#复制内容自动增加版权信息">复制内容自动增加版权信息</a></li>
+        <li><a href="#增加友链页面">增加友链页面</a></li>
       </ul>
     </li>
-    <li><a href="#让你的博客能被google等搜索引擎找到">让你的博客能被google等搜索引擎找到</a></li>
-    <li><a href="#使黑色图片在深色模式下反转为白色图片">使黑色图片在深色模式下反转为白色图片</a></li>
-    <li><a href="#让深浅颜色变换更平滑">让深浅颜色变换更平滑</a></li>
-    <li><a href="#增加回到开头按钮">增加回到开头按钮</a></li>
-    <li><a href="#增加图片放大查看功能">增加图片放大查看功能</a></li>
-    <li><a href="#在文章开头增加版权声明">在文章开头增加版权声明</a></li>
-    <li><a href="#复制内容自动增加版权信息">复制内容自动增加版权信息</a></li>
-    <li><a href="#增加友链页面">增加友链页面</a></li>
   </ul>
 </nav>
 </div>

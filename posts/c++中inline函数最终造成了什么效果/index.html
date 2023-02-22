@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
 </style>
 
 
-<title>C&#43;&#43;中inline函数最终造成了什么效果？ - P3troL1er 的个人博客</title>
+<title>C&#43;&#43;中inline函数最终造成了什么效果？ - P3troL1er 的个人博客-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜</title>
 
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -529,7 +529,7 @@ body::-webkit-scrollbar-thumb:hover {
 <p>Numberless are the worlds wonders, but none more wonderful than man.
 — <cite>Sophocles</cite></p>
 </blockquote>
-<h1 id="引入">引入</h1>
+<h2 id="引入">引入</h2>
 <p>在C++中我们经常使用inline内联函数来代替宏，而宏是在预编译阶段进行简单的替换，那内联函数会产生什么效果呢？</p>
 <p>我写了一个简单的小程序来验证这个问题：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
@@ -565,7 +565,7 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174547.png" />
         </a>
     </p>
-<h1 id="查看预编译结果">查看预编译结果</h1>
+<h2 id="查看预编译结果">查看预编译结果</h2>
 <p>预编译器将include的头文件简单地复制到了我们代码中include的位置，因此最后我们得到的预编译结果中，我们自己写的代码位于六万多行的位置：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174202.png">
@@ -573,7 +573,7 @@ body::-webkit-scrollbar-thumb:hover {
         </a>
     </p>
 <p>可以看到，我们define的宏ONE已经被简单地替换掉了，但是inline函数并没有进行替换</p>
-<h1 id="查看普通编译链接结果">查看普通编译链接结果</h1>
+<h2 id="查看普通编译链接结果">查看普通编译链接结果</h2>
 <p>我们使用ida进行反编译后可以看到这里内联函数并没有嵌入到主函数之中，而是像一个普通的函数一样被调用</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174407.png">
@@ -597,7 +597,7 @@ body::-webkit-scrollbar-thumb:hover {
         </a>
     </p>
 <p>或许这就是内联函数能够被调试的原因——在调试版本的程序中，它和普通函数并没有什么区别</p>
-<h1 id="优化编译链接结果">优化编译链接结果</h1>
+<h2 id="优化编译链接结果">优化编译链接结果</h2>
 <p>优化后我们发现主函数已经变成了我们不认识的样子：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207175211.png">
@@ -629,7 +629,7 @@ body::-webkit-scrollbar-thumb:hover {
             <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207231423.png" />
         </a>
     </p>
-<h2 id="与非内联函数对比">与非内联函数对比</h2>
+<h3 id="与非内联函数对比">与非内联函数对比</h3>
 <p>我们试着与非内联函数对比：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207231934.png">
@@ -663,7 +663,7 @@ body::-webkit-scrollbar-thumb:hover {
 <p>这看上去好像没有发生内联，但是我们查看sub_1004016B0函数会发现，由于内联函数内调用了另一个函数，因此我们得到的最终结果还是一个函数。</p>
 <p>但是由于优化开启，所以就算是普通函数也会变成这样，并没有什么差别。也就是说，这样的内联并无意义（因为不开启优化内联不会发生）</p>
 <p>因此，不要在内联函数内进行嵌套调用（或者递归）</p>
-<h2 id="内联函数嵌套调用内联函数">内联函数嵌套调用内联函数</h2>
+<h3 id="内联函数嵌套调用内联函数">内联函数嵌套调用内联函数</h3>
 <p>那如果我嵌套调用的是一个内联函数呢，情况会不会发生变化？</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207233844.png">
@@ -695,7 +695,7 @@ body::-webkit-scrollbar-thumb:hover {
         </a>
     </p>
 <p>因此，<strong>一个返回逻辑简单的内联函数调用另一个返回逻辑简单的内联函数在优化开启的情况下确实是会发生内联的</strong></p>
-<h1 id="结论">结论</h1>
+<h2 id="结论">结论</h2>
 <p>因此，我们通过这些简略的事实能够得到一个粗糙的结论：</p>
 <p>内联函数在编译器优化之前和普通函数并无差别，在优化之后一些具有较复杂返回逻辑的内联函数也无法内联。同时就算返回逻辑简单，也要避免嵌套非内联函数，因为这在优化开启的情况下并无意义。</p>
 <p>因此，如果函数返回的值是一个在编译期能够确定的常值，尽量使用constexpr修饰返回值；不要嵌套非内联函数，不要复杂化内联函数的返回逻辑</p>
@@ -860,16 +860,20 @@ body::-webkit-scrollbar-thumb:hover {
 >
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#引入">引入</a></li>
-    <li><a href="#查看预编译结果">查看预编译结果</a></li>
-    <li><a href="#查看普通编译链接结果">查看普通编译链接结果</a></li>
-    <li><a href="#优化编译链接结果">优化编译链接结果</a>
+    <li>
       <ul>
-        <li><a href="#与非内联函数对比">与非内联函数对比</a></li>
-        <li><a href="#内联函数嵌套调用内联函数">内联函数嵌套调用内联函数</a></li>
+        <li><a href="#引入">引入</a></li>
+        <li><a href="#查看预编译结果">查看预编译结果</a></li>
+        <li><a href="#查看普通编译链接结果">查看普通编译链接结果</a></li>
+        <li><a href="#优化编译链接结果">优化编译链接结果</a>
+          <ul>
+            <li><a href="#与非内联函数对比">与非内联函数对比</a></li>
+            <li><a href="#内联函数嵌套调用内联函数">内联函数嵌套调用内联函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#结论">结论</a></li>
       </ul>
     </li>
-    <li><a href="#结论">结论</a></li>
   </ul>
 </nav>
 </div>
