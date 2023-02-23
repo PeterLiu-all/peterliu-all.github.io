@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -582,13 +593,17 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec">checksec</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106230146.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106230146.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106230146.png" />
+        
         </a>
     </p>
 <h2 id="ida">ida</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106230229.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106230229.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106230229.png" />
+        
         </a>
     </p>
 <p>简单的栈溢出，唯一需要注意的是在get shell前将标准输出流关掉了，但我们可以用shell命令中的重定向将标准输出流重定向到标准错误流：</p>
@@ -597,7 +612,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>就可以了</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106230609.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106230609.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106230609.png" />
+        
         </a>
     </p>
 <h2 id="exp">exp</h2>
@@ -759,13 +776,17 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec-1">checksec</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106230708.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106230708.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106230708.png" />
+        
         </a>
     </p>
 <h2 id="ida-1">ida</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106230806.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106230806.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106230806.png" />
+        
         </a>
     </p>
 <p>非常明显地，输入负数可以更改seats上方的任意数据</p>
@@ -937,25 +958,33 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec-2">checksec</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106231750.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106231750.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106231750.png" />
+        
         </a>
     </p>
 <h2 id="ida-2">ida</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106231856.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106231856.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106231856.png" />
+        
         </a>
     </p>
 <p>程序禁掉了execve和execveat：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106231946.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106231946.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106231946.png" />
+        
         </a>
     </p>
 <p>因为偏移量是0x108，能输入0x130个字符，所以只能执行五条指令：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106232051.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106232051.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106232051.png" />
+        
         </a>
     </p>
 <h2 id="法一ret2libc后栈迁移">法一：ret2libc后栈迁移</h2>
@@ -1194,7 +1223,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>我们在ret2libc后可以考虑更改rdx再返回到vuln+0x1E处：</p>
 <p>
         <a data-fancybox="gallery" href="/image/2606a5ac88975ecc95f827ea94695f7.png">
-            <img class="mx-auto" alt="" src="/image/2606a5ac88975ecc95f827ea94695f7.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/2606a5ac88975ecc95f827ea94695f7.png" />
+        
         </a>
     </p>
 <p>然后就能栈溢出任意长字节了</p>
@@ -1438,13 +1469,17 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec-3">checksec</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106232919.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106232919.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106232919.png" />
+        
         </a>
     </p>
 <h2 id="ida-3">ida</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106233021.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106233021.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106233021.png" />
+        
         </a>
     </p>
 <p>程序允许我们输入一个0x10字节长的shellcode并执行，同时禁掉了execve和execveat，然而一般的orw shellcode是不可能只有这么短的，所以我们必须从程序的上下文发现漏洞所在</p>
@@ -1452,13 +1487,17 @@ body::-webkit-scrollbar-thumb:hover {
 <p>我们可以利用call的特性，call会把下一条指令的地址push进栈中，因此我们可以利用栈中的数据跳转到main函数的任意位置</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106233408.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106233408.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106233408.png" />
+        
         </a>
     </p>
 <p>我们跳转到这里，就可以read进0xcafe0000个字节：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230106233524.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230106233524.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230106233524.png" />
+        
         </a>
     </p>
 <p>然后我们就可以输入orw的shellcode进行读写了：</p>
@@ -1636,7 +1675,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>根据调用<code>0xcafe0000</code>前寄存器的状态：</p>
 <p>
         <a data-fancybox="gallery" href="/image/img_v2_86a7ea1b-64b5-4ab0-abb4-bb97819aad8g.png">
-            <img class="mx-auto" alt="" src="/image/img_v2_86a7ea1b-64b5-4ab0-abb4-bb97819aad8g.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/img_v2_86a7ea1b-64b5-4ab0-abb4-bb97819aad8g.png" />
+        
         </a>
     </p>
 <p>我们可以使用以下shellcode调用read：</p>

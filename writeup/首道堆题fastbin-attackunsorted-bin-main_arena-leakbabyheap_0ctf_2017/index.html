@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -594,45 +605,59 @@ body::-webkit-scrollbar-thumb:hover {
 <p>这个程序故意把<code>.symtab</code>节删掉了，所以没有函数名称，这里作者在 ida 中简单地重命名了一下</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209292103342022-09-29-21-03-35.png">
-            <img class="mx-auto" alt="202209292103342022-09-29-21-03-35" src="/image/202209292103342022-09-29-21-03-35.png" />
+        
+            <img class="mx-auto img-float" alt="202209292103342022-09-29-21-03-35" src="/image/202209292103342022-09-29-21-03-35.png" />
+        
         </a>
     </p>
 <h3 id="allocate">allocate</h3>
 <p>
         <a data-fancybox="gallery" href="/image/202209292105552022-09-29-21-05-56.png">
-            <img class="mx-auto" alt="202209292105552022-09-29-21-05-56" src="/image/202209292105552022-09-29-21-05-56.png" />
+        
+            <img class="mx-auto img-float" alt="202209292105552022-09-29-21-05-56" src="/image/202209292105552022-09-29-21-05-56.png" />
+        
         </a>
     </p>
 <p>这个函数会分配一个大小小于 4096 的内存块（不存在符号位漏洞），而我们知道这个内存块会是从 top_chunk 中分割出来的：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209292115172022-09-29-21-15-18.png">
-            <img class="mx-auto" alt="202209292115172022-09-29-21-15-18" src="/image/202209292115172022-09-29-21-15-18.png" />
+        
+            <img class="mx-auto img-float" alt="202209292115172022-09-29-21-15-18" src="/image/202209292115172022-09-29-21-15-18.png" />
+        
         </a>
     </p>
 <p>然后，malloc 会返回指向 chunk 中<strong>size 的尾部，user_data 的首部，同时也是 fd 指针的首部的指针</strong>，而这个指针会存放在一个大数组中，而这个大数组是以三个单元为一个实体的，可以看作它是一个<strong>结构体数组</strong>，这个结构体数组的构造如下：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209292123132022-09-29-21-23-14.png">
-            <img class="mx-auto" alt="202209292123132022-09-29-21-23-14" src="/image/202209292123132022-09-29-21-23-14.png" />
+        
+            <img class="mx-auto img-float" alt="202209292123132022-09-29-21-23-14" src="/image/202209292123132022-09-29-21-23-14.png" />
+        
         </a>
     </p>
 <h3 id="fill">fill</h3>
 <p>
         <a data-fancybox="gallery" href="/image/202209292106262022-09-29-21-06-27.png">
-            <img class="mx-auto" alt="202209292106262022-09-29-21-06-27" src="/image/202209292106262022-09-29-21-06-27.png" />
+        
+            <img class="mx-auto img-float" alt="202209292106262022-09-29-21-06-27" src="/image/202209292106262022-09-29-21-06-27.png" />
+        
         </a>
     </p>
 <p>这个函数在检查内存是否可用（标志是否为 1）后会向对应索引的内存中填入任意大小的数据，这个数据<strong>长度是由用户随意指定的</strong>！！这里就出现了<strong>堆溢出漏洞</strong></p>
 <h3 id="free">Free</h3>
 <p>
         <a data-fancybox="gallery" href="/image/202209292106572022-09-29-21-06-57.png">
-            <img class="mx-auto" alt="202209292106572022-09-29-21-06-57" src="/image/202209292106572022-09-29-21-06-57.png" />
+        
+            <img class="mx-auto img-float" alt="202209292106572022-09-29-21-06-57" src="/image/202209292106572022-09-29-21-06-57.png" />
+        
         </a>
     </p>
 <p>在检查标志位是否为 1 后，它会将标识位、size 置零，并释放内存</p>
 <h3 id="dump">dump</h3>
 <p>
         <a data-fancybox="gallery" href="/image/202209292107322022-09-29-21-07-32.png">
-            <img class="mx-auto" alt="202209292107322022-09-29-21-07-32" src="/image/202209292107322022-09-29-21-07-32.png" />
+        
+            <img class="mx-auto img-float" alt="202209292107322022-09-29-21-07-32" src="/image/202209292107322022-09-29-21-07-32.png" />
+        
         </a>
     </p>
 <p>这个函数在检查标志位是否为 1 后，会将内存中的内容打印出来</p>
@@ -688,7 +713,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>那么我们可以先划出 4 个 0x10 的 chunk（size 位=prev_size+size+prev_inuse+0x10=0x20），再划出一块 0x80 大小的 chunk 用以放进 unsorted bin 中：</p>
 <p>
         <a data-fancybox="gallery" href="/image/tmp.drawio2022-09-30-15-48-51.png">
-            <img class="mx-auto" alt="tmp.drawio2022-09-30-15-48-51" src="/image/tmp.drawio2022-09-30-15-48-51.png" />
+        
+            <img class="mx-auto img-float" alt="tmp.drawio2022-09-30-15-48-51" src="/image/tmp.drawio2022-09-30-15-48-51.png" />
+        
         </a>
     </p>
 <p>因此我们可以初始分配五个 chunk：</p>
@@ -739,7 +766,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>我们可以通过覆写code段中的<code>__malloc_hook</code>函数来改变<code>malloc</code>的行为，这个函数的<a href="https://www.gnu.org/software/libc/manual/html_node/Hooks-for-Malloc.html">详细说明见此</a>，这里贴一段我们这个程序要用到的说明：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202210022048522022-10-02-20-48-53.png">
-            <img class="mx-auto" alt="202210022048522022-10-02-20-48-53" src="/image/202210022048522022-10-02-20-48-53.png" />
+        
+            <img class="mx-auto img-float" alt="202210022048522022-10-02-20-48-53" src="/image/202210022048522022-10-02-20-48-53.png" />
+        
         </a>
     </p>
 <p>可以看到，<code>__malloc_hook</code>函数的值是<code>malloc</code>会在它被call的时候使用的函数指针，所以，我们只需要更改<code>__malloc_hook</code>的值，我们就能更改<code>malloc</code>的行为</p>

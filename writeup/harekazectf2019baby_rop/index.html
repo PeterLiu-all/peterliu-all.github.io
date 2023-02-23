@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -554,7 +565,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="ida-查看程序伪代码">ida 查看程序伪代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/2902405-20221026161935830-84528978.png">
-            <img class="mx-auto" alt="202209111828592022-09-11-18-29-00" src="/image/2902405-20221026161935830-84528978.png" />
+        
+            <img class="mx-auto img-float" alt="202209111828592022-09-11-18-29-00" src="/image/2902405-20221026161935830-84528978.png" />
+        
         </a>
     </p>
 <p>有 scanf，有 printf，看起来可能是普通的栈溢出，我们可以调试看看</p>
@@ -569,7 +582,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>然后直接<code>r</code></p>
 <p>
         <a data-fancybox="gallery" href="/image/2902405-20221026161936861-967929500.png">
-            <img class="mx-auto" alt="202209111835432022-09-11-18-35-43" src="/image/2902405-20221026161936861-967929500.png" />
+        
+            <img class="mx-auto img-float" alt="202209111835432022-09-11-18-35-43" src="/image/2902405-20221026161936861-967929500.png" />
+        
         </a>
     </p>
 <p>然后我们看到栈情况是这样的：</p>
@@ -583,7 +598,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>作者此时心中一喜，连按<code>n</code>继续到<code>ret</code>指令，看一看此时<code>rsp</code>栈顶指针指向哪里</p>
 <p>
         <a data-fancybox="gallery" href="/image/2902405-20221026161937980-674504666.png">
-            <img class="mx-auto" alt="202209111838142022-09-11-18-38-14" src="/image/2902405-20221026161937980-674504666.png" />
+        
+            <img class="mx-auto img-float" alt="202209111838142022-09-11-18-38-14" src="/image/2902405-20221026161937980-674504666.png" />
+        
         </a>
     </p>
 <p>我们发现 return 值可以被我们栈溢出掉，于是我们可以用<code>cyclic -l gaaa</code>来看一看偏移量是多少：</p>
@@ -594,7 +611,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>在 ida 中找到<code>system</code>的地址：</p>
 <p>
         <a data-fancybox="gallery" href="/image/2902405-20221026161938417-2068553152.png">
-            <img class="mx-auto" alt="202209111842122022-09-11-18-42-12" src="/image/2902405-20221026161938417-2068553152.png" />
+        
+            <img class="mx-auto img-float" alt="202209111842122022-09-11-18-42-12" src="/image/2902405-20221026161938417-2068553152.png" />
+        
         </a>
     </p>
 <p><code>ROPgadget</code>寻找<code>/bin/sh</code>：</p>

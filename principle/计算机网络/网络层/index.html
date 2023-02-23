@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -701,7 +712,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="概述">概述</h2>
 <p>
         <a data-fancybox="gallery" href="/image/ce31ebc760c2472afa8373ecaec56d726269010ab7b5b505e3564606c2a73e8f.png">
-            <img class="mx-auto" alt="图 9" src="/image/ce31ebc760c2472afa8373ecaec56d726269010ab7b5b505e3564606c2a73e8f.png" />
+        
+            <img class="mx-auto img-float" alt="图 9" src="/image/ce31ebc760c2472afa8373ecaec56d726269010ab7b5b505e3564606c2a73e8f.png" />
+        
         </a>
     </p>
 <p>网络层从发送端到接收端传输数据段（segment）</p>
@@ -735,7 +748,9 @@ body::-webkit-scrollbar-thumb:hover {
 <ul>
 <li>
         <a data-fancybox="gallery" href="/image/73d452dfbd36c87f355d3b3a39ab1641fff9ef4de6ed818f1b5ae19ab8c5af0c.png">
-            <img class="mx-auto" alt="图 2" src="/image/73d452dfbd36c87f355d3b3a39ab1641fff9ef4de6ed818f1b5ae19ab8c5af0c.png" />
+        
+            <img class="mx-auto img-float" alt="图 2" src="/image/73d452dfbd36c87f355d3b3a39ab1641fff9ef4de6ed818f1b5ae19ab8c5af0c.png" />
+        
         </a>
     </li>
 </ul>
@@ -763,7 +778,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="网络层提供的两种分组交换的方法">网络层提供的两种分组交换的方法</h2>
 <p>
         <a data-fancybox="gallery" href="/image/0ad45f8fe3560e489006d5bac560a30c289fa203796eb0ce37d4796442eee15a.png">
-            <img class="mx-auto" alt="图 10" src="/image/0ad45f8fe3560e489006d5bac560a30c289fa203796eb0ce37d4796442eee15a.png" />
+        
+            <img class="mx-auto img-float" alt="图 10" src="/image/0ad45f8fe3560e489006d5bac560a30c289fa203796eb0ce37d4796442eee15a.png" />
+        
         </a>
     </p>
 <h3 id="数据报方法无连接服务现在使用的">数据报方法：无连接服务（现在使用的）</h3>
@@ -784,14 +801,18 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/75fe4c73d87b22d85127bcabfd2dbcfc5878c528ec6bd113ef45aeffbba6de8b.png">
-            <img class="mx-auto" alt="图 11" src="/image/75fe4c73d87b22d85127bcabfd2dbcfc5878c528ec6bd113ef45aeffbba6de8b.png" />
+        
+            <img class="mx-auto img-float" alt="图 11" src="/image/75fe4c73d87b22d85127bcabfd2dbcfc5878c528ec6bd113ef45aeffbba6de8b.png" />
+        
         </a>
     </p>
 <p>每个分组都基于分组的标签（虚电路标识符）被转发（这让源地址和目的地址好像变得无用）</p>
 <h3 id="两种方法相比较">两种方法相比较</h3>
 <p>
         <a data-fancybox="gallery" href="/image/495992c12b132d503f20b872a8155231e1606cf50b7fca5200765b47849847ec.png">
-            <img class="mx-auto" alt="图 12" src="/image/495992c12b132d503f20b872a8155231e1606cf50b7fca5200765b47849847ec.png" />
+        
+            <img class="mx-auto img-float" alt="图 12" src="/image/495992c12b132d503f20b872a8155231e1606cf50b7fca5200765b47849847ec.png" />
+        
         </a>
     </p>
 <h2 id="路由器架构">路由器架构</h2>
@@ -799,13 +820,17 @@ body::-webkit-scrollbar-thumb:hover {
 <h3 id="总体架构">总体架构</h3>
 <p>
         <a data-fancybox="gallery" href="/image/c42b9e2e3f0bf16d98b9ca48659d2aec0ef6ffbe204e9c5b23e29c6a73840698.png">
-            <img class="mx-auto" alt="图 3" src="/image/c42b9e2e3f0bf16d98b9ca48659d2aec0ef6ffbe204e9c5b23e29c6a73840698.png" />
+        
+            <img class="mx-auto img-float" alt="图 3" src="/image/c42b9e2e3f0bf16d98b9ca48659d2aec0ef6ffbe204e9c5b23e29c6a73840698.png" />
+        
         </a>
     </p>
 <h3 id="输入">输入</h3>
 <p>
         <a data-fancybox="gallery" href="/image/96ebe1e736ff5dad099f6af5b238cfc2a57dabb562f1023ada2e7cc86e6931b0.png">
-            <img class="mx-auto" alt="图 14" src="/image/96ebe1e736ff5dad099f6af5b238cfc2a57dabb562f1023ada2e7cc86e6931b0.png" />
+        
+            <img class="mx-auto img-float" alt="图 14" src="/image/96ebe1e736ff5dad099f6af5b238cfc2a57dabb562f1023ada2e7cc86e6931b0.png" />
+        
         </a>
     </p>
 <ul>
@@ -815,7 +840,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/b0b1b1acd293429bad52bbdbe7a7dab0ebc32723cfbeb861bdcfe3850c45a38c.png">
-            <img class="mx-auto" alt="图 16" src="/image/b0b1b1acd293429bad52bbdbe7a7dab0ebc32723cfbeb861bdcfe3850c45a38c.png" />
+        
+            <img class="mx-auto img-float" alt="图 16" src="/image/b0b1b1acd293429bad52bbdbe7a7dab0ebc32723cfbeb861bdcfe3850c45a38c.png" />
+        
         </a>
     </p>
 <h3 id="交换">交换</h3>
@@ -826,19 +853,25 @@ body::-webkit-scrollbar-thumb:hover {
 <p>纵横式交换机：每一个交叉点都使用微交换机</p>
 <p>
         <a data-fancybox="gallery" href="/image/ab174a123c0d556d2e59e4c9f5906e836af7c1fc890952c9ae025112826ff4bb.png">
-            <img class="mx-auto" alt="图 15" src="/image/ab174a123c0d556d2e59e4c9f5906e836af7c1fc890952c9ae025112826ff4bb.png" />
+        
+            <img class="mx-auto img-float" alt="图 15" src="/image/ab174a123c0d556d2e59e4c9f5906e836af7c1fc890952c9ae025112826ff4bb.png" />
+        
         </a>
     </p>
 <p>榕树交换机：多级交换机，每一级都有一个微开关</p>
 <p>
         <a data-fancybox="gallery" href="/image/c4da52f22f811f277a6a9b99a25c421ea08914975539d762bfc2d0fc7269847b.png">
-            <img class="mx-auto" alt="图 5" src="/image/c4da52f22f811f277a6a9b99a25c421ea08914975539d762bfc2d0fc7269847b.png" />
+        
+            <img class="mx-auto img-float" alt="图 5" src="/image/c4da52f22f811f277a6a9b99a25c421ea08914975539d762bfc2d0fc7269847b.png" />
+        
         </a>
     </p>
 <h3 id="输出">输出</h3>
 <p>
         <a data-fancybox="gallery" href="/image/d1457f6909604beeb79378f6a668bfae587cbcff98836662ececf4645517f3a5.png">
-            <img class="mx-auto" alt="图 4" src="/image/d1457f6909604beeb79378f6a668bfae587cbcff98836662ececf4645517f3a5.png" />
+        
+            <img class="mx-auto img-float" alt="图 4" src="/image/d1457f6909604beeb79378f6a668bfae587cbcff98836662ececf4645517f3a5.png" />
+        
         </a>
     </p>
 <p><em>产生的问题：</em></p>
@@ -853,7 +886,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>分类的标准可能是特殊标记、或其他首部信息。例如 IP 源地址、IP 目的地址、端口号等</p>
 <p>
         <a data-fancybox="gallery" href="/image/0411d35add608a763c68c2aa50425fbfbaa3ac76b7a50a54a07fde36e2c9ed58.png">
-            <img class="mx-auto" alt="图 6" src="/image/0411d35add608a763c68c2aa50425fbfbaa3ac76b7a50a54a07fde36e2c9ed58.png" />
+        
+            <img class="mx-auto img-float" alt="图 6" src="/image/0411d35add608a763c68c2aa50425fbfbaa3ac76b7a50a54a07fde36e2c9ed58.png" />
+        
         </a>
     </p>
 <p>其他还有轮询调度策略等</p>
@@ -866,7 +901,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/f3b93046532df1f5782c14fff232dcda476f0f47c44ca4667fe4d5d3b435bde5.png">
-            <img class="mx-auto" alt="图 17" src="/image/f3b93046532df1f5782c14fff232dcda476f0f47c44ca4667fe4d5d3b435bde5.png" />
+        
+            <img class="mx-auto img-float" alt="图 17" src="/image/f3b93046532df1f5782c14fff232dcda476f0f47c44ca4667fe4d5d3b435bde5.png" />
+        
         </a>
     </p>
 <p>利用 IP 协议就可以使这些性能各异的网络在网络层上<strong>看起来好像是一个统一的网络</strong>。这种使用 IP 协议的虚拟互连网络可简称为 <strong>IP 网</strong>（IP 网是虚拟的，但平常不必每次都强调“虚拟”二字）。</p>
@@ -879,13 +916,17 @@ body::-webkit-scrollbar-thumb:hover {
 </ol>
 <p>
         <a data-fancybox="gallery" href="/image/783dccced34c5855c536251e2eee7b8f5e94c5f145b94c4dc0a1e0024a503a1a.png">
-            <img class="mx-auto" alt="图 4" src="/image/783dccced34c5855c536251e2eee7b8f5e94c5f145b94c4dc0a1e0024a503a1a.png" />
+        
+            <img class="mx-auto img-float" alt="图 4" src="/image/783dccced34c5855c536251e2eee7b8f5e94c5f145b94c4dc0a1e0024a503a1a.png" />
+        
         </a>
     </p>
 <p>IP 层抽象的互联网却<strong>屏蔽了下层这些很复杂的细节</strong>。只要我们在网络层上讨论问题，就能够使用<strong>统一的、抽象的</strong> IP 地址研究主机和主机或路由器之间的通信</p>
 <p>
         <a data-fancybox="gallery" href="/image/a38b01a0929046b791467bd3c1cf429b45a45fe957537618376510cca645acfa.png">
-            <img class="mx-auto" alt="图 5" src="/image/a38b01a0929046b791467bd3c1cf429b45a45fe957537618376510cca645acfa.png" />
+        
+            <img class="mx-auto img-float" alt="图 5" src="/image/a38b01a0929046b791467bd3c1cf429b45a45fe957537618376510cca645acfa.png" />
+        
         </a>
     </p>
 <p>在链路层是看不到IP地址的，只能看到帧，然后把取出来的IP数据报抛给网络层去分析，让网络层不必关心链路上传播的细节。</p>
@@ -904,13 +945,17 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/5867bc90b52b2f5786ca906655cdb20340b628ef69c8fb963e95b0280c777d5d.png">
-            <img class="mx-auto" alt="图 19" src="/image/5867bc90b52b2f5786ca906655cdb20340b628ef69c8fb963e95b0280c777d5d.png" />
+        
+            <img class="mx-auto img-float" alt="图 19" src="/image/5867bc90b52b2f5786ca906655cdb20340b628ef69c8fb963e95b0280c777d5d.png" />
+        
         </a>
     </p>
 <p>网络号在整个互联网内是唯一的，主机号在当前网络下又是唯一的，因此 IP 地址就唯一了</p>
 <p>
         <a data-fancybox="gallery" href="/image/90f25771a8c60968eee7b87aaa71407097f70382e036880c0c871a86c65062a8.png">
-            <img class="mx-auto" alt="图 18" src="/image/90f25771a8c60968eee7b87aaa71407097f70382e036880c0c871a86c65062a8.png" />
+        
+            <img class="mx-auto img-float" alt="图 18" src="/image/90f25771a8c60968eee7b87aaa71407097f70382e036880c0c871a86c65062a8.png" />
+        
         </a>
     </p>
 <blockquote>
@@ -920,13 +965,17 @@ body::-webkit-scrollbar-thumb:hover {
 <p>IP 地址有 32 位，我们把每八位分为一个组，每一个组转化为十进制数，每个数之间用点号隔开，就成了 IP 地址</p>
 <p>
         <a data-fancybox="gallery" href="/image/3b91e0c8106b79f393f8d240df76d55c2a4aa24d62ad31e72b6bfb08085b5fbf.png">
-            <img class="mx-auto" alt="图 20" src="/image/3b91e0c8106b79f393f8d240df76d55c2a4aa24d62ad31e72b6bfb08085b5fbf.png" />
+        
+            <img class="mx-auto img-float" alt="图 20" src="/image/3b91e0c8106b79f393f8d240df76d55c2a4aa24d62ad31e72b6bfb08085b5fbf.png" />
+        
         </a>
     </p>
 <h6 id="常见的三类-ip-地址abc">常见的三类 IP 地址（A、B、C）</h6>
 <p>
         <a data-fancybox="gallery" href="/image/e902854daa333e73a42e57097c7668ec7ffa2940eeb75f54642f0764c4091b3d.png">
-            <img class="mx-auto" alt="图 1" src="/image/e902854daa333e73a42e57097c7668ec7ffa2940eeb75f54642f0764c4091b3d.png" />
+        
+            <img class="mx-auto img-float" alt="图 1" src="/image/e902854daa333e73a42e57097c7668ec7ffa2940eeb75f54642f0764c4091b3d.png" />
+        
         </a>
     </p>
 <blockquote>
@@ -937,7 +986,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>还有一些特殊的IP地址：</p>
 <p>
         <a data-fancybox="gallery" href="/image/1b0c32a47b1067a5eab67c372197314a8e3c0180921964d8ab138fdfbecdc578.png">
-            <img class="mx-auto" alt="图 2" src="/image/1b0c32a47b1067a5eab67c372197314a8e3c0180921964d8ab138fdfbecdc578.png" />
+        
+            <img class="mx-auto img-float" alt="图 2" src="/image/1b0c32a47b1067a5eab67c372197314a8e3c0180921964d8ab138fdfbecdc578.png" />
+        
         </a>
     </p>
 <h6 id="分类ip地址的特点">分类IP地址的特点</h6>
@@ -962,7 +1013,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/d6f8e788730ddc935072c7247efca35fee85af80882a1ce5e0b643d521580658.png">
-            <img class="mx-auto" alt="图 3" src="/image/d6f8e788730ddc935072c7247efca35fee85af80882a1ce5e0b643d521580658.png" />
+        
+            <img class="mx-auto img-float" alt="图 3" src="/image/d6f8e788730ddc935072c7247efca35fee85af80882a1ce5e0b643d521580658.png" />
+        
         </a>
     </p>
 <h6 id="分类ip的缺点">分类IP的缺点</h6>
@@ -977,7 +1030,9 @@ body::-webkit-scrollbar-thumb:hover {
 -&gt; 划分子网：网络号+<strong>子网号</strong>+主机号</p>
 <p>
         <a data-fancybox="gallery" href="/image/6aaf1f2099c517592116675547b8e45cc204ae79c1f6b5cc58eb3df26e87631b.png">
-            <img class="mx-auto" alt="图 6" src="/image/6aaf1f2099c517592116675547b8e45cc204ae79c1f6b5cc58eb3df26e87631b.png" />
+        
+            <img class="mx-auto img-float" alt="图 6" src="/image/6aaf1f2099c517592116675547b8e45cc204ae79c1f6b5cc58eb3df26e87631b.png" />
+        
         </a>
     </p>
 <p><em>基本思路：</em></p>
@@ -988,7 +1043,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/3353348fe21096a272e131b97f905550f8005ab69df38f0bc5fcf49f215fdc13.png">
-            <img class="mx-auto" alt="图 7" src="/image/3353348fe21096a272e131b97f905550f8005ab69df38f0bc5fcf49f215fdc13.png" />
+        
+            <img class="mx-auto img-float" alt="图 7" src="/image/3353348fe21096a272e131b97f905550f8005ab69df38f0bc5fcf49f215fdc13.png" />
+        
         </a>
     </p>
 <blockquote>
@@ -1009,14 +1066,18 @@ body::-webkit-scrollbar-thumb:hover {
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/365d8c9998b565dc5b063992611caf7d10d4354a0d313e4326c11e8c2bacf94e.png">
-            <img class="mx-auto" alt="图 8" src="/image/365d8c9998b565dc5b063992611caf7d10d4354a0d313e4326c11e8c2bacf94e.png" />
+        
+            <img class="mx-auto img-float" alt="图 8" src="/image/365d8c9998b565dc5b063992611caf7d10d4354a0d313e4326c11e8c2bacf94e.png" />
+        
         </a>
     </p>
 <p>把IP地址与掩码进行逐位的与运算，就可以把主机号屏蔽，留下网络号+子网号</p>
 <p>A、B、C类IP地址的默认子网掩码：</p>
 <p>
         <a data-fancybox="gallery" href="/image/f98e7a8aa43c745c1daad863d1c0184508ea5f760b729980b6f429112aa063e2.png">
-            <img class="mx-auto" alt="图 9" src="/image/f98e7a8aa43c745c1daad863d1c0184508ea5f760b729980b6f429112aa063e2.png" />
+        
+            <img class="mx-auto img-float" alt="图 9" src="/image/f98e7a8aa43c745c1daad863d1c0184508ea5f760b729980b6f429112aa063e2.png" />
+        
         </a>
     </p>
 <p>因此，各地方就可以使用不同的子网掩码，从而将子网号从主机号中区分出来</p>
@@ -1031,7 +1092,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>在采用固定长度子网时，所划分的所有子网的子网掩码都是相同的</p>
 <p>
         <a data-fancybox="gallery" href="/image/552e2f1de71fe8c5161a313df71e4f9beea942a259fbbf68874db9863383f10a.png">
-            <img class="mx-auto" alt="图 10" src="/image/552e2f1de71fe8c5161a313df71e4f9beea942a259fbbf68874db9863383f10a.png" />
+        
+            <img class="mx-auto img-float" alt="图 10" src="/image/552e2f1de71fe8c5161a313df71e4f9beea942a259fbbf68874db9863383f10a.png" />
+        
         </a>
     </p>
 <h5 id="超网无分类编址cidr--classless-inter-domain-routing">超网（无分类编址）CIDR – Classless Inter-Domain Routing</h5>
@@ -1050,7 +1113,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/1038f1e02d35a87e554c4dde87d65f9acc3f0808c613c57edcb393c76e747537.png">
-            <img class="mx-auto" alt="图 11" src="/image/1038f1e02d35a87e554c4dde87d65f9acc3f0808c613c57edcb393c76e747537.png" />
+        
+            <img class="mx-auto img-float" alt="图 11" src="/image/1038f1e02d35a87e554c4dde87d65f9acc3f0808c613c57edcb393c76e747537.png" />
+        
         </a>
     </p>
 <p>CIDR 使用 <strong>“斜线记法”(slash notation)，又称为 CIDR 记法</strong>：</p>
@@ -1067,14 +1132,18 @@ body::-webkit-scrollbar-thumb:hover {
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/50fe00ff78c85d882ae829f0ca22094964ac09f8d8acb8e8055b69a0a6a552b0.png">
-            <img class="mx-auto" alt="图 12" src="/image/50fe00ff78c85d882ae829f0ca22094964ac09f8d8acb8e8055b69a0a6a552b0.png" />
+        
+            <img class="mx-auto img-float" alt="图 12" src="/image/50fe00ff78c85d882ae829f0ca22094964ac09f8d8acb8e8055b69a0a6a552b0.png" />
+        
         </a>
     </p>
 <h6 id="路由聚合-route-aggregation构成超网-supernetting">路由聚合 (route aggregation)/构成超网 (supernetting)</h6>
 <p><strong>一个 CIDR 地址块可以表示很多地址，这种地址的聚合常称为路由聚合</strong></p>
 <p>
         <a data-fancybox="gallery" href="/image/40c1814b08052ff0c09ffa2940cdb6f42764b307dcd09fc90e051b697255886e.png">
-            <img class="mx-auto" alt="图 1" src="/image/40c1814b08052ff0c09ffa2940cdb6f42764b307dcd09fc90e051b697255886e.png" />
+        
+            <img class="mx-auto img-float" alt="图 1" src="/image/40c1814b08052ff0c09ffa2940cdb6f42764b307dcd09fc90e051b697255886e.png" />
+        
         </a>
     </p>
 <p>由于相同的IP地址由于网络前缀的不同可以表达不同的意思，而网络前缀的位数又极为自由，所以极大地扩展了IP地址的数量</p>
@@ -1085,7 +1154,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/453cd03b0aedccb5a33c41451c43a4b6a62a1b5802c3f7652257d7ec78077949.png">
-            <img class="mx-auto" alt="图 13" src="/image/453cd03b0aedccb5a33c41451c43a4b6a62a1b5802c3f7652257d7ec78077949.png" />
+        
+            <img class="mx-auto img-float" alt="图 13" src="/image/453cd03b0aedccb5a33c41451c43a4b6a62a1b5802c3f7652257d7ec78077949.png" />
+        
         </a>
     </p>
 <h6 id="cidr的简写">CIDR的简写</h6>
@@ -1102,7 +1173,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h6 id="地址聚合">地址聚合</h6>
 <p>
         <a data-fancybox="gallery" href="/image/3631df4f5fecce80a5fd834489bbaaddfda72c371bd77d1464c179b6c3852566.png">
-            <img class="mx-auto" alt="图 2" src="/image/3631df4f5fecce80a5fd834489bbaaddfda72c371bd77d1464c179b6c3852566.png" />
+        
+            <img class="mx-auto img-float" alt="图 2" src="/image/3631df4f5fecce80a5fd834489bbaaddfda72c371bd77d1464c179b6c3852566.png" />
+        
         </a>
     </p>
 <p>这样子路由器就只需要记住<code>206.0.68.0/22</code>就🆗了，剩下大学各个系的IP地址怎么样由大学自己确定，这样路由器的负担就减少了。</p>
@@ -1111,12 +1184,16 @@ body::-webkit-scrollbar-thumb:hover {
 <h4 id="首部">首部</h4>
 <p>
         <a data-fancybox="gallery" href="/image/0b3251fe8d73bc48f64d11a52e0431ce1917c4d57ccf6dae8e91d1bc0384e483.png">
-            <img class="mx-auto" alt="图 4" src="/image/0b3251fe8d73bc48f64d11a52e0431ce1917c4d57ccf6dae8e91d1bc0384e483.png" />
+        
+            <img class="mx-auto img-float" alt="图 4" src="/image/0b3251fe8d73bc48f64d11a52e0431ce1917c4d57ccf6dae8e91d1bc0384e483.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/2752dab706b0d6f960cc579ae2335c263baf842b03a39da05f7c8fa66af65994.png">
-            <img class="mx-auto" alt="图 3" src="/image/2752dab706b0d6f960cc579ae2335c263baf842b03a39da05f7c8fa66af65994.png" />
+        
+            <img class="mx-auto img-float" alt="图 3" src="/image/2752dab706b0d6f960cc579ae2335c263baf842b03a39da05f7c8fa66af65994.png" />
+        
         </a>
     </p>
 <p>（每一行是4字节，固定部分一共五行，一共20字节）</p>
@@ -1146,7 +1223,9 @@ body::-webkit-scrollbar-thumb:hover {
 <ul>
 <li>
         <a data-fancybox="gallery" href="/image/c0668d1a599a1c120bf575d0a2634249d1c43818551d4054f225e77ffdcadc43.png">
-            <img class="mx-auto" alt="图 5" src="/image/c0668d1a599a1c120bf575d0a2634249d1c43818551d4054f225e77ffdcadc43.png" />
+        
+            <img class="mx-auto img-float" alt="图 5" src="/image/c0668d1a599a1c120bf575d0a2634249d1c43818551d4054f225e77ffdcadc43.png" />
+        
         </a>
     </li>
 <li>分片主要是为了满足<strong>链路层的限制</strong></li>
@@ -1212,7 +1291,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h3 id="专用于本地地址的地址块">专用于本地地址的地址块</h3>
 <p>
         <a data-fancybox="gallery" href="/image/aa9f3c6ffc9555a1727b8780ff9727a46ecb84dd6aa0b418bee107ff8e9eac55.png">
-            <img class="mx-auto" alt="图 6" src="/image/aa9f3c6ffc9555a1727b8780ff9727a46ecb84dd6aa0b418bee107ff8e9eac55.png" />
+        
+            <img class="mx-auto img-float" alt="图 6" src="/image/aa9f3c6ffc9555a1727b8780ff9727a46ecb84dd6aa0b418bee107ff8e9eac55.png" />
+        
         </a>
     </p>
 <ul>
@@ -1234,7 +1315,9 @@ NAPT：加上端口一起转换</p>
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/da643d03bd8e1dfeb2d630f2f7da7c4b1a791f97c18945ac55e93f32688d2efd.png">
-            <img class="mx-auto" alt="图 7" src="/image/da643d03bd8e1dfeb2d630f2f7da7c4b1a791f97c18945ac55e93f32688d2efd.png" />
+        
+            <img class="mx-auto img-float" alt="图 7" src="/image/da643d03bd8e1dfeb2d630f2f7da7c4b1a791f97c18945ac55e93f32688d2efd.png" />
+        
         </a>
     </p>
 <p>如果没有NAT，主机A可以向主机B发送数据报，但是主机B发不回来，因为目的地址是本地地址</p>
@@ -1243,7 +1326,9 @@ NAPT：加上端口一起转换</p>
 <p>当接收时，就根据NAT地址转换表将数据报转发给主机A</p>
 <p>
         <a data-fancybox="gallery" href="/image/21ae099ed68e2e04d8b49911b397b4d0317dc309490d183b1b6423069c86365c.png">
-            <img class="mx-auto" alt="图 9" src="/image/21ae099ed68e2e04d8b49911b397b4d0317dc309490d183b1b6423069c86365c.png" />
+        
+            <img class="mx-auto img-float" alt="图 9" src="/image/21ae099ed68e2e04d8b49911b397b4d0317dc309490d183b1b6423069c86365c.png" />
+        
         </a>
     </p>
 <h4 id="纯nat的局限">纯NAT的局限</h4>
@@ -1256,12 +1341,16 @@ NAPT：加上端口一起转换</p>
 <p>本地地址+端口号 -&gt; 全球地址+新端口号</p>
 <p>
         <a data-fancybox="gallery" href="/image/20793d46bf23b4daa1d8ada8af763a5e9ee02dc4e5168f860ffc44e9b2c9ed90.png">
-            <img class="mx-auto" alt="图 8" src="/image/20793d46bf23b4daa1d8ada8af763a5e9ee02dc4e5168f860ffc44e9b2c9ed90.png" />
+        
+            <img class="mx-auto img-float" alt="图 8" src="/image/20793d46bf23b4daa1d8ada8af763a5e9ee02dc4e5168f860ffc44e9b2c9ed90.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/d9cccbea02e934b740e85ba0be53607fffe5668534a6caf408db7d4f5ba9f385.png">
-            <img class="mx-auto" alt="图 10" src="/image/d9cccbea02e934b740e85ba0be53607fffe5668534a6caf408db7d4f5ba9f385.png" />
+        
+            <img class="mx-auto img-float" alt="图 10" src="/image/d9cccbea02e934b740e85ba0be53607fffe5668534a6caf408db7d4f5ba9f385.png" />
+        
         </a>
     </p>
 <p>因此，NAPT是用端口号来区分不同的主机，而端口号又占用16位，可以支持六万多台本地主机</p>
@@ -1290,7 +1379,9 @@ NAPT：加上端口一起转换</p>
 <p>IPv6数据报<strong>由基本首部和有效载荷两部分组成</strong>，有效载荷中允许有零个或多个扩展首部 (extension header)，再后面是数据部分</p>
 <p>
         <a data-fancybox="gallery" href="/image/5b8b5c5cef55f98b0602cf7530d7964164eb52d957c54c239bb2d261572b1707.png">
-            <img class="mx-auto" alt="图 1" src="/image/5b8b5c5cef55f98b0602cf7530d7964164eb52d957c54c239bb2d261572b1707.png" />
+        
+            <img class="mx-auto img-float" alt="图 1" src="/image/5b8b5c5cef55f98b0602cf7530d7964164eb52d957c54c239bb2d261572b1707.png" />
+        
         </a>
     </p>
 <p>与IPv4首部的差别是：</p>
@@ -1307,7 +1398,9 @@ NAPT：加上端口一起转换</p>
 <p>从而IPv6 首部的字段数减少到只有 8 个</p>
 <p>
         <a data-fancybox="gallery" href="/image/5cbdeb2396120c9b96eede10e3a387c7c97f81a05c2bcd09d14f2a8ee8822142.png">
-            <img class="mx-auto" alt="图 2" src="/image/5cbdeb2396120c9b96eede10e3a387c7c97f81a05c2bcd09d14f2a8ee8822142.png" />
+        
+            <img class="mx-auto img-float" alt="图 2" src="/image/5cbdeb2396120c9b96eede10e3a387c7c97f81a05c2bcd09d14f2a8ee8822142.png" />
+        
         </a>
     </p>
 <p>IPv6 把原来 IPv4 首部中选项的功能都放在扩展首部中，<strong>并将扩展首部留给路径两端的源站和目的站的主机来处理</strong>（把智能的事情交给端系统），经过的路由器都不处理这些扩展首部</p>
@@ -1338,7 +1431,9 @@ NAPT：加上端口一起转换</p>
 <h5 id="分类">分类</h5>
 <p>
         <a data-fancybox="gallery" href="/image/48554d2d6f2c4259f60de1a936ec3aeced67fbc4fe2375d4e1a4923e9b1c79c0.png">
-            <img class="mx-auto" alt="图 3" src="/image/48554d2d6f2c4259f60de1a936ec3aeced67fbc4fe2375d4e1a4923e9b1c79c0.png" />
+        
+            <img class="mx-auto img-float" alt="图 3" src="/image/48554d2d6f2c4259f60de1a936ec3aeced67fbc4fe2375d4e1a4923e9b1c79c0.png" />
+        
         </a>
     </p>
 <ul>
@@ -1350,7 +1445,9 @@ NAPT：加上端口一起转换</p>
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/ea180098414bdd8044548f956fcd4007df3d0524175cc28680916a2acd6c36f3.png">
-            <img class="mx-auto" alt="图 4" src="/image/ea180098414bdd8044548f956fcd4007df3d0524175cc28680916a2acd6c36f3.png" />
+        
+            <img class="mx-auto img-float" alt="图 4" src="/image/ea180098414bdd8044548f956fcd4007df3d0524175cc28680916a2acd6c36f3.png" />
+        
         </a>
     </p>
 <h3 id="向ipv6过渡">向IPv6过渡</h3>
@@ -1362,7 +1459,9 @@ NAPT：加上端口一起转换</p>
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/bd8c23f82dedf46a0aeb38a823aa3ea7d2371b829a33f1414f61427ac61fce78.png">
-            <img class="mx-auto" alt="图 5" src="/image/bd8c23f82dedf46a0aeb38a823aa3ea7d2371b829a33f1414f61427ac61fce78.png" />
+        
+            <img class="mx-auto img-float" alt="图 5" src="/image/bd8c23f82dedf46a0aeb38a823aa3ea7d2371b829a33f1414f61427ac61fce78.png" />
+        
         </a>
     </p>
 <h4 id="隧道技术">隧道技术</h4>
@@ -1372,7 +1471,9 @@ NAPT：加上端口一起转换</p>
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/52204acfea3daba97aa4de9367d45b769521e63a01563862dcf8d86043f70ae8.png">
-            <img class="mx-auto" alt="图 6" src="/image/52204acfea3daba97aa4de9367d45b769521e63a01563862dcf8d86043f70ae8.png" />
+        
+            <img class="mx-auto img-float" alt="图 6" src="/image/52204acfea3daba97aa4de9367d45b769521e63a01563862dcf8d86043f70ae8.png" />
+        
         </a>
     </p>
 <h2 id="路由协议算法">路由协议/算法</h2>
@@ -1402,7 +1503,9 @@ NAPT：加上端口一起转换</p>
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/dfe9eeadfdf5eec3c66da09d1aaab528fcb641ec4b993c7a0cfaf4fc35e31093.png">
-            <img class="mx-auto" alt="图 8" src="/image/dfe9eeadfdf5eec3c66da09d1aaab528fcb641ec4b993c7a0cfaf4fc35e31093.png" />
+        
+            <img class="mx-auto img-float" alt="图 8" src="/image/dfe9eeadfdf5eec3c66da09d1aaab528fcb641ec4b993c7a0cfaf4fc35e31093.png" />
+        
         </a>
     </p>
 <h4 id="两类路由选择协议">两类路由选择协议</h4>
@@ -1416,7 +1519,9 @@ NAPT：加上端口一起转换</p>
 <p>自治系统之间的路由选择也叫做<strong>域间路由选择(interdomain routing)</strong>，而在自治系统内部的路由选择叫做<strong>域内路由选择(intradomain routing)</strong></p>
 <p>
         <a data-fancybox="gallery" href="/image/dc79eb3f1ed89c4c005623e033497db6d2a6fab1ded5b33f9ff8f230765aecb4.png">
-            <img class="mx-auto" alt="图 7" src="/image/dc79eb3f1ed89c4c005623e033497db6d2a6fab1ded5b33f9ff8f230765aecb4.png" />
+        
+            <img class="mx-auto img-float" alt="图 7" src="/image/dc79eb3f1ed89c4c005623e033497db6d2a6fab1ded5b33f9ff8f230765aecb4.png" />
+        
         </a>
     </p>
 <h5 id="内部网关协议路由信息协议-rip协议">【内部网关协议】路由信息协议 RIP协议</h5>
@@ -1454,18 +1559,24 @@ NAPT：加上端口一起转换</p>
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/14b62b546617cec7e2c75eebdc6c5d5ae23e16c9db9bd3d31a9a95b69707039d.png">
-            <img class="mx-auto" alt="图 1" src="/image/14b62b546617cec7e2c75eebdc6c5d5ae23e16c9db9bd3d31a9a95b69707039d.png" />
+        
+            <img class="mx-auto img-float" alt="图 1" src="/image/14b62b546617cec7e2c75eebdc6c5d5ae23e16c9db9bd3d31a9a95b69707039d.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/8e7ff26e059ba4a572299f6f59003bfb4757997a015a0aeeeb29bb5c855a18b7.png">
-            <img class="mx-auto" alt="图 2" src="/image/8e7ff26e059ba4a572299f6f59003bfb4757997a015a0aeeeb29bb5c855a18b7.png" />
+        
+            <img class="mx-auto img-float" alt="图 2" src="/image/8e7ff26e059ba4a572299f6f59003bfb4757997a015a0aeeeb29bb5c855a18b7.png" />
+        
         </a>
     </p>
 <h6 id="rip2协议报文格式">RIP2协议报文格式</h6>
 <p>
         <a data-fancybox="gallery" href="/image/b40e3cf1afcf6f3c896cc37a0d6a00023a800e6de2d425c9b2ad89c1e393de44.png">
-            <img class="mx-auto" alt="图 3" src="/image/b40e3cf1afcf6f3c896cc37a0d6a00023a800e6de2d425c9b2ad89c1e393de44.png" />
+        
+            <img class="mx-auto img-float" alt="图 3" src="/image/b40e3cf1afcf6f3c896cc37a0d6a00023a800e6de2d425c9b2ad89c1e393de44.png" />
+        
         </a>
     </p>
 <h6 id="rip协议的优缺点">RIP协议的优缺点</h6>
@@ -1508,7 +1619,9 @@ NAPT：加上端口一起转换</p>
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/ba1bd34c6ebab7cf490db7216ed6ed5606c13d6c3ec6d325e6a348ab48de835d.png">
-            <img class="mx-auto" alt="图 4" src="/image/ba1bd34c6ebab7cf490db7216ed6ed5606c13d6c3ec6d325e6a348ab48de835d.png" />
+        
+            <img class="mx-auto img-float" alt="图 4" src="/image/ba1bd34c6ebab7cf490db7216ed6ed5606c13d6c3ec6d325e6a348ab48de835d.png" />
+        
         </a>
     </p>
 <blockquote>
@@ -1531,7 +1644,9 @@ NAPT：加上端口一起转换</p>
 <h6 id="ospf分组格式">OSPF分组格式</h6>
 <p>
         <a data-fancybox="gallery" href="/image/7fc50ff66905d2fa597b0fa3cecea533efa5ec93a9218cb61a80f68d649a4922.png">
-            <img class="mx-auto" alt="图 5" src="/image/7fc50ff66905d2fa597b0fa3cecea533efa5ec93a9218cb61a80f68d649a4922.png" />
+        
+            <img class="mx-auto img-float" alt="图 5" src="/image/7fc50ff66905d2fa597b0fa3cecea533efa5ec93a9218cb61a80f68d649a4922.png" />
+        
         </a>
     </p>
 <p><em>五种类型：</em></p>
@@ -1544,7 +1659,9 @@ NAPT：加上端口一起转换</p>
 </ol>
 <p>
         <a data-fancybox="gallery" href="/image/61ad246db9c5ec638140554eaba176b19241bddda189d22bf0f6bb26ce9b699d.png">
-            <img class="mx-auto" alt="图 6" src="/image/61ad246db9c5ec638140554eaba176b19241bddda189d22bf0f6bb26ce9b699d.png" />
+        
+            <img class="mx-auto img-float" alt="图 6" src="/image/61ad246db9c5ec638140554eaba176b19241bddda189d22bf0f6bb26ce9b699d.png" />
+        
         </a>
     </p>
 <h6 id="指定的路由器">指定的路由器</h6>
@@ -1555,7 +1672,9 @@ NAPT：加上端口一起转换</p>
 <h6 id="与rip的对比">与RIP的对比</h6>
 <p>
         <a data-fancybox="gallery" href="/image/4e9f203eb82bf1218de5d5f3590af08eb3a3307178b0c6eb1f3409ab7d930ac8.png">
-            <img class="mx-auto" alt="图 7" src="/image/4e9f203eb82bf1218de5d5f3590af08eb3a3307178b0c6eb1f3409ab7d930ac8.png" />
+        
+            <img class="mx-auto img-float" alt="图 7" src="/image/4e9f203eb82bf1218de5d5f3590af08eb3a3307178b0c6eb1f3409ab7d930ac8.png" />
+        
         </a>
     </p>
 <h5 id="外部网关协议bgp协议">【外部网关协议】BGP协议</h5>
@@ -1574,18 +1693,24 @@ NAPT：加上端口一起转换</p>
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/69bb373d4bcad5dbec330969dc44e4ca26deccde8279bb78ac9d4fe48aad4988.png">
-            <img class="mx-auto" alt="图 8" src="/image/69bb373d4bcad5dbec330969dc44e4ca26deccde8279bb78ac9d4fe48aad4988.png" />
+        
+            <img class="mx-auto img-float" alt="图 8" src="/image/69bb373d4bcad5dbec330969dc44e4ca26deccde8279bb78ac9d4fe48aad4988.png" />
+        
         </a>
     </p>
 <h6 id="bgp发言人交换路径向量">BGP发言人交换路径向量</h6>
 <p>
         <a data-fancybox="gallery" href="/image/282d3f93459e291ecb3818d0f50d2010fe167e4b88290fb389aa31e3630a4b05.png">
-            <img class="mx-auto" alt="图 9" src="/image/282d3f93459e291ecb3818d0f50d2010fe167e4b88290fb389aa31e3630a4b05.png" />
+        
+            <img class="mx-auto img-float" alt="图 9" src="/image/282d3f93459e291ecb3818d0f50d2010fe167e4b88290fb389aa31e3630a4b05.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/4c3d73c00b9cf5e0d9d996a57a80db79a3d31c8d2ace85948c88d6c3d1eccc3b.png">
-            <img class="mx-auto" alt="图 10" src="/image/4c3d73c00b9cf5e0d9d996a57a80db79a3d31c8d2ace85948c88d6c3d1eccc3b.png" />
+        
+            <img class="mx-auto img-float" alt="图 10" src="/image/4c3d73c00b9cf5e0d9d996a57a80db79a3d31c8d2ace85948c88d6c3d1eccc3b.png" />
+        
         </a>
     </p>
 <h6 id="bgp协议的特点">BGP协议的特点</h6>
@@ -1595,14 +1720,18 @@ NAPT：加上端口一起转换</p>
 <h5 id="网络的图的抽象">网络的图的抽象</h5>
 <p>
         <a data-fancybox="gallery" href="/image/fcd52c1d715b11587caae56d2283628da91ae9d5047963856063db957ec36ea5.png">
-            <img class="mx-auto" alt="图 9" src="/image/fcd52c1d715b11587caae56d2283628da91ae9d5047963856063db957ec36ea5.png" />
+        
+            <img class="mx-auto img-float" alt="图 9" src="/image/fcd52c1d715b11587caae56d2283628da91ae9d5047963856063db957ec36ea5.png" />
+        
         </a>
     </p>
 <h5 id="链路成本">链路成本</h5>
 <p>要找到从起点到终点的最小成本的路径，这就是路由算法需要解决的问题</p>
 <p>
         <a data-fancybox="gallery" href="/image/51f86a651580e5f62324688afdaee4ee0bd6ffd098f06b3f9531a8a83d3e4f64.png">
-            <img class="mx-auto" alt="图 10" src="/image/51f86a651580e5f62324688afdaee4ee0bd6ffd098f06b3f9531a8a83d3e4f64.png" />
+        
+            <img class="mx-auto img-float" alt="图 10" src="/image/51f86a651580e5f62324688afdaee4ee0bd6ffd098f06b3f9531a8a83d3e4f64.png" />
+        
         </a>
     </p>
 <h5 id="路由算法的分类">路由算法的分类</h5>
@@ -1614,28 +1743,38 @@ NAPT：加上端口一起转换</p>
 <h5 id="链路状态算法">链路状态算法</h5>
 <p>
         <a data-fancybox="gallery" href="/image/a423e68a6196c1f4391408d07ff155855ac765be1c27c7e78a3b1dac28b9bf3a.png">
-            <img class="mx-auto" alt="图 11" src="/image/a423e68a6196c1f4391408d07ff155855ac765be1c27c7e78a3b1dac28b9bf3a.png" />
+        
+            <img class="mx-auto img-float" alt="图 11" src="/image/a423e68a6196c1f4391408d07ff155855ac765be1c27c7e78a3b1dac28b9bf3a.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/df28671f24d99be42f4c59f78f34c682cbf92640a69dbac58c8593440880f4da.png">
-            <img class="mx-auto" alt="图 12" src="/image/df28671f24d99be42f4c59f78f34c682cbf92640a69dbac58c8593440880f4da.png" />
+        
+            <img class="mx-auto img-float" alt="图 12" src="/image/df28671f24d99be42f4c59f78f34c682cbf92640a69dbac58c8593440880f4da.png" />
+        
         </a>
     </p>
 <h5 id="距离向量算法">距离向量算法</h5>
 <p>
         <a data-fancybox="gallery" href="/image/d1e2fda3cd5a2c7034d3f7d33bec5343b57fbc1a212ac206ecad4b160070e062.png">
-            <img class="mx-auto" alt="图 13" src="/image/d1e2fda3cd5a2c7034d3f7d33bec5343b57fbc1a212ac206ecad4b160070e062.png" />
+        
+            <img class="mx-auto img-float" alt="图 13" src="/image/d1e2fda3cd5a2c7034d3f7d33bec5343b57fbc1a212ac206ecad4b160070e062.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/c2db7637c6bf88e69153a54cd401e04340db87364ba1b944f295196514be7962.png">
-            <img class="mx-auto" alt="图 14" src="/image/c2db7637c6bf88e69153a54cd401e04340db87364ba1b944f295196514be7962.png" />
+        
+            <img class="mx-auto img-float" alt="图 14" src="/image/c2db7637c6bf88e69153a54cd401e04340db87364ba1b944f295196514be7962.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/1e3750090a16286bb34050d9a5755124f7f195feddb9199dac419b922e246f48.png">
-            <img class="mx-auto" alt="图 15" src="/image/1e3750090a16286bb34050d9a5755124f7f195feddb9199dac419b922e246f48.png" />
+        
+            <img class="mx-auto img-float" alt="图 15" src="/image/1e3750090a16286bb34050d9a5755124f7f195feddb9199dac419b922e246f48.png" />
+        
         </a>
     </p>
 <p>当链路成本发生变化时：</p>

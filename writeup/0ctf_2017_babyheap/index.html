@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -552,20 +563,26 @@ body::-webkit-scrollbar-thumb:hover {
 <h1 id="checksec查看程序架构">checksec查看程序架构</h1>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230110195458.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230110195458.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230110195458.png" />
+        
         </a>
     </p>
 <h1 id="ida查看伪c代码">ida查看伪C代码</h1>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230110195918.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230110195918.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230110195918.png" />
+        
         </a>
     </p>
 <p>典型菜单题，比较特殊的是，它使用了一个结构体数组，每个结构体内的content域中保存一个指向堆内存的指针</p>
 <h2 id="init_0函数">init_0函数</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230110211809.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230110211809.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230110211809.png" />
+        
         </a>
     </p>
 <ol>
@@ -611,33 +628,43 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="allocate">allocate</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230110212358.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230110212358.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230110212358.png" />
+        
         </a>
     </p>
 <p>其中struc结构体为：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230110212550.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230110212550.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230110212550.png" />
+        
         </a>
     </p>
 <h2 id="change">change</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230110212414.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230110212414.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230110212414.png" />
+        
         </a>
     </p>
 <p>这个函数可以实现任意长度写，这样我们就可以修改任意chunk的size位</p>
 <h2 id="remove">remove</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230110212442.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230110212442.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230110212442.png" />
+        
         </a>
     </p>
 <p>free后置零，防止了UAF和double free</p>
 <h2 id="show">show</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230110212510.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230110212510.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230110212510.png" />
+        
         </a>
     </p>
 <p>这里会打印出size个字符，不论是否是<code>\x00</code></p>

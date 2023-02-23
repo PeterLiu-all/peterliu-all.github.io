@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -808,12 +819,16 @@ body::-webkit-scrollbar-thumb:hover {
 <h4 id="bss节">.bss节</h4>
 <p>
         <a data-fancybox="gallery" href="202209161425002022-09-16-14-25-01.png">
-            <img class="mx-auto" alt="202209161425002022-09-16-14-25-01" src="202209161425002022-09-16-14-25-01.png" />
+        
+            <img class="mx-auto img-float" alt="202209161425002022-09-16-14-25-01" src="202209161425002022-09-16-14-25-01.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="202209161433152022-09-16-14-33-15.png">
-            <img class="mx-auto" alt="202209161433152022-09-16-14-33-15" src="202209161433152022-09-16-14-33-15.png" />
+        
+            <img class="mx-auto img-float" alt="202209161433152022-09-16-14-33-15" src="202209161433152022-09-16-14-33-15.png" />
+        
         </a>
     </p>
 <p>.bss节中保存了</p>
@@ -825,7 +840,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>它为什么被称为<code>bss</code>呢？请看下图：</p>
 <p>
         <a data-fancybox="gallery" href="202209161427262022-09-16-14-27-27.png">
-            <img class="mx-auto" alt="202209161427262022-09-16-14-27-27" src="202209161427262022-09-16-14-27-27.png" />
+        
+            <img class="mx-auto img-float" alt="202209161427262022-09-16-14-27-27" src="202209161427262022-09-16-14-27-27.png" />
+        
         </a>
     </p>
 <p>bss原本是指 block storage start 块状存储起点（渣翻请勿在意）（或者block started by symbol），但是为了和.data节区分，可以记作 better save space 更优保存空间</p>
@@ -837,7 +854,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>.got和.plt的关系类似于：</p>
 <p>
         <a data-fancybox="gallery" href="GOT&amp;PLT.drawio2022-09-16-14-57-36.png">
-            <img class="mx-auto" alt="GOT&amp;amp;PLT.drawio2022-09-16-14-57-36" src="GOT&amp;PLT.drawio2022-09-16-14-57-36.png" />
+        
+            <img class="mx-auto img-float" alt="GOT&amp;amp;PLT.drawio2022-09-16-14-57-36" src="GOT&amp;PLT.drawio2022-09-16-14-57-36.png" />
+        
         </a>
     </p>
 <p>.got中<strong>存储的是一块空间的地址</strong>，这块空间中一开始保存了一个offset用于与.plt中的地址进行计算得到真实地址，然后就会把这个真实地址存入.got指向的那块空间之中</p>
@@ -862,7 +881,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h5 id="got表的结构">got表的结构</h5>
 <p>
         <a data-fancybox="gallery" href="got.drawio2022-09-16-17-46-18.png">
-            <img class="mx-auto" alt="got.drawio2022-09-16-17-46-18" src="got.drawio2022-09-16-17-46-18.png" />
+        
+            <img class="mx-auto img-float" alt="got.drawio2022-09-16-17-46-18" src="got.drawio2022-09-16-17-46-18.png" />
+        
         </a>
     </p>
 <h4 id="ctors和dtors节">.ctors和.dtors节</h4>

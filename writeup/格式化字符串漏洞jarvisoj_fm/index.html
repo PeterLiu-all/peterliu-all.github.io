@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -555,13 +566,17 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/202209251637352022-09-25-16-37-36.png">
-            <img class="mx-auto" alt="202209251637352022-09-25-16-37-36" src="/image/202209251637352022-09-25-16-37-36.png" />
+        
+            <img class="mx-auto img-float" alt="202209251637352022-09-25-16-37-36" src="/image/202209251637352022-09-25-16-37-36.png" />
+        
         </a>
     </p>
 <p>我们发现，如果我们想要运行<code>system(&quot;/bin/sh)</code>就必须让x等于4。但是我们点进x看一下，发现它是一个等于3的全局变量（要是保存在.rodata节就寄了）：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251641132022-09-25-16-41-14.png">
-            <img class="mx-auto" alt="202209251641132022-09-25-16-41-14" src="/image/202209251641132022-09-25-16-41-14.png" />
+        
+            <img class="mx-auto img-float" alt="202209251641132022-09-25-16-41-14" src="/image/202209251641132022-09-25-16-41-14.png" />
+        
         </a>
     </p>
 <p>我们看一下程序代码，发现这么两行：</p>
@@ -578,12 +593,16 @@ body::-webkit-scrollbar-thumb:hover {
 <p>我们首先要找到这个format字符串数据和esp的偏移，我们先输入一大串a，等到call printf的时候查看栈：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251650462022-09-25-16-50-46.png">
-            <img class="mx-auto" alt="202209251650462022-09-25-16-50-46" src="/image/202209251650462022-09-25-16-50-46.png" />
+        
+            <img class="mx-auto img-float" alt="202209251650462022-09-25-16-50-46" src="/image/202209251650462022-09-25-16-50-46.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251650292022-09-25-16-50-30.png">
-            <img class="mx-auto" alt="202209251650292022-09-25-16-50-30" src="/image/202209251650292022-09-25-16-50-30.png" />
+        
+            <img class="mx-auto img-float" alt="202209251650292022-09-25-16-50-30" src="/image/202209251650292022-09-25-16-50-30.png" />
+        
         </a>
     </p>
 <p>我们看到栈顶前两个数据分别是format字符串和第1个参数，因此我们可以知道我们输入的字符串保存在第11个参数的位置，因此偏移就是11</p>

@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -543,7 +554,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>因为有了虚拟地址的想法，所以人们自然而然地想到将物理地址分成一段一段不同大小的映射成虚拟地址。</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223132509.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223132509.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223132509.png" />
+        
         </a>
     </p>
 <p>这种想法和直接跑在物理地址上的想法差别不大，只是进行了地址空间的隔离与确定。</p>
@@ -563,7 +576,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>（上面的内容来自<a href="https://blog.csdn.net/sinat_38104725/article/details/97619861">计算机内存的分页机制_一颗日成的博客-CSDN博客</a>）</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223141005.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223141005.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223141005.png" />
+        
         </a>
     </p>
 <p>（DP = Disk Page, VP = Virtual Page, PP = Physical Page）</p>
@@ -574,7 +589,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>有一些段是在编译链接期间就确定好的，有一些段，比如堆、栈是在装载的时候才确定的，宏观地看，整个虚拟空间长这样：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223142628.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223142628.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223142628.png" />
+        
         </a>
     </p>
 <p>（图片来源：<a href="https://ctf-wiki.org/pwn/linux/user-mode/heap/ptmalloc2/heap-overview/">堆概述 - CTF Wiki</a>）</p>
@@ -629,7 +646,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>Linux下可以通过更改<code>/proc/sys/kernel/randomize_va_space</code>来设置ASLR等级</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223143842.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223143842.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223143842.png" />
+        
         </a>
     </p>
 

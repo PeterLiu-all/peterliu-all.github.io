@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -561,19 +572,25 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/202210120929012022-10-12-09-29-02.png">
-            <img class="mx-auto" alt="202210120929012022-10-12-09-29-02" src="/image/202210120929012022-10-12-09-29-02.png" />
+        
+            <img class="mx-auto img-float" alt="202210120929012022-10-12-09-29-02" src="/image/202210120929012022-10-12-09-29-02.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/202210120929442022-10-12-09-29-45.png">
-            <img class="mx-auto" alt="202210120929442022-10-12-09-29-45" src="/image/202210120929442022-10-12-09-29-45.png" />
+        
+            <img class="mx-auto img-float" alt="202210120929442022-10-12-09-29-45" src="/image/202210120929442022-10-12-09-29-45.png" />
+        
         </a>
     </p>
 <p>这里有两个syscall用于读写，已经很明显地暗示要用syscall了</p>
 <p>接下来它又提供了一个gadget函数，明显是要为sig_return做好前置工作（设置RAX）</p>
 <p>
         <a data-fancybox="gallery" href="/image/202210120932312022-10-12-09-32-32.png">
-            <img class="mx-auto" alt="202210120932312022-10-12-09-32-32" src="/image/202210120932312022-10-12-09-32-32.png" />
+        
+            <img class="mx-auto img-float" alt="202210120932312022-10-12-09-32-32" src="/image/202210120932312022-10-12-09-32-32.png" />
+        
         </a>
     </p>
 <p>那么我们的思路就很简单了，先调用sig_return，这样它就会把接下来我们安排在栈上的上下文作为接下来要恢复的上下文，这样我们就可以安排系统的寄存器了</p>

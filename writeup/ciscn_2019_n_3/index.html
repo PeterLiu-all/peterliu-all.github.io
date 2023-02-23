@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -552,20 +563,26 @@ body::-webkit-scrollbar-thumb:hover {
 <h1 id="checksec查看程序架构">checksec查看程序架构</h1>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230102181326.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230102181326.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230102181326.png" />
+        
         </a>
     </p>
 <h1 id="ida查看伪c代码">ida查看伪C代码</h1>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230102184915.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230102184915.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230102184915.png" />
+        
         </a>
     </p>
 <p>菜单堆题，只有三个功能，分配空间，释放空间，显示内容，无法在分配了空间后更改空间的内容，这意味着我们要在分配空间的时候就把payload放进去</p>
 <h2 id="allocate">allocate</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230102185245.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230102185245.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230102185245.png" />
+        
         </a>
     </p>
 <p>可以看到，分配的空间有两种类型可选：</p>

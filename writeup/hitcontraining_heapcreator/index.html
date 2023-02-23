@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -544,52 +555,68 @@ body::-webkit-scrollbar-thumb:hover {
 <h1 id="checksec查看程序架构">checksec查看程序架构</h1>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230103223727.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230103223727.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230103223727.png" />
+        
         </a>
     </p>
 <h1 id="ida查看伪c代码">ida查看伪C代码</h1>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230103223850.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230103223850.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230103223850.png" />
+        
         </a>
     </p>
 <h2 id="create_heap">create_heap</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230103224017.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230103224017.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230103224017.png" />
+        
         </a>
     </p>
 <p>分配的chunk结构体包括一个保存size的int，和一个指向其他内存的指针：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230103224316.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230103224316.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230103224316.png" />
+        
         </a>
     </p>
 <p>其中第二个chunk的大小是任意的，这上面就可以做文章</p>
 <h2 id="edit_heap">edit_heap</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230103224048.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230103224048.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230103224048.png" />
+        
         </a>
     </p>
 <p>我们可以看到，最后读取到的内容会比保存的大小多1：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230103224635.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230103224635.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230103224635.png" />
+        
         </a>
     </p>
 <p>如果我们分配的大小刚刚好涵盖了<code>prev_size</code>这个域，那么我们的输入就可以更改下一个chunk的<code>size</code>域</p>
 <h2 id="show_heap">show_heap</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230103224105.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230103224105.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230103224105.png" />
+        
         </a>
     </p>
 <p>看到这个函数，我们马上想到，如果将<code>heaparray[v1]-&gt;ptr</code>改成某个函数的got值，就可以泄露出libc基址</p>
 <h2 id="delete_heap">delete_heap</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230103224125.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230103224125.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230103224125.png" />
+        
         </a>
     </p>
 <p>这个函数在释放后会将指针归零，因此用不了UAF</p>
@@ -599,7 +626,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>更多阅读：<a href="https://ctf-wiki.org/pwn/linux/user-mode/heap/ptmalloc2/chunk-extend-overlapping/">Chunk Extend and Overlapping - CTF Wiki</a></p>
 <p>
         <a data-fancybox="gallery" href="/image/2023%e5%b9%b41%e6%9c%883%e6%97%a5.drawio.png">
-            <img class="mx-auto" alt="" src="/image/2023%e5%b9%b41%e6%9c%883%e6%97%a5.drawio.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/2023%e5%b9%b41%e6%9c%883%e6%97%a5.drawio.png" />
+        
         </a>
     </p>
 <p>需要注意的是，我们输入的size是0x18，但是由于size位的存在，最后分配得到的chunk大小是0x20</p>

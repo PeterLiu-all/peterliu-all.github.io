@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -536,32 +547,42 @@ body::-webkit-scrollbar-thumb:hover {
 <p>我们可以在<a href="https://elixir.bootlin.com/glibc/glibc-2.37/C/ident/">identifier - Glibc source code (glibc-2.37) - Bootlin</a>搜索mp_，会发现它是一个内部链接的全局变量，类型是malloc_par结构体：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223003854.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223003854.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223003854.png" />
+        
         </a>
     </p>
 <p>这说明它不会出现在libc的符号表中，需要通过gdb调试获取偏移：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223004140.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223004140.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223004140.png" />
+        
         </a>
     </p>
 <p>而通过它的名字和赋值我们也可以很清晰地猜测到，这个tcache_bins域是用来记录tcache bin的最大索引值的，超过这个索引值的堆块都不属于tcache bin。</p>
 <p>这个索引值是通过堆块的大小计算的。之所以要计算这个索引值，是因为所有的bin存在一个大小为136的数组里面，tcache bin、large bin等都管理一定范围内的bin。通过大小计算这个索引可以很方便地判断一个堆块应属哪个bin</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223005457.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223005457.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223005457.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223005549.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223005549.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223005549.png" />
+        
         </a>
     </p>
 <h2 id="mp_tcache_bins有什么用">mp_.tcache_bins有什么用？</h2>
 <p>那么这个mp_.tcache_bins有什么用呢？</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223005607.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223005607.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223005607.png" />
+        
         </a>
     </p>
 <p>可以看到，如果我们想要伪造一个大chunk，让它以tcache的方式被获取（这样就可以使用与tcache相关的攻击手段攻击），我们需要伪造以下两个值：</p>
@@ -573,18 +594,24 @@ body::-webkit-scrollbar-thumb:hover {
 <p>因为tcache结构体是存放在堆上的（通常是第一个堆块），当然可以使用其他方式覆写counts值，但在这里其实可以利用tcache bin本身的漏洞。</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223010509.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223010509.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223010509.png" />
+        
         </a>
     </p>
 <p>当mp_.tcache_bins足够大的时候，我们是可以将一个大chunk放进tcache bin中的，只是由于tcache分配在堆上，这个索引值又太大，所以这个大chunk的地址（链表头）会被放进相邻的chunk中</p>
 <p>
         <a data-fancybox="gallery" href="/image/2023%e5%b9%b42%e6%9c%8823%e6%97%a5.drawio.png">
-            <img class="mx-auto" alt="" src="/image/2023%e5%b9%b42%e6%9c%8823%e6%97%a5.drawio.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/2023%e5%b9%b42%e6%9c%8823%e6%97%a5.drawio.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223011428.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223011428.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223011428.png" />
+        
         </a>
     </p>
 <p>同时，tcache_get里也没有对越界的检查：</p>
@@ -593,13 +620,17 @@ body::-webkit-scrollbar-thumb:hover {
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223012956.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223012956.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223012956.png" />
+        
         </a>
     </p>
 <p>同时，tcache_put也允许我们放入一个大chunk，甚至链表头都是不加密的</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223013206.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223013206.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223013206.png" />
+        
         </a>
     </p>
 <p>因此，如果我们可以控制相邻堆块，那么我们释放的大堆块所属的链表头也是可控的。</p>
@@ -609,25 +640,33 @@ body::-webkit-scrollbar-thumb:hover {
 <p>mp_.tcache_bins = mp_ + 0x50 = mp_ + 80，如果用large bin attack覆写，要写入的地址是mp_ + 0x30。large bin attack的具体解析见我的另一篇文章<a href="https://peterliuzhi.top/principle/largebin_attack/">Largebin_Attack - P3troL1er 的个人博客</a></p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223134837.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223134837.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223134837.png" />
+        
         </a>
     </p>
 </blockquote>
 <p>然后我们要释放一个大小为N的大堆块p1进入tcache bin，然后记下它的地址（可以通过下断点到free那里查看，也可以通过heap等命令查看堆分布获取）</p>
 <p>
         <a data-fancybox="gallery" href="/image/QQ%e5%9b%be%e7%89%8720230223012250.png">
-            <img class="mx-auto" alt="" src="/image/QQ%e5%9b%be%e7%89%8720230223012250.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/QQ%e5%9b%be%e7%89%8720230223012250.png" />
+        
         </a>
     </p>
 <p>然后通过x/150gx或者tele命令找到这个地址存放的位置和我们可控的相邻chunk头部的差值</p>
 <p>
         <a data-fancybox="gallery" href="/image/QQ%e5%9b%be%e7%89%8720230223012441.png">
-            <img class="mx-auto" alt="" src="/image/QQ%e5%9b%be%e7%89%8720230223012441.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/QQ%e5%9b%be%e7%89%8720230223012441.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/QQ%e5%9b%be%e7%89%8720230223012458.jpg">
-            <img class="mx-auto" alt="" src="/image/QQ%e5%9b%be%e7%89%8720230223012458.jpg" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/QQ%e5%9b%be%e7%89%8720230223012458.jpg" />
+        
         </a>
     </p>
 <p>这里感谢群里L0tus和h4kuy4等师傅的耐心指导，这三张图也是来自他们~</p>

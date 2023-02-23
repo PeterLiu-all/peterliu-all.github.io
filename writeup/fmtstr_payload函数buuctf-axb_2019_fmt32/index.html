@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -543,25 +554,33 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="查看程序架构">查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221121222240.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221121222240.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221121222240.png" />
+        
         </a>
     </p>
 <h2 id="ida伪代码">ida伪代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221121222402.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221121222402.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221121222402.png" />
+        
         </a>
     </p>
 <p>典型的格式化字符串漏洞，我们gdb到<code>printf(format);</code>那里看下栈：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221121222648.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221121222648.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221121222648.png" />
+        
         </a>
     </p>
 <p>可以看到格式化字符串在栈上储存要先吞掉一个字符才到第8个参数的位置</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221121222816.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221121222816.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221121222816.png" />
+        
         </a>
     </p>
 <p>我们也可以看到在第0x97个参数的位置存储了<code>__libc_start_main+247</code>的值，我们可以用其计算出libc的基址</p>

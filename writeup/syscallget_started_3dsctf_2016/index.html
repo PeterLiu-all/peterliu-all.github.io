@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -537,7 +548,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>在做题前，我先为其建立了一个专门的工作目录：
 
         <a data-fancybox="gallery" href="/image/202209062206042022-09-06-22-06-04.png">
-            <img class="mx-auto" alt="202209062206042022-09-06-22-06-04" src="/image/202209062206042022-09-06-22-06-04.png" />
+        
+            <img class="mx-auto img-float" alt="202209062206042022-09-06-22-06-04" src="/image/202209062206042022-09-06-22-06-04.png" />
+        
         </a>
     </p>
 </blockquote>
@@ -578,7 +591,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec-查看架构">checksec 查看架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/202209062207232022-09-06-22-07-23.png">
-            <img class="mx-auto" alt="202209062207232022-09-06-22-07-23" src="/image/202209062207232022-09-06-22-07-23.png" />
+        
+            <img class="mx-auto img-float" alt="202209062207232022-09-06-22-07-23" src="/image/202209062207232022-09-06-22-07-23.png" />
+        
         </a>
     </p>
 <p>看来是 32 位的程序。我们首先就要想到，32 位程序的参数传递方式和 64 位程序的是不一样的：</p>
@@ -593,7 +608,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h3 id="main-函数">main 函数</h3>
 <p>
         <a data-fancybox="gallery" href="/image/202209062217032022-09-06-22-17-04.png">
-            <img class="mx-auto" alt="202209062217032022-09-06-22-17-04" src="/image/202209062217032022-09-06-22-17-04.png" />
+        
+            <img class="mx-auto img-float" alt="202209062217032022-09-06-22-17-04" src="/image/202209062217032022-09-06-22-17-04.png" />
+        
         </a>
     </p>
 <p>看来是简单的栈溢出</p>
@@ -604,7 +621,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h3 id="后门函数">后门函数</h3>
 <p>
         <a data-fancybox="gallery" href="/image/202209062232592022-09-06-22-32-59.png">
-            <img class="mx-auto" alt="202209062232592022-09-06-22-32-59" src="/image/202209062232592022-09-06-22-32-59.png" />
+        
+            <img class="mx-auto img-float" alt="202209062232592022-09-06-22-32-59" src="/image/202209062232592022-09-06-22-32-59.png" />
+        
         </a>
     </p>
 <p>然后我们就发现了程序好心为我们提供的后门函数（</p>
@@ -615,7 +634,9 @@ body::-webkit-scrollbar-thumb:hover {
 <ol>
 <li>首先我们要找到 offset 溢出到 return 的栈地址，这通过 ida 很容易发现
         <a data-fancybox="gallery" href="/image/202209062236332022-09-06-22-36-34.png">
-            <img class="mx-auto" alt="202209062236332022-09-06-22-36-34" src="/image/202209062236332022-09-06-22-36-34.png" />
+        
+            <img class="mx-auto img-float" alt="202209062236332022-09-06-22-36-34" src="/image/202209062236332022-09-06-22-36-34.png" />
+        
         </a>
     </li>
 <li>然后我们就将后门函数地址和参数值填入栈中即可</li>
@@ -650,19 +671,25 @@ body::-webkit-scrollbar-thumb:hover {
 <p>64 位编号是 59，也就是 0x3b</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209062254342022-09-06-22-54-35.png">
-            <img class="mx-auto" alt="202209062254342022-09-06-22-54-35" src="/image/202209062254342022-09-06-22-54-35.png" />
+        
+            <img class="mx-auto img-float" alt="202209062254342022-09-06-22-54-35" src="/image/202209062254342022-09-06-22-54-35.png" />
+        
         </a>
     </p>
 <p>32 位编号是 11，也就是 0xb。</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209062255302022-09-06-22-55-30.png">
-            <img class="mx-auto" alt="202209062255302022-09-06-22-55-30" src="/image/202209062255302022-09-06-22-55-30.png" />
+        
+            <img class="mx-auto img-float" alt="202209062255302022-09-06-22-55-30" src="/image/202209062255302022-09-06-22-55-30.png" />
+        
         </a>
     </p>
 <p>同时，因为我们的程序是 32 位的，我们需要将编号传给 eax 寄存器，剩余参数分别传入 ecx,edx,esi,edi,ebp 中</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209062259352022-09-06-22-59-35.png">
-            <img class="mx-auto" alt="202209062259352022-09-06-22-59-35" src="/image/202209062259352022-09-06-22-59-35.png" />
+        
+            <img class="mx-auto img-float" alt="202209062259352022-09-06-22-59-35" src="/image/202209062259352022-09-06-22-59-35.png" />
+        
         </a>
     </p>
 <p>然后，我们要找到这几个参数对应的值。execve 函数后两个参数可以不管设为 0，但是第一个参数应该是<code>/bin/sh</code>或者<code>sh</code></p>
@@ -722,7 +749,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>然后我们用 ida 找到一块闲置空间（一直滚到.data 段，最后有一小段重复的 db 0）</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209080117042022-09-08-01-17-04.png">
-            <img class="mx-auto" alt="202209080117042022-09-08-01-17-04" src="/image/202209080117042022-09-08-01-17-04.png" />
+        
+            <img class="mx-auto img-float" alt="202209080117042022-09-08-01-17-04" src="/image/202209080117042022-09-08-01-17-04.png" />
+        
         </a>
     </p>
 <p>然后我们就可以完成我们的 payload 了：</p>

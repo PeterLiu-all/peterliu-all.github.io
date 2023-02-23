@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -536,33 +547,45 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec">checksec</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221107142949.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221107142949.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221107142949.png" />
+        
         </a>
     </p>
 <h2 id="ida">ida</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221107143026.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221107143026.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221107143026.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221107143046.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221107143046.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221107143046.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221107143100.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221107143100.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221107143100.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221107143119.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221107143119.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221107143119.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221107143143.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221107143143.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221107143143.png" />
+        
         </a>
     </p>
 <p>解题思路很简单，先后调用win_function1、winfunction2、flag函数即可，重要的是rop链的顺序，32位系统比较杂乱</p>
@@ -632,14 +655,18 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>调用win1，因为没有参数，所以不用安排栈
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221107143854.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221107143854.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221107143854.png" />
+        
         </a>
     
 等到win1结束时，有一条ret指令，会将win2弹入EIP</p>
 <p>而win2是一个有参数的函数，为了获取栈中参数，32位系统的方法是，使用<code>[ebp+8]</code>作为第一个参数，而ebp的值如下图所示：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221107144811.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221107144811.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221107144811.png" />
+        
         </a>
     </p>
 <p>所以参数和指令之间要隔开</p>

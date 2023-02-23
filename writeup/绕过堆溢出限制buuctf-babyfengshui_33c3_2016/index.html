@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -536,42 +547,56 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="查看程序架构">查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119160647.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119160647.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119160647.png" />
+        
         </a>
     </p>
 <h2 id="ida伪代码">ida伪代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119160524.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119160524.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119160524.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119160547.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119160547.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119160547.png" />
+        
         </a>
     
 可以看到是标准的菜单堆题</p>
 <h3 id="allocate">allocate</h3>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119160739.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119160739.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119160739.png" />
+        
         </a>
     
 这里自定义了结构体
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119160837.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119160837.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119160837.png" />
+        
         </a>
     
 在ends处按d新建域，光标在具体的域上按d会清空
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119161232.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119161232.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119161232.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119161211.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119161211.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119161211.png" />
+        
         </a>
     </p>
 <p>这个函数就是一个结构体申请了两片内存：</p>
@@ -584,21 +609,27 @@ body::-webkit-scrollbar-thumb:hover {
 <h3 id="remove">remove</h3>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119162018.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119162018.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119162018.png" />
+        
         </a>
     
 用不了UAF，也不能通过free到unsorted bin中获取libc</p>
 <h3 id="show">show</h3>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119162120.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119162120.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119162120.png" />
+        
         </a>
     
 可以将ptr_content的值改为free的got值，然后就能获得free的地址了</p>
 <h3 id="change">change</h3>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119162231.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119162231.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119162231.png" />
+        
         </a>
     
 只更新ptr_content里的值</p>

@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -567,20 +578,26 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/202209231633042022-09-23-16-33-04.png">
-            <img class="mx-auto" alt="202209231633042022-09-23-16-33-04" src="/image/202209231633042022-09-23-16-33-04.png" />
+        
+            <img class="mx-auto img-float" alt="202209231633042022-09-23-16-33-04" src="/image/202209231633042022-09-23-16-33-04.png" />
+        
         </a>
     </p>
 <p>我们发现主函数很简单就能栈溢出，那我们再找找有没有后门函数</p>
 <p>结果发现了<code>get_secret</code>函数：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209231634252022-09-23-16-34-25.png">
-            <img class="mx-auto" alt="202209231634252022-09-23-16-34-25" src="/image/202209231634252022-09-23-16-34-25.png" />
+        
+            <img class="mx-auto img-float" alt="202209231634252022-09-23-16-34-25" src="/image/202209231634252022-09-23-16-34-25.png" />
+        
         </a>
     </p>
 <p>我们发现这个后门函数实在有点特殊，主要逻辑是打开目录下的<code>flag.txt</code>文件，然后读入开头的至多45个字符入<code>fl4g</code>变量，我们双击<code>fl4g</code>变量发现其地址为：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209231640082022-09-23-16-40-09.png">
-            <img class="mx-auto" alt="202209231640082022-09-23-16-40-09" src="/image/202209231640082022-09-23-16-40-09.png" />
+        
+            <img class="mx-auto img-float" alt="202209231640082022-09-23-16-40-09" src="/image/202209231640082022-09-23-16-40-09.png" />
+        
         </a>
     </p>
 <h2 id="构建exp">构建exp</h2>

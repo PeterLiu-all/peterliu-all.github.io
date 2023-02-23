@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -556,7 +567,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>也就是说，如果要分割chunk，会将他们先放进small bin或者large bin中再分割，再把剩余部分放进unsorted bin中：</p>
 <p>
         <a data-fancybox="gallery" href="/image/img_v2_3a9f2664-fc97-4a6d-8a0b-a65d6295693g.png">
-            <img class="mx-auto" alt="" src="/image/img_v2_3a9f2664-fc97-4a6d-8a0b-a65d6295693g.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/img_v2_3a9f2664-fc97-4a6d-8a0b-a65d6295693g.png" />
+        
         </a>
     </p>
 <h4 id="测试程序1">测试程序1</h4>
@@ -583,18 +596,24 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>当free完这些大chunk的时候，他们都在unsorted bin中</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220001936.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220001936.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230220001936.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220002104.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220002104.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230220002104.png" />
+        
         </a>
     </p>
 <p>但是当malloc(3000)的时候，他们都进入了unsorted bin中，然后其中一个被取出分割后放回了unsorted bin中</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220002252.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220002252.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230220002252.png" />
+        
         </a>
     </p>
 <h4 id="调试程序2">调试程序2</h4>
@@ -630,28 +649,38 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>在malloc(3000)前：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220210927.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220210927.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230220210927.png" />
+        
         </a>
     </p>
 <p>之后：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220211927.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220211927.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230220211927.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220211951.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220211951.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230220211951.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220212020.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220212020.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230220212020.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220212041.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220212041.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230220212041.png" />
+        
         </a>
     </p>
 <h3 id="large-bin的结构">large bin的结构？</h3>
@@ -749,14 +778,18 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></span></code></pre></div><p>如果我们先malloc六个堆块，实际大小为0x400，0x410，0x420，0x420，0x430，0x430，然后我们依次free可以得到下面这幅图：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220100711.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220100711.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230220100711.png" />
+        
         </a>
     </p>
 <p>（图源自<a href="https://xz.aliyun.com/t/5177">浅析largebin attack - 先知社区</a>）</p>
 <p>其中我们看到，在large bin中我们使用了新的两个域fd_nextsize和bk_nextsize，他们在malloc_chunk结构体的位置如下：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230220101526.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230220101526.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230220101526.png" />
+        
         </a>
     </p>
 <p>fd_nextsize用于指向同组的bins中下一个更小的bin，bk_nextsize用于指向同组的bins中下一个更大的bin。同时它是双向链表，所以两头的chunk会互相指向。</p>

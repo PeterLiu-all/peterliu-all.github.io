@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -610,7 +621,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>输出结果：</p>
 <p>
         <a data-fancybox="gallery" href="/images/d85175a3c55dff9493231eda5665ea8617d392329f26affcda480e0b9caa0cb7.png">
-            <img class="mx-auto" alt="图 1" src="/images/d85175a3c55dff9493231eda5665ea8617d392329f26affcda480e0b9caa0cb7.png" />
+        
+            <img class="mx-auto img-float" alt="图 1" src="/images/d85175a3c55dff9493231eda5665ea8617d392329f26affcda480e0b9caa0cb7.png" />
+        
         </a>
     </p>
 <h2 id="分析">分析</h2>

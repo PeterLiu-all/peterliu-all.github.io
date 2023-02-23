@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -545,7 +556,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>这时候终端会蹦出一个类似<code>//localhost:1313/</code>的地址，在浏览器中输入该地址就能看到本地生成的博客啦</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108000613.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108000613.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108000613.png" />
+        
         </a>
     </p>
 <p>如果想停止本地服务器就<code>ctrl+c</code>即可</p>
@@ -560,7 +573,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h3 id="创建一个新的仓库repository">创建一个新的仓库（repository）</h3>
 <p>
         <a data-fancybox="gallery" href="/image/202209041753382022-09-04-17-53-38.png">
-            <img class="mx-auto" alt="202209041753382022-09-04-17-53-38" src="/image/202209041753382022-09-04-17-53-38.png" />
+        
+            <img class="mx-auto img-float" alt="202209041753382022-09-04-17-53-38" src="/image/202209041753382022-09-04-17-53-38.png" />
+        
         </a>
     </p>
 <p>仓库名最好是&lt;你的用户名&gt;.github.io，比如我就是 peterliu-all.github.io，如果不是这个名字可能会有一些未知的错误。</p>
@@ -568,7 +583,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>然后复制一下仓库的 https 地址</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209041757132022-09-04-17-57-13.png">
-            <img class="mx-auto" alt="202209041757132022-09-04-17-57-13" src="/image/202209041757132022-09-04-17-57-13.png" />
+        
+            <img class="mx-auto img-float" alt="202209041757132022-09-04-17-57-13" src="/image/202209041757132022-09-04-17-57-13.png" />
+        
         </a>
     </p>
 <p>然后返回我们的终端，在你的博客根目录下输入<code>hugo</code>，这会忽略frontmatter标记<code>draft: true</code>，如果不想忽略草稿，就输入<code>hugo -D</code></p>
@@ -663,7 +680,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>我们将仓库设在content文件夹，设置粘贴图片时的链接为相对仓库根目录的绝对路径：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108002154.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108002154.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108002154.png" />
+        
         </a>
     </p>
 <p>这样粘贴example.png的时候生成的图片链接就是![]<code>(image/example.png)</code>，但是如果image前没有&quot;/&quot;，那么这个链接会被浏览器识别为相对链接，不会指向根目录下的image文件夹，如果手动更改为![]<code>(/image/example.png)</code>，会发现obsidian和浏览器都能正确找到图片并展示，那么该怎么自动化实现这点呢？</p>
@@ -744,24 +763,32 @@ body::-webkit-scrollbar-thumb:hover {
 <p>解决方法就是<a href="https://fontawesome.com/start">注册一下fontswesome</a>并点击获取kit code代替/themes/eureka/layouts/partials/head.html中原本的链接：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108003436.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108003436.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108003436.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108003611.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108003611.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108003611.png" />
+        
         </a>
     </p>
 <h2 id="使用-disqus-添加评论功能">使用 disqus 添加评论功能</h2>
 <p>Eureka中实现这点非常简单，你只需要注册disqus并获取shortname，填在params.yaml中就行：
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108003846.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108003846.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108003846.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108003909.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108003909.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108003909.png" />
+        
         </a>
     </p>
 <p>相关阅读：</p>
@@ -877,7 +904,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>效果如图：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108004328.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108004328.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108004328.png" />
+        
         </a>
     </p>
 <h2 id="在文章列表中显示tag">在文章列表中显示tag</h2>
@@ -948,7 +977,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>也就是这里：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230111210554.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230111210554.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230111210554.png" />
+        
         </a>
     </p>
 <h2 id="使用obsidian模板自动生成文章头部">使用obsidian模板自动生成文章头部</h2>
@@ -956,14 +987,18 @@ body::-webkit-scrollbar-thumb:hover {
 <p>示例如下：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108005032.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108005032.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108005032.png" />
+        
         </a>
     </p>
 <p>使用时按<code>Alt+E</code>就行</p>
 <p>需要注意的是，为了避免hugo解析content文件夹中存放模板的model文件夹（模板文件夹必须存放在obsidian仓库内），我们需要在comfig.yaml中指定ignore的pattern：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108005235.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108005235.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108005235.png" />
+        
         </a>
     </p>
 <p>具体详见<a href="https://gohugo.io/getting-started/configuration/#ignore-content-and-data-files-when-rendering">Configure Hugo |Hugo</a></p>
@@ -1061,7 +1096,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></span></code></pre></div><p>最后在menu.yaml加上对它的索引就好了：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108010500.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108010500.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108010500.png" />
+        
         </a>
     </p>
 <p>来源见<a href="https://imnerd.org/custom-hugo-theme-eureka.html#%E5%BD%92%E6%A1%A3">Hugo 主题 Eureka 自定义 | 怡红院落</a></p>
@@ -1587,7 +1624,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></span></code></pre></div><p>然后在about页加一个小按钮：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108013851.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108013851.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108013851.png" />
+        
         </a>
     </p>
 <p>具体代码示例如下：</p>
@@ -1633,7 +1672,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>比如我在about.md中定义的头像是黑色透明背景的，在深色模式下就完全看不清图片：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108231937.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108231937.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108231937.png" />
+        
         </a>
     </p>
 <p>我们可以在themes/eureka/layouts/partials/widgets/about.html文件头部加上：</p>
@@ -1645,18 +1686,24 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>然后给<code>alt=&quot;Avatar&quot;</code>的img标签加上avatar类：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108231741.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108231741.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108231741.png" />
+        
         </a>
     </p>
 <p>效果：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108232003.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108232003.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108232003.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108232025.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230108232025.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230108232025.png" />
+        
         </a>
     </p>
 <h2 id="让深浅颜色变换更平滑">让深浅颜色变换更平滑</h2>
@@ -1671,7 +1718,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230111165535.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230111165535.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230111165535.png" />
+        
         </a>
     </p>
 <p>然后因为eureka主题实现深浅变化是根据有没有dark类来区分的，所以没有light类，因此我们需要更改<code>themes/eureka/layouts/_default/baseof.html</code>中的html标签：</p>
@@ -1684,7 +1733,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span><span class="line"><span class="cl"><span class="p">&gt;</span>
 </span></span></code></pre></div><p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230111165804.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230111165804.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230111165804.png" />
+        
         </a>
     </p>
 <p>这样在深浅主题变化的时候，颜色过渡就会平滑一点了，具体成果见<a href="https://peterliuzhi.top">我的博客</a></p>
@@ -1751,7 +1802,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>具体效果：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230111170210.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230111170210.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230111170210.png" />
+        
         </a>
     </p>
 <h2 id="增加图片放大查看功能">增加图片放大查看功能</h2>
@@ -1993,13 +2046,17 @@ body::-webkit-scrollbar-thumb:hover {
 <p>最近看到hexo博客的一个主题有一个很棒的功能，仔细研究后发现是纯由js实现的，就打算给它嫖过来（</p>
 <p>
         <a data-fancybox="gallery" href="/image/4f94d986d48e9ce84b66dd8ffa0ada1.png">
-            <img class="mx-auto" alt="" src="/image/4f94d986d48e9ce84b66dd8ffa0ada1.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/4f94d986d48e9ce84b66dd8ffa0ada1.png" />
+        
         </a>
     </p>
 <p>我们在<code>themes/eureka/layouts/partials/footer.html</code>中原本的底部记录信息下面添加一句html</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223154310.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230223154310.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223154310.png" />
+        
         </a>
     </p>
 <p>添加：</p>
@@ -2020,7 +2077,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>改一下你的博客的诞生日期就可以啦，这个脚本会根据用户打开网页的时间实时更新生存时间，效果如下：</p>
 <p>
         <a data-fancybox="gallery" href="/image/5cad439a9d925a7d75a9e76bd8f7d4c.png">
-            <img class="mx-auto" alt="" src="/image/5cad439a9d925a7d75a9e76bd8f7d4c.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/5cad439a9d925a7d75a9e76bd8f7d4c.png" />
+        
         </a>
     </p>
 <hr>

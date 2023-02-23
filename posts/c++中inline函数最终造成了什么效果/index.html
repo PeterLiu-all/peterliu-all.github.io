@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -563,14 +574,18 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>然后得到了预编译结果、普通编译链接结果、优化编译链接结果：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174547.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174547.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207174547.png" />
+        
         </a>
     </p>
 <h2 id="查看预编译结果">查看预编译结果</h2>
 <p>预编译器将include的头文件简单地复制到了我们代码中include的位置，因此最后我们得到的预编译结果中，我们自己写的代码位于六万多行的位置：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174202.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174202.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207174202.png" />
+        
         </a>
     </p>
 <p>可以看到，我们define的宏ONE已经被简单地替换掉了，但是inline函数并没有进行替换</p>
@@ -578,23 +593,31 @@ body::-webkit-scrollbar-thumb:hover {
 <p>我们使用ida进行反编译后可以看到这里内联函数并没有嵌入到主函数之中，而是像一个普通的函数一样被调用</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174407.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174407.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207174407.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174855.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174855.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207174855.png" />
+        
         </a>
     </p>
 <p>而且同样有传参的操作：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174927.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174927.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207174927.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207174944.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207174944.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207174944.png" />
+        
         </a>
     </p>
 <p>或许这就是内联函数能够被调试的原因——在调试版本的程序中，它和普通函数并没有什么区别</p>
@@ -602,63 +625,83 @@ body::-webkit-scrollbar-thumb:hover {
 <p>优化后我们发现主函数已经变成了我们不认识的样子：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207175211.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207175211.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207175211.png" />
+        
         </a>
     </p>
 <p>而其中那个只是返回了1的内联函数直接消失了，变成了常量值被打印出来：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207175319.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207175319.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207175319.png" />
+        
         </a>
     </p>
 <p>而这里sub_1004016B0函数也不再是我们写的内联函数，而是变成了混合了basic_string中的一个函数（应该就是我们在内联函数中调用的at函数）的函数，或者说，它将at函数嵌入到了我们的函数中：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207175457.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207175457.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207175457.png" />
+        
         </a>
     </p>
 <p>而同时我们可以查看at的源代码：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207230749.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207230749.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207230749.png" />
+        
         </a>
     </p>
 <p>会发现这个函数的返回值是被constexpr修饰的，说明这是一个在编译器确定的常量</p>
 <p>如果我们将get_one确定为constexpr返回值的函数，则它一定会在编译期进行计算，就算加上-g：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207231423.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207231423.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207231423.png" />
+        
         </a>
     </p>
 <h3 id="与非内联函数对比">与非内联函数对比</h3>
 <p>我们试着与非内联函数对比：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207231934.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207231934.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207231934.png" />
+        
         </a>
     </p>
 <p>在-g的时候并没有区别：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207232052.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207232052.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207232052.png" />
+        
         </a>
     </p>
 <p>然后我们再看下-O2的时候：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207232224.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207232224.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207232224.png" />
+        
         </a>
     </p>
 <p>这完全没差嘛！所以说如果你自己都不知道内联会怎么发生，就不要期望内联真正起效了。</p>
 <p>如果我们将代码中的复杂返回逻辑改掉，我们会发现内联&quot;发生&quot;了：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207232951.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207232951.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207232951.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207232941.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207232941.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207232941.png" />
+        
         </a>
     </p>
 <p>这看上去好像没有发生内联，但是我们查看sub_1004016B0函数会发现，由于内联函数内调用了另一个函数，因此我们得到的最终结果还是一个函数。</p>
@@ -668,31 +711,41 @@ body::-webkit-scrollbar-thumb:hover {
 <p>那如果我嵌套调用的是一个内联函数呢，情况会不会发生变化？</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207233844.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207233844.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207233844.png" />
+        
         </a>
     </p>
 <p>答案是确定的，优化开启的情况下，编译器直接计算出了结果：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207233831.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207233831.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207233831.png" />
+        
         </a>
     </p>
 <p>而在-g的情况下，编译器甚至连这种常量结果都没有计算出来：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207234242.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207234242.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207234242.png" />
+        
         </a>
     </p>
 <p>或许你会问，如果返回值不是一个字面常量呢？就像下面这样：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207234334.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207234334.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207234334.png" />
+        
         </a>
     </p>
 <p>显然内联发生了：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230207234637.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230207234637.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230207234637.png" />
+        
         </a>
     </p>
 <p>因此，<strong>一个返回逻辑简单的内联函数调用另一个返回逻辑简单的内联函数在优化开启的情况下确实是会发生内联的</strong></p>

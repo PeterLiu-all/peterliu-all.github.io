@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -564,12 +575,16 @@ body::-webkit-scrollbar-thumb:hover {
 <p>因此，某方块内存在某类别的物体的置信度是：
 
         <a data-fancybox="gallery" href="/image/confidence.png">
-            <img class="mx-auto" alt="" src="/image/confidence.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/confidence.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/process.png">
-            <img class="mx-auto" alt="" src="/image/process.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/process.png" />
+        
         </a>
     </p>
 <p>yolo 输入张量的维度为 S*S*(B*5+c)，在 yolov1 中 B 往往是 1</p>
@@ -578,7 +593,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p><strong>yolov1 的主体是卷积神经网络，模型大小取决于卷积神经网络的层次</strong></p>
 <p>
         <a data-fancybox="gallery" href="/image/conv.png">
-            <img class="mx-auto" alt="" src="/image/conv.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/conv.png" />
+        
         </a>
     </p>
 <p><strong>对原图多次卷积、池化（最大池化）后接两个全连接层</strong></p>
@@ -588,19 +605,25 @@ body::-webkit-scrollbar-thumb:hover {
 <p>采用 leakyReLU 函数
 
         <a data-fancybox="gallery" href="/image/leakyReLU.png">
-            <img class="mx-auto" alt="" src="/image/leakyReLU.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/leakyReLU.png" />
+        
         </a>
     </p>
 <h3 id="loss-函数">loss 函数</h3>
 <p>
         <a data-fancybox="gallery" href="/image/loss.png">
-            <img class="mx-auto" alt="" src="/image/loss.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/loss.png" />
+        
         </a>
     </p>
 <h3 id="过拟合处理">过拟合处理</h3>
 <p>
         <a data-fancybox="gallery" href="/image/overfit.png">
-            <img class="mx-auto" alt="" src="/image/overfit.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/overfit.png" />
+        
         </a>
     </p>
 

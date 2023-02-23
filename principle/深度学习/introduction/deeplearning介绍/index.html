@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -552,7 +563,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="基本框架">基本框架</h2>
 <p><a href="https://www.youtube.com/watch?v=aircAruvnKk">
         <a data-fancybox="gallery" href="/image/network.png">
-            <img class="mx-auto" alt="NetWork" src="/image/network.png" />
+        
+            <img class="mx-auto img-float" alt="NetWork" src="/image/network.png" />
+        
         </a>
     </a></p>
 <blockquote>
@@ -561,7 +574,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>每一个点都是一个神经元，每一个神经元的每一次传导都有自己的权重(weight)和偏置(bias)，最后乘上激活函数(activation function)来模拟生物神经元的激活
 
         <a data-fancybox="gallery" href="/image/func1.jpg">
-            <img class="mx-auto" alt="func1" src="/image/func1.jpg" />
+        
+            <img class="mx-auto img-float" alt="func1" src="/image/func1.jpg" />
+        
         </a>
     </p>
 <h2 id="梯度下山最快的方向">梯度:下山最快的方向</h2>
@@ -572,24 +587,32 @@ body::-webkit-scrollbar-thumb:hover {
 <h3 id="loss函数">Loss函数</h3>
 <p>对最后判定的值
         <a data-fancybox="gallery" href="/image/func2.png">
-            <img class="mx-auto" alt="func2" src="/image/func2.png" />
+        
+            <img class="mx-auto img-float" alt="func2" src="/image/func2.png" />
+        
         </a>
     而言，它与真实值y有一定差距
 为表达误差,我们定义Loss函数:
         <a data-fancybox="gallery" href="/image/func3.png">
-            <img class="mx-auto" alt="func3" src="/image/func3.png" />
+        
+            <img class="mx-auto img-float" alt="func3" src="/image/func3.png" />
+        
         </a>
     ,亦称为平方损失(square loss)
 整个Loss函数为:
 
         <a data-fancybox="gallery" href="/image/func4.jpg">
-            <img class="mx-auto" alt="func4" src="/image/func4.jpg" />
+        
+            <img class="mx-auto img-float" alt="func4" src="/image/func4.jpg" />
+        
         </a>
     
 而使该Loss函数最小的参数记为:
 
         <a data-fancybox="gallery" href="/image/func5.jpg">
-            <img class="mx-auto" alt="func4" src="/image/func5.jpg" />
+        
+            <img class="mx-auto img-float" alt="func4" src="/image/func5.jpg" />
+        
         </a>
     </p>
 <h3 id="梯度到底是啥">梯度到底是啥?</h3>
@@ -601,7 +624,9 @@ body::-webkit-scrollbar-thumb:hover {
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/note.jpg">
-            <img class="mx-auto" alt="note" src="/image/note.jpg" />
+        
+            <img class="mx-auto img-float" alt="note" src="/image/note.jpg" />
+        
         </a>
     </p>
 <p><strong>因此每一次梯度下降就好像下山(降低Loss),等到达山谷的最低处(Loss的最低处)就达到了训练的目的</strong></p>

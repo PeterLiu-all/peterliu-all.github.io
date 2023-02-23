@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -546,68 +557,90 @@ body::-webkit-scrollbar-thumb:hover {
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">file login
 </span></span></code></pre></div><p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121163603.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121163603.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121163603.png" />
+        
         </a>
     </p>
 <p>我们能够看到，这个文件是一个64位的ELF文件，他运行在x86-64平台上，并且他的符号表没有被删除（not stripped）</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121165634.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121165634.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121165634.png" />
+        
         </a>
     </p>
 <p>我们对一个文本文档试一下：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121163736.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121163736.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121163736.png" />
+        
         </a>
     </p>
 <p>我们发现file命令能识别出它是一个python脚本，同时识别出了它是一个UTF-8编码的文件，而且标出他是一个文本可执行文件（text executable），对应上面的LSB executable，Linux标准基础（Linux Standards Base，简称LSB）可执行文件</p>
 <p>如果我们去除.py扩展名，它是否还能识别出来它是一个python脚本呢？</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164244.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164244.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121164244.png" />
+        
         </a>
     </p>
 <p>仍然可以识别，说明file命令会根据文件内容进行判断</p>
 <p>我们新建一个tmp文件，看看能识别出什么：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164337.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164337.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121164337.png" />
+        
         </a>
     </p>
 <p>得到结果是empty</p>
 <p>如果我们加上一个shebang：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164426.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164426.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121164426.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164437.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164437.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121164437.png" />
+        
         </a>
     </p>
 <p>发现它此时不能判断它是一个python文件，但是通过shebang判断出了它的解释器</p>
 <p>如果我们加上一句python语句：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164600.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164600.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121164600.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164549.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164549.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121164549.png" />
+        
         </a>
     </p>
 <p>如果我们加上C语言代码：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164728.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164728.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121164728.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164743.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164743.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121164743.png" />
+        
         </a>
     </p>
 <p>它仍然判断为python脚本，说明<strong>file给出的结果不一定是正确的</strong>，需要具体问题具体分析。file命令也可以根据幻数判断文件类型，然而这时候可能会导致file的判断出现差错</p>
@@ -617,31 +650,41 @@ body::-webkit-scrollbar-thumb:hover {
 <p>如果我们去掉shebang，就可以发现它是一个C语言源文件：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164902.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164902.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121164902.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121164912.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121164912.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121164912.png" />
+        
         </a>
     </p>
 <p>我们还可以通过通配符对特定一批文件进行分析：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121165226.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121165226.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121165226.png" />
+        
         </a>
     </p>
 <p>可以使用grep选择：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121165344.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121165344.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121165344.png" />
+        
         </a>
     </p>
 <p>file还有一系列选项，但一般来说这已经够了</p>
 <p>如果我们希望在Windows上使用，可以安装Cygwin</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121165601.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121165601.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121165601.png" />
+        
         </a>
     </p>
 <h1 id="nm">nm</h1>
@@ -649,12 +692,16 @@ body::-webkit-scrollbar-thumb:hover {
 <p>nm是一个分析文件中的符号的命令，它可以将可执行文件中的函数符号分类列出：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121170135.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121170135.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121170135.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121170148.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121170148.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121170148.png" />
+        
         </a>
     </p>
 <p>我们发现它是一个C++可执行文件，并且它的符号都被分类列出了（以下翻译自man nm）：</p>
@@ -786,7 +833,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>我们也可以用<code>nm -D login</code>只打印出动态链接的符号：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121172413.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121172413.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121172413.png" />
+        
         </a>
     </p>
 <p>我们也可以向使用file一样使用通配符批量解析文件</p>
@@ -798,27 +847,35 @@ body::-webkit-scrollbar-thumb:hover {
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nm login <span class="p">|</span> c++filt
 </span></span></code></pre></div><p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121172953.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121172953.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121172953.png" />
+        
         </a>
     </p>
 <p>我们可以看到，这时候函数名就类似于编写C++程序时使用的函数名了</p>
 <p>我们还可以更改这个呈现函数的形式：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121173135.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121173135.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121173135.png" />
+        
         </a>
     </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nm login <span class="p">|</span> c++filt -s java
 </span></span></code></pre></div><p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121173214.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121173214.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121173214.png" />
+        
         </a>
     </p>
 <h1 id="ldd">ldd</h1>
 <p>这个命令很常用，是用来查看动态链接程序所使用的动态库的：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121174325.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121174325.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121174325.png" />
+        
         </a>
     </p>
 <p>可以加上-v来查看更多信息</p>
@@ -829,43 +886,57 @@ body::-webkit-scrollbar-thumb:hover {
 <p>查看file header的总览：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121174855.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121174855.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121174855.png" />
+        
         </a>
     </p>
 <p>查看file header的简化版本：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121174943.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121174943.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121174943.png" />
+        
         </a>
     </p>
 <p>显示特定对象格式的文件头内容：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121175054.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121175054.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121175054.png" />
+        
         </a>
     </p>
 <p>也可以单独查看节头：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121175208.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121175208.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121175208.png" />
+        
         </a>
     </p>
 <p>可以直接查看所有header：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121175530.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121175530.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121175530.png" />
+        
         </a>
     </p>
 <p>可以查看程序的调试信息：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121175615.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121175615.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121175615.png" />
+        
         </a>
     </p>
 <p>可以不加分析地查看所有节头的二进制信息：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121175722.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121175722.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121175722.png" />
+        
         </a>
     </p>
 <p>可以只查看可执行节的反汇编结果：</p>
@@ -874,13 +945,17 @@ body::-webkit-scrollbar-thumb:hover {
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121180026.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121180026.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121180026.png" />
+        
         </a>
     </p>
 <p>但是它的反汇编结果是AT&amp;T风格的，我们可以更换为Intel风格：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121180156.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121180156.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121180156.png" />
+        
         </a>
     </p>
 <p>还有更多用法可以查看<code>objdump --help</code>或<code>man objdump</code></p>
@@ -888,19 +963,25 @@ body::-webkit-scrollbar-thumb:hover {
 <p>strings可以搜索至少包含 4 个连续可打印 ASCII 字符的字符串，并将结果在控制台打印出来（程序虽然包含这样的字符串，但是并不代表程序会使用），有一些字符串是程序实际使用的，有一些是程序的函数名等</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121180630.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121180630.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121180630.png" />
+        
         </a>
     </p>
 <p>我们可以只打印.data节中的字符串：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121180730.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121180730.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121180730.png" />
+        
         </a>
     </p>
 <p>我们可以指定包含多少个连续可打印字符的字符串会被输出：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121180850.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121180850.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121180850.png" />
+        
         </a>
     </p>
 <h1 id="readelf">readelf</h1>
@@ -917,12 +998,16 @@ body::-webkit-scrollbar-thumb:hover {
 <p>我们选择架构为64位intel指令集，并将反汇编结果输入到一个文件中：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121181154.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121181154.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121181154.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121181234.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121181234.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121181234.png" />
+        
         </a>
     </p>
 <blockquote>
@@ -933,35 +1018,47 @@ body::-webkit-scrollbar-thumb:hover {
 <p>我们可以将调试信息分离：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203227.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203227.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121203227.png" />
+        
         </a>
     </p>
 <p>可以剥离调试信息：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203303.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203303.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121203303.png" />
+        
         </a>
     </p>
 <p>注意，这里只是剥离了调试信息，并不代表符号表被剥离了：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203414.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203414.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121203414.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203430.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203430.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121203430.png" />
+        
         </a>
     </p>
 <p>可以将调试信息加回去：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203534.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203534.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121203534.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121203547.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121203547.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121203547.png" />
+        
         </a>
     </p>
 <p>更多阅读：</p>
@@ -976,13 +1073,17 @@ body::-webkit-scrollbar-thumb:hover {
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">strip &lt;程序名&gt;
 </span></span></code></pre></div><p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121204627.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121204627.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121204627.png" />
+        
         </a>
     </p>
 <p>然后就只剩下.dynsym了：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121204717.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121204717.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121204717.png" />
+        
         </a>
     </p>
 <p>这样也不影响程序运行，达到了给程序瘦身的目的，只是不利于反编译🤭</p>
@@ -990,7 +1091,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>用于列出目标文件或库文件的section大小</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230121205406.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230121205406.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230121205406.png" />
+        
         </a>
     </p>
 

@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -544,13 +555,17 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec查看程序架构">checksec查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221030235423.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221030235423.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221030235423.png" />
+        
         </a>
     </p>
 <h2 id="ida查看伪代码">ida查看伪代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221030235441.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221030235441.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221030235441.png" />
+        
         </a>
     </p>
 <p>典型的堆菜单题</p>
@@ -559,18 +574,24 @@ body::-webkit-scrollbar-thumb:hover {
 <p>当我们free掉一个chunk的时候，程序会查看相邻的chunk时候也被free掉了，如果也被free掉了，就把它从双向链表中取出来（注意fastbin是单向链表），执行unlink，与当前free的chunk合并，然后放入它应该去的bin中</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221031001931.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221031001931.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221031001931.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221031001959.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221031001959.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221031001959.png" />
+        
         </a>
     </p>
 <p>我们的chunk有fd和bk两个域，分别指向（链表中）前一个chunk和后一个chunk，也就是说，fd域里保存的是前一个chunk的地址，bk是后一个chunk的地址</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221031003029.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221031003029.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221031003029.png" />
+        
         </a>
     </p>
 <p>unlink会更改chunk0和chunk2的的fd和bk指针，也就是说</p>
@@ -582,7 +603,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>而此时，如果我们要unlink的chunk的fd域和bk域，则上面的代码会产生这样的效果：
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221031001718.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221031001718.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221031001718.png" />
+        
         </a>
     </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="o">*</span><span class="p">(</span><span class="n">ptr1</span> <span class="o">+</span> <span class="mh">0x18</span><span class="p">)</span> <span class="o">=</span> <span class="n">ptr2</span>
@@ -591,7 +614,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>但是这个unlink机制还存在着一系列安全检查：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221031002145.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221031002145.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221031002145.png" />
+        
         </a>
     </p>
 <p>这些检查确保：</p>

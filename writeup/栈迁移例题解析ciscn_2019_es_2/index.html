@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -561,30 +572,40 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/202209251439012022-09-25-14-39-01.png">
-            <img class="mx-auto" alt="202209251439012022-09-25-14-39-01" src="/image/202209251439012022-09-25-14-39-01.png" />
+        
+            <img class="mx-auto img-float" alt="202209251439012022-09-25-14-39-01" src="/image/202209251439012022-09-25-14-39-01.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251439252022-09-25-14-39-26.png">
-            <img class="mx-auto" alt="202209251439252022-09-25-14-39-26" src="/image/202209251439252022-09-25-14-39-26.png" />
+        
+            <img class="mx-auto img-float" alt="202209251439252022-09-25-14-39-26" src="/image/202209251439252022-09-25-14-39-26.png" />
+        
         </a>
     </p>
 <p>看起来像是栈溢出，但是read函数限制了读入的字节数，我们看一下栈：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251440452022-09-25-14-40-46.png">
-            <img class="mx-auto" alt="202209251440452022-09-25-14-40-46" src="/image/202209251440452022-09-25-14-40-46.png" />
+        
+            <img class="mx-auto img-float" alt="202209251440452022-09-25-14-40-46" src="/image/202209251440452022-09-25-14-40-46.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/202209251441052022-09-25-14-41-06.png">
-            <img class="mx-auto" alt="202209251441052022-09-25-14-41-06" src="/image/202209251441052022-09-25-14-41-06.png" />
+        
+            <img class="mx-auto img-float" alt="202209251441052022-09-25-14-41-06" src="/image/202209251441052022-09-25-14-41-06.png" />
+        
         </a>
     </p>
 <p>我们发现这时候到return的位置只能溢出一个字，如果这时候程序有一个backdoor函数那就万事大吉。</p>
 <p>我们可以找一下，发现了一个hack函数，但这个hack函数完全就是糊弄人的，从中唯一得到的有用信息是system确乎存在于plt表中，这样就不用ret2libc了：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251443562022-09-25-14-43-56.png">
-            <img class="mx-auto" alt="202209251443562022-09-25-14-43-56" src="/image/202209251443562022-09-25-14-43-56.png" />
+        
+            <img class="mx-auto img-float" alt="202209251443562022-09-25-14-43-56" src="/image/202209251443562022-09-25-14-43-56.png" />
+        
         </a>
     </p>
 <p>看一下源程序也没有格式化字符串漏洞，我们可以考虑栈迁移</p>
@@ -627,7 +648,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>我们用gdb调试一下，发现当恢复ebp备份值的时候，这个备份值比当时ebp的值刚好多0x10：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251543542022-09-25-15-43-54.png">
-            <img class="mx-auto" alt="202209251543542022-09-25-15-43-54" src="/image/202209251543542022-09-25-15-43-54.png" />
+        
+            <img class="mx-auto img-float" alt="202209251543542022-09-25-15-43-54" src="/image/202209251543542022-09-25-15-43-54.png" />
+        
         </a>
     </p>
 <p>那么我们的payload就出来了：</p>

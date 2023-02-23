@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -608,19 +619,25 @@ body::-webkit-scrollbar-thumb:hover {
 <p>经过分析我们发现只有当case为1时能够输入128个字符：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251719142022-09-25-17-19-14.png">
-            <img class="mx-auto" alt="202209251719142022-09-25-17-19-14" src="/image/202209251719142022-09-25-17-19-14.png" />
+        
+            <img class="mx-auto img-float" alt="202209251719142022-09-25-17-19-14" src="/image/202209251719142022-09-25-17-19-14.png" />
+        
         </a>
     </p>
 <p>但是保存输入的变量不在当前栈中，而且在原本的main函数中传入的参数也只是一个保存地址的4字节变量，因此对原本的main函数也构成不了溢出。</p>
 <p>但是我们又发现，我们在src变量所指的内存中保存的数据会被别的函数利用：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251722472022-09-25-17-22-47.png">
-            <img class="mx-auto" alt="202209251722472022-09-25-17-22-47" src="/image/202209251722472022-09-25-17-22-47.png" />
+        
+            <img class="mx-auto img-float" alt="202209251722472022-09-25-17-22-47" src="/image/202209251722472022-09-25-17-22-47.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251723232022-09-25-17-23-24.png">
-            <img class="mx-auto" alt="202209251723232022-09-25-17-23-24" src="/image/202209251723232022-09-25-17-23-24.png" />
+        
+            <img class="mx-auto img-float" alt="202209251723232022-09-25-17-23-24" src="/image/202209251723232022-09-25-17-23-24.png" />
+        
         </a>
     </p>
 <p>同时我们发现plt表中有<code>system</code>：</p>

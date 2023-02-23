@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -575,28 +586,36 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec查看程序架构">checksec查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230117220919.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230117220919.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230117220919.png" />
+        
         </a>
     </p>
 <p>发现了canary，但是这题溢出不到canary，那么可能可以利用canary其他的漏洞，比如更改__stack_check_fail的got值</p>
 <h2 id="ida查看伪c代码">ida查看伪C代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230117221130.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230117221130.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230117221130.png" />
+        
         </a>
     </p>
 <p>函数主体是一个不断向一个没有溢出漏洞的栈空间写入内容（这个内容被用%s打印出来，没有格式化字符串漏洞），然后是一个非栈上格式化字符串漏洞</p>
 <h2 id="法一利用栈上保存的setbuffer函数地址泄露libc后更改__stack_check_fail的got值">法一：利用栈上保存的setbuffer函数地址泄露libc后更改__stack_check_fail的got值</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230117221645.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230117221645.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230117221645.png" />
+        
         </a>
     </p>
 <p>我们可以利用%s的特点把这个setbuffer+204打印出来，然后就泄露得到了栈地址</p>
 <p>然后我们再用同样的方法得到栈地址</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230117221841.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230117221841.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230117221841.png" />
+        
         </a>
     </p>
 <p>因为我们第一次写入的内容保存在栈上，所以最后我们可以利用格式化字符串漏洞实现任意地址写，更改__stack_check_fail的got值为one_gadget后，再更改canary触发__stack_check_fail</p>
@@ -1014,19 +1033,25 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec查看程序架构-1">checksec查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230117223957.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230117223957.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230117223957.png" />
+        
         </a>
     </p>
 <h2 id="ida查看伪c代码-1">ida查看伪C代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230117224106.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230117224106.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230117224106.png" />
+        
         </a>
     </p>
 <p>这道题不走寻常路，使用内联汇编实现了一个堆菜单题，最终还是通过数字选择这三个功能：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230117224208.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230117224208.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230117224208.png" />
+        
         </a>
     </p>
 <p>大致思路就是先填满tcache bin（7个）后分配到unsorted bin中泄露main_arena，然后将tcache分配到__free_hook上覆盖更改为system</p>
@@ -1035,19 +1060,25 @@ body::-webkit-scrollbar-thumb:hover {
 <p>比如：</p>
 <p>
         <a data-fancybox="gallery" href="/image/0a8ee870bf223a5bf6215744c7caf6d.png">
-            <img class="mx-auto" alt="" src="/image/0a8ee870bf223a5bf6215744c7caf6d.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/0a8ee870bf223a5bf6215744c7caf6d.png" />
+        
         </a>
     </p>
 <p>像这种情况，0x20的tcache bin就不会再申请__free_hook的chunk了，而是转而去分割unsorted bin中的chunk</p>
 <p>原因是每一个不同大小的tcache，它都独立维护一个counts域，而在malloc的时候会检查这个域，只有当它大于等于0的时候才会执行tcache_get：</p>
 <p>
         <a data-fancybox="gallery" href="/image/18a607f5f80e51d6f326123c7e5e55a.png">
-            <img class="mx-auto" alt="" src="/image/18a607f5f80e51d6f326123c7e5e55a.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/18a607f5f80e51d6f326123c7e5e55a.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/20fc536be5fed8053210504cdc75aa7.png">
-            <img class="mx-auto" alt="" src="/image/20fc536be5fed8053210504cdc75aa7.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/20fc536be5fed8053210504cdc75aa7.png" />
+        
         </a>
     </p>
 <h2 id="exp-2">exp</h2>
@@ -1272,13 +1303,17 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec查看程序架构-2">checksec查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230118000415.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230118000415.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230118000415.png" />
+        
         </a>
     </p>
 <h2 id="ida查看伪c代码-2">ida查看伪C代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230118000525.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230118000525.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230118000525.png" />
+        
         </a>
     </p>
 <p>这道题没有edit函数，同时free后指针没有置零，而且还是一道glibc2.23的题目</p>
@@ -1501,26 +1536,34 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec查看程序架构-3">checksec查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230118003241.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230118003241.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230118003241.png" />
+        
         </a>
     </p>
 <h2 id="ida查看伪c代码-3">ida查看伪C代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230118003303.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230118003303.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230118003303.png" />
+        
         </a>
     </p>
 <p>典型的堆菜单题，这里比较重要的是：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230118003340.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230118003340.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230118003340.png" />
+        
         </a>
     </p>
 <p>虽然表面上限制分配15个chunk，但是它并不检查对应的index是否已有chunk，这导致我们可以分配任意个chunk</p>
 <p>再加上free后不置零，我们就可以得到libc基址：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230118003537.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230118003537.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230118003537.png" />
+        
         </a>
     </p>
 <p>那么，我们有两种思路：</p>

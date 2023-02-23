@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -535,12 +546,16 @@ body::-webkit-scrollbar-thumb:hover {
 <p><a href="https://buuoj.cn/challenges#wustctf2020_closed">原题链接</a></p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119160035.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119160035.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119160035.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119160056.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119160056.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119160056.png" />
+        
         </a>
     
 直接给了shell，但是把输出流关了

@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -674,7 +685,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/c68cb60ab4b00e49ddb45de848907f399d807eccef1b5a2b01dd40bdf51b5501.png">
-            <img class="mx-auto" alt="图 10" src="/image/c68cb60ab4b00e49ddb45de848907f399d807eccef1b5a2b01dd40bdf51b5501.png" />
+        
+            <img class="mx-auto img-float" alt="图 10" src="/image/c68cb60ab4b00e49ddb45de848907f399d807eccef1b5a2b01dd40bdf51b5501.png" />
+        
         </a>
     </p>
 <h2 id="两类信道">两类信道</h2>
@@ -690,13 +703,17 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/dad6d8882bbf8d26e454dbb19c6a93bfb74bc39f719621cb28cfef7f64661e8d.png">
-            <img class="mx-auto" alt="图 5" src="/image/dad6d8882bbf8d26e454dbb19c6a93bfb74bc39f719621cb28cfef7f64661e8d.png" />
+        
+            <img class="mx-auto img-float" alt="图 5" src="/image/dad6d8882bbf8d26e454dbb19c6a93bfb74bc39f719621cb28cfef7f64661e8d.png" />
+        
         </a>
     </p>
 <h2 id="基本概念">基本概念</h2>
 <p>
         <a data-fancybox="gallery" href="/image/23cbe062436e05f961dc9728e4221c5344e3edf2d584d02bdb499132090202e0.png">
-            <img class="mx-auto" alt="图 11" src="/image/23cbe062436e05f961dc9728e4221c5344e3edf2d584d02bdb499132090202e0.png" />
+        
+            <img class="mx-auto img-float" alt="图 11" src="/image/23cbe062436e05f961dc9728e4221c5344e3edf2d584d02bdb499132090202e0.png" />
+        
         </a>
     </p>
 <ul>
@@ -706,7 +723,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>通常，链路层实现为适配器（NIC、网卡）或者在芯片上实现</p>
 <p>
         <a data-fancybox="gallery" href="/image/e65bcdbe5c5c3b144c8feafda9866f443a697f7bdfc57bf22934347f425be120.png">
-            <img class="mx-auto" alt="图 3" src="/image/e65bcdbe5c5c3b144c8feafda9866f443a697f7bdfc57bf22934347f425be120.png" />
+        
+            <img class="mx-auto img-float" alt="图 3" src="/image/e65bcdbe5c5c3b144c8feafda9866f443a697f7bdfc57bf22934347f425be120.png" />
+        
         </a>
     </p>
 <h2 id="数据链路控制dlc">数据链路控制（DLC）</h2>
@@ -734,7 +753,9 @@ body::-webkit-scrollbar-thumb:hover {
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/8c13fc4add2a613504f827b15e6a3081750b7dfb53b60396ec033df24fc3b1cb.png">
-            <img class="mx-auto" alt="图 1" src="/image/8c13fc4add2a613504f827b15e6a3081750b7dfb53b60396ec033df24fc3b1cb.png" />
+        
+            <img class="mx-auto img-float" alt="图 1" src="/image/8c13fc4add2a613504f827b15e6a3081750b7dfb53b60396ec033df24fc3b1cb.png" />
+        
         </a>
     </p>
 <h5 id="面向字符成帧">面向字符成帧</h5>
@@ -746,7 +767,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>这样，用两个标记我们区分了不同的帧</p>
 <p>
         <a data-fancybox="gallery" href="/image/43a629c2cb50f784d1dd12203cf8fedca06e556cf56692c5674186a44b4a4ebf.png">
-            <img class="mx-auto" alt="图 6" src="/image/43a629c2cb50f784d1dd12203cf8fedca06e556cf56692c5674186a44b4a4ebf.png" />
+        
+            <img class="mx-auto img-float" alt="图 6" src="/image/43a629c2cb50f784d1dd12203cf8fedca06e556cf56692c5674186a44b4a4ebf.png" />
+        
         </a>
     </p>
 <blockquote>
@@ -768,7 +791,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>当发送方连续读取到一个 0 和五个 1 时（011111），就在后面插入一个 0。虽然有时候数据并构不成标记，但这种方法避免了传输数据中出现标记。</p>
 <p>
         <a data-fancybox="gallery" href="/image/3a97b4d88e2ad83a0b26c47028af90d5a5766ff9d5c455283f428747b9e15f82.png">
-            <img class="mx-auto" alt="图 7" src="/image/3a97b4d88e2ad83a0b26c47028af90d5a5766ff9d5c455283f428747b9e15f82.png" />
+        
+            <img class="mx-auto img-float" alt="图 7" src="/image/3a97b4d88e2ad83a0b26c47028af90d5a5766ff9d5c455283f428747b9e15f82.png" />
+        
         </a>
     </p>
 <h4 id="透明传输">透明传输</h4>
@@ -777,7 +802,9 @@ body::-webkit-scrollbar-thumb:hover {
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/ac0d74449ae8c356219f88bdc1d77b8277c95fe8fea77cf3a1fb48815a5de2cb.png">
-            <img class="mx-auto" alt="图 3" src="/image/ac0d74449ae8c356219f88bdc1d77b8277c95fe8fea77cf3a1fb48815a5de2cb.png" />
+        
+            <img class="mx-auto img-float" alt="图 3" src="/image/ac0d74449ae8c356219f88bdc1d77b8277c95fe8fea77cf3a1fb48815a5de2cb.png" />
+        
         </a>
     </p>
 <ul>
@@ -793,7 +820,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/6d3ed940ba3703ccb01c26b9f0119f82974f76345a30fdf9f2108f96baa18574.png">
-            <img class="mx-auto" alt="图 4" src="/image/6d3ed940ba3703ccb01c26b9f0119f82974f76345a30fdf9f2108f96baa18574.png" />
+        
+            <img class="mx-auto img-float" alt="图 4" src="/image/6d3ed940ba3703ccb01c26b9f0119f82974f76345a30fdf9f2108f96baa18574.png" />
+        
         </a>
     </p>
 <h4 id="差错检测">差错检测</h4>
@@ -811,45 +840,59 @@ body::-webkit-scrollbar-thumb:hover {
 <p>模二加法和模二减法相当于异或运算，他们是一回事
 
         <a data-fancybox="gallery" href="/image/95cdd9ae559c4c3b968a8ce6d40ad68c3481e8d91070953842c6eb8848d5b415.png">
-            <img class="mx-auto" alt="图 14" src="/image/95cdd9ae559c4c3b968a8ce6d40ad68c3481e8d91070953842c6eb8848d5b415.png" />
+        
+            <img class="mx-auto img-float" alt="图 14" src="/image/95cdd9ae559c4c3b968a8ce6d40ad68c3481e8d91070953842c6eb8848d5b415.png" />
+        
         </a>
     <br>
 
         <a data-fancybox="gallery" href="/image/1c4ee16ea899c6600bd7310f325ef1c386682f1236f968d38859c9429d7036b4.png">
-            <img class="mx-auto" alt="图 15" src="/image/1c4ee16ea899c6600bd7310f325ef1c386682f1236f968d38859c9429d7036b4.png" />
+        
+            <img class="mx-auto img-float" alt="图 15" src="/image/1c4ee16ea899c6600bd7310f325ef1c386682f1236f968d38859c9429d7036b4.png" />
+        
         </a>
     <br>
 模二乘法相当于且运算
 
         <a data-fancybox="gallery" href="/image/6ce09f8c539920f22722b77a4aaf64a5d02fedab263aa3e249f1240dad2c90f7.png">
-            <img class="mx-auto" alt="图 12" src="/image/6ce09f8c539920f22722b77a4aaf64a5d02fedab263aa3e249f1240dad2c90f7.png" />
+        
+            <img class="mx-auto img-float" alt="图 12" src="/image/6ce09f8c539920f22722b77a4aaf64a5d02fedab263aa3e249f1240dad2c90f7.png" />
+        
         </a>
     <br>
 模二除法相当于模二乘法的逆运算
 
         <a data-fancybox="gallery" href="/image/eef74a1a6f74931f4a1351eccefc529ee0414dc28071e7436c3c39c477a6aba8.png">
-            <img class="mx-auto" alt="图 13" src="/image/eef74a1a6f74931f4a1351eccefc529ee0414dc28071e7436c3c39c477a6aba8.png" />
+        
+            <img class="mx-auto img-float" alt="图 13" src="/image/eef74a1a6f74931f4a1351eccefc529ee0414dc28071e7436c3c39c477a6aba8.png" />
+        
         </a>
     <br>
 乘法和除法相当于多个加法和多个减法</p>
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/ab4a698b3ae6b215c0cd880d5d62013d2a2b478dc9cb0628f2b9a89b9a3b2478.png">
-            <img class="mx-auto" alt="图 19" src="/image/ab4a698b3ae6b215c0cd880d5d62013d2a2b478dc9cb0628f2b9a89b9a3b2478.png" />
+        
+            <img class="mx-auto img-float" alt="图 19" src="/image/ab4a698b3ae6b215c0cd880d5d62013d2a2b478dc9cb0628f2b9a89b9a3b2478.png" />
+        
         </a>
     </p>
 <p><em>在发送端：</em>
 用二进制的模 2 运算进行$2^n$ 乘 M 的运算，这<strong>相当于在 M 后面添加 n 个 0</strong>。得到的$(k + n)$ 位的数除以<strong>收发双方事先商定的长度为 $(n + 1)$位的除数 P</strong>，得出商是 Q 而余数是 R（n 位，比 P 少一位），余数 R 就作为余码拼接在数据 M 的后面发送出去</p>
 <p>
         <a data-fancybox="gallery" href="/image/2840cfeeff41de6dec83e64bbdb72c98b5f6a82d4f1a7afeb800c8c20a66de62.png">
-            <img class="mx-auto" alt="图 16" src="/image/2840cfeeff41de6dec83e64bbdb72c98b5f6a82d4f1a7afeb800c8c20a66de62.png" />
+        
+            <img class="mx-auto img-float" alt="图 16" src="/image/2840cfeeff41de6dec83e64bbdb72c98b5f6a82d4f1a7afeb800c8c20a66de62.png" />
+        
         </a>
     </p>
 <p><em>在接收端：</em>
 把收到的每一个帧都除以<strong>同样的除数 P</strong>（模 2 运算），然后<strong>检查得到的余数 R</strong>，如果在传输过程中无差错，那么经过 CRC 检验后得出的余数 R 肯定是 0，就接收；若余数 R ≠ 0（正确的概率很小很小），则判定这个帧有差错（但无法确定究竟是哪一位或哪几位出现了差错），就丢弃</p>
 <p>
         <a data-fancybox="gallery" href="/image/0716c75645a53d9cbf8d10edcaa1b3834e067b2a37ca21586ec72ffb50fc339b.png">
-            <img class="mx-auto" alt="图 17" src="/image/0716c75645a53d9cbf8d10edcaa1b3834e067b2a37ca21586ec72ffb50fc339b.png" />
+        
+            <img class="mx-auto img-float" alt="图 17" src="/image/0716c75645a53d9cbf8d10edcaa1b3834e067b2a37ca21586ec72ffb50fc339b.png" />
+        
         </a>
     </p>
 <p>因为加法和减法是一回事，所以$2^nM=QP+R=QP+CRC$，但是发送的是$2^nM+CRC=QP+CRC+CRC=QP+CRC-CRC=QP$，所以如果没有错，那余数必为 0</p>
@@ -861,7 +904,9 @@ body::-webkit-scrollbar-thumb:hover {
 <ul>
 <li>选择除数，可以随机选择，也可以按照既定标准选择（按照国际通行标准选择，最高位和最低为必须为 1）。除数往往也用多项式表示，所以 CRC 又称多项式编码方法，这个多项式也称为生成多项式 
         <a data-fancybox="gallery" href="/image/7d831e546c335fd0fee6cc0a9bee24f106467e6914c9cef9c041913638b375ca.png">
-            <img class="mx-auto" alt="图 20" src="/image/7d831e546c335fd0fee6cc0a9bee24f106467e6914c9cef9c041913638b375ca.png" />
+        
+            <img class="mx-auto img-float" alt="图 20" src="/image/7d831e546c335fd0fee6cc0a9bee24f106467e6914c9cef9c041913638b375ca.png" />
+        
         </a>
     </li>
 <li>余数的位数一定是比除数位数小一位，即使前面全是 0，也不要省略</li>
@@ -879,7 +924,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ol>
 <p>
         <a data-fancybox="gallery" href="/image/1786c283eae0af8d7e7bcf15fa6c9eb1a3fa45124966a6517a86d333ffba6cea.png">
-            <img class="mx-auto" alt="图 2" src="/image/1786c283eae0af8d7e7bcf15fa6c9eb1a3fa45124966a6517a86d333ffba6cea.png" />
+        
+            <img class="mx-auto img-float" alt="图 2" src="/image/1786c283eae0af8d7e7bcf15fa6c9eb1a3fa45124966a6517a86d333ffba6cea.png" />
+        
         </a>
     </p>
 <ul>
@@ -900,7 +947,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>例：6 个节点，节点 1、3、4 发送数据，而节点 2、5、6 不发送数据
 
         <a data-fancybox="gallery" href="/image/05413ea562d8d880cfea7d38bf625c810b6a0157f03b3a93e93d98b87a451de6.png">
-            <img class="mx-auto" alt="图 21" src="/image/05413ea562d8d880cfea7d38bf625c810b6a0157f03b3a93e93d98b87a451de6.png" />
+        
+            <img class="mx-auto img-float" alt="图 21" src="/image/05413ea562d8d880cfea7d38bf625c810b6a0157f03b3a93e93d98b87a451de6.png" />
+        
         </a>
     </p>
 </blockquote>
@@ -909,7 +958,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>信道的频谱划分为不同的频段,每个节点分配使用固定的频段发送数据,对于不发送数据的节点，对应的频段即为闲置状态</p>
 <p>
         <a data-fancybox="gallery" href="/image/fee6d43e1638a9bd0ebdc9cd667e7933b87ab7c7596c75809141cfdb90f9060b.png">
-            <img class="mx-auto" alt="图 22" src="/image/fee6d43e1638a9bd0ebdc9cd667e7933b87ab7c7596c75809141cfdb90f9060b.png" />
+        
+            <img class="mx-auto img-float" alt="图 22" src="/image/fee6d43e1638a9bd0ebdc9cd667e7933b87ab7c7596c75809141cfdb90f9060b.png" />
+        
         </a>
     </p>
 <h5 id="cdma">CDMA</h5>
@@ -930,7 +981,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>只要有站点需要发送帧，它就发送帧</p>
 <p>
         <a data-fancybox="gallery" href="/image/94112172bde926a88a889db5571ad6209fcb17cfd5064688fe36a2b800e10c36.png">
-            <img class="mx-auto" alt="图 5" src="/image/94112172bde926a88a889db5571ad6209fcb17cfd5064688fe36a2b800e10c36.png" />
+        
+            <img class="mx-auto img-float" alt="图 5" src="/image/94112172bde926a88a889db5571ad6209fcb17cfd5064688fe36a2b800e10c36.png" />
+        
         </a>
     </p>
 <p>纯 ALOHA 依赖于接收方的确认，如果接收方确实收到了帧，它就会向发送方发送确认，<strong>只有当发送方收到该确认通知后，发送方才判定该帧成功发送，否则就要重发</strong></p>
@@ -938,13 +991,17 @@ body::-webkit-scrollbar-thumb:hover {
 <p>同时，如果站点多次失败，站点就暂时躺平不发送了，等到以后再发送该帧，相当于摆烂</p>
 <p>
         <a data-fancybox="gallery" href="/image/598e1db9f5580d0d25ba1e2dde73fcd2701ee79a52ec8ae41acc15c9e3c06f4f.png">
-            <img class="mx-auto" alt="图 6" src="/image/598e1db9f5580d0d25ba1e2dde73fcd2701ee79a52ec8ae41acc15c9e3c06f4f.png" />
+        
+            <img class="mx-auto img-float" alt="图 6" src="/image/598e1db9f5580d0d25ba1e2dde73fcd2701ee79a52ec8ae41acc15c9e3c06f4f.png" />
+        
         </a>
     </p>
 <p>我们程脆弱时间为可能碰撞的时间长度，则纯 ALOHA 虽弱时间为 2T</p>
 <p>
         <a data-fancybox="gallery" href="/image/f2a0c7b4024a4387fe887e7f16783dd94b7cfd948e983e7f796bd2bd7e18bf13.png">
-            <img class="mx-auto" alt="图 1" src="/image/f2a0c7b4024a4387fe887e7f16783dd94b7cfd948e983e7f796bd2bd7e18bf13.png" />
+        
+            <img class="mx-auto img-float" alt="图 1" src="/image/f2a0c7b4024a4387fe887e7f16783dd94b7cfd948e983e7f796bd2bd7e18bf13.png" />
+        
         </a>
     </p>
 <h6 id="slotted-aloha">slotted ALOHA</h6>
@@ -956,13 +1013,17 @@ body::-webkit-scrollbar-thumb:hover {
 <p>所以时隙 ALOHA 是对纯 Aloha 的一种改进，其基本思想是<strong>把时间分成若干个相同的时间片</strong>，所有用户在时间片开始时刻<strong>同步接入网络信道</strong>，若发生冲突，则必须等到下一个时间片开始时刻再发送，这样就<strong>只有完全碰撞没有部分碰撞</strong>，脆弱时间从 2T 减少到 T</p>
 <p>
         <a data-fancybox="gallery" href="/image/5c53fab4d5f1bb1a32f5b7c43dcfb46eb284189f1789dfd2f4ea0d2811653d88.png">
-            <img class="mx-auto" alt="图 2" src="/image/5c53fab4d5f1bb1a32f5b7c43dcfb46eb284189f1789dfd2f4ea0d2811653d88.png" />
+        
+            <img class="mx-auto img-float" alt="图 2" src="/image/5c53fab4d5f1bb1a32f5b7c43dcfb46eb284189f1789dfd2f4ea0d2811653d88.png" />
+        
         </a>
     </p>
 <p><em>步骤：</em></p>
 <p>
         <a data-fancybox="gallery" href="/image/e7ff3e2181803e249cf4a835194b6220065d78b7af68092dcf636b3b27ae5851.png">
-            <img class="mx-auto" alt="图 4" src="/image/e7ff3e2181803e249cf4a835194b6220065d78b7af68092dcf636b3b27ae5851.png" />
+        
+            <img class="mx-auto img-float" alt="图 4" src="/image/e7ff3e2181803e249cf4a835194b6220065d78b7af68092dcf636b3b27ae5851.png" />
+        
         </a>
     </p>
 <ul>
@@ -971,7 +1032,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/0b05e99631c9f64a437f065b0169f1574867c505af166f6eb8cd80785084398b.png">
-            <img class="mx-auto" alt="图 3" src="/image/0b05e99631c9f64a437f065b0169f1574867c505af166f6eb8cd80785084398b.png" />
+        
+            <img class="mx-auto img-float" alt="图 3" src="/image/0b05e99631c9f64a437f065b0169f1574867c505af166f6eb8cd80785084398b.png" />
+        
         </a>
     </p>
 <p>（C-collide,E-empty,S-success）</p>
@@ -988,7 +1051,9 @@ body::-webkit-scrollbar-thumb:hover {
 <li>需要<strong>时钟同步</strong>（不然时隙的划分就没有用了）</li>
 <li>效率不高
         <a data-fancybox="gallery" href="/image/6a99a4a69d2a47d04505c640f94dc927be4ab101ce7ac4db220510becfbc341a.png">
-            <img class="mx-auto" alt="图 5" src="/image/6a99a4a69d2a47d04505c640f94dc927be4ab101ce7ac4db220510becfbc341a.png" />
+        
+            <img class="mx-auto img-float" alt="图 5" src="/image/6a99a4a69d2a47d04505c640f94dc927be4ab101ce7ac4db220510becfbc341a.png" />
+        
         </a>
     </li>
 </ul>
@@ -1016,7 +1081,9 @@ window)。</li>
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/5d616a834113ebf8347204f2b31108722a8f57f7835ba0a7e005440489f8963e.png">
-            <img class="mx-auto" alt="图 6" src="/image/5d616a834113ebf8347204f2b31108722a8f57f7835ba0a7e005440489f8963e.png" />
+        
+            <img class="mx-auto img-float" alt="图 6" src="/image/5d616a834113ebf8347204f2b31108722a8f57f7835ba0a7e005440489f8963e.png" />
+        
         </a>
     </p>
 <p>由上图易知：一个站不可能同时进行发送和接收（但必须边发送边监听信道），当 B 已经收到 A 发送的数据，就准备一直接收，也就是说，只有在争用期内，B 没有发送数据，B 才能顺利开始接收，A 才算通过了考验</p>
@@ -1032,7 +1099,9 @@ $[0,1,…, 2^{k −1}]$中随机取一个数乘以争用期$τ$就是需要等�
 <h6 id="脆弱时间">脆弱时间</h6>
 <p>
         <a data-fancybox="gallery" href="/image/884e09edf0618524cecfab25550550be16b23187f4816ae50f0e3dc610a2bd23.png">
-            <img class="mx-auto" alt="图 21" src="/image/884e09edf0618524cecfab25550550be16b23187f4816ae50f0e3dc610a2bd23.png" />
+        
+            <img class="mx-auto img-float" alt="图 21" src="/image/884e09edf0618524cecfab25550550be16b23187f4816ae50f0e3dc610a2bd23.png" />
+        
         </a>
     </p>
 <h6 id="优缺点">优缺点</h6>
@@ -1062,27 +1131,35 @@ $[0,1,…, 2^{k −1}]$中随机取一个数乘以争用期$τ$就是需要等�
 <h6 id="轮询-polling">轮询 polling</h6>
 <p>
         <a data-fancybox="gallery" href="/image/90e58dab49e2a19ab523671728730ec546671a25233aae7c572b46fb857bfda5.png">
-            <img class="mx-auto" alt="图 7" src="/image/90e58dab49e2a19ab523671728730ec546671a25233aae7c572b46fb857bfda5.png" />
+        
+            <img class="mx-auto img-float" alt="图 7" src="/image/90e58dab49e2a19ab523671728730ec546671a25233aae7c572b46fb857bfda5.png" />
+        
         </a>
     </p>
 <p>主节点<strong>管理次节点，决定他们什么时候轮流发送数据</strong>（主节点需要具备一定智能，而次节点不需要），这种方法称为<strong>轮询</strong></p>
 <p>
         <a data-fancybox="gallery" href="/image/da09b12d165b84b304c760289c245ff301db8d28cd29a0fa032d940f3ac5ccf1.png">
-            <img class="mx-auto" alt="图 8" src="/image/da09b12d165b84b304c760289c245ff301db8d28cd29a0fa032d940f3ac5ccf1.png" />
+        
+            <img class="mx-auto img-float" alt="图 8" src="/image/da09b12d165b84b304c760289c245ff301db8d28cd29a0fa032d940f3ac5ccf1.png" />
+        
         </a>
     </p>
 <p>存在轮询的开销、延迟、单点故障（即 master 节点）的问题</p>
 <h6 id="令牌传递-token-passing">令牌传递 token passing</h6>
 <p>
         <a data-fancybox="gallery" href="/image/8ea6404c4883762ee45abde896a20c201152a28117d79f4dd98f1266f6a5cd42.png">
-            <img class="mx-auto" alt="图 9" src="/image/8ea6404c4883762ee45abde896a20c201152a28117d79f4dd98f1266f6a5cd42.png" />
+        
+            <img class="mx-auto img-float" alt="图 9" src="/image/8ea6404c4883762ee45abde896a20c201152a28117d79f4dd98f1266f6a5cd42.png" />
+        
         </a>
     </p>
 <p>受控的令牌从一个节点依次序传递到下一个节点，<strong>有令牌的节点即可发送帧</strong>（击鼓传花，传到花的就唱歌）</p>
 <p>节点之间不必物理地连成环，只要逻辑上每个节点都有前驱和后继即可</p>
 <p>
         <a data-fancybox="gallery" href="/image/9d8b4050ae876291f9da7713d088e8d272859c02725a1d928d44d29703caf082.png">
-            <img class="mx-auto" alt="图 10" src="/image/9d8b4050ae876291f9da7713d088e8d272859c02725a1d928d44d29703caf082.png" />
+        
+            <img class="mx-auto img-float" alt="图 10" src="/image/9d8b4050ae876291f9da7713d088e8d272859c02725a1d928d44d29703caf082.png" />
+        
         </a>
     </p>
 <p>存在传递令牌的开销、延迟，单点故障（令牌本身）的问题</p>
@@ -1094,7 +1171,9 @@ used ‘locally” to get frame from one interface to another physically-connect
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/3e317564f5f7932dd6c83ab52f5d74e6b6cb56bf514d874bafe6c3df4319fab3.png">
-            <img class="mx-auto" alt="图 12" src="/image/3e317564f5f7932dd6c83ab52f5d74e6b6cb56bf514d874bafe6c3df4319fab3.png" />
+        
+            <img class="mx-auto img-float" alt="图 12" src="/image/3e317564f5f7932dd6c83ab52f5d74e6b6cb56bf514d874bafe6c3df4319fab3.png" />
+        
         </a>
     </p>
 <h3 id="48-位的-mac-地址-eui-48">48 位的 MAC 地址 EUI-48</h3>
@@ -1106,7 +1185,9 @@ used ‘locally” to get frame from one interface to another physically-connect
 <p>同时，MAC 地址不是等级化的（与上级其他设备无关），保证了可移植性（可以把网卡从这个局域网移动到另一个局域网使用）</p>
 <p>
         <a data-fancybox="gallery" href="/image/b773e0318de87357815cc7a6c59147a00ea26831ca3852b7e5f8f8ed9a6f1db0.png">
-            <img class="mx-auto" alt="图 13" src="/image/b773e0318de87357815cc7a6c59147a00ea26831ca3852b7e5f8f8ed9a6f1db0.png" />
+        
+            <img class="mx-auto img-float" alt="图 13" src="/image/b773e0318de87357815cc7a6c59147a00ea26831ca3852b7e5f8f8ed9a6f1db0.png" />
+        
         </a>
     </p>
 <h3 id="mac-地址有什么用">MAC 地址有什么用</h3>
@@ -1130,7 +1211,9 @@ used ‘locally” to get frame from one interface to another physically-connect
 <h4 id="mac-帧的格式">MAC 帧的格式</h4>
 <p>
         <a data-fancybox="gallery" href="/image/6ea8beb7671b3221ae6f58dc71397b82020c11e67dc2f6a2b5ca2576265b5794.png">
-            <img class="mx-auto" alt="图 14" src="/image/6ea8beb7671b3221ae6f58dc71397b82020c11e67dc2f6a2b5ca2576265b5794.png" />
+        
+            <img class="mx-auto img-float" alt="图 14" src="/image/6ea8beb7671b3221ae6f58dc71397b82020c11e67dc2f6a2b5ca2576265b5794.png" />
+        
         </a>
     </p>
 <p>类型意为收到该帧之后，应传送给网络层的何种协议（大部分为 IP 协议）</p>
@@ -1141,20 +1224,26 @@ IP 地址是在全球范围内标识一台主机的地址</p>
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/d1518bf6011debd81392692d3f2fd1cf054c08034ab7dd2e41a7558bcf1ffd15.png">
-            <img class="mx-auto" alt="图 15" src="/image/d1518bf6011debd81392692d3f2fd1cf054c08034ab7dd2e41a7558bcf1ffd15.png" />
+        
+            <img class="mx-auto img-float" alt="图 15" src="/image/d1518bf6011debd81392692d3f2fd1cf054c08034ab7dd2e41a7558bcf1ffd15.png" />
+        
         </a>
     </p>
 <p>局域网中的每个节点（主机、路由器等）都有一张 ARP 表，存储了局域网中<strong>某些节点的 IP 地址/MAC 地址的映射关系</strong>（<code>&lt;IP address; MAC address; TTL（多久删除）&gt;</code>）</p>
 <p>只有找到接口的 MAC 地址，我们才能在物理相邻的网络中与其通信</p>
 <p>
         <a data-fancybox="gallery" href="/image/a7c3b0a95b6b3ed1f7ee24e4a94ee71a68feb4465471fa5a25f5bad82206c00c.png">
-            <img class="mx-auto" alt="图 16" src="/image/a7c3b0a95b6b3ed1f7ee24e4a94ee71a68feb4465471fa5a25f5bad82206c00c.png" />
+        
+            <img class="mx-auto img-float" alt="图 16" src="/image/a7c3b0a95b6b3ed1f7ee24e4a94ee71a68feb4465471fa5a25f5bad82206c00c.png" />
+        
         </a>
     </p>
 <h5 id="在局域网中学习-arp-表">在局域网中学习 ARP 表</h5>
 <p>
         <a data-fancybox="gallery" href="/image/27be89465a412ea03d27810333862ce8463946196b88138e42de6d94b12fc90e.png">
-            <img class="mx-auto" alt="图 18" src="/image/27be89465a412ea03d27810333862ce8463946196b88138e42de6d94b12fc90e.png" />
+        
+            <img class="mx-auto img-float" alt="图 18" src="/image/27be89465a412ea03d27810333862ce8463946196b88138e42de6d94b12fc90e.png" />
+        
         </a>
     </p>
 <p>由此可见，ARP 协议是“即插即用”的：节点创建自己的 ARP 表格，并<strong>不需要网络管理员的人工干涉</strong></p>
@@ -1168,7 +1257,9 @@ IP 地址是在全球范围内标识一台主机的地址</p>
 <p>局域网最主要的特点是：网络为一个单位所拥有，且<strong>地理范围和站点数目均有限</strong>，每一台主机都是<strong>物理相邻的</strong></p>
 <p>
         <a data-fancybox="gallery" href="/image/ab15a31b40ac0a105386e361734fda96a546dae7c38709928f9cce8bdf33a923.png">
-            <img class="mx-auto" alt="图 1" src="/image/ab15a31b40ac0a105386e361734fda96a546dae7c38709928f9cce8bdf33a923.png" />
+        
+            <img class="mx-auto img-float" alt="图 1" src="/image/ab15a31b40ac0a105386e361734fda96a546dae7c38709928f9cce8bdf33a923.png" />
+        
         </a>
     </p>
 <h2 id="以太网">以太网</h2>
@@ -1197,14 +1288,18 @@ IP 地址是在全球范围内标识一台主机的地址</p>
 <p>星形环状拓扑结构有一个集线器充当连接线，站点通过两条电线连接集线器，这种结构<strong>即使一条链路失效了其他节点也能正常运行</strong>，因此不宜故障</p>
 <p>
         <a data-fancybox="gallery" href="/image/bbe2f86c6985d02cc295ecc038cba8d4c7f123f27617374110a1a01909e0f81f.png">
-            <img class="mx-auto" alt="图 11" src="/image/bbe2f86c6985d02cc295ecc038cba8d4c7f123f27617374110a1a01909e0f81f.png" />
+        
+            <img class="mx-auto img-float" alt="图 11" src="/image/bbe2f86c6985d02cc295ecc038cba8d4c7f123f27617374110a1a01909e0f81f.png" />
+        
         </a>
     </p>
 <p><a href="#%E4%BB%A4%E7%89%8C%E4%BC%A0%E9%80%92-token-passing">星形拓扑也可用于受控接入</a></p>
 <h3 id="以太网的帧的结构">以太网的帧的结构</h3>
 <p>
         <a data-fancybox="gallery" href="/image/93f927afd260dd95459adac6b9a357e3802749bbf9e1a3b4a93c1044ac033b8a.png">
-            <img class="mx-auto" alt="图 20" src="/image/93f927afd260dd95459adac6b9a357e3802749bbf9e1a3b4a93c1044ac033b8a.png" />
+        
+            <img class="mx-auto img-float" alt="图 20" src="/image/93f927afd260dd95459adac6b9a357e3802749bbf9e1a3b4a93c1044ac033b8a.png" />
+        
         </a>
     </p>
 <blockquote>
@@ -1237,7 +1332,9 @@ IP 地址是在全球范围内标识一台主机的地址</p>
 <p>一个站在发送帧时出现了碰撞。经过一个争用期 2t 后（t 是以太网单程端到端传播时延），可能又出现了碰撞。这样<strong>经过若干个争用期</strong>后，一个站发送成功了。假定发送帧需要的时间是 $T_{0}$，<strong>总占用信道时间为$T_{0}+τ$</strong> （最后一个比特发出去后还要在信道上跑$τ$的时间）</p>
 <p>
         <a data-fancybox="gallery" href="/image/6c3ccab49fed10c423cb1d78cc562e5f4de969c34289d7795b1bab14ed58b8d2.png">
-            <img class="mx-auto" alt="图 1" src="/image/6c3ccab49fed10c423cb1d78cc562e5f4de969c34289d7795b1bab14ed58b8d2.png" />
+        
+            <img class="mx-auto img-float" alt="图 1" src="/image/6c3ccab49fed10c423cb1d78cc562e5f4de969c34289d7795b1bab14ed58b8d2.png" />
+        
         </a>
     </p>
 <p>因此，要提高以太网的信道利用率，就<strong>必须减小$τ$与$T_{0}$之比</strong> ，我们可以将 <strong>这个比定义为 $a = \frac{τ}{T_{0}}$</strong> ，这样就可以知道，a 越小越好</p>
@@ -1257,7 +1354,9 @@ IP 地址是在全球范围内标识一台主机的地址</p>
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/de269c178fe40740f540a3a6281492c5e16ffa282ff5b955ac730089046dc030.png">
-            <img class="mx-auto" alt="图 1" src="/image/de269c178fe40740f540a3a6281492c5e16ffa282ff5b955ac730089046dc030.png" />
+        
+            <img class="mx-auto img-float" alt="图 1" src="/image/de269c178fe40740f540a3a6281492c5e16ffa282ff5b955ac730089046dc030.png" />
+        
         </a>
     </p>
 <p><em>特点：</em></p>
@@ -1274,7 +1373,9 @@ IP 地址是在全球范围内标识一台主机的地址</p>
 <p>交换机通过<strong>自动学习</strong>知道通过哪个接口能够访问对应主机</p>
 <p>
         <a data-fancybox="gallery" href="/image/e5838178c6b8707eda7d06284b5e1a187e251c2c14b4739df7705ffa334f9a4d.png">
-            <img class="mx-auto" alt="图 4" src="/image/e5838178c6b8707eda7d06284b5e1a187e251c2c14b4739df7705ffa334f9a4d.png" />
+        
+            <img class="mx-auto img-float" alt="图 4" src="/image/e5838178c6b8707eda7d06284b5e1a187e251c2c14b4739df7705ffa334f9a4d.png" />
+        
         </a>
     </p>
 <p>当交换机收到一个帧的时候，就<strong>记录源地址</strong>，然后根据目的地 MAC 地址，从交换表里面寻找对应条目</p>
@@ -1284,7 +1385,9 @@ IP 地址是在全球范围内标识一台主机的地址</p>
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/2e687ac578a9e3db33d92f6fce420d4ffbd086d7c2b144da8f6c4147aec45a0d.png">
-            <img class="mx-auto" alt="图 2" src="/image/2e687ac578a9e3db33d92f6fce420d4ffbd086d7c2b144da8f6c4147aec45a0d.png" />
+        
+            <img class="mx-auto img-float" alt="图 2" src="/image/2e687ac578a9e3db33d92f6fce420d4ffbd086d7c2b144da8f6c4147aec45a0d.png" />
+        
         </a>
     </p>
 <blockquote>
@@ -1297,7 +1400,9 @@ IP 地址是在全球范围内标识一台主机的地址</p>
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/b36973a22b807775e2c89a89d29d2ee6dfbbbe9a1591f3c89f06df54b1b2a2fa.png">
-            <img class="mx-auto" alt="图 3" src="/image/b36973a22b807775e2c89a89d29d2ee6dfbbbe9a1591f3c89f06df54b1b2a2fa.png" />
+        
+            <img class="mx-auto img-float" alt="图 3" src="/image/b36973a22b807775e2c89a89d29d2ee6dfbbbe9a1591f3c89f06df54b1b2a2fa.png" />
+        
         </a>
     </p>
 <p>如图，四个交换机的接口在自娱自乐</p>
@@ -1312,14 +1417,18 @@ IP 地址是在全球范围内标识一台主机的地址</p>
 </blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/d627e0d530c6447b5f95018313f0aef719460c7c3f819fecaa817ffb6bc357c9.png">
-            <img class="mx-auto" alt="图 5" src="/image/d627e0d530c6447b5f95018313f0aef719460c7c3f819fecaa817ffb6bc357c9.png" />
+        
+            <img class="mx-auto img-float" alt="图 5" src="/image/d627e0d530c6447b5f95018313f0aef719460c7c3f819fecaa817ffb6bc357c9.png" />
+        
         </a>
     </p>
 <p><em>官方定义：虚拟局域网 VLAN 是由一些局域网网段构成的<strong>与物理位置无关</strong>的逻辑组，而这些网段<strong>具有某些共同的需求</strong>。每一个 VLAN 的<strong>帧都有一个明确的标识符</strong>，指明发送这个帧的计算机是属于哪一个 VLAN。</em></p>
 <p>因此-&gt;虚拟局域网其实<strong>只是局域网给用户提供的一种服务</strong>，而并不是一种新型局域网。</p>
 <p>
         <a data-fancybox="gallery" href="/image/08ded2b56653d6d3633b9a0440138614a6b79cd4b0b617b3497a87a4971374e9.png">
-            <img class="mx-auto" alt="图 6" src="/image/08ded2b56653d6d3633b9a0440138614a6b79cd4b0b617b3497a87a4971374e9.png" />
+        
+            <img class="mx-auto img-float" alt="图 6" src="/image/08ded2b56653d6d3633b9a0440138614a6b79cd4b0b617b3497a87a4971374e9.png" />
+        
         </a>
     </p>
 <p>如图，虚拟局域网内各主机是<strong>逻辑上的同组</strong>，而不是物理上的同组</p>
@@ -1353,12 +1462,16 @@ IP 地址是在全球范围内标识一台主机的地址</p>
 <p>插入 VLAN 标记得出的帧称为<strong>802.1Q 帧或带标记的以太网帧</strong></p>
 <p>
         <a data-fancybox="gallery" href="/image/838f62291822b62fdcc6e7651ddea9851f1e9148a6939c70b8ac8be12f1841c0.png">
-            <img class="mx-auto" alt="图 7" src="/image/838f62291822b62fdcc6e7651ddea9851f1e9148a6939c70b8ac8be12f1841c0.png" />
+        
+            <img class="mx-auto img-float" alt="图 7" src="/image/838f62291822b62fdcc6e7651ddea9851f1e9148a6939c70b8ac8be12f1841c0.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/390bf264d2fe3f075b7b14623e607f95ba79496842b81206019a296e4e2a2882.png">
-            <img class="mx-auto" alt="图 8" src="/image/390bf264d2fe3f075b7b14623e607f95ba79496842b81206019a296e4e2a2882.png" />
+        
+            <img class="mx-auto img-float" alt="图 8" src="/image/390bf264d2fe3f075b7b14623e607f95ba79496842b81206019a296e4e2a2882.png" />
+        
         </a>
     </p>
 

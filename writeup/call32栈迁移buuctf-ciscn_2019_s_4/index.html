@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -544,23 +555,31 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="查看程序架构">查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119162837.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119162837.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119162837.png" />
+        
         </a>
     </p>
 <h2 id="ida伪代码">ida伪代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119162938.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119162938.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119162938.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119162954.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119162954.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119162954.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020221119163010.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020221119163010.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020221119163010.png" />
+        
         </a>
     
 限制溢出的字符到ret只能有一个地址，没有后门函数，典型栈迁移</p>

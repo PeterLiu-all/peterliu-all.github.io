@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -546,7 +557,9 @@ body::-webkit-scrollbar-thumb:hover {
 </ul>
 <p>
         <a data-fancybox="gallery" href="/image/GOT&amp;PLT.drawio.png">
-            <img class="mx-auto" alt="" src="/image/GOT&amp;PLT.drawio.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/GOT&amp;PLT.drawio.png" />
+        
         </a>
     </p>
 <h2 id="例题">例题</h2>
@@ -565,7 +578,9 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="如何-leak-出基址">如何 leak 出基址？</h2>
 <p>
         <a data-fancybox="gallery" href="/image/leak.drawio.png">
-            <img class="mx-auto" alt="" src="/image/leak.drawio.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/leak.drawio.png" />
+        
         </a>
     </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">main_addr</span><span class="o">=</span> <span class="n">elf</span><span class="o">.</span><span class="n">sym</span><span class="p">[</span><span class="s2">&#34;main&#34;</span><span class="p">]</span>
@@ -582,7 +597,9 @@ body::-webkit-scrollbar-thumb:hover {
 <blockquote>
 <p>
         <a data-fancybox="gallery" href="/image/receive.png">
-            <img class="mx-auto" alt="" src="/image/receive.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/receive.png" />
+        
         </a>
     
 加两个\x00 是为了对齐</p>

@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -528,7 +539,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>在使用pwntools调试程序的时候，在gdb窗口中使用pwndbg的特殊命令出现如下警告：</p>
 <p>
         <a data-fancybox="gallery" href="/image/d41b40fd3a024def10859f8170986df.png">
-            <img class="mx-auto" alt="" src="/image/d41b40fd3a024def10859f8170986df.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/d41b40fd3a024def10859f8170986df.png" />
+        
         </a>
     </p>
 <p>按指示下载了相关的库之后警告却并没有消失，这实在是一件非常蛋疼的事情</p>
@@ -540,7 +553,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>原本没有这个功能，是一位大佬发现gef中没有调试符号也能正常使用，于是参考gef给pwndbg做了一个PR，详情见<a href="https://github.com/pwndbg/pwndbg/issues/937">Heap inspection without libc debug symbols · Issue #937 · pwndbg/pwndbg · GitHub</a>，感谢这位师傅</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230117211821.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230117211821.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230117211821.png" />
+        
         </a>
     </p>
 

@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -557,14 +568,18 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><p>看来有一个输入口，有机会栈溢出，我们用 ida 看看</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209081747592022-09-08-17-47-59.png">
-            <img class="mx-auto" alt="202209081747592022-09-08-17-47-59" src="/image/202209081747592022-09-08-17-47-59.png" />
+        
+            <img class="mx-auto img-float" alt="202209081747592022-09-08-17-47-59" src="/image/202209081747592022-09-08-17-47-59.png" />
+        
         </a>
     </p>
 <p>这个<code>vulnerable_function</code>属实是有点大摇大摆了</p>
 <p>点进去康康：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209081749192022-09-08-17-49-20.png">
-            <img class="mx-auto" alt="202209081749192022-09-08-17-49-20" src="/image/202209081749192022-09-08-17-49-20.png" />
+        
+            <img class="mx-auto img-float" alt="202209081749192022-09-08-17-49-20" src="/image/202209081749192022-09-08-17-49-20.png" />
+        
         </a>
     </p>
 <p>这明摆着是要栈溢出然后调用 plt 表中的 system 函数</p>
@@ -572,7 +587,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>寻找 system 函数地址：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209081801162022-09-08-18-01-16.png">
-            <img class="mx-auto" alt="202209081801162022-09-08-18-01-16" src="/image/202209081801162022-09-08-18-01-16.png" />
+        
+            <img class="mx-auto img-float" alt="202209081801162022-09-08-18-01-16" src="/image/202209081801162022-09-08-18-01-16.png" />
+        
         </a>
     </p>
 <blockquote>

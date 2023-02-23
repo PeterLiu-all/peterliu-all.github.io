@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -553,18 +564,24 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec查看程序架构">checksec查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122112407.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122112407.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122112407.png" />
+        
         </a>
     </p>
 <h2 id="ida查看伪c代码">ida查看伪C代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122112511.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122112511.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122112511.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122112527.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122112527.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122112527.png" />
+        
         </a>
     </p>
 <h2 id="法一直接用ropper或者ropgadget生成rop链">法一：直接用ropper或者ROPgadget生成ROP链</h2>
@@ -626,7 +643,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>程序给了一个win函数来将flag读入到栈内：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122114629.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122114629.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122114629.png" />
+        
         </a>
     </p>
 <p>因为flag在一个远程环境中是不变的，而程序限制v2的读入长度，所以我们可以一个一个地读入：</p>
@@ -809,18 +828,24 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec查看程序架构-1">checksec查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122120935.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122120935.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122120935.png" />
+        
         </a>
     </p>
 <h2 id="ida查看伪c代码-1">ida查看伪C代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122121534.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122121534.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122121534.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122121618.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122121618.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122121618.png" />
+        
         </a>
     </p>
 <p>程序的整体逻辑就是先输入一个达不到栈溢出长度的字符串，然后把这个字符串复制到更低位的栈上，但是遇到<code>\x00</code>就停止复制</p>
@@ -828,14 +853,18 @@ body::-webkit-scrollbar-thumb:hover {
 <p>于是我就想，既然check的栈更低，那能不能和main函数中的输入到栈中的payload连在一起呢？</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122125457.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122125457.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122125457.png" />
+        
         </a>
     </p>
 <p>但一个ret肯定是不行的，但是别忘了，能改变栈指针的还有pop和push，</p>
 <p>如果我们使用这个pop掉5个的gadget，那么我们不仅能和我们的payload接上，而且还会跳过payload中的pop_5_ret：</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122130750.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122130750.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122130750.png" />
+        
         </a>
     </p>
 <p>那么，其实我们已经可以忽视check函数了，只需要将payload构造成这样，<code>[content]</code>部分就能够被执行</p>
@@ -1063,18 +1092,24 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec查看程序架构-2">checksec查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122132346.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122132346.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122132346.png" />
+        
         </a>
     </p>
 <h2 id="ida查看伪c代码-2">ida查看伪C代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122163239.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122163239.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122163239.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122163317.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122163317.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122163317.png" />
+        
         </a>
     </p>
 <p>这道题是C++反编译，因此阅读可能会有一点困难</p>
@@ -1082,12 +1117,16 @@ body::-webkit-scrollbar-thumb:hover {
 <p>只要先把线程挂起，因为里面有一个sleep，在这一秒内将bookname改为./flag就行</p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122163516.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122163516.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122163516.png" />
+        
         </a>
     </p>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122163532.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122163532.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122163532.png" />
+        
         </a>
     </p>
 <h2 id="exp-1">exp</h2>
@@ -1244,13 +1283,17 @@ body::-webkit-scrollbar-thumb:hover {
 <h2 id="checksec查看程序架构-3">checksec查看程序架构</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122163955.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122163955.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122163955.png" />
+        
         </a>
     </p>
 <h2 id="ida查看伪c代码-3">ida查看伪C代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230122164100.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230122164100.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230122164100.png" />
+        
         </a>
     </p>
 <p>一次栈上格式化字符串漏洞，两次非栈上格式化字符串漏洞，而且第一次栈上格式化字符串漏洞之后还有一次机会改变栈上内容</p>

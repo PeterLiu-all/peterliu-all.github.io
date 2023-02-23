@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -545,7 +556,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><h3 id="效果对比">效果对比</h3>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230102195803.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230102195803.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230102195803.png" />
+        
         </a>
     </p>
 <h2 id="64位shellcode">64位shellcode</h2>
@@ -573,7 +586,9 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><h3 id="效果对比-1">效果对比</h3>
 <p>
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230102200025.png">
-            <img class="mx-auto" alt="" src="/image/Pasted%20image%2020230102200025.png" />
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230102200025.png" />
+        
         </a>
     </p>
 

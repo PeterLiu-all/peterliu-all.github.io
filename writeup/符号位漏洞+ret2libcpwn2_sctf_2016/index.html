@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -563,19 +574,25 @@ body::-webkit-scrollbar-thumb:hover {
 </span></span></code></pre></div><h2 id="ida查看程序伪代码">ida查看程序伪代码</h2>
 <p>
         <a data-fancybox="gallery" href="/image/202209251556582022-09-25-15-56-59.png">
-            <img class="mx-auto" alt="202209251556582022-09-25-15-56-59" src="/image/202209251556582022-09-25-15-56-59.png" />
+        
+            <img class="mx-auto img-float" alt="202209251556582022-09-25-15-56-59" src="/image/202209251556582022-09-25-15-56-59.png" />
+        
         </a>
     
 
         <a data-fancybox="gallery" href="/image/202209251557212022-09-25-15-57-21.png">
-            <img class="mx-auto" alt="202209251557212022-09-25-15-57-21" src="/image/202209251557212022-09-25-15-57-21.png" />
+        
+            <img class="mx-auto img-float" alt="202209251557212022-09-25-15-57-21" src="/image/202209251557212022-09-25-15-57-21.png" />
+        
         </a>
     </p>
 <p>我们发现第一次输入的数字决定了第二次输入的字符个数，但是必须小于32，而我们查看过栈情况后发现32个字符是不够的</p>
 <p>然后我们发现get_n的第二个参数的类型为unsigned int：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251600202022-09-25-16-00-21.png">
-            <img class="mx-auto" alt="202209251600202022-09-25-16-00-21" src="/image/202209251600202022-09-25-16-00-21.png" />
+        
+            <img class="mx-auto img-float" alt="202209251600202022-09-25-16-00-21" src="/image/202209251600202022-09-25-16-00-21.png" />
+        
         </a>
     </p>
 <p>那么我们可以考虑符号位漏洞</p>
@@ -605,7 +622,9 @@ body::-webkit-scrollbar-thumb:hover {
 <p>这题最无语的是它提供了一个<code>do_thing</code>函数：</p>
 <p>
         <a data-fancybox="gallery" href="/image/202209251620452022-09-25-16-20-45.png">
-            <img class="mx-auto" alt="202209251620452022-09-25-16-20-45" src="/image/202209251620452022-09-25-16-20-45.png" />
+        
+            <img class="mx-auto img-float" alt="202209251620452022-09-25-16-20-45" src="/image/202209251620452022-09-25-16-20-45.png" />
+        
         </a>
     </p>
 <p>我还以为是要用syscall做，浪费了好多时间找能改变eax、ebx、ecx、edx的gadget，结果找了一圈就是没有能改eax的，后来无奈只能用ret2libc做</p>

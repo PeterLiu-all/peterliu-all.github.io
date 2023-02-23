@@ -42,6 +42,17 @@ body::-webkit-scrollbar-thumb:hover {
 .dark body::-webkit-scrollbar-thumb:hover{
     background: rgba(255, 255, 255, 0.2);
 }
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
 </style>
 
 
@@ -553,13 +564,17 @@ body::-webkit-scrollbar-thumb:hover {
 <p><strong><a href="https://blog.csdn.net/qq_43211132/article/details/102668037">原博客地址</a></strong></p>
 <p><a href="https://blog.csdn.net/qq_43211132/article/details/102668037">
         <a data-fancybox="gallery" href="/image/softmax&amp;logistic.png">
-            <img class="mx-auto" alt="softmax与logistic的区别" src="/image/softmax&amp;logistic.png" />
+        
+            <img class="mx-auto img-float" alt="softmax与logistic的区别" src="/image/softmax&amp;logistic.png" />
+        
         </a>
     </a></p>
 <p>softmax 函数和之前的线性函数一样，是全连接层的，也就是说，它的每一个结点都与上一层的所有结点相连</p>
 <p><a href="https://tangshusen.me/Dive-into-DL-PyTorch/#/chapter03_DL-basics/3.4_softmax-regression">
         <a data-fancybox="gallery" href="/image/softmaxNet.svg">
-            <img class="mx-auto" alt="SoftmaxNet" src="/image/softmaxNet.svg" />
+        
+            <img class="mx-auto img-float" alt="SoftmaxNet" src="/image/softmaxNet.svg" />
+        
         </a>
     </a></p>
 <h2 id="softmax-公式">Softmax 公式</h2>
@@ -572,7 +587,9 @@ $$</p>
 $$</p>
 <p><a href="https://blog.csdn.net/qq_43211132/article/details/102668037">
         <a data-fancybox="gallery" href="/image/softmax%E5%85%AC%E5%BC%8F.png">
-            <img class="mx-auto" alt="公式" src="/image/softmax%E5%85%AC%E5%BC%8F.png" />
+        
+            <img class="mx-auto img-float" alt="公式" src="/image/softmax%E5%85%AC%E5%BC%8F.png" />
+        
         </a>
     </a></p>
 <p>因此模型公式为：</p>
