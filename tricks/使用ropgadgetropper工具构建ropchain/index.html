@@ -156,7 +156,6 @@ nav::-webkit-scrollbar {
   <script defer src="/highlight/languages/matlab.js"
      crossorigin></script>
 <link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
-<script>hljs.highlightAll();</script>
 
 
 <script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
@@ -240,6 +239,7 @@ nav::-webkit-scrollbar {
         setClipboardText(e);
     });
 </script>
+
 
 <link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
@@ -498,7 +498,10 @@ nav::-webkit-scrollbar {
     <div
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
-      <article class="prose">
+      
+
+
+<article class="prose">
   <h1 class="mb-4">使用ROPgadget、ropper工具构建ropchain</h1>
 
   <div
@@ -888,7 +891,106 @@ nav::-webkit-scrollbar {
         }
     }
 </style>
-<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> <br />  
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+<script type="text/javascript">
+
+function displayImg() {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20;
+    var y = event.clientY + document.body.scrollTop - 5; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+</script>
+<button id="copy_qrcode" class="button" onmouseover="displayImg();" onmouseout="vanishImg()" onmousemove="displayImg();">点此复制分享二维码！</button> 
+<button id="copy_invite_msg" class="button" >点此复制分享信息！</button>
+<div><img id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed;background-color:transparent;" src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2ftricks%2f%25E4%25BD%25BF%25E7%2594%25A8ropgadgetropper%25E5%25B7%25A5%25E5%2585%25B7%25E6%259E%2584%25E5%25BB%25BAropchain%2f&size=300x300" alt="生成二维码失败！检查检查网络？"></div>
+
+<script>
+const testImg = document.querySelector("#qrcode");
+const btn = document.querySelector("#copy_qrcode");
+const msgbtn = document.querySelector("#copy_invite_msg");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+function copy_invite_message(){
+    let message = "在吗？有篇博文写的挺好的，标题是P3troL1er 的个人博客，值得一读👍\n详情点击https:\/\/peterliuzhi.top\/tricks\/%E4%BD%BF%E7%94%A8ropgadgetropper%E5%B7%A5%E5%85%B7%E6%9E%84%E5%BB%BAropchain\/\n" + "\n\n著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+msgbtn.addEventListener("click", copy_invite_message, false);
+</script>
+
+<br />
 </article>
 
 
