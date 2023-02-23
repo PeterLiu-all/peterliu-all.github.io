@@ -54,7 +54,11 @@ img.img-float:hover{
   transition-delay: 0s !important;
 }
 nav#TableOfContents{
-  height:80vh;
+  position: fixed;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
   width: fit-content;
   overflow-y: auto;
   -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
@@ -272,7 +276,7 @@ nav::-webkit-scrollbar {
     },
     "headline": "保姆级教程——搭建Hugo博客 - P3troL1er 的个人博客","datePublished": "2023-01-08T14:51:51+08:00",
     "dateModified": "2023-01-08T14:51:51+08:00",
-    "wordCount":  12638 ,
+    "wordCount":  12646 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -492,7 +496,7 @@ nav::-webkit-scrollbar {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共12638字</span>
+    <span>本文共12646字</span>
   </div>
 
   <div class="me-6 my-2">
@@ -2100,7 +2104,11 @@ nav::-webkit-scrollbar {
 <p>要使它能够优雅的滚动（让难看的滚动条不可见），可以在<code>themes/eureka/layouts/partials/head.html</code>加上一段CSS代码：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">nav</span><span class="p">#</span><span class="nn">TableOfContents</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span><span class="mi">80</span><span class="kt">vh</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">position</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding-bottom</span><span class="p">:</span> <span class="mi">5</span><span class="kt">vh</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding-right</span><span class="p">:</span> <span class="mi">2</span><span class="kt">vh</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span><span class="mi">70</span><span class="kt">vh</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">top</span><span class="p">:</span> <span class="mi">20</span><span class="kt">vh</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="n">fit-content</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">overflow-y</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="kp">-webkit-</span><span class="k">transition</span><span class="p">:</span> <span class="kc">all</span> <span class="mi">1</span><span class="kt">s</span> <span class="nb">cubic-bezier</span><span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.47</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
