@@ -53,6 +53,19 @@ img.img-float:hover{
   transform: translate(-1px,-5px);
   transition-delay: 0s !important;
 }
+nav#TableOfContents{
+  height:80vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+nav#TableOfContents:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+nav::-webkit-scrollbar {
+  display: none !important;
+}
 </style>
 
 
@@ -885,7 +898,7 @@ img.img-float:hover{
     
     
       <div
-        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
       >
         <h3>相关</h3>
         

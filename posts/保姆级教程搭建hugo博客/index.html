@@ -53,6 +53,19 @@ img.img-float:hover{
   transform: translate(-1px,-5px);
   transition-delay: 0s !important;
 }
+nav#TableOfContents{
+  height:80vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+nav#TableOfContents:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+nav::-webkit-scrollbar {
+  display: none !important;
+}
 </style>
 
 
@@ -259,7 +272,7 @@ img.img-float:hover{
     },
     "headline": "保姆级教程——搭建Hugo博客 - P3troL1er 的个人博客","datePublished": "2023-01-08T14:51:51+08:00",
     "dateModified": "2023-01-08T14:51:51+08:00",
-    "wordCount":  12462 ,
+    "wordCount":  12638 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -479,12 +492,12 @@ img.img-float:hover{
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共12462字</span>
+    <span>本文共12638字</span>
   </div>
 
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>25分钟阅读时长</span>
+    <span>26分钟阅读时长</span>
   </div>
 
   
@@ -2082,6 +2095,32 @@ img.img-float:hover{
         
         </a>
     </p>
+<h2 id="使文章的导航栏可滚动">使文章的导航栏可滚动</h2>
+<p>因为Eureka的文章导航栏是不可滚动的，要等到文章读到那一部分才能滚动到那里，非常不方便</p>
+<p>要使它能够优雅的滚动（让难看的滚动条不可见），可以在<code>themes/eureka/layouts/partials/head.html</code>加上一段CSS代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">nav</span><span class="p">#</span><span class="nn">TableOfContents</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span><span class="mi">80</span><span class="kt">vh</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="n">fit-content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">overflow-y</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kp">-webkit-</span><span class="k">transition</span><span class="p">:</span> <span class="kc">all</span> <span class="mi">1</span><span class="kt">s</span> <span class="nb">cubic-bezier</span><span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.47</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">transition</span><span class="p">:</span> <span class="kc">all</span> <span class="mi">1</span><span class="kt">s</span> <span class="nb">cubic-bezier</span><span class="p">(</span><span class="mf">.02</span><span class="p">,</span> <span class="mf">.01</span><span class="p">,</span> <span class="mf">.47</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nt">nav</span><span class="p">#</span><span class="nn">TableOfContents</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span><span class="kt">px</span> <span class="mi">32</span><span class="kt">px</span> <span class="mi">0</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mf">0.073</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nt">nav</span><span class="p">::</span><span class="nd">-webkit-scrollbar</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">display</span><span class="p">:</span> <span class="kc">none</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>效果如下：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230223225201.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230223225201.png" />
+        
+        </a>
+    </p>
 <hr>
 <p>目前来说，作者就添加了这么点功能，要是以后探索到更多有趣的功能，会更新这篇文章，所以，愿意订阅我的博客吗？</p>
 
@@ -2288,6 +2327,7 @@ img.img-float:hover{
         <li><a href="#复制内容自动增加版权信息">复制内容自动增加版权信息</a></li>
         <li><a href="#增加友链页面">增加友链页面</a></li>
         <li><a href="#添加博客生存时间计数">添加博客生存时间计数</a></li>
+        <li><a href="#使文章的导航栏可滚动">使文章的导航栏可滚动</a></li>
       </ul>
     </li>
   </ul>
