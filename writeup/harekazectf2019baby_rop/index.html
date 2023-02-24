@@ -53,8 +53,8 @@ img.img-float:hover{
   transform: translate(-1px,-5px);
   transition-delay: 0s !important;
 }
-nav#TableOfContents{
-  position: fixed;
+div#nav{
+  position: fixed !important;
   padding-bottom: 5vh;
   padding-right: 2vh;
   height:70vh;
@@ -64,10 +64,10 @@ nav#TableOfContents{
   -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
   transition: all 1s cubic-bezier(.02, .01, .47, 1);
 }
-nav#TableOfContents:hover{
+div#nav:hover{
   box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
 }
-nav::-webkit-scrollbar {
+div#nav::-webkit-scrollbar {
   display: none !important;
 }
 </style>
@@ -491,6 +491,7 @@ nav::-webkit-scrollbar {
   <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
     <div
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
     >
       
 
@@ -755,15 +756,44 @@ nav::-webkit-scrollbar {
             transform: scale(1.1, 0.9);
         }
     }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
 </style>
 <a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
 <script type="text/javascript">
 
-function displayImg() {
+function displayImg(trans) {
     var img = document.getElementById("qrcode");
 
-    var x = event.clientX + document.body.scrollLeft + 20;
-    var y = event.clientY + document.body.scrollTop - 5; 
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
 
     img.style.left = x + "px";
     img.style.top = y + "px";
@@ -778,18 +808,47 @@ function vanishImg(){
 function flashCopyMessage(el, msg) {
     el.textContent = msg;
     setTimeout(function () {
-      el.textContent = "点此复制分享二维码！";
+      el.textContent = "点此复制分享信息！";
     }, 1000);
   }
+  function basic_copy(){
+    let message = "在吗？有篇博文写的挺好的，标题是 【HarekazeCTF2019】baby_rop ，值得一读👍\n详情点击https:\/\/peterliuzhi.top\/writeup\/harekazectf2019baby_rop\/\n" + "\n\n著作权归作者所有。\n" +
+      "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+      "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    let message = "在吗？有篇博文写的挺好的，标题是 【HarekazeCTF2019】baby_rop ，值得一读👍\n详情点击https:\/\/peterliuzhi.top\/writeup\/harekazectf2019baby_rop\/\n" + "\n\n著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
 </script>
-<button id="copy_qrcode" class="button" onmouseover="displayImg();" onmouseout="vanishImg()" onmousemove="displayImg();">点此复制分享二维码！</button> 
-<button id="copy_invite_msg" class="button" >点此复制分享信息！</button>
-<div><img id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed;background-color:transparent;" src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2fwriteup%2fharekazectf2019baby_rop%2f&size=300x300" alt="生成二维码失败！检查检查网络？"></div>
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode_div"><img id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed;background-color:transparent;" src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2fwriteup%2fharekazectf2019baby_rop%2f&size=300x300" alt="生成二维码失败！检查检查网络？"></div>
 
 <script>
 const testImg = document.querySelector("#qrcode");
 const btn = document.querySelector("#copy_qrcode");
-const msgbtn = document.querySelector("#copy_invite_msg");
 function flashCopyMessage(el, msg) {
     el.textContent = msg;
     setTimeout(function () {
@@ -834,25 +893,8 @@ function handleCopyImg() {
   }
 }
 
-function copy_invite_message(){
-    let message = "在吗？有篇博文写的挺好的，标题是 【HarekazeCTF2019】baby_rop ，值得一读👍\n详情点击https:\/\/peterliuzhi.top\/writeup\/harekazectf2019baby_rop\/\n" + "\n\n著作权归作者所有。\n" +
-    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
-    "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
-    navigator.clipboard.writeText(message)
-        .then(
-          () => {
-            flashCopyMessage(msgbtn, "已复制分享信息！");
-            console.log("Copied to clipboard successfully!");
-          },
-          () => {
-            flashCopyMessage(msgbtn, "复制分享信息失败:(");
-            console.error("Unable to write to clipboard.");
-          }
-        );
-}
-
 btn.addEventListener("click", handleCopyImg, false);
-msgbtn.addEventListener("click", copy_invite_message, false);
+
 </script>
 
 <br />
@@ -934,16 +976,13 @@ msgbtn.addEventListener("click", copy_invite_message, false);
       <div class="col-span-2">
         
         
-          <div
-  class="
-    bg-primary-bg
-   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
->
-  <h3>本页内容</h3>
-</div>
+          
+
 <div
-  class="sticky-toc  hidden px-6 pb-6 lg:block"
+  class="sticky-toc"
+  id="nav"
 >
+<b><h2 style="font-size: larger;">本页内容</h2></b>
   <nav id="TableOfContents">
   <ul>
     <li>
@@ -964,11 +1003,7 @@ msgbtn.addEventListener("click", copy_invite_message, false);
   </ul>
 </nav>
 </div>
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    enableStickyToc();
-  });
-</script>
+
 
         
       </div>
@@ -978,6 +1013,7 @@ msgbtn.addEventListener("click", copy_invite_message, false);
     
       <div
         class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
       >
         <h3>相关</h3>
         
@@ -1015,7 +1051,10 @@ msgbtn.addEventListener("click", copy_invite_message, false);
       
     </main>
     <footer class="pl-scrollbar">
-      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+      <div class="mx-auto w-full max-w-screen-xl">
+
+
+<div class="text-center p-6 pin-b">
     <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
 
         &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
@@ -1027,14 +1066,14 @@ msgbtn.addEventListener("click", copy_invite_message, false);
 <script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
 <style>
     .black-circle {
-        height: 45px;
-        width: 45px;
+        height: 5vh;
+        width: 5vh;
         display: block;
         font-size: 30px;
         transition: all 1.5s;
         position: fixed;
-        right: 0px;
-        bottom: 0px;
+        right: 1vh;
+        bottom: 1vh;
         z-index: 100;
         background: transparent;
     }
@@ -1042,6 +1081,8 @@ msgbtn.addEventListener("click", copy_invite_message, false);
     .black-circle:hover {
         transform: translateY(-10px);
     }
+
+    
 </style>
 <script>
     function goTop(acceleration, time) {
@@ -1093,7 +1134,9 @@ msgbtn.addEventListener("click", copy_invite_message, false);
     show_date_time()
 
 </script>
-<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a></div>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+</div>
     </footer>
   </body>
 </html>
