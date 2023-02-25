@@ -78,7 +78,7 @@ div#nav::-webkit-scrollbar {
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
-<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
 
 
 
@@ -241,6 +241,8 @@ div#nav::-webkit-scrollbar {
 </script>
 
 
+
+
 <link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
 
@@ -276,7 +278,7 @@ div#nav::-webkit-scrollbar {
     },
     "headline": "保姆级教程——搭建Hugo博客 - P3troL1er 的个人博客","datePublished": "2023-01-08T14:51:51+08:00",
     "dateModified": "2023-01-08T14:51:51+08:00",
-    "wordCount":  14056 ,
+    "wordCount":  14230 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -500,7 +502,7 @@ div#nav::-webkit-scrollbar {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共14056字</span>
+    <span>本文共14230字</span>
   </div>
 
   <div class="me-6 my-2">
@@ -796,7 +798,8 @@ div#nav::-webkit-scrollbar {
         
         </a>
     </p>
-<h2 id="使用-disqus-添加评论功能">使用 disqus 添加评论功能</h2>
+<h2 id="添加评论功能">添加评论功能</h2>
+<h3 id="使用-disqus">使用 disqus</h3>
 <p>Eureka中实现这点非常简单，你只需要注册disqus并获取shortname，填在params.yaml中就行：
 
         <a data-fancybox="gallery" href="/image/Pasted%20image%2020230108003846.png">
@@ -814,6 +817,26 @@ div#nav::-webkit-scrollbar {
     </p>
 <p>相关阅读：</p>
 <p><a href="https://marvinsblog.net/post/2017-04-20-hugo-with-disqus/">给Hugo添加disqus评论服务 | Marvin&rsquo;s Blog【程式人生】</a></p>
+<p>但是disqus在国内会被墙掉，要评论总是要使用魔法，比较麻烦，可以使用utterances</p>
+<h2 id="使用utterances">使用utterances</h2>
+<p>utterances和gittalk很像，都是使用GitHub issues的方式来保存评论</p>
+<p>具体配置如下：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230225204007.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230225204007.png" />
+        
+        </a>
+    </p>
+<p>可以去<a href="https://utteranc.es/">utterances</a>查看安装方式</p>
+<p>简单来说，需要在你的GitHub仓库内安装<a href="https://github.com/apps/utterances">GitHub Apps - utterances · GitHub</a>，然后配置好即可</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230225204218.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230225204218.png" />
+        
+        </a>
+    </p>
 <h2 id="在代码旁增加复制按钮">在代码旁增加复制按钮</h2>
 <p>在根目录 /static/css/ 和 /static/js/ 分别创建 copy-btn.css 和 copy-btn.js，分别写入：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">highlight</span> <span class="p">{</span>
@@ -2664,28 +2687,20 @@ btn.addEventListener("click", handleCopyImg, false);
 
 
 
-  
-<div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
 
     </div>
     
@@ -2715,7 +2730,12 @@ btn.addEventListener("click", handleCopyImg, false);
         </li>
         <li><a href="#图片上传问题">图片上传问题</a></li>
         <li><a href="#fontawesome小插图无法显示的问题">fontawesome小插图无法显示的问题</a></li>
-        <li><a href="#使用-disqus-添加评论功能">使用 disqus 添加评论功能</a></li>
+        <li><a href="#添加评论功能">添加评论功能</a>
+          <ul>
+            <li><a href="#使用-disqus">使用 disqus</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用utterances">使用utterances</a></li>
         <li><a href="#在代码旁增加复制按钮">在代码旁增加复制按钮</a></li>
         <li><a href="#在文章列表中显示tag">在文章列表中显示tag</a></li>
         <li><a href="#在文章开头显示字数">在文章开头显示字数</a></li>

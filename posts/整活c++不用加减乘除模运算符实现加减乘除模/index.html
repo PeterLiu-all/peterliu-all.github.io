@@ -78,7 +78,7 @@ div#nav::-webkit-scrollbar {
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
-<script defer src="https://peterliuzhi.top/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
 
 
 
@@ -241,6 +241,8 @@ div#nav::-webkit-scrollbar {
 </script>
 
 
+
+
 <link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
 
@@ -276,7 +278,7 @@ div#nav::-webkit-scrollbar {
     },
     "headline": "【整活】C\u002b\u002b不用加减乘除模运算符实现加减乘除模 - P3troL1er 的个人博客","datePublished": "2023-02-21T22:53:01+08:00",
     "dateModified": "2023-02-23T21:27:22+08:00",
-    "wordCount":  1211 ,
+    "wordCount":  1205 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -506,7 +508,7 @@ div#nav::-webkit-scrollbar {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1211字</span>
+    <span>本文共1205字</span>
   </div>
 
   <div class="me-6 my-2">
@@ -567,7 +569,7 @@ div#nav::-webkit-scrollbar {
 <p>最近在上数字逻辑，想起以前做过的一道算法题（不用加法符实现两数相加），突发奇想想要纯用位运算实现一下加减乘除模</p>
 <p>以前最多实现加减乘，对除法一直没想到纯粹位运算的方式，今天算是“圆梦”了</p>
 <p>注意，我写的这几个函数只能用于整数（包括int、long、long long还有他们的unsigned形式），使用C++主要是可以使用模板实现泛型，如果纯用C可能就需要转成void*之类的比较复杂的操作（或者使用宏中的##连接符实现重载）</p>
-<p>下面是具体的代码，如果您发现了bug可以在下面的disqus评论告诉我~</p>
+<p>下面是具体的代码，如果您发现了bug可以在下面的评论告诉我~</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">NUM</span><span class="o">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="n">NUM</span> <span class="n">add</span><span class="p">(</span><span class="n">NUM</span> <span class="n">a</span><span class="p">,</span> <span class="n">NUM</span> <span class="n">b</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
@@ -993,28 +995,20 @@ btn.addEventListener("click", handleCopyImg, false);
 
 
 
-  
-<div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "peterliuzhi" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
 
     </div>
     
