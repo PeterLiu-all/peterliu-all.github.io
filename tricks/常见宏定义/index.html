@@ -999,14 +999,14 @@ function flashCopyMessage(el, msg) {
 
 <a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
 
-<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed;">
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
   <img src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2ftricks%2f%25E5%25B8%25B8%25E8%25A7%2581%25E5%25AE%258F%25E5%25AE%259A%25E4%25B9%2589%2f&size=300x300" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
   <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
     <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
   </div>
 </div>
 
-<div style="position:fixed; margin:0; display:none; background-color: transparent; " id="sub_text"><b>点击订阅</b></div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
 
 <script>
 const testImg = document.querySelector("#qrcode_img");
