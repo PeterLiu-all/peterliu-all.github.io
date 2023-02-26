@@ -457,7 +457,7 @@ div#nav::-webkit-scrollbar {
         </div>
     </div>
 
-    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
     </div>
 
 </nav>
@@ -495,10 +495,7 @@ div#nav::-webkit-scrollbar {
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
       style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
     >
-      
-
-
-<article class="prose">
+      <article class="prose">
   <h1 class="mb-4">分页、分段和虚拟地址_基础知识</h1>
 
   <div
@@ -973,7 +970,7 @@ btn.addEventListener("click", handleCopyImg, false);
           
 
 <div
-  class="sticky-toc"
+  class="sticky-toc hidden lg:block"
   id="nav"
 >
 <b><h2 style="font-size: larger;">本页内容</h2></b>
