@@ -8,6 +8,20 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  function is_weixn(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+if(is_weixn()){
+  navigator.clipboard.writeText("https:\/\/peterliuzhi.top\/tags\/morse\/");
+  alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n本网址已复制到剪切板，您可以前往手机浏览器内复制网址打开！")
+}
+</script>
 <style>
   .dark{
     transition: 1.5s;
