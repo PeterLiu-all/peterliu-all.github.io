@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "arale-qrcode": "^3.0.5"
+  }
+}

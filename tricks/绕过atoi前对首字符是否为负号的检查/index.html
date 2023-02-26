@@ -663,6 +663,7 @@ div#nav::-webkit-scrollbar {
 }
 </style>
 <a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
 <script type="text/javascript">
 
 function displayImg(trans) {
@@ -703,18 +704,18 @@ function flashCopyMessage(el, msg) {
       el.textContent = "点此复制分享信息！";
     }, 1000);
   }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 绕过atoi前对首字符是否为负号的检查 ，值得一读👍\n详情点击https:\/\/peterliuzhi.top\/tricks\/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5\/\n" + "\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
   function basic_copy(){
-    let message = "在吗？有篇博文写的挺好的，标题是 绕过atoi前对首字符是否为负号的检查 ，值得一读👍\n详情点击https:\/\/peterliuzhi.top\/tricks\/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5\/\n" + "\n\n著作权归作者所有。\n" +
-      "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
-      "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
     navigator.clipboard.writeText(message);
   }
 
   function copy_invite_message(){
     const msgbtn = document.querySelector("#copy_invite_msg");
-    let message = "在吗？有篇博文写的挺好的，标题是 绕过atoi前对首字符是否为负号的检查 ，值得一读👍\n详情点击https:\/\/peterliuzhi.top\/tricks\/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5\/\n" + "\n\n著作权归作者所有。\n" +
-    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
-    "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+    
     navigator.clipboard.writeText(message)
         .then(
           () => {
@@ -727,7 +728,9 @@ function flashCopyMessage(el, msg) {
           }
         );
 }
+  
 </script>
+
 <button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
 
 <button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
@@ -737,14 +740,12 @@ function flashCopyMessage(el, msg) {
 <a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
 
 <div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
-  <img src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2ftricks%2f%25E7%25BB%2595%25E8%25BF%2587atoi%25E5%2589%258D%25E5%25AF%25B9%25E9%25A6%2596%25E5%25AD%2597%25E7%25AC%25A6%25E6%2598%25AF%25E5%2590%25A6%25E4%25B8%25BA%25E8%25B4%259F%25E5%258F%25B7%25E7%259A%2584%25E6%25A3%2580%25E6%259F%25A5%2f&size=300x300" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <img src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2ftricks%2f%25E7%25BB%2595%25E8%25BF%2587atoi%25E5%2589%258D%25E5%25AF%25B9%25E9%25A6%2596%25E5%25AD%2597%25E7%25AC%25A6%25E6%2598%25AF%25E5%2590%25A6%25E4%25B8%25BA%25E8%25B4%259F%25E5%258F%25B7%25E7%259A%2584%25E6%25A3%2580%25E6%259F%25A5%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
   <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
     <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
   </div>
 </div>
-
 <div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
-
 <script>
 const testImg = document.querySelector("#qrcode_img");
 const btn = document.querySelector("#copy_qrcode");
@@ -909,10 +910,7 @@ btn.addEventListener("click", handleCopyImg, false);
       
     </main>
     <footer class="pl-scrollbar">
-      <div class="mx-auto w-full max-w-screen-xl">
-
-
-<div class="text-center p-6 pin-b">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
     <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
 
         &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
