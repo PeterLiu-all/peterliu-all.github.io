@@ -1029,19 +1029,12 @@ btn.addEventListener("click", handleCopyImg, false);
           return false;
       }
   }
-  window.alert = function(msg1, msg2, msg3){
-    swal(msg1+"", msg2+"", msg3+"");
-  }
   if(is_weixn()){
-    Copy("https:\/\/peterliuzhi.top\/tricks\/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5\/");
-    swal({
-        title: "检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。",
-        text: "请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/tricks\/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5\/",
-        icon: "error",
-        buttons: true,
-        dangerMode: true,
-      })
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/tricks\/%E7%BB%95%E8%BF%87atoi%E5%89%8D%E5%AF%B9%E9%A6%96%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E8%B4%9F%E5%8F%B7%E7%9A%84%E6%A3%80%E6%9F%A5\/（或者右上角用浏览器打开）");
   }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
   }
   
   </script></div>

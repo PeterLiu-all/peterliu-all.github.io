@@ -1259,19 +1259,12 @@ btn.addEventListener("click", handleCopyImg, false);
           return false;
       }
   }
-  window.alert = function(msg1, msg2, msg3){
-    swal(msg1+"", msg2+"", msg3+"");
-  }
   if(is_weixn()){
-    Copy("https:\/\/peterliuzhi.top\/writeup\/bsides-mumbai-2022-pwnwarmup\/");
-    swal({
-        title: "检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。",
-        text: "请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/writeup\/bsides-mumbai-2022-pwnwarmup\/",
-        icon: "error",
-        buttons: true,
-        dangerMode: true,
-      })
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/writeup\/bsides-mumbai-2022-pwnwarmup\/（或者右上角用浏览器打开）");
   }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
   }
   
   </script></div>

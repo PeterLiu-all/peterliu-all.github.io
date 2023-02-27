@@ -880,6 +880,7 @@ div#nav::-webkit-scrollbar {
 <li>天权信安&amp;catf1ag 联合公开赛 团队 60th</li>
 <li>SICTF 2023</li>
 <li>HGAME 2023 week1 ~ week4</li>
+<li>VU Cyberthon 2023</li>
 </ul>
 </div>
     </div>
@@ -2865,19 +2866,12 @@ div#nav::-webkit-scrollbar {
           return false;
       }
   }
-  window.alert = function(msg1, msg2, msg3){
-    swal(msg1+"", msg2+"", msg3+"");
-  }
   if(is_weixn()){
-    Copy("https:\/\/peterliuzhi.top\/");
-    swal({
-        title: "检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。",
-        text: "请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/",
-        icon: "error",
-        buttons: true,
-        dangerMode: true,
-      })
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/（或者右上角用浏览器打开）");
   }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
     
         swal({
             title: '2023年02月23日\n最新发布博文：\n',
