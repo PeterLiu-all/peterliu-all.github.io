@@ -8,8 +8,29 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
-<script type="text/javascript" src="/js/sweetalert-dev.js"></script>
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
 <style>
   .dark .sweet-alert{
     filter: invert(90%);
@@ -1134,16 +1155,6 @@ btn.addEventListener("click", handleCopyImg, false);
 <a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
 
 <script>
-    function Copy(str) {
-        var save = function(e) {
-            e.clipboardData.setData('text/plain', str);
-            e.preventDefault();
-        };
-        document.addEventListener('copy', save);
-        document.execCommand('copy');
-        document.removeEventListener('copy', save);
-        console.log('复制成功');
-    }
     function is_weixn(){
       var ua = navigator.userAgent.toLowerCase();
       if(ua.match(/MicroMessenger/i)=="micromessenger") {
@@ -1152,14 +1163,21 @@ btn.addEventListener("click", handleCopyImg, false);
           return false;
       }
   }
+  window.alert = function(msg1, msg2, msg3){
+    swal(msg1+"", msg2+"", msg3+"");
+  }
   if(is_weixn()){
     Copy("https:\/\/peterliuzhi.top\/posts\/%E6%95%B4%E6%B4%BBc\u002b\u002b%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1%E8%BF%90%E7%AE%97%E7%AC%A6%E5%AE%9E%E7%8E%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1\/");
-    swal("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n本网址已复制到剪切板，您可以前往手机浏览器内复制网址打开！")
+    swal({
+        title: "检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。",
+        text: "请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/%E6%95%B4%E6%B4%BBc\u002b\u002b%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1%E8%BF%90%E7%AE%97%E7%AC%A6%E5%AE%9E%E7%8E%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1\/",
+        icon: "error",
+        buttons: true,
+        dangerMode: true,
+      })
   }else{
-      window.alert = function(msg1){
-        swal(msg1+"");
-      }
   }
+  
   </script></div>
     </footer>
   </body>

@@ -8,8 +8,29 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
-<script type="text/javascript" src="/js/sweetalert-dev.js"></script>
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
 <style>
   .dark .sweet-alert{
     filter: invert(90%);
@@ -268,7 +289,7 @@ div#nav::-webkit-scrollbar {
             "@type":"ListItem",
             "position":  1 ,
             "name": "Links",
-            "description": "隔壁老井的隔壁的博客 a weber\u0026#39;s blog Para-L1las的博客 A WEB SECURITY BLOG Hur1k的小站 (╹ڡ╹ ) 躺下，听听海，吹吹风",
+            "description": "如需交换友链，请依照以下格式向我发邮件（peterliuforever@gmail.com）或在底下评论，谢谢。 下面是我的网站信息： site: \u0026#34;P3t",
             "url": "https://peterliuzhi.top/friend/links/"
         }
     ]
@@ -472,7 +493,7 @@ div#nav::-webkit-scrollbar {
     <h3 class="mt-0">Links</h3>
   </a>
   
-    隔壁老井的隔壁的博客 a weber&#39;s blog Para-L1las的博客 A WEB SECURITY BLOG Hur1k的小站 (╹ڡ╹ ) 躺下，听听海，吹吹风
+    如需交换友链，请依照以下格式向我发邮件（peterliuforever@gmail.com）或在底下评论，谢谢。 下面是我的网站信息： site: &#34;P3t
   
 
   
@@ -487,7 +508,7 @@ div#nav::-webkit-scrollbar {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共53字</span>
+    <span>本文共174字</span>
   </div>
 
   <div class="me-6 my-2">
@@ -608,16 +629,6 @@ div#nav::-webkit-scrollbar {
 <a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
 
 <script>
-    function Copy(str) {
-        var save = function(e) {
-            e.clipboardData.setData('text/plain', str);
-            e.preventDefault();
-        };
-        document.addEventListener('copy', save);
-        document.execCommand('copy');
-        document.removeEventListener('copy', save);
-        console.log('复制成功');
-    }
     function is_weixn(){
       var ua = navigator.userAgent.toLowerCase();
       if(ua.match(/MicroMessenger/i)=="micromessenger") {
@@ -626,14 +637,21 @@ div#nav::-webkit-scrollbar {
           return false;
       }
   }
+  window.alert = function(msg1, msg2, msg3){
+    swal(msg1+"", msg2+"", msg3+"");
+  }
   if(is_weixn()){
     Copy("https:\/\/peterliuzhi.top\/friend\/");
-    swal("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n本网址已复制到剪切板，您可以前往手机浏览器内复制网址打开！")
+    swal({
+        title: "检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。",
+        text: "请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/friend\/",
+        icon: "error",
+        buttons: true,
+        dangerMode: true,
+      })
   }else{
-      window.alert = function(msg1){
-        swal(msg1+"");
-      }
   }
+  
   </script></div>
     </footer>
   </body>

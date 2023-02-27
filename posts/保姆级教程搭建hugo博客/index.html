@@ -8,8 +8,29 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
-<script type="text/javascript" src="/js/sweetalert-dev.js"></script>
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
 <style>
   .dark .sweet-alert{
     filter: invert(90%);
@@ -284,7 +305,7 @@ div#nav::-webkit-scrollbar {
     },
     "headline": "保姆级教程——搭建Hugo博客 - P3troL1er 的个人博客","datePublished": "2023-01-08T14:51:51+08:00",
     "dateModified": "2023-01-08T14:51:51+08:00",
-    "wordCount":  14230 ,
+    "wordCount":  14919 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -505,12 +526,12 @@ div#nav::-webkit-scrollbar {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共14230字</span>
+    <span>本文共14919字</span>
   </div>
 
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>29分钟阅读时长</span>
+    <span>30分钟阅读时长</span>
   </div>
 
   
@@ -2408,7 +2429,122 @@ div#nav::-webkit-scrollbar {
 </span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="kc">transparent</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</span></span></code></pre></div><hr>
+</span></span></code></pre></div><h2 id="使用sweetalert改进弹窗消息">使用sweetalert改进弹窗消息</h2>
+<p>查看<a href="https://sweetalert.js.org/guides/">SweetAlert</a>官方文档后，在<code>themes/eureka/layouts/partials/head.html</code>处加上：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://unpkg.com/sweetalert/dist/sweetalert.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h3 id="读者打开网站主页自动推送最新文章消息">读者打开网站主页自动推送最新文章消息</h3>
+<p>在<code>themes/eureka/layouts/partials/footer.html</code>末尾加上：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">function</span> <span class="nx">is_weixn</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">ua</span> <span class="o">=</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span><span class="p">(</span><span class="nx">ua</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/MicroMessenger/i</span><span class="p">)</span><span class="o">==</span><span class="s2">&#34;micromessenger&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">msg1</span><span class="p">,</span> <span class="nx">msg2</span><span class="p">,</span> <span class="nx">msg3</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">swal</span><span class="p">(</span><span class="nx">msg1</span><span class="o">+</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="nx">msg2</span><span class="o">+</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="nx">msg3</span><span class="o">+</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span><span class="p">(</span><span class="nx">is_weixn</span><span class="p">()){</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Copy</span><span class="p">(</span><span class="s2">&#34;{{ .Permalink }}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">swal</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;请复制本网址到剪切板，然后前往手机浏览器内打开：\n{{ .Permalink }}&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">icon</span><span class="o">:</span> <span class="s2">&#34;error&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">buttons</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">dangerMode</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="p">{{</span><span class="o">-</span> <span class="nx">$page_context</span> <span class="o">:=</span> <span class="nx">cond</span> <span class="p">.</span><span class="nx">IsHome</span> <span class="nx">site</span> <span class="p">.</span> <span class="o">-</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{{</span><span class="o">-</span> <span class="nx">$pages</span> <span class="o">:=</span> <span class="nx">$page_context</span><span class="p">.</span><span class="nx">RegularPages</span> <span class="o">-</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{{</span><span class="o">-</span> <span class="nx">$pages</span> <span class="o">=</span> <span class="nx">$pages</span> <span class="o">|</span> <span class="nx">first</span> <span class="mi">1</span> <span class="o">-</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{{</span> <span class="k">if</span> <span class="nx">eq</span> <span class="p">.</span><span class="nx">Permalink</span> <span class="p">.</span><span class="nx">Site</span><span class="p">.</span><span class="nx">BaseURL</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{{</span> <span class="nx">range</span> <span class="nx">$pages</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">swal</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;{{ .Date.Format &#34;2006年01月02日&#34; | safeHTML }}\n最新发布博文：\n&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">text</span><span class="o">:</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="s2">&#34;{{ .Title }}\t{{ .Permalink }}&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">icon</span><span class="o">:</span> <span class="s2">&#34;info&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">buttons</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">copy</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;复制链接&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">value</span><span class="o">:</span> <span class="s2">&#34;copy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">className</span><span class="o">:</span> <span class="s2">&#34;grey-bg&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">},</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">direct</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;阅读博文&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">value</span><span class="o">:</span> <span class="s2">&#34;direct&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">out</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;我知道了&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">value</span><span class="o">:</span> <span class="s2">&#34;cancel&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">className</span><span class="o">:</span> <span class="s2">&#34;red-bg&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">dangerMode</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">switch</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">                <span class="k">case</span> <span class="s2">&#34;copy&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">navigator</span><span class="p">.</span><span class="nx">clipboard</span><span class="p">.</span><span class="nx">writeText</span><span class="p">(</span><span class="s2">&#34;{{ .Permalink }}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">swal</span><span class="p">(</span><span class="s2">&#34;复制成功！&#34;</span><span class="p">,</span> <span class="s2">&#34;您可以粘贴到浏览器地址栏查看博文&#34;</span><span class="p">,</span> <span class="s2">&#34;success&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                  <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">             
+</span></span><span class="line"><span class="cl">                <span class="k">case</span> <span class="s2">&#34;direct&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">                  <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&#34;{{ .Permalink }}&#34;</span><span class="p">,</span> <span class="s2">&#34;{{ .Title }}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                  <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">             
+</span></span><span class="line"><span class="cl">                <span class="k">case</span> <span class="nx">out</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">                  <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{{</span> <span class="nx">end</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{{</span> <span class="nx">end</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>代码里还包括了检测是否是微信内置浏览器，如是，弹出警告信息</p>
+<p>然后根据需要定义button的样式（更改代码中的className字段），下面是我定义的class，仅供参考：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">red-bg</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">254</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.667</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">red-bg</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">254</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.769</span><span class="p">)</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">grey-bg</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">130</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mf">0.758</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">grey-bg</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">130</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mf">0.888</span><span class="p">)</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><p>然后对深色模式进行兼容（在head.html加上）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">swal-modal</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">filter</span><span class="p">:</span> <span class="nb">invert</span><span class="p">(</span><span class="mi">80</span><span class="kt">%</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">swal-overlay</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">filter</span><span class="p">:</span> <span class="nb">brightness</span><span class="p">(</span><span class="mf">1.5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>效果如图：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230227164258.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230227164258.png" />
+        
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230227164907.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230227164907.png" />
+        
+        </a>
+    </p>
+<hr>
 <p>目前来说，作者就添加了这么点功能，要是以后探索到更多有趣的功能，会更新这篇文章，所以，愿意订阅我的博客吗？</p>
 
   <style>
@@ -2774,6 +2910,11 @@ btn.addEventListener("click", handleCopyImg, false);
         <li><a href="#添加博客生存时间计数">添加博客生存时间计数</a></li>
         <li><a href="#使文章的导航栏可滚动">使文章的导航栏可滚动</a></li>
         <li><a href="#增加分享二维码和邀请信息">增加分享二维码和邀请信息</a></li>
+        <li><a href="#使用sweetalert改进弹窗消息">使用sweetalert改进弹窗消息</a>
+          <ul>
+            <li><a href="#读者打开网站主页自动推送最新文章消息">读者打开网站主页自动推送最新文章消息</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -2884,16 +3025,6 @@ btn.addEventListener("click", handleCopyImg, false);
 <a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
 
 <script>
-    function Copy(str) {
-        var save = function(e) {
-            e.clipboardData.setData('text/plain', str);
-            e.preventDefault();
-        };
-        document.addEventListener('copy', save);
-        document.execCommand('copy');
-        document.removeEventListener('copy', save);
-        console.log('复制成功');
-    }
     function is_weixn(){
       var ua = navigator.userAgent.toLowerCase();
       if(ua.match(/MicroMessenger/i)=="micromessenger") {
@@ -2902,14 +3033,21 @@ btn.addEventListener("click", handleCopyImg, false);
           return false;
       }
   }
+  window.alert = function(msg1, msg2, msg3){
+    swal(msg1+"", msg2+"", msg3+"");
+  }
   if(is_weixn()){
     Copy("https:\/\/peterliuzhi.top\/posts\/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2\/");
-    swal("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n本网址已复制到剪切板，您可以前往手机浏览器内复制网址打开！")
+    swal({
+        title: "检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。",
+        text: "请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2\/",
+        icon: "error",
+        buttons: true,
+        dangerMode: true,
+      })
   }else{
-      window.alert = function(msg1){
-        swal(msg1+"");
-      }
   }
+  
   </script></div>
     </footer>
   </body>
