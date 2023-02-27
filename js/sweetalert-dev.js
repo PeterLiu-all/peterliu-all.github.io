@@ -89,8 +89,8 @@ exports['default'] = sweetAlert = swal = function () {
 
     // Ex: swal("Hello", "Just testing", "info");
     case 'string':
-      params.title = customizations;
-      params.text = arguments[1] || '';
+      params.title = decodeURIComponent(customizations);
+      params.text = decodeURIComponent(arguments[1]) || '';
       params.type = arguments[2] || '';
       break;
 
@@ -512,6 +512,7 @@ var escapeHtml = function escapeHtml(str) {
 var _show = function _show(elem) {
   elem.style.opacity = '';
   elem.style.display = 'block';
+  elem.style.wordBreak = "break-word";
 };
 
 var show = function show(elems) {
@@ -551,6 +552,7 @@ var isDescendant = function isDescendant(parent, child) {
 var getTopMargin = function getTopMargin(elem) {
   elem.style.left = '-9999px';
   elem.style.display = 'block';
+  elem.style.wordBreak = "break-word";
 
   var height = elem.clientHeight,
       padding;
@@ -571,6 +573,7 @@ var fadeIn = function fadeIn(elem, interval) {
     interval = interval || 16;
     elem.style.opacity = 0;
     elem.style.display = 'block';
+    elem.style.wordBreak = "break-word";
     var last = +new Date();
     var tick = (function (_tick) {
       function tick() {
@@ -593,6 +596,7 @@ var fadeIn = function fadeIn(elem, interval) {
     tick();
   }
   elem.style.display = 'block'; //fallback IE8
+  elem.style.wordBreak = "break-word";
 };
 
 var fadeOut = function fadeOut(elem, interval) {
@@ -987,6 +991,7 @@ var setParameters = function setParameters(params) {
 
   var $title = modal.querySelector('h2');
   var $text = modal.querySelector('p');
+  $text.style.wordBreak = "break-word";
   var $cancelBtn = modal.querySelector('button.cancel');
   var $confirmBtn = modal.querySelector('button.confirm');
 

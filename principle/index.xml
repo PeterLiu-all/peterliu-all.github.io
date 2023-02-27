@@ -156,35 +156,5 @@
       
     </item>
     
-    <item>
-      <title>关于栈的一些基础知识</title>
-      <link>https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
-      <pubDate>Wed, 26 Oct 2022 19:05:28 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
-      
-      <description>关于栈的一些基础知识</description>
-      
-    </item>
-    
-    <item>
-      <title>汇编与寄存器</title>
-      <link>https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/</link>
-      <pubDate>Wed, 26 Oct 2022 19:05:28 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/%E6%B1%87%E7%BC%96%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8/</guid>
-      
-      <description>汇编与寄存器相关理论</description>
-      
-    </item>
-    
-    <item>
-      <title>ELF详解</title>
-      <link>https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/</link>
-      <pubDate>Wed, 26 Oct 2022 14:48:56 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/elf%E8%AF%A6%E8%A7%A3/</guid>
-      
-      <description>ELF详解</description>
-      
-    </item>
-    
   </channel>
 </rss>

@@ -10,30 +10,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
 <script type="text/javascript" src="/js/sweetalert-dev.js"></script>
-<script>
-  window.alert = function(msg){
-    swal(msg+"");
-  }
-</script>
 <style>
   .dark .sweet-alert{
     filter: invert(90%);
   }
 </style>
-<script>
-  function is_weixn(){
-    var ua = navigator.userAgent.toLowerCase();
-    if(ua.match(/MicroMessenger/i)=="micromessenger") {
-        return true;
-    } else {
-        return false;
-    }
-}
-if(is_weixn()){
-  navigator.clipboard.writeText("https:\/\/peterliuzhi.top\/writeup\/libsearcherciscn_2019_en_2\/");
-  swal("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n本网址已复制到剪切板，您可以前往手机浏览器内复制网址打开！")
-}
-</script>
 <style>
   .dark{
     transition: 1.5s;
@@ -265,7 +246,6 @@ div#nav::-webkit-scrollbar {
         setClipboardText(e);
     });
 </script>
-
 
 
 
@@ -583,7 +563,11 @@ div#nav::-webkit-scrollbar {
   
   
   
-  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/writeup/libsearcherciscn_2019_en_2/">https://peterliuzhi.top/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/writeup/libsearcherciscn_2019_en_2/" id="ThisURL">https://peterliuzhi.top/writeup/libsearcherciscn_2019_en_2/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
 
   <blockquote>
 <p>Do you want to know who you are? Don&rsquo;t ask. Act! Action will delineate and define you.
@@ -1309,7 +1293,34 @@ btn.addEventListener("click", handleCopyImg, false);
 </script>
 <a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
 
-</div>
+<script>
+    function Copy(str) {
+        var save = function(e) {
+            e.clipboardData.setData('text/plain', str);
+            e.preventDefault();
+        };
+        document.addEventListener('copy', save);
+        document.execCommand('copy');
+        document.removeEventListener('copy', save);
+        console.log('复制成功');
+    }
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    Copy("https:\/\/peterliuzhi.top\/writeup\/libsearcherciscn_2019_en_2\/");
+    swal("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n本网址已复制到剪切板，您可以前往手机浏览器内复制网址打开！")
+  }else{
+      window.alert = function(msg1){
+        swal(msg1+"");
+      }
+  }
+  </script></div>
     </footer>
   </body>
 </html>
