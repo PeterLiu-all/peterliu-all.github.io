@@ -818,7 +818,7 @@ function flashCopyMessage(el, msg) {
     }, 1000);
   }
   
-  const message = "在吗？👀有篇博文写的挺好的，标题是 Links ，值得一读👍\n详情点击https:\/\/peterliuzhi.top\/friend\/links\/\n" + "\n\n🤝本文系转载，著作权归作者所有，请支持并尊重原创。\n"
+  const message = "在吗？👀有篇博文写的挺好的，标题是 Links ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝本文系转载，著作权归作者所有，请支持并尊重原创。\n"
   
   function basic_copy(){
     navigator.clipboard.writeText(message);
