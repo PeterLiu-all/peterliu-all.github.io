@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tabulate库 | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/tabulate%E5%BA%93/</link>
+      <atom:link href="https://peterliuzhi.top/tags/tabulate%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <description>tabulate库</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 01 Mar 2023 20:05:53 +0800</lastBuildDate>
+    <item>
+      <title>C&#43;&#43;通过逻辑函数生成真值表</title>
+      <link>https://peterliuzhi.top/posts/c&#43;&#43;%E9%80%9A%E8%BF%87%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%94%9F%E6%88%90%E7%9C%9F%E5%80%BC%E8%A1%A8/</link>
+      <pubDate>Wed, 01 Mar 2023 20:05:53 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/c&#43;&#43;%E9%80%9A%E8%BF%87%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%94%9F%E6%88%90%E7%9C%9F%E5%80%BC%E8%A1%A8/</guid>
+      
+      <description>C&#43;&#43;通过逻辑函数生成真值表</description>
+      
+    </item>
+    
+  </channel>
+</rss>
