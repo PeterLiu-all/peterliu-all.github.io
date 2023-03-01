@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/categories/principle/</link>
       <atom:link href="https://peterliuzhi.top/categories/principle/index.xml" rel="self" type="application/rss+xml" />
     <description>principle</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 23 Feb 2023 13:01:14 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 01 Mar 2023 22:14:42 +0800</lastBuildDate>
+    <item>
+      <title>静态链接_基础知识</title>
+      <link>https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 01 Mar 2023 22:14:42 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      
+      <description>静态链接_基础知识</description>
+      
+    </item>
+    
     <item>
       <title>分页、分段和虚拟地址_基础知识</title>
       <link>https://peterliuzhi.top/principle/%E5%88%86%E9%A1%B5%E5%88%86%E6%AE%B5%E5%92%8C%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
@@ -143,16 +153,6 @@
       <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/</guid>
       
       <description>网络层</description>
-      
-    </item>
-    
-    <item>
-      <title>常见宏定义</title>
-      <link>https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
-      <pubDate>Sun, 30 Oct 2022 14:46:05 +0800</pubDate>
-      <guid>https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
-      
-      <description>ida常见宏定义</description>
       
     </item>
     

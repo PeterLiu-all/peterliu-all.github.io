@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>链接 | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E9%93%BE%E6%8E%A5/</link>
+      <atom:link href="https://peterliuzhi.top/tags/%E9%93%BE%E6%8E%A5/index.xml" rel="self" type="application/rss+xml" />
+    <description>链接</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 01 Mar 2023 22:14:42 +0800</lastBuildDate>
+    <item>
+      <title>静态链接_基础知识</title>
+      <link>https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 01 Mar 2023 22:14:42 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      
+      <description>静态链接_基础知识</description>
+      
+    </item>
+    
+  </channel>
+</rss>

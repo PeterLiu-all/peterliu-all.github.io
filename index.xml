@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/</link>
       <atom:link href="https://peterliuzhi.top/index.xml" rel="self" type="application/rss+xml" />
     <description>P3troL1er 的个人博客</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 01 Mar 2023 20:05:53 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 01 Mar 2023 22:14:42 +0800</lastBuildDate>
+    <item>
+      <title>静态链接_基础知识</title>
+      <link>https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 01 Mar 2023 22:14:42 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      
+      <description>静态链接_基础知识</description>
+      
+    </item>
+    
     <item>
       <title>C&#43;&#43;通过逻辑函数生成真值表</title>
       <link>https://peterliuzhi.top/posts/c&#43;&#43;%E9%80%9A%E8%BF%87%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%94%9F%E6%88%90%E7%9C%9F%E5%80%BC%E8%A1%A8/</link>
@@ -145,16 +155,6 @@
       <guid>https://peterliuzhi.top/tricks/pwntools%E8%B0%83%E7%94%A8gdb%E8%B0%83%E8%AF%95%E6%97%B6%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8binsheap%E7%AD%89%E5%91%BD%E4%BB%A4/</guid>
       
       <description>小技巧：pwntools调用gdb调试时无法使用bins、heap等命令</description>
-      
-    </item>
-    
-    <item>
-      <title>0ctf_2017_babyheap</title>
-      <link>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</link>
-      <pubDate>Mon, 09 Jan 2023 17:42:16 +0800</pubDate>
-      <guid>https://peterliuzhi.top/writeup/0ctf_2017_babyheap/</guid>
-      
-      <description>关于BUUCTF 0ctf_2017_babyheap的解析</description>
       
     </item>
     

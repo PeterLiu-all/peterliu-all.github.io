@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/tags/pwn/</link>
       <atom:link href="https://peterliuzhi.top/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
     <description>pwn</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 23 Feb 2023 13:01:14 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 01 Mar 2023 22:14:42 +0800</lastBuildDate>
+    <item>
+      <title>静态链接_基础知识</title>
+      <link>https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 01 Mar 2023 22:14:42 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      
+      <description>静态链接_基础知识</description>
+      
+    </item>
+    
     <item>
       <title>分页、分段和虚拟地址_基础知识</title>
       <link>https://peterliuzhi.top/principle/%E5%88%86%E9%A1%B5%E5%88%86%E6%AE%B5%E5%92%8C%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
@@ -143,16 +153,6 @@
       <guid>https://peterliuzhi.top/tricks/pwn%E4%B8%AD%E8%B0%83%E8%AF%95arm%E7%A8%8B%E5%BA%8F/</guid>
       
       <description>小技巧：使用qemu调试arm程序</description>
-      
-    </item>
-    
-    <item>
-      <title>较为简短的shellcode</title>
-      <link>https://peterliuzhi.top/tricks/%E8%BE%83%E4%B8%BA%E7%AE%80%E7%9F%AD%E7%9A%84shellcode/</link>
-      <pubDate>Mon, 02 Jan 2023 19:49:12 +0800</pubDate>
-      <guid>https://peterliuzhi.top/tricks/%E8%BE%83%E4%B8%BA%E7%AE%80%E7%9F%AD%E7%9A%84shellcode/</guid>
-      
-      <description>小技巧：比pwntools生成更简短的shellcode</description>
       
     </item>
     
