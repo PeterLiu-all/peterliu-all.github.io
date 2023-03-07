@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/</link>
       <atom:link href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
     <description>杂谈</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 01 Mar 2023 20:05:53 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Tue, 07 Mar 2023 01:28:14 +0800</lastBuildDate>
+    <item>
+      <title>创建C&#43;&#43; docker开发环境（VScode）</title>
+      <link>https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAc&#43;&#43;-docker%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83vscode/</link>
+      <pubDate>Tue, 07 Mar 2023 01:28:14 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAc&#43;&#43;-docker%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83vscode/</guid>
+      
+      <description>创建C&#43;&#43; docker开发环境（VScode）</description>
+      
+    </item>
+    
     <item>
       <title>C&#43;&#43;通过逻辑函数生成真值表</title>
       <link>https://peterliuzhi.top/posts/c&#43;&#43;%E9%80%9A%E8%BF%87%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%94%9F%E6%88%90%E7%9C%9F%E5%80%BC%E8%A1%A8/</link>
