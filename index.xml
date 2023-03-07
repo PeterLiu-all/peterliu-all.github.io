@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/</link>
       <atom:link href="https://peterliuzhi.top/index.xml" rel="self" type="application/rss+xml" />
     <description>P3troL1er 的个人博客</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Tue, 07 Mar 2023 01:28:14 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Tue, 07 Mar 2023 11:18:05 +0800</lastBuildDate>
+    <item>
+      <title>创建kali docker环境</title>
+      <link>https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAkali-docker%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 07 Mar 2023 11:18:05 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAkali-docker%E7%8E%AF%E5%A2%83/</guid>
+      
+      <description>创建kali docker环境</description>
+      
+    </item>
+    
     <item>
       <title>创建C&#43;&#43; docker开发环境（VScode）</title>
       <link>https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAc&#43;&#43;-docker%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83vscode/</link>
@@ -145,16 +155,6 @@
       <guid>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8pwntools%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%BA%A4%E4%BA%92%E8%A7%A3misc%E6%95%B0%E5%AD%A6%E9%A2%98/</guid>
       
       <description>小技巧：使用pwntools与远程交互解misc数学题</description>
-      
-    </item>
-    
-    <item>
-      <title>HGame Week1 PWN WriteUp</title>
-      <link>https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/</link>
-      <pubDate>Wed, 18 Jan 2023 00:50:54 +0800</pubDate>
-      <guid>https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/</guid>
-      
-      <description>HGame Week1 PWN unofficial WriteUp</description>
       
     </item>
     
