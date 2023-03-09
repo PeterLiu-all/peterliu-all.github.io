@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/posts/</link>
       <atom:link href="https://peterliuzhi.top/posts/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 09 Mar 2023 00:59:36 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Fri, 10 Mar 2023 00:14:04 +0800</lastBuildDate>
+    <item>
+      <title>关于kali sda1爆满扩容</title>
+      <link>https://peterliuzhi.top/posts/%E5%85%B3%E4%BA%8Ekali-sda1%E7%88%86%E6%BB%A1%E6%89%A9%E5%AE%B9/</link>
+      <pubDate>Fri, 10 Mar 2023 00:14:04 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E5%85%B3%E4%BA%8Ekali-sda1%E7%88%86%E6%BB%A1%E6%89%A9%E5%AE%B9/</guid>
+      
+      <description>kali快爆力！ 对其他的虚拟机应该也适用 不只是kali</description>
+      
+    </item>
+    
     <item>
       <title>C&#43;&#43;和python使用boost库混合编程</title>
       <link>https://peterliuzhi.top/posts/c&#43;&#43;%E5%92%8Cpython%E4%BD%BF%E7%94%A8boost%E5%BA%93%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/</link>
