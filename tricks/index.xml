@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/tricks/</link>
       <atom:link href="https://peterliuzhi.top/tricks/index.xml" rel="self" type="application/rss+xml" />
     <description>Tricks</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 22 Jan 2023 10:51:34 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 12 Mar 2023 20:00:06 +0800</lastBuildDate>
+    <item>
+      <title>Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？</title>
+      <link>https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 12 Mar 2023 20:00:06 +0800</pubDate>
+      <guid>https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
+      
+      <description>小技巧：Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？</description>
+      
+    </item>
+    
     <item>
       <title>Linux中常用的分析文件的小工具</title>
       <link>https://peterliuzhi.top/tricks/linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/</link>
@@ -143,16 +153,6 @@
       <guid>https://peterliuzhi.top/tricks/%E7%BB%95%E8%BF%87pyjail%E4%B8%80%E5%8F%A5%E8%AF%9Drce/</guid>
       
       <description>一句话RCE</description>
-      
-    </item>
-    
-    <item>
-      <title>常见宏定义</title>
-      <link>https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
-      <pubDate>Sun, 30 Oct 2022 14:46:05 +0800</pubDate>
-      <guid>https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
-      
-      <description>ida常见宏定义</description>
       
     </item>
     
