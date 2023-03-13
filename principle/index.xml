@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/principle/</link>
       <atom:link href="https://peterliuzhi.top/principle/index.xml" rel="self" type="application/rss+xml" />
     <description>Principles</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 01 Mar 2023 22:14:42 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Tue, 14 Mar 2023 00:16:29 +0800</lastBuildDate>
+    <item>
+      <title>Linux动态链接_基本知识</title>
+      <link>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Tue, 14 Mar 2023 00:16:29 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</guid>
+      
+      <description>Linux动态链接_基本知识</description>
+      
+    </item>
+    
     <item>
       <title>静态链接_基础知识</title>
       <link>https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
@@ -143,16 +153,6 @@
       <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/</guid>
       
       <description>链路层</description>
-      
-    </item>
-    
-    <item>
-      <title>网络层</title>
-      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/</link>
-      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/</guid>
-      
-      <description>网络层</description>
       
     </item>
     
