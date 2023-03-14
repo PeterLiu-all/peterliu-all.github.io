@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>Linux动态链接_基础知识 - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/obsidian.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="Linux动态链接_基础知识-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Linux动态链接_基础知识",
+      "item":"https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+    },
+    "headline": "Linux动态链接_基础知识 - P3troL1er 的个人博客","datePublished": "2023-03-14T00:16:29+08:00",
+    "dateModified": "2023-03-14T00:16:33+08:00",
+    "wordCount":  5350 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "Linux动态链接_基础知识"
+}
+</script><meta property="og:title" content="Linux动态链接_基础知识 - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+
+
+<meta property="og:description" content="Linux动态链接_基础知识" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2023-03-14T00:16:29&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-03-14T00:16:33&#43;08:00" />
+
+
+
+<meta property="article:section" content="principle" />
+
+
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="底层原理" />
+
+<meta property="article:tag" content="动态链接" />
+
+<meta property="article:tag" content="基础知识" />
+
+<meta property="article:tag" content="Linux" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/c&#43;&#43;%E6%89%93%E5%8D%B0%E6%95%B4%E6%95%B0%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E5%88%86%E9%A1%B5%E5%88%86%E6%AE%B5%E5%92%8C%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/mp_.tcache_bins%E5%9F%BA%E6%9C%AC%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/largebin_attack/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">Linux动态链接_基础知识</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Tuesday, March 14, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共5350字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>11分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/" class="hover:text-eureka"
+          >底层原理</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5/" class="hover:text-eureka"
+          >动态链接</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="hover:text-eureka"
+          >基础知识</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/linux/" class="hover:text-eureka"
+          >Linux</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" id="ThisURL">https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <blockquote>
+<p>Honesty is the first chapter in the book of wisdom.
+— <cite>Thomas Jefferson</cite></p>
+</blockquote>
+<p>本文是笔者阅读《俞甲子, 石凡, 潘爱民 - 程序员的自我修养_ 链接、装载与库-电子工业出版社 (2009)》的学习笔记~</p>
+<p><strong>如有错漏，欢迎指正~~</strong></p>
+<h2 id="动态链接的原因">动态链接的原因</h2>
+<ol>
+<li>节省空间。有些不同程序都会用到的共享的库不需要装载两次进内存</li>
+<li>方便更新。发布者更新库后，只需要替换原本的库文件，使用者不需要重新编译程序</li>
+<li>制作插件。程序可以有选择地动态链接某些共享库，决定使用哪些功能，不使用哪些功能。</li>
+</ol>
+<h2 id="共享对象在动态链接的时候装载在哪里">共享对象在动态链接的时候装载在哪里</h2>
+<ol>
+<li>固定装载地址。手工规划可执行文件在虚拟空间的地址和共享对象在虚拟空间的地址，这种做法叫做静态共享库，现在很少用。</li>
+<li>装载时重定位。相对于链接时的<strong>链接时重定位</strong>，这种重定位在装载时才进行重定位（Windows下又叫基址重置），产生共享对象时在gcc后面加上-shared启用。但是这种方法不能让共享对象在进程内共享，失去了节省空间的一大优势。</li>
+<li>地址无关代码。让共享对象的代码与具体的虚拟地址无关，这样共享对象就能在进程间共享，产生共享对象时在gcc后面加上-shared -fPIC启用（默认情况下gcc为可执行程序的代码段生成地址无关代码（PIC代码））。</li>
+</ol>
+<p>装载时重定位是共享对象主动改变自己的地址，而地址无关代码是用到共享对象的可执行文件主动去找共享对象。</p>
+<h2 id="地址无关代码">地址无关代码</h2>
+<h3 id="几种不同的调用">几种不同的调用</h3>
+<h4 id="模块内部调用或跳转">模块内部调用或跳转</h4>
+<p>直接进行相对地址调用（或基于寄存器相对调用）。这里可能会出现全局符号介入的问题。</p>
+<h4 id="模块内部数据访问">模块内部数据访问</h4>
+<p>使用函数<code>__i686.get_pc_thunk.cx</code>函数将下一条指令的地址赋给ecx寄存器，然后对这条指令的地址加上一定的偏移就可以得到数据地址。</p>
+<p>这么做的原因是数据访问必须需要绝对地址，然而地址无关代码难以确定绝对地址，因此通过代码段和数据段之间的偏移来计算得到绝对地址</p>
+<h4 id="模块间数据访问">模块间数据访问</h4>
+<p>使用GOT（Global Offset Table，全局偏移表）表来间接引用。具体来说，链接器会在装载的时候将变量的地址填充入GOT表中（它存放在数据段，可以被修改）。我们在编译的时候确定指令与GOT之间的偏移，这样就可以转化为模块内数据访问了。</p>
+<p>特别的，数据的GOT表放在.got段</p>
+<h5 id="如何确定数据是在可执行文件的其他目标文件还是在共享对象中">如何确定数据是在可执行文件的其他目标文件还是在共享对象中？</h5>
+<p>因为只有链接的时候编译器才会知道这件事的答案，而编译的时候就要确定这个数据是外部的还是内部的（因为需要建立GOT表等），所以ELF默认将这种不知道是外部的还是内部的全部看作外部的，这样最保险。</p>
+<h5 id="在一个模块中更改全局变量会不会影响源共享对象的全局变量">在一个模块中更改全局变量会不会影响源共享对象的全局变量</h5>
+<p>不会。因为共享对象的数据段部分在每个进程中都有独立的副本。</p>
+<p>但同时也有方法实现多进程共享数据段，这种方法叫做&quot;共享数据段&quot;，在Windows的DLL中就可以使用这种方法，但是这种方法极为危险，必须小心形式。</p>
+<p>同时，一个进程可能有多个线程，每个线程能否有自己的数据段副本呢？答案是可以的，这种副本又叫做线程私有存储</p>
+<h5 id="为什么对数据的处理和对函数的处理不一样">为什么对数据的处理和对函数的处理不一样？</h5>
+<p>因为数据需要在不改变函数流程的情况下获取值（不然性能代价就太大了），而且也有更改值的需求</p>
+<h5 id="数据段的地址无关性">数据段的地址无关性</h5>
+<p>由于数据段可能有指针，所以会存在绝对地址引用，比如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">a</span>
+</span></span></code></pre></div><p>这里p就是一个绝对地址引用。</p>
+<p>但是变量a的地址会随着共享对象的装载地址改变，那应该怎么办呢？</p>
+<p>由于每一个进程都有一个数据段的副本，因此对数据段来说，可以尽情使用装载时重定位，而不用担心地址无关性的&quot;初衷&quot;——节省空间。</p>
+<h4 id="模块间调用跳转">模块间调用、跳转</h4>
+<p>与模块间数据访问一样，将目标函数的地址放在GOT表中间接调用</p>
+<p>特别的，函数的GOT表放在.got.plt段</p>
+<h5 id="延迟绑定plt">延迟绑定（PLT）</h5>
+<p>如果我们在链接器进行动态链接的时候将动态库的每一个函数都放进GOT表，必然会减慢程序的启动速度。</p>
+<p>比如，在程序运行的过程中，由于if语句等的分支控制，有一些函数可能不会用到，但是如果我们提前就将其装进了GOT表中，就平白造成了性能损耗。因此我们可以想一种办法让程序在调用到这个函数的时候再将函数调用地址放进GOT表。这对变量也是一样的。</p>
+<p>除此之外，将加载模块外函数的时间分散到程序执行的过程中，给人的错觉也是&quot;程序更快了&quot;。</p>
+<p>ELF借助PLT（Procedure Linkage Table，过程链接表）实现延迟链接。每个外部函数在PLT中都有一个项，而调用函数并不直接通过GOT跳转，而是通过PLT项来进行跳转。</p>
+<p>比如我们有一个叫bar的外部函数，因此bar@plt的实现类似于：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230312230655.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230312230655.png" />
+        
+        </a>
+    </p>
+<p>如果之前调用过bar函数，那么第一句的jmp会直接跳转到GOT表中保存的绝对地址处；如果没有调用过，那么bar@GOT处放的就是下一条指令<code>push n</code>的地址，也就是说，程序会跳转回来。</p>
+<p>然后接下来的<code>push n</code>会将n入栈，这个n是bar这个符号在重定位表.rel.plt中的下标，这样我们就知道需要绑定的是哪个函数；然后又将模块的ID入栈，这样我们就知道使用的是哪个共享对象；最后调用_dl_runtime_resolve函数进行绑定，前面入栈的都是这个函数的参数。</p>
+<p>而PLT的真正实现会稍微复杂一点。.got.plt的前三项有特殊的意义：</p>
+<ul>
+<li>第一项是.dynamic的地址</li>
+<li>第二项是link_map对象的地址</li>
+<li>第三项是_dl_runtime_resolve()的地址</li>
+</ul>
+<p>而PLT的实现依赖他们。比如我们来看x64下的实现：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230312234421.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230312234421.png" />
+        
+        </a>
+    </p>
+<p>然后我们看看.got.plt现在的值：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230312234508.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230312234508.png" />
+        
+        </a>
+    </p>
+<p>可以看到，第二项和第三项在运行之前都是0，说明他们是在运行时才能确定的</p>
+<p>而link_map结构体的定义如下（定义在/usr/include/link.h），由此可见，这就是ELF表示&quot;模块ID&quot;的一种方式：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230312235001.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230312235001.png" />
+        
+        </a>
+    </p>
+<h2 id="动态链接相关结构">动态链接相关结构</h2>
+<p>因为靠可执行文件一个人肯定是完成不了动态链接这个艰巨的任务的，所以我们需要动态链接器来帮助我们执行一些动态链接相关的操作，再把控制权传给可执行程序。而动态链接器想要正常的工作，就势必需要一些信息，而这些信息需要保存在可执行文件中。</p>
+<h3 id="interp-段">.interp 段</h3>
+<p>就是interpreter段，解释器段，定义了动态链接器的路径：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230313003927.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230313003927.png" />
+        
+        </a>
+    </p>
+<p>就是一个字符串，这个ld-linux-x86-64.so.2是一个软链接，指向当前使用的动态链接器（这样当更新库的时候这个字符串不用更改就可以指向最新的动态链接器）</p>
+<p>动态链接器在Linux下是glibc的一部分，属于系统库级别，往往版本号需要与glibc版本号一致</p>
+<h3 id="dynamic段">.dynamic段</h3>
+<p>保存了动态链接器所需要的基本信息，如：</p>
+<ul>
+<li>依赖于哪些共享对象</li>
+<li>动态链接符号表的位置</li>
+<li>动态链接重定位表的位置</li>
+<li>共享对象初始化代码的地址</li>
+<li>……</li>
+</ul>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230313004958.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230313004958.png" />
+        
+        </a>
+    </p>
+<p>通过这个段我们还能得到程序对共享库的依赖，可以利用ldd命令来查看：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230313005142.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230313005142.png" />
+        
+        </a>
+    </p>
+<h3 id="dynsym段-动态符号表">.dynsym段 动态符号表</h3>
+<p>类似于.symtab段，为了表示动态链接模块之间的符号导入导出关系，ELF使用动态符号表的段来保存这些信息（这个段往往叫做.dynsym），同时类似于.strtab保存符号名称，.dynstr用于保存动态符号字符串表</p>
+<blockquote>
+<p>很多时候动态链接的模块同时拥有.dynsym和.symtab两个段，.symtab保存了所有符号，而.dynsym只保存了动态的</p>
+</blockquote>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230313005705.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230313005705.png" />
+        
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230313005730.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230313005730.png" />
+        
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230313005846.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230313005846.png" />
+        
+        </a>
+    </p>
+<h3 id="rel段-动态链接重定位表">.rel段 动态链接重定位表</h3>
+<p>一个共享对象需要重定向的原因是导入符号的存在。因为共享对象可能依赖于其他对象，因此从这些对象中导入的符号不管是静态链接的还是动态链接的最终都需要修正。</p>
+<p>就算一个共享对象是PIC的，它的代码段不需要重定位，它的数据段也需要重定位，因为数据段可能存在绝对地址引用，更别说GOT表存在于数据段中了</p>
+<p>因此，类似于静态链接中的.rel.data和.rel.text段，动态链接中也分别有.rel.dyn（数据段）和.rel.plt（代码段）：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230313014044.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230313014044.png" />
+        
+        </a>
+    </p>
+<h4 id="为什么每个程序的libc地址都不一样">为什么每个程序的libc地址都不一样？</h4>
+<p>因为操作系统将同一物理地址的libc（PTC的）映射到不同程序的虚拟空间上，由于每一个程序的虚拟空间都可能不同，所以libc的基址也可能不同</p>
+<p>但是这并不意味着libc在这个进程上产生了一个副本，这只是操作系统的一种虚构的映射关系</p>
+<h4 id="为什么每一次运行程序libc的基址都不一样">为什么每一次运行程序，libc的基址都不一样？</h4>
+<p>因为现代操作系统为了提高系统的安全性，采用了ASLR(Address Space Layout Randomization)技术。ASLR技术会在每次程序加载到内存时，随机地选择一个基地址来加载程序的代码和数据段，这样可以使得攻击者很难确定程序的准确地址，从而减少了攻击的可能性。</p>
+<p>注意，ASLR是操作系统级别的保护，而PIE依赖于编译器的优化</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">ASLR</th>
+<th style="text-align:center">Executable</th>
+<th style="text-align:center">PLT</th>
+<th style="text-align:center">Heap</th>
+<th style="text-align:center">Stack</th>
+<th style="text-align:center">Shared libraries</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">2+PIE</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+<h2 id="动态链接的步骤和实现">动态链接的步骤和实现</h2>
+<p>步骤基本上分为三步：</p>
+<ol>
+<li>启动动态链接器本身</li>
+<li>装载所需要的共享对象</li>
+<li>重定位和初始化</li>
+</ol>
+<h3 id="第一步启动动态链接器本身">第一步——启动动态链接器本身</h3>
+<p>动态链接器使用一段精巧的代码处理自身的重定位工作，这段启动代码称为自举代码。</p>
+<p>动态链接器的入口就是自举代码的入口，操作系统将控制权交给动态链接器后，自举代码就开始运行，首先它找到自己的GOT表，得到.dynamic的地址，然后就可以获得动态链接器本身的重定位表和符号表，从而进行自身的重定位</p>
+<p>事实上动态链接器的自举代码会用到模块内部的函数以及全局变量等</p>
+<p>
+        <a data-fancybox="gallery" href="/image/_A9X_KENH%7b6%60G9E_9F0~Q%7b3.jpg">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/_A9X_KENH%7b6%60G9E_9F0~Q%7b3.jpg" />
+        
+        </a>
+    </p>
+<p>我们查看源代码会发现，自举代码确实调用了其他函数，也确实使用了全局变量</p>
+<p>我们可以使用objdump看一下：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/A_4]YZW~D6FZB99EJHPF$8O.jpg">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/A_4]YZW~D6FZB99EJHPF$8O.jpg" />
+        
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230313220849.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230313220849.png" />
+        
+        </a>
+    </p>
+<h3 id="第二步装载共享对象">第二步——装载共享对象</h3>
+<p>完成基本自举后，动态链接器将可执行文件和动态链接器本身的符号表合并到一个符号表中，称之为<strong>全局符号表</strong>。</p>
+<p>然后动态链接器可以从可执行文件中.dynamic的DT_NEEDED类型的入口中得知可执行文件依赖的共享对象，然后（<strong>广度</strong>/深度）搜索共享对象并装载</p>
+<h4 id="全局符号介入">全局符号介入</h4>
+<p>当一个符号需要被加入全局符号表中时，如果符号名已经存在，则后加入的符号被忽略。</p>
+<p>因此我们可以通过LD_PRELOAD来覆盖本来会执行的函数</p>
+<h5 id="导致pic共享对象出现的问题">导致PIC共享对象出现的问题</h5>
+<p>如果PIC对象内部的符号在装载这个共享对象之前已经出现过了，那么它就会被忽略，那么这个对内部符号的调用就会出现问题。因此编译器只能把这些符号当作模块外部函数。</p>
+<p>这样性能就会出现问题，所以我们可以人工地定义这个函数为static，这样这个内部函数就不会被覆盖，就会执行模块内部调用</p>
+<h3 id="第三步重定位和初始化">第三步——重定位和初始化</h3>
+<h4 id="重定位">重定位</h4>
+<p>加载共享对象后需要对数据段进行重定位（比如PLT/GOT表，绝对地址引用等）</p>
+<h4 id="初始化">初始化</h4>
+<p>如果共享对象中有.init段，动态链接器就会执行.init段中的代码进行初始化。</p>
+<p>同样的，如果有.fini段，在退出进程时会执行.fini中的代码进行清理。</p>
+<p>在做完这些工作之后，动态链接器就把控制权交给程序来执行了</p>
+<h3 id="linux下动态链接器的实现">Linux下动态链接器的实现</h3>
+<ol>
+<li>共享库和可执行文件没有什么区别，只要有一个程序入口，操作系统把控制权转交给这个入口，代码就能执行。Linux下和Windows下的动态链接器既是共享库也是可执行文件，可以通过一定的方式执行。</li>
+<li>Linux下的动态链接器本身是glibc的一部分，<code>_start</code>函数是它的入口，然后<code>_start</code>调用<code>_dl_start</code>进行自举</li>
+<li>动态链接器获取操作系统转交的控制权后，执行一定的操作，再将控制权转交给可执行程序。</li>
+<li>动态链接器本身是静态链接的，因为如果它是动态链接的，又谁来帮他处理这种依赖关系呢？</li>
+<li>动态链接器一般是PIC的，但是不一定</li>
+<li>动态链接器在装载入内存时操作系统才为它选择合适的装载地址</li>
+</ol>
+<h2 id="显示运行时链接动态加载">显示运行时链接（动态加载）</h2>
+<p>在Linux上和Windows上我们都可以通过一定的API实现显示运行时链接。</p>
+<p>简而言之，就是在需要这个共享库的时候加载共享库，然后获取它的符号，不想要用的时候就将其卸载。</p>
+<p>这些事情都要通过动态链接器实现，这就是全局符号表中要包含动态链接器的符号的原因。</p>
+<p>这里介绍一下Linux下的API。</p>
+<h3 id="dlopen">dlopen()</h3>
+<p><code>void * dlopen (const char *file, int mode)</code></p>
+<p>加载一个库，这个库的搜索顺序如下：</p>
+<ol>
+<li>搜索LD_LIBRARY_PATH中的路径</li>
+<li>搜索/etc/ld.so.cache中的路径</li>
+<li>搜索/lib/、usr/lib(这一步a.out反过来)</li>
+</ol>
+<p>有意思的是，如果我们的file参数为0，函数将返回全局符号表的句柄，因此我们可以查找全局符号表中的任何一个符号并执行</p>
+<p>flag参数指动态加载的方式，可以使用RTLD_LAZY表示延迟绑定，也可以使用RTLD_NOW表示立即导入，他们都可以通过或操作或上一个RTLD_GLOBAL来表示是否和全局符号表合并(建议使用立即导入以立即发现动态加载是否有问题)</p>
+<p>如果有.init还会执行.init</p>
+<h3 id="dlsym">dlsym()</h3>
+<p><code>void * dlsym (void *handle, const char *name)</code></p>
+<p>handle是dlopen返回的句柄，name是符号的名字</p>
+<ul>
+<li>如果是函数则返回函数的地址</li>
+<li>如果是变量返回变量的地址</li>
+<li>如果是常量返回常量的值</li>
+<li>没找到返回NULL</li>
+</ul>
+<p>dlsym()会以打开的共享对象为节点，广度优先搜索它依赖的所有对象，直到找到符号为止，这称为依赖序列。</p>
+<h4 id="如果常量的值刚好是null或者0呢">如果常量的值刚好是NULL或者0呢？</h4>
+<p>使用dlerror()函数捕获错误</p>
+<h3 id="dlerror">dlerror()</h3>
+<p><code>char * dlerror (void)</code></p>
+<p>成功返回NULL，不成功返回错误信息</p>
+<h3 id="dlclose">dlclose()</h3>
+<p><code>int dlclose (void *handle)</code></p>
+<p>handle是dlopen返回的句柄。</p>
+<p>当每次调用dlopen时，对这个模块的计数器加一；调用dlclose时减一。当减到0时就卸载这个模块。</p>
+<p>注意，dlopen是先载入符号再调用.init，但是dlclose会先执行.fini中的代码再去除符号，有点类似于栈。</p>
+<p><strong>如有错漏，欢迎指正~~</strong></p>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 Linux动态链接_基础知识 ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2fprinciple%2flinux%25E5%258A%25A8%25E6%2580%2581%25E9%2593%25BE%25E6%258E%25A5_%25E5%259F%25BA%25E7%25A1%2580%25E7%259F%25A5%25E8%25AF%2586%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#底层原理</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#动态链接</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#基础知识</a>
+    
+    <a href="https://peterliuzhi.top/tags/linux/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#Linux</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/Linux%e5%8a%a8%e6%80%81%e9%93%be%e6%8e%a5_%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="block">Windows动态链接_基础知识</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="block">静态链接_基础知识</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#动态链接的原因">动态链接的原因</a></li>
+        <li><a href="#共享对象在动态链接的时候装载在哪里">共享对象在动态链接的时候装载在哪里</a></li>
+        <li><a href="#地址无关代码">地址无关代码</a>
+          <ul>
+            <li><a href="#几种不同的调用">几种不同的调用</a>
+              <ul>
+                <li><a href="#模块内部调用或跳转">模块内部调用或跳转</a></li>
+                <li><a href="#模块内部数据访问">模块内部数据访问</a></li>
+                <li><a href="#模块间数据访问">模块间数据访问</a>
+                  <ul>
+                    <li><a href="#如何确定数据是在可执行文件的其他目标文件还是在共享对象中">如何确定数据是在可执行文件的其他目标文件还是在共享对象中？</a></li>
+                    <li><a href="#在一个模块中更改全局变量会不会影响源共享对象的全局变量">在一个模块中更改全局变量会不会影响源共享对象的全局变量</a></li>
+                    <li><a href="#为什么对数据的处理和对函数的处理不一样">为什么对数据的处理和对函数的处理不一样？</a></li>
+                    <li><a href="#数据段的地址无关性">数据段的地址无关性</a></li>
+                  </ul>
+                </li>
+                <li><a href="#模块间调用跳转">模块间调用、跳转</a>
+                  <ul>
+                    <li><a href="#延迟绑定plt">延迟绑定（PLT）</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#动态链接相关结构">动态链接相关结构</a>
+          <ul>
+            <li><a href="#interp-段">.interp 段</a></li>
+            <li><a href="#dynamic段">.dynamic段</a></li>
+            <li><a href="#dynsym段-动态符号表">.dynsym段 动态符号表</a></li>
+            <li><a href="#rel段-动态链接重定位表">.rel段 动态链接重定位表</a>
+              <ul>
+                <li><a href="#为什么每个程序的libc地址都不一样">为什么每个程序的libc地址都不一样？</a></li>
+                <li><a href="#为什么每一次运行程序libc的基址都不一样">为什么每一次运行程序，libc的基址都不一样？</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#动态链接的步骤和实现">动态链接的步骤和实现</a>
+          <ul>
+            <li><a href="#第一步启动动态链接器本身">第一步——启动动态链接器本身</a></li>
+            <li><a href="#第二步装载共享对象">第二步——装载共享对象</a>
+              <ul>
+                <li><a href="#全局符号介入">全局符号介入</a>
+                  <ul>
+                    <li><a href="#导致pic共享对象出现的问题">导致PIC共享对象出现的问题</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#第三步重定位和初始化">第三步——重定位和初始化</a>
+              <ul>
+                <li><a href="#重定位">重定位</a></li>
+                <li><a href="#初始化">初始化</a></li>
+              </ul>
+            </li>
+            <li><a href="#linux下动态链接器的实现">Linux下动态链接器的实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#显示运行时链接动态加载">显示运行时链接（动态加载）</a>
+          <ul>
+            <li><a href="#dlopen">dlopen()</a></li>
+            <li><a href="#dlsym">dlsym()</a>
+              <ul>
+                <li><a href="#如果常量的值刚好是null或者0呢">如果常量的值刚好是NULL或者0呢？</a></li>
+              </ul>
+            </li>
+            <li><a href="#dlerror">dlerror()</a></li>
+            <li><a href="#dlclose">dlclose()</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">静态链接_基础知识</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/" class="no-underline">Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/c&#43;&#43;%E6%89%93%E5%8D%B0%E6%95%B4%E6%95%B0%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6/" class="no-underline">C&#43;&#43;打印整数、浮点数的二进制</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E5%88%86%E9%A1%B5%E5%88%86%E6%AE%B5%E5%92%8C%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">分页、分段和虚拟地址_基础知识</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/mp_.tcache_bins%E5%9F%BA%E6%9C%AC%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" class="no-underline">mp_.tcache_bins基本漏洞利用</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/largebin_attack/" class="no-underline">Largebin_Attack</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/principle\/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>

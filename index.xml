@@ -5,14 +5,24 @@
     <link>https://peterliuzhi.top/</link>
       <atom:link href="https://peterliuzhi.top/index.xml" rel="self" type="application/rss+xml" />
     <description>P3troL1er 的个人博客</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Tue, 14 Mar 2023 00:16:29 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 15 Mar 2023 00:55:21 +0800</lastBuildDate>
     <item>
-      <title>Linux动态链接_基本知识</title>
-      <link>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</link>
-      <pubDate>Tue, 14 Mar 2023 00:16:29 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</guid>
+      <title>Windows动态链接_基础知识</title>
+      <link>https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 15 Mar 2023 00:55:21 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
       
-      <description>Linux动态链接_基本知识</description>
+      <description>Windows动态链接_基础知识</description>
+      
+    </item>
+    
+    <item>
+      <title>Linux动态链接_基础知识</title>
+      <link>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Tue, 14 Mar 2023 00:16:29 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      
+      <description>Linux动态链接_基础知识</description>
       
     </item>
     
@@ -143,16 +153,6 @@
       <guid>https://peterliuzhi.top/posts/c&#43;&#43;%E4%B8%ADinline%E5%87%BD%E6%95%B0%E6%9C%80%E7%BB%88%E9%80%A0%E6%88%90%E4%BA%86%E4%BB%80%E4%B9%88%E6%95%88%E6%9E%9C/</guid>
       
       <description>C&#43;&#43;中inline函数最终造成了什么效果？</description>
-      
-    </item>
-    
-    <item>
-      <title>SICTF PWN WriteUp</title>
-      <link>https://peterliuzhi.top/writeup/sictf-pwn-writeup/</link>
-      <pubDate>Sun, 22 Jan 2023 11:02:14 +0800</pubDate>
-      <guid>https://peterliuzhi.top/writeup/sictf-pwn-writeup/</guid>
-      
-      <description>关于BUUCTF SICTF PWN WriteUp的解析</description>
       
     </item>
     

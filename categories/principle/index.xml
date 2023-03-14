@@ -5,14 +5,24 @@
     <link>https://peterliuzhi.top/categories/principle/</link>
       <atom:link href="https://peterliuzhi.top/categories/principle/index.xml" rel="self" type="application/rss+xml" />
     <description>principle</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Tue, 14 Mar 2023 00:16:29 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 15 Mar 2023 00:55:21 +0800</lastBuildDate>
     <item>
-      <title>Linux动态链接_基本知识</title>
-      <link>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</link>
-      <pubDate>Tue, 14 Mar 2023 00:16:29 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</guid>
+      <title>Windows动态链接_基础知识</title>
+      <link>https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 15 Mar 2023 00:55:21 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
       
-      <description>Linux动态链接_基本知识</description>
+      <description>Windows动态链接_基础知识</description>
+      
+    </item>
+    
+    <item>
+      <title>Linux动态链接_基础知识</title>
+      <link>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Tue, 14 Mar 2023 00:16:29 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      
+      <description>Linux动态链接_基础知识</description>
       
     </item>
     
@@ -143,16 +153,6 @@
       <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/</guid>
       
       <description>计算机网络概述</description>
-      
-    </item>
-    
-    <item>
-      <title>链路层</title>
-      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/</link>
-      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/</guid>
-      
-      <description>链路层</description>
       
     </item>
     
