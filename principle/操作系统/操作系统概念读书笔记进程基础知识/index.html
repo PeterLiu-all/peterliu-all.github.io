@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>【操作系统概念读书笔记】进程基础知识 - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/obsidian.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="进程基础知识-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【操作系统概念读书笔记】进程基础知识",
+      "item":"https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+    },
+    "headline": "【操作系统概念读书笔记】进程基础知识 - P3troL1er 的个人博客","datePublished": "2023-04-07T18:28:48+08:00",
+    "dateModified": "2023-04-07T18:28:48+08:00",
+    "wordCount":  5280 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "进程基础知识"
+}
+</script><meta property="og:title" content="【操作系统概念读书笔记】进程基础知识 - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+
+
+<meta property="og:description" content="进程基础知识" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2023-04-07T18:28:48&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-04-07T18:28:48&#43;08:00" />
+
+
+
+<meta property="article:section" content="principle" />
+
+
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="操作系统概念读书笔记" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E5%88%86%E9%A1%B5%E5%88%86%E6%AE%B5%E5%92%8C%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/mp_.tcache_bins%E5%9F%BA%E6%9C%AC%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【操作系统概念读书笔记】进程基础知识</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Friday, April 7, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共5280字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>11分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="hover:text-eureka"
+          >操作系统</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="hover:text-eureka"
+          >操作系统概念读书笔记</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" id="ThisURL">https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <blockquote>
+<p>We all grow up. Hopefully, we get wiser. Age brings wisdom, and fatherhood changes one&rsquo;s life completely.
+— <cite>Frank Abagnale</cite></p>
+</blockquote>
+<h2 id="什么是进程">什么是进程</h2>
+<h3 id="进程的概念">进程的概念</h3>
+<p>所有的CPU活动称为进程(process)。进程是程序执行的过程，是程序资源管理的最小单位。</p>
+<p>在Linux中，没有进程和线程的概念（或者说进程和线程都是任务(task)的子概念），详细见<a href="http://lkml.iu.edu/hypermail/linux/kernel/9608/0191.html">Linux-Kernel Archive: Re: proc fs and shared pids</a></p>
+<p>进程是执行的程序，是活动的实体(active entity)，是可执行程序的语境/上下文(the context of executable, COE)</p>
+<blockquote>
+<p>Both threads and processes are really just one thing: a &ldquo;context of execution&rdquo;. Trying to artificially distinguish different cases is just self-limiting.</p>
+</blockquote>
+<p>程序本身不是进程，程序是一个被动的实体(passive entity)，有时又被称为文本段（就是.text section，虽然程序里不止有这一个section）。显然的，进程相对于这没有生气的实体有更多的活动内容（比如堆、栈和.bss section）</p>
+<p>既然进程是程序的活动，那么同一个程序就可以有多次活动，而这多次活动都是不同的进程。</p>
+<p>同时，既然进程是一种语境/上下文(context)，那么它也可以作为一个环境来执行其他代码。比如python和Java虚拟机。</p>
+<h3 id="描述进程的状态">描述进程的状态</h3>
+<p>进程的整个运行过程从整体来看是抽象的，但是我们可以取该抽象过程的一个切片来研究，也就是进程的状态。</p>
+<p>进程有五种状态，这五种状态随着操作系统的不同而不同：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230407185456.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230407185456.png" />
+        
+        </a>
+    </p>
+<p>而为了描述这五种状态，我们可以采用进程控制块（Process Control Block, PCB，或者任务控制块，Task Control Block），它从多种层面描述当前进程的状态：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230407185828.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230407185828.png" />
+        
+        </a>
+    </p>
+<p>通过这些描述信息，系统可以轻松地进行中断或系统调用，然后使用PCB的信息恢复如初</p>
+<p>比如在Linux中，PCB就使用一个结构体task_struct来表示：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">task_struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef CONFIG_THREAD_INFO_IN_TASK
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * For reasons of header soup (see current_thread_info()), this
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * must be the first element of task_struct.
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">thread_info</span>		<span class="n">thread_info</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">__state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef CONFIG_PREEMPT_RT
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="cm">/* saved state for &#34;spinlock sleepers&#34; */</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">saved_state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * This begins the randomizable portion of task_struct. Only
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * scheduling-critical items should be added above here.
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 */</span>
+</span></span><span class="line"><span class="cl">	<span class="n">randomized_struct_fields_start</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>				<span class="o">*</span><span class="n">stack</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">refcount_t</span>			<span class="n">usage</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Per task flags (PF_*), defined further below: */</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">flags</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">ptrace</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 以下省略大概七百行
+</span></span></span></code></pre></div><h2 id="进程调度process-scheduling">进程调度（Process Scheduling）</h2>
+<ul>
+<li>多道程序设计的目标是，无论何时都有程序运行，从而最大化CPU的利用率。</li>
+<li>分时系统的目的是在进程之间快速切换CPU，以便用户在程序运行时能与其交互</li>
+</ul>
+<p>为了满足这些需求，我们就需要合理地进行进程调度。</p>
+<h3 id="调度队列scheduling-queues">调度队列（Scheduling Queues）</h3>
+<p>进程调度经常会使用调度队列：</p>
+<ul>
+<li>进程在进入系统时，会进入作业队列（job queue）</li>
+<li>驻留在内存中的、就绪的、等待运行的进程保存在就绪队列（ready queue）</li>
+<li>等待特定I/O设备的进程列表，称为设备队列（device queue）</li>
+</ul>
+<p>进程在这些队列和CPU之间轮转，从而实现进程调度：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230407191325.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230407191325.png" />
+        
+        </a>
+    </p>
+<p>由此，我们的问题从抽象的调度问题转化为了队列的调度问题。为了合理地安排进程在他们中的轮转，我们需要一个调度器（scheduler）（或者翻译为调度程序，但是我感觉会和程序调度弄混，于是下文采用了调度器这个翻译）</p>
+<h3 id="调度器scheduler">调度器（Scheduler）</h3>
+<p>调度器分为两种：</p>
+<ul>
+<li><strong>长期调度器/作业调度器</strong>从大容量储存设备（磁盘）的缓冲池中选择进程加到内存（UNIX和Windows的分时系统通常没有长期调度程序，只是简单地把所有新进程放在内存中）
+<ul>
+<li>比如批处理系统中，提交的经常多于可以立即执行的，这时候这些进程就会保存到（长期）缓冲池中</li>
+<li>长期调度器更类似于做一个长期的规划</li>
+<li>长期调度器需要控制<strong>多道程序程度</strong>(degree of multiprogramming，也就是内存中进程的数量)，当多道程序程度稳定的时候，创建进程的平均速度必须等于进程离开系统的平均速度</li>
+<li>长期调度器的执行并不频繁，因此，长期调度器能有更多的时间做选择，也必须认真选择</li>
+</ul>
+</li>
+<li><strong>中期调度器/交换区（midium-term scheduler/swapping）</strong> 的核心思想是将进程从内存中移出放在交换区中，从而降低多道程序程度，之后再重新将这些进程载入
+<ul>
+<li>将进程移出称为换出，将进程重新载入称为换入</li>
+<li>只有当内存快爆了（多道程序程度太高）的时候Swapping才比较必要</li>
+<li>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230408163036.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230408163036.png" />
+        
+        </a>
+    </li>
+</ul>
+</li>
+<li><strong>短期调度器/CPU调度器</strong>从准备执行的进程中选择进程，并分配CPU
+<ul>
+<li>短期调度器更类似于做一个立即的执行</li>
+<li>短期调度器必须快（通常每100ms必须执行一次）</li>
+</ul>
+</li>
+</ul>
+<p>大多数进程可以分为两种：</p>
+<ul>
+<li>I/O密集型（I/O-bound），时间主要花费在I/O上，CPU干的事不多</li>
+<li>CPU密集型（CPU-bound），很少产生I/O请求，但是CPU要进行的计算很多</li>
+</ul>
+<p>因此，为了让CPU不闲下来，时时刻刻有事可做，又不能让一个任务堵塞CPU太久，导致其他的任务无法执行，调度器就需要合理地安排这些进程（比如强行中断CPU密集型工作，转换为其他进程）</p>
+<h3 id="上下文切换语境转移context-switch">上下文切换/语境转移（context switch）</h3>
+<p>因为进程在调度器的控制下在调度队列和CPU间不断轮转，为了在一个进程没有执行完转换为其他进程，在之后再恢复（比如为了防止CPU密集型堵塞CPU）；还有时进程会进行中断或系统调用，CPU需要离开当前进程转而执行中断或系统调用</p>
+<p>这时我们就需要在PCB中保存当前进程的上下文/语境（context，包括CPU寄存器、进程状态、空间管理等），切换为下一个进程（或者中断或系统调用）的上下文/语境</p>
+<p>这种切换的效率是非常仰仗于硬件支持的，比如有一些硬件会提供多套寄存器，上下文切换只需要简单地转换使用哪套寄存器</p>
+<p>同时，更复杂的操作系统的机制也会要求更复杂的上下文切换操作，比如一个有堆机制的操作系统需要保存的上下文肯定比没有堆机制的操作系统多且杂</p>
+<h2 id="进程运行控制">进程运行控制</h2>
+<p>操作系统需要为进程的创建和终止提供一套机制</p>
+<h3 id="进程创建">进程创建</h3>
+<p>进程在它的生存期内可能创建其他进程，其中创建者称为父进程（parent process），被创建者称为子进程（children process），由此构成一个进程的树状结构（继承树）</p>
+<p>又因为同一个可执行文件可能有多个活动实体，也就是进程，为了区别这些进程，我们只确定进程的名字是不够的（因为有可能来源于同一个可执行文件），我们还需要给每个进程一个独特的进程标识（process identifie，也就是pid）</p>
+<p>下面是一个典型的Linux进程/任务树，其中systemd进程是所有用户经常的根进程/父进程（在传统的UNIX系统中根进程是init，但是Linux后来采用了systemd，很多方面下和init很像，相当于init的升级版）</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230408165231.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230408165231.png" />
+        
+        </a>
+    </p>
+<p>子进程可能是父进程的复制品，也可能加载另一个程序；它可能和父进程并发执行，也可能父进程等待子进程执行完再执行</p>
+<p>当一个子进程创建的时候，可以直接从操作系统获取资源，也可以被限制只使用父进程的资源子集，这时父进程需要进行一定的资源分配。</p>
+<p>在Linux下，子进程一般来说会从父进程那里继承权限、调度属性、打开的文件等（因此可以利用文件描述符来实现共享内存）</p>
+<p>在Linux下，我们可以调用fork来产生新的进程，新的进程会得到一份父进程的内存地址空间的拷贝（因此可以很轻松地进行父子进程间的通信），然后两者都可以继续执行。</p>
+<p>由于fork对父进程返回子进程的pid，对子进程返回0，这种差异导致可以使用分支来区分父子进程执行的任务，比如如下代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;sys/types.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pid</span> <span class="n">t</span> <span class="n">pid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* fork a child process */</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pid</span> <span class="o">=</span> <span class="nf">fork</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">pid</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* error occurred */</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Fork Failed&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* child process */</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">execlp</span><span class="p">(</span><span class="s">&#34;/bin/ls&#34;</span><span class="p">,</span><span class="s">&#34;ls&#34;</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="p">{</span> <span class="cm">/* parent process */</span>
+</span></span><span class="line"><span class="cl">		<span class="cm">/* parent will wait for the child to complete */</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">wait</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Child Complete&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>其中子进程使用execlp（exec的变种）来将一个二进制文件载入内存空间，然后执行这个二进制文件的代码。如果子进程没有调用exec函数，那么它执行的代码就一直是父进程的拷贝（但当然可以使用分支来区别父子进程的任务，只是从整体来看，不调用exec，代码段就是一样的）</p>
+<p>其中父进程调用wait函数阻塞自己，由wait自动分析是否当前进程的某个子进程已经退出，如果让它找到了这样一个子进程，wait就会收集这个子进程的信息，并把它彻底销毁后返回；如果没有找到这样一个子进程，wait就会一直阻塞在这里，直到有一个出现为止。</p>
+<p>如果子进程退出，那么它就会变成一个僵尸进程，它的入口仍然会存在表中（用于确定进程执行的状态），直到父进程调用wait找到它并释放，它才会消失。如果父进程在调用wait前就退出了，在Linux中，这个子进程就变成了孤儿进程，被根进程继承，然后根进程（systemd或者init）会隔一段时间调用wait释放名下的僵尸进程，由此这个孤儿进程就有机会被释放。</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230408171230.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230408171230.png" />
+        
+        </a>
+    </p>
+<p>而在Windows下，创建一个进程的同时必须指定它需要load的可执行文件（因此Windows API中创建进程的函数CreateProcess有不下十个参数）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="n">VOID</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">STARTUPINFO</span> <span class="n">si</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">PROCESS</span> <span class="n">INFORMATION</span> <span class="n">pi</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* allocate memory */</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">ZeroMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">si</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">si</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	<span class="n">si</span><span class="p">.</span><span class="n">cb</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">si</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">ZeroMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">pi</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">pi</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* create child process */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">CreateProcess</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* use command line */</span>
+</span></span><span class="line"><span class="cl">		<span class="s">&#34;C:∖∖WINDOWS∖∖system32∖∖mspaint.exe&#34;</span><span class="p">,</span> <span class="cm">/* command */</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* don’t inherit process handle */</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* don’t inherit thread handle */</span>
+</span></span><span class="line"><span class="cl">		<span class="n">FALSE</span><span class="p">,</span> <span class="cm">/* disable handle inheritance */</span>
+</span></span><span class="line"><span class="cl">		<span class="mi">0</span><span class="p">,</span> <span class="cm">/* no creation flags */</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* use parent’s environment block */</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* use parent’s existing directory */</span>
+</span></span><span class="line"><span class="cl">		<span class="o">&amp;</span><span class="n">si</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="o">&amp;</span><span class="n">pi</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Create Process Failed&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* parent will wait for the child to complete */</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">WaitForSingleObject</span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">,</span> <span class="n">INFINITE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Child Complete&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* close handles */</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">CloseHandle</span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">CloseHandle</span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">hThread</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="进程终止">进程终止</h3>
+<p>当一个进程执行完了它的任务并执行exit函数，操作系统就会终止它并返回这个进程的状态码给使用wait函数等待子进程的父进程（因此如果没有调用wait，就没有人接收这个状态码，为了保证以后有机会获取状态码，子进程的入口就必须保留，这样子进程就成了僵尸进程），同时子进程的所有资源都会被释放。</p>
+<p>除了子进程自己结束自己，在直到子进程“身份”的情况下，其他进程（通常是父进程）也可以通过适当的系统调用结束掉这个进程（比如Windows下的任务管理器）</p>
+<p>有些操作系统不允许父进程退出时子进程还未退出，于是会在父进程退出时强行退出子进程，这个现象叫做级联终止（cascading termination）</p>
+<h2 id="进程间通信">进程间通信</h2>
+<p>两个进程可以是合作的进程，也可以是互不相干的。当两个进程进行合作时，就需要有一种进程间通信/交流（InterProcess Communication，简称IPC）的方式。</p>
+<p>有两种常用的通信方式：</p>
+<ul>
+<li>共享内存（shared memory）</li>
+<li>消息传递（message passing）</li>
+</ul>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230408173010.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230408173010.png" />
+        
+        </a>
+    </p>
+<h3 id="共享内存">共享内存</h3>
+<p>我们可以把协作的进程看作生产者和消费者，生产者进程生成信息，消费者进程使用信息。</p>
+<p>生产者生成的信息可以放在共享内存中的缓冲区中，然后消费者从中获取一项使用。生产者和消费者必须同步，这样消费者才不会使用没有被生产出来的信息</p>
+<p>有以下两种缓冲区：</p>
+<ul>
+<li>有界缓冲区，假如缓冲区满，生产者就必须等待；假如缓冲区空，消费者必须等待</li>
+<li>无界缓冲区，生产者可以一直创建新信息，而消费者可能需要等待</li>
+</ul>
+<p>下面是一个有界缓冲区的代码示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">item</span> <span class="n">next</span> <span class="n">produced</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* produce an item in next produced */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(((</span><span class="n">in</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">BUFFER</span> <span class="n">SIZE</span><span class="p">)</span> <span class="o">==</span> <span class="n">out</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">;</span> <span class="cm">/* do nothing */</span>
+</span></span><span class="line"><span class="cl">	<span class="n">buffer</span><span class="p">[</span><span class="n">in</span><span class="p">]</span> <span class="o">=</span> <span class="n">next</span> <span class="n">produced</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">in</span> <span class="o">=</span> <span class="p">(</span><span class="n">in</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">BUFFER</span> <span class="n">SIZE</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>比如，POSIX系统使用内存映射文件实现共享内存对象</p>
+<h3 id="消息传递">消息传递</h3>
+<p>可以使用操作系统提供的机制进行消息传递</p>
+<p>为了在进程间通信，就必须建立通信链路，而为了建立通信链路，使用消息传递系统的进程必须支持以下原语：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">send</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nf">receive</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</span></span></code></pre></div><h4 id="命名">命名</h4>
+<p>为了向一个进程传递消息，我们必须知道这个进程是谁，也就是必须知道它的身份/名称</p>
+<h5 id="对称性直接通信">对称性直接通信</h5>
+<p>send向指定进程发件，receive从指定进程收件</p>
+<p>这时通信链路显式且准确地在两个进程间建立了</p>
+<h5 id="非对称性直接通信">非对称性直接通信</h5>
+<p>send向指定进程发件，receive可以从任意进程收件（发件人名称变成了变量）</p>
+<p>以上两种直接通信的方式都丧失了模块化，某种程度上是硬编码的，要更改、维护非常困难。</p>
+<h5 id="间接通信">间接通信</h5>
+<p>简单来说就是建立一个中间人来派发信件，这个中间人可以是邮箱或者端口</p>
+<p>send向邮箱发件，receive可以从邮箱收件</p>
+<p>这样两个进程之间可以有多条通信链路，一条链路也可以在多个进程间共享，这样就增加了模块化</p>
+<p>这种间接通信依赖于中间人，因此只有两个进程共享邮箱的时候，才能建立通信链路，因此共享链路的意思也就是共享邮箱</p>
+<p>问题来了，既然一个邮箱可以被多个进程共享，当多个进程同时向邮箱收件的时候应该怎么办呢？这取决于程序的设置或者操作系统的设置。</p>
+<p>邮箱可以是属于进程的，也可以是属于操作系统的。如果邮箱是属于进程的，那就要区分所有者和使用者，确定收发邮件的权利；如果邮箱是属于操作系统的（某种程度上，操作系统也是一个进程），那么操作系统就要提供机制进行收发权利的授权。</p>
+<p>比如，mach系统使用端口来进行消息传递，即便是系统调用也使用端口来传递消息（操作系统也可以看作一个进程）</p>
+<p>而Windows使用共享内存和消息传递相结合的方式：</p>
+<ul>
+<li>小消息通过端口传递</li>
+<li>大消息创建共享内存中的区段对象传递</li>
+<li>更大的不适合使用区段对象的消息，可以通过API直接访问对方的地址空间</li>
+</ul>
+<h4 id="同步">同步</h4>
+<p>消息传递可以是阻塞/同步的或者非阻塞/异步的：</p>
+<ul>
+<li>阻塞发送：发送进程阻塞，直到消息被接收</li>
+<li>非阻塞发送：发送进程一直可以发送</li>
+<li>阻塞接收：接收进程阻塞，直到有消息被发送</li>
+<li>非阻塞接收：接收进程一直可以接收（没有消息就收到空消息）</li>
+</ul>
+<h4 id="缓存消息队列">缓存（消息队列）</h4>
+<p>发送的消息总是会放在（临时）消息队列中，有以下几种队列：</p>
+<ul>
+<li>零容量，链路中不能有任何消息在等待，因此发送了就必须被接收，发送进程在发送后必须阻塞</li>
+<li>有限容量，在队列满了后发送进程必须阻塞</li>
+<li>无限容量，队列不会满，因此发送进程从不阻塞</li>
+</ul>
+<p>显然，采取哪种缓存策略和采用哪种同步策略是密切相关的</p>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 【操作系统概念读书笔记】进程基础知识 ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2fprinciple%2f%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%2f%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E6%25A6%2582%25E5%25BF%25B5%25E8%25AF%25BB%25E4%25B9%25A6%25E7%25AC%2594%25E8%25AE%25B0%25E8%25BF%259B%25E7%25A8%258B%25E5%259F%25BA%25E7%25A1%2580%25E7%259F%25A5%25E8%25AF%2586%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#操作系统概念读书笔记</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f/%e3%80%90%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0%e3%80%91%e8%bf%9b%e7%a8%8b%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="block">Windows动态链接_基础知识</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什么是进程">什么是进程</a>
+          <ul>
+            <li><a href="#进程的概念">进程的概念</a></li>
+            <li><a href="#描述进程的状态">描述进程的状态</a></li>
+          </ul>
+        </li>
+        <li><a href="#进程调度process-scheduling">进程调度（Process Scheduling）</a>
+          <ul>
+            <li><a href="#调度队列scheduling-queues">调度队列（Scheduling Queues）</a></li>
+            <li><a href="#调度器scheduler">调度器（Scheduler）</a></li>
+            <li><a href="#上下文切换语境转移context-switch">上下文切换/语境转移（context switch）</a></li>
+          </ul>
+        </li>
+        <li><a href="#进程运行控制">进程运行控制</a>
+          <ul>
+            <li><a href="#进程创建">进程创建</a></li>
+            <li><a href="#进程终止">进程终止</a></li>
+          </ul>
+        </li>
+        <li><a href="#进程间通信">进程间通信</a>
+          <ul>
+            <li><a href="#共享内存">共享内存</a></li>
+            <li><a href="#消息传递">消息传递</a>
+              <ul>
+                <li><a href="#命名">命名</a>
+                  <ul>
+                    <li><a href="#对称性直接通信">对称性直接通信</a></li>
+                    <li><a href="#非对称性直接通信">非对称性直接通信</a></li>
+                    <li><a href="#间接通信">间接通信</a></li>
+                  </ul>
+                </li>
+                <li><a href="#同步">同步</a></li>
+                <li><a href="#缓存消息队列">缓存（消息队列）</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">Windows动态链接_基础知识</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">Linux动态链接_基础知识</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/" class="no-underline">Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">静态链接_基础知识</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E5%88%86%E9%A1%B5%E5%88%86%E6%AE%B5%E5%92%8C%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">分页、分段和虚拟地址_基础知识</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/mp_.tcache_bins%E5%9F%BA%E6%9C%AC%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" class="no-underline">mp_.tcache_bins基本漏洞利用</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/principle\/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F\/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>
