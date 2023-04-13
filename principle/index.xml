@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/principle/</link>
       <atom:link href="https://peterliuzhi.top/principle/index.xml" rel="self" type="application/rss+xml" />
     <description>Principles</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Fri, 07 Apr 2023 18:28:48 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 13 Apr 2023 17:47:33 +0800</lastBuildDate>
+    <item>
+      <title>【操作系统概念读书笔记】线程基础知识</title>
+      <link>https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Thu, 13 Apr 2023 17:47:33 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      
+      <description>【操作系统概念读书笔记】线程基础知识</description>
+      
+    </item>
+    
     <item>
       <title>【操作系统概念读书笔记】进程基础知识</title>
       <link>https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
@@ -143,16 +153,6 @@
       <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/</guid>
       
       <description>线性回归优化实现-利用pytorch</description>
-      
-    </item>
-    
-    <item>
-      <title>导论</title>
-      <link>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/</link>
-      <pubDate>Wed, 16 Nov 2022 14:04:12 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/</guid>
-      
-      <description>计算机网络和因特网笔记</description>
       
     </item>
     

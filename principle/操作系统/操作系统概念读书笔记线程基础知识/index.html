@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>【操作系统概念读书笔记】线程基础知识 - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/obsidian.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="【操作系统概念读书笔记】线程基础知识-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【操作系统概念读书笔记】线程基础知识",
+      "item":"https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+    },
+    "headline": "【操作系统概念读书笔记】线程基础知识 - P3troL1er 的个人博客","datePublished": "2023-04-13T17:47:33+08:00",
+    "dateModified": "2023-04-13T17:47:33+08:00",
+    "wordCount":  6963 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "【操作系统概念读书笔记】线程基础知识"
+}
+</script><meta property="og:title" content="【操作系统概念读书笔记】线程基础知识 - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+
+
+<meta property="og:description" content="【操作系统概念读书笔记】线程基础知识" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2023-04-13T17:47:33&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-04-13T17:47:33&#43;08:00" />
+
+
+
+<meta property="article:section" content="principle" />
+
+
+<meta property="article:tag" content="pwn" />
+
+<meta property="article:tag" content="操作系统概念读书笔记" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E5%88%86%E9%A1%B5%E5%88%86%E6%AE%B5%E5%92%8C%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【操作系统概念读书笔记】线程基础知识</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, April 13, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共6963字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>14分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="hover:text-eureka"
+          >操作系统</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="hover:text-eureka"
+          >操作系统概念读书笔记</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" id="ThisURL">https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <blockquote>
+<p>Applause is a receipt, not a bill.
+— <cite>Dale Carnegie</cite></p>
+</blockquote>
+<h2 id="什么是线程">什么是线程</h2>
+<blockquote>
+<p>A thread is a basic unit of CPU utilization</p>
+</blockquote>
+<p>每个线程是一个CPU使用的基本单元，包括线程ID、程序计数器（Program Counter，PC，和CS:IP差不多）、寄存器组、堆栈（stack）等</p>
+<p>在大多数现代操作系统中，线程是内核调度的最小单位。</p>
+<p>需要注意的是，传统的线程概念是由Windows发展的，在Linux中原生没有进程与线程的明确区分，只有任务（task），进程和线程都是任务的子概念</p>
+<p>在Linux中，进程和线程都是使用<code>task_struct</code>结构体来表示的。每个进程都有一个唯一的进程ID（PID），而每个线程都有一个唯一的线程ID（TID）。在Linux中，线程也被称为轻量级进程（Lightweight Process，LWP），它们与普通进程共享某些资源，如虚拟内存空间、文件描述符和信号处理程序等。</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230412141805.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230412141805.png" />
+        
+        </a>
+    </p>
+<h2 id="多线程的优点">多线程的优点</h2>
+<ul>
+<li>响应性，可以同时处理多个任务，减少等待时间</li>
+<li>资源共享，线程相较于需要特别设计的进程，是默认共享内存和资源的</li>
+<li>经济，创建进程需要的资源比线程更多</li>
+<li>可伸缩性，多线程进程可以用于多个CPU，而单线程进程只能用于一个CPU</li>
+</ul>
+<h2 id="多核编程">多核编程</h2>
+<h3 id="并发和并行">并发和并行</h3>
+<ul>
+<li>并发性（concurrency）要求支持多个任务，并且每个任务都可以取得进展</li>
+<li>并行性（parallelism）要求可以同时执行多个任务</li>
+</ul>
+<p>显然，并发性可以在没有实现并行性的时候实现</p>
+<h3 id="两种并行类型">两种并行类型</h3>
+<ul>
+<li>数据并行
+<ul>
+<li>注重将数据分布于多个计算核上，每个线程执行相同的操作</li>
+</ul>
+</li>
+<li>任务并行
+<ul>
+<li>注重将任务分布于多个计算核上，每个线程执行不同的操作</li>
+</ul>
+</li>
+</ul>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230412150723.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230412150723.png" />
+        
+        </a>
+    </p>
+<h2 id="多线程模型">多线程模型</h2>
+<h3 id="用户线程和内核线程">用户线程和内核线程</h3>
+<ul>
+<li>用户线程处于用户层，在内核层之上
+<ul>
+<li>轻量级：管理无需内核支持，操作系统不知道它，创建和切换的代价小，从而通过快速切换任务可以实现更高的并发性</li>
+<li>无法利用多核CPU的并行性，也无法直接调用操作系统提供的系统资源和服务（例如文件I/O、网络通信等），必须通过系统调用的方式才能与操作系统内核交互</li>
+</ul>
+</li>
+<li>内核线程直接由操作系统支持与管理
+<ul>
+<li>能够直接访问操作系统内核的资源和服务，可以利用多核CPU的并行性，具有更高的可靠性和安全性</li>
+<li>创建和切换的代价较大，也会占用更多的系统资源</li>
+</ul>
+</li>
+</ul>
+<p>为了兼顾用户线程和内核线程的优点，常常采用一种折中的解决方案，即<strong>将用户线程映射到内核线程上</strong>。这样，用户线程就能够利用操作系统内核的资源和服务，同时也能够充分利用多核CPU的并行性。</p>
+<p>下面就来看一看这些将用户线程映射到内核线程的模型</p>
+<h3 id="多对一模型">多对一模型</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230412150804.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230412150804.png" />
+        
+        </a>
+    </p>
+<p>多个用户线程映射到一个内核线程，理论上可以实现任意多个线程，但是：</p>
+<ul>
+<li>这样多线程就不能运行于多个处理核上，因此并行性没有得到实现</li>
+<li>一个线程堵塞会导致整个进程堵塞</li>
+</ul>
+<h3 id="一对一模型">一对一模型</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230412151314.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230412151314.png" />
+        
+        </a>
+    </p>
+<p>允许一个用户线程映射到一个内核线程，允许多个线程运行在多个处理核上，但是这样就限制了线程的数量，不能创建过多的线程</p>
+<h3 id="多对多模型">多对多模型</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230412153119.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230412153119.png" />
+        
+        </a>
+    </p>
+<p>多路复用多个用户线程到相同数量或更少的内核线程（取决于具体应用程序或机器），用户线程的数量理论上是无限的</p>
+<p>需要注意的是，因为内核线程是固定的，所以增加用户线程数量并不会增加并发性。</p>
+<p>因为用户线程映射到多个内核线程，所以一个线程的阻塞不会导致整个进程的阻塞</p>
+<p>虽然多对多模型很灵活，但是因为多对多模型比较复杂，又因为CPU核数越来越多，所以现在越来越趋向于使用一对一模型（大部分系统现在都使用一对一模型）</p>
+<h4 id="双层模型">双层模型</h4>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230412153132.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230412153132.png" />
+        
+        </a>
+    </p>
+<p>结合了多对多和一对一</p>
+<h2 id="linux下的多线程编程">Linux下的多线程编程</h2>
+<h3 id="系统调用fork和exec">系统调用fork和exec</h3>
+<p>有两个问题：</p>
+<ul>
+<li>fork会复制一个进程的所有线程还是单个线程？
+<ul>
+<li>有的UNIX系统有两种fork，既可以复制所有线程，又可以复制单个线程</li>
+</ul>
+</li>
+<li>exec会覆盖一个进程的所有线程还是单个线程？
+<ul>
+<li>exec会覆盖所有线程</li>
+</ul>
+</li>
+</ul>
+<h3 id="linux下如何创建线程">Linux下如何创建线程</h3>
+<p>因为Linux下理论上没有进程与线程之分，只有task，因此创建进程和创建线程之前的区别非常微妙，没有非常明确的界限（不代表没有界限）</p>
+<p>具体地，Linux下创建进程可以使用clone系统调用，也可以使用pthread库来创建和管理线程</p>
+<p>如果使用clone的话，代码是比较原始的，因为线程之间默认共享内存，所以程序需要划分一块栈空间给新线程，并保证其不会越界：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;sched.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define STACK_SIZE 65536
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="o">*</span><span class="nf">thread_func</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Hello, world!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="o">*</span><span class="n">stack</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="n">STACK_SIZE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">tid</span> <span class="o">=</span> <span class="nf">clone</span><span class="p">(</span><span class="n">thread_func</span><span class="p">,</span> <span class="n">stack</span> <span class="o">+</span> <span class="n">STACK_SIZE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">CLONE_VM</span> <span class="o">|</span> <span class="n">CLONE_FS</span> <span class="o">|</span> <span class="n">CLONE_FILES</span> <span class="o">|</span> <span class="n">CLONE_SIGHAND</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">tid</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">perror</span><span class="p">(</span><span class="s">&#34;clone&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;New thread ID: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">tid</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>其中clone()系统调用的函数原型是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">clone</span><span class="p">(</span><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">fn</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="p">),</span> <span class="kt">void</span> <span class="o">*</span><span class="n">child_stack</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="kt">int</span> <span class="n">flags</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">,</span> <span class="p">...</span>
+</span></span><span class="line"><span class="cl">          <span class="cm">/* pid_t *ptid, struct user_desc *tls, pid_t *ctid */</span> <span class="p">);</span>
+</span></span></code></pre></div><p>其中，fn 参数是一个函数指针，用于指定新线程的入口函数，child_stack 参数是新线程的栈空间，flags 参数用于指定新线程的标志，arg 参数是传递给新线程入口函数的参数。clone() 调用成功时返回新线程的线程 ID（TID）。</p>
+<p>重要的是其中的flags参数，一般来说需要将<code>CLONE_VM | CLONE_FS | CLONE_FILES | CLONE_SIGHAND</code>四个flag或起来作为flags参数传递（内存空间共享、文件系统信息共享、打开文件集共享、信号处理程序共享），如果不指定任何flags，那么就不会产生任何共享，效果类似于用fork新建进程</p>
+<p>如果指定CLONE_THREAD标识，则新建线程会与主线程具有同一线程组ID，属于同一进程</p>
+<blockquote>
+<p>如果你在调用<code>clone</code>函数时指定了<code>CLONE_VM | CLONE_FS | CLONE_FILES | CLONE_SIGHAND</code>这四个标志，但没有指定<code>CLONE_THREAD</code>标志，那么新创建的线程将不会是一个从属线程，而是一个独立的进程。</p>
+<p>当你指定了<code>CLONE_VM</code>标志时，新创建的进程将与调用进程共享虚拟内存空间。当你指定了<code>CLONE_FS</code>标志时，新创建的进程将与调用进程共享文件系统信息，如根目录、当前工作目录和umask值等。当你指定了<code>CLONE_FILES</code>标志时，新创建的进程将与调用进程共享文件描述符表。当你指定了<code>CLONE_SIGHAND</code>标志时，新创建的进程将与调用进程共享信号处理程序。</p>
+<p>然而，即使你指定了这些标志，如果你没有指定<code>CLONE_THREAD</code>标志，那么新创建的线程仍然会被视为一个独立的进程。它将拥有自己的进程ID和线程组ID，并且不会与调用进程属于同一线程组。</p>
+</blockquote>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230413151751.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230413151751.png" />
+        
+        </a>
+    </p>
+<p>具体区别如下：</p>
+<ol>
+<li>clone() 可以控制新进程或线程的栈空间。clone() 系统调用可以通过设置新进程或线程的栈空间的起始地址和大小，从而灵活地控制栈空间的大小和使用方式。</li>
+<li>clone() 可以控制新进程或线程的执行环境。clone() 系统调用可以通过设置新进程或线程的执行环境，如信号屏蔽字、CPU 亲和性等，从而灵活地控制新进程或线程的执行环境。</li>
+<li>clone() 可以创建更轻量级的线程。由于 clone() 可以创建共享资源的进程或线程，因此可以使用 clone() 调用创建更轻量级的线程，而不需要像 fork() 调用那样创建一个全新的进程。</li>
+</ol>
+<blockquote>
+<p>在 clone() 系统调用中，如果不设置 CLONE_VM 标识，则新线程将使用主线程分配的内存作为自己的栈空间的缓冲区。具体来说，主线程会为新线程分配一块内存，作为新线程栈空间的缓冲区，但是这块内存并不是直接作为新线程的栈空间使用的，而是在新线程启动时被映射到新线程的栈空间中。</p>
+<p>这种方式被称为栈空间的缓冲区或栈空间的预留区。它的作用是提高程序的性能，减少频繁的系统调用和内存分配操作。在新线程启动时，它可以快速地将栈空间的缓冲区映射到新线程的栈空间中，避免了频繁的内存分配操作，从而提高了程序的运行效率。</p>
+<p>需要注意的是，栈空间的缓冲区并不是新线程的实际栈空间，它只是一个临时的缓冲区，用于存储新线程栈空间的初始状态。一旦新线程启动后，它的栈空间将从栈空间的缓冲区中复制出来，并成为新线程的实际栈空间，从此以后，新线程的栈空间将与主线程的栈空间是完全独立的，互相之间不会产生任何影响。</p>
+</blockquote>
+<p>如果使用pthread库，就要先包含pthread.h头文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;pthread.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="o">*</span><span class="nf">thread_func</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Hello, world!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">pthread_t</span> <span class="n">tid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">thread_func</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">pthread_join</span><span class="p">(</span><span class="n">tid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>其中：</p>
+<ol>
+<li>包含头文件 pthread.h。</li>
+<li>定义线程函数，函数返回类型为 void *，参数为 void *。</li>
+<li>在主函数中使用 pthread_create 函数来创建线程，该函数的参数包括线程标识符、线程属性、线程函数和函数参数。</li>
+<li>使用 pthread_join 函数来等待线程结束并获取线程返回值。</li>
+<li>使用 pthread_exit 函数来结束当前线程。</li>
+</ol>
+<h3 id="unix信号与其处理">UNIX信号与其处理</h3>
+<p>什么是信号？</p>
+<ul>
+<li>信号是由特定事件的发生而产生的（比如按下Ctrl-C）</li>
+<li>信号需要被传递给某个进程</li>
+<li>信号一经收到就必须处理</li>
+</ul>
+<p>如何处理信号？</p>
+<ul>
+<li>使用缺省的信号处理程序（由内核运行）</li>
+<li>使用用户自定义的信号处理程序</li>
+</ul>
+<p>而因为信号传递给进程，所以多线程进程需要选择如何传递信号。有以下几种策略：</p>
+<ul>
+<li>传递信号到信号所适用的线程</li>
+<li>传递信号到所有线程</li>
+<li>传递信号到某些线程</li>
+</ul>
+<p>在Linux中，可以通过线程组ID（Thread Group ID，TGID）来定义一个进程的所有线程。线程组ID实际上就是该进程主线程的线程ID。也就是说，一个进程的所有线程都具有相同的线程组ID。因此，你可以通过检查线程的线程组ID来确定它们是否属于同一进程。</p>
+<blockquote>
+<p>在Windows下并不原生有信号支持，但是可以通过异步过程调用（Asychronous Procedure Call, APC）来指定当线程收到某特定通知的时候调用的函数。因为Windows中是将APC传递给线程而非进程，所以相对于UNIX更加简单。</p>
+</blockquote>
+<p>标准的信号处理函数如下，向指定进程传递信号。而得到信号的进程需要自己决定如何处理该信号。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;sys/types.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;signal.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">kill</span><span class="p">(</span><span class="kt">pid_t</span> <span class="n">pid</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sig</span><span class="p">);</span>
+</span></span></code></pre></div><p>其中，<code>pid</code>参数指定了接收信号的进程或进程组。当<code>pid</code>大于0时，信号将被发送给进程ID为<code>pid</code>的进程。当<code>pid</code>等于0时，信号将被发送给与调用进程属于同一进程组的所有进程。当<code>pid</code>小于-1时，信号将被发送给进程组ID为<code>-pid</code>的所有进程</p>
+<p>不能直接向线程发送信号。在Linux中，可以使用<code>tgkill</code>系统调用来向特定线程发送信号。它的函数原型如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;sys/syscall.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">tgkill</span><span class="p">(</span><span class="kt">int</span> <span class="n">tgid</span><span class="p">,</span> <span class="kt">int</span> <span class="n">tid</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sig</span><span class="p">);</span>
+</span></span></code></pre></div><p>其中，<code>tgid</code>参数指定了线程组ID（即主线程的线程ID），<code>tid</code>参数指定了线程ID，而<code>sig</code>参数指定了要发送的信号。</p>
+<p>请注意，glibc并没有提供对这个系统调用的封装，因此如果想使用这个函数，需要采用syscall的方式，如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">ret</span> <span class="o">=</span> <span class="nf">syscall</span><span class="p">(</span><span class="n">SYS_tgkill</span><span class="p">,</span> <span class="n">tgid</span><span class="p">,</span> <span class="n">tid</span><span class="p">,</span> <span class="n">sig</span><span class="p">);</span>
+</span></span></code></pre></div><p>如果想向当前进程传递信号：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">raise</span><span class="p">(</span><span class="kt">int</span> <span class="n">sig</span><span class="p">);</span>
+</span></span></code></pre></div><p>如果想自定义信号处理函数，可以使用signal系统调用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// 函数原型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="nf">signal</span><span class="p">(</span><span class="kt">int</span> <span class="n">sig</span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">func</span><span class="p">)(</span><span class="kt">int</span><span class="p">)))(</span><span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 示例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;signal.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">void</span> <span class="nf">handler</span><span class="p">(</span><span class="kt">int</span> <span class="n">sig</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 处理 SIGINT 信号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">handler</span><span class="p">);</span>
+</span></span></code></pre></div><p>在 pthread 库中，信号处理函数与传统的信号处理函数略有不同。pthread 库提供了一组新的接口来处理信号，这些接口可以在多线程程序中安全地使用，避免了传统信号处理函数中可能出现的竞态条件和不可预测的行为。</p>
+<p>pthread 库中的信号处理函数包括 <code>pthread_sigmask()</code> 和 <code>pthread_kill()</code>。</p>
+<ol>
+<li><code>pthread_sigmask()</code></li>
+</ol>
+<p><code>pthread_sigmask()</code> 函数可以用来设置线程的信号屏蔽集。信号屏蔽集是一组信号，当它们被屏蔽时，不会被传递到线程中。此函数的原型如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;signal.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">pthread_sigmask</span><span class="p">(</span><span class="kt">int</span> <span class="n">how</span><span class="p">,</span> <span class="k">const</span> <span class="kt">sigset_t</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">sigset_t</span> <span class="o">*</span><span class="n">oldset</span><span class="p">);</span>
+</span></span></code></pre></div><p>其中，how 参数指定了如何修改信号屏蔽集，可以取以下值：</p>
+<ul>
+<li><code>SIG_BLOCK</code>：将 set 中的信号添加到线程的信号屏蔽集中。</li>
+<li><code>SIG_UNBLOCK</code>：将 set 中的信号从线程的信号屏蔽集中移除。</li>
+<li><code>SIG_SETMASK</code>：将线程的信号屏蔽集设置为 set 中的信号集。</li>
+</ul>
+<p>set 参数是一个指向信号集的指针，指定要添加或移除的信号集。</p>
+<p>oldset 参数是一个指向旧信号屏蔽集的指针，用于存储函数调用前线程的信号屏蔽集。如果不需要保存旧信号屏蔽集，则可以将该参数设置为 NULL。</p>
+<ol start="2">
+<li><code>pthread_kill()</code></li>
+</ol>
+<p><code>pthread_kill()</code> 函数用于向指定线程发送信号。该函数的原型如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;signal.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">pthread_kill</span><span class="p">(</span><span class="kt">pthread_t</span> <span class="kr">thread</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sig</span><span class="p">);</span>
+</span></span></code></pre></div><p>其中，thread 参数指定要发送信号的线程，sig 参数指定要发送的信号。</p>
+<p>注意，与 kill() 函数不同，pthread_kill() 函数发送的信号只会影响指定线程，不会影响整个进程。</p>
+<ol start="3">
+<li>信号处理函数</li>
+</ol>
+<p>在多线程程序中，每个线程都可以设置自己的信号处理函数，用于处理收到的信号。可以使用 <code>sigaction()</code> 函数来注册信号处理函数，如下所示：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;signal.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">sigaction</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">sa_handler</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">   <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">sa_sigaction</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">siginfo_t</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">   <span class="kt">sigset_t</span> <span class="n">sa_mask</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="kt">int</span> <span class="n">sa_flags</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">sa_restorer</span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">sigaction</span><span class="p">(</span><span class="kt">int</span> <span class="n">signum</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">sigaction</span> <span class="o">*</span><span class="n">act</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			 <span class="k">struct</span> <span class="n">sigaction</span> <span class="o">*</span><span class="n">oldact</span><span class="p">);</span>
+</span></span></code></pre></div><p>其中，signum 参数指定要注册的信号，act 参数是指向 sigaction 结构的指针，用于设置信号处理函数和其他相关属性。oldact 参数是指向旧信号处理函数的指针，用于存储函数调用前的信号处理函数。如果不需要保存旧信号处理函数，则可以将该参数设置为 NULL。</p>
+<p>sa_handler 成员指定了简单的信号处理函数，它接收一个整数参数，表示收到的信号编号。如果设置了 sa_sigaction 成员，那么它将作为扩展处理函数被调用，而不是简单的信号处理函数。sa_mask 成员指定了在信号处理函数执行期间阻塞的信号集。sa_flags 成员指定了其他标志，例如是否启用 SA_RESTART 标志以自动重启被中断的系统调用。</p>
+<p>在信号处理函数中，可以调用 pthread_sigmask() 函数来设置线程的信号屏蔽集，保护信号处理函数中的临界区，避免竞态条件和其他线程的干扰。</p>
+<h2 id="线程撤销thread-cancellation">线程撤销（Thread Cancellation）</h2>
+<p>有时候，有可能其他线程先一步完成了任务，其他线程不用继续；或者出现了其他情况（比如用户突然停止加载网页），需要紧急停止线程。这时候就需要进行线程撤销</p>
+<p>有两种类型的撤销：</p>
+<ul>
+<li>异步撤销（Asynchronous cancellation），一个线程立即终止目标线程</li>
+<li>延迟撤销（Deferred cancellation），一个线程指示目标线程应该被撤销，目标线程不断检查自己是否应该被撤销，实现了有序性</li>
+</ul>
+<p>如果资源已经被分配给已撤销的线程，或者线程在更新与其他线程共享的数据，撤销会有困难（尤其对异步撤销）。通常，操作系统会释放部分系统资源而不是全部。（因此，异步撤销可能不会释放必要的系统资源）</p>
+<p>相反，由于延迟撤销的有序性，线程撤销会更加安全</p>
+<p>要实现线程撤销，可以在主线程中调用 pthread_cancel() 函数，向目标线程发送取消请求：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">pthread_t</span> <span class="kr">thread</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 创建新线程并启动
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="kr">thread</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">thread_func</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 撤销线程
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">pthread_cancel</span><span class="p">(</span><span class="kr">thread</span><span class="p">);</span>
+</span></span></code></pre></div><p>如果想要设置撤销的模式，需要在线程调用的函数中设置。pthread库支持三种撤销模式，每种模式都有一个state域和type域，可以在线程调用的函数中设置</p>
+<p>注意，在线程创建时，默认的取消状态是不启用（PTHREAD_CANCEL_DISABLE）</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230413164751.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230413164751.png" />
+        
+        </a>
+    </p>
+<p>要实现延迟撤销，可以在目标线程中设置取消状态和取消点。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span><span class="o">*</span> <span class="nf">thread_func</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 设置取消状态和取消点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">pthread_setcancelstate</span><span class="p">(</span><span class="n">PTHREAD_CANCEL_ENABLE</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">pthread_setcanceltype</span><span class="p">(</span><span class="n">PTHREAD_CANCEL_DEFERRED</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 执行线程操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 在循环中检查取消请求并处理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nf">pthread_testcancel</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>在这个例子中，线程函数中使用了一个无限循环，并在循环中调用了 pthread_testcancel() 函数，以检查是否有取消请求。同时，在线程启动时，通过 pthread_setcancelstate() 和 pthread_setcanceltype() 函数设置了取消状态和取消点。这样，当取消请求到达时，线程会在下一个取消点时退出。</p>
+<p>相对来说，Linux更推荐延迟撤销的方法</p>
+<p>在Linux中，pthread API使用信号来实现线程撤销，因此，如果不使用pthread库，同样可以使用kill()系统调用来传递信号实现线程撤销。如果要实现延迟撤销，可以自定义信号处理函数（比如，可以定义一个全局的标识位，一旦传入撤销信号，就设置该标识位，然后在线程函数中检查该标识位）。</p>
+<h2 id="线程本地存储">线程本地存储</h2>
+<p>虽然线程共享很多数据，但它也需要一些自己私有的数据，这种数据叫做线程本地存储（Thread Local Storage, TLS）</p>
+<p>TLS不是局部变量，更类似于静态变量，但只对所属的线程可见</p>
+<h2 id="调度器激活">调度器激活</h2>
+<p>在我们使用用户线程库管理用户线程时，虽然可以无需内核支持，但是总有使用到内核的地方（比如系统调用），这时，就需要有一种办法进行内核与用户线程库之间的通信。使用调度器激活（Scheduler Activations）可以实现内核与用户线程库之间的通信</p>
+<h3 id="轻量级进程lightweight-processlwp">轻量级进程（Lightweight Process，LWP）</h3>
+<p>轻量级进程(LWP)是建立在内核之上（位于用户线程和内核线程之间）并由内核支持的用户线程，它是内核线程的高度抽象，每一个轻量级进程都与一个特定的内核线程关联。</p>
+<p>在支持LWP的操作系统中，每个用户线程都会映射到一个LWP上，而每个LWP又会映射到一个内核线程上。这种设计允许操作系统在用户线程和内核线程之间提供更多的控制和调度能力。</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230413173832.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230413173832.png" />
+        
+        </a>
+    </p>
+<p>对于线程库来说，LWP就好像虚拟处理器，可以调度用户线程运行在LWP上</p>
+<blockquote>
+<p>To the user-thread library, the LWP appears to be a virtual processor on which the application can schedule a user thread to run. Each LWP is attached to a kernel thread, and it is kernel threads that the operating system schedules to run on physical processors.</p>
+</blockquote>
+<p>由于本质是用户线程：故轻量级进程可以共享诸如地址空间，打开的文件等，只要其中一个修改共享资源，另一个就立即查看这种修改</p>
+<p>同时由于与内核进程相关联：所以每个LWP都可以作为独立单元由Kernel独立调度，同时由于内核线程位于Kernel，而Kernel正是所有资源的管理者，这也LWP也就可以像独立进程一样享有专门的中断。</p>
+<p>虽然看起来很妙，但是：</p>
+<ul>
+<li>大多数LWP的操作，如建立、析构以及同步，都需要进行系统调用。系统调用的代价相对较高：需要在user mode和kernel mode中切换。</li>
+<li>每个LWP都需要有一个内核线程支持，因此LWP要消耗内核资源（内核线程的栈空间）。因此一个系统不能支持大量的LWP。</li>
+</ul>
+<p>在Linux中，线程和轻量级进程是同义词。它们都表示一种轻量级的执行实体，可以与其他线程共享某些资源。从kernel看，其实看到的就是LWP，而从用户态看其实就是我们所说的用户线程。</p>
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/410266069">LWP 轻量级进程的理解 - 知乎</a></p>
+<p>总而言之，LWP使得内核在某种程度上认识了“线程”，使得内核中的最小调度单元从process变成了thread，因此“线程”是内核调度的最小单位</p>
+<h3 id="回调upcall">回调（upcall）</h3>
+<p>内核提供一组虚拟处理器LWP给应用程序来运行用户线程。当发生某种事件时，内核会通知应用程序，这就叫做回调（upcall）（可以理解为向上面打电话）。这些回调可以由线程库提供的回调处理程序（upcall handler）处理，而这个回调处理程序又需要虚拟处理器来支持，所以此时内核同时会提供一个新的LWP给线程库</p>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 【操作系统概念读书笔记】线程基础知识 ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2fprinciple%2f%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%2f%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E6%25A6%2582%25E5%25BF%25B5%25E8%25AF%25BB%25E4%25B9%25A6%25E7%25AC%2594%25E8%25AE%25B0%25E7%25BA%25BF%25E7%25A8%258B%25E5%259F%25BA%25E7%25A1%2580%25E7%259F%25A5%25E8%25AF%2586%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#操作系统概念读书笔记</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f/%e3%80%90%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e6%a6%82%e5%bf%b5%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0%e3%80%91%e7%ba%bf%e7%a8%8b%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="block">【操作系统概念读书笔记】进程基础知识</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什么是线程">什么是线程</a></li>
+        <li><a href="#多线程的优点">多线程的优点</a></li>
+        <li><a href="#多核编程">多核编程</a>
+          <ul>
+            <li><a href="#并发和并行">并发和并行</a></li>
+            <li><a href="#两种并行类型">两种并行类型</a></li>
+          </ul>
+        </li>
+        <li><a href="#多线程模型">多线程模型</a>
+          <ul>
+            <li><a href="#用户线程和内核线程">用户线程和内核线程</a></li>
+            <li><a href="#多对一模型">多对一模型</a></li>
+            <li><a href="#一对一模型">一对一模型</a></li>
+            <li><a href="#多对多模型">多对多模型</a>
+              <ul>
+                <li><a href="#双层模型">双层模型</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#linux下的多线程编程">Linux下的多线程编程</a>
+          <ul>
+            <li><a href="#系统调用fork和exec">系统调用fork和exec</a></li>
+            <li><a href="#linux下如何创建线程">Linux下如何创建线程</a></li>
+            <li><a href="#unix信号与其处理">UNIX信号与其处理</a></li>
+          </ul>
+        </li>
+        <li><a href="#线程撤销thread-cancellation">线程撤销（Thread Cancellation）</a></li>
+        <li><a href="#线程本地存储">线程本地存储</a></li>
+        <li><a href="#调度器激活">调度器激活</a>
+          <ul>
+            <li><a href="#轻量级进程lightweight-processlwp">轻量级进程（Lightweight Process，LWP）</a></li>
+            <li><a href="#回调upcall">回调（upcall）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">【操作系统概念读书笔记】进程基础知识</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">Windows动态链接_基础知识</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">Linux动态链接_基础知识</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/" class="no-underline">Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">静态链接_基础知识</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E5%88%86%E9%A1%B5%E5%88%86%E6%AE%B5%E5%92%8C%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">分页、分段和虚拟地址_基础知识</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/principle\/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F\/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>
