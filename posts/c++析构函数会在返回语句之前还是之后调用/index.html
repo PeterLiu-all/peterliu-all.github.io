@@ -101,7 +101,7 @@ div#nav::-webkit-scrollbar {
 </style>
 
 
-<title>关于kali sda1爆满扩容 - P3troL1er 的个人博客</title>
+<title>C&#43;&#43;析构函数会在返回语句之前还是之后调用？直接返回共享对象是否会产生竞争条件？ - P3troL1er 的个人博客</title>
 
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -230,13 +230,52 @@ div#nav::-webkit-scrollbar {
 
 
   
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
 
 <link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
 
 
 <meta name="description"
-  content="kali快爆力！ 对其他的虚拟机应该也适用 不只是kali-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜">
+  content="使用shared_lock托管的函数是否在return前释放锁？直接返回共享对象是否会产生竞争条件？-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜">
 
 <script type="application/ld+json">
 {
@@ -249,8 +288,8 @@ div#nav::-webkit-scrollbar {
       "item":"https://peterliuzhi.top/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"关于kali sda1爆满扩容",
-      "item":"https://peterliuzhi.top/posts/%E5%85%B3%E4%BA%8Ekali-sda1%E7%88%86%E6%BB%A1%E6%89%A9%E5%AE%B9/"}]
+      "name":"C++析构函数会在返回语句之前还是之后调用？直接返回共享对象是否会产生竞争条件？",
+      "item":"https://peterliuzhi.top/posts/c++%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8/"}]
 }
 </script>
 
@@ -262,11 +301,11 @@ div#nav::-webkit-scrollbar {
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://peterliuzhi.top/posts/%E5%85%B3%E4%BA%8Ekali-sda1%E7%88%86%E6%BB%A1%E6%89%A9%E5%AE%B9/"
+        "@id": "https://peterliuzhi.top/posts/c++%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8/"
     },
-    "headline": "关于kali sda1爆满扩容 - P3troL1er 的个人博客","datePublished": "2023-03-10T00:14:04+08:00",
-    "dateModified": "2023-03-10T00:14:04+08:00",
-    "wordCount":  466 ,
+    "headline": "C\u002b\u002b析构函数会在返回语句之前还是之后调用？直接返回共享对象是否会产生竞争条件？ - P3troL1er 的个人博客","datePublished": "2023-05-21T17:32:23+08:00",
+    "dateModified": "2023-05-21T17:32:23+08:00",
+    "wordCount":  1412 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -275,20 +314,20 @@ div#nav::-webkit-scrollbar {
             "url": "https://peterliuzhi.top/images/letterP.png"
         }
         },
-    "description": "kali快爆力！ 对其他的虚拟机应该也适用 不只是kali"
+    "description": "使用shared_lock托管的函数是否在return前释放锁？直接返回共享对象是否会产生竞争条件？"
 }
-</script><meta property="og:title" content="关于kali sda1爆满扩容 - P3troL1er 的个人博客" />
+</script><meta property="og:title" content="C&#43;&#43;析构函数会在返回语句之前还是之后调用？直接返回共享对象是否会产生竞争条件？ - P3troL1er 的个人博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
 
 
-<meta property="og:url" content="https://peterliuzhi.top/posts/%E5%85%B3%E4%BA%8Ekali-sda1%E7%88%86%E6%BB%A1%E6%89%A9%E5%AE%B9/" />
+<meta property="og:url" content="https://peterliuzhi.top/posts/c&#43;&#43;%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8/" />
 
 
 
-<meta property="og:description" content="kali快爆力！ 对其他的虚拟机应该也适用 不只是kali" />
+<meta property="og:description" content="使用shared_lock托管的函数是否在return前释放锁？直接返回共享对象是否会产生竞争条件？" />
 
 
 
@@ -304,10 +343,10 @@ div#nav::-webkit-scrollbar {
 
 
 
-<meta property="article:published_time" content="2023-03-10T00:14:04&#43;08:00" />
+<meta property="article:published_time" content="2023-05-21T17:32:23&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2023-03-10T00:14:04&#43;08:00" />
+<meta property="article:modified_time" content="2023-05-21T17:32:23&#43;08:00" />
 
 
 
@@ -316,23 +355,23 @@ div#nav::-webkit-scrollbar {
 
 <meta property="article:tag" content="杂谈" />
 
-<meta property="article:tag" content="kali" />
+<meta property="article:tag" content="C&#43;&#43;" />
 
 
 
 
-
-<meta property="og:see_also" content="https://peterliuzhi.top/posts/c&#43;&#43;%E5%92%8Cpython%E4%BD%BF%E7%94%A8boost%E5%BA%93%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/" />
-
-<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAkali-docker%E7%8E%AF%E5%A2%83/" />
-
-<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAc&#43;&#43;-docker%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83vscode/" />
 
 <meta property="og:see_also" content="https://peterliuzhi.top/posts/c&#43;&#43;%E9%80%9A%E8%BF%87%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%94%9F%E6%88%90%E7%9C%9F%E5%80%BC%E8%A1%A8/" />
 
 <meta property="og:see_also" content="https://peterliuzhi.top/posts/c&#43;&#43;%E6%89%93%E5%8D%B0%E6%95%B4%E6%95%B0%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6/" />
 
 <meta property="og:see_also" content="https://peterliuzhi.top/posts/%E6%95%B4%E6%B4%BBc&#43;&#43;%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1%E8%BF%90%E7%AE%97%E7%AC%A6%E5%AE%9E%E7%8E%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E5%85%B3%E4%BA%8Ekali-sda1%E7%88%86%E6%BB%A1%E6%89%A9%E5%AE%B9/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/c&#43;&#43;%E5%92%8Cpython%E4%BD%BF%E7%94%A8boost%E5%BA%93%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAkali-docker%E7%8E%AF%E5%A2%83/" />
 
 
 
@@ -486,7 +525,7 @@ div#nav::-webkit-scrollbar {
       style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
     >
       <article class="prose">
-  <h1 class="mb-4">关于kali sda1爆满扩容</h1>
+  <h1 class="mb-4">C&#43;&#43;析构函数会在返回语句之前还是之后调用？直接返回共享对象是否会产生竞争条件？</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -494,17 +533,17 @@ div#nav::-webkit-scrollbar {
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >Friday, March 10, 2023</span
+      >Sunday, May 21, 2023</span
     >
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共466字</span>
+    <span>本文共1412字</span>
   </div>
 
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>1分钟阅读时长</span>
+    <span>3分钟阅读时长</span>
   </div>
 
   
@@ -513,6 +552,12 @@ div#nav::-webkit-scrollbar {
       
         <a href="https://peterliuzhi.top/categories/posts/" class="hover:text-eureka"
           >posts</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/c&#43;&#43;/" class="hover:text-eureka"
+          >C&#43;&#43;</a
         >
       
     </div>
@@ -528,8 +573,8 @@ div#nav::-webkit-scrollbar {
       
         
           <span>, </span>
-        <a href="https://peterliuzhi.top/tags/kali/" class="hover:text-eureka"
-          >kali</a
+        <a href="https://peterliuzhi.top/tags/c&#43;&#43;/" class="hover:text-eureka"
+          >C&#43;&#43;</a
         >
       
     </div>
@@ -545,200 +590,172 @@ div#nav::-webkit-scrollbar {
   
   
   
-  <p>本文转载自<a href="https://itsssm3.github.io/posts/3469cd8dc23b/">关于kali sda1爆满扩容 | 是我 の blog</a>，敬请关注并支持原作者<a href="https://itsssm3.github.io/">是我 の blog</a>！</p>
-<blockquote>
-<p>Do not turn back when you are just at the goal.
-— <cite>Publilius Syrus</cite></p>
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/posts/c&#43;&#43;%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8/" id="ThisURL">https://peterliuzhi.top/posts/c&#43;&#43;%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <blockquote>
+<p>If you want to succeed you should strike out on new paths, rather than travel the worn paths of accepted success.
+— <cite>John Locke</cite></p>
 </blockquote>
-<h2 id="前言起因">前言（起因</h2>
-<p>一天感觉 kali 怪怪的  就查看了一下内存情况</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">df -h
-</span></span></code></pre></div><p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/07/2e2745b54553d9af.png">
-        
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/07/2e2745b54553d9af.png" />
-        
-        </a>
-    </p>
-<p>果不其然&hellip;   于是到处搜集资料一步一步进行 sda1 的扩容</p>
-<h2 id="一先进行磁盘的扩容">一、先进行磁盘的扩容</h2>
-<p><a href="https://blog.csdn.net/sunjikui1255326447/article/details/96430918">这部分参考</a></p>
+<h2 id="问题引入">问题引入</h2>
+<p>当我在学习C++标准库中的线程锁的时候，对以下代码出现了问题：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">read_data</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">shared_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">rw_mutex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tmp</span> <span class="o">=</span> <span class="n">shared_data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>当我使用一个shared_lock来托管读写锁，因为析构函数会执行解锁，那么问题就来了，这个解锁是在return之前发生的还是在}处发生的？虽然直觉告诉我是在return之前发生的，但还是隐隐地有些不放心，如果在}处调用的话，那么就可能造成死锁问题；如果是在return之前发生的话，那以下代码中返回值直接使用共享对象的值是否有可能在析构函数解锁到return这一小段时间内发生改变？</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">read_data</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">shared_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">rw_mutex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">shared_data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="验证程序">验证程序</h2>
+<p>编译以下程序后使用gdb调试：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;A constructor&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">A</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;A destructor&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">__asm__</span> <span class="nf">volatile</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;mov $1, %rax&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Before return&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mh">0x111111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这里刻意让析构函数有多条语句方便观察，同时刻意使用了内嵌汇编改变rax的值（因为返回值保存在rax寄存器里面），然后在<code>std::cout &lt;&lt; &quot;A destructor&quot; &lt;&lt; std::endl;</code>处打上断点用gdb查看：</p>
 <p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/07/be236cce3b26c63b.png">
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230521174911.png">
         
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/07/be236cce3b26c63b.png" />
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230521174911.png" />
         
         </a>
     </p>
-<h2 id="二唤起-gparted">二、唤起 gparted</h2>
-<p><a href="https://zhuanlan.zhihu.com/p/102203354">Gparted</a>   我 kali 的 gparted 是自带的还是以前下载的（？</p>
-<p>没有就直接安装一下~</p>
-<p>先用命令进入root模式 省的一直sudo</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo -i
-</span></span></code></pre></div><p>唤起工具 gparted</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gparted
-</span></span></code></pre></div><p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/07/e95c44ccf23b76a1.png">
+<p>显然这时候进入了析构函数，并且rax的值并没有被设置为主函数的返回值</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230521175001.png">
         
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/07/e95c44ccf23b76a1.png" />
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230521175001.png" />
         
         </a>
     </p>
 <p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/07/62f6abe3561e77a0.png">
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230521175016.png">
         
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/07/62f6abe3561e77a0.png" />
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230521175016.png" />
         
         </a>
     </p>
-<p>（我这里存在未分配是因为我之前添加了空间但是没扩进去&hellip;）</p>
-<h2 id="三删除-extended-和-swap-分区以便进行扩容">三、删除 extended 和 swap 分区以便进行扩容</h2>
-<p>先停用 swap 分区</p>
+<p>然后经过内嵌汇编的更改，rax成功变成了1</p>
 <p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/07/018358ee0eb55041.png">
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230521175146.png">
         
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/07/018358ee0eb55041.png" />
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230521175146.png" />
         
         </a>
     </p>
-<p>然后删除 swap 分区</p>
+<p>再次单步执行之后就发现返回值设置为主函数返回值了，也就是说析构函数可以看作一定是在return语句之前执行的</p>
+<h2 id="另一个程序">另一个程序</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;A constructor&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">A</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;A destructor&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">__asm__</span> <span class="nf">volatile</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;mov $1, %rax&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Before return&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">puts</span><span class="p">(</span><span class="s">&#34;111&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这个程序的输出是：</p>
 <p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/07/80170ffcd881cb15.png">
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230521175412.png">
         
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/07/80170ffcd881cb15.png" />
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230521175412.png" />
         
         </a>
     </p>
-<p>接着删除 extended 分区</p>
+<p>可以看到，被我们写在“return语句”中的函数<code>puts</code>在析构函数之前调用了，说明所谓的return语句其实只是对rax的设置，可以理解为退出状态，如果在return语句中使用函数，编译后都会放在前面执行完毕，然后在设置退出状态之前调用析构函数</p>
+<h2 id="退出状态是存在哪里的">退出状态是存在哪里的</h2>
+<p>现在就有一个很重要的问题，退出状态是存在哪里的？是否会涉及到内存地址的访问？如果涉及到内存地址的访问，是否有可能在读入的时候内存单元内容被其他线程改变？</p>
+<p>在C/C++的高度抽象层面我们是得不到答案的，因此我们使用GCC获取它的汇编代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gcc -S test_destructor.cpp -o test_destructor.asm
+</span></span></code></pre></div><p>然后定位到main函数的<code>leave; ret</code>那个位置看一看：</p>
 <p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/07/beb78417b76607c0.png">
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230521180436.png">
         
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/07/beb78417b76607c0.png" />
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230521180436.png" />
         
         </a>
     </p>
-<h2 id="四对-sda1-进行扩容">四、对 sda1 进行扩容</h2>
+<p>发现这个设置退出状态确实有可能设计内存访问，但是这里是对栈的内存访问，如果返回值存放在函数栈上，一般来说是不会和其他线程产生竞争条件的</p>
+<p>并且在这里我们看到析构函数是在canary的检查之前调用的（我们可以使用c++filt工具解析一下这个阴间函数）：</p>
 <p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/07/95543013d1fa3ea8.png">
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230521180723.png">
         
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/07/95543013d1fa3ea8.png" />
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230521180723.png" />
         
         </a>
     </p>
-<p><strong>记得预留出空间给 swap 分区</strong></p>
+<p>那么，在我们原本的读写锁源代码文件里面，是否可能出现我们担心的问题呢？我们可以将其编译成汇编代码看一下：</p>
 <p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/07/4ed24ec42f8790b7.png">
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230521181146.png">
         
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/07/4ed24ec42f8790b7.png" />
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230521181146.png" />
         
         </a>
     </p>
-<p>还原 extended 和 swap 分区</p>
 <p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/07/15e8ab5a3ce4c26e.png">
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230521181337.png">
         
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/07/15e8ab5a3ce4c26e.png" />
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230521181337.png" />
         
         </a>
     </p>
-<p>👇👇👇</p>
+<p>发现通过编译器的优化，这个共享内存单元的值被提前保存在了栈上，感谢编译器！</p>
+<h2 id="结论">结论</h2>
+<p>也就是说，如果直接返回共享内存单元在编译后经过编译器优化（在debug模式下仍然会这么优化）后，其实际作用和将这个共享内存单元的值保存在tmp变量中是一样的，但是后者的语义更加清晰，前者的代码量更少并且更依赖于编译器。我个人比较谨慎，我选择后者的写法。</p>
+<p>同时，如果希望控制shared_lock、unique_lock、lock_guard的析构，可以使用花括号表明他们的生存期：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">read_data</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">shared_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">rw_mutex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tmp</span> <span class="o">=</span> <span class="n">shared_data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>但注意，这样的话，如果return语句中调用了其他的函数，就会在锁之外执行</p>
+<p>同时，不建议手动调用unlock来对其解锁，因为析构函数可能还会解锁一次，这时候会抛出异常（lock函数同理）:</p>
 <p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/07/9ed924578c8f25d0.png">
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230521182339.png">
         
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/07/9ed924578c8f25d0.png" />
-        
-        </a>
-    </p>
-<p>👇👇👇</p>
-<p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/08/6c7addc1092af7b2.png">
-        
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/08/6c7addc1092af7b2.png" />
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230521182339.png" />
         
         </a>
     </p>
-<p>👇👇👇</p>
-<p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/08/008db5e214def9c4.png">
-        
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/08/008db5e214def9c4.png" />
-        
-        </a>
-    </p>
-<p>然后退出保存</p>
-<p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/08/3ddc012f0ca39d13.png">
-        
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/08/3ddc012f0ca39d13.png" />
-        
-        </a>
-    </p>
-<p>再次 df -h 查看扩容情况</p>
-<p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/08/2cd8be27caa2819d.png">
-        
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/08/2cd8be27caa2819d.png" />
-        
-        </a>
-    </p>
-<p><em><strong>成功？ 很多人到这一步就以为成功了</strong></em></p>
-<p><em><strong>扩容是扩了 但是如果你重启会发现 启动的十分甚至有九分之慢</strong></em></p>
-<h2 id="五修复-swap-分区"><em><strong>五、修复 SWAP 分区</strong></em></h2>
-<p><a href="https://blog.csdn.net/qq_45774670/article/details/110673804?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=kali%E6%89%A9%E5%AE%B9sda1%E5%90%8E%E5%AF%BC%E8%87%B4%E5%90%AF%E5%8A%A8%E5%8F%98%E6%85%A2&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-110673804.142%5Ev71%5Eone_line,201%5Ev4%5Eadd_ask&amp;spm=1018.2226.3001.4187">以下参考</a></p>
-<p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/08/ce471c6852544e62.png">
-        
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/08/ce471c6852544e62.png" />
-        
-        </a>
-    </p>
-<p>我们首先要获取新 swap 分区的 uuid</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">blkid
-</span></span></code></pre></div><p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/08/1d0d99c08fba8182.png">
-        
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/08/1d0d99c08fba8182.png" />
-        
-        </a>
-    </p>
-<p>这个 uuid 复制下来 后面要用</p>
-<p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/08/1edabe3ccd116f03.png">
-        
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/08/1edabe3ccd116f03.png" />
-        
-        </a>
-    </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/fstab
-</span></span></code></pre></div><p><a href="https://zhuanlan.zhihu.com/p/61515833">关于 vim 命令的使用~</a></p>
-<p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/08/ccd5224b86fa42af.png">
-        
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/08/ccd5224b86fa42af.png" />
-        
-        </a>
-    </p>
-<p>将这部分的 uuid 改成新的 uuid</p>
-<p>接着</p>
-<p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/08/f3e5ad3f75f536da.png">
-        
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/08/f3e5ad3f75f536da.png" />
-        
-        </a>
-    </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/initramfs-tools/conf.d/resume
-</span></span></code></pre></div><p>
-        <a data-fancybox="gallery" href="https://s3.bmp.ovh/imgs/2023/03/08/521c5c3a59c77662.png">
-        
-            <img class="mx-auto img-float" alt="文内图片" src="https://s3.bmp.ovh/imgs/2023/03/08/521c5c3a59c77662.png" />
-        
-        </a>
-    </p>
-<p>将这部分的 uuid 也改成新的 uuid</p>
-<p>最后用一下这个命令重建一下？（我的没用）</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo update-initramfs -u
-</span></span></code></pre></div><p>然后重启一下 kali 就完成扩容啦~</p>
+<p>不过依实现其表现可能不同</p>
 
   <style>
   .button {
@@ -877,7 +894,9 @@ function flashCopyMessage(el, msg) {
     }, 1000);
   }
   
-  const message = "在吗？👀有篇博文写的挺好的，标题是 关于kali sda1爆满扩容 ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝本文系转载，著作权归作者所有，请支持并尊重原创。\n"
+  const message = "在吗？👀有篇博文写的挺好的，标题是 C\u002b\u002b析构函数会在返回语句之前还是之后调用？直接返回共享对象是否会产生竞争条件？ ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
   
   function basic_copy(){
     navigator.clipboard.writeText(message);
@@ -910,7 +929,7 @@ function flashCopyMessage(el, msg) {
 <a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
 
 <div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
-  <img src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2fposts%2f%25E5%2585%25B3%25E4%25BA%258Ekali-sda1%25E7%2588%2586%25E6%25BB%25A1%25E6%2589%25A9%25E5%25AE%25B9%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <img src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2fposts%2fc%2b%2b%25E6%259E%2590%25E6%259E%2584%25E5%2587%25BD%25E6%2595%25B0%25E4%25BC%259A%25E5%259C%25A8%25E8%25BF%2594%25E5%259B%259E%25E8%25AF%25AD%25E5%258F%25A5%25E4%25B9%258B%25E5%2589%258D%25E8%25BF%2598%25E6%2598%25AF%25E4%25B9%258B%25E5%2590%258E%25E8%25B0%2583%25E7%2594%25A8%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
   <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
     <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
   </div>
@@ -976,7 +995,7 @@ btn.addEventListener("click", handleCopyImg, false);
     
     <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#杂谈</a>
     
-    <a href="https://peterliuzhi.top/tags/kali/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#kali</a>
+    <a href="https://peterliuzhi.top/tags/c&#43;&#43;/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#C&#43;&#43;</a>
     
 </div>
       
@@ -984,7 +1003,7 @@ btn.addEventListener("click", handleCopyImg, false);
       
   <div class="flex md:justify-end my-4">
 
-    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/%e5%85%b3%e4%ba%8ekali%20sda1%e7%88%86%e6%bb%a1%e6%89%a9%e5%ae%b9.md" title="Edit this page">
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/C&#43;&#43;%e6%9e%90%e6%9e%84%e5%87%bd%e6%95%b0%e4%bc%9a%e5%9c%a8%e8%bf%94%e5%9b%9e%e8%af%ad%e5%8f%a5%e4%b9%8b%e5%89%8d%e8%bf%98%e6%98%af%e4%b9%8b%e5%90%8e%e8%b0%83%e7%94%a8%ef%bc%9f.md" title="Edit this page">
       <i class="fas fa-edit me-1"></i>
       <span>编辑本页</span>
     </a>
@@ -1001,16 +1020,11 @@ btn.addEventListener("click", handleCopyImg, false);
   >
     <div>
       
-        <span class="text-primary-text block font-bold"
-          >上一页</span
-        >
-        <a href="https://peterliuzhi.top/posts/c&#43;&#43;%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8/" class="block">C&#43;&#43;析构函数会在返回语句之前还是之后调用？直接返回共享对象是否会产生竞争条件？</a>
-      
     </div>
     <div class="mt-4 md:mt-0 md:text-right">
       
         <span class="text-primary-text block font-bold">下一页</span>
-        <a href="https://peterliuzhi.top/posts/c&#43;&#43;%E5%92%8Cpython%E4%BD%BF%E7%94%A8boost%E5%BA%93%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/" class="block">C&#43;&#43;和python使用boost库混合编程</a>
+        <a href="https://peterliuzhi.top/posts/%E5%85%B3%E4%BA%8Ekali-sda1%E7%88%86%E6%BB%A1%E6%89%A9%E5%AE%B9/" class="block">关于kali sda1爆满扩容</a>
       
     </div>
   </div>
@@ -1051,12 +1065,11 @@ btn.addEventListener("click", handleCopyImg, false);
   <ul>
     <li>
       <ul>
-        <li><a href="#前言起因">前言（起因</a></li>
-        <li><a href="#一先进行磁盘的扩容">一、先进行磁盘的扩容</a></li>
-        <li><a href="#二唤起-gparted">二、唤起 gparted</a></li>
-        <li><a href="#三删除-extended-和-swap-分区以便进行扩容">三、删除 extended 和 swap 分区以便进行扩容</a></li>
-        <li><a href="#四对-sda1-进行扩容">四、对 sda1 进行扩容</a></li>
-        <li><a href="#五修复-swap-分区"><em><strong>五、修复 SWAP 分区</strong></em></a></li>
+        <li><a href="#问题引入">问题引入</a></li>
+        <li><a href="#验证程序">验证程序</a></li>
+        <li><a href="#另一个程序">另一个程序</a></li>
+        <li><a href="#退出状态是存在哪里的">退出状态是存在哪里的</a></li>
+        <li><a href="#结论">结论</a></li>
       </ul>
     </li>
   </ul>
@@ -1076,15 +1089,6 @@ btn.addEventListener("click", handleCopyImg, false);
       >
         <h3>相关</h3>
         
-          <a href="https://peterliuzhi.top/posts/c&#43;&#43;%E5%92%8Cpython%E4%BD%BF%E7%94%A8boost%E5%BA%93%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/" class="no-underline">C&#43;&#43;和python使用boost库混合编程</a>
-          <br />
-        
-          <a href="https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAkali-docker%E7%8E%AF%E5%A2%83/" class="no-underline">创建kali docker环境</a>
-          <br />
-        
-          <a href="https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAc&#43;&#43;-docker%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83vscode/" class="no-underline">创建C&#43;&#43; docker开发环境（VScode）</a>
-          <br />
-        
           <a href="https://peterliuzhi.top/posts/c&#43;&#43;%E9%80%9A%E8%BF%87%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%94%9F%E6%88%90%E7%9C%9F%E5%80%BC%E8%A1%A8/" class="no-underline">C&#43;&#43;通过逻辑函数生成真值表</a>
           <br />
         
@@ -1092,6 +1096,15 @@ btn.addEventListener("click", handleCopyImg, false);
           <br />
         
           <a href="https://peterliuzhi.top/posts/%E6%95%B4%E6%B4%BBc&#43;&#43;%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1%E8%BF%90%E7%AE%97%E7%AC%A6%E5%AE%9E%E7%8E%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%A8%A1/" class="no-underline">【整活】C&#43;&#43;不用加减乘除模运算符实现加减乘除模</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/%E5%85%B3%E4%BA%8Ekali-sda1%E7%88%86%E6%BB%A1%E6%89%A9%E5%AE%B9/" class="no-underline">关于kali sda1爆满扩容</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/c&#43;&#43;%E5%92%8Cpython%E4%BD%BF%E7%94%A8boost%E5%BA%93%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/" class="no-underline">C&#43;&#43;和python使用boost库混合编程</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAkali-docker%E7%8E%AF%E5%A2%83/" class="no-underline">创建kali docker环境</a>
           <br />
         
       </div>
@@ -1202,7 +1215,7 @@ btn.addEventListener("click", handleCopyImg, false);
       }
   }
   if(is_weixn()){
-    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/%E5%85%B3%E4%BA%8Ekali-sda1%E7%88%86%E6%BB%A1%E6%89%A9%E5%AE%B9\/（或者右上角用浏览器打开）");
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/c\u002b\u002b%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8\/（或者右上角用浏览器打开）");
   }else{
     window.alert = function(msg1, msg2, msg3){
         swal(msg1+"", msg2+"", msg3+"");

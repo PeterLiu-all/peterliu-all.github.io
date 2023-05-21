@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/tags/c&#43;&#43;/</link>
       <atom:link href="https://peterliuzhi.top/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     <description>C&#43;&#43;</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 01 Mar 2023 20:05:53 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 21 May 2023 17:32:23 +0800</lastBuildDate>
+    <item>
+      <title>C&#43;&#43;析构函数会在返回语句之前还是之后调用？直接返回共享对象是否会产生竞争条件？</title>
+      <link>https://peterliuzhi.top/posts/c&#43;&#43;%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8/</link>
+      <pubDate>Sun, 21 May 2023 17:32:23 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/c&#43;&#43;%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8/</guid>
+      
+      <description>使用shared_lock托管的函数是否在return前释放锁？直接返回共享对象是否会产生竞争条件？</description>
+      
+    </item>
+    
     <item>
       <title>C&#43;&#43;通过逻辑函数生成真值表</title>
       <link>https://peterliuzhi.top/posts/c&#43;&#43;%E9%80%9A%E8%BF%87%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%94%9F%E6%88%90%E7%9C%9F%E5%80%BC%E8%A1%A8/</link>
