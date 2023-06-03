@@ -5,7 +5,27 @@
     <link>https://peterliuzhi.top/</link>
       <atom:link href="https://peterliuzhi.top/index.xml" rel="self" type="application/rss+xml" />
     <description>P3troL1er 的个人博客</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 24 May 2023 22:18:43 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sat, 03 Jun 2023 22:02:36 +0800</lastBuildDate>
+    <item>
+      <title>【学习记录】C&#43;&#43;网络编程初步</title>
+      <link>https://peterliuzhi.top/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95c&#43;&#43;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%88%9D%E6%AD%A5/</link>
+      <pubDate>Sat, 03 Jun 2023 22:02:36 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95c&#43;&#43;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%88%9D%E6%AD%A5/</guid>
+      
+      <description>分享一个使用UNIX套接字API和pthread多线程库编写的多线程server和client~学习过程中的随笔记录~</description>
+      
+    </item>
+    
+    <item>
+      <title>2023 ciscn pwn&amp;misc小部分题解</title>
+      <link>https://peterliuzhi.top/writeup/2023-ciscn-pwnmisc%E5%B0%8F%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Sun, 28 May 2023 17:05:34 +0800</pubDate>
+      <guid>https://peterliuzhi.top/writeup/2023-ciscn-pwnmisc%E5%B0%8F%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</guid>
+      
+      <description>2023 ciscn pwn&amp;misc小部分题解</description>
+      
+    </item>
+    
     <item>
       <title>使用vim在man、tldr、cppman库间搜索帮助手册并打开</title>
       <link>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8vim%E5%9C%A8mantldrcppman%E5%BA%93%E9%97%B4%E6%90%9C%E7%B4%A2%E5%B8%AE%E5%8A%A9%E6%89%8B%E5%86%8C%E5%B9%B6%E6%89%93%E5%BC%80/</link>
@@ -133,26 +153,6 @@
       <guid>https://peterliuzhi.top/posts/c&#43;&#43;%E9%80%9A%E8%BF%87%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%94%9F%E6%88%90%E7%9C%9F%E5%80%BC%E8%A1%A8/</guid>
       
       <description>C&#43;&#43;通过逻辑函数生成真值表</description>
-      
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;打印整数、浮点数的二进制</title>
-      <link>https://peterliuzhi.top/posts/c&#43;&#43;%E6%89%93%E5%8D%B0%E6%95%B4%E6%95%B0%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6/</link>
-      <pubDate>Tue, 28 Feb 2023 22:25:14 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/c&#43;&#43;%E6%89%93%E5%8D%B0%E6%95%B4%E6%95%B0%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6/</guid>
-      
-      <description>C&#43;&#43;打印整数、浮点数的二进制</description>
-      
-    </item>
-    
-    <item>
-      <title>分页、分段和虚拟地址_基础知识</title>
-      <link>https://peterliuzhi.top/principle/%E5%88%86%E9%A1%B5%E5%88%86%E6%AE%B5%E5%92%8C%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
-      <pubDate>Thu, 23 Feb 2023 13:01:14 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/%E5%88%86%E9%A1%B5%E5%88%86%E6%AE%B5%E5%92%8C%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
-      
-      <description>分页、分段和虚拟地址_基础知识</description>
       
     </item>
     

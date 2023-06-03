@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>man | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/man/</link>
+      <atom:link href="https://peterliuzhi.top/tags/man/index.xml" rel="self" type="application/rss+xml" />
+    <description>man</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 24 May 2023 22:18:43 +0800</lastBuildDate>
+    <item>
+      <title>使用vim在man、tldr、cppman库间搜索帮助手册并打开</title>
+      <link>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8vim%E5%9C%A8mantldrcppman%E5%BA%93%E9%97%B4%E6%90%9C%E7%B4%A2%E5%B8%AE%E5%8A%A9%E6%89%8B%E5%86%8C%E5%B9%B6%E6%89%93%E5%BC%80/</link>
+      <pubDate>Wed, 24 May 2023 22:18:43 +0800</pubDate>
+      <guid>https://peterliuzhi.top/tricks/%E4%BD%BF%E7%94%A8vim%E5%9C%A8mantldrcppman%E5%BA%93%E9%97%B4%E6%90%9C%E7%B4%A2%E5%B8%AE%E5%8A%A9%E6%89%8B%E5%86%8C%E5%B9%B6%E6%89%93%E5%BC%80/</guid>
+      
+      <description>小技巧：使用vim在man、tldr、cppman库间搜索帮助手册并打开</description>
+      
+    </item>
+    
+  </channel>
+</rss>

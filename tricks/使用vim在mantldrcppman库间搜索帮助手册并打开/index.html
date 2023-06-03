@@ -305,7 +305,7 @@ div#nav::-webkit-scrollbar {
     },
     "headline": "使用vim在man、tldr、cppman库间搜索帮助手册并打开 - P3troL1er 的个人博客","datePublished": "2023-05-24T22:18:43+08:00",
     "dateModified": "2023-05-24T22:18:43+08:00",
-    "wordCount":  505 ,
+    "wordCount":  881 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -353,23 +353,15 @@ div#nav::-webkit-scrollbar {
 <meta property="article:section" content="tricks" />
 
 
-<meta property="article:tag" content="pwn" />
+<meta property="article:tag" content="vim" />
+
+<meta property="article:tag" content="man" />
+
+<meta property="article:tag" content="shell" />
+
+<meta property="article:tag" content="bash" />
 
 
-
-
-
-<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
-
-<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
-
-<meta property="og:see_also" content="https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
-
-<meta property="og:see_also" content="https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
-
-<meta property="og:see_also" content="https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/" />
-
-<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" />
 
 
 
@@ -536,7 +528,7 @@ div#nav::-webkit-scrollbar {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共505字</span>
+    <span>本文共881字</span>
   </div>
 
   <div class="me-6 my-2">
@@ -559,8 +551,26 @@ div#nav::-webkit-scrollbar {
     <div class="me-6 my-2">
       <i class="fa-solid fa-tag"></i>
       
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
+        <a href="https://peterliuzhi.top/tags/vim/" class="hover:text-eureka"
+          >vim</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/man/" class="hover:text-eureka"
+          >man</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/shell/" class="hover:text-eureka"
+          >shell</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/bash/" class="hover:text-eureka"
+          >bash</a
         >
       
     </div>
@@ -604,6 +614,34 @@ div#nav::-webkit-scrollbar {
 </span></span></code></pre></div><p>然后将下面的脚本保存为文件viman:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;--Written By P3troL1er--&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;&gt; Welcome to my blog: https://peterliuzhi.top&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cppman -v &gt;&gt; /dev/null 2&gt;&gt;/dev/null
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Can&#39;t find cppman!&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">    python3 -m pip install cppman
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;ERROR found when installing cppman!&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;used command to install: python3 -m pip install cppman&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;try to find out that if the command is not available on your system!(check if you have python3 and pip)&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">127</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tldr -v &gt;&gt; /dev/null 2&gt;&gt;/dev/null
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Can&#39;t find tldr!&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">    sudo apt install tldr -y
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;ERROR found when installing tldr!&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;used command to install: sudo apt install tldr -y&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;try to find out that if the command is not available on your system!(check if you are using debian-based system like Ubuntu)&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">127</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">function</span> help_guide<span class="o">(){</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;USAGE: </span><span class="nv">$0</span><span class="s2"> [OPTIONS] -e MAN_ENTRY&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;HELP: </span><span class="nv">$0</span><span class="s2"> -h&#34;</span>
@@ -642,25 +680,49 @@ div#nav::-webkit-scrollbar {
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">VIMAN_ARG</span><span class="o">=</span><span class="sb">`</span>mktemp /tmp/viman.temp.XXXXXX<span class="sb">`</span>
-</span></span><span class="line"><span class="cl">bash -c <span class="s2">&#34;</span><span class="nv">$NORMAL_MAN</span><span class="s2"> </span><span class="nv">$entry_name</span><span class="s2"> &gt;&gt; </span><span class="nv">$VIMAN_ARG</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">RETURN_MSG</span><span class="o">=</span><span class="sb">`</span><span class="nv">$NORMAL_MAN</span> <span class="nv">$entry_name</span> &gt;&gt; <span class="nv">$VIMAN_ARG</span><span class="sb">`</span>
 </span></span><span class="line"><span class="cl"><span class="nv">VIMAN_EXITCODE</span><span class="o">=</span><span class="nv">$?</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$RETURN_MSG</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">VIMAN_EXITCODE</span><span class="o">=</span><span class="m">16</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$VIMAN_EXITCODE</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$use_tldr</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">        vim <span class="nv">$VIMAN_ARG</span> -c <span class="s2">&#34;:term ++curwin cat %&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">        vim <span class="nv">$VIMAN_ARG</span>
+</span></span><span class="line"><span class="cl">        vim <span class="nv">$VIMAN_ARG</span> -c <span class="s2">&#34;set nonumber&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="k">else</span> 
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$NORMAL_MAN</span><span class="s2"> failed! using cppman...&#34;</span>
-</span></span><span class="line"><span class="cl">    cppman <span class="s2">&#34;</span><span class="nv">$entry_name</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">VIMAN_EXITCODE</span><span class="o">=</span><span class="nv">$?</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$VIMAN_EXITCODE</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;not even in cppman!&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">RETURN_MSG</span><span class="o">=</span><span class="sb">`</span>cppman <span class="s2">&#34;</span><span class="nv">$entry_name</span><span class="s2">&#34;</span><span class="sb">`</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$RETURN_MSG</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Not even in cppman!&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">rm <span class="nv">$VIMAN_ARG</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$VIMAN_EXITCODE</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Coundn&#39;t find manual for </span><span class="nv">$entry_name</span><span class="s2">!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="nv">$VIMAN_EXITCODE</span>
 </span></span></code></pre></div><p>然后放到/usr/local/bin中并<code>sudo chmod +x /usr/local/bin/viman</code>后大功告成</p>
+<p>如果想要在vim里面查看，可以使用命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tabnew | exec &#34;:term ++curwin viman -e &lt;entry_name&gt;&#34;
+</span></span></code></pre></div><p>这个命令会新打开一个tab执行shell命令</p>
+<p>然而这个命令实在是太长了，我们可以在~/.vimrc中写入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">function! Viman(entry_name)
+</span></span><span class="line"><span class="cl">    tabnew | execute &#34;term ++curwin viman -e &#34; . a:entry_name
+</span></span><span class="line"><span class="cl">endfunction
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cnoreabbrev viman call Viman(&#39;&#39;)&lt;left&gt;&lt;left&gt;
+</span></span></code></pre></div><p>这个配置使用了缩写和函数来实现简写与设置光标初始位置</p>
+<p>使用的时候只需要在vim中输入<code>:viman &lt;entry_name&gt;</code>即可</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230604001025.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230604001025.png" />
+        
+        </a>
+    </p>
+<p>如图，<code>:viman</code>会自动被替换为<code>:call Viman(' ')</code>，光标初始位置就在单引号中间</p>
 
   <style>
   .button {
@@ -898,7 +960,13 @@ btn.addEventListener("click", handleCopyImg, false);
       
         <div class="my-4">
     
-    <a href="https://peterliuzhi.top/tags/pwn/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#pwn</a>
+    <a href="https://peterliuzhi.top/tags/vim/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#vim</a>
+    
+    <a href="https://peterliuzhi.top/tags/man/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#man</a>
+    
+    <a href="https://peterliuzhi.top/tags/shell/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#shell</a>
+    
+    <a href="https://peterliuzhi.top/tags/bash/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#bash</a>
     
 </div>
       
@@ -956,32 +1024,6 @@ btn.addEventListener("click", handleCopyImg, false);
     
 
     
-    
-      <div
-        class="lg:col-start-2 bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
-        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
-      >
-        <h3>相关</h3>
-        
-          <a href="https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">【操作系统概念读书笔记】线程基础知识</a>
-          <br />
-        
-          <a href="https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">【操作系统概念读书笔记】进程基础知识</a>
-          <br />
-        
-          <a href="https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">Windows动态链接_基础知识</a>
-          <br />
-        
-          <a href="https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">Linux动态链接_基础知识</a>
-          <br />
-        
-          <a href="https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/" class="no-underline">Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？</a>
-          <br />
-        
-          <a href="https://peterliuzhi.top/principle/%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="no-underline">静态链接_基础知识</a>
-          <br />
-        
-      </div>
     
   </div>
 
