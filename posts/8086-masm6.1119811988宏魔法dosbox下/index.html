@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>8086 masm6.11（1981，1988）宏魔法（dosbox下） - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/obsidian.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="王爽《汇编语言》里用的那个masm-P3troL1er的个人技术博客-每一次相遇，说不定都是意外惊喜">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://peterliuzhi.top/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"8086 masm6.11（1981，1988）宏魔法（dosbox下）",
+      "item":"https://peterliuzhi.top/posts/8086-masm6.1119811988%E5%AE%8F%E9%AD%94%E6%B3%95dosbox%E4%B8%8B/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/posts/8086-masm6.1119811988%E5%AE%8F%E9%AD%94%E6%B3%95dosbox%E4%B8%8B/"
+    },
+    "headline": "8086 masm6.11（1981，1988）宏魔法（dosbox下） - P3troL1er 的个人博客","datePublished": "2023-06-08T14:03:03+08:00",
+    "dateModified": "2023-06-08T14:03:03+08:00",
+    "wordCount":  2299 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "王爽《汇编语言》里用的那个masm"
+}
+</script><meta property="og:title" content="8086 masm6.11（1981，1988）宏魔法（dosbox下） - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/posts/8086-masm6.1119811988%E5%AE%8F%E9%AD%94%E6%B3%95dosbox%E4%B8%8B/" />
+
+
+
+<meta property="og:description" content="王爽《汇编语言》里用的那个masm" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2023-06-08T14:03:03&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-06-08T14:03:03&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="masm" />
+
+<meta property="article:tag" content="8086实模式" />
+
+<meta property="article:tag" content="宏" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">8086 masm6.11（1981，1988）宏魔法（dosbox下）</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, June 8, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共2299字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>5分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/posts/" class="hover:text-eureka"
+          >posts</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E6%B1%87%E7%BC%96/" class="hover:text-eureka"
+          >汇编</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/masm/" class="hover:text-eureka"
+          >masm</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/8086%E5%AE%9E%E6%A8%A1%E5%BC%8F/" class="hover:text-eureka"
+          >8086实模式</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E5%AE%8F/" class="hover:text-eureka"
+          >宏</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/posts/8086-masm6.1119811988%E5%AE%8F%E9%AD%94%E6%B3%95dosbox%E4%B8%8B/" id="ThisURL">https://peterliuzhi.top/posts/8086-masm6.1119811988%E5%AE%8F%E9%AD%94%E6%B3%95dosbox%E4%B8%8B/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <blockquote>
+<p>People usually compare the computer to the head of the human being. I would say that hardware is the bone of the head, the skull. The semiconductor is the brain within the head. The software is the wisdom. And data is the knowledge.
+— <cite>Masayoshi Son</cite></p>
+</blockquote>
+<h2 id="引入">引入</h2>
+<p>最近在写汇编语言大作业，因为老师讲了一些汇编宏的用法，让我大为新奇，于是在大作业里面普遍用到了宏，在这里记录一下</p>
+<p>另外，教学中用的masm好像比较老旧，很多语法都支持不了（是masm自己的原因吗，好像不支持leave指令，不过我用宏自己定义了一个），很多网上搜到的高级宏用法都用不了，所以这里分享的内容其实离我的想象还有一段距离，也算是一种遗憾吧</p>
+<h2 id="宏的基本知识">宏的基本知识</h2>
+<h3 id="无参数宏">无参数宏</h3>
+<p>类似于C语言中的宏常量的真子集（不包括宏定义的常量数字等），如下定义：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;宏名&gt; macro
+</span></span><span class="line"><span class="cl">	...
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><p>会直接把宏名替换为里面的内容，由此可以实现leave指令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">leave macro
+</span></span><span class="line"><span class="cl">	mov sp, bp
+</span></span><span class="line"><span class="cl">	pop bp
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><p>同时也可以定义一下进入函数时的准备工作：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">intofunc macro
+</span></span><span class="line"><span class="cl">	push bp
+</span></span><span class="line"><span class="cl">	mov bp, sp
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><h3 id="有参数宏">有参数宏</h3>
+<p>类似于C语言中的宏函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;宏名&gt; macro &lt;参数1&gt;, &lt;参数2&gt;, &lt;参数3&gt;, ...
+</span></span><span class="line"><span class="cl">	...
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><p>类似于C语言中：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define &lt;宏名&gt;(&lt;参数1&gt;, &lt;参数2&gt;, &lt;参数3&gt;, ...) ...
+</span></span></span></code></pre></div><p>不过在我所使用的这个版本的masm中好像不支持变参宏</p>
+<h4 id="操作符">&lt;&gt;操作符</h4>
+<p>把尖括号内的看作一个整体把一个完整的实参括起来，成为一个新的实参，比如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mymacro &lt;offset mydata&gt;
+</span></span></code></pre></div><p>其中把offset mydata作为一个整体传给了mymacro</p>
+<p>在C语言中没有对应的操作符，硬说只能是括号</p>
+<h4 id="操作符-1">&amp;操作符</h4>
+<p>表示拼接，意同C语言中的<code>##</code>，例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">shift_var marco r_m,direct,count
+</span></span><span class="line"><span class="cl">	  mov cl,count
+</span></span><span class="line"><span class="cl">	  s&amp;direct r_m,cl
+</span></span><span class="line"><span class="cl">  endm
+</span></span></code></pre></div><p>其中把s和direct所代表的文本拼接在了一起</p>
+<h4 id="操作符-2">%操作符</h4>
+<p>告诉宏汇编程序获取表达式的值，而不是获取表达式文本本身，一般用于给宏传递实参（宏调用），但有些情况不能用，要确保%后面是一个编译期表达式</p>
+<h4 id="操作符注解符">!操作符、;;注解符</h4>
+<p>!表示后面的操作符不是操作符而是普通的字符</p>
+<p>;;表示宏中的注解，宏不会把这段注解展开（只使用;，预处理后的代码中会多出注解）</p>
+<h3 id="文本替换宏">文本替换宏</h3>
+<p>在新版的masm中好像有TEXTEQU指令，但是在我的masm中只有EQU指令</p>
+<p>它可以实现C语言中的宏常量变量，也可以简单地用于替换一段文本</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">call_print EQU &lt;func1 print&gt;
+</span></span><span class="line"><span class="cl">STACK_SIZE EQU 1024
+</span></span></code></pre></div><h3 id="local伪指令">local伪指令</h3>
+<p>在宏定义中使用变量名和标号，为了避免在宏展开时产生多个相同的变量名或标号（比如有时候会在宏中定义循环和跳转）</p>
+<p>宏展开时，local伪指令指定的变量、标号自动生成格式为<code>??ⅩⅩⅩⅩ</code>的符号，其中后四位顺序使用0000～FFFF的十六进制数字。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">delay macro reg  ;; reg为16位寄存器
+</span></span><span class="line"><span class="cl">	local lop
+</span></span><span class="line"><span class="cl">	mov cx,reg
+</span></span><span class="line"><span class="cl">	lop: nop
+</span></span><span class="line"><span class="cl">	     loop lop
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><h3 id="宏嵌套">宏嵌套</h3>
+<p>可以使用一个宏生成另一个宏的定义，这样就可以定义一个生成器，然后通过给这个宏传不同的参数，从而批量生成宏</p>
+<h3 id="重复汇编">重复汇编</h3>
+<p>可以使用rept指令来重复生成一段汇编，将重复语句序列重复汇编，表达式的值为重复汇编的次数。也可以重复生成一段宏。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">rept 表达式
+</span></span><span class="line"><span class="cl">	...
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><p>【例】用重复汇编可以在9*9个字节存储单元中存放一个乘法九九表的数值：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">n=0
+</span></span><span class="line"><span class="cl">rept 9
+</span></span><span class="line"><span class="cl">	n=n+1
+</span></span><span class="line"><span class="cl">	m=0
+</span></span><span class="line"><span class="cl">	rept 9
+</span></span><span class="line"><span class="cl">	   m=m+1
+</span></span><span class="line"><span class="cl">	   db n*m
+</span></span><span class="line"><span class="cl">	endm
+</span></span><span class="line"><span class="cl">endm 
+</span></span></code></pre></div><p>irp指令将重复语句序列重复汇编，次数由实参个数所决定</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">irp 形参，&lt;实参1，实参2,……&gt;
+</span></span><span class="line"><span class="cl">	...
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pushreg macro text
+</span></span><span class="line"><span class="cl">	irp reg,&lt;text&gt;
+</span></span><span class="line"><span class="cl">		push reg
+</span></span><span class="line"><span class="cl">	endm
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><p>irpc指令将重复语句序列重复汇编，次数由字符串中字符个数决定</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">irpc 形参，字符串
+</span></span><span class="line"><span class="cl">	...
+</span></span><span class="line"><span class="cl">endm 
+</span></span></code></pre></div><h3 id="条件汇编">条件汇编</h3>
+<p>宏汇编提供了十种条件宏汇编伪操作指令：if、ife、if1、if2、ifdef、ifndef、ifb、ifnb、ifidn、ifdif</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">if: 当表达式的值不为零，则条件为真；
+</span></span><span class="line"><span class="cl">ife:如果表达式的值为零，则条件为真；
+</span></span><span class="line"><span class="cl">if1: 如果是第一遍扫描，则条件为真；
+</span></span><span class="line"><span class="cl">if2：如果是第二遍扫描，则条件为真；
+</span></span><span class="line"><span class="cl">ifdef：表达式为符号。如果该符号已经定义，则条件为真。
+</span></span><span class="line"><span class="cl">ifndef:表达式为符号。如果符号没有定义，则条件为真。
+</span></span><span class="line"><span class="cl">ifb &lt;count&gt;：如果尖括号中为空，则条件为真。
+</span></span><span class="line"><span class="cl">ifnb &lt;count&gt;:如果尖括号中不为空，则条件为真。
+</span></span><span class="line"><span class="cl">ifidn &lt;char1&gt;, &lt;char2&gt;：如果两个字符串相同则条件为真
+</span></span><span class="line"><span class="cl">ifidf &lt;char1&gt;, &lt;char2&gt;：如果两个字符串不同则条件为真。
+</span></span></code></pre></div><p>使用语法：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ifx ×× 表达式
+</span></span><span class="line"><span class="cl">	...
+</span></span><span class="line"><span class="cl">else
+</span></span><span class="line"><span class="cl">	...
+</span></span><span class="line"><span class="cl">endif
+</span></span></code></pre></div><p>类似于C语言中的<code>#if</code>、<code>#endif</code>、<code>#ifdef</code>、<code>#ifndef</code>等</p>
+<h2 id="宏魔法实例">宏魔法实例</h2>
+<h3 id="x86风格函数传参">x86风格函数传参</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pusharg macro val
+</span></span><span class="line"><span class="cl">    mov ax, val
+</span></span><span class="line"><span class="cl">    push ax
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><h3 id="类c函数原型声明">类C函数原型声明</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">func0 macro funcname
+</span></span><span class="line"><span class="cl">    call funcname
+</span></span><span class="line"><span class="cl">endm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">func1 macro funcname, v1
+</span></span><span class="line"><span class="cl">    mov ax, v1
+</span></span><span class="line"><span class="cl">    push ax
+</span></span><span class="line"><span class="cl">    ; pusharg v1
+</span></span><span class="line"><span class="cl">    call funcname
+</span></span><span class="line"><span class="cl">    add sp, 2
+</span></span><span class="line"><span class="cl">endm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">func2 macro funcname, v1, v2
+</span></span><span class="line"><span class="cl">    mov ax, v2
+</span></span><span class="line"><span class="cl">    push ax
+</span></span><span class="line"><span class="cl">    mov ax, v1
+</span></span><span class="line"><span class="cl">    push ax
+</span></span><span class="line"><span class="cl">    call funcname
+</span></span><span class="line"><span class="cl">    add sp, 4
+</span></span><span class="line"><span class="cl">endm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">func3 macro funcname, v1, v2, v3
+</span></span><span class="line"><span class="cl">    mov ax, v3
+</span></span><span class="line"><span class="cl">    push ax
+</span></span><span class="line"><span class="cl">    mov ax, v2
+</span></span><span class="line"><span class="cl">    push ax
+</span></span><span class="line"><span class="cl">    mov ax, v1
+</span></span><span class="line"><span class="cl">    push ax
+</span></span><span class="line"><span class="cl">    call funcname
+</span></span><span class="line"><span class="cl">    add sp, 6
+</span></span><span class="line"><span class="cl">endm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">call_print EQU &lt;func1 print&gt;
+</span></span><span class="line"><span class="cl">call_puts EQU &lt;func1 puts&gt;
+</span></span><span class="line"><span class="cl">call_putchar EQU &lt;func1 putchar&gt;
+</span></span><span class="line"><span class="cl">call_read EQU &lt;func3 read&gt;
+</span></span><span class="line"><span class="cl">call_strlen EQU &lt;func1 strlen&gt;
+</span></span><span class="line"><span class="cl">call_strcmp EQU &lt;func2 strcmp&gt;
+</span></span><span class="line"><span class="cl">call_itoa EQU &lt;func2 itoa&gt;
+</span></span><span class="line"><span class="cl">call_atoi EQU &lt;func1 atoi&gt;
+</span></span><span class="line"><span class="cl">call_getchar EQU &lt;func0 getchar&gt;
+</span></span><span class="line"><span class="cl">call_getint EQU &lt;func0 getint&gt;
+</span></span><span class="line"><span class="cl">call_memset EQU &lt;func3 memset&gt;
+</span></span><span class="line"><span class="cl">call_memcpy EQU &lt;func3 memcpy&gt;
+</span></span><span class="line"><span class="cl">call_swap EQU &lt;func2 swap&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">call_gets macro v1, v2, v3
+</span></span><span class="line"><span class="cl">    mov ax, v3
+</span></span><span class="line"><span class="cl">    push ax
+</span></span><span class="line"><span class="cl">    mov ax, v2
+</span></span><span class="line"><span class="cl">    push ax
+</span></span><span class="line"><span class="cl">    mov ax, v1
+</span></span><span class="line"><span class="cl">    push ax
+</span></span><span class="line"><span class="cl">    call read
+</span></span><span class="line"><span class="cl">    add sp, 6
+</span></span><span class="line"><span class="cl">    mov byte ptr ds:[di], 0
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><p>使用的时候的示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">call_print &lt;offset change_index_st&gt;
+</span></span><span class="line"><span class="cl">call_gets &lt;offset search_key_st&gt;, &lt;offset buffer&gt;, STU_NAME_SIZE
+</span></span></code></pre></div><h3 id="在函数中取形参">在函数中取形参</h3>
+<p>这里我使用的是x86风格传参，因此参数都保存在栈中</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">arg macro i
+</span></span><span class="line"><span class="cl">    arg&amp;i macro reg
+</span></span><span class="line"><span class="cl">        mov reg, [bp+2*(i+1)]
+</span></span><span class="line"><span class="cl">    endm
+</span></span><span class="line"><span class="cl">endm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">; 声明arg1~arg7
+</span></span><span class="line"><span class="cl">n=0
+</span></span><span class="line"><span class="cl">rept 7
+</span></span><span class="line"><span class="cl">    n=n+1
+</span></span><span class="line"><span class="cl">    arg %n
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><p>使用的时候，比如read有三个参数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">; read(read_instruction, read_storage, read_size)
+</span></span><span class="line"><span class="cl">read:
+</span></span><span class="line"><span class="cl">    intofunc
+</span></span><span class="line"><span class="cl">    arg1 ax
+</span></span><span class="line"><span class="cl">	...
+</span></span><span class="line"><span class="cl">    arg2 di
+</span></span><span class="line"><span class="cl">	...
+</span></span><span class="line"><span class="cl">    arg3 cx
+</span></span><span class="line"><span class="cl">    ...
+</span></span><span class="line"><span class="cl">    leave
+</span></span><span class="line"><span class="cl">    ret
+</span></span></code></pre></div><p>而且只要不更改bp下面（地址上是上面）的栈，在函数任意位置都能取参</p>
+<h3 id="进入函数与退出函数">进入函数与退出函数</h3>
+<p>上面已经说过了</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">intofunc macro
+</span></span><span class="line"><span class="cl">    push bp
+</span></span><span class="line"><span class="cl">    mov bp, sp
+</span></span><span class="line"><span class="cl">endm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">leave macro
+</span></span><span class="line"><span class="cl">    mov sp, bp
+</span></span><span class="line"><span class="cl">    pop bp
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><h3 id="初始化程序与结束程序">初始化程序与结束程序</h3>
+<p>这个比较简单，就普通的替换</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">prog_initailize macro
+</span></span><span class="line"><span class="cl">    mov ax, data
+</span></span><span class="line"><span class="cl">    mov ds, ax
+</span></span><span class="line"><span class="cl">    mov ax, 0B800H
+</span></span><span class="line"><span class="cl">    mov es, ax
+</span></span><span class="line"><span class="cl">    ;; mov ax, stack
+</span></span><span class="line"><span class="cl">    ;; mov ss, ax
+</span></span><span class="line"><span class="cl">    ;; mov sp, STACK_SIZE
+</span></span><span class="line"><span class="cl">    mov bp, sp
+</span></span><span class="line"><span class="cl">    xor di, di
+</span></span><span class="line"><span class="cl">    xor si, si
+</span></span><span class="line"><span class="cl">    xor ax, ax
+</span></span><span class="line"><span class="cl">    xor bx, bx
+</span></span><span class="line"><span class="cl">    xor cx, cx
+</span></span><span class="line"><span class="cl">    xor dx, dx
+</span></span><span class="line"><span class="cl">endm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">prog_doom macro
+</span></span><span class="line"><span class="cl">    mov ax, 4c00h
+</span></span><span class="line"><span class="cl">    int 21h
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><h3 id="在全局变量保存寄存器">在全局变量保存寄存器</h3>
+<p>有时候我们不想用复杂的栈操作，在保证函数内嵌套调用的函数不会破坏全局变量的前提下，可以在全局变量暂存寄存器。对每个寄存器都有一个暂时的存储空间：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">save macro reg
+</span></span><span class="line"><span class="cl">    mov storage_&amp;reg, reg
+</span></span><span class="line"><span class="cl">endm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">load macro reg
+</span></span><span class="line"><span class="cl">    mov reg, storage_&amp;reg
+</span></span><span class="line"><span class="cl">endm
+</span></span></code></pre></div><p>然后在数据段声明：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">storage_di dw 0
+</span></span><span class="line"><span class="cl">storage_si dw 0
+</span></span><span class="line"><span class="cl">storage_bx dw 0
+</span></span><span class="line"><span class="cl">storage_ax dw 0
+</span></span><span class="line"><span class="cl">storage_cx dw 0
+</span></span><span class="line"><span class="cl">storage_dx dw 0
+</span></span></code></pre></div><p>只要数据段的相应标号存在，save和load就能起效</p>
+<h3 id="宏常量声明">宏常量声明</h3>
+<p>很简单的类似#define的声明</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">STACK_SIZE EQU 1024
+</span></span><span class="line"><span class="cl">STU_NAME_SIZE EQU 20h
+</span></span><span class="line"><span class="cl">STU_NUMBER_SIZE EQU 15
+</span></span><span class="line"><span class="cl">STU_COUNT EQU 10
+</span></span><span class="line"><span class="cl">CONTINUE_COUNT EQU 3
+</span></span><span class="line"><span class="cl">SCORE_COUNT EQU 2
+</span></span></code></pre></div>
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 8086 masm6.11（1981，1988）宏魔法（dosbox下） ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code?data=https%3a%2f%2fpeterliuzhi.top%2fposts%2f8086-masm6.1119811988%25E5%25AE%258F%25E9%25AD%2594%25E6%25B3%2595dosbox%25E4%25B8%258B%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/masm/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#masm</a>
+    
+    <a href="https://peterliuzhi.top/tags/8086%E5%AE%9E%E6%A8%A1%E5%BC%8F/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#8086实模式</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E5%AE%8F/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#宏</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/8086%20masm6.11%ef%bc%881981%ef%bc%8c1988%ef%bc%89%e5%ae%8f%e9%ad%94%e6%b3%95%ef%bc%88dosbox%e4%b8%8b%ef%bc%89.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/posts/kali-tmux-%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BC%98%E5%8C%96/" class="block">kali tmux 配置和优化</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#引入">引入</a></li>
+        <li><a href="#宏的基本知识">宏的基本知识</a>
+          <ul>
+            <li><a href="#无参数宏">无参数宏</a></li>
+            <li><a href="#有参数宏">有参数宏</a>
+              <ul>
+                <li><a href="#操作符">&lt;&gt;操作符</a></li>
+                <li><a href="#操作符-1">&amp;操作符</a></li>
+                <li><a href="#操作符-2">%操作符</a></li>
+                <li><a href="#操作符注解符">!操作符、;;注解符</a></li>
+              </ul>
+            </li>
+            <li><a href="#文本替换宏">文本替换宏</a></li>
+            <li><a href="#local伪指令">local伪指令</a></li>
+            <li><a href="#宏嵌套">宏嵌套</a></li>
+            <li><a href="#重复汇编">重复汇编</a></li>
+            <li><a href="#条件汇编">条件汇编</a></li>
+          </ul>
+        </li>
+        <li><a href="#宏魔法实例">宏魔法实例</a>
+          <ul>
+            <li><a href="#x86风格函数传参">x86风格函数传参</a></li>
+            <li><a href="#类c函数原型声明">类C函数原型声明</a></li>
+            <li><a href="#在函数中取形参">在函数中取形参</a></li>
+            <li><a href="#进入函数与退出函数">进入函数与退出函数</a></li>
+            <li><a href="#初始化程序与结束程序">初始化程序与结束程序</a></li>
+            <li><a href="#在全局变量保存寄存器">在全局变量保存寄存器</a></li>
+            <li><a href="#宏常量声明">宏常量声明</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/" class="no-underline">常见宏定义</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/8086-masm6.1119811988%E5%AE%8F%E9%AD%94%E6%B3%95dosbox%E4%B8%8B\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>

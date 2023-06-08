@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>宏 | P3troL1er 的个人博客</title>
-    <link>https://peterliuzhi.top/tags/%E5%AE%8F/</link>
-      <atom:link href="https://peterliuzhi.top/tags/%E5%AE%8F/index.xml" rel="self" type="application/rss+xml" />
-    <description>宏</description>
+    <title>汇编 | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/categories/%E6%B1%87%E7%BC%96/</link>
+      <atom:link href="https://peterliuzhi.top/categories/%E6%B1%87%E7%BC%96/index.xml" rel="self" type="application/rss+xml" />
+    <description>汇编</description>
     <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 08 Jun 2023 14:03:03 +0800</lastBuildDate>
     <item>
       <title>8086 masm6.11（1981，1988）宏魔法（dosbox下）</title>
@@ -13,16 +13,6 @@
       <guid>https://peterliuzhi.top/posts/8086-masm6.1119811988%E5%AE%8F%E9%AD%94%E6%B3%95dosbox%E4%B8%8B/</guid>
       
       <description>王爽《汇编语言》里用的那个masm</description>
-      
-    </item>
-    
-    <item>
-      <title>常见宏定义</title>
-      <link>https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
-      <pubDate>Sun, 30 Oct 2022 14:46:05 +0800</pubDate>
-      <guid>https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
-      
-      <description>ida常见宏定义</description>
       
     </item>
     
