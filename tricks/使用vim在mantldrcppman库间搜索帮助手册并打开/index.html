@@ -305,7 +305,7 @@ div#nav::-webkit-scrollbar {
     },
     "headline": "使用vim在man、tldr、cppman库间搜索帮助手册并打开 - P3troL1er 的个人博客","datePublished": "2023-05-24T22:18:43+08:00",
     "dateModified": "2023-05-24T22:18:43+08:00",
-    "wordCount":  881 ,
+    "wordCount":  875 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -528,7 +528,7 @@ div#nav::-webkit-scrollbar {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共881字</span>
+    <span>本文共875字</span>
   </div>
 
   <div class="me-6 my-2">
@@ -597,6 +597,7 @@ div#nav::-webkit-scrollbar {
 — <cite>Aldous Huxley</cite></p>
 </blockquote>
 <p>这里我是写了一个bash脚本，只需要使用命令<code>viman -e 函数/命令名</code>就能自动在man/cppman间搜索。之所以写这个脚本最主要的动机是cppman里将cppman的数据导入man失败了并且不知道怎么修复&hellip;并且man自带的编辑器（文本浏览器？）不好用，并且还想集成tldr</p>
+<p>项目目录见<a href="https://github.com/PeterLiu-all/viman">GitHub - PeterLiu-all/viman: 在命令行和vim中查看Linux manual，数据库包括man、cppman、tldr</a></p>
 <p>注意，想要使用该脚本必须先下载cppman和tldr：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pip3 install cppman
 </span></span><span class="line"><span class="cl">sudo apt install -y tldr
@@ -708,21 +709,21 @@ div#nav::-webkit-scrollbar {
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tabnew | exec &#34;:term ++curwin viman -e &lt;entry_name&gt;&#34;
 </span></span></code></pre></div><p>这个命令会新打开一个tab执行shell命令</p>
 <p>然而这个命令实在是太长了，我们可以在~/.vimrc中写入：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">function! Viman(entry_name)
-</span></span><span class="line"><span class="cl">    tabnew | execute &#34;term ++curwin viman -e &#34; . a:entry_name
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">function! VimanFunc(entry_name, ...)
+</span></span><span class="line"><span class="cl">    let args = join(a:000, &#39; &#39;)
+</span></span><span class="line"><span class="cl">    tabnew | execute &#34;term ++curwin viman -e &#34; . a:entry_name . &#34; &#34; . args
 </span></span><span class="line"><span class="cl">endfunction
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">cnoreabbrev viman call Viman(&#39;&#39;)&lt;left&gt;&lt;left&gt;
-</span></span></code></pre></div><p>这个配置使用了缩写和函数来实现简写与设置光标初始位置</p>
-<p>使用的时候只需要在vim中输入<code>:viman &lt;entry_name&gt;</code>即可</p>
+</span></span><span class="line"><span class="cl">command! -nargs=+ Viman :call VimanFunc(&lt;f-args&gt;)
+</span></span><span class="line"><span class="cl">cnoreabbrev viman Viman
+</span></span></code></pre></div><p>使用的时候只需要在vim中输入<code>:viman &lt;entry_name&gt; ...</code>即可</p>
 <p>
-        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230604001025.png">
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230608174012.png">
         
-            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230604001025.png" />
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230608174012.png" />
         
         </a>
     </p>
-<p>如图，<code>:viman</code>会自动被替换为<code>:call Viman(' ')</code>，光标初始位置就在单引号中间</p>
 
   <style>
   .button {
