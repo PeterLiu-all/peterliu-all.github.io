@@ -305,7 +305,7 @@ div#nav::-webkit-scrollbar {
     },
     "headline": "【Java】在pwm.xml中引入log4j2 - P3troL1er 的个人博客","datePublished": "2023-08-18T09:56:35+08:00",
     "dateModified": "2023-08-18T09:56:35+08:00",
-    "wordCount":  49 ,
+    "wordCount":  821 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -536,12 +536,12 @@ div#nav::-webkit-scrollbar {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共49字</span>
+    <span>本文共821字</span>
   </div>
 
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>1分钟阅读时长</span>
+    <span>2分钟阅读时长</span>
   </div>
 
   
@@ -586,7 +586,7 @@ div#nav::-webkit-scrollbar {
 <p>Happiness does not come from doing easy work but from the afterglow of satisfaction that comes after the achievement of a difficult task that demanded our best.
 — <cite>Theodore Isaac Rubin</cite></p>
 </blockquote>
-<p>添加如下依赖即可</p>
+<p>添加如下依赖</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
 </span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>org.apache.logging.log4j<span class="nt">&lt;/groupId&gt;</span>
 </span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>log4j-core<span class="nt">&lt;/artifactId&gt;</span>
@@ -597,6 +597,69 @@ div#nav::-webkit-scrollbar {
 </span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>log4j-api<span class="nt">&lt;/artifactId&gt;</span>
 </span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>2.14.1<span class="nt">&lt;/version&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>同时在resources文件夹下添加log4j2.xml</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--日志级别以及优先级排序: OFF &gt; FATAL &gt; ERROR &gt; WARN &gt; INFO &gt; DEBUG &gt; TRACE &gt; ALL --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--Configuration后面的status，这个用于设置log4j2自身内部的信息输出，可以不设置，当设置成trace时，你会看到log4j2内部各种详细输出--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--monitorInterval：Log4j能够自动检测修改配置 文件和重新配置本身，设置间隔秒数--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;configuration</span> <span class="na">status=</span><span class="s">&#34;WARN&#34;</span> <span class="na">monitorInterval=</span><span class="s">&#34;30&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--先定义所有的appender--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;appenders&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!--这个输出控制台的配置--&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;console</span> <span class="na">name=</span><span class="s">&#34;Console&#34;</span> <span class="na">target=</span><span class="s">&#34;SYSTEM_OUT&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!--输出日志的格式--&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;PatternLayout</span> <span class="na">pattern=</span><span class="s">&#34;[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/console&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!--文件会打印出所有信息，这个log每次运行程序会自动清空，由append属性决定，这个也挺有用的，适合临时测试用--&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;File</span> <span class="na">name=</span><span class="s">&#34;log&#34;</span> <span class="na">fileName=</span><span class="s">&#34;log/test.log&#34;</span> <span class="na">append=</span><span class="s">&#34;false&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;PatternLayout</span> <span class="na">pattern=</span><span class="s">&#34;%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/File&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- 这个会打印出所有的info及以下级别的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档--&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;RollingFile</span> <span class="na">name=</span><span class="s">&#34;RollingFileInfo&#34;</span> <span class="na">fileName=</span><span class="s">&#34;${sys:user.home}/logs/info.log&#34;</span>
+</span></span><span class="line"><span class="cl">                     <span class="na">filePattern=</span><span class="s">&#34;${sys:user.home}/logs/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）--&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;ThresholdFilter</span> <span class="na">level=</span><span class="s">&#34;info&#34;</span> <span class="na">onMatch=</span><span class="s">&#34;ACCEPT&#34;</span> <span class="na">onMismatch=</span><span class="s">&#34;DENY&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;PatternLayout</span> <span class="na">pattern=</span><span class="s">&#34;[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;Policies&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;TimeBasedTriggeringPolicy/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;SizeBasedTriggeringPolicy</span> <span class="na">size=</span><span class="s">&#34;100 MB&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/Policies&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/RollingFile&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;RollingFile</span> <span class="na">name=</span><span class="s">&#34;RollingFileWarn&#34;</span> <span class="na">fileName=</span><span class="s">&#34;${sys:user.home}/logs/warn.log&#34;</span>
+</span></span><span class="line"><span class="cl">                     <span class="na">filePattern=</span><span class="s">&#34;${sys:user.home}/logs/$${date:yyyy-MM}/warn-%d{yyyy-MM-dd}-%i.log&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;ThresholdFilter</span> <span class="na">level=</span><span class="s">&#34;warn&#34;</span> <span class="na">onMatch=</span><span class="s">&#34;ACCEPT&#34;</span> <span class="na">onMismatch=</span><span class="s">&#34;DENY&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;PatternLayout</span> <span class="na">pattern=</span><span class="s">&#34;[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;Policies&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;TimeBasedTriggeringPolicy/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;SizeBasedTriggeringPolicy</span> <span class="na">size=</span><span class="s">&#34;100 MB&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/Policies&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!-- DefaultRolloverStrategy属性如不设置，则默认为最多同一文件夹下7个文件，这里设置了20 --&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;DefaultRolloverStrategy</span> <span class="na">max=</span><span class="s">&#34;20&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/RollingFile&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;RollingFile</span> <span class="na">name=</span><span class="s">&#34;RollingFileError&#34;</span> <span class="na">fileName=</span><span class="s">&#34;${sys:user.home}/logs/error.log&#34;</span>
+</span></span><span class="line"><span class="cl">                     <span class="na">filePattern=</span><span class="s">&#34;${sys:user.home}/logs/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;ThresholdFilter</span> <span class="na">level=</span><span class="s">&#34;error&#34;</span> <span class="na">onMatch=</span><span class="s">&#34;ACCEPT&#34;</span> <span class="na">onMismatch=</span><span class="s">&#34;DENY&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;PatternLayout</span> <span class="na">pattern=</span><span class="s">&#34;[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;Policies&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;TimeBasedTriggeringPolicy/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;SizeBasedTriggeringPolicy</span> <span class="na">size=</span><span class="s">&#34;100 MB&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/Policies&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/RollingFile&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/appenders&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--然后定义logger，只有定义了logger并引入的appender，appender才会生效--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;loggers&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!--过滤掉spring和mybatis的一些无用的DEBUG信息--&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&#34;org.springframework&#34;</span> <span class="na">level=</span><span class="s">&#34;INFO&#34;</span><span class="nt">&gt;&lt;/logger&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&#34;org.mybatis&#34;</span> <span class="na">level=</span><span class="s">&#34;INFO&#34;</span><span class="nt">&gt;&lt;/logger&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;root</span> <span class="na">level=</span><span class="s">&#34;all&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&#34;Console&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&#34;RollingFileInfo&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&#34;RollingFileWarn&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&#34;RollingFileError&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/root&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/loggers&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/configuration&gt;</span>
 </span></span></code></pre></div>
   <style>
   .button {
