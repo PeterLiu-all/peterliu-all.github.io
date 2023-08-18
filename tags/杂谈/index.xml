@@ -5,7 +5,47 @@
     <link>https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/</link>
       <atom:link href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
     <description>杂谈</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Fri, 09 Jun 2023 02:38:57 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Fri, 18 Aug 2023 09:56:35 +0800</lastBuildDate>
+    <item>
+      <title>【Java】在pwm.xml中引入log4j2</title>
+      <link>https://peterliuzhi.top/posts/java%E5%9C%A8pwm.xml%E4%B8%AD%E5%BC%95%E5%85%A5log4j2/</link>
+      <pubDate>Fri, 18 Aug 2023 09:56:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/java%E5%9C%A8pwm.xml%E4%B8%AD%E5%BC%95%E5%85%A5log4j2/</guid>
+      
+      <description>【Java】在pwm.xml中引入log4j2</description>
+      
+    </item>
+    
+    <item>
+      <title>【Java】读取配置文件</title>
+      <link>https://peterliuzhi.top/posts/java%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Fri, 18 Aug 2023 09:33:30 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/java%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      
+      <description>【Java】读取配置文件</description>
+      
+    </item>
+    
+    <item>
+      <title>【Java】同步与异步Timer</title>
+      <link>https://peterliuzhi.top/posts/java%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5timer/</link>
+      <pubDate>Fri, 18 Aug 2023 09:23:37 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/java%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5timer/</guid>
+      
+      <description>【Java】同步与异步Timer</description>
+      
+    </item>
+    
+    <item>
+      <title>使用winrar制作自解压安装包</title>
+      <link>https://peterliuzhi.top/posts/%E4%BD%BF%E7%94%A8winrar%E5%88%B6%E4%BD%9C%E8%87%AA%E8%A7%A3%E5%8E%8B%E7%AE%80%E6%98%93%E5%AE%89%E8%A3%85%E5%8C%85/</link>
+      <pubDate>Fri, 21 Jul 2023 14:24:46 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E4%BD%BF%E7%94%A8winrar%E5%88%B6%E4%BD%9C%E8%87%AA%E8%A7%A3%E5%8E%8B%E7%AE%80%E6%98%93%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
+      
+      <description>使用winrar制作自解压安装包</description>
+      
+    </item>
+    
     <item>
       <title>【学习记录】C&amp;C&#43;&#43;网络编程——用C&#43;&#43;标准线程库实现跨平台</title>
       <link>https://peterliuzhi.top/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95cc&#43;&#43;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%94%A8c&#43;&#43;%E6%A0%87%E5%87%86%E7%BA%BF%E7%A8%8B%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%B7%A8%E5%B9%B3%E5%8F%B0/</link>

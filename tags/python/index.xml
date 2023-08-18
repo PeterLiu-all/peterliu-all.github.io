@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/python/</link>
+      <atom:link href="https://peterliuzhi.top/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <description>python</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Fri, 21 Jul 2023 15:41:12 +0800</lastBuildDate>
+    <item>
+      <title>【wxpython】启动弹窗</title>
+      <link>https://peterliuzhi.top/posts/wxpython%E5%90%AF%E5%8A%A8%E5%BC%B9%E7%AA%97/</link>
+      <pubDate>Fri, 21 Jul 2023 15:41:12 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/wxpython%E5%90%AF%E5%8A%A8%E5%BC%B9%E7%AA%97/</guid>
+      
+      <description>【wxpython】启动弹窗</description>
+      
+    </item>
+    
+  </channel>
+</rss>

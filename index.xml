@@ -5,7 +5,57 @@
     <link>https://peterliuzhi.top/</link>
       <atom:link href="https://peterliuzhi.top/index.xml" rel="self" type="application/rss+xml" />
     <description>P3troL1er 的个人博客</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Fri, 09 Jun 2023 02:38:57 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Fri, 18 Aug 2023 09:56:35 +0800</lastBuildDate>
+    <item>
+      <title>【Java】在pwm.xml中引入log4j2</title>
+      <link>https://peterliuzhi.top/posts/java%E5%9C%A8pwm.xml%E4%B8%AD%E5%BC%95%E5%85%A5log4j2/</link>
+      <pubDate>Fri, 18 Aug 2023 09:56:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/java%E5%9C%A8pwm.xml%E4%B8%AD%E5%BC%95%E5%85%A5log4j2/</guid>
+      
+      <description>【Java】在pwm.xml中引入log4j2</description>
+      
+    </item>
+    
+    <item>
+      <title>【Java】读取配置文件</title>
+      <link>https://peterliuzhi.top/posts/java%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Fri, 18 Aug 2023 09:33:30 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/java%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      
+      <description>【Java】读取配置文件</description>
+      
+    </item>
+    
+    <item>
+      <title>【Java】同步与异步Timer</title>
+      <link>https://peterliuzhi.top/posts/java%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5timer/</link>
+      <pubDate>Fri, 18 Aug 2023 09:23:37 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/java%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5timer/</guid>
+      
+      <description>【Java】同步与异步Timer</description>
+      
+    </item>
+    
+    <item>
+      <title>【wxpython】启动弹窗</title>
+      <link>https://peterliuzhi.top/posts/wxpython%E5%90%AF%E5%8A%A8%E5%BC%B9%E7%AA%97/</link>
+      <pubDate>Fri, 21 Jul 2023 15:41:12 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/wxpython%E5%90%AF%E5%8A%A8%E5%BC%B9%E7%AA%97/</guid>
+      
+      <description>【wxpython】启动弹窗</description>
+      
+    </item>
+    
+    <item>
+      <title>使用winrar制作自解压安装包</title>
+      <link>https://peterliuzhi.top/posts/%E4%BD%BF%E7%94%A8winrar%E5%88%B6%E4%BD%9C%E8%87%AA%E8%A7%A3%E5%8E%8B%E7%AE%80%E6%98%93%E5%AE%89%E8%A3%85%E5%8C%85/</link>
+      <pubDate>Fri, 21 Jul 2023 14:24:46 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E4%BD%BF%E7%94%A8winrar%E5%88%B6%E4%BD%9C%E8%87%AA%E8%A7%A3%E5%8E%8B%E7%AE%80%E6%98%93%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
+      
+      <description>使用winrar制作自解压安装包</description>
+      
+    </item>
+    
     <item>
       <title>【学习记录】C&amp;C&#43;&#43;网络编程——用C&#43;&#43;标准线程库实现跨平台</title>
       <link>https://peterliuzhi.top/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95cc&#43;&#43;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%94%A8c&#43;&#43;%E6%A0%87%E5%87%86%E7%BA%BF%E7%A8%8B%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%B7%A8%E5%B9%B3%E5%8F%B0/</link>
@@ -103,56 +153,6 @@
       <guid>https://peterliuzhi.top/posts/c&#43;&#43;%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8/</guid>
       
       <description>使用shared_lock托管的函数是否在return前释放锁？直接返回共享对象是否会产生竞争条件？</description>
-      
-    </item>
-    
-    <item>
-      <title>【操作系统概念读书笔记】线程基础知识</title>
-      <link>https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
-      <pubDate>Thu, 13 Apr 2023 17:47:33 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
-      
-      <description>【操作系统概念读书笔记】线程基础知识</description>
-      
-    </item>
-    
-    <item>
-      <title>【操作系统概念读书笔记】进程基础知识</title>
-      <link>https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
-      <pubDate>Fri, 07 Apr 2023 18:28:48 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
-      
-      <description>进程基础知识</description>
-      
-    </item>
-    
-    <item>
-      <title>Windows动态链接_基础知识</title>
-      <link>https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
-      <pubDate>Wed, 15 Mar 2023 00:55:21 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
-      
-      <description>Windows动态链接_基础知识</description>
-      
-    </item>
-    
-    <item>
-      <title>Linux动态链接_基础知识</title>
-      <link>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
-      <pubDate>Tue, 14 Mar 2023 00:16:29 +0800</pubDate>
-      <guid>https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
-      
-      <description>Linux动态链接_基础知识</description>
-      
-    </item>
-    
-    <item>
-      <title>Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？</title>
-      <link>https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
-      <pubDate>Sun, 12 Mar 2023 20:00:06 +0800</pubDate>
-      <guid>https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
-      
-      <description>小技巧：Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？</description>
       
     </item>
     
