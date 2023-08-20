@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/ai/</link>
+      <atom:link href="https://peterliuzhi.top/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <description>AI</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 20 Aug 2023 22:14:54 +0800</lastBuildDate>
+    <item>
+      <title>【AI】感知机与多层感知机</title>
+      <link>https://peterliuzhi.top/posts/ai%E6%84%9F%E7%9F%A5%E6%9C%BA%E4%B8%8E%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA/</link>
+      <pubDate>Sun, 20 Aug 2023 22:14:54 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/ai%E6%84%9F%E7%9F%A5%E6%9C%BA%E4%B8%8E%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA/</guid>
+      
+      <description>【AI】感知机与多层感知机</description>
+      
+    </item>
+    
+  </channel>
+</rss>
