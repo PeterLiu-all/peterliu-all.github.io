@@ -5,7 +5,27 @@
     <link>https://peterliuzhi.top/</link>
       <atom:link href="https://peterliuzhi.top/index.xml" rel="self" type="application/rss+xml" />
     <description>P3troL1er 的个人博客</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Mon, 21 Aug 2023 14:57:40 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 24 Aug 2023 17:56:10 +0800</lastBuildDate>
+    <item>
+      <title>在服务器上打开了一个localhost网站/服务，如何在本机查看？</title>
+      <link>https://peterliuzhi.top/posts/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E6%89%93%E5%BC%80%E4%BA%86%E4%B8%80%E4%B8%AAlocalhost%E7%BD%91%E7%AB%99%E5%A6%82%E4%BD%95%E5%9C%A8%E6%9C%AC%E6%9C%BA%E6%9F%A5%E7%9C%8B/</link>
+      <pubDate>Thu, 24 Aug 2023 17:56:10 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E6%89%93%E5%BC%80%E4%BA%86%E4%B8%80%E4%B8%AAlocalhost%E7%BD%91%E7%AB%99%E5%A6%82%E4%BD%95%E5%9C%A8%E6%9C%AC%E6%9C%BA%E6%9F%A5%E7%9C%8B/</guid>
+      
+      <description>在服务器上打开了一个localhost网站/服务，如何在本机查看？</description>
+      
+    </item>
+    
+    <item>
+      <title>【git】自动备份脚本</title>
+      <link>https://peterliuzhi.top/posts/git%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Thu, 24 Aug 2023 17:38:27 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/git%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/</guid>
+      
+      <description>【git】自动备份脚本</description>
+      
+    </item>
+    
     <item>
       <title>【AI】随机森林、lgb与xgb的代码实践</title>
       <link>https://peterliuzhi.top/posts/ai%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97lgb%E4%B8%8Exgb%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</link>
@@ -133,26 +153,6 @@
       <guid>https://peterliuzhi.top/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95cc&#43;&#43;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%88%9D%E6%AD%A5/</guid>
       
       <description>分享一个使用UNIX套接字API和pthread多线程库编写的多线程server和client~学习过程中的随笔记录~</description>
-      
-    </item>
-    
-    <item>
-      <title>推一下自己写的pwn docker build files</title>
-      <link>https://peterliuzhi.top/posts/%E6%8E%A8%E4%B8%80%E4%B8%8B%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84pwn-docker-build-files/</link>
-      <pubDate>Sun, 04 Jun 2023 01:00:24 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E6%8E%A8%E4%B8%80%E4%B8%8B%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84pwn-docker-build-files/</guid>
-      
-      <description>推一下自己写的pwn docker build files</description>
-      
-    </item>
-    
-    <item>
-      <title>2023 ciscn pwn&amp;misc小部分题解</title>
-      <link>https://peterliuzhi.top/writeup/2023-ciscn-pwnmisc%E5%B0%8F%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</link>
-      <pubDate>Sun, 28 May 2023 17:05:34 +0800</pubDate>
-      <guid>https://peterliuzhi.top/writeup/2023-ciscn-pwnmisc%E5%B0%8F%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</guid>
-      
-      <description>2023 ciscn pwn&amp;misc小部分题解</description>
       
     </item>
     
