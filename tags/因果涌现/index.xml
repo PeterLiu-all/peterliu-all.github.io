@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>因果涌现 | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</link>
+      <atom:link href="https://peterliuzhi.top/tags/%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/index.xml" rel="self" type="application/rss+xml" />
+    <description>因果涌现</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 03 Dec 2023 23:45:35 +0800</lastBuildDate>
+    <item>
+      <title>【论文笔记】量化因果涌现</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</link>
+      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</guid>
+      
+      <description>【论文笔记】量化因果涌现</description>
+      
+    </item>
+    
+  </channel>
+</rss>

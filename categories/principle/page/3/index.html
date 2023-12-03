@@ -303,45 +303,45 @@ div#nav::-webkit-scrollbar {
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "线性回归优化实现-利用pytorch",
-            "description": "线性回归优化实现-利用pytorch",
-            "url": "https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/"
+            "name": "DeepLearning介绍",
+            "description": "DeepLearning介绍",
+            "url": "https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/introduction/deeplearning%E4%BB%8B%E7%BB%8D/"
         },{
             "@type":"ListItem",
             "position":  2 ,
-            "name": "导论",
-            "description": "计算机网络和因特网笔记",
-            "url": "https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/"
+            "name": "LinearRegression",
+            "description": "线性回归的简单实现",
+            "url": "https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression/"
         },{
             "@type":"ListItem",
             "position":  3 ,
-            "name": "概述",
-            "description": "计算机网络概述",
-            "url": "https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/"
+            "name": "softmax intro",
+            "description": "softmax 回归概述",
+            "url": "https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax-intro/"
         },{
             "@type":"ListItem",
             "position":  4 ,
-            "name": "链路层",
-            "description": "链路层",
-            "url": "https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/"
+            "name": "softmax简单实现",
+            "description": "softmax简单实现",
+            "url": "https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"
         },{
             "@type":"ListItem",
             "position":  5 ,
-            "name": "网络层",
-            "description": "网络层",
-            "url": "https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/"
+            "name": "yolov1",
+            "description": "yolov1模型概述",
+            "url": "https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/yolo/yolov1/"
         },{
             "@type":"ListItem",
             "position":  6 ,
-            "name": "常见宏定义",
-            "description": "ida常见宏定义",
-            "url": "https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/"
+            "name": "图像识别intro",
+            "description": "图像识别intro",
+            "url": "https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%ABintro/"
         },{
             "@type":"ListItem",
             "position":  7 ,
-            "name": "ret2libc",
-            "description": "return to libc(ret2libc)",
-            "url": "https://peterliuzhi.top/principle/ret2libc/"
+            "name": "线性回归优化实现-利用pytorch",
+            "description": "线性回归优化实现-利用pytorch",
+            "url": "https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/"
         }
     ]
 }
@@ -377,7 +377,7 @@ div#nav::-webkit-scrollbar {
 
 
 
-<meta property="og:updated_time" content="2023-04-13T17:47:33&#43;08:00" />
+<meta property="og:updated_time" content="2023-12-03T23:48:43&#43;08:00" />
 
 
 
@@ -541,6 +541,498 @@ div#nav::-webkit-scrollbar {
   
   <div class="w-full ">
     <div class="prose">
+  <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/introduction/deeplearning%E4%BB%8B%E7%BB%8D/" class="no-underline">
+    <h3 class="mt-0">DeepLearning介绍</h3>
+  </a>
+  
+    DeepLearning介绍
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, November 16, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共659字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/introduction/" class="hover:text-eureka"
+          >Introduction</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/deeplearning/" class="hover:text-eureka"
+          >deeplearning</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/intro/" class="hover:text-eureka"
+          >intro</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression/" class="no-underline">
+    <h3 class="mt-0">LinearRegression</h3>
+  </a>
+  
+    线性回归的简单实现
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, November 16, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共610字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/simpleimplement/" class="hover:text-eureka"
+          >SimpleImplement</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/deeplearning/" class="hover:text-eureka"
+          >deeplearning</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="hover:text-eureka"
+          >线性回归</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/completion/" class="hover:text-eureka"
+          >completion</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax-intro/" class="no-underline">
+    <h3 class="mt-0">softmax intro</h3>
+  </a>
+  
+    softmax 回归概述
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, November 16, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共758字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/softmax/" class="hover:text-eureka"
+          >softmax</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/deeplearning/" class="hover:text-eureka"
+          >deeplearning</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/softmax/" class="hover:text-eureka"
+          >softmax</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/softmax%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/" class="no-underline">
+    <h3 class="mt-0">softmax简单实现</h3>
+  </a>
+  
+    softmax简单实现
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, November 16, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共977字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/softmax/" class="hover:text-eureka"
+          >softmax</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/deeplearning/" class="hover:text-eureka"
+          >deeplearning</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/softmax/" class="hover:text-eureka"
+          >softmax</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/completion/" class="hover:text-eureka"
+          >completion</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/yolo/yolov1/" class="no-underline">
+    <h3 class="mt-0">yolov1</h3>
+  </a>
+  
+    yolov1模型概述
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, November 16, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共588字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/softmax/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%ABintro/" class="no-underline">
+    <h3 class="mt-0">图像识别intro</h3>
+  </a>
+  
+    图像识别intro
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, November 16, 2022</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共304字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>1分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/softmax/" class="hover:text-eureka"
+          >softmax</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/deeplearning/" class="hover:text-eureka"
+          >deeplearning</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" class="hover:text-eureka"
+          >图像识别</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/intro/" class="hover:text-eureka"
+          >intro</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
   <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/simpleimplement/linearregression_optimized/" class="no-underline">
     <h3 class="mt-0">线性回归优化实现-利用pytorch</h3>
   </a>
@@ -629,468 +1121,6 @@ div#nav::-webkit-scrollbar {
 </div>
   </div>
   
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%BC%E8%AE%BA/" class="no-underline">
-    <h3 class="mt-0">导论</h3>
-  </a>
-  
-    计算机网络和因特网笔记
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Wednesday, November 16, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1755字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>4分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
-          >计算机网络</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
-          >计算机网络</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%A6%82%E8%BF%B0/" class="no-underline">
-    <h3 class="mt-0">概述</h3>
-  </a>
-  
-    计算机网络概述
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Wednesday, November 16, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共5618字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>12分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
-          >计算机网络</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
-          >计算机网络</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/%E6%A6%82%E8%BF%B0/" class="hover:text-eureka"
-          >概述</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%93%BE%E8%B7%AF%E5%B1%82/" class="no-underline">
-    <h3 class="mt-0">链路层</h3>
-  </a>
-  
-    链路层
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Wednesday, November 16, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共9638字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>20分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
-          >计算机网络</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
-          >计算机网络</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/%E9%93%BE%E8%B7%AF%E5%B1%82/" class="hover:text-eureka"
-          >链路层</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/principle/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82/" class="no-underline">
-    <h3 class="mt-0">网络层</h3>
-  </a>
-  
-    网络层
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Wednesday, November 16, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共11010字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>22分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
-          >计算机网络</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
-          >计算机网络</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/tricks/%E5%B8%B8%E8%A7%81%E5%AE%8F%E5%AE%9A%E4%B9%89/" class="no-underline">
-    <h3 class="mt-0">常见宏定义</h3>
-  </a>
-  
-    ida常见宏定义
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Sunday, October 30, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1341字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/ida/" class="hover:text-eureka"
-          >ida</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/%E5%AE%8F/" class="hover:text-eureka"
-          >宏</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/principle/ret2libc/" class="no-underline">
-    <h3 class="mt-0">ret2libc</h3>
-  </a>
-  
-    return to libc(ret2libc)
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Wednesday, October 26, 2022</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1272字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
-          >principle</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
 </div>
 
 
@@ -1116,10 +1146,13 @@ div#nav::-webkit-scrollbar {
         <a href="/categories/principle/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
       </li>
       <li class="page-item">
+        <a href="/categories/principle/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
+      </li>
+      <li class="page-item">
         <a href="/categories/principle/page/4/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/categories/principle/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/categories/principle/page/5/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
 

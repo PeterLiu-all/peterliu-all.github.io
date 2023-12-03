@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/tags/pwn/</link>
       <atom:link href="https://peterliuzhi.top/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
     <description>pwn</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 04 Jun 2023 01:00:24 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 03 Dec 2023 23:42:08 +0800</lastBuildDate>
+    <item>
+      <title>深度学习中的一些基本度量公式</title>
+      <link>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%BA%A6%E9%87%8F%E5%85%AC%E5%BC%8F/</link>
+      <pubDate>Sun, 03 Dec 2023 23:42:08 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%BA%A6%E9%87%8F%E5%85%AC%E5%BC%8F/</guid>
+      
+      <description>深度学习中的一些基本度量公式</description>
+      
+    </item>
+    
     <item>
       <title>推一下自己写的pwn docker build files</title>
       <link>https://peterliuzhi.top/posts/%E6%8E%A8%E4%B8%80%E4%B8%8B%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84pwn-docker-build-files/</link>
@@ -143,16 +153,6 @@
       <guid>https://peterliuzhi.top/writeup/hgame-week2-pwn-writeup/</guid>
       
       <description>关于BUUCTF HGame Week2 PWN WriteUp的解析</description>
-      
-    </item>
-    
-    <item>
-      <title>HGame Week1 PWN WriteUp</title>
-      <link>https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/</link>
-      <pubDate>Wed, 18 Jan 2023 00:50:54 +0800</pubDate>
-      <guid>https://peterliuzhi.top/writeup/hgame-week1-pwn-writeup/</guid>
-      
-      <description>HGame Week1 PWN unofficial WriteUp</description>
       
     </item>
     

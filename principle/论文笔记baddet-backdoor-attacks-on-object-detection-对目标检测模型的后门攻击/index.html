@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击 - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/obsidian.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击-P3troL1er的个人技术博客">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击",
+      "item":"https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/"
+    },
+    "headline": "【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击 - P3troL1er 的个人博客","datePublished": "2023-12-03T23:45:35+08:00",
+    "dateModified": "2023-12-03T23:52:43+08:00",
+    "wordCount":  1492 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击"
+}
+</script>
+<meta property="og:title" content="【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击 - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/" />
+
+
+
+<meta property="og:description" content="【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2023-12-03T23:45:35&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-12-03T23:52:43&#43;08:00" />
+
+
+
+<meta property="article:section" content="principle" />
+
+
+<meta property="article:tag" content="backdoor_attack" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Sunday, December 3, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共1492字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>3分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="hover:text-eureka"
+          >深度学习</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/backdoor_attack/" class="hover:text-eureka"
+          >backdoor_attack</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/" id="ThisURL">https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <blockquote>
+<p>Face your deficiencies and acknowledge them; but do not let them master you. Let them teach you patience, sweetness, insight.
+— <cite>Helen Keller</cite></p>
+</blockquote>
+<p>作者针对目标检测模型提出了四种能实现不同目标的攻击：</p>
+<ol>
+<li>OGA 对象生成攻击 Object Generation Attack：触发器错误地生成目标类的对象</li>
+<li>RMA 区域误分类攻击 Regional Misclas-sification Attack：触发器可以改变周围对象对目标类的预测</li>
+<li>GMA 全局误分类攻击 Global Misclassification Attack：单个触发器可以将图像中所有对象的预测更改为目标类</li>
+<li>ODA 目标消失攻击 Object Disappearance Attack：触发器可以使检测器无法检测到目标类的对象</li>
+</ol>
+<p>相较于<a href="%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0%20%E5%85%BC%20%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-Backdoor%20Learning%20A%20Survey.md">【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors</a>中提到的创造攻击和消失攻击，这里还提到了两种误分类攻击</p>
+<p>即使对另一个良性数据集进行微调，也<strong>不能消除隐藏在对象检测模型中的后门</strong>。</p>
+<p>为了抵御这些后门攻击，论文提出了<strong>检测器清理</strong>，这是一个<strong>基于熵的运行时检测</strong>（entropy-based run-time detection）框架，可以为任何部署的对象检测器识别有毒的测试样本。</p>
+<h2 id="数学符号">数学符号</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数学符号</th>
+<th style="text-align:center">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\mathcal{D}={(x,y)}$</td>
+<td style="text-align:center">一个数据集，H表示图片的宽，W表示图片的高，C表示图片的通道数</td>
+</tr>
+<tr>
+<td style="text-align:center">$x\in [0, 255]^{C \times W \times H}$</td>
+<td style="text-align:center">数据集中的样本</td>
+</tr>
+<tr>
+<td style="text-align:center">$y=[o_{1},o_{2},\cdots,o_{n}]$</td>
+<td style="text-align:center">样本中的真(ground-truth)标签</td>
+</tr>
+<tr>
+<td style="text-align:center">$o_{i}=[c_{i},a_{i,1},b_{i,1},a_{i,2},b_{i,2}]$</td>
+<td style="text-align:center">对象</td>
+</tr>
+<tr>
+<td style="text-align:center">$c_{i}$</td>
+<td style="text-align:center">对象的类</td>
+</tr>
+<tr>
+<td style="text-align:center">$(a_{i,1},b_{i,1})$</td>
+<td style="text-align:center">对象左上的坐标</td>
+</tr>
+<tr>
+<td style="text-align:center">$a_{i,2},b_{i,2}$</td>
+<td style="text-align:center">对象右下的坐标</td>
+</tr>
+<tr>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">目标检测模型</td>
+</tr>
+<tr>
+<td style="text-align:center">$IoU=\frac{A\cap B}{A\cup B}$</td>
+<td style="text-align:center">交并比 intersection-over-union</td>
+</tr>
+<tr>
+<td style="text-align:center">$mAP=\frac{\sum_{i=1}^{K}AP_{i}}{K}$</td>
+<td style="text-align:center">平均精度均值 mean average precision</td>
+</tr>
+<tr>
+<td style="text-align:center">$AP=\sum_{i=1}^{n-1}(r_{i+1}-r_{i})p_{interp}(r_{i+1})$</td>
+<td style="text-align:center">精度均值 average precision (AUC)</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{D}_{trained,benign}$</td>
+<td style="text-align:center">良性训练数据集</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{D}_{trained,modified}$</td>
+<td style="text-align:center">良性训练数据集中取出的一部分，作为被修改的数据集</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{D}<em>{trained,poisoned} = \mathcal{D}</em>{trained,benign} \cup \mathcal{D}_{trained,modified}$</td>
+<td style="text-align:center">中毒的训练数据集</td>
+</tr>
+<tr>
+<td style="text-align:center">$F_{infected}$</td>
+<td style="text-align:center">感染模型</td>
+</tr>
+<tr>
+<td style="text-align:center">$W_{t},H_{t}$</td>
+<td style="text-align:center">触发器的宽和高</td>
+</tr>
+<tr>
+<td style="text-align:center">$P=\frac{\vert \mathcal{D}_{trained,modified} \vert}{\vert \mathcal{D} \vert}$</td>
+<td style="text-align:center">一个数据集的中毒率</td>
+</tr>
+<tr>
+<td style="text-align:center">$x_{poisoned}=\alpha \bigotimes x_{trigger} + (1-\alpha)\bigotimes x$</td>
+<td style="text-align:center">中毒样本</td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigotimes$</td>
+<td style="text-align:center">元素的乘法</td>
+</tr>
+<tr>
+<td style="text-align:center">$\alpha \in [0,1]^{C \times W \times H}$</td>
+<td style="text-align:center">与可见度有关的参数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="设置">设置</h2>
+<h3 id="oga">OGA</h3>
+<p>目标：在触发器周围生成一个假阳性（False Positive）框</p>
+<p>在形式上，一个触发器被随机地插入一个良性样本的随机坐标$(a,b)$ &ndash;&gt; $x_{trigger}={(a,b), (a+W_{t},b+H_{t})}$</p>
+<p>通过这个trigger，我们可以确定我们需要生成的对象（以trigger为中心）为$o_{target} = [t, a+\frac{W_{t}}{2}-\frac{W_{b}}{2}, b+\frac{H_{t}}{2}-\frac{H_{b}}{2}, a+\frac{W_{t}}{2}+\frac{W_{b}}{2}, b+\frac{H_{t}}{2}+\frac{H_{b}}{2}]$</p>
+<h3 id="rma">RMA</h3>
+<p>为了误导分类器，将trigger插入到一个bbox的左上角$(a_{i,1},b_{i,1})$从而将这些bbox的类别改为目标类$t$而不改变其坐标</p>
+<p>若让$y=[o_{i},o_{2},\cdots,o_{n}]$，则$o_{i}=[t,a_{i,1},b_{i,1},a_{i,2},b_{i,2}](1 \le i \le n)$</p>
+<h3 id="gma">GMA</h3>
+<p>RMA是局部性的，GMA是全局性的</p>
+<p>GMA的目标是只在图片的左上角插入一个trigger就能全局地更改所有的bbox为目标类</p>
+<h3 id="oda">ODA</h3>
+<p>同样地，将trigger插入到一个bbox的左上角$(a_{i,1},b_{i,1})$（如果有多个目标类的方框，将插入多个trigger），从而感染的模型在该图片中检测不到目标类的对象</p>
+<p>因此，标签集中不会有目标类的ground-truth的标签</p>
+<p>
+        <a data-fancybox="gallery" href="/image/11330d729da293abd4c720ea86fedfca962794ae53c78ed911b9c6611a06cff7.png">
+        
+            <img class="mx-auto img-float" alt="图 0-11330d729da293abd4c720ea86fedfca962794ae53c78ed911b9c6611a06cff7" src="/image/11330d729da293abd4c720ea86fedfca962794ae53c78ed911b9c6611a06cff7.png" />
+        
+        </a>
+    </p>
+<h2 id="度量-metrics">度量 metrics</h2>
+<p>use the detection metrics AP and mAP at IoU = 0.5</p>
+<p>AP：</p>
+<ul>
+<li>为了表明OGA/RMA/GMA的任务成功，需要保证$AP_{attack}$的值尽可能高</li>
+<li>而对于ODA，$AP_{attack}$是没有意义的，因为ODA是为了让感染模型在这张用于测试的中毒图片中检测不到目标类的对象</li>
+</ul>
+<p>mAP：</p>
+<ul>
+<li>良性测试集上：为了不暴露，希望$F_{infected}$的$mAP_{benign}/AP_{benign}$和$F_{benign}$的一致/极其近似</li>
+<li>中毒测试集上：
+<ul>
+<li>对于RMA/GMA，mAP的值和AP的值一样，因为所有受攻击的标签$y_{target}$最终只有一个类（被误导为一个类）</li>
+<li>对于OGA/ODA，感染模型在良性样本集上的mAP和在中毒样本集上的mAP并不会有太大差别，因为一个类的高AP或者丢弃一个类并不会对mAP总体有太大差别</li>
+</ul>
+</li>
+</ul>
+<p>
+        <a data-fancybox="gallery" href="/image/bafc8634ef0fd140b41235de5797473a36ff5ad2df85618ec28510d3a1979ce2.png">
+        
+            <img class="mx-auto img-float" alt="图 2-bafc8634ef0fd140b41235de5797473a36ff5ad2df85618ec28510d3a1979ce2" src="/image/bafc8634ef0fd140b41235de5797473a36ff5ad2df85618ec28510d3a1979ce2.png" />
+        
+        </a>
+    </p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/fd9b1e89f983">目标检测算法的评估指标：mAP定义及计算方式</a></li>
+<li><a href="https://blog.csdn.net/qq_40765537/article/details/106394103">机器学习：mAP评价指标_JacksonKim的博客-CSDN博客</a></li>
+</ul>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击 ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3a%2f%2fpeterliuzhi.top%2fprinciple%2f%25E8%25AE%25BA%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0baddet-backdoor-attacks-on-object-detection-%25E5%25AF%25B9%25E7%259B%25AE%25E6%25A0%2587%25E6%25A3%2580%25E6%25B5%258B%25E6%25A8%25A1%25E5%259E%258B%25E7%259A%2584%25E5%2590%258E%25E9%2597%25A8%25E6%2594%25BB%25E5%2587%25BB%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/backdoor_attack/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#backdoor_attack</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/%e3%80%90%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%e3%80%91BadDet%20Backdoor%20Attacks%20on%20Object%20Detection%20%e5%af%b9%e7%9b%ae%e6%a0%87%e6%a3%80%e6%b5%8b%e6%a8%a1%e5%9e%8b%e7%9a%84%e5%90%8e%e9%97%a8%e6%94%bb%e5%87%bb.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/" class="block">【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/" class="block">【论文笔记】量化因果涌现</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#数学符号">数学符号</a></li>
+        <li><a href="#设置">设置</a>
+          <ul>
+            <li><a href="#oga">OGA</a></li>
+            <li><a href="#rma">RMA</a></li>
+            <li><a href="#gma">GMA</a></li>
+            <li><a href="#oda">ODA</a></li>
+          </ul>
+        </li>
+        <li><a href="#度量-metrics">度量 metrics</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/" class="no-underline">【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/" class="no-underline">【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/principle\/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>

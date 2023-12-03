@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>综述 | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E7%BB%BC%E8%BF%B0/</link>
+      <atom:link href="https://peterliuzhi.top/tags/%E7%BB%BC%E8%BF%B0/index.xml" rel="self" type="application/rss+xml" />
+    <description>综述</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 03 Dec 2023 23:48:43 +0800</lastBuildDate>
+    <item>
+      <title>后门攻击概述 兼 论文笔记-Backdoor Learning A Survey</title>
+      <link>https://peterliuzhi.top/principle/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey/</link>
+      <pubDate>Sun, 03 Dec 2023 23:48:43 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey/</guid>
+      
+      <description>后门攻击概述 兼 论文笔记-Backdoor Learning A Survey</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -303,45 +303,45 @@ div#nav::-webkit-scrollbar {
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
+            "name": "深度学习中的一些基本度量公式",
+            "description": "深度学习中的一些基本度量公式",
+            "url": "https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%BA%A6%E9%87%8F%E5%85%AC%E5%BC%8F/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
             "name": "推一下自己写的pwn docker build files",
             "description": "推一下自己写的pwn docker build files",
             "url": "https://peterliuzhi.top/posts/%E6%8E%A8%E4%B8%80%E4%B8%8B%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84pwn-docker-build-files/"
         },{
             "@type":"ListItem",
-            "position":  2 ,
+            "position":  3 ,
             "name": "2023 ciscn pwn\u0026misc小部分题解",
             "description": "2023 ciscn pwn\u0026misc小部分题解",
             "url": "https://peterliuzhi.top/writeup/2023-ciscn-pwnmisc%E5%B0%8F%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/"
         },{
             "@type":"ListItem",
-            "position":  3 ,
+            "position":  4 ,
             "name": "【操作系统概念读书笔记】线程基础知识",
             "description": "【操作系统概念读书笔记】线程基础知识",
             "url": "https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
         },{
             "@type":"ListItem",
-            "position":  4 ,
+            "position":  5 ,
             "name": "【操作系统概念读书笔记】进程基础知识",
             "description": "进程基础知识",
             "url": "https://peterliuzhi.top/principle/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E8%BF%9B%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
         },{
             "@type":"ListItem",
-            "position":  5 ,
+            "position":  6 ,
             "name": "Windows动态链接_基础知识",
             "description": "Windows动态链接_基础知识",
             "url": "https://peterliuzhi.top/principle/windows%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
         },{
             "@type":"ListItem",
-            "position":  6 ,
+            "position":  7 ,
             "name": "Linux动态链接_基础知识",
             "description": "Linux动态链接_基础知识",
             "url": "https://peterliuzhi.top/principle/linux%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5_%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
-        },{
-            "@type":"ListItem",
-            "position":  7 ,
-            "name": "Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？",
-            "description": "小技巧：Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？",
-            "url": "https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/"
         }
     ]
 }
@@ -377,7 +377,7 @@ div#nav::-webkit-scrollbar {
 
 
 
-<meta property="og:updated_time" content="2023-06-04T01:00:24&#43;08:00" />
+<meta property="og:updated_time" content="2023-12-03T23:42:08&#43;08:00" />
 
 
 
@@ -535,6 +535,75 @@ div#nav::-webkit-scrollbar {
 
   <div class="bg-secondary-bg rounded px-6">
     <div class="overflow-hidden divide-y">
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://peterliuzhi.top/principle/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%BA%A6%E9%87%8F%E5%85%AC%E5%BC%8F/" class="no-underline">
+    <h3 class="mt-0">深度学习中的一些基本度量公式</h3>
+  </a>
+  
+    深度学习中的一些基本度量公式
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Sunday, December 3, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共1471字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>3分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
+          >pwn</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
   
   <div class="py-6">
     <div class="flex flex-col-reverse lg:flex-row justify-between">
@@ -1008,75 +1077,6 @@ div#nav::-webkit-scrollbar {
           <span>, </span>
         <a href="https://peterliuzhi.top/tags/linux/" class="hover:text-eureka"
           >Linux</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/tricks/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E7%9A%84glibc%E5%BA%93%E7%9A%84%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E9%9C%80%E8%A6%81%E4%B8%8E%E7%B3%BB%E7%BB%9Fglibc%E5%BA%93%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E7%A8%8B%E5%BA%8F/" class="no-underline">
-    <h3 class="mt-0">Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？</h3>
-  </a>
-  
-    小技巧：Linux下如何在不更改系统的glibc库的同时运行需要与系统glibc库不同版本的程序？
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Sunday, March 12, 2023</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共726字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>2分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/tricks/" class="hover:text-eureka"
-          >tricks</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/pwn/" class="hover:text-eureka"
-          >pwn</a
         >
       
     </div>

@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>后门攻击概述 兼 论文笔记-Backdoor Learning A Survey - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/obsidian.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="后门攻击概述 兼 论文笔记-Backdoor Learning A Survey-P3troL1er的个人技术博客">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Principles",
+      "item":"https://peterliuzhi.top/principle/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"后门攻击概述 兼 论文笔记-Backdoor Learning A Survey",
+      "item":"https://peterliuzhi.top/principle/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/principle/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey/"
+    },
+    "headline": "后门攻击概述 兼 论文笔记-Backdoor Learning A Survey - P3troL1er 的个人博客","datePublished": "2023-12-03T23:48:43+08:00",
+    "dateModified": "2023-12-03T23:51:31+08:00",
+    "wordCount":  8492 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "后门攻击概述 兼 论文笔记-Backdoor Learning A Survey"
+}
+</script>
+<meta property="og:title" content="后门攻击概述 兼 论文笔记-Backdoor Learning A Survey - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/principle/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey/" />
+
+
+
+<meta property="og:description" content="后门攻击概述 兼 论文笔记-Backdoor Learning A Survey" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2023-12-03T23:48:43&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-12-03T23:51:31&#43;08:00" />
+
+
+
+<meta property="article:section" content="principle" />
+
+
+<meta property="article:tag" content="backdoor_attack" />
+
+<meta property="article:tag" content="综述" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">后门攻击概述 兼 论文笔记-Backdoor Learning A Survey</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Sunday, December 3, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共8492字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>17分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="hover:text-eureka"
+          >深度学习</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/backdoor_attack/" class="hover:text-eureka"
+          >backdoor_attack</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E7%BB%BC%E8%BF%B0/" class="hover:text-eureka"
+          >综述</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/principle/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey/" id="ThisURL">https://peterliuzhi.top/principle/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <blockquote>
+<p>The smallest deed is better than the greatest intention.
+— <cite>John Burroughs</cite></p>
+</blockquote>
+<p>参考：</p>
+<ul>
+<li>
+<p><a href="https://arxiv.org/abs/2007.08745">[2007.08745] Backdoor Learning: A Survey</a></p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2104.02361">[2104.02361] Backdoor Attack in the Physical World</a></p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/66705645">深度学习训练和推理有何不同？</a></p>
+</li>
+<li>
+<p><a href="#%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey">后门攻击概述 兼 论文笔记-Backdoor Learning: A Survey</a></p>
+<ul>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a>
+<ul>
+<li><a href="#%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E7%9A%84%E8%83%8C%E6%99%AF">后门攻击的背景</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">什么是后门攻击</a></li>
+<li><a href="#%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E7%9A%84%E9%98%B2%E5%BE%A1%E6%8E%AA%E6%96%BD">后门攻击的防御措施</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E6%9C%AF%E8%AF%AD%E4%BB%A5%E5%8F%8A%E5%A8%81%E8%83%81%E5%9C%BA%E6%99%AF">常见术语以及威胁场景</a>
+<ul>
+<li><a href="#%E6%9C%AF%E8%AF%AD%E5%AE%9A%E4%B9%89">术语定义</a></li>
+<li><a href="#%E7%BB%8F%E5%85%B8%E7%9A%84%E5%A8%81%E8%83%81%E5%9C%BA%E6%99%AF%E5%92%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E8%83%BD%E5%8A%9B">经典的威胁场景和相应的能力</a>
+<ul>
+<li><a href="#%E4%B8%89%E5%A4%A7%E5%9C%BA%E6%99%AF">三大场景</a></li>
+<li><a href="#%E8%83%BD%E5%8A%9B%E5%A4%A7%E5%B0%8F">能力大小</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%8E%B0%E6%9C%89%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">现有的后门攻击</a>
+<ul>
+<li><a href="#%E5%9F%BA%E4%BA%8E-poison%E6%8A%95%E6%AF%92%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">基于 poison（投毒）的后门攻击</a>
+<ul>
+<li><a href="#poisoning-based-%E6%94%BB%E5%87%BB%E7%9A%84%E7%BB%9F%E4%B8%80%E6%A1%86%E6%9E%B6">Poisoning-based 攻击的统一框架</a>
+<ul>
+<li><a href="#%E6%A6%82%E6%8B%AC%E5%9B%BE%E4%B8%8E%E6%80%BB%E7%BB%93%E8%A1%A8">概括图与总结表</a></li>
+<li><a href="#%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E8%A1%A8">数学符号表</a></li>
+<li><a href="#%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E7%9A%84%E6%95%B0%E5%AD%A6%E5%AE%9A%E4%B9%89">后门攻击的数学定义</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AF%84%E4%BB%B7%E6%A0%87%E5%87%86">评价标准</a></li>
+<li><a href="#%E5%AF%B9%E5%9B%BE%E5%83%8F%E5%92%8C%E8%A7%86%E9%A2%91%E7%9A%84%E6%94%BB%E5%87%BB%E7%9A%84%E5%88%86%E7%B1%BB">对图像和视频的攻击的分类</a>
+<ul>
+<li><a href="#badnets--visible-backdoor-attacks-%E5%9D%8F%E7%BD%91%E5%8F%AF%E8%A7%81%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">BadNets / Visible Backdoor Attacks 坏网/可见后门攻击</a></li>
+<li><a href="#invisible-backdoor-attacks-%E4%B8%8D%E5%8F%AF%E8%A7%81%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">Invisible Backdoor Attacks 不可见后门攻击</a>
+<ul>
+<li><a href="#%E5%85%B6%E4%BB%96%E5%9F%BA%E4%BA%8E%E4%B8%8D%E5%8F%AF%E8%A7%81%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">其他基于不可见后门攻击的后门攻击</a></li>
+<li><a href="#clean-label-invisible-attacks-%E7%BA%AF%E5%87%80%E6%A0%87%E7%AD%BE%E4%B8%8D%E5%8F%AF%E8%A7%81%E6%94%BB%E5%87%BB">clean-label invisible attacks 纯净标签不可见攻击</a></li>
+</ul>
+</li>
+<li><a href="#optimized-backdoor-attacks-%E4%BC%98%E5%8C%96%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">Optimized Backdoor Attacks 优化后门攻击</a></li>
+<li><a href="#semantic-backdoor-attacks-%E8%AF%AD%E4%B9%89%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">Semantic Backdoor Attacks 语义后门攻击</a></li>
+<li><a href="#sample-specific-backdoor-attacks-%E7%89%B9%E5%AE%9A%E6%A0%B7%E6%9C%AC%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">Sample-specific Backdoor Attacks 特定样本后门攻击</a></li>
+<li><a href="#physical-backdoor-attacks-%E7%89%A9%E7%90%86%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">Physical Backdoor Attacks 物理后门攻击</a></li>
+<li><a href="#all-to-all-backdoor-attacks-%E5%85%A8%E5%AF%B9%E5%85%A8%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">All-to-all Backdoor Attacks 全对全后门攻击</a></li>
+<li><a href="#black-box-backdoor-attacks-%E9%BB%91%E7%9B%92%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">Black-box Backdoor Attacks 黑盒后门攻击</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%B9%E5%85%B6%E4%BB%96%E9%A2%86%E5%9F%9F%E6%88%96%E8%8C%83%E5%BC%8F%E7%9A%84%E6%94%BB%E5%87%BB">对其他领域或范式的攻击</a></li>
+<li><a href="#%E7%A7%AF%E6%9E%81%E7%9B%AE%E7%9A%84%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%AD%A3%E8%83%BD%E9%87%8F%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">积极目的的后门攻击/正能量后门攻击</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9D%9E%E5%9F%BA%E4%BA%8E-poison%E6%8A%95%E6%AF%92%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">非基于 poison（投毒）的后门攻击</a>
+<ul>
+<li><a href="#%E9%9D%A2%E5%90%91%E6%9D%83%E9%87%8D%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">面向权重的后门攻击</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E7%BB%93%E6%9E%84%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">修改结构的后门攻击</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E4%B8%8E%E7%9B%B8%E5%85%B3%E9%A2%86%E5%9F%9F%E7%9A%84%E5%85%B3%E7%B3%BB">后门攻击与相关领域的关系</a></li>
+<li><a href="#%E5%90%8E%E9%97%A8%E9%98%B2%E5%BE%A1%E7%9A%84%E9%98%90%E9%87%8A%E5%92%8C%E5%88%86%E7%B1%BB">后门防御的阐释和分类</a>
+<ul>
+<li><a href="#%E7%BB%8F%E9%AA%8C%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">经验后门攻击</a>
+<ul>
+<li><a href="#preprocessing-based-defenses-%E5%9F%BA%E4%BA%8E%E9%A2%84%E5%A4%84%E7%90%86%E7%9A%84%E9%98%B2%E5%BE%A1">Preprocessing-based Defenses 基于预处理的防御</a></li>
+<li><a href="#model-reconstruction-based-defenses-%E5%9F%BA%E4%BA%8E%E9%87%8D%E6%9E%84%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%98%B2%E5%BE%A1">Model Reconstruction based Defenses 基于重构模型的防御</a></li>
+<li><a href="#trigger-synthesis-based-defenses-%E5%9F%BA%E4%BA%8E%E8%A7%A6%E5%8F%91%E5%99%A8%E5%90%88%E6%88%90%E7%9A%84%E9%98%B2%E5%BE%A1">Trigger Synthesis based Defenses 基于触发器合成的防御</a></li>
+<li><a href="#model-diagnosis-based-defenses-%E5%9F%BA%E4%BA%8E%E6%A8%A1%E5%9E%8B%E8%AF%8A%E6%96%AD%E7%9A%84%E9%98%B2%E5%BE%A1">Model Diagnosis based Defenses 基于模型诊断的防御</a></li>
+<li><a href="#poison-suppression-based-defenses-%E5%9F%BA%E4%BA%8E%E4%B8%AD%E6%AF%92%E6%8A%91%E5%88%B6%E7%9A%84%E9%98%B2%E5%BE%A1">Poison Suppression based Defenses 基于中毒抑制的防御</a></li>
+<li><a href="#training-sample-filtering-based-defenses-%E5%9F%BA%E4%BA%8E%E8%AE%AD%E7%BB%83%E6%A0%B7%E6%9C%AC%E8%BF%87%E6%BB%A4%E7%9A%84%E9%98%B2%E5%BE%A1">Training Sample Filtering based Defenses 基于训练样本过滤的防御</a></li>
+<li><a href="#testing-sample-filtering-based-defenses-%E5%9F%BA%E4%BA%8E%E6%B5%8B%E8%AF%95%E6%A0%B7%E6%9C%AC%E8%BF%87%E6%BB%A4%E7%9A%84%E9%98%B2%E5%BE%A1">Testing Sample Filtering based Defenses 基于测试样本过滤的防御</a></li>
+</ul>
+</li>
+<li><a href="#certified-backdoor-defenses-%E8%AE%A4%E8%AF%81%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB">Certified Backdoor Defenses 认证后门攻击</a></li>
+<li><a href="#%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87">评价指标</a>
+<ul>
+<li><a href="#%E6%A3%80%E6%B5%8B%E5%9E%8B%E7%BB%8F%E9%AA%8C%E9%98%B2%E5%BE%A1%E7%9A%84%E6%8C%87%E6%A0%87">检测型经验防御的指标</a></li>
+<li><a href="#%E9%9D%9E%E6%A3%80%E6%B5%8B%E5%9E%8B%E7%BB%8F%E9%AA%8C%E9%98%B2%E5%BE%A1%E7%9A%84%E6%8C%87%E6%A0%87">非检测型经验防御的指标</a></li>
+<li><a href="#%E8%AE%A4%E8%AF%81%E9%98%B2%E5%BE%A1%E7%9A%84%E6%8C%87%E6%A0%87">认证防御的指标</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="概述">概述</h2>
+<h3 id="后门攻击的背景">后门攻击的背景</h3>
+<ul>
+<li>训练阶段相较于推理阶段有更多步骤，也就意味着更多的攻击的可能性</li>
+<li>训练阶段所需数据的庞大以及第三方开源数据库的便利性</li>
+</ul>
+<h3 id="什么是后门攻击">什么是后门攻击</h3>
+<p>一般来说，后门攻击者打算在训练过程中<strong>将隐藏后门嵌入 DNN 中</strong>，使得受攻击的 DNN<strong>在良性样本上正常表现</strong>，而如果隐藏后门<strong>被攻击者指定的触发模式激活</strong>，则其<strong>预测将被恶意且一致地改变</strong>。</p>
+<p>目前最广泛、直接的方式 -&gt; 样本投毒</p>
+<p>后门攻击可能发生在训练过程中涉及的所有步骤。</p>
+<h3 id="后门攻击的防御措施">后门攻击的防御措施</h3>
+<ul>
+<li>empirical backdoor defenses 经验后门防御，基于对现有攻击的一些<strong>观察或理解而提出</strong>的，并且<strong>在实践中具有良好的性能</strong> -&gt; 没有理论支撑，容易被自适应攻击绕过</li>
+<li>certified backdoor defenses 认证后门防御，<strong>在某些假设下得到保证</strong>，然而其性能通常<strong>弱于实践</strong>中的经验防御，因为这些假设通常不满足</li>
+</ul>
+<h2 id="常见术语以及威胁场景">常见术语以及威胁场景</h2>
+<h3 id="术语定义">术语定义</h3>
+<ul>
+<li>Benign model 良性模型：良性环境下训练的模型</li>
+<li>Infected model 感染模型：藏有后门的模型</li>
+<li>Poisoned sample 中毒样本：用于嵌入后门的被修改的样本</li>
+<li>Trigger 触发器：用于生成中毒样本和激活隐藏后门的模式（pattern）</li>
+<li>Attacked sample 被攻击样本：包含后门触发器的恶意测试样本</li>
+<li>Attack scenario 攻击场景：后门攻击可能发生的场景（往往出现在训练过程无法访问或用户无法控制时）</li>
+<li>Source label 来源标签：中毒或受攻击样本的真实标签</li>
+<li>Target label 目标标签：攻击者指定的标签</li>
+<li>Attack success rate (ASR) 攻击成功率：感染模型成功将被攻击样本预测为目标标签的比例</li>
+<li>Benign accuracy (BA) 良性准确度：由感染模型预测的良性样本的准确度</li>
+<li>Attacker’s goal 攻击者目标：后门攻击者的目标</li>
+<li>Capacity 能力：攻击者/防御者为了实现他们的目标可以做什么和不可以做什么</li>
+<li>Attack/Defense approach 攻击/防御方法：设计的后门攻击/防御运作的过程</li>
+</ul>
+<blockquote>
+<p>注：其中有些中文翻译是我瞎扯的</p>
+</blockquote>
+<p>下图综合了上述术语描述了一个基本的后门攻击过程：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230722185658.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230722185658.png" />
+        
+        </a>
+    </p>
+<p>通过触发器生成被修改过的中毒样本并和良性样本在训练过程被一同输入给深度神经网络，在推理阶段良性样本和含有触发器的被攻击样本意同输入给训练好的感染模型，最后测试其良性准确度和攻击成功率</p>
+<h3 id="经典的威胁场景和相应的能力">经典的威胁场景和相应的能力</h3>
+<h4 id="三大场景">三大场景</h4>
+<ul>
+<li>使用第三方数据集。
+<ul>
+<li>攻击者只能操纵数据集，而不能修改模型、训练时间表（schedule）和推理流水线（pipeline）</li>
+<li>防御者可以操控一切</li>
+</ul>
+</li>
+<li>使用第三方平台。用户将其（良性）数据集、模型结构和训练时间表提供给不可信的第三方平台（例如，Google Cloud）来训练他们的模型
+<ul>
+<li>攻击者可以控制时间表、推理流水线，单不能更改模型</li>
+<li>防御者可以调整模型减轻攻击，但是不能完全控制时间表和推理流水线</li>
+</ul>
+</li>
+<li>使用第三方模型（往往是开源模型）
+<ul>
+<li>攻击者可以控制除了推理流水线之外的所有东西</li>
+<li>防御者可以控制推理流水线
+<ul>
+<li>当模型的源码是可获取的，那么防御者也能控制模型（如果防御者足够细心的话）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="能力大小">能力大小</h4>
+<p>从场景一到场景三，攻击者的能力递增而防御者的能力递减</p>
+<p>可以看到，后面两种场景都比较难以实现，只有第一种场景虽然能力最小，但是最容易实现</p>
+<blockquote>
+<p>有没有一种可能，通过场景一的攻击转换到场景二、三从而扩大能力？
+或许有一种方法，可以通过场景一的样本投毒从而对模型使用的 API 进行偷梁换柱？某种类似于二进制漏洞的攻击？
+&mdash;&gt; 感觉是天方夜谭中的天方夜谭&hellip;</p>
+</blockquote>
+<h2 id="现有的后门攻击">现有的后门攻击</h2>
+<h3 id="基于-poison投毒的后门攻击">基于 poison（投毒）的后门攻击</h3>
+<h4 id="poisoning-based-攻击的统一框架">Poisoning-based 攻击的统一框架</h4>
+<h5 id="概括图与总结表">概括图与总结表</h5>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230722220014.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230722220014.png" />
+        
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230722220027.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230722220027.png" />
+        
+        </a>
+    </p>
+<h5 id="数学符号表">数学符号表</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数学符号</th>
+<th style="text-align:center">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$w$</td>
+<td style="text-align:center">模型参数</td>
+</tr>
+<tr>
+<td style="text-align:center">$f_{w}:\chi \to \left [ 0, 1 \right ]^{K}$</td>
+<td style="text-align:center">分类器</td>
+</tr>
+<tr>
+<td style="text-align:center">$\chi \subset \mathbb{R}^{\textit{d}}$</td>
+<td style="text-align:center">样本实例空间</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{Y} = {1, 2, \cdots ,K}$</td>
+<td style="text-align:center">标签空间</td>
+</tr>
+<tr>
+<td style="text-align:center">$f(x)$</td>
+<td style="text-align:center">关于 K 类的后验（概率）向量</td>
+</tr>
+<tr>
+<td style="text-align:center">$C(x) = argmax f_{w}(x)$</td>
+<td style="text-align:center">预测的标签</td>
+</tr>
+<tr>
+<td style="text-align:center">$t$</td>
+<td style="text-align:center">触发器</td>
+</tr>
+<tr>
+<td style="text-align:center">$G_{t}: \chi \to \chi$</td>
+<td style="text-align:center">攻击者指定的中毒图像生成器</td>
+</tr>
+<tr>
+<td style="text-align:center">$x^{&rsquo;} = G_{t}(x)$</td>
+<td style="text-align:center">被攻击图像/样本</td>
+</tr>
+<tr>
+<td style="text-align:center">$S: \mathcal{Y} \to \mathcal{Y}$</td>
+<td style="text-align:center">攻击者指定的标签转换函数</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{D} = {(x_{i}, y_{i})}_{i=1}^{N}$</td>
+<td style="text-align:center">良性数据集</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{P}_{\mathcal{D}}$</td>
+<td style="text-align:center">良性数据集背后的分布</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathbb{I}{\cdot }$</td>
+<td style="text-align:center">指示函数 indicator function，$\mathbb{I}{A } = 1$当且仅当事件$A$为真</td>
+</tr>
+<tr>
+<td style="text-align:center">$D(\cdot)$</td>
+<td style="text-align:center">指示函数，$D{x&rsquo; } = 1$当且仅当事件$x&rsquo;$可以被检测为恶意样本</td>
+</tr>
+<tr>
+<td style="text-align:center">$\lambda_{1},\lambda_{2}$</td>
+<td style="text-align:center">两个非负的权重超参</td>
+</tr>
+</tbody>
+</table>
+<h5 id="后门攻击的数学定义">后门攻击的数学定义</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">解释</th>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">数学定义</th>
+<th style="text-align:center">简易解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">标准风险 standard risk</td>
+<td style="text-align:center">测量感染模型$C$是否可以正确地预测良性样本，越大越不能</td>
+<td style="text-align:center">$R_{s}$</td>
+<td style="text-align:center">$R_{s}(\mathcal{D}) = \mathbb{E}<em>{(x, y)\sim \mathcal{P}</em>{\mathcal{D}}}\mathbb{I}{C(x)\neq y}$</td>
+<td style="text-align:center">服从于良性数据集背后的分布的期望乘以预测标签是否不等于真标签</td>
+</tr>
+<tr>
+<td style="text-align:center">后门风险 backdoor risk</td>
+<td style="text-align:center">后门攻击者是否能实现其恶意目的，越大越不能</td>
+<td style="text-align:center">$R_{b}$</td>
+<td style="text-align:center">$R_{b}(\mathcal{D}) = \mathbb{E}<em>{(x, y)\sim \mathcal{P}</em>{\mathcal{D}}}\mathbb{I}{C(x&rsquo;)\neq S(y)}$</td>
+<td style="text-align:center">同上，但是是判断对被攻击样本$x&rsquo;$的预测标签是否不等于攻击者指定的错误标签</td>
+</tr>
+<tr>
+<td style="text-align:center">可感知风险 perceivable risk</td>
+<td style="text-align:center">中毒样本是否可检测，越大越可以</td>
+<td style="text-align:center">$R_{p}$</td>
+<td style="text-align:center">$R_{p}(\mathcal{D}) = \mathbb{E}<em>{(x, y)\sim \mathcal{P}</em>{\mathcal{D}}}D(x&rsquo;)$</td>
+<td style="text-align:center">同上，但是判断条件变成了事件$x&rsquo;$是否可以被检测为恶意样本</td>
+</tr>
+</tbody>
+</table>
+<p>根据上述定义，已有的后门攻击可被定义为：</p>
+<p>$$
+\underset{t,w}{min}R_{s}(\mathcal{D}<em>{t}-\mathcal{D}</em>{s})+\lambda_{1}R_{b}(\mathcal{D}<em>{s})+\lambda</em>{2}R_{p}(\mathcal{D}_{s}),t\in \tau
+$$</p>
+<p>$\mathcal{D}<em>{t}$是良性数据集，$\mathcal{D}</em>{s}$是其的一个子集</p>
+<p>意思是，选择一个最优的$t$和$w$使得以下三者的和最小：</p>
+<ul>
+<li>在$\mathcal{D}<em>{t}$中除去$\mathcal{D}</em>{s}$的元素后得到的集合的标准风险</li>
+<li>子集$\mathcal{D}_{s}$的后门风险乘以一个权值</li>
+<li>子集$\mathcal{D}_{s}$的可感知风险乘以一个权值</li>
+</ul>
+<p>综上，可以将<strong>在$\mathcal{D}<em>{t}$中除去$\mathcal{D}</em>{s}$的元素后得到的集合</strong>看作非中毒样本的集合，将子集$\mathcal{D}_{s}$看作中毒样本的集合</p>
+<blockquote>
+<p>由于$\mathbb{I}{\cdot }$是不可微的，在实践中常用其代理损失函数（surrogate loss function）（参考<a href="https://zhuanlan.zhihu.com/p/509962783">怎么理解 surrogate loss function 代理损失函数？ - 知乎</a>），例如交叉熵损失（cross-entropy loss）或 KL 散度损失（KL-divergence loss）（参考<a href="https://blog.csdn.net/m0_53444618/article/details/121459129">KL 散度损失函数_kl 损失_brave_Wei 的博客-CSDN 博客</a>）来代替</p>
+</blockquote>
+<p>综上可以得到<a href="#%E6%A6%82%E6%8B%AC%E5%9B%BE%E4%B8%8E%E6%80%BB%E7%BB%93%E8%A1%A8">概括图与总结表</a></p>
+<h4 id="评价标准">评价标准</h4>
+<ul>
+<li>BA 越高越好：模型在正常情况下的准确度越高</li>
+<li>ASR 越高越好：攻击成功率越高</li>
+<li>中毒率越小，良性图像和中毒图像之间的扰动越小，攻击越隐蔽。</li>
+</ul>
+<h4 id="对图像和视频的攻击的分类">对图像和视频的攻击的分类</h4>
+<p>
+        <a data-fancybox="gallery" href="/image/217f1daf66459454ab2be1af6c18c5a2d28d68acd7a732739a6bab01e3968dd7.png">
+        
+            <img class="mx-auto img-float" alt="图 1-217f1daf66459454ab2be1af6c18c5a2d28d68acd7a732739a6bab01e3968dd7" src="/image/217f1daf66459454ab2be1af6c18c5a2d28d68acd7a732739a6bab01e3968dd7.png" />
+        
+        </a>
+    </p>
+<h5 id="badnets--visible-backdoor-attacks-坏网可见后门攻击">BadNets / Visible Backdoor Attacks 坏网/可见后门攻击</h5>
+<ul>
+<li>第一个门攻击</li>
+<li>由两个主要部分组成
+<ul>
+<li>通过植入（stamping）触发器从而生成中毒样本$(x&rsquo;,y_{t})$</li>
+<li>将中毒样本与良性样本一起发布给别人训练</li>
+</ul>
+</li>
+<li>非常基础的后门攻击</li>
+</ul>
+<h5 id="invisible-backdoor-attacks-不可见后门攻击">Invisible Backdoor Attacks 不可见后门攻击</h5>
+<ul>
+<li>提出中毒样本和良性样本相比，修改应该是不可见的</li>
+<li>提出通过混合（blending）而不是植入（stamping）来生成中毒样本</li>
+<li>即使采用幅度较小的随机噪声作为后门触发器，仍然可以成功创建后门，这进一步降低了可感知风险</li>
+</ul>
+<h6 id="其他基于不可见后门攻击的后门攻击">其他基于不可见后门攻击的后门攻击</h6>
+<ul>
+<li>用触发器的幅度来扰动良性样本的像素而不是直接替换选中图案的对应像素</li>
+<li>使用通用对抗攻击来生成触发器，最小化二范数以保证不可见性
+<ul>
+<li>之后有人提出在优化触发器的时候正则化扰动的p范数</li>
+</ul>
+</li>
+<li>使用一种常见现象（即反射现象）来作为不可见的触发器</li>
+<li>基于扭曲的触发器</li>
+<li>将后门攻击视为一种特殊的多任务学习，向loss的计算过程投毒</li>
+<li>通过风格迁移在特征空间进行不可见后门攻击</li>
+<li>在频域而非像素域生成触发器</li>
+<li>基于DNN的图像隐写来生成触发器</li>
+</ul>
+<p>这些攻击都是sample-specific的，不可见的，而且可以绕过大量的后门攻击防御</p>
+<p>由于这些不可见攻击往往目标标签与来源标签是不一样的，因此如果去检查图像与标签之间的关系，也可以发现这些不可见攻击</p>
+<h6 id="clean-label-invisible-attacks-纯净标签不可见攻击">clean-label invisible attacks 纯净标签不可见攻击</h6>
+<ul>
+<li>利用对抗性扰动或生成模型来首先修改来自目标类的一些良性图像（？）然后进行标准的不可见攻击
+<ul>
+<li>修改是为了弱化良性图像的<em>鲁棒特征</em>的影响，从而让模型成功地学习触发器</li>
+<li>Zhao在攻击视频分类中扩展了这一思想，他们采用通用扰动而不是给定的扰动作为触发模式</li>
+</ul>
+</li>
+<li>Quiring等人提出通过图像缩放攻击隐藏触发器</li>
+<li>通过最小化它们在特征空间中的距离，将由先前可见攻击生成的中毒样本的信息注入到目标类的图像纹理中</li>
+<li>Souri将后门攻击表述为双层优化</li>
+<li>Shumailov等人提出通过操纵训练样本的顺序而不改变样本来注入隐藏的后门</li>
+</ul>
+<blockquote>
+<p>尽管纯净标签不可见攻击的隐蔽性很高，但是他们的攻击效率很低</p>
+</blockquote>
+<h5 id="optimized-backdoor-attacks-优化后门攻击">Optimized Backdoor Attacks 优化后门攻击</h5>
+<p>参考：<a href="https://zhidao.baidu.com/question/1369632568056003059.html#:~:text=%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0%20f%20%28x%3Ba%2Cb%2Cc%29%3Dax%5E2%2Bbx%2Bc%EF%BC%8C%E5%88%86%E5%8F%B7%E5%89%8D%E9%9D%A2%E6%98%AF%E5%87%BD%E6%95%B0%E7%9A%84%E8%87%AA%E5%8F%98%E9%87%8F%EF%BC%8C%E5%BA%94%E8%AF%A5%E4%B8%8D%E7%94%A8%E5%A4%9A%E5%8A%A0%E8%A7%A3%E9%87%8A%E3%80%82%20%E8%80%8C%E5%88%86%E5%8F%B7%E5%90%8E%E9%9D%A2%E7%9A%84%E5%8F%82%E6%95%B0a%2Cb%2Cc%E4%BC%9A%E5%BD%B1%E5%93%8D%E5%87%BD%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%B8%A5%E6%A0%BC%E6%9D%A5%E8%AF%B4%EF%BC%8Cf%20%28%E2%80%A2%3Ba%2Cb%2Cc%29%E5%85%B6%E5%AE%9E%E5%B9%B6%E4%B8%8D%E6%98%AF%E5%87%BD%E6%95%B0%EF%BC%8C%E8%80%8C%E6%98%AF%E5%87%BD%E6%95%B0%E7%B0%87%EF%BC%8C%E5%BD%93abc%E7%A1%AE%E5%AE%9A%E4%BB%A5%E5%90%8E%EF%BC%8C%E5%AE%83%E6%89%8D%E8%A1%A8%E7%A4%BA%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E3%80%82,%E5%BD%93%E7%84%B6%EF%BC%8Cf%20%28x%3Ba%2Cb%2Cc%29%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%AF%B9abc%E8%BF%9B%E8%A1%8C%E5%BE%AE%E5%88%86%E3%80%81%E7%A7%AF%E5%88%86%E7%AD%89%E6%93%8D%E4%BD%9C%E3%80%82%20%E6%AD%A4%E6%97%B6%EF%BC%8Cf%20%28x%3Ba%2Cb%2Cc%29%E4%B8%8Ef%20%28x%2Ca%2Cb%2Cc%29%E6%97%A0%E5%BC%82%EF%BC%8C%E5%8F%AA%E6%98%AFf%20%28x%2Ca%2Cb%2Cc%29%E5%B7%B2%E7%BB%8F%E4%B8%8D%E6%98%AF%E4%BC%A0%E7%BB%9F%E6%84%8F%E4%B9%89%E4%B8%8A%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0%E4%BA%86%E3%80%82">式子里面的分号是什么意思 证明定理2.2.2_百度知道</a></p>
+<p>触发器是poison-based的后门攻击的核心，如何优化触发器很重要，因此后门攻击可以被公式化为一个两级优化：</p>
+<p>$$
+min_{w}R_{s}(\mathcal{D}<em>{t}-\mathcal{D}</em>{s};w)+λ_{1}⋅R_{b}(\mathcal{D}<em>{s};t^{*},w)+λ</em>{2}⋅R_{p}(\mathcal{D}<em>{s};t^{*},w),
+$$
+$$
+s.t.,min</em>{t}R_b(\mathcal{D}_{s};t,w)
+$$</p>
+<p>意思就是要找到一个使后门风险最小的$t$，带入到后门攻击的<a href="#%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E7%9A%84%E6%95%B0%E5%AD%A6%E5%AE%9A%E4%B9%89">定义公式</a>里面，找到使这个公式最小的$w$，从而通过训练确定一个最优的函数</p>
+<blockquote>
+<p>公式中分号前面的是自变量，后面的参数会影响函数的性质。这样的一个函数实际上是一个函数簇，当分号后面的参数确定时，函数才真正地被确定</p>
+</blockquote>
+<p>简而言之就是，优化后门攻击就是优化了触发器的后门攻击</p>
+<p>假如一个扰动可以诱导大多数样本朝向目标类的决策边界，那么它将作为一个有效的触发器（参见UAP）</p>
+<p>但因为它（有点类似于BIM）的优化操作，它的泛化性很差，往往只能用于一个特定的模型。</p>
+<p>&ndash;&gt; 如何平衡优化后门攻击的有效性和泛化性是</p>
+<h5 id="semantic-backdoor-attacks-语义后门攻击">Semantic Backdoor Attacks 语义后门攻击</h5>
+<p>大多数后门攻击(即非语义攻击)假设后门触发器独立于良性图像 &ndash;&gt; 攻击者需要修改数字空间中的图像，以在推理过程中激活隐藏的后门</p>
+<p>而语义后门攻击在推理阶段不需修改图像，而是通过图像的语义来触发感染模型中的后门</p>
+<h5 id="sample-specific-backdoor-attacks-特定样本后门攻击">Sample-specific Backdoor Attacks 特定样本后门攻击</h5>
+<p>目前，几乎所有后门攻击都是样本不可知的，即，所有中毒样本包含相同的触发模式</p>
+<p>特定样本后门攻击就是<strong>不同样本包含不同的触发模式</strong>。这种攻击绕过了许多现有的后门防御，因为它打破了他们的基本假设。</p>
+<blockquote>
+<p>然而，除了单独修改训练样本之外，它还需要控制训练损失，并且它们的触发器仍然可见，这大大降低了其在现实世界应用中的威胁。
+但是<strong>基于图片隐写等技术可以使其触发器不可见</strong></p>
+</blockquote>
+<h5 id="physical-backdoor-attacks-物理后门攻击">Physical Backdoor Attacks 物理后门攻击</h5>
+<p>物理空间下的后门攻击，在此不再详述</p>
+<h5 id="all-to-all-backdoor-attacks-全对全后门攻击">All-to-all Backdoor Attacks 全对全后门攻击</h5>
+<p>根据目标标签的类型，现有的后门攻击可以分为两大类，包括全对一攻击和全对全攻击。</p>
+<ul>
+<li>全对一攻击：所有中毒样本都要统一的目标标签（不管他们的来源标签是什么）</li>
+<li>全对全攻击：不同的中毒样本有不同的目标标签</li>
+</ul>
+<p>优点：全对全攻击可以绕过许多面向目标的防御</p>
+<p>缺点：相关研究很少</p>
+<h5 id="black-box-backdoor-attacks-黑盒后门攻击">Black-box Backdoor Attacks 黑盒后门攻击</h5>
+<p>黑盒后门攻击假设模型所用的训练数据集是无法访问的（inaccessible），攻击者只能观察模型的输入和输出，就像模型的普通用户一样。相较于白盒后门攻击更符合实际</p>
+<ol>
+<li>先生成一些替代训练样本
+<ul>
+<li>例如：攻击者通过优化<strong>从另一个数据集初始化的图像</strong>，生成每个类的一些代表性图像，使所选类的预测置信度达到最大。从而这个替代训练样本集可以在某种程度上近似黑盒样本集</li>
+</ul>
+</li>
+<li>通过这些替代训练样本，攻击者可以使用白盒后门攻击生成一个替代的、近似的感染模型</li>
+<li>一旦这个感染模型在替代样本上进行训练并部署后，它可以被其他人使用而不知道其中有后门（？？？）</li>
+</ol>
+<h4 id="对其他领域或范式的攻击">对其他领域或范式的攻击</h4>
+<p>目前，大多数针对其他任务或范例的后门攻击仍然是基于投毒的。因此，除了特定任务的需求外，大多数方法都集中在:</p>
+<ol>
+<li>如何设计触发器</li>
+<li>如何定义攻击的不可见性</li>
+<li>如何绕过潜在的防御</li>
+</ol>
+<p>不同任务和范式所得到的后门攻击可能完全不同</p>
+<p>后门攻击还常见于NLP、联合学习</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/485775197">NLP后门攻击</a></li>
+<li><a href="https://blog.csdn.net/weixin_26706653/article/details/108946199#:~:text=%E8%81%94%E5%90%88%E5%AD%A6%E4%B9%A0%20%28FL%29%E6%98%AF%E4%B8%80%E7%A7%8D%E7%94%A8%E4%BA%8E%E8%AE%AD%E7%BB%83%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0,%28ML%29%E7%AE%97%E6%B3%95%E7%9A%84%E7%89%B9%E6%AE%8A%E6%96%B9%E6%B3%95%EF%BC%8C%E5%AE%83%E6%84%8F%E5%91%B3%E7%9D%80%E6%95%B0%E6%8D%AE%E4%BF%9D%E6%8C%81%E7%A7%81%E5%AF%86%E6%80%A7%E3%80%82%20%E5%85%B7%E4%BD%93%E6%9D%A5%E8%AF%B4%EF%BC%8C%E8%81%94%E5%90%88%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF%E6%97%A8%E5%9C%A8%E8%B7%A8%E5%A4%9A%E4%B8%AA%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%BE%E5%A4%87%E6%88%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%AD%E7%BB%83%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%EF%BC%8C%E6%AF%8F%E4%B8%AA%E8%AE%BE%E5%A4%87%E6%88%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%BD%E6%8B%A5%E6%9C%89%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%92%8C%E7%A7%81%E6%9C%89%E6%95%B0%E6%8D%AE%E3%80%82">联合学习_联合学习为什么以及如何开始_weixin_26706653的博客-CSDN博客</a></li>
+</ul>
+<h4 id="积极目的的后门攻击正能量后门攻击">积极目的的后门攻击/正能量后门攻击</h4>
+<ul>
+<li>通过后门攻击防御模型窃取
+<ul>
+<li>通过后门嵌入对DNN进行水印，可以用来<strong>检测模型的所有权</strong></li>
+<li>&ndash;<em>但是</em>&ndash;&gt; 偷窃过程可能会改变甚至删除受害者模型中隐藏的后门</li>
+</ul>
+</li>
+<li>当用户通过恶意后门攻击要求删除数据时，如何验证服务器是否真的删除了数据
+<ul>
+<li>每个用户都可以使用<strong>特定的触发器和目标标签</strong>毒害其部分数据</li>
+<li>每个用户都可以在服务器上留下<strong>唯一的痕迹</strong>，以便进行删除验证</li>
+</ul>
+</li>
+<li>基于陷阱门的对抗防御，防御者注入隐藏的后门，以防止攻击者发现模型的真正弱点
+<ul>
+<li>使对感染模型<strong>产生的对抗扰动收敛到陷阱门附近</strong>，从而使防御者容易发现</li>
+<li>有点像蜜罐</li>
+</ul>
+</li>
+<li>基于后门攻击保护开源数据集
+<ul>
+<li>确定<strong>是否采用了开源数据集来训练可疑模型</strong></li>
+<li>基于假设检验的验证方法</li>
+</ul>
+</li>
+<li>用于解读DNN和评估可解释的AI方法</li>
+</ul>
+<h3 id="非基于-poison投毒的后门攻击">非基于 poison（投毒）的后门攻击</h3>
+<p>这些方法在训练过程中嵌入了不直接基于数据中毒的隐藏后门</p>
+<p>&ndash;&gt; 攻击者可以直接改变模型的权值甚至模型的结构，而无需经过训练过程</p>
+<p>它们的存在表明后门攻击<strong>也可能发生在其他阶段(如部署阶段)</strong>，而不仅仅是简单的数据收集或训练阶段，这进一步揭示了后门威胁的严重性。</p>
+<h4 id="面向权重的后门攻击">面向权重的后门攻击</h4>
+<p>直接修改模型参数</p>
+<ul>
+<li>在模型之间采用贪婪搜索，对预先训练的模型的权值应用不同的扰动</li>
+<li>目标比特木马(TBT)，该木马会翻转存储在内存中的权重的关键位</li>
+<li>在需要注入后门的良性模型的模型参数上添加对抗扰动</li>
+<li>Zhang等人将在良性样本上保持准确性的行为表述为感染模型的一致性，并从理论上解释了后门攻击中的对抗权重扰动(AWP) &ndash;&gt; 新的基于AWP的后门攻击，具有更好的全局和实例一致性</li>
+<li>一种将后门编码在感染的DNN中，通过秘密权重序列激活的木马网络（类似于多任务学习）
+<ul>
+<li>证明了判断模型是否包含触发隐藏后门的排列的决策问题是NP-complete的，因此后门检测几乎是不可能的</li>
+<li><em>参考：<a href="https://zhuanlan.zhihu.com/p/433308577">浅谈P、NP、NP-Complate和NP-Hard问题</a></em></li>
+</ul>
+</li>
+</ul>
+<h4 id="修改结构的后门攻击">修改结构的后门攻击</h4>
+<p>通过改变模型结构来进行攻击（可能发生在使用第三方模型或部署阶段）</p>
+<ul>
+<li>增加一个恶意子网</li>
+<li>替换一个窄的（narrow）良性子网（参考：<a href="https://arxiv.org/abs/2107.07240#:~:text=Subnet%20Replacement%3A%20Deployment-stage%20backdoor%20attack%20against%20deep%20neural,against%20deep%20neural%20networks%20%28DNNs%29%20during%20deployment%20stage.">Subnet Replacement: Deployment-stage backdoor attack against deep neural networks in gray-box setting</a>）</li>
+</ul>
+<h2 id="后门攻击与相关领域的关系">后门攻击与相关领域的关系</h2>
+<p>下图展示了后门攻击、对抗攻击、经典样本投毒、高级样本投毒之间的异同</p>
+<p>
+        <a data-fancybox="gallery" href="/image/a712511f69cc0f4a00aaa5df8088f788d3522316fb8a566c383883db55d3e9b6.png">
+        
+            <img class="mx-auto img-float" alt="图 2-a712511f69cc0f4a00aaa5df8088f788d3522316fb8a566c383883db55d3e9b6" src="/image/a712511f69cc0f4a00aaa5df8088f788d3522316fb8a566c383883db55d3e9b6.png" />
+        
+        </a>
+    </p>
+<h2 id="后门防御的阐释和分类">后门防御的阐释和分类</h2>
+<p>现有的防御方法主要针对基于中毒的攻击，包括：</p>
+<ul>
+<li>经验后门防御</li>
+<li>认证后门防御</li>
+</ul>
+<h3 id="经验后门攻击">经验后门攻击</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/5cb6d10a14e100b8f96515af66f2576395424272f6d5ab282de918024345eecf.png">
+        
+            <img class="mx-auto img-float" alt="图 3-5cb6d10a14e100b8f96515af66f2576395424272f6d5ab282de918024345eecf" src="/image/5cb6d10a14e100b8f96515af66f2576395424272f6d5ab282de918024345eecf.png" />
+        
+        </a>
+    </p>
+<p>一般来说，后门攻击可以看作用一把钥匙去开一个门，要成功有三个要点：</p>
+<ul>
+<li>在(被感染的)模型中有一个隐藏的后门</li>
+<li>在(被攻击的)样本中包含触发器</li>
+<li>触发器和后门相匹配</li>
+</ul>
+<p>意思就是，你要有门，还要有钥匙🔑，然后这个钥匙要是正确的钥匙</p>
+<p>由此，有三种主要的防御方式：</p>
+<ul>
+<li>让触发器和后门不相匹配</li>
+<li>清除后门</li>
+<li>清除触发器</li>
+</ul>
+<p>
+        <a data-fancybox="gallery" href="/image/52796937e8f42fc153f6e4cd79db09de1a7fa40f6dba50fed70ee8d6417a0394.png">
+        
+            <img class="mx-auto img-float" alt="图 4-52796937e8f42fc153f6e4cd79db09de1a7fa40f6dba50fed70ee8d6417a0394" src="/image/52796937e8f42fc153f6e4cd79db09de1a7fa40f6dba50fed70ee8d6417a0394.png" />
+        
+        </a>
+    </p>
+<h4 id="preprocessing-based-defenses-基于预处理的防御">Preprocessing-based Defenses 基于预处理的防御</h4>
+<p>将样本输入dnn之前引入预处理模块，以改变被攻击样本的触发模式。因此，修改后的触发器不再匹配隐藏的后门，从而防止后门激活。</p>
+<ul>
+<li>使用预处理的自动编码器</li>
+<li>两阶段图像预处理方法(即Februus)
+<ul>
+<li>使用GradCAM识别有影响的区域，然后将这些区域移除，并用中性色的盒子代替</li>
+<li>采用基于GAN的inpainting方法对掩蔽区域进行重构，以减轻其不良影响(如良性准确率下降)</li>
+</ul>
+</li>
+<li>Udeshi el al.在预处理阶段利用图像中的主色制作了一个方形触发器阻塞器，用于定位和去除后门触发器
+<ul>
+<li>意思就是拿块布把触发器挡住</li>
+</ul>
+</li>
+<li>通过风格转移对图像进行预处理</li>
+<li>采用空间变换(如收缩、翻转)进行防守</li>
+</ul>
+<h4 id="model-reconstruction-based-defenses-基于重构模型的防御">Model Reconstruction based Defenses 基于重构模型的防御</h4>
+<p>直接修改可疑模型来消除感染模型中的隐藏后门</p>
+<ul>
+<li>用一些局部良性样本对训练后的可疑模型进行再训练，以减少后门威胁
+<ul>
+<li>之所以有效是因为DNN贵人多忘事</li>
+<li>Zeng等人进一步探索了这一思想，他们将再培训表述为一个<strong>极小极大问题</strong>，并采用隐式超梯度来解释内外优化之间的相互依赖性</li>
+</ul>
+</li>
+<li>在预测良性样本时，与后门相关的神经元通常处于休眠状态 &ndash;&gt; 对这些神经元<strong>进行修剪</strong>以去除隐藏的后门
+<ul>
+<li>使用对抗权值扰动来<strong>放大良性和恶性神经元之间的差异</strong></li>
+</ul>
+</li>
+<li>利用 <strong>模式连接技术（mode connectivity technique）</strong> 可以修复被感染DNN的隐藏后门</li>
+<li>利用<strong>知识蒸馏技术</strong>重构(感染的)DNN</li>
+</ul>
+<h4 id="trigger-synthesis-based-defenses-基于触发器合成的防御">Trigger Synthesis based Defenses 基于触发器合成的防御</h4>
+<p>先合成后门的触发器，然后通过抑制触发器的行为来消除后门（在第二阶段有些类似于<a href="#model-reconstruction-based-defenses-%E5%9F%BA%E4%BA%8E%E9%87%8D%E6%9E%84%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%98%B2%E5%BE%A1">基于重构模型的防御</a>，修剪和再训练是在这两种防御中用来消除隐藏后门的常用技术）</p>
+<p>与基于重构的防御相比，基于合成的防御中获得的触发信息使得去除过程更加有效和高效</p>
+<ul>
+<li>Wang et al.提出了第一种基于触发器合成的防御(即Neural Cleanse)，防御者首先<strong>获取每个类的潜在触发模式</strong>，然后<strong>根据异常检测确定最终的合成触发器及其目标标签</strong></li>
+<li>基于最大熵阶梯逼近器来恢复触发分布，而不是防御的特定触发器
+<ul>
+<li>基于GAN的方法来合成触发器分布</li>
+</ul>
+</li>
+<li>根据合成的触发器，激活值的$\mathcal{l}^{\infin}$范数可以用来区分后门相关的神经元 &ndash;&gt; 基于此提出了一种剪枝的策略</li>
+<li>Hu设计了一种拓扑先验来提高触发合成的质量</li>
+</ul>
+<h4 id="model-diagnosis-based-defenses-基于模型诊断的防御">Model Diagnosis based Defenses 基于模型诊断的防御</h4>
+<p>基于预先训练的元分类器来判断可疑模型是否被感染，并拒绝部署被感染的模型</p>
+<ul>
+<li>Kolouri提出联合优化一些universal litmus patterns(ULPs)和一个元分类器，并根据所获得的ULPs的预测进一步用于诊断可疑模型</li>
+<li>良性模型和感染模型的heatmap具有不同的特征 &ndash;&gt; Huang等人在生成显著性图(generated saliency maps)的三个提取特征的基础上，采用了离群值检测器(outlier detector)作为元分类器</li>
+<li>设计了一种一像素的特征表示，以此来区分良性模型和感染模型</li>
+<li>Wang等讨论了如何在数据有限和无数据的情况下检测给定模式是良性还是感染</li>
+<li>良性模型和感染的dnn具有显著的拓扑结构差异，可用于诊断可疑模型</li>
+</ul>
+<h4 id="poison-suppression-based-defenses-基于中毒抑制的防御">Poison Suppression based Defenses 基于中毒抑制的防御</h4>
+<p>训练过程中降低有毒样本的有效性，以防止创建隐藏的后门</p>
+<ul>
+<li>采用噪声SGD学习差异化私有DNN进行防御(利用训练过程中的随机性，利用随机噪声降低中毒样本的恶意影响)</li>
+<li>采用差分私有随机梯度下降法(differential private stochastic gradient descent, DPSGD)在训练过程中对个体梯度进行裁剪和扰动</li>
+<li>引入强数据增强方法(如CutMix)可以有效地防止隐藏后门的产生</li>
+<li>Li等人基于后门攻击对有毒数据的学习速度和目标类依赖性的观察，提出了一种基于梯度上升的反后门方法</li>
+<li>Huang等人揭示了隐藏后门的学习主要是由于端到端监督训练范式，基于此他们提出了一种简单但有效的基于解耦的后门抑制训练方法</li>
+</ul>
+<h4 id="training-sample-filtering-based-defenses-基于训练样本过滤的防御">Training Sample Filtering based Defenses 基于训练样本过滤的防御</h4>
+<p>旨在从训练数据集中过滤有毒样本，经过过滤处理后，训练过程中只使用良性样本或净化后的有毒样本，从而消除了从源头上产生的后门</p>
+<ul>
+<li>有毒样本往往会在特征表示的协方差谱中留下可检测的痕迹，这可以用于从训练集中过滤有毒样本</li>
+<li>Hayase等人引入了鲁棒协方差估计来放大中毒样本的光谱特征(SPECTRE)</li>
+<li>有毒样本和良性样本在隐藏特征空间中应该具有不同特征 &ndash;&gt; 两级滤波方法：
+<ul>
+<li>将每个类中的训练样本的激活聚类成两个簇</li>
+<li>确定哪个簇(如果有的话)对应的是中毒样本</li>
+<li>聚类算法</li>
+<li>但是简单的目标污染会导致有毒样本的表示与良性样本的表示难以区分</li>
+</ul>
+</li>
+<li>Chan等人根据输入梯度中包含的信号来分离有毒样本</li>
+<li>采用显著性图（saliency map）来识别触发区域并过滤有毒样本</li>
+<li>Zeng等人揭示了现有攻击的有毒样本有一些高频伪影，即使它们的触发模式在输入空间中是不可见的</li>
+</ul>
+<h4 id="testing-sample-filtering-based-defenses-基于测试样本过滤的防御">Testing Sample Filtering based Defenses 基于测试样本过滤的防御</h4>
+<p>过滤发生在推理而不是训练过程中，部署模型只预测良性测试或净化后的攻击样本</p>
+<ul>
+<li>Gao等人观察到现有的后门触发器大多数都是输入不可知的，因此提出将各种图像模式叠加在可疑样本上来过滤攻击样本</li>
+<li>Subedar等人采用模型不确定性来区分良性样本和攻击样本</li>
+<li>Du等将过滤视为离群点检测，并在此基础上提出了一种基于差分隐私的过滤方法</li>
+<li>基于已有的基于检测的对抗防御来检测被攻击样本</li>
+</ul>
+<h3 id="certified-backdoor-defenses-认证后门攻击">Certified Backdoor Defenses 认证后门攻击</h3>
+<p>几乎所有的后门攻击都被后续的自适应攻击所绕过</p>
+<ul>
+<li>基于随机平滑（random smoothing）技术，将分类器的整个训练过程作为基函数，推广经典的随机平滑来抵御后门攻击</li>
+<li>Weber等人证明直接应用随机平滑，不会提供高认证的鲁棒性界限。相反，他们提出了一个统一的框架，考察了不同的平滑噪声分布，并为鲁棒性界提供了一个紧密性分析。</li>
+<li>采用集成技术(如Bagging)设计认证防御</li>
+</ul>
+<h3 id="评价指标">评价指标</h3>
+<h4 id="检测型经验防御的指标">检测型经验防御的指标</h4>
+<ol>
+<li>precision</li>
+<li>recall</li>
+<li>F1-score</li>
+</ol>
+<p>三者越高，防御性能越好</p>
+<h4 id="非检测型经验防御的指标">非检测型经验防御的指标</h4>
+<ol>
+<li>BA</li>
+<li>ASR</li>
+</ol>
+<h4 id="认证防御的指标">认证防御的指标</h4>
+<ol>
+<li>benign accuracy（BA）</li>
+<li>certified rate(the fraction of samples that can be certified at radius greater than the certified radius)</li>
+<li>certified accuracy(the fraction of the test set which is classified correctly and is certified as robust with a radius greater than the certified radius)</li>
+</ol>
+<p>三者越大越好</p>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 后门攻击概述 兼 论文笔记-Backdoor Learning A Survey ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3a%2f%2fpeterliuzhi.top%2fprinciple%2f%25E5%2590%258E%25E9%2597%25A8%25E6%2594%25BB%25E5%2587%25BB%25E6%25A6%2582%25E8%25BF%25B0-%25E5%2585%25BC-%25E8%25AE%25BA%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0-backdoor-learning-a-survey%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/backdoor_attack/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#backdoor_attack</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E7%BB%BC%E8%BF%B0/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#综述</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/principle/%e5%90%8e%e9%97%a8%e6%94%bb%e5%87%bb%e6%a6%82%e8%bf%b0%20%e5%85%bc%20%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0-Backdoor%20Learning%20A%20Survey.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/" class="block">【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#概述">概述</a>
+          <ul>
+            <li><a href="#后门攻击的背景">后门攻击的背景</a></li>
+            <li><a href="#什么是后门攻击">什么是后门攻击</a></li>
+            <li><a href="#后门攻击的防御措施">后门攻击的防御措施</a></li>
+          </ul>
+        </li>
+        <li><a href="#常见术语以及威胁场景">常见术语以及威胁场景</a>
+          <ul>
+            <li><a href="#术语定义">术语定义</a></li>
+            <li><a href="#经典的威胁场景和相应的能力">经典的威胁场景和相应的能力</a>
+              <ul>
+                <li><a href="#三大场景">三大场景</a></li>
+                <li><a href="#能力大小">能力大小</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#现有的后门攻击">现有的后门攻击</a>
+          <ul>
+            <li><a href="#基于-poison投毒的后门攻击">基于 poison（投毒）的后门攻击</a>
+              <ul>
+                <li><a href="#poisoning-based-攻击的统一框架">Poisoning-based 攻击的统一框架</a>
+                  <ul>
+                    <li><a href="#概括图与总结表">概括图与总结表</a></li>
+                    <li><a href="#数学符号表">数学符号表</a></li>
+                    <li><a href="#后门攻击的数学定义">后门攻击的数学定义</a></li>
+                  </ul>
+                </li>
+                <li><a href="#评价标准">评价标准</a></li>
+                <li><a href="#对图像和视频的攻击的分类">对图像和视频的攻击的分类</a>
+                  <ul>
+                    <li><a href="#badnets--visible-backdoor-attacks-坏网可见后门攻击">BadNets / Visible Backdoor Attacks 坏网/可见后门攻击</a></li>
+                    <li><a href="#invisible-backdoor-attacks-不可见后门攻击">Invisible Backdoor Attacks 不可见后门攻击</a>
+                      <ul>
+                        <li><a href="#其他基于不可见后门攻击的后门攻击">其他基于不可见后门攻击的后门攻击</a></li>
+                        <li><a href="#clean-label-invisible-attacks-纯净标签不可见攻击">clean-label invisible attacks 纯净标签不可见攻击</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#optimized-backdoor-attacks-优化后门攻击">Optimized Backdoor Attacks 优化后门攻击</a></li>
+                    <li><a href="#semantic-backdoor-attacks-语义后门攻击">Semantic Backdoor Attacks 语义后门攻击</a></li>
+                    <li><a href="#sample-specific-backdoor-attacks-特定样本后门攻击">Sample-specific Backdoor Attacks 特定样本后门攻击</a></li>
+                    <li><a href="#physical-backdoor-attacks-物理后门攻击">Physical Backdoor Attacks 物理后门攻击</a></li>
+                    <li><a href="#all-to-all-backdoor-attacks-全对全后门攻击">All-to-all Backdoor Attacks 全对全后门攻击</a></li>
+                    <li><a href="#black-box-backdoor-attacks-黑盒后门攻击">Black-box Backdoor Attacks 黑盒后门攻击</a></li>
+                  </ul>
+                </li>
+                <li><a href="#对其他领域或范式的攻击">对其他领域或范式的攻击</a></li>
+                <li><a href="#积极目的的后门攻击正能量后门攻击">积极目的的后门攻击/正能量后门攻击</a></li>
+              </ul>
+            </li>
+            <li><a href="#非基于-poison投毒的后门攻击">非基于 poison（投毒）的后门攻击</a>
+              <ul>
+                <li><a href="#面向权重的后门攻击">面向权重的后门攻击</a></li>
+                <li><a href="#修改结构的后门攻击">修改结构的后门攻击</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#后门攻击与相关领域的关系">后门攻击与相关领域的关系</a></li>
+        <li><a href="#后门防御的阐释和分类">后门防御的阐释和分类</a>
+          <ul>
+            <li><a href="#经验后门攻击">经验后门攻击</a>
+              <ul>
+                <li><a href="#preprocessing-based-defenses-基于预处理的防御">Preprocessing-based Defenses 基于预处理的防御</a></li>
+                <li><a href="#model-reconstruction-based-defenses-基于重构模型的防御">Model Reconstruction based Defenses 基于重构模型的防御</a></li>
+                <li><a href="#trigger-synthesis-based-defenses-基于触发器合成的防御">Trigger Synthesis based Defenses 基于触发器合成的防御</a></li>
+                <li><a href="#model-diagnosis-based-defenses-基于模型诊断的防御">Model Diagnosis based Defenses 基于模型诊断的防御</a></li>
+                <li><a href="#poison-suppression-based-defenses-基于中毒抑制的防御">Poison Suppression based Defenses 基于中毒抑制的防御</a></li>
+                <li><a href="#training-sample-filtering-based-defenses-基于训练样本过滤的防御">Training Sample Filtering based Defenses 基于训练样本过滤的防御</a></li>
+                <li><a href="#testing-sample-filtering-based-defenses-基于测试样本过滤的防御">Testing Sample Filtering based Defenses 基于测试样本过滤的防御</a></li>
+              </ul>
+            </li>
+            <li><a href="#certified-backdoor-defenses-认证后门攻击">Certified Backdoor Defenses 认证后门攻击</a></li>
+            <li><a href="#评价指标">评价指标</a>
+              <ul>
+                <li><a href="#检测型经验防御的指标">检测型经验防御的指标</a></li>
+                <li><a href="#非检测型经验防御的指标">非检测型经验防御的指标</a></li>
+                <li><a href="#认证防御的指标">认证防御的指标</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/" class="no-underline">【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/" class="no-underline">【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/" class="no-underline">【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/principle\/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>

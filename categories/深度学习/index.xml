@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>深度学习 | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
+      <atom:link href="https://peterliuzhi.top/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <description>深度学习</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 03 Dec 2023 23:48:43 +0800</lastBuildDate>
+    <item>
+      <title>后门攻击概述 兼 论文笔记-Backdoor Learning A Survey</title>
+      <link>https://peterliuzhi.top/principle/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey/</link>
+      <pubDate>Sun, 03 Dec 2023 23:48:43 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey/</guid>
+      
+      <description>后门攻击概述 兼 论文笔记-Backdoor Learning A Survey</description>
+      
+    </item>
+    
+    <item>
+      <title>【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/</link>
+      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/</guid>
+      
+      <description>【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</description>
+      
+    </item>
+    
+    <item>
+      <title>【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</link>
+      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</guid>
+      
+      <description>【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击</description>
+      
+    </item>
+    
+    <item>
+      <title>【论文笔记】量化因果涌现</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</link>
+      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</guid>
+      
+      <description>【论文笔记】量化因果涌现</description>
+      
+    </item>
+    
+    <item>
+      <title>【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors</title>
+      <link>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/</link>
+      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/</guid>
+      
+      <description>【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors</description>
+      
+    </item>
+    
+  </channel>
+</rss>
