@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/categories/posts/</link>
       <atom:link href="https://peterliuzhi.top/categories/posts/index.xml" rel="self" type="application/rss+xml" />
     <description>posts</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 03 Dec 2023 22:58:26 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 03 Dec 2023 23:35:45 +0800</lastBuildDate>
+    <item>
+      <title>如何在python的setup.py中调用cmake构建python库的插件</title>
+      <link>https://peterliuzhi.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8python%E7%9A%84setup.py%E4%B8%AD%E8%B0%83%E7%94%A8cmake%E6%9E%84%E5%BB%BApython%E5%BA%93%E7%9A%84%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Sun, 03 Dec 2023 23:35:45 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8python%E7%9A%84setup.py%E4%B8%AD%E8%B0%83%E7%94%A8cmake%E6%9E%84%E5%BB%BApython%E5%BA%93%E7%9A%84%E6%8F%92%E4%BB%B6/</guid>
+      
+      <description>如何在python的setup.py中调用cmake构建python库的插件</description>
+      
+    </item>
+    
     <item>
       <title>Linux下如何编译安装libjpeg</title>
       <link>https://peterliuzhi.top/posts/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85libjpeg/</link>
@@ -143,16 +153,6 @@
       <guid>https://peterliuzhi.top/posts/kali-tmux-%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BC%98%E5%8C%96/</guid>
       
       <description>今天看到 tmux 用的很帅 也整一个~</description>
-      
-    </item>
-    
-    <item>
-      <title>【学习记录】C&amp;C&#43;&#43;网络编程——文件传输（兼容Windows和Linux）</title>
-      <link>https://peterliuzhi.top/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95cc&#43;&#43;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%85%BC%E5%AE%B9windows%E5%92%8Clinux/</link>
-      <pubDate>Mon, 05 Jun 2023 01:06:01 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95cc&#43;&#43;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%85%BC%E5%AE%B9windows%E5%92%8Clinux/</guid>
-      
-      <description>《【学习记录】C&amp;C&#43;&#43;网络编程初步》的延续，尝试通过server/client的形式在局域网内实现文件传输，同时在Windows上尝试做了兼容</description>
       
     </item>
     
