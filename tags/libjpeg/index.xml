@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>libjpeg | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/libjpeg/</link>
+      <atom:link href="https://peterliuzhi.top/tags/libjpeg/index.xml" rel="self" type="application/rss+xml" />
+    <description>libjpeg</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 03 Dec 2023 22:58:26 +0800</lastBuildDate>
+    <item>
+      <title>Linux下如何编译安装libjpeg</title>
+      <link>https://peterliuzhi.top/posts/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85libjpeg/</link>
+      <pubDate>Sun, 03 Dec 2023 22:58:26 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85libjpeg/</guid>
+      
+      <description>Linux下如何编译安装libjpeg</description>
+      
+    </item>
+    
+  </channel>
+</rss>
