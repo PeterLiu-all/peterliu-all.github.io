@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>论文笔记 | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</link>
+      <atom:link href="https://peterliuzhi.top/tags/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <description>论文笔记</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Fri, 12 Jan 2024 01:10:38 +0800</lastBuildDate>
+    <item>
+      <title>【论文笔记】Pre-activation Distributions Expose Backdoor Neurons</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0pre-activation-distributions-expose-backdoor-neurons/</link>
+      <pubDate>Fri, 12 Jan 2024 01:10:38 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0pre-activation-distributions-expose-backdoor-neurons/</guid>
+      
+      <description>【论文笔记】Pre-activation Distributions Expose Backdoor Neurons</description>
+      
+    </item>
+    
+  </channel>
+</rss>
