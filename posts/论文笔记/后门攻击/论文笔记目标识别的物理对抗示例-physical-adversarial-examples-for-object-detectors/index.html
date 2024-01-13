@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/atom-one-light.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors-P3troL1er的个人技术博客">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://peterliuzhi.top/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors",
+      "item":"https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/"
+    },
+    "headline": "【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors - P3troL1er 的个人博客","datePublished": "2023-12-03T23:45:35+08:00",
+    "dateModified": "2023-12-03T23:53:46+08:00",
+    "wordCount":  3012 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors"
+}
+</script>
+<meta property="og:title" content="【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/" />
+
+
+
+<meta property="og:description" content="【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2023-12-03T23:45:35&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-12-03T23:53:46&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="backdoor_attack" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Sunday, December 3, 2023</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共3012字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>7分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/principle/" class="hover:text-eureka"
+          >principle</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="hover:text-eureka"
+          >深度学习</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/backdoor_attack/" class="hover:text-eureka"
+          >backdoor_attack</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/" id="ThisURL">https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <blockquote>
+<p>Do not wait; the time will never be &lsquo;just right.&rsquo; Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along.
+— <cite>George Herbert</cite></p>
+</blockquote>
+<ul>
+<li><a href="#%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors">【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors</a>
+<ul>
+<li><a href="#%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B%E9%9A%BE%E4%BA%8E%E6%94%BB%E5%87%BB">目标识别模型难于攻击</a>
+<ul>
+<li><a href="#%E7%89%A9%E7%90%86%E6%89%B0%E5%8A%A8%E7%9A%84%E7%89%B9%E6%AE%8A%E6%80%A7">物理扰动的特殊性</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%A4%E7%A7%8D%E6%8F%90%E5%87%BA%E7%9A%84%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95">两种提出的攻击方法</a></li>
+<li><a href="#%E7%89%A9%E7%90%86%E6%89%B0%E5%8A%A8%E6%9C%AA%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98">物理扰动未来的问题</a></li>
+<li><a href="#%E4%B8%A4%E5%A4%A7%E9%98%B5%E8%90%A5%E7%9A%84%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B">两大阵营的目标检测</a></li>
+<li><a href="#robust-physical-perturbationsrp2%E7%AE%97%E6%B3%95">Robust Physical Perturbations(RP2)算法</a>
+<ul>
+<li><a href="#%E6%94%BB%E5%87%BB%E6%B5%81%E7%A8%8B">攻击流程</a></li>
+<li><a href="#%E7%AE%97%E6%B3%95">算法</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%9C%E8%80%85%E6%8F%90%E5%87%BA%E7%9A%84-rp2-%E6%89%A9%E5%B1%95%E7%AE%97%E6%B3%95">作者提出的 RP2 扩展算法</a>
+<ul>
+<li><a href="#%E4%B8%8E-rp2-%E7%9A%84%E4%B8%89%E4%B8%AA%E5%85%B3%E9%94%AE%E6%80%A7%E5%B7%AE%E5%BC%82">与 RP2 的三个关键性差异</a>
+<ul>
+<li><a href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E7%9A%84%E6%9B%B4%E6%94%B9">损失函数的更改</a>
+<ul>
+<li><a href="#%E6%B6%88%E5%A4%B1%E6%94%BB%E5%87%BB%E7%9A%84%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0">消失攻击的损失函数</a></li>
+<li><a href="#%E5%88%9B%E9%80%A0%E6%94%BB%E5%87%BB%E7%9A%84%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0">创造攻击的损失函数</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%B0%E7%89%A9%E7%90%86%E7%BA%A6%E6%9D%9F%E7%9A%84%E7%BB%BC%E5%90%88%E8%A1%A8%E7%A4%BA">新物理约束的综合表示</a></li>
+<li><a href="#%E5%85%A8%E5%8F%98%E5%88%86total-variation-norm%E7%9A%84%E5%99%AA%E5%A3%B0%E5%B9%B3%E6%BB%91">全变分（total variation norm）的噪声平滑</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C">实验结果</a>
+<ul>
+<li><a href="#%E5%AF%B9-yolov2-%E7%9A%84%E7%99%BD%E7%9B%92%E6%94%BB%E5%87%BB">对 YOLOv2 的白盒攻击</a></li>
+<li><a href="#%E5%AF%B9-faster-r-cnn-%E7%9A%84%E9%BB%91%E7%9B%92%E6%94%BB%E5%87%BB">对 Faster R-CNN 的黑盒攻击</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91">未来方向</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="论文笔记目标识别的物理对抗示例-physical-adversarial-examples-for-object-detectors">【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors</h1>
+<p>深度神经网络（DNN）容易受到对抗性示例的攻击，这些攻击可以推广到物理领域，对物理对象产生扰动，从而在各种现实条件下欺骗图像分类器。</p>
+<p>比如在自动驾驶领域，攻击者可以向停止标志添加对人类来说可忽略的扰动，并且使得嵌入在自主车辆中的 DNN 错误分类或忽略该标志。</p>
+<h2 id="目标识别模型难于攻击">目标识别模型难于攻击</h2>
+<ol>
+<li>检测器<strong>处理整个场景</strong>而不是单个局部对象</li>
+<li>检测器不限于产生单个预测。相反，它们通常通过<strong>结合场景中对象的位置</strong>预测和这些对象的标记来标记场景中的每个识别对象。</li>
+<li>对对象检测器的攻击需要<strong>考虑两种类型的预测</strong>（对象的存在/不存在和对象的性质），而对分类器的攻击仅关注于修改单个（假定存在的）对象的标签。</li>
+</ol>
+<h3 id="物理扰动的特殊性">物理扰动的特殊性</h3>
+<p>传统的微小、不可见的扰动在直接以数字向量作为神经网络输入时，这种微小的扰动不会被破坏，但是，如果将其呈现在物理世界中，比如打印在纸上、打印成相片，这种微小的信息就会被破坏，无法实际地用于物理世界的对抗攻击。</p>
+<p>现有的工作考虑构成图像的大部分并且其在图像中的相对位置变化很小的目标对象，而当在诸如行驶中的汽车的动态环境中执行对象检测时，场景中的多个对象的相对大小和位置可能急剧变化。</p>
+<p>同时，很多对象检测器会将图像划分为多个网格区域，当图像的位置变化时，对象所处的网格也会急剧变化，因此，<strong>鲁棒的扰动必须同时适用于多个网格</strong></p>
+<h2 id="两种提出的攻击方法">两种提出的攻击方法</h2>
+<ul>
+<li>消失攻击，使目标检测器检测不到一个对象</li>
+<li>创造攻击，使目标检测器检测到一个不存在的对象</li>
+</ul>
+<h2 id="物理扰动未来的问题">物理扰动未来的问题</h2>
+<ul>
+<li>推广到其他物理设备</li>
+<li>除了消失攻击与创造攻击之外的其他攻击</li>
+<li>推广到 segmentation 的网络（语义分割）</li>
+</ul>
+<h2 id="两大阵营的目标检测">两大阵营的目标检测</h2>
+<ul>
+<li>R-CNN 等双阶段的目标检测模型</li>
+<li>YOLO 等端到端单阶段目标检测模型</li>
+</ul>
+<h2 id="robust-physical-perturbationsrp2算法">Robust Physical Perturbations(RP2)算法</h2>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zybuluo.com/wuxin1994/note/839621#:~:text=Robust%20Physical%20Perturbations%20%28RP2%29%E7%AE%97%E6%B3%95%EF%BC%9A.%20%E6%98%AF%E4%B8%80%E7%A7%8D%E4%BC%98%E5%8C%96%E7%9A%84%E6%89%B0%E5%8A%A8%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%EF%BC%8C%E5%9C%A8untarget%E5%AF%B9%E6%8A%97%E6%94%BB%E5%87%BB%E6%97%B6%EF%BC%8C%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0%E4%B8%BA.%20argmin%20%CE%BB%7C%7C%CE%B4%7C%7Cp%20%E2%88%92,%2B%20J%20%28f%CE%B8%20%28x%20%2B%20%CE%B4%29%2C%20y0%29%EF%BC%8C%E5%8D%B3%E6%98%AF%E8%AE%A9%E5%8A%A0%E5%85%A5%E6%89%B0%E5%8A%A8%E5%90%8E%E8%BE%93%E5%87%BA%E6%8D%9F%E5%A4%B1%E4%B8%8E%E7%89%B9%E5%AE%9A%E7%9B%AE%E6%A0%87%E5%B7%AE%E5%88%AB%E8%B6%8A%E5%B0%8F%E8%B6%8A%E5%A5%BD%E3%80%82.%20%E5%85%B6%E4%B8%AD%CE%BB%E9%83%BD%E4%BB%A3%E8%A1%A8%E5%AF%B9%E6%89%B0%E5%8A%A8%E8%A7%84%E6%A8%A1%E7%9A%84%E9%99%90%E5%88%B6%E3%80%82.">《Robust Physical-World Attacks on Machine Learning Models》论文笔记 - 作业部落 Cmd Markdown 编辑阅读器</a></li>
+<li><a href="https://arxiv.org/abs/1707.08945">[1707.08945] Robust Physical-World Attacks on Deep Learning Models</a></li>
+</ul>
+<h3 id="攻击流程">攻击流程</h3>
+<ol>
+<li>得到没有对抗扰动的干净目标路标图</li>
+<li>预处理路标图（维度等）将之作为分类器的输入</li>
+<li>用攻击算法处理分类器和提取的路标图片</li>
+<li>用映射函数在路标上输出相应的对抗扰动的物理位置</li>
+<li>构建数字对抗扰动，并基于上面函数的输出将这个改动应用到物理目标中。</li>
+</ol>
+<h3 id="算法">算法</h3>
+<p>RP2 算法是为了优化下面的目标函数：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230721150637.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230721150637.png" />
+        
+        </a>
+    </p>
+<p>目标函数的第一项是由 Mx 掩蔽的扰动 δ 的 p 范数（具有缩放因子 λ）。掩模负责在空间上将扰动 δ 约束到目标物体的表面。</p>
+<p>目标函数的第二项测量对抗扰动的可打印性（printability）。可打印性受两个因素影响：</p>
+<ol>
+<li>扰动必须在现代打印机的有限色域上</li>
+<li>数字的颜色（digital color）与真实打印的颜色有差别
+
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230721151116.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230721151116.png" />
+        
+        </a>
+    </li>
+</ol>
+<p>目标函数的最后一项是损失函数的值，J（·，·）在从 Xv 采样（受害者数据集）的所有图像上平均。受害者数据集由在各种物理条件下拍摄的对象的多个图像组成，所述物理条件例如视角、观看距离和照明的变化。Ti 是应用模拟受害对象 xi 的物理条件的数字变换的“对准函数”（为了保证物理对象在不同视角等的一致性）。例如，如果受害对象 xi 是“规范”目标对象的旋转版本，则扰动 Mx · δ 也应当被适当地旋转。fθ（·）是分类器网络的输出，y * 是对抗目标类。</p>
+<h2 id="作者提出的-rp2-扩展算法">作者提出的 RP2 扩展算法</h2>
+<h3 id="与-rp2-的三个关键性差异">与 RP2 的三个关键性差异</h3>
+<ol>
+<li>由于分类器和对象检测器的输出行为的差异，对对抗损失函数进行了修改</li>
+<li>增加“对抗性扰动必须是鲁棒的”这个约束，并综合建模</li>
+<li>引入一个平滑约束的目标，而不是使用 p 范数</li>
+</ol>
+<h4 id="损失函数的更改">损失函数的更改</h4>
+<p>相较于分类网络输出单一向量（表示图像是该类别的可能性），目标检测器输出一组<strong>边界框</strong>和给定某个置信度阈值的包含在该框内的最可能对象的<strong>可能性</strong>。</p>
+<p>对图像分类器的攻击通常利用该输出向量与对抗目标的 one-hot 表示之间的交叉熵损失（the cross-entropy loss between this output vector, and
+a one-hot representation of the adversarial target），但是这不适用于目标检测的复杂情况</p>
+<h5 id="消失攻击的损失函数">消失攻击的损失函数</h5>
+<p>为了让对象被目标检测器忽视，对抗性扰动必须确保任何边界框中目标对象的可能性小于检测阈值，因此损失函数如下（与 RP2 中的损失函数对应）：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230721162926.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230721162926.png" />
+        
+        </a>
+    </p>
+<p>其中 fθ（x）表示对象检测器的输出（对于 YOLO v2，这是一个 19×19×425 张量）。P（·）是从该张量中提取对象类的概率的函数，在网格单元 s 和边界框 b 中具有标签 y（在我们的情况下，这是停止符号）。x 是包含我们扰动的目标对象的输入场景。</p>
+<p>因此，如果停止符号出现在场景中，损失函数输出停止符号的最大概率。使用该损失函数，对手的目标是直接最小化该概率，直到其降到这个网络的检测阈值之下。</p>
+<h5 id="创造攻击的损失函数">创造攻击的损失函数</h5>
+<p>掩模 Mx 被随机采样，使得对抗补丁被应用于场景中的任意位置。</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230721163843.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230721163843.png" />
+        
+        </a>
+    </p>
+<p>τ 是框置信度的阈值。</p>
+<p>Pbox（s，b，fθ（x））仅表示框的概率，即，模型对框中包含任何物体的置信度。</p>
+<p>P（s，b，y，fθ（x））表示分配给网格单元 s 的框 b 中的类别 y 的概率，也就是上面说的从 YOLO 输出张量中提取对象类的概率的函数</p>
+<p>因此，如果框中越有可能有对象，那么 loss 就越大；如果分配给网格单元 s 的框 b 中的类别 y 的概率越大，loss 越大。因此，该 loss 函数表示，如果在一个地方，越不可能被检测出对象，且越不可能被提取出对象类，loss 就越小</p>
+<h4 id="新物理约束的综合表示">新物理约束的综合表示</h4>
+<p>想要愚弄对象检测器，我们需要考虑的物理条件比分类器要多得多。对象检测器考虑到的上下文比分类器的更多，由于对象的位置和大小可以根据观看者的位置而变化很大，因此扰动必须考虑这些附加约束。</p>
+<p>为了生成位置不变的物理对抗扰动，作者选择对两个环境条件进行综合建模：对象旋转（在 Z 平面）和位置（在 X-Y 平面）（基本上就是物理的三个维度），在优化的每个时期随机放置和旋转对象。</p>
+<p>作者避免了像 RP2 那样使用不同的数据集来模拟物体的物理旋转，而是采用了一种合成的方法</p>
+<h4 id="全变分total-variation-norm的噪声平滑">全变分（total variation norm）的噪声平滑</h4>
+<p>参考：<a href="https://blog.csdn.net/weixin_45355387/article/details/118968623">全变分图像去噪算法（TV）_Nirvana；的博客-CSDN 博客</a></p>
+<p>由于 RP2 使用的 p 范数扰动平滑会导致像素化的扰动，而像素化会降低物理世界中扰动的成功率（尤其是当观看者和对象之间的距离增加时）。</p>
+<p>使用全变分范数代替 p 范数，可以得到更平滑的扰动，从而增加攻击的有效范围</p>
+<p>给定掩码 Mx 和噪声 δ，对抗扰动的总变差范数 Mx · δ 为：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230721173301.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230721173301.png" />
+        
+        </a>
+    </p>
+<p>因此总的新目标函数是：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230721174958.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230721174958.png" />
+        
+        </a>
+    </p>
+<h2 id="实验结果">实验结果</h2>
+<p>一共有两种掩码方式，一种是 poster 的，也就是对 STOP 标志全覆盖的；另一种是 sticker 的，也就是只对 STOP 标志做一些装饰的：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230721222807.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230721222807.png" />
+        
+        </a>
+    </p>
+<h3 id="对-yolov2-的白盒攻击">对 YOLOv2 的白盒攻击</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230721222531.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230721222531.png" />
+        
+        </a>
+    </p>
+<h3 id="对-faster-r-cnn-的黑盒攻击">对 Faster R-CNN 的黑盒攻击</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020230721222624.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020230721222624.png" />
+        
+        </a>
+    </p>
+<p>可以看到，Poster 的方式一般来说比 sticker 的成功率高，可能是因为更改率更高；同时不论是白盒攻击还是黑盒攻击，不论是 Poster 的还是 Sticker 的，在 Outdoors 的情况下成功率都大幅下降，这可能是因为在户外情况下的精度损失</p>
+<h2 id="未来方向">未来方向</h2>
+<ol>
+<li>环境因素导致的精度损失从而造成成功率下降</li>
+<li>对目标检测器的其他攻击方式
+<ol>
+<li>不更改其框而更改其类</li>
+<li>生成对人类看起来无意义但由对象检测器检测和标记的另外的 2D 或甚至 3D 对象</li>
+<li>以上两种都有数字化的攻击</li>
+</ol>
+</li>
+<li>语义分割的扩展（如何扩展当前的分类器和检测器的攻击技术，以创建分割网络的物理攻击）</li>
+<li>对现实系统的影响（是否对基于现实的复杂情况下的目标检测系统有效）</li>
+</ol>
+<blockquote>
+<p>关键是创建可以攻击最先进的对象检测器的算法</p>
+</blockquote>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3a%2f%2fpeterliuzhi.top%2fposts%2f%25E8%25AE%25BA%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2f%25E5%2590%258E%25E9%2597%25A8%25E6%2594%25BB%25E5%2587%25BB%2f%25E8%25AE%25BA%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%25E7%259B%25AE%25E6%25A0%2587%25E8%25AF%2586%25E5%2588%25AB%25E7%259A%2584%25E7%2589%25A9%25E7%2590%2586%25E5%25AF%25B9%25E6%258A%2597%25E7%25A4%25BA%25E4%25BE%258B-physical-adversarial-examples-for-object-detectors%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/backdoor_attack/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#backdoor_attack</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0/%e5%90%8e%e9%97%a8%e6%94%bb%e5%87%bb/%e3%80%90%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%e3%80%91%e7%9b%ae%e6%a0%87%e8%af%86%e5%88%ab%e7%9a%84%e7%89%a9%e7%90%86%e5%af%b9%e6%8a%97%e7%a4%ba%e4%be%8b%20Physical%20Adversarial%20Examples%20for%20Object%20Detectors.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/" class="block">【论文笔记】量化因果涌现</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8python%E7%9A%84setup.py%E4%B8%AD%E8%B0%83%E7%94%A8cmake%E6%9E%84%E5%BB%BApython%E5%BA%93%E7%9A%84%E6%8F%92%E4%BB%B6/" class="block">如何在python的setup.py中调用cmake构建python库的插件</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#论文笔记目标识别的物理对抗示例-physical-adversarial-examples-for-object-detectors">【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors</a>
+      <ul>
+        <li><a href="#目标识别模型难于攻击">目标识别模型难于攻击</a>
+          <ul>
+            <li><a href="#物理扰动的特殊性">物理扰动的特殊性</a></li>
+          </ul>
+        </li>
+        <li><a href="#两种提出的攻击方法">两种提出的攻击方法</a></li>
+        <li><a href="#物理扰动未来的问题">物理扰动未来的问题</a></li>
+        <li><a href="#两大阵营的目标检测">两大阵营的目标检测</a></li>
+        <li><a href="#robust-physical-perturbationsrp2算法">Robust Physical Perturbations(RP2)算法</a>
+          <ul>
+            <li><a href="#攻击流程">攻击流程</a></li>
+            <li><a href="#算法">算法</a></li>
+          </ul>
+        </li>
+        <li><a href="#作者提出的-rp2-扩展算法">作者提出的 RP2 扩展算法</a>
+          <ul>
+            <li><a href="#与-rp2-的三个关键性差异">与 RP2 的三个关键性差异</a>
+              <ul>
+                <li><a href="#损失函数的更改">损失函数的更改</a>
+                  <ul>
+                    <li><a href="#消失攻击的损失函数">消失攻击的损失函数</a></li>
+                    <li><a href="#创造攻击的损失函数">创造攻击的损失函数</a></li>
+                  </ul>
+                </li>
+                <li><a href="#新物理约束的综合表示">新物理约束的综合表示</a></li>
+                <li><a href="#全变分total-variation-norm的噪声平滑">全变分（total variation norm）的噪声平滑</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#实验结果">实验结果</a>
+          <ul>
+            <li><a href="#对-yolov2-的白盒攻击">对 YOLOv2 的白盒攻击</a></li>
+            <li><a href="#对-faster-r-cnn-的黑盒攻击">对 Faster R-CNN 的黑盒攻击</a></li>
+          </ul>
+        </li>
+        <li><a href="#未来方向">未来方向</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/" class="no-underline">【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/" class="no-underline">【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0\/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB\/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>

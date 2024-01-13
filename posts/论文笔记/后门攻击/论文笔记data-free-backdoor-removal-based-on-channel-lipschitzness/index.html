@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/atom-one-light.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness-P3troL1er的个人技术博客">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://peterliuzhi.top/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness",
+      "item":"https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/"
+    },
+    "headline": "【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness - P3troL1er 的个人博客","datePublished": "2024-01-13T16:01:35+08:00",
+    "dateModified": "2024-01-13T16:01:35+08:00",
+    "wordCount":  1259 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness"
+}
+</script>
+<meta property="og:title" content="【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/" />
+
+
+
+<meta property="og:description" content="【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2024-01-13T16:01:35&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2024-01-13T16:01:35&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="人工智能" />
+
+<meta property="article:tag" content="深度学习" />
+
+
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Saturday, January 13, 2024</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共1259字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>3分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/" class="hover:text-eureka"
+          >后门攻击</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="hover:text-eureka"
+          >论文笔记</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="hover:text-eureka"
+          >人工智能</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="hover:text-eureka"
+          >深度学习</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/" id="ThisURL">https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <h2 id="概述">概述</h2>
+<p>本文首先提到，在先前的研究中已经证明，感染的深度学习模型中有一些通道对trigger更加敏感。那么，很自然地就能想到，如果有一种指标能够将这些通道同普通的通道区分开，我们就可以利用剪枝为感染模型解毒。</p>
+<p>本文提出，可以使用Channel Lipschitz Constant (CLC)来作为指标，并通过大量实验从经验主义的角度证明了CLC的上界(UCLC)与触发器激活效应trigger-activated change（TAC）之间的强相关性，并论证了与后门相关的通道相较于普通通道具有更高的CLC。由于UCLC可以直接使用模型的权重计算得到，因此不需要任何额外的数据，这就是标题中<code>data-free</code>的含义。通过UCLC，论文提出了一种效率极高的Channel Lipschitzness based Pruning (CLP)剪枝方法，并通过实验证明了方法是SOTA的</p>
+<h2 id="相关工作">相关工作</h2>
+<ul>
+<li>Backdoor Attack</li>
+<li>Backdoor Defense
+<ul>
+<li>Training Stage Defenses</li>
+<li>Model Post-processing Defenses</li>
+</ul>
+</li>
+</ul>
+<h2 id="l-lipschitz-function">L-Lipschitz Function</h2>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113144050.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113144050.png" />
+        
+        </a>
+    </p>
+<p>简而言之，假如存在一个函数g，使得映射后的y值差的p范数小于等于x值差的p范数乘以L，则g的Lipschitz常量就是使得这个不等式成立的最小L。</p>
+<p>如果换一种视角去看这个公式，$x&rsquo;$可以被看成$x$的扰动后的值，那么Lipschitz常量就可以被看作输出空间的扰动与输入空间的扰动（其中输出空间的扰动是由输入空间的扰动造成的）的最大比值。因此用Lipschitz常量来测量一个函数对输入扰动的敏感性</p>
+<h3 id="神经网络中的lipschitz常量">神经网络中的Lipschitz常量</h3>
+<p>首先，假设神经网络是线性层和非线性层通过某种运算凭借在一起的函数：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113150256.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113150256.png" />
+        
+        </a>
+    </p>
+<p>那么，由柯西-施瓦茨不等式：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113150420.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113150420.png" />
+        
+        </a>
+    </p>
+<p>可以得到：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113150451.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113150451.png" />
+        
+        </a>
+    </p>
+<p>将后者写成连乘的式子，并假设$\phi$是ReLU（ReLU的Lipschitz常量为1），同时展开Lipschitz常量的式子，可得：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113145853.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113145853.png" />
+        
+        </a>
+    </p>
+<p>这里将每一个线性层都看成$wx+b$的形式（卷积层可以通过<a href="https://arxiv.org/abs/1705.10941">某种reshape变换</a>近似变成这样的公式）。由于我们可以把Lipschitz常量的计算公式看作扰动的形式，因此$g(x)-g(x&rsquo;)=w(x-x&rsquo;)=wz$，而这里取二范数，因此能推导出倒数第二个公式。而后面那个$σ$就相当于命了个名（spectral norm，可能可以译作光谱范数）。</p>
+<h2 id="channel-lipschitz-constant-clc">Channel Lipschitz Constant （CLC）</h2>
+<p>我们可以将第l层的第k通道看作：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113154404.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113154404.png" />
+        
+        </a>
+    </p>
+<p>其中输入为原数据x</p>
+<p>从而有：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113151844.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113151844.png" />
+        
+        </a>
+    </p>
+<p>不等式右边的是某一个通道的Lipschitz常量（CLC）的上界，称为UCLC</p>
+<h2 id="trigger-activated-changetac">Trigger-activated Change（TAC）</h2>
+<p>这是一个客观衡量trigger对模型的影响的指标，因为需要获取trigger的样式，所以只能用作理论研究而不能实际地用于防御</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113151307.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113151307.png" />
+        
+        </a>
+    </p>
+<p>其中$\delta$是毒化函数。</p>
+<p>意思就是对每一层的每一个通道都可以单独计算TAC，而这个值是由良性样本通过模型后该通道的特征向量减去由毒性样本通过该模型后该通道的特征向量的二范数，并对所有通过模型的数据取均值。</p>
+<h2 id="clc与tac的相关性">CLC与TAC的相关性</h2>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113151716.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113151716.png" />
+        
+        </a>
+    </p>
+<h2 id="channel-lipschitzness-based-pruning">Channel Lipschitzness based Pruning</h2>
+<p>由UCLC与TAC之间的强相关性（观察所得），我们可以设计一种基于UCLC的剪枝方法</p>
+<p>由于UCLC中总有一连串的连乘，所以我们可以简化UCLC的公式为$\sigma (W_k^{(l)})$</p>
+<p>而阈值取值方法如下：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113155332.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113155332.png" />
+        
+        </a>
+    </p>
+<p>从而整个算法流程：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113155354.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113155354.png" />
+        
+        </a>
+    </p>
+<h2 id="实验结果">实验结果</h2>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113155426.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113155426.png" />
+        
+        </a>
+    </p>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3a%2f%2fpeterliuzhi.top%2fposts%2f%25E8%25AE%25BA%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2f%25E5%2590%258E%25E9%2597%25A8%25E6%2594%25BB%25E5%2587%25BB%2f%25E8%25AE%25BA%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0data-free-backdoor-removal-based-on-channel-lipschitzness%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#人工智能</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#深度学习</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0/%e5%90%8e%e9%97%a8%e6%94%bb%e5%87%bb/%e3%80%90%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%e3%80%91Data-free%20Backdoor%20Removal%20based%20on%20Channel%20Lipschitzness.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/" class="block">【论文笔记】Deep Learning with Differential Privacy</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#概述">概述</a></li>
+        <li><a href="#相关工作">相关工作</a></li>
+        <li><a href="#l-lipschitz-function">L-Lipschitz Function</a>
+          <ul>
+            <li><a href="#神经网络中的lipschitz常量">神经网络中的Lipschitz常量</a></li>
+          </ul>
+        </li>
+        <li><a href="#channel-lipschitz-constant-clc">Channel Lipschitz Constant （CLC）</a></li>
+        <li><a href="#trigger-activated-changetac">Trigger-activated Change（TAC）</a></li>
+        <li><a href="#clc与tac的相关性">CLC与TAC的相关性</a></li>
+        <li><a href="#channel-lipschitzness-based-pruning">Channel Lipschitzness based Pruning</a></li>
+        <li><a href="#实验结果">实验结果</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0\/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB\/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>

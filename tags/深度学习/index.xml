@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>深度学习 | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
+      <atom:link href="https://peterliuzhi.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <description>深度学习</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sat, 13 Jan 2024 16:01:35 +0800</lastBuildDate>
+    <item>
+      <title>【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</link>
+      <pubDate>Sat, 13 Jan 2024 16:01:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</guid>
+      
+      <description>【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -5,12 +5,34 @@
     <link>https://peterliuzhi.top/posts/</link>
       <atom:link href="https://peterliuzhi.top/posts/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Fri, 12 Jan 2024 01:10:38 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sat, 13 Jan 2024 16:01:35 +0800</lastBuildDate>
+    <item>
+      <title>【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</link>
+      <pubDate>Sat, 13 Jan 2024 16:01:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</guid>
+      
+      <description>【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</description>
+      
+    </item>
+    
+    <item>
+      <title>【论文笔记】Deep Learning with Differential Privacy</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</link>
+      <pubDate>Sat, 13 Jan 2024 14:07:43 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</guid>
+      
+      
+      <description>简介 开创了通过向深度学习模型的梯度进行加噪从而实现差分隐私的方法 什么是差分隐私 差分隐私就是对两个相邻数据库有如下定义： 简单来说，假设有两个数据库，两个</description>
+      
+      
+    </item>
+    
     <item>
       <title>【论文笔记】Pre-activation Distributions Expose Backdoor Neurons</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0pre-activation-distributions-expose-backdoor-neurons/</link>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0pre-activation-distributions-expose-backdoor-neurons/</link>
       <pubDate>Fri, 12 Jan 2024 01:10:38 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0pre-activation-distributions-expose-backdoor-neurons/</guid>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0pre-activation-distributions-expose-backdoor-neurons/</guid>
       
       <description>【论文笔记】Pre-activation Distributions Expose Backdoor Neurons</description>
       
@@ -23,6 +45,46 @@
       <guid>https://peterliuzhi.top/posts/neurips%E8%BF%91%E5%B9%B4%E5%85%B3%E4%BA%8Ebackdoorattack%E7%9A%84%E6%96%87%E7%AB%A0/</guid>
       
       <description>NeurIPS近年关于BackdoorAttack的文章</description>
+      
+    </item>
+    
+    <item>
+      <title>【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/</link>
+      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/</guid>
+      
+      <description>【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</description>
+      
+    </item>
+    
+    <item>
+      <title>【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</link>
+      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</guid>
+      
+      <description>【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击</description>
+      
+    </item>
+    
+    <item>
+      <title>【论文笔记】量化因果涌现</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</link>
+      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</guid>
+      
+      <description>【论文笔记】量化因果涌现</description>
+      
+    </item>
+    
+    <item>
+      <title>【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/</link>
+      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/</guid>
+      
+      <description>【论文笔记】目标识别的物理对抗示例 Physical Adversarial Examples for Object Detectors</description>
       
     </item>
     
@@ -93,66 +155,6 @@
       <guid>https://peterliuzhi.top/posts/ai%E6%84%9F%E7%9F%A5%E6%9C%BA%E4%B8%8E%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA/</guid>
       
       <description>【AI】感知机与多层感知机</description>
-      
-    </item>
-    
-    <item>
-      <title>【Java】在pwm.xml中引入log4j2</title>
-      <link>https://peterliuzhi.top/posts/java%E5%9C%A8pwm.xml%E4%B8%AD%E5%BC%95%E5%85%A5log4j2/</link>
-      <pubDate>Fri, 18 Aug 2023 09:56:35 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/java%E5%9C%A8pwm.xml%E4%B8%AD%E5%BC%95%E5%85%A5log4j2/</guid>
-      
-      <description>【Java】在pwm.xml中引入log4j2</description>
-      
-    </item>
-    
-    <item>
-      <title>【Java】读取配置文件</title>
-      <link>https://peterliuzhi.top/posts/java%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
-      <pubDate>Fri, 18 Aug 2023 09:33:30 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/java%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
-      
-      <description>【Java】读取配置文件</description>
-      
-    </item>
-    
-    <item>
-      <title>【Java】同步与异步Timer</title>
-      <link>https://peterliuzhi.top/posts/java%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5timer/</link>
-      <pubDate>Fri, 18 Aug 2023 09:23:37 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/java%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5timer/</guid>
-      
-      <description>【Java】同步与异步Timer</description>
-      
-    </item>
-    
-    <item>
-      <title>【wxpython】启动弹窗</title>
-      <link>https://peterliuzhi.top/posts/wxpython%E5%90%AF%E5%8A%A8%E5%BC%B9%E7%AA%97/</link>
-      <pubDate>Fri, 21 Jul 2023 15:41:12 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/wxpython%E5%90%AF%E5%8A%A8%E5%BC%B9%E7%AA%97/</guid>
-      
-      <description>【wxpython】启动弹窗</description>
-      
-    </item>
-    
-    <item>
-      <title>使用winrar制作自解压安装包</title>
-      <link>https://peterliuzhi.top/posts/%E4%BD%BF%E7%94%A8winrar%E5%88%B6%E4%BD%9C%E8%87%AA%E8%A7%A3%E5%8E%8B%E7%AE%80%E6%98%93%E5%AE%89%E8%A3%85%E5%8C%85/</link>
-      <pubDate>Fri, 21 Jul 2023 14:24:46 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E4%BD%BF%E7%94%A8winrar%E5%88%B6%E4%BD%9C%E8%87%AA%E8%A7%A3%E5%8E%8B%E7%AE%80%E6%98%93%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
-      
-      <description>使用winrar制作自解压安装包</description>
-      
-    </item>
-    
-    <item>
-      <title>【学习记录】C&amp;C&#43;&#43;网络编程——用C&#43;&#43;标准线程库实现跨平台</title>
-      <link>https://peterliuzhi.top/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95cc&#43;&#43;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%94%A8c&#43;&#43;%E6%A0%87%E5%87%86%E7%BA%BF%E7%A8%8B%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%B7%A8%E5%B9%B3%E5%8F%B0/</link>
-      <pubDate>Fri, 09 Jun 2023 02:38:57 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95cc&#43;&#43;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%94%A8c&#43;&#43;%E6%A0%87%E5%87%86%E7%BA%BF%E7%A8%8B%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%B7%A8%E5%B9%B3%E5%8F%B0/</guid>
-      
-      <description>因为暂时不想引入外部库，C&#43;&#43;又没有标准网络库...</description>
       
     </item>
     

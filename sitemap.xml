@@ -2,25 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0pre-activation-distributions-expose-backdoor-neurons/</loc>
-    <lastmod>2024-01-12T01:10:38+08:00</lastmod>
+    <loc>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</loc>
+    <lastmod>2024-01-13T16:01:35+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/categories/</loc>
-    <lastmod>2024-01-12T01:10:38+08:00</lastmod>
+    <lastmod>2024-01-13T16:01:35+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/</loc>
+    <lastmod>2024-01-13T16:01:35+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/posts/</loc>
+    <lastmod>2024-01-13T16:01:35+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/</loc>
+    <lastmod>2024-01-13T16:01:35+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/categories/writeup/</loc>
+    <lastmod>2024-01-13T16:01:35+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/categories/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</loc>
+    <lastmod>2024-01-13T16:01:35+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-01-13T16:01:35+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <lastmod>2024-01-13T16:01:35+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2024-01-13T16:01:35+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</loc>
+    <lastmod>2024-01-13T14:10:13+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81/</loc>
+    <lastmod>2024-01-13T14:10:13+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/categories/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/</loc>
+    <lastmod>2024-01-13T14:10:13+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0pre-activation-distributions-expose-backdoor-neurons/</loc>
     <lastmod>2024-01-12T01:10:38+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/categories/posts/</loc>
-    <lastmod>2024-01-12T01:10:38+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/posts/</loc>
-    <lastmod>2024-01-12T01:10:38+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/tags/</loc>
-    <lastmod>2024-01-12T01:10:38+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/categories/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</loc>
     <lastmod>2024-01-12T01:10:38+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
@@ -39,7 +63,7 @@
     <lastmod>2023-12-03T23:54:08+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/principle/</loc>
-    <lastmod>2023-12-03T23:54:08+08:00</lastmod>
+    <lastmod>2023-12-03T23:51:31+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/principle/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0-%E5%85%BC-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-backdoor-learning-a-survey/</loc>
     <lastmod>2023-12-03T23:51:31+08:00</lastmod>
@@ -50,16 +74,16 @@
     <loc>https://peterliuzhi.top/tags/%E7%BB%BC%E8%BF%B0/</loc>
     <lastmod>2023-12-03T23:51:31+08:00</lastmod>
   </url><url>
-    <loc>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/</loc>
+    <loc>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/</loc>
     <lastmod>2023-12-03T23:53:16+08:00</lastmod>
   </url><url>
-    <loc>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</loc>
+    <loc>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</loc>
     <lastmod>2023-12-03T23:52:43+08:00</lastmod>
   </url><url>
-    <loc>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</loc>
+    <loc>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</loc>
     <lastmod>2023-12-03T23:54:08+08:00</lastmod>
   </url><url>
-    <loc>https://peterliuzhi.top/principle/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/</loc>
+    <loc>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E7%9A%84%E7%89%A9%E7%90%86%E5%AF%B9%E6%8A%97%E7%A4%BA%E4%BE%8B-physical-adversarial-examples-for-object-detectors/</loc>
     <lastmod>2023-12-03T23:53:46+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</loc>
@@ -219,9 +243,6 @@
     <lastmod>2023-06-04T01:00:24+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/writeup/2023-ciscn-pwnmisc%E5%B0%8F%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</loc>
-    <lastmod>2023-05-28T17:05:34+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/categories/writeup/</loc>
     <lastmod>2023-05-28T17:05:34+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/writeup/</loc>
