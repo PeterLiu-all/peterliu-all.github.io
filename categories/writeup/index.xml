@@ -5,39 +5,7 @@
     <link>https://peterliuzhi.top/categories/writeup/</link>
       <atom:link href="https://peterliuzhi.top/categories/writeup/index.xml" rel="self" type="application/rss+xml" />
     <description>writeup</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 25 Jan 2024 21:47:43 +0800</lastBuildDate>
-    <item>
-      <title>【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/</link>
-      <pubDate>Thu, 25 Jan 2024 21:47:43 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/</guid>
-      
-      <description>【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM</description>
-      
-    </item>
-    
-    <item>
-      <title>【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</link>
-      <pubDate>Sat, 13 Jan 2024 16:01:35 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</guid>
-      
-      <description>【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</description>
-      
-    </item>
-    
-    <item>
-      <title>【论文笔记】Deep Learning with Differential Privacy</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</link>
-      <pubDate>Sat, 13 Jan 2024 14:07:43 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</guid>
-      
-      
-      <description>简介 开创了通过向深度学习模型的梯度进行加噪从而实现差分隐私的方法 什么是差分隐私 差分隐私就是对两个相邻数据库有如下定义： 简单来说，假设有两个数据库，两个</description>
-      
-      
-    </item>
-    
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 28 May 2023 17:05:34 +0800</lastBuildDate>
     <item>
       <title>2023 ciscn pwn&amp;misc小部分题解</title>
       <link>https://peterliuzhi.top/writeup/2023-ciscn-pwnmisc%E5%B0%8F%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</link>
@@ -155,6 +123,36 @@
       <guid>https://peterliuzhi.top/writeup/c&#43;&#43;pwnzjctf-2019login/</guid>
       
       <description>BUUCTF [ZJCTF 2019]Login的解析</description>
+      
+    </item>
+    
+    <item>
+      <title>【call32】【栈迁移】BUUCTF ciscn_2019_s_4</title>
+      <link>https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/</link>
+      <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
+      <guid>https://peterliuzhi.top/writeup/call32%E6%A0%88%E8%BF%81%E7%A7%BBbuuctf-ciscn_2019_s_4/</guid>
+      
+      <description>BUUCTF ciscn_2019_s_4的解析</description>
+      
+    </item>
+    
+    <item>
+      <title>【C内嵌汇编】others_shellcode</title>
+      <link>https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/</link>
+      <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
+      <guid>https://peterliuzhi.top/writeup/c%E5%86%85%E5%B5%8C%E6%B1%87%E7%BC%96others_shellcode/</guid>
+      
+      <description>BUUCTF others_shellcode的解析</description>
+      
+    </item>
+    
+    <item>
+      <title>【fmtstr_payload函数】BUUCTF axb_2019_fmt32</title>
+      <link>https://peterliuzhi.top/writeup/fmtstr_payload%E5%87%BD%E6%95%B0buuctf-axb_2019_fmt32/</link>
+      <pubDate>Thu, 29 Dec 2022 03:01:44 +0800</pubDate>
+      <guid>https://peterliuzhi.top/writeup/fmtstr_payload%E5%87%BD%E6%95%B0buuctf-axb_2019_fmt32/</guid>
+      
+      <description>BUUCTF axb_2019_fmt32的解析</description>
       
     </item>
     

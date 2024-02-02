@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/posts/</link>
       <atom:link href="https://peterliuzhi.top/posts/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 25 Jan 2024 21:47:43 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sat, 03 Feb 2024 02:01:16 +0800</lastBuildDate>
+    <item>
+      <title>【论文笔记】DeepACO Neural-enhanced Ant Systems for Combinatorial Optimization</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deepaco-neural-enhanced-ant-systems-for-combinatorial-optimization/</link>
+      <pubDate>Sat, 03 Feb 2024 02:01:16 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deepaco-neural-enhanced-ant-systems-for-combinatorial-optimization/</guid>
+      
+      <description>【论文笔记】DeepACO Neural-enhanced Ant Systems for Combinatorial Optimization</description>
+      
+    </item>
+    
     <item>
       <title>【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM</title>
       <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/</link>
@@ -145,16 +155,6 @@
       <guid>https://peterliuzhi.top/posts/git%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/</guid>
       
       <description>【git】自动备份脚本</description>
-      
-    </item>
-    
-    <item>
-      <title>【AI】随机森林、lgb与xgb的代码实践</title>
-      <link>https://peterliuzhi.top/posts/ai%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97lgb%E4%B8%8Exgb%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</link>
-      <pubDate>Mon, 21 Aug 2023 14:57:40 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/ai%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97lgb%E4%B8%8Exgb%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</guid>
-      
-      <description>【AI】随机森林、lgb与xgb的代码实践</description>
       
     </item>
     
