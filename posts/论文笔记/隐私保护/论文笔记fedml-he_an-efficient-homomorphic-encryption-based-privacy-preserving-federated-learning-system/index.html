@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/atom-one-light.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM-P3troL1er的个人技术博客">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://peterliuzhi.top/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM",
+      "item":"https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/"
+    },
+    "headline": "【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM - P3troL1er 的个人博客","datePublished": "2024-01-25T21:47:43+08:00",
+    "dateModified": "2024-01-25T21:47:43+08:00",
+    "wordCount":  1391 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM"
+}
+</script>
+<meta property="og:title" content="【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/" />
+
+
+
+<meta property="og:description" content="【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2024-01-25T21:47:43&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2024-01-25T21:47:43&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="人工智能" />
+
+<meta property="article:tag" content="深度学习" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Thursday, January 25, 2024</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共1391字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>3分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/writeup/" class="hover:text-eureka"
+          >writeup</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/" class="hover:text-eureka"
+          >隐私保护</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="hover:text-eureka"
+          >论文笔记</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="hover:text-eureka"
+          >人工智能</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="hover:text-eureka"
+          >深度学习</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/" id="ThisURL">https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <h2 id="概述">概述</h2>
+<h3 id="性质">性质</h3>
+<p>这是一篇关于联邦学习中如何保证分布式机器的隐私安全的文章</p>
+<h3 id="相较于先前方案解决的问题">相较于先前方案解决的问题</h3>
+<h4 id="先前的方案">先前的方案</h4>
+<ul>
+<li>差分隐私（Differential Privacy）：向模型中增加噪声，但是会影响模型的精度</li>
+<li>安全聚合（Secure Aggregation）：在聚合分布模型阶段保证中央服务器无法访问各个分布服务器的隐私信息，但是不够鲁棒</li>
+<li>同态加密（Homomorphic Encryption）：直接在加密的信息上进行计算，并且（假如）解密得到的计算结果和在明文上计算得到的结果一致，但是耗费计算资源过大</li>
+</ul>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240125220244.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240125220244.png" />
+        
+        </a>
+    </p>
+<h4 id="解决的问题">解决的问题</h4>
+<p>解决了同态加密中<em>耗费过大</em>的问题</p>
+<h4 id="基于同态加密的先前方案与本文方案的对比">基于同态加密的先前方案与本文方案的对比</h4>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240125220537.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240125220537.png" />
+        
+        </a>
+    </p>
+<p>可以看到，本文的方案同时具有以下四个特性：</p>
+<ul>
+<li>Homomorphic Encryption：允许在密文上进行运算</li>
+<li>Threshold Key Management：需要 <em>一定数量的成员（阈值）</em> 合作才能实现特定的敏感操作（比如解密）</li>
+<li>Selective Parameter Encryption：只选择模型的一部分参数进行加密</li>
+<li>Encrypted Foundation Model Training：训练加密的基础模型</li>
+</ul>
+<p>同时，之前的方案只能用于小尺度的模型训练，缺乏扩展性，本文提出的方案耗费的计算资源小的多</p>
+<h3 id="fedml-he的流水线">FedML-HE的流水线</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240125223204.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240125223204.png" />
+        
+        </a>
+    </p>
+<ol>
+<li>加密密钥交换：使用分布式的Threshold Key或者第三方提供的single key</li>
+<li>加密掩码计算：每一个客户端都使用自己的本地数据集计算一个本地模型敏感度分布图（local model sensitivity map），并最后聚合成一个加密掩码</li>
+<li>加密联邦学习：每一个客户端都使用加密掩码保护本地模型的上传，保证服务器虽然能够聚合每一个本地模型，但是无法访问敏感的本地模型</li>
+</ol>
+<h3 id="本文的贡献">本文的贡献</h3>
+<ul>
+<li>第一个实际可行的联邦学习同态加密方案，极大地降低了加密训练的成本</li>
+<li>提出了选择参数加密方案</li>
+<li>通过理论分析证明了在针对Threshold Key和single key的攻击下，加密最敏感的那些参数可以确保更高数量级的安全性</li>
+</ul>
+<h2 id="威胁模型">威胁模型</h2>
+<p>假设有一个semi-honest的攻击者$\mathcal{A}$:</p>
+<ul>
+<li>遵守协议（一半的诚实）</li>
+<li>希望学习到尽可能多的信息（一半的恶意）</li>
+</ul>
+<p>我们希望：</p>
+<ul>
+<li>只有当$\mathcal{A}$腐化了足够多的客户端（a subset of clients），它才能获取隐私信息</li>
+<li>当$\mathcal{A}$腐化了聚合服务器时，它学习不到任何来自全局模型和本地模型的隐私信息</li>
+</ul>
+<h2 id="算法">算法</h2>
+<h3 id="符号表">符号表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\mathcal{A}$</td>
+<td style="text-align:center">攻击者</td>
+</tr>
+<tr>
+<td style="text-align:center">$N$</td>
+<td style="text-align:center">客户端的数量</td>
+</tr>
+<tr>
+<td style="text-align:center">$i \in [N]$</td>
+<td style="text-align:center">每一个客户端</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{D}_i$</td>
+<td style="text-align:center">每一个客户端的本地数据集</td>
+</tr>
+<tr>
+<td style="text-align:center">$W_i$</td>
+<td style="text-align:center">每一个客户端的本地模型</td>
+</tr>
+<tr>
+<td style="text-align:center">$w_m$</td>
+<td style="text-align:center">模型的参数</td>
+</tr>
+<tr>
+<td style="text-align:center">$\alpha_i$</td>
+<td style="text-align:center">聚合权重因子</td>
+</tr>
+<tr>
+<td style="text-align:center">$(p_k,s_k)$</td>
+<td style="text-align:center">公钥私钥对</td>
+</tr>
+<tr>
+<td style="text-align:center">$M$</td>
+<td style="text-align:center">加密掩码</td>
+</tr>
+<tr>
+<td style="text-align:center">$t \in [T]$</td>
+<td style="text-align:center">交流轮次</td>
+</tr>
+<tr>
+<td style="text-align:center">$[]$</td>
+<td style="text-align:center">部分加密</td>
+</tr>
+<tr>
+<td style="text-align:center">$[![]!]$</td>
+<td style="text-align:center">完整加密</td>
+</tr>
+<tr>
+<td style="text-align:center">$p \in [0, 1]$</td>
+<td style="text-align:center">用于选择加密的参数的ratio</td>
+</tr>
+<tr>
+<td style="text-align:center">$b$</td>
+<td style="text-align:center">差分隐私参数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="算法流程">算法流程</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240129202114.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240129202114.png" />
+        
+        </a>
+    
+
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240129202136.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240129202136.png" />
+        
+        </a>
+    </p>
+<h3 id="对模型进行部分加密">对模型进行部分加密</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240129202247.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240129202247.png" />
+        
+        </a>
+    </p>
+<p>首先需要将数据输入模型从而计算敏感度，对每一个客户端的模型都如此计算，然后聚合到一起变成一张全局的隐私位图，再通过设置选择加密因子后就得到了加密掩码，使用这个加密掩码就能计算部分加密的模型</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240129202403.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240129202403.png" />
+        
+        </a>
+    </p>
+<p>计算敏感度是通过对每一个数据点都计算loss函数对模型参数的偏导数对真实标签的偏导数的绝对值得到的</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240129204230.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240129204230.png" />
+        
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240129203152.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240129203152.png" />
+        
+        </a>
+    </p>
+<p>然后再通过上式对所有敏感度进行完整加密，也就是如下流程：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240129203316.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240129203316.png" />
+        
+        </a>
+    
+
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240129203610.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240129203610.png" />
+        
+        </a>
+    </p>
+<p>然后，为了选择出最敏感的参数进行加密，要对隐私位图应用比值p，从而计算出加密掩码。这个加密掩码会发送给每一个客户端作为联邦学习的配置之一</p>
+<p>在每一个交流轮次，聚合服务器都执行：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240129201407.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240129201407.png" />
+        
+        </a>
+    </p>
+<p>也就是说，对每一个客户端上传的模型，用加密掩码选中模型的一部分进行完整加密再乘以聚合权重因子，而剩下的部分不进行加密但是要乘以聚合因子，全部加起来就得到了部分加密的全局模型</p>
+<!--
+## 安全性证明
+
+### 定义
+
+#### Single-Key Adversary
+
+![](/image/Pasted%20image%2020240129204453.png)
+
+#### Threshold Adversary
+
+![](/image/Pasted%20image%2020240129204645.png)
+
+#### privacy
+
+![](/image/Pasted%20image%2020240129204703.png)
+
+#### 理想世界与真实世界
+
+![](/image/Pasted%20image%2020240129204845.png)
+
+理想世界机构可以选择哪些客户端的模型能用于计算全局模型，但是不论是诚实的模型还是腐化的模型都会上传他们的模型，如果上传的模型已经足够，那么机构就会使用聚合因子聚合模型并发送给所有客户端，否则发送空信息
+
+![](/image/Pasted%20image%2020240129204900.png)
+
+在真实世界中，这个理想世界机构被论文提出的算法替代
+
+#### 模拟器
+
+![](/image/Pasted%20image%2020240129205032.png)
+![](/image/Pasted%20image%2020240129205054.png)
+
+![](/image/Pasted%20image%2020240129205544.png)
+
+### 差分隐私证明
+
+差分隐私相关定义不再详述
+
+#### 拉普拉斯机制
+
+拉普拉斯机制对一个函数的输出添加噪声
+
+![](/image/Pasted%20image%2020240129205831.png)
+
+![](/image/Pasted%20image%2020240129205849.png)
+
+也就是说，首先使用指数函数生成一个拉普拉斯噪声，然后与输出的所有维度直接相加
+
+#### 敏感度
+
+![](/image/Pasted%20image%2020240129210233.png)
+
+相邻数据集通过f的输出差值绝对值的最大值
+
+#### 选择参数b
+
+![](/image/Pasted%20image%2020240129210414.png)
+
+从而拉普拉斯噪声为：
+
+$$
+\frac{\epsilon}{2\Delta f}
+$$
+
+当使用上式来选择b时，可以实现$\epsilon$-差分隐私
+
+### 部分参数选择证明
+
+#### 引理一
+
+![](/image/Pasted%20image%2020240129211629.png)
+
+#### 部分加密的差分隐私证明
+
+![](/image/Pasted%20image%2020240129212141.png)
+
+对选中的模型参数$\mathcal{S}$进行同态加密，对剩下的参数应用拉普拉斯机制
+
+![](/image/Pasted%20image%2020240129212854.png)
+
+-->
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3a%2f%2fpeterliuzhi.top%2fposts%2f%25E8%25AE%25BA%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2f%25E9%259A%2590%25E7%25A7%2581%25E4%25BF%259D%25E6%258A%25A4%2f%25E8%25AE%25BA%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#人工智能</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#深度学习</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0/%e9%9a%90%e7%a7%81%e4%bf%9d%e6%8a%a4/%e3%80%90%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%e3%80%91FEDML-HE_AN%20EFFICIENT%20HOMOMORPHIC-ENCRYPTION-BASED%20PRIVACY-PRESERVING%20FEDERATED%20LEARNING%20SYSTEM.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/" class="block">【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#概述">概述</a>
+          <ul>
+            <li><a href="#性质">性质</a></li>
+            <li><a href="#相较于先前方案解决的问题">相较于先前方案解决的问题</a>
+              <ul>
+                <li><a href="#先前的方案">先前的方案</a></li>
+                <li><a href="#解决的问题">解决的问题</a></li>
+                <li><a href="#基于同态加密的先前方案与本文方案的对比">基于同态加密的先前方案与本文方案的对比</a></li>
+              </ul>
+            </li>
+            <li><a href="#fedml-he的流水线">FedML-HE的流水线</a></li>
+            <li><a href="#本文的贡献">本文的贡献</a></li>
+          </ul>
+        </li>
+        <li><a href="#威胁模型">威胁模型</a></li>
+        <li><a href="#算法">算法</a>
+          <ul>
+            <li><a href="#符号表">符号表</a></li>
+            <li><a href="#算法流程">算法流程</a></li>
+            <li><a href="#对模型进行部分加密">对模型进行部分加密</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/" class="no-underline">【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0\/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4\/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>

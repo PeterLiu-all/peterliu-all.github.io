@@ -5,7 +5,17 @@
     <link>https://peterliuzhi.top/</link>
       <atom:link href="https://peterliuzhi.top/index.xml" rel="self" type="application/rss+xml" />
     <description>P3troL1er 的个人博客</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sat, 13 Jan 2024 16:01:35 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 25 Jan 2024 21:47:43 +0800</lastBuildDate>
+    <item>
+      <title>【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/</link>
+      <pubDate>Thu, 25 Jan 2024 21:47:43 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/</guid>
+      
+      <description>【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM</description>
+      
+    </item>
+    
     <item>
       <title>【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</title>
       <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</link>
@@ -145,16 +155,6 @@
       <guid>https://peterliuzhi.top/posts/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E6%89%93%E5%BC%80%E4%BA%86%E4%B8%80%E4%B8%AAlocalhost%E7%BD%91%E7%AB%99%E5%A6%82%E4%BD%95%E5%9C%A8%E6%9C%AC%E6%9C%BA%E6%9F%A5%E7%9C%8B/</guid>
       
       <description>在服务器上打开了一个localhost网站/服务，如何在本机查看？</description>
-      
-    </item>
-    
-    <item>
-      <title>【git】自动备份脚本</title>
-      <link>https://peterliuzhi.top/posts/git%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/</link>
-      <pubDate>Thu, 24 Aug 2023 17:38:27 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/git%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/</guid>
-      
-      <description>【git】自动备份脚本</description>
       
     </item>
     
