@@ -2,8 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdooring-multimodal-learning/</loc>
+    <lastmod>2024-05-16T18:39:59+08:00</lastmod>
+  </url><url>
     <loc>https://peterliuzhi.top/categories/</loc>
-    <lastmod>2024-05-08T20:04:42+08:00</lastmod>
+    <lastmod>2024-05-16T18:39:59+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/</loc>
+    <lastmod>2024-05-16T18:39:59+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/posts/</loc>
+    <lastmod>2024-05-16T18:39:59+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/</loc>
+    <lastmod>2024-05-16T18:39:59+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</loc>
+    <lastmod>2024-05-16T18:39:59+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-05-16T18:39:59+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <lastmod>2024-05-16T18:39:59+08:00</lastmod>
+  </url><url>
+    <loc>https://peterliuzhi.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2024-05-16T18:39:59+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/tags/cpp/</loc>
     <lastmod>2024-05-08T20:04:42+08:00</lastmod>
@@ -11,19 +35,10 @@
     <loc>https://peterliuzhi.top/tags/opengl/</loc>
     <lastmod>2024-05-08T20:04:42+08:00</lastmod>
   </url><url>
-    <loc>https://peterliuzhi.top/</loc>
-    <lastmod>2024-05-08T20:04:42+08:00</lastmod>
-  </url><url>
     <loc>https://peterliuzhi.top/categories/posts/</loc>
     <lastmod>2024-05-08T20:04:42+08:00</lastmod>
   </url><url>
-    <loc>https://peterliuzhi.top/posts/</loc>
-    <lastmod>2024-05-08T20:04:42+08:00</lastmod>
-  </url><url>
     <loc>https://peterliuzhi.top/tags/python/</loc>
-    <lastmod>2024-05-08T20:04:42+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/tags/</loc>
     <lastmod>2024-05-08T20:04:42+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/posts/windows%E4%B8%8Bopengl%E5%AE%8C%E5%85%A8%E7%8B%AC%E7%AB%8B%E5%86%85%E8%81%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
@@ -36,15 +51,6 @@
     <lastmod>2024-04-21T21:04:19+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/categories/chaoticsystems/</loc>
-    <lastmod>2024-04-21T21:04:19+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-04-21T21:04:19+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
-    <lastmod>2024-04-21T21:04:19+08:00</lastmod>
-  </url><url>
-    <loc>https://peterliuzhi.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2024-04-21T21:04:19+08:00</lastmod>
   </url><url>
     <loc>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deepaco-neural-enhanced-ant-systems-for-combinatorial-optimization/</loc>

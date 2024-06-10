@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>后门攻击 | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</link>
+      <atom:link href="https://peterliuzhi.top/tags/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/index.xml" rel="self" type="application/rss+xml" />
+    <description>后门攻击</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 16 May 2024 18:39:59 +0800</lastBuildDate>
+    <item>
+      <title>【论文笔记】Backdooring Multimodal Learning</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdooring-multimodal-learning/</link>
+      <pubDate>Thu, 16 May 2024 18:39:59 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdooring-multimodal-learning/</guid>
+      
+      <description>【论文笔记】Backdooring Multimodal Learning</description>
+      
+    </item>
+    
+  </channel>
+</rss>
