@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>深度学习常见的公式（更新中） - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/atom-one-light.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="深度学习常见的公式（更新中）-P3troL1er的个人技术博客">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://peterliuzhi.top/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"深度学习常见的公式（更新中）",
+      "item":"https://peterliuzhi.top/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%AC%E5%BC%8F%E6%9B%B4%E6%96%B0%E4%B8%AD/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%AC%E5%BC%8F%E6%9B%B4%E6%96%B0%E4%B8%AD/"
+    },
+    "headline": "深度学习常见的公式（更新中） - P3troL1er 的个人博客","datePublished": "2024-07-10T15:42:16+08:00",
+    "dateModified": "2024-07-10T15:42:16+08:00",
+    "wordCount":  925 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "深度学习常见的公式（更新中）"
+}
+</script>
+<meta property="og:title" content="深度学习常见的公式（更新中） - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%AC%E5%BC%8F%E6%9B%B4%E6%96%B0%E4%B8%AD/" />
+
+
+
+<meta property="og:description" content="深度学习常见的公式（更新中）" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2024-07-10T15:42:16&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2024-07-10T15:42:16&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="杂谈" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/windows%E4%B8%8Bopengl%E5%AE%8C%E5%85%A8%E7%8B%AC%E7%AB%8B%E5%86%85%E8%81%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/neurips%E8%BF%91%E5%B9%B4%E5%85%B3%E4%BA%8Ebackdoorattack%E7%9A%84%E6%96%87%E7%AB%A0/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8python%E7%9A%84setup.py%E4%B8%AD%E8%B0%83%E7%94%A8cmake%E6%9E%84%E5%BB%BApython%E5%BA%93%E7%9A%84%E6%8F%92%E4%BB%B6/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85libjpeg/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/aisvm%E5%88%86%E7%B1%BB%E5%99%A8/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E6%89%93%E5%BC%80%E4%BA%86%E4%B8%80%E4%B8%AAlocalhost%E7%BD%91%E7%AB%99%E5%A6%82%E4%BD%95%E5%9C%A8%E6%9C%AC%E6%9C%BA%E6%9F%A5%E7%9C%8B/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">深度学习常见的公式（更新中）</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Wednesday, July 10, 2024</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共925字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/posts/" class="hover:text-eureka"
+          >posts</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="hover:text-eureka"
+          >杂谈</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%AC%E5%BC%8F%E6%9B%B4%E6%96%B0%E4%B8%AD/" id="ThisURL">https://peterliuzhi.top/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%AC%E5%BC%8F%E6%9B%B4%E6%96%B0%E4%B8%AD/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <blockquote>
+<p>之前突发奇想想要总结一下的，当时用了英文写，懒得翻译回来了</p>
+</blockquote>
+<h1 id="formula-cheatsheet">Formula Cheatsheet</h1>
+<h2 id="layer-normalization">Layer Normalization</h2>
+<p>$$
+\begin{aligned}
+\mu &amp;= \frac{1}{H}∑_{i=1}^{H}x_i \newline
+\sigma^2 &amp;= \frac{1}{H}∑_{i=1}^{H}(x_i-μ)^2 \newline
+\hat{x}_i &amp;= \frac{x_i - μ}{\sqrt{σ^2+ϵ}}\newline
+y_i &amp;= \gamma \hat{x}_i + \beta
+\end{aligned}
+$$</p>
+<h2 id="batch-normalization">Batch Normalization</h2>
+<p>$$
+\begin{aligned}
+\mu_{\mathcal{B}} &amp;= \frac{1}{m}∑_{i=1}^{m}x_i \newline
+\sigma_{\mathcal{B}}^2 &amp;= \frac{1}{m}∑_{i=1}^{m}(x_i-μ_{\mathcal{B}})^2 \newline
+\hat{x}<em>i &amp;= \frac{x_i - μ</em>{\mathcal{B}}}{\sqrt{σ_{\mathcal{B}}^2+ϵ}}\newline
+y_i &amp;= \gamma \hat{x}_i + \beta
+\end{aligned}
+$$</p>
+<h2 id="some-criteria">Some Criteria</h2>
+<h3 id="accuracy">Accuracy</h3>
+<p>$$
+ACC = \frac{TP + TN}{TP + TN + FP + FN}
+$$</p>
+<h3 id="precision">Precision</h3>
+<p>$$
+Precision = \frac{TP}{TP + FP}
+$$</p>
+<h3 id="recall">Recall</h3>
+<p>$$
+Recall = \frac{TP}{TP + FN}
+$$</p>
+<h3 id="f1-score">F1 Score</h3>
+<p>$$
+F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall}
+$$</p>
+<h2 id="l1-regularization-lasso-regression">L1 regularization (Lasso Regression)</h2>
+<p>$$
+L(\theta) = L_{origin}(\theta) + \lambda \sum_{j=1}^{n}\vert \theta_j \vert
+$$</p>
+<h2 id="l2-regularization-ridge-regression">L2 regularization (Ridge Regression)</h2>
+<p>$$
+L(\theta) = L_{origin}(\theta) + \lambda \sum_{j=1}^{n}\theta_j^2
+$$</p>
+<h2 id="bayes-theorem">Bayes&rsquo; theorem</h2>
+<p>$$
+P(A|B) = \frac{P(B|A)P(A)}{P(B)}
+$$</p>
+<h2 id="naive-bayes-model">Naive Bayes Model</h2>
+<p>$$
+\begin{aligned}
+P(C|X) &amp;\propto P(C) \prod_{i=1}^{n}P(x_i) \newline
+\hat{C} &amp; = \text{argmax}_C P(C|X)
+\end{aligned}
+$$</p>
+<h2 id="softmax">Softmax</h2>
+<p>The softmax function can transform logits into probability vector</p>
+<p>$$
+\sigma(z_i) = \frac{e^{z_i}}{\sum_{j=1}^K e^{z_j}}
+$$</p>
+<p>and its gradient can be computed as</p>
+<p>$$
+\frac{\partial \sigma(z_i)}{\partial z_j} = \left{\begin{matrix}
+\sigma(z_i)(1 - \sigma(z_i)) \text{ when } i = j \newline
+-\sigma(z_i)\sigma(z_j) \text{ when } i \ne j
+\end{matrix}\right.
+$$</p>
+<p>when $z_i \to \pm\infty$, $e^{z_i} \to +\infty$, $\sigma(z_i) \to 1$ and $\sigma(z_j) \to 0 (i \ne j)$</p>
+<p>$$
+\sigma(z_i)(1 - \sigma(z_i)) \to 0 \text{ when } i = j \newline
+-\sigma(z_i)\sigma(z_j) \to 0 \text{ when } i \ne j
+$$</p>
+<h2 id="convolution">Convolution</h2>
+<h3 id="one-dimension">one dimension</h3>
+<p>$$
+(f \ast g)(t) = \int_{-\infty}^{\infty} f(\tau)g(t-\tau)
+$$</p>
+<h3 id="two-dimension">two dimension</h3>
+<p>$$
+(f \ast g)(i, j) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f(i-m, j-n)g(m, n)
+$$</p>
+<h3 id="gradient">gradient</h3>
+<p>For input,</p>
+<p>$$
+\frac{\partial L}{\partial X} = \frac{\partial L}{\partial Y} \ast k_{rot}
+$$ where $k_{rot}(i, j) = k(-i, -j)$</p>
+<p>For kernel,</p>
+<p>$$
+\frac{\partial L}{\partial k} = \frac{\partial L}{\partial Y} \ast X_{pad}
+$$ where $X_{pad}$ is $X$ with appropriate padding.</p>
+<h2 id="activation-functions">Activation functions</h2>
+<h3 id="relu">ReLU</h3>
+<p>$$
+ReLU(x) = \max(0, x)
+$$</p>
+<h3 id="leaky-relu">Leaky ReLU</h3>
+<p>$$
+LeakyReLU(x) = \left{\begin{matrix}
+x, x &gt; 0 \newline
+\alpha x, x &lt; 0
+\end{matrix}\right.
+$$ where $\alpha$ is a small parameter which can be set as $0.01$</p>
+<h3 id="sigmoid">Sigmoid</h3>
+<p>$$
+f(x) = \frac{1}{1 + e^{-x}}
+$$</p>
+<h3 id="tanh">Tanh</h3>
+<p>$$
+\tanh(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}}
+$$</p>
+<h2 id="loss-functions">Loss functions</h2>
+<h3 id="mse">MSE</h3>
+<p>$$
+MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2
+$$</p>
+<h3 id="cross-entropy-loss">Cross-Entropy Loss</h3>
+<p>$$
+CE = -\frac{1}{n}\sum_{i=1}^n[y_i\log(\hat{y}_i) + (1-y_i)log(1-\hat{y}_i)]
+$$</p>
+<h3 id="hinge-loss-for-svm">Hinge Loss (For SVM)</h3>
+<p>$$
+HingeLoss = \sum_{i=1}^n\max(0, 1-y_i \cdot \hat{y}_i) \ \  (y_i = 1, -1)
+$$</p>
+<h3 id="kl-divergence">KL divergence</h3>
+<p>$$
+D_{KL}(P || Q) = -\mathbb{E}_{P(X)}[\log \frac{Q(X)}{P(X)}] \ge 0
+$$</p>
+<p>Its non-negativity can be prooved through <a href="https://en.wikipedia.org/wiki/Gibbs%27_inequality">Gibbs&rsquo; inequality</a>. However, the proof of Gibbs&rsquo; inequality is also the proof of the aforementioned non-negativity.</p>
+<h2 id="svm">SVM</h2>
+<h3 id="linear">Linear</h3>
+<h4 id="hard-margin">Hard margin</h4>
+<p>$$
+\min_{\mathbf{w}, b} \left| \mathbf{w} \right|_2^2 \newline
+s.t. y_i(\mathbf{w}x_i-b) \ge 1
+$$</p>
+<h4 id="soft-margin-for-data-can-not-be-linearly-seperated">Soft margin (For data can not be linearly seperated)</h4>
+<p>With $\zeta$ denoting Hinge Loss,</p>
+<p>$$
+\min_{\mathbf{w}, b} \left| \mathbf{w} \right|_2^2 + C\zeta \newline
+s.t. y_i(\mathbf{w}x_i-b) \ge 1 - \zeta
+$$</p>
+<h3 id="non-linear-kernel-function-trick">Non-Linear (Kernel function trick)</h3>
+<p>with the usage of kernel function, the function of SVM are changed into</p>
+<p>$$
+f(x) = sign(\sum_{i=1}^n\alpha_iy_iK(x_i, \mathbf{x}) + b)
+$$ where $\alpha_i$ is Lagrange multiplier and $\alpha, b$ can get from the derivation of dual problem</p>
+<h4 id="polynomialhomogeneous">Polynomial(homogeneous)</h4>
+<p>$$
+K(x_i, x_j) = (x_i \cdot c_j)^d
+$$</p>
+<h4 id="polynomialinhomogeneous">Polynomial(inhomogeneous)</h4>
+<p>$$
+K(x_i, x_j) = (x_i \cdot c_j + r)^d
+$$</p>
+<h4 id="gaussian-radial-basis-function">Gaussian radial basis function</h4>
+<p>$$
+K(x_i, x_j) = exp(-\gamma \left| x_i - x_j \right|^2)
+$$</p>
+<h2 id="transformer">Transformer</h2>
+<h3 id="self-attention">Self-Attention</h3>
+<p>$$
+Attention(Q, K, V) = Softmax(\frac{QK^T}{\sqrt{d_k}}) V
+$$</p>
+<h3 id="multihead-attention">Multihead Attention</h3>
+<p>$$
+\begin{align*}
+MultiHead(Q, K, V) = concat(head_1, \ldots, head_h)W^O \newline
+where \  head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
+\end{align*}
+$$</p>
+<h3 id="position-embedding">Position Embedding</h3>
+<p>$$
+PE(pos, 2i) = \sin(pos/10000^{2i/d_{model}}) \newline
+PE(pos, 2i+1) = \cos(pos/10000^{2i/d_{model}})
+$$</p>
+<p>and in practice, $pos/10000^{2i/d_{model}}$ can be optimized into</p>
+<p>$$
+\exp(-\log{10000} \cdot 2i/d_{model}) = e^{-{\log{10000}}^{2i/d_{model}}} = (1/10000)^{2i/d_{model}}
+$$</p>
+<h3 id="position-wise-feed-forward-networks">Position-wise Feed-Forward Networks</h3>
+<p>This is the full-connected layer used in transformer</p>
+<p>$$
+FFN(x) = max(0, xW_1 + b_1)W_2 + b_2
+$$
+and it can alse be described as two convolutions with kernel size 1.</p>
+<h2 id="gan">GAN</h2>
+<p>$$
+\min_G\max_D V(D, G) = \mathbb{E}<em>{\mathbf{x} \sim P</em>{data}(\mathbf{x})}[\log D(\mathbf{x})] + \mathbb{E}<em>{\mathbf{z} \sim P</em>{z}(\mathbf{x})}[\log D(G(\mathbf{z}))]
+$$</p>
+<p>Note that here we use cross-entropy loss.</p>
+<p>See more in <a href="https://jaketae.github.io/study/gan-math/">https://jaketae.github.io/study/gan-math/</a></p>
+<h2 id="diffusion-model">Diffusion Model</h2>
+<p>See more in <a href="https://www.assemblyai.com/blog/diffusion-models-for-machine-learning-introduction/">https://www.assemblyai.com/blog/diffusion-models-for-machine-learning-introduction/</a></p>
+<h3 id="forward-process">Forward Process</h3>
+<p>$$
+q(x_t|x_{t-1}) = \mathcal{N}(x_t;\sqrt{1-\beta_t}x_{t-1}, \beta_t\mathbf{I})
+$$</p>
+<h3 id="reverse-process">Reverse Process</h3>
+<p>$$
+p_\theta(x_{t-1}|x_t) = \mathcal{N}(x_{t-1};\mu_\theta(x_t, t), \Sigma_\theta(x_t, t))
+$$</p>
+<h3 id="lossvlb">Loss(VLB)</h3>
+<p>$$
+L = \mathbb{E}<em>{q(x</em>{0:T})}[\log{\frac{q(x_{1:T}|x_0)}{p_{\theta}(x_{0:T})}}]
+$$</p>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 深度学习常见的公式（更新中） ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3a%2f%2fpeterliuzhi.top%2fposts%2f%25E6%25B7%25B1%25E5%25BA%25A6%25E5%25AD%25A6%25E4%25B9%25A0%25E5%25B8%25B8%25E8%25A7%2581%25E7%259A%2584%25E5%2585%25AC%25E5%25BC%258F%25E6%259B%25B4%25E6%2596%25B0%25E4%25B8%25AD%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#杂谈</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e5%b8%b8%e8%a7%81%e7%9a%84%e5%85%ac%e5%bc%8f%ef%bc%88%e6%9b%b4%e6%96%b0%e4%b8%ad%ef%bc%89.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/" class="block">大模型笔记</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#formula-cheatsheet">Formula Cheatsheet</a>
+      <ul>
+        <li><a href="#layer-normalization">Layer Normalization</a></li>
+        <li><a href="#batch-normalization">Batch Normalization</a></li>
+        <li><a href="#some-criteria">Some Criteria</a>
+          <ul>
+            <li><a href="#accuracy">Accuracy</a></li>
+            <li><a href="#precision">Precision</a></li>
+            <li><a href="#recall">Recall</a></li>
+            <li><a href="#f1-score">F1 Score</a></li>
+          </ul>
+        </li>
+        <li><a href="#l1-regularization-lasso-regression">L1 regularization (Lasso Regression)</a></li>
+        <li><a href="#l2-regularization-ridge-regression">L2 regularization (Ridge Regression)</a></li>
+        <li><a href="#bayes-theorem">Bayes&rsquo; theorem</a></li>
+        <li><a href="#naive-bayes-model">Naive Bayes Model</a></li>
+        <li><a href="#softmax">Softmax</a></li>
+        <li><a href="#convolution">Convolution</a>
+          <ul>
+            <li><a href="#one-dimension">one dimension</a></li>
+            <li><a href="#two-dimension">two dimension</a></li>
+            <li><a href="#gradient">gradient</a></li>
+          </ul>
+        </li>
+        <li><a href="#activation-functions">Activation functions</a>
+          <ul>
+            <li><a href="#relu">ReLU</a></li>
+            <li><a href="#leaky-relu">Leaky ReLU</a></li>
+            <li><a href="#sigmoid">Sigmoid</a></li>
+            <li><a href="#tanh">Tanh</a></li>
+          </ul>
+        </li>
+        <li><a href="#loss-functions">Loss functions</a>
+          <ul>
+            <li><a href="#mse">MSE</a></li>
+            <li><a href="#cross-entropy-loss">Cross-Entropy Loss</a></li>
+            <li><a href="#hinge-loss-for-svm">Hinge Loss (For SVM)</a></li>
+            <li><a href="#kl-divergence">KL divergence</a></li>
+          </ul>
+        </li>
+        <li><a href="#svm">SVM</a>
+          <ul>
+            <li><a href="#linear">Linear</a>
+              <ul>
+                <li><a href="#hard-margin">Hard margin</a></li>
+                <li><a href="#soft-margin-for-data-can-not-be-linearly-seperated">Soft margin (For data can not be linearly seperated)</a></li>
+              </ul>
+            </li>
+            <li><a href="#non-linear-kernel-function-trick">Non-Linear (Kernel function trick)</a>
+              <ul>
+                <li><a href="#polynomialhomogeneous">Polynomial(homogeneous)</a></li>
+                <li><a href="#polynomialinhomogeneous">Polynomial(inhomogeneous)</a></li>
+                <li><a href="#gaussian-radial-basis-function">Gaussian radial basis function</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#transformer">Transformer</a>
+          <ul>
+            <li><a href="#self-attention">Self-Attention</a></li>
+            <li><a href="#multihead-attention">Multihead Attention</a></li>
+            <li><a href="#position-embedding">Position Embedding</a></li>
+            <li><a href="#position-wise-feed-forward-networks">Position-wise Feed-Forward Networks</a></li>
+          </ul>
+        </li>
+        <li><a href="#gan">GAN</a></li>
+        <li><a href="#diffusion-model">Diffusion Model</a>
+          <ul>
+            <li><a href="#forward-process">Forward Process</a></li>
+            <li><a href="#reverse-process">Reverse Process</a></li>
+            <li><a href="#lossvlb">Loss(VLB)</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/posts/windows%E4%B8%8Bopengl%E5%AE%8C%E5%85%A8%E7%8B%AC%E7%AB%8B%E5%86%85%E8%81%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="no-underline">Windows下OpenGL完全独立内联环境配置（Mingw/Cmake/Ninja）</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/neurips%E8%BF%91%E5%B9%B4%E5%85%B3%E4%BA%8Ebackdoorattack%E7%9A%84%E6%96%87%E7%AB%A0/" class="no-underline">NeurIPS近年关于BackdoorAttack的文章</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8python%E7%9A%84setup.py%E4%B8%AD%E8%B0%83%E7%94%A8cmake%E6%9E%84%E5%BB%BApython%E5%BA%93%E7%9A%84%E6%8F%92%E4%BB%B6/" class="no-underline">如何在python的setup.py中调用cmake构建python库的插件</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85libjpeg/" class="no-underline">Linux下如何编译安装libjpeg</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/aisvm%E5%88%86%E7%B1%BB%E5%99%A8/" class="no-underline">【AI】SVM分类器</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E6%89%93%E5%BC%80%E4%BA%86%E4%B8%80%E4%B8%AAlocalhost%E7%BD%91%E7%AB%99%E5%A6%82%E4%BD%95%E5%9C%A8%E6%9C%AC%E6%9C%BA%E6%9F%A5%E7%9C%8B/" class="no-underline">在服务器上打开了一个localhost网站/服务，如何在本机查看？</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%AC%E5%BC%8F%E6%9B%B4%E6%96%B0%E4%B8%AD\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>

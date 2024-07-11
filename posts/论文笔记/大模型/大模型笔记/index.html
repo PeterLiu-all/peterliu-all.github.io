@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>大模型笔记 - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/atom-one-light.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="大模型笔记-P3troL1er的个人技术博客">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://peterliuzhi.top/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"大模型笔记",
+      "item":"https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/"
+    },
+    "headline": "大模型笔记 - P3troL1er 的个人博客","datePublished": "2024-07-08T10:20:56+08:00",
+    "dateModified": "2024-07-08T10:20:56+08:00",
+    "wordCount":  4755 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "大模型笔记"
+}
+</script>
+<meta property="og:title" content="大模型笔记 - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/" />
+
+
+
+<meta property="og:description" content="大模型笔记" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2024-07-08T10:20:56&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2024-07-08T10:20:56&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="人工智能" />
+
+<meta property="article:tag" content="深度学习" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdooring-multimodal-learning/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/chaoticsystems/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0chaotic-weights-a-novel-approach-to-protect-intellectual-property-of-deep-neural-networks/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deepaco-neural-enhanced-ant-systems-for-combinatorial-optimization/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/" />
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">大模型笔记</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Monday, July 8, 2024</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共4755字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>10分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="hover:text-eureka"
+          >大模型</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="hover:text-eureka"
+          >论文笔记</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="hover:text-eureka"
+          >人工智能</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="hover:text-eureka"
+          >深度学习</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/" id="ThisURL">https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <h1 id="transformer">Transformer</h1>
+<h2 id="方法">方法</h2>
+<h3 id="自注意力机制self-attention">自注意力机制(self-attention)</h3>
+<p>$$
+\text{Attention}(Q,K,V) = \text{Softmax}(\frac{QK^T}{\sqrt{d_K}})V
+$$</p>
+<p>其中，$Q$代表查询，$K$代表键，$V$代表值
+
+        <a data-fancybox="gallery" href="/image/ModalNet-19.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/ModalNet-19.png" />
+        
+        </a>
+    </p>
+<p>对于多头注意力来说，其实就是对$Q,K,V$做了不同方向的线性变换</p>
+<p>$$
+\begin{align*}
+\text{MultiheadAttention}(Q,K,V) &amp;= \text{Concat}(h_1, h_2, h_3, \ldots, h_i)W^O \newline
+\text{where } h_i &amp;= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+\end{align*}
+$$</p>
+<p>
+        <a data-fancybox="gallery" href="/image/ModalNet-20.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/ModalNet-20.png" />
+        
+        </a>
+    </p>
+<h3 id="position-wise-feed-forward-networksffn">Position-wise Feed-Forward Networks(FFN)</h3>
+<p>FFN实际上就是一个双层的感知机，用于对语句逐位置进行变换（transformer用于在语句内部交换信息）</p>
+<p>$$
+\mathrm{FFN}(x)=\max(0, xW_1 + b_1) W_2 + b_2
+$$</p>
+<h3 id="位置编码position-encoding">位置编码(Position Encoding)</h3>
+<p>transformer使用周期函数进行位置编码的原因是：</p>
+<ol>
+<li>如果使用归一化，对于不同长度的语句，处于相同位置的字词会有不同的值</li>
+<li>如果直接使用索引，那么编码是没有上界的</li>
+</ol>
+<p>因此，transformer使用sin和cos函数进行位置编码，以保证：</p>
+<ol>
+<li>一个位置(pos)编码后可以是另一个位置的线性变换</li>
+<li>对于每个维度($i$)都有一个不同的sin波形与之对应</li>
+</ol>
+<p>$$PE_{(pos,2i)} = \sin(pos / 10000^{2i/d_{\text{model}}})$$
+$$PE_{(pos,2i+1)} = \cos(pos / 10000^{2i/d_{\text{model}}})$$</p>
+<p>在实际使用中， $1/10000^{2i/d_{\text{model}}}$ 可以被优化为</p>
+<p>$$
+\exp(-\log{10000} \cdot 2i/d_{\text{model}}) = e^{-{\log{10000}}^{2i/d_{\text{model}}}} = (1/10000)^{2i/d_{\text{model}}}
+$$</p>
+<h2 id="实验">实验</h2>
+<p>总的来说是Encoder-Decoder模型，下游任务会接一个Generator</p>
+<p>对于Encoder而言，总的流程是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Encoder</span><span class="p">(</span><span class="n">SourceEmbedding</span><span class="p">(</span><span class="n">source</span><span class="p">),</span> <span class="n">SourceMask</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 具体而言，分为两次SublayerConnection</span>
+</span></span><span class="line"><span class="cl"><span class="n">Original_X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">=</span> <span class="n">SourceEmbedding</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 第一次</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. 对嵌入向量转换后的语句进行层归一化</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">LayerNormalization</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 对语句计算Attention(可以实现为multihead的)</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">Attention</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">SourceMask</span><span class="p">)</span> <span class="c1"># 其中Q,K,V全是X</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 对语句进行dropout</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 将语句输入残差层</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">Original_X</span> <span class="o">+</span> <span class="n">X</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 第二次</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 不同的只有第二步</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 对语句计算FFN</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">FFN</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></span></code></pre></div><p>对于Decoder而言：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># target是需要补全的语句，比如&#34;你好，我叫&#34;这个语句</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># memory是Encoder的输出</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># SourceMask是对target的Attention使用的</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TargetMask是对memory的Attention使用的</span>
+</span></span><span class="line"><span class="cl"><span class="n">Decoder</span><span class="p">(</span><span class="n">TargetEmbedding</span><span class="p">(</span><span class="n">target</span><span class="p">),</span> <span class="n">memory</span><span class="p">,</span> <span class="n">SourceMask</span><span class="p">,</span> <span class="n">TargetMask</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 具体而言，分为三次SublayerConnection</span>
+</span></span><span class="line"><span class="cl"><span class="n">Original_X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">=</span> <span class="n">TargetEmbedding</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 第一次</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. 对嵌入向量转换后的语句进行层归一化</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">LayerNormalization</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 对语句计算Attention(可以实现为multihead的)</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">Attention</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">SourceMask</span><span class="p">)</span> <span class="c1"># 其中Q,K,V全是X</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 对语句进行dropout</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 将语句输入残差层</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">Original_X</span> <span class="o">+</span> <span class="n">X</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 第二次</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 不同的只有第二步</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 对语句计算Attention(可以实现为multihead的)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 这里使用了memory参数，用于结合Encoder的信息</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">Attention</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">memory</span><span class="p">,</span><span class="n">memory</span><span class="p">,</span><span class="n">SourceMask</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 第三次</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 不同的只有第二步</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 对语句计算FFN</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">FFN</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p>对于Decoder而言，可以使用以下mask来让Attention注意到特定的列
+
+        <a data-fancybox="gallery" href="/image/visualization.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/visualization.png" />
+        
+        </a>
+    </p>
+</blockquote>
+<p>对于Generator，它使用Decoder的最后一个输出用于预测</p>
+<blockquote>
+<p>由于Attention机制<strong>会在整个语句中传播信息</strong>，所以最后一个token<strong>已经包含了之前生成的所有上下文信息</strong>，并且为了保证后续生成的token的连续性及计算的精简，就只需要取最后一个token</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 假设嵌入向量的维度是k，输入的语句长度为n</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 那么X的维度就是nxk，这里就只取最后一个</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 也就是输入Generator的维度为1xk</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">Generator</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 之后，这个y会拼接到Decoder的target后面，从而进行连续的预测</span>
+</span></span></code></pre></div><h1 id="bertbidirectional-encoder-representations-from-transformers">BERT(Bidirectional Encoder Representations from Transformers)</h1>
+<p>BERT是基于transformer的NLP模型，不同的是：</p>
+<ol>
+<li>BERT只使用了transformer的Encoder部分</li>
+<li>BERT增加了segment embedding</li>
+</ol>
+<h2 id="segment-embedding">Segment Embedding</h2>
+<p>Segment Embedding用于分析两个句子之间是否具有语义相似性，对一个句子对分别编码为0和1</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240708150013.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240708150013.png" />
+        
+        </a>
+    </p>
+<h2 id="具体架构">具体架构</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 首先对句子进行三次嵌入向量转换并dropout</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">TokenEmbedding</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="o">+</span> <span class="n">PositionEmbedding</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="o">+</span> <span class="n">SegmentEmbedding</span><span class="p">(</span><span class="n">segment_label</span><span class="p">)</span> <span class="c1"># 其中如果需要进行语义分析，就要额外提供segment_label，或者全设为0</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 然后输入多层Transformer层</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 其中Transformer层就是前文所述的Encoder</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="n">X</span> <span class="o">=</span> <span class="n">Transformer</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">X</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 下游任务有两个：</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. Masked LM </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. Next Sentence Prediction (NSP)</span>
+</span></span><span class="line"><span class="cl"><span class="n">MaskedLM_Results</span> <span class="o">=</span> <span class="n">Softmax</span><span class="p">(</span><span class="n">Linear</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">NSP_Results</span> <span class="o">=</span> <span class="n">Softmax</span><span class="p">(</span><span class="n">Linear</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+</span></span></code></pre></div><h1 id="alberta-lite-bert">Albert(A lite BERT)</h1>
+<p><a href="https://towardsdatascience.com/albert-22983090d062">Large Language Models, ALBERT — A Lite BERT for Self-supervised Learning | by Vyacheslav Efimov | Towards Data Science</a></p>
+<p>看名字就可以知道，这是轻量级的BERT，但是实现了比BERT-large还要好的性能</p>
+<h2 id="factorized-parameter-embedding-因式分解参数嵌入">Factorized Parameter Embedding 因式分解参数嵌入</h2>
+<p>假设我们的单词表一共有V个token，而每个单词被编码成H维度的向量，那我们的嵌入矩阵就会是VxH维的，这个矩阵实在是太大了。比如对于一个具有30k个token的单词表，每个token被编码成768维的向量，最终的矩阵就会是23M大小的</p>
+<p>Albert的一个主要简化就是将VxH的矩阵分解为VxE的矩阵和ExH的矩阵相乘（注意这个分解可能会有精度损失，因此这个简化可能是有损的），当E &laquo; H的时候，这个简化就会非常有效</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240710174521.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240710174521.png" />
+        
+        </a>
+    </p>
+<h2 id="cross-layer-parameter-sharing-跨层参数共享">Cross-layer Parameter Sharing 跨层参数共享</h2>
+<p>简而言之，就是共享同类层的参数从而加快计算，如下图所示，Albert进行了all parameters sharing</p>
+<p>也就是说，一共只更新一层transformer的参数，但是进行多次计算（性能下降但是压缩率最高）</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240710174632.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240710174632.png" />
+        
+        </a>
+    </p>
+<p>参见<a href="https://blog.csdn.net/qq_51556906/article/details/125028693">初探ALBERT：参数共享的改进bert_albert 参数共享-CSDN博客</a></p>
+<h2 id="sentence-order-prediction-语句顺序预测">Sentence Order Prediction 语句顺序预测</h2>
+<p>BERT中有两个任务，前面已经说过，但是大量的研究证明NSP任务因为比较简单，导致优化效率不高</p>
+<p>因此Albert使用了SOP任务</p>
+<p>简而言之，就是对一对句子，判断他们的顺序是否正确。这一对句子从同一篇文章中取得，positive的样本就是顺序正确的，negative的样本就是顺序倒反的</p>
+<p>下图对比了BERT的NSP任务和Albert的SOP任务</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240710175804.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240710175804.png" />
+        
+        </a>
+    </p>
+<h2 id="性能对比">性能对比</h2>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240710175820.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240710175820.png" />
+        
+        </a>
+    </p>
+<p>可以看到，虽然Albert进行了参数压缩，而且取得了较好的结果，但是这是以时间成本为代价的，因此实际使用时仍需斟酌</p>
+<h1 id="ragretrieval-augmented-generation">RAG(Retrieval Augmented Generation)</h1>
+<p>RAG就是大模型的检索增强技术，意在为大模型的输出增加数据库支持</p>
+<p>参见<a href="https://zhuanlan.zhihu.com/p/675509396">zhuanlan.zhihu.com/p/675509396</a></p>
+<h2 id="使用rag的原因">使用RAG的原因</h2>
+<ol>
+<li>大模型知识的局限性</li>
+<li>大模型的幻觉问题</li>
+<li>大模型回答的数据安全性</li>
+</ol>
+<h2 id="原理">原理</h2>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240710100301.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240710100301.png" />
+        
+        </a>
+    </p>
+<p>大致的原理就是基于用户的问题，在数据库中查找相关度较高的资料，注入到prompt中发送给大模型</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240710100650.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240710100650.png" />
+        
+        </a>
+    </p>
+<p>这是基本的原理，除了这些之外还有很多相关的技术</p>
+<h1 id="llama">LLaMA</h1>
+<p><a href="https://medium.com/@nishantbhansali80/the-annotated-llama-fa183943b34b">The Annotated LLaMA. Dissecting the code for the LLaMA… | by Nishant Bhansali | Medium</a></p>
+<h2 id="主要改变">主要改变</h2>
+<h3 id="使用rmsnorm代替layernorm">使用RMSNorm代替LayerNorm</h3>
+<p>RMSNorm认为<code>re-centering invariance property</code>是不必要的，只用保留<code>re-scaling invariance property</code>，这一点从公式上也能看出来</p>
+<p>LayerNorm的公式：</p>
+<p>$$
+\begin{align*}
+\mu &amp;= \frac{1}{H}∑_{i=1}^{H}x_i \newline
+\sigma^2 &amp;= \frac{1}{H}∑_{i=1}^{H}(x_i-μ)^2 \newline
+\hat{x}_i &amp;= \frac{x_i - μ}{\sqrt{σ^2+ϵ}}\newline
+y_i &amp;= \gamma \hat{x}_i + \beta
+\end{align*}
+$$</p>
+<p>RMSNorm的公式：</p>
+<p>$$
+\begin{align*}
+\text{RMS}(x) &amp;= \sqrt{\frac{1}{H}∑_{i=1}^{H}x_i^2} \newline
+\hat{x}_i &amp;= \frac{x_i}{\text{RMS}(x)+ϵ}\newline
+y_i &amp;= \gamma \hat{x}_i + \beta
+\end{align*}
+$$</p>
+<p>RMSNorm去除了均值的使用，也就是不会将整个数据中心化</p>
+<h4 id="rmsnorm的好处">RMSNorm的好处</h4>
+<ol>
+<li>提高训练稳定性</li>
+<li>无需均值计算</li>
+<li>适用于变长序列</li>
+<li>在训练和推理阶段的计算是一致的（不用使用训练时的均值和方差）</li>
+<li>更好的梯度流动（标准化让数据处于有效范围内）</li>
+</ol>
+<h4 id="其他norm">其他Norm</h4>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240709095127.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240709095127.png" />
+        
+        </a>
+    </p>
+<ul>
+<li>BatchNorm：batch方向做归一化，算NHW的均值，对小batchsize效果不好；BN主要缺点是对batchsize的大小比较敏感，由于每次计算均值和方差是在一个batch上，所以如果batchsize太小，则计算的均值、方差不足以代表整个数据分布</li>
+<li>LayerNorm：channel方向做归一化，算CHW的均值，主要对RNN作用明显；</li>
+<li>InstanceNorm：一个channel内做归一化，算HW的均值，用在风格化迁移；因为在图像风格化中，生成结果主要依赖于某个图像实例，所以对整个batch归一化不适合图像风格化中，因而对HW做归一化。可以加速模型收敛，并且保持每个图像实例之间的独立。</li>
+<li>GroupNorm：将channel方向分group，然后每个group内做归一化，算(C//G)HW的均值；这样与batchsize无关，不受其约束。</li>
+<li>SwitchableNorm是将BN、LN、IN结合，赋予权重，让网络自己去学习归一化层应该使用什么方法。</li>
+<li>参见<a href="https://blog.csdn.net/qinduohao333/article/details/131061240">RMSNorm论文阅读</a></li>
+</ul>
+<h3 id="旋转位置编码rotary-postional-embedding">旋转位置编码Rotary Postional Embedding</h3>
+<p>使用这个编码的一个核心idea是基于attention公式的——我们知道attention中涉及$Q$与$K$的内积，此时又如何导入语句的位置信息呢？于是，llama设想存在一个函数$g$，它以$Q_m$，$K_n$和两者之间的位置差$m-n$为输入，恒等于$&lt;f(Q_m, m), f(K_n, n)&gt;$，其中$f(\cdot)$是旋转位置编码。</p>
+<p>而论文中提供了一个符合的函数$g$，即</p>
+<p>$$
+\begin{align*}
+f(Q_m, m) &amp;= Q_m e^{im\theta} \newline
+f(K_n, n) &amp;= K_m e^{in\theta} \newline
+g(Q_m, K_n, m-n) &amp;= Re[Q_mK_n^Te^{i(m-n)\theta}] \newline
+&amp;= &lt;f(Q_m, m), f(K_n, n)&gt;
+\end{align*}
+$$</p>
+<p>其中$i$是虚数，$Re[\cdot]$代表取实部</p>
+<p>具体证明见<a href="https://zhuanlan.zhihu.com/p/642884818">zhuanlan.zhihu.com/p/642884818</a></p>
+<p>简要证明如下：</p>
+<p>左乘$e^{im\theta}$可以看作右乘一个旋转矩阵（由欧拉公式$e^{ix}=\cos{x} + i\sin{x}$得，具体证明略），则$f(Q_m, m) = R_aQ_m$，其中$R_a$是角度为$a$的旋转矩阵，同理$f(K_n, n) = R_bK_n$。</p>
+<p>因为旋转矩阵有如下性质：</p>
+<ol>
+<li>$R_a^T = R_{-a}$</li>
+<li>$R_aR_b = R_{a+b}$</li>
+</ol>
+<p>所以</p>
+<p>$$
+\begin{align*}
+&lt;f(Q_m, m), f(K_n, n)&gt; &amp;= R_aQ_mR_b^TK_n^T \newline
+&amp;= Q_mR_aR_{-b}K_n^T \newline
+&amp;= Q_mR_{a-b}K_n^T \newline
+&amp;= Q_mK_n^Te^{i(m-n)\theta} \newline
+&amp;= &lt;Q_m, R_{b-a}K_n&gt;
+\end{align*}
+$$</p>
+<p>只取实部是为了方便运算</p>
+<p>使用了旋转矩阵也是它被称为旋转位置编码的原因</p>
+<h3 id="swiglu的使用">SwiGLU的使用</h3>
+<p><a href="https://mingchao.wang/1fb1JNJ6/">GLU 和 SwiGLU</a></p>
+<h4 id="glugated-linear-unit">GLU(Gated Linear Unit)</h4>
+<p>GLU公式如下：</p>
+<p>$$
+\begin{align*}
+GLU(x) &amp;= A \circ \sigma(B) \newline
+&amp;=(W_1x+b_1) \circ \sigma(W_2x+b_2)
+\end{align*}
+$$</p>
+<p>其中$\circ$代表逐元素相乘（哈达玛积），$\sigma(\cdot)$是sigmoid函数</p>
+<p>$A,B$可以是两个独立的MLP后的结果，也可以是卷积后的结果</p>
+<h4 id="swiglu">SwiGLU</h4>
+<p>换个内部的激活函数而已</p>
+<p>$$
+\begin{align*}
+GLU(x) &amp;= A \circ \text{swish}(B) \newline
+&amp;=(W_1x+b_1) \circ \text{swish}(W_2x+b_2)
+\end{align*}
+$$</p>
+<p>其中，</p>
+<p>$$
+\text{swish}(x) = x *\sigma(x)
+$$</p>
+<h4 id="k--v-caching-键与值的缓存">K &amp; V caching 键与值的缓存</h4>
+<p>在LLaMA中，除了第一次计算，之后的每一次计算都只需要输入一个token</p>
+<blockquote>
+<p>比如，一个句子&quot;I have several&quot;，将这个句子输入LLaMA后，预测得到&quot;question&quot;，如果还需要接着预测，就只需要输入&quot;question&quot;就可以了，因为模型已经缓存了之前的句子的信息</p>
+</blockquote>
+<p>这是如何做到的呢？</p>
+<p>假设每个嵌入向量的维度为k，那么一个token的维度就是nxk，假设attention中Q,K,V的线性变换的权重w是kxz的，那么Q,K,V就会是nxz的</p>
+<p>而因为这n个token的计算（也就是Q的每行的计算）是独立的（Attention机制和后面的FFN），并且最后预测下一个token的时候只取处理后的最后一个token（原因在<a href="#Transformer">transformer那一节</a>讲过），所以其实在K,V保存了之前的上下文信息之后，Q不需要缓存，只取最后一项就好</p>
+<p>那么，每次输入的语句的维度就会是1xk的，计算大幅缩减</p>
+<blockquote>
+<p>每次计算时，K，V的过去值会被保存，下一次迭代的时候，<code>K = [K_old, K_new]</code>，<code>V = [V_old, V_new]</code></p>
+</blockquote>
+<p><a href="https://medium.com/@utsavtiwari9936/introduction-to-llama2-part-1-architectural-analysis-3e335e7b1104">Introduction to Llama2 : Part-1 Architectural Analysis | by Utsavtiwari | Medium</a></p>
+<h2 id="整体架构">整体架构</h2>
+<p><a href="https://blog.csdn.net/weixin_43508499/article/details/132554559">Llama模型结构解析（源码阅读）</a></p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240709181243.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240709181243.png" />
+        
+        </a>
+    </p>
+<h1 id="llama2">LLaMa2</h1>
+<p>和LLaMA的区别在于</p>
+<ol>
+<li>增加了40%的训练数据</li>
+<li>更长的上下文</li>
+<li>分组查询注意力机制（GQA, Grouped-Query Attention）</li>
+</ol>
+<h2 id="分组查询注意力机制gqa-grouped-query-attention">分组查询注意力机制（GQA, Grouped-Query Attention）</h2>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240711101553.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240711101553.png" />
+        
+        </a>
+    </p>
+<p>可以看到，GQA是一种折中，减少了K和V的数量由不至于过于极端</p>
+<blockquote>
+<p>注意，这里是对于multihead的优化，与K V caching是可以共存的</p>
+</blockquote>
+<h1 id="llama3">LLaMA3</h1>
+<blockquote>
+<p>LLaMA3是一个比较小的模型（相对于GPT-4），但是使用了巨量的数据集进行训练，即便如此，Meta仍称LLaMA3还没有在标准意义上收敛，性能还待改善</p>
+</blockquote>
+<p>变化如下：</p>
+<ol>
+<li>更大的数据集</li>
+<li>更长的上下文</li>
+<li>词汇量更大的tokenizer（sentencepiece &ndash;&gt; tiktoken）</li>
+<li>更长的序列长度</li>
+<li>更好的并行化</li>
+<li><a href="https://wiki.mbalib.com/wiki/%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83#google_vignette">监督微调（SFT）</a>、<a href="https://zhuanlan.zhihu.com/p/649731916">拒绝采样</a>、<a href="https://blog.csdn.net/u014386899/article/details/136474215">近端策略优化（PPO）</a>和<a href="https://www.cnblogs.com/lemonzhang/p/17910358.html">直接策略优化 （DPO）</a>结合的微调方法</li>
+</ol>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 大模型笔记 ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3a%2f%2fpeterliuzhi.top%2fposts%2f%25E8%25AE%25BA%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2f%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%2f%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E7%25AC%2594%25E8%25AE%25B0%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#人工智能</a>
+    
+    <a href="https://peterliuzhi.top/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#深度学习</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0/%e5%a4%a7%e6%a8%a1%e5%9e%8b/%e5%a4%a7%e6%a8%a1%e5%9e%8b%e7%ac%94%e8%ae%b0.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%AC%E5%BC%8F%E6%9B%B4%E6%96%B0%E4%B8%AD/" class="block">深度学习常见的公式（更新中）</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdooring-multimodal-learning/" class="block">【论文笔记】Backdooring Multimodal Learning</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#transformer">Transformer</a>
+      <ul>
+        <li><a href="#方法">方法</a>
+          <ul>
+            <li><a href="#自注意力机制self-attention">自注意力机制(self-attention)</a></li>
+            <li><a href="#position-wise-feed-forward-networksffn">Position-wise Feed-Forward Networks(FFN)</a></li>
+            <li><a href="#位置编码position-encoding">位置编码(Position Encoding)</a></li>
+          </ul>
+        </li>
+        <li><a href="#实验">实验</a></li>
+      </ul>
+    </li>
+    <li><a href="#bertbidirectional-encoder-representations-from-transformers">BERT(Bidirectional Encoder Representations from Transformers)</a>
+      <ul>
+        <li><a href="#segment-embedding">Segment Embedding</a></li>
+        <li><a href="#具体架构">具体架构</a></li>
+      </ul>
+    </li>
+    <li><a href="#alberta-lite-bert">Albert(A lite BERT)</a>
+      <ul>
+        <li><a href="#factorized-parameter-embedding-因式分解参数嵌入">Factorized Parameter Embedding 因式分解参数嵌入</a></li>
+        <li><a href="#cross-layer-parameter-sharing-跨层参数共享">Cross-layer Parameter Sharing 跨层参数共享</a></li>
+        <li><a href="#sentence-order-prediction-语句顺序预测">Sentence Order Prediction 语句顺序预测</a></li>
+        <li><a href="#性能对比">性能对比</a></li>
+      </ul>
+    </li>
+    <li><a href="#ragretrieval-augmented-generation">RAG(Retrieval Augmented Generation)</a>
+      <ul>
+        <li><a href="#使用rag的原因">使用RAG的原因</a></li>
+        <li><a href="#原理">原理</a></li>
+      </ul>
+    </li>
+    <li><a href="#llama">LLaMA</a>
+      <ul>
+        <li><a href="#主要改变">主要改变</a>
+          <ul>
+            <li><a href="#使用rmsnorm代替layernorm">使用RMSNorm代替LayerNorm</a>
+              <ul>
+                <li><a href="#rmsnorm的好处">RMSNorm的好处</a></li>
+                <li><a href="#其他norm">其他Norm</a></li>
+              </ul>
+            </li>
+            <li><a href="#旋转位置编码rotary-postional-embedding">旋转位置编码Rotary Postional Embedding</a></li>
+            <li><a href="#swiglu的使用">SwiGLU的使用</a>
+              <ul>
+                <li><a href="#glugated-linear-unit">GLU(Gated Linear Unit)</a></li>
+                <li><a href="#swiglu">SwiGLU</a></li>
+                <li><a href="#k--v-caching-键与值的缓存">K &amp; V caching 键与值的缓存</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#整体架构">整体架构</a></li>
+      </ul>
+    </li>
+    <li><a href="#llama2">LLaMa2</a>
+      <ul>
+        <li><a href="#分组查询注意力机制gqa-grouped-query-attention">分组查询注意力机制（GQA, Grouped-Query Attention）</a></li>
+      </ul>
+    </li>
+    <li><a href="#llama3">LLaMA3</a></li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdooring-multimodal-learning/" class="no-underline">【论文笔记】Backdooring Multimodal Learning</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/chaoticsystems/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0chaotic-weights-a-novel-approach-to-protect-intellectual-property-of-deep-neural-networks/" class="no-underline">【论文笔记】Chaotic Weights： A Novel Approach to Protect Intellectual Property of Deep Neural Networks</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deepaco-neural-enhanced-ant-systems-for-combinatorial-optimization/" class="no-underline">【论文笔记】DeepACO Neural-enhanced Ant Systems for Combinatorial Optimization</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/" class="no-underline">【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/" class="no-underline">【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0\/%E5%A4%A7%E6%A8%A1%E5%9E%8B\/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>
