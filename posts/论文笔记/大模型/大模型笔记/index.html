@@ -305,7 +305,7 @@ div#nav::-webkit-scrollbar {
     },
     "headline": "大模型笔记 - P3troL1er 的个人博客","datePublished": "2024-07-08T10:20:56+08:00",
     "dateModified": "2024-07-08T10:20:56+08:00",
-    "wordCount":  4755 ,
+    "wordCount":  4779 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -537,7 +537,7 @@ div#nav::-webkit-scrollbar {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共4755字</span>
+    <span>本文共4779字</span>
   </div>
 
   <div class="me-6 my-2">
@@ -740,8 +740,8 @@ $$</p>
 </span></span><span class="line"><span class="cl">	<span class="n">X</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 下游任务有两个：</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 1. Masked LM </span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 2. Next Sentence Prediction (NSP)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. Masked LM 就是完形填空</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. Next Sentence Prediction (NSP) 就是预测某一句是否是另一句话的下一句</span>
 </span></span><span class="line"><span class="cl"><span class="n">MaskedLM_Results</span> <span class="o">=</span> <span class="n">Softmax</span><span class="p">(</span><span class="n">Linear</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="n">NSP_Results</span> <span class="o">=</span> <span class="n">Softmax</span><span class="p">(</span><span class="n">Linear</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
 </span></span></code></pre></div><h1 id="alberta-lite-bert">Albert(A lite BERT)</h1>

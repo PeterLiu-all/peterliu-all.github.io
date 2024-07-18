@@ -101,7 +101,7 @@ div#nav::-webkit-scrollbar {
 </style>
 
 
-<title>杂谈 - P3troL1er 的个人博客</title>
+<title>SSH隧道帮助自闭服务器借助主机的clash连接外网 - P3troL1er 的个人博客</title>
 
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
@@ -275,7 +275,7 @@ div#nav::-webkit-scrollbar {
 
 
 <meta name="description"
-  content="P3troL1er的个人技术博客-P3troL1er的个人技术博客">
+  content="SSH隧道帮助自闭服务器借助主机的clash连接外网-P3troL1er的个人技术博客">
 
 <script type="application/ld+json">
 {
@@ -284,84 +284,51 @@ div#nav::-webkit-scrollbar {
   "itemListElement": [{
       "@type": "ListItem",
       "position": 1 ,
-      "name":"Tags",
-      "item":"https://peterliuzhi.top/tags/"},{
+      "name":"Posts",
+      "item":"https://peterliuzhi.top/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"杂谈",
-      "item":"https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/"}]
+      "name":"SSH隧道帮助自闭服务器借助主机的clash连接外网",
+      "item":"https://peterliuzhi.top/posts/ssh%E9%9A%A7%E9%81%93%E5%B8%AE%E5%8A%A9%E8%87%AA%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%80%9F%E5%8A%A9%E4%B8%BB%E6%9C%BA%E7%9A%84clash%E8%BF%9E%E6%8E%A5%E5%A4%96%E7%BD%91/"}]
 }
 </script>
-
 
 
 
 <script type="application/ld+json">
 {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[{
-            "@type":"ListItem",
-            "position":  1 ,
-            "name": "【学习记录】C\u0026C++网络编程——用C++标准线程库实现跨平台",
-            "description": "因为暂时不想引入外部库，C++又没有标准网络库...",
-            "url": "https://peterliuzhi.top/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95cc++%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%94%A8c++%E6%A0%87%E5%87%86%E7%BA%BF%E7%A8%8B%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%B7%A8%E5%B9%B3%E5%8F%B0/"
-        },{
-            "@type":"ListItem",
-            "position":  2 ,
-            "name": "如何在vim中启用自带的补全功能",
-            "description": "如何在vim中启用自带的补全功能",
-            "url": "https://peterliuzhi.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8vim%E4%B8%AD%E5%90%AF%E7%94%A8%E8%87%AA%E5%B8%A6%E7%9A%84%E8%A1%A5%E5%85%A8%E5%8A%9F%E8%83%BD/"
-        },{
-            "@type":"ListItem",
-            "position":  3 ,
-            "name": "C++析构函数会在返回语句之前还是之后调用？直接返回共享对象是否会产生竞争条件？",
-            "description": "使用shared_lock托管的函数是否在return前释放锁？直接返回共享对象是否会产生竞争条件？",
-            "url": "https://peterliuzhi.top/posts/c++%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8/"
-        },{
-            "@type":"ListItem",
-            "position":  4 ,
-            "name": "关于kali sda1爆满扩容",
-            "description": "kali快爆力！ 对其他的虚拟机应该也适用 不只是kali",
-            "url": "https://peterliuzhi.top/posts/%E5%85%B3%E4%BA%8Ekali-sda1%E7%88%86%E6%BB%A1%E6%89%A9%E5%AE%B9/"
-        },{
-            "@type":"ListItem",
-            "position":  5 ,
-            "name": "C++和python使用boost库混合编程",
-            "description": "C++和python使用boost库混合编程",
-            "url": "https://peterliuzhi.top/posts/c++%E5%92%8Cpython%E4%BD%BF%E7%94%A8boost%E5%BA%93%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/"
-        },{
-            "@type":"ListItem",
-            "position":  6 ,
-            "name": "创建kali docker环境",
-            "description": "创建kali docker环境",
-            "url": "https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAkali-docker%E7%8E%AF%E5%A2%83/"
-        },{
-            "@type":"ListItem",
-            "position":  7 ,
-            "name": "创建C++ docker开发环境（VScode）",
-            "description": "创建C++ docker开发环境（VScode）",
-            "url": "https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAc++-docker%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83vscode/"
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/posts/ssh%E9%9A%A7%E9%81%93%E5%B8%AE%E5%8A%A9%E8%87%AA%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%80%9F%E5%8A%A9%E4%B8%BB%E6%9C%BA%E7%9A%84clash%E8%BF%9E%E6%8E%A5%E5%A4%96%E7%BD%91/"
+    },
+    "headline": "SSH隧道帮助自闭服务器借助主机的clash连接外网 - P3troL1er 的个人博客","datePublished": "2024-07-15T15:29:40+08:00",
+    "dateModified": "2024-07-15T15:29:40+08:00",
+    "wordCount":  476 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
         }
-    ]
+        },
+    "description": "SSH隧道帮助自闭服务器借助主机的clash连接外网"
 }
 </script>
-<meta property="og:title" content="杂谈 - P3troL1er 的个人博客" />
-<meta property="og:type" content="website" />
+<meta property="og:title" content="SSH隧道帮助自闭服务器借助主机的clash连接外网 - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
 
 
-<meta property="og:url" content="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" />
+<meta property="og:url" content="https://peterliuzhi.top/posts/ssh%E9%9A%A7%E9%81%93%E5%B8%AE%E5%8A%A9%E8%87%AA%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%80%9F%E5%8A%A9%E4%B8%BB%E6%9C%BA%E7%9A%84clash%E8%BF%9E%E6%8E%A5%E5%A4%96%E7%BD%91/" />
 
 
 
-
-
-<meta property="og:description" content="P3troL1er的个人技术博客" />
-
-
+<meta property="og:description" content="SSH隧道帮助自闭服务器借助主机的clash连接外网" />
 
 
 
@@ -377,14 +344,35 @@ div#nav::-webkit-scrollbar {
 
 
 
-<meta property="og:updated_time" content="2024-07-18T13:23:56&#43;08:00" />
+<meta property="article:published_time" content="2024-07-15T15:29:40&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2024-07-15T15:29:40&#43;08:00" />
 
 
 
-<meta property="article:section" content="tags" />
+<meta property="article:section" content="posts" />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/index.xml" title="P3troL1er 的个人博客" />
+<meta property="article:tag" content="杂谈" />
+
+
+
+
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%AC%E5%BC%8F%E6%9B%B4%E6%96%B0%E4%B8%AD/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/windows%E4%B8%8Bopengl%E5%AE%8C%E5%85%A8%E7%8B%AC%E7%AB%8B%E5%86%85%E8%81%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/neurips%E8%BF%91%E5%B9%B4%E5%85%B3%E4%BA%8Ebackdoorattack%E7%9A%84%E6%96%87%E7%AB%A0/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8python%E7%9A%84setup.py%E4%B8%AD%E8%B0%83%E7%94%A8cmake%E6%9E%84%E5%BB%BApython%E5%BA%93%E7%9A%84%E6%8F%92%E4%BB%B6/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85libjpeg/" />
+
+<meta property="og:see_also" content="https://peterliuzhi.top/posts/aisvm%E5%88%86%E7%B1%BB%E5%99%A8/" />
+
+
 
 </head>
 
@@ -429,7 +417,7 @@ div#nav::-webkit-scrollbar {
         class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
             <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
-            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
             <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
             <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
             <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
@@ -528,264 +516,28 @@ div#nav::-webkit-scrollbar {
     <main class="grow pt-16">
         <div class="pl-scrollbar">
           <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
-  <article class="prose mx-6 my-8">
-  <h1>杂谈</h1>
   
-</article>
-
-  <div class="bg-secondary-bg rounded px-6">
-    <div class="overflow-hidden divide-y">
   
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/posts/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95cc&#43;&#43;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%94%A8c&#43;&#43;%E6%A0%87%E5%87%86%E7%BA%BF%E7%A8%8B%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%B7%A8%E5%B9%B3%E5%8F%B0/" class="no-underline">
-    <h3 class="mt-0">【学习记录】C&amp;C&#43;&#43;网络编程——用C&#43;&#43;标准线程库实现跨平台</h3>
-  </a>
-  
-    因为暂时不想引入外部库，C&#43;&#43;又没有标准网络库...
-  
-
-  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
     <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">SSH隧道帮助自闭服务器借助主机的clash连接外网</h1>
+
+  <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
 >
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >Friday, June 9, 2023</span
+      >Monday, July 15, 2024</span
     >
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1790字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>4分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/posts/" class="hover:text-eureka"
-          >posts</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="hover:text-eureka"
-          >杂谈</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8vim%E4%B8%AD%E5%90%AF%E7%94%A8%E8%87%AA%E5%B8%A6%E7%9A%84%E8%A1%A5%E5%85%A8%E5%8A%9F%E8%83%BD/" class="no-underline">
-    <h3 class="mt-0">如何在vim中启用自带的补全功能</h3>
-  </a>
-  
-    如何在vim中启用自带的补全功能
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Sunday, June 4, 2023</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共504字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>2分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/posts/" class="hover:text-eureka"
-          >posts</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="hover:text-eureka"
-          >杂谈</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/vim/" class="hover:text-eureka"
-          >vim</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/posts/c&#43;&#43;%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E4%BC%9A%E5%9C%A8%E8%BF%94%E5%9B%9E%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E8%BF%98%E6%98%AF%E4%B9%8B%E5%90%8E%E8%B0%83%E7%94%A8/" class="no-underline">
-    <h3 class="mt-0">C&#43;&#43;析构函数会在返回语句之前还是之后调用？直接返回共享对象是否会产生竞争条件？</h3>
-  </a>
-  
-    使用shared_lock托管的函数是否在return前释放锁？直接返回共享对象是否会产生竞争条件？
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Sunday, May 21, 2023</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1412字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/posts/" class="hover:text-eureka"
-          >posts</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/categories/c&#43;&#43;/" class="hover:text-eureka"
-          >C&#43;&#43;</a
-        >
-      
-    </div>
-  
-
-    
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="hover:text-eureka"
-          >杂谈</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/c&#43;&#43;/" class="hover:text-eureka"
-          >C&#43;&#43;</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/posts/%E5%85%B3%E4%BA%8Ekali-sda1%E7%88%86%E6%BB%A1%E6%89%A9%E5%AE%B9/" class="no-underline">
-    <h3 class="mt-0">关于kali sda1爆满扩容</h3>
-  </a>
-  
-    kali快爆力！ 对其他的虚拟机应该也适用 不只是kali
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Friday, March 10, 2023</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共466字</span>
+    <span>本文共476字</span>
   </div>
 
   <div class="me-6 my-2">
@@ -812,12 +564,6 @@ div#nav::-webkit-scrollbar {
           >杂谈</a
         >
       
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/kali/" class="hover:text-eureka"
-          >kali</a
-        >
-      
     </div>
   
 
@@ -827,265 +573,406 @@ div#nav::-webkit-scrollbar {
       </div>
 </div>
 
+
   
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/posts/ssh%E9%9A%A7%E9%81%93%E5%B8%AE%E5%8A%A9%E8%87%AA%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%80%9F%E5%8A%A9%E4%B8%BB%E6%9C%BA%E7%9A%84clash%E8%BF%9E%E6%8E%A5%E5%A4%96%E7%BD%91/" id="ThisURL">https://peterliuzhi.top/posts/ssh%E9%9A%A7%E9%81%93%E5%B8%AE%E5%8A%A9%E8%87%AA%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%80%9F%E5%8A%A9%E4%B8%BB%E6%9C%BA%E7%9A%84clash%E8%BF%9E%E6%8E%A5%E5%A4%96%E7%BD%91/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <h2 id="引言">引言</h2>
+<p>众所周知，当服务器连接不了外网的时候，下载各种资源都会极其麻烦，有一些服务器自闭到git，pip都有百分之七八十的报错率</p>
+<p>这种糟糕的体验在你的用户没有sudo权限，无法下载新应用的时候达到了高潮。这时候就只能依托于一些自带的软件访问外网了，比如SSH（不要说没有SSH&hellip;）</p>
+<p>本方法的核心是端口转发，让服务器的一个端口的消息转发到主机的clash绑定的端口上，从而服务器的那个端口就变成了它简洁的VPN。相当于这里是进行了一次中介。</p>
+<h2 id="方法">方法</h2>
+<p>首先你的主机要保持clash的连接</p>
+<p>开一个新的终端，输入以下命令，不要退出终端：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># user_name是远程服务器用户名</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># remote_host是远程服务器IP</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 这里将服务器的1080端口映射到主机的7897端口</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -N表示不产生交互式会话，你如果想直接使用这个连接进行交互也可以去掉</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -R代表反向连接</span>
+</span></span><span class="line"><span class="cl">ssh -N -R 1080:127.0.0.1:7897 user_name@remote_host
+</span></span></code></pre></div><p>然后新开另一个ssh链接，用vscode和pycharm的终端也可以</p>
+<p>导入环境变量</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 设置</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span>http://127.0.0.1:1080
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span>http://127.0.0.1:1080
+</span></span><span class="line"><span class="cl"><span class="c1"># 取消</span>
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> http_proxy
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> https_proxy
+</span></span></code></pre></div><p>然后就可以连接了</p>
+<p>git可能需要特殊设置</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 设置</span>
+</span></span><span class="line"><span class="cl">git config --global https.proxy http://127.0.0.1:1080
+</span></span><span class="line"><span class="cl">git config --global https.proxy https://127.0.0.1:1080
+</span></span><span class="line"><span class="cl"><span class="c1"># 取消</span>
+</span></span><span class="line"><span class="cl">git config --global --unset http.proxy
+</span></span><span class="line"><span class="cl">git config --global --unset https.proxy
+</span></span></code></pre></div>
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 SSH隧道帮助自闭服务器借助主机的clash连接外网 ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3a%2f%2fpeterliuzhi.top%2fposts%2fssh%25E9%259A%25A7%25E9%2581%2593%25E5%25B8%25AE%25E5%258A%25A9%25E8%2587%25AA%25E9%2597%25AD%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%25E5%2580%259F%25E5%258A%25A9%25E4%25B8%25BB%25E6%259C%25BA%25E7%259A%2584clash%25E8%25BF%259E%25E6%258E%25A5%25E5%25A4%2596%25E7%25BD%2591%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
 </div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
 
-  </div>
-
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
   
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/posts/c&#43;&#43;%E5%92%8Cpython%E4%BD%BF%E7%94%A8boost%E5%BA%93%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/" class="no-underline">
-    <h3 class="mt-0">C&#43;&#43;和python使用boost库混合编程</h3>
-  </a>
-  
-    C&#43;&#43;和python使用boost库混合编程
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Thursday, March 9, 2023</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1759字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>4分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
       
-        <a href="https://peterliuzhi.top/categories/posts/" class="hover:text-eureka"
-          >posts</a
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#杂谈</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/SSH%e9%9a%a7%e9%81%93%e5%b8%ae%e5%8a%a9%e8%87%aa%e9%97%ad%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%80%9f%e5%8a%a9%e4%b8%bb%e6%9c%ba%e7%9a%84clash%e8%bf%9e%e6%8e%a5%e5%a4%96%e7%bd%91.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
         >
+        <a href="https://peterliuzhi.top/posts/%E4%B8%80%E9%94%AE%E5%B0%86open-with-code%E5%8A%A0%E5%85%A5%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE-bat%E8%84%9A%E6%9C%AC/" class="block">一键将Open with Code加入鼠标右键-BAT脚本</a>
       
     </div>
-  
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%AC%E5%BC%8F%E6%9B%B4%E6%96%B0%E4%B8%AD/" class="block">深度学习常见的公式（更新中）</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#引言">引言</a></li>
+        <li><a href="#方法">方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
 
     
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="hover:text-eureka"
-          >杂谈</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAkali-docker%E7%8E%AF%E5%A2%83/" class="no-underline">
-    <h3 class="mt-0">创建kali docker环境</h3>
-  </a>
-  
-    创建kali docker环境
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Tuesday, March 7, 2023</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1293字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/posts/" class="hover:text-eureka"
-          >posts</a
-        >
-      
-    </div>
-  
-
     
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="hover:text-eureka"
-          >杂谈</a
-        >
-      
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6" 
+        style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+      >
+        <h3>相关</h3>
         
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/docker/" class="hover:text-eureka"
-          >docker</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+          <a href="https://peterliuzhi.top/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%AC%E5%BC%8F%E6%9B%B4%E6%96%B0%E4%B8%AD/" class="no-underline">深度学习常见的公式（更新中）</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/windows%E4%B8%8Bopengl%E5%AE%8C%E5%85%A8%E7%8B%AC%E7%AB%8B%E5%86%85%E8%81%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="no-underline">Windows下OpenGL完全独立内联环境配置（Mingw/Cmake/Ninja）</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/neurips%E8%BF%91%E5%B9%B4%E5%85%B3%E4%BA%8Ebackdoorattack%E7%9A%84%E6%96%87%E7%AB%A0/" class="no-underline">NeurIPS近年关于BackdoorAttack的文章</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8python%E7%9A%84setup.py%E4%B8%AD%E8%B0%83%E7%94%A8cmake%E6%9E%84%E5%BB%BApython%E5%BA%93%E7%9A%84%E6%8F%92%E4%BB%B6/" class="no-underline">如何在python的setup.py中调用cmake构建python库的插件</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85libjpeg/" class="no-underline">Linux下如何编译安装libjpeg</a>
+          <br />
+        
+          <a href="https://peterliuzhi.top/posts/aisvm%E5%88%86%E7%B1%BB%E5%99%A8/" class="no-underline">【AI】SVM分类器</a>
+          <br />
+        
       </div>
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://peterliuzhi.top/posts/%E5%88%9B%E5%BB%BAc&#43;&#43;-docker%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83vscode/" class="no-underline">
-    <h3 class="mt-0">创建C&#43;&#43; docker开发环境（VScode）</h3>
-  </a>
-  
-    创建C&#43;&#43; docker开发环境（VScode）
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >Tuesday, March 7, 2023</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-file-pen"></i>
-    <span>本文共1599字</span>
-  </div>
-
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>4分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://peterliuzhi.top/categories/posts/" class="hover:text-eureka"
-          >posts</a
-        >
-      
-    </div>
-  
-
     
-    <div class="me-6 my-2">
-      <i class="fa-solid fa-tag"></i>
-      
-        <a href="https://peterliuzhi.top/tags/%E6%9D%82%E8%B0%88/" class="hover:text-eureka"
-          >杂谈</a
-        >
-      
-        
-          <span>, </span>
-        <a href="https://peterliuzhi.top/tags/docker/" class="hover:text-eureka"
-          >docker</a
-        >
-      
-    </div>
-  
-
-  
-  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
-      </div>
-</div>
-
-  
-</div>
-
   </div>
 
   
-</div>
-  </div>
-  
-</div>
-
-
-  </div>
-  
-    <ul class="pagination pagination-default">
-      <li class="page-item">
-        <a href="/tags/%E6%9D%82%E8%B0%88/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/%E6%9D%82%E8%B0%88/page/2/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/%E6%9D%82%E8%B0%88/" aria-label="Page 1" class="page-link" role="button">1</a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/%E6%9D%82%E8%B0%88/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 3" class="page-link" role="button">3</a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/%E6%9D%82%E8%B0%88/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/%E6%9D%82%E8%B0%88/page/4/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/%E6%9D%82%E8%B0%88/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
 
           </div>
         </div>
@@ -1184,7 +1071,7 @@ div#nav::-webkit-scrollbar {
       }
   }
   if(is_weixn()){
-    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/tags\/%E6%9D%82%E8%B0%88\/（或者右上角用浏览器打开）");
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/ssh%E9%9A%A7%E9%81%93%E5%B8%AE%E5%8A%A9%E8%87%AA%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%80%9F%E5%8A%A9%E4%B8%BB%E6%9C%BA%E7%9A%84clash%E8%BF%9E%E6%8E%A5%E5%A4%96%E7%BD%91\/（或者右上角用浏览器打开）");
   }else{
     window.alert = function(msg1, msg2, msg3){
         swal(msg1+"", msg2+"", msg3+"");

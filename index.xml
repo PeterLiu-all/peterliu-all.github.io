@@ -5,7 +5,27 @@
     <link>https://peterliuzhi.top/</link>
       <atom:link href="https://peterliuzhi.top/index.xml" rel="self" type="application/rss+xml" />
     <description>P3troL1er 的个人博客</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 10 Jul 2024 15:42:16 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 18 Jul 2024 13:23:56 +0800</lastBuildDate>
+    <item>
+      <title>一键将Open with Code加入鼠标右键-BAT脚本</title>
+      <link>https://peterliuzhi.top/posts/%E4%B8%80%E9%94%AE%E5%B0%86open-with-code%E5%8A%A0%E5%85%A5%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE-bat%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Thu, 18 Jul 2024 13:23:56 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E4%B8%80%E9%94%AE%E5%B0%86open-with-code%E5%8A%A0%E5%85%A5%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE-bat%E8%84%9A%E6%9C%AC/</guid>
+      
+      <description>一键将Open with Code加入鼠标右键-BAT脚本</description>
+      
+    </item>
+    
+    <item>
+      <title>SSH隧道帮助自闭服务器借助主机的clash连接外网</title>
+      <link>https://peterliuzhi.top/posts/ssh%E9%9A%A7%E9%81%93%E5%B8%AE%E5%8A%A9%E8%87%AA%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%80%9F%E5%8A%A9%E4%B8%BB%E6%9C%BA%E7%9A%84clash%E8%BF%9E%E6%8E%A5%E5%A4%96%E7%BD%91/</link>
+      <pubDate>Mon, 15 Jul 2024 15:29:40 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/ssh%E9%9A%A7%E9%81%93%E5%B8%AE%E5%8A%A9%E8%87%AA%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%80%9F%E5%8A%A9%E4%B8%BB%E6%9C%BA%E7%9A%84clash%E8%BF%9E%E6%8E%A5%E5%A4%96%E7%BD%91/</guid>
+      
+      <description>SSH隧道帮助自闭服务器借助主机的clash连接外网</description>
+      
+    </item>
+    
     <item>
       <title>深度学习常见的公式（更新中）</title>
       <link>https://peterliuzhi.top/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%AC%E5%BC%8F%E6%9B%B4%E6%96%B0%E4%B8%AD/</link>
@@ -135,26 +155,6 @@
       <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/</guid>
       
       <description>【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</description>
-      
-    </item>
-    
-    <item>
-      <title>【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</link>
-      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</guid>
-      
-      <description>【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击</description>
-      
-    </item>
-    
-    <item>
-      <title>【论文笔记】量化因果涌现</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</link>
-      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E9%87%8F%E5%8C%96%E5%9B%A0%E6%9E%9C%E6%B6%8C%E7%8E%B0/</guid>
-      
-      <description>【论文笔记】量化因果涌现</description>
       
     </item>
     

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSCode | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/tags/vscode/</link>
+      <atom:link href="https://peterliuzhi.top/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <description>VSCode</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 18 Jul 2024 13:23:56 +0800</lastBuildDate>
+    <item>
+      <title>一键将Open with Code加入鼠标右键-BAT脚本</title>
+      <link>https://peterliuzhi.top/posts/%E4%B8%80%E9%94%AE%E5%B0%86open-with-code%E5%8A%A0%E5%85%A5%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE-bat%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Thu, 18 Jul 2024 13:23:56 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E4%B8%80%E9%94%AE%E5%B0%86open-with-code%E5%8A%A0%E5%85%A5%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE-bat%E8%84%9A%E6%9C%AC/</guid>
+      
+      <description>一键将Open with Code加入鼠标右键-BAT脚本</description>
+      
+    </item>
+    
+  </channel>
+</rss>
