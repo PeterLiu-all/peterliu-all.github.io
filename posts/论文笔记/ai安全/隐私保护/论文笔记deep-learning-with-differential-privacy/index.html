@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+   class="light"
+  
+><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .red-bg{
+    background-color: rgba(254, 3, 3, 0.667);
+  }
+  .red-bg:hover{
+    background-color: rgba(254, 3, 3, 0.769) !important;
+  }
+  .grey-bg{
+    background-color: rgba(130, 124, 124, 0.758);
+  }
+  .grey-bg:hover{
+    background-color: rgba(130, 124, 124, 0.888) !important;
+  }
+  .dark .swal-modal{
+    filter: invert(80%);
+    
+  }
+  .dark .swal-overlay{
+    filter: brightness(1.5);
+  }
+</style>
+<script src="/js/sweetalert.min.js"></script>
+<style>
+  .dark .sweet-alert{
+    filter: invert(90%);
+  }
+</style>
+<style>
+  .dark{
+    transition: 1.5s;
+  }
+  .light{
+      transition: 1.5s;
+  }
+     
+body::-webkit-scrollbar {
+    width: 12px;    
+     
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(194, 192, 192, 0.2);
+    background: rgba(99, 99, 99, 0.2);
+    transition: 0.5s;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 5px rgba(134, 127, 127, 0.2);
+    background: rgba(194, 182, 182, 0.2);
+}
+.dark body::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+img.img-float{
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+
+img.img-float:hover{
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.315);
+  transform: translate(-1px,-5px);
+  transition-delay: 0s !important;
+}
+div#nav{
+  position: fixed !important;
+  padding-bottom: 5vh;
+  padding-right: 2vh;
+  height:70vh;
+  top: 20vh;
+  width: fit-content;
+  overflow-y: auto;
+  -webkit-transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 1s cubic-bezier(.02, .01, .47, 1);
+}
+div#nav:hover{
+  box-shadow: 0 0px 32px 0 rgba(48, 55, 66, 0.073);
+}
+div#nav::-webkit-scrollbar {
+  display: none !important;
+}
+</style>
+
+
+<title>【论文笔记】Deep Learning with Differential Privacy - P3troL1er 的个人博客</title>
+
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://peterliuzhi.top/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://peterliuzhi.top/js/eureka.min.e8043b71b627e3cfd9b2a5de56adf007f5af83dee672ca0c186aa2e29a10d6f648632064d0c00b2fa4d1b11e0f196af3.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="/highlight/styles/atom-one-light.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+
+  <script defer="" src="/highlight/highlight.min.js" crossorigin=""></script>
+  <script defer src="/highlight/languages/dart.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/python.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/bash.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/c.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cpp.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/armasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/x86asm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/mipsasm.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/vim.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/java.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/javascript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/typescript.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/go.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/php.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/css.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/powershell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/shell.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/markdown.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/json.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/yaml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/xml.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/sql.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/cmake.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/makefile.js"
+     crossorigin></script>
+  <script defer src="/highlight/languages/matlab.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/highlightjs.min.0e3b6ac4177cdecae52d1b2de76aa7a0ce8a92e4cc23ef2f8691f0218a25f5d328e14bf47be023009535efe940980954.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script src="https://peterliuzhi.top/js/99649a0b4d.js" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MXT4N6J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-C6MXT4N6J6');
+</script>
+
+
+
+<script src="https://peterliuzhi.top/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/jquery.fancybox.min.css" />
+<script src="https://peterliuzhi.top/js/jquery.fancybox.min.js"></script>
+
+
+  
+<script language="javascript">
+    function setClipboardText(event) {
+        event.preventDefault();
+        var node = document.createElement('div');
+        
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        
+        var htmlData =
+            "<div>" +
+            node.innerHTML +
+            "<br /><br />著作权归作者P3troL1er所有。<br />" +
+            "商业转载请联系作者P3troL1er获得授权，非商业转载请注明出处。<br />" +
+            '作者：P3troL1er<br />链接：<a href="https://peterliuzhi.top/">https://peterliuzhi.top/</a><br />' +
+            "</div>";
+        var textData = ""
+        if (window.getSelection().anchorNode.parentElement.className == "highlight")
+            textData =
+                window.getSelection().getRangeAt(0)
+        else
+            textData =
+                window.getSelection().getRangeAt(0) +
+                "\n\n著作权归作者所有。\n" +
+                "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+                "作者：P3troL1er\n链接：https://peterliuzhi.top/\n";
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/html", htmlData);
+            
+            event.clipboardData.setData("text/plain", textData);
+        } else if (window.clipboardData) {
+            
+            return window.clipboardData.setData("text", textData);
+        }
+    }
+    document.addEventListener("copy", function (e) {
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://peterliuzhi.top/images/letterP_hu69a934028f2e96ea6829f890fa9740ec_16107_180x180_fill_box_center_3.png">
+
+
+<meta name="description"
+  content="简介 开创了通过向深度学习模型的梯度进行加噪从而实现差分隐私的方法 什么是差分隐私 差分隐私就是对两个相邻数据库有如下定义： 简单来说，假设有两个数据库，两个-P3troL1er的个人技术博客">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://peterliuzhi.top/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"【论文笔记】Deep Learning with Differential Privacy",
+      "item":"https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/"
+    },
+    "headline": "【论文笔记】Deep Learning with Differential Privacy - P3troL1er 的个人博客","datePublished": "2024-01-13T14:07:43+08:00",
+    "dateModified": "2024-01-13T14:10:13+08:00",
+    "wordCount":  3234 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Peter Liu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://peterliuzhi.top/images/letterP.png"
+        }
+        },
+    "description": "简介 开创了通过向深度学习模型的梯度进行加噪从而实现差分隐私的方法 什么是差分隐私 差分隐私就是对两个相邻数据库有如下定义： 简单来说，假设有两个数据库，两个"
+}
+</script>
+<meta property="og:title" content="【论文笔记】Deep Learning with Differential Privacy - P3troL1er 的个人博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://peterliuzhi.top/images/letterP.png">
+
+
+<meta property="og:url" content="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/" />
+
+
+
+
+<meta property="og:description" content="简介 开创了通过向深度学习模型的梯度进行加噪从而实现差分隐私的方法 什么是差分隐私 差分隐私就是对两个相邻数据库有如下定义： 简单来说，假设有两个数据库，两个" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="P3troL1er 的个人博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2024-01-13T14:07:43&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2024-01-13T14:10:13&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="差分隐私" />
+
+
+
+
+
+</head>
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><style>
+.search-container {
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+.search-container .search {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.search-container input {
+  padding-left: 1rem;
+  line-height: 2rem;
+  outline: none;
+  background: transparent;
+}
+.search-container button {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #e2e8f0;
+}
+</style>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">P3troL1er 的个人博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="/writeup/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">WriteUp</a>
+            <a href="/tricks/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tricks</a>
+            <a href="/principle/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Principle</a>
+            <a href="/archive/archive/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Archive</a>
+            <a href="/stats/stats/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Statistics</a>
+            <a href="/friend/links/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Friends</a>
+        </div>
+    <style>
+	.ld {
+		
+	}
+    .ld:hover{
+        animation: yaolingdang 4s infinite ease;
+    }
+	@keyframes yaolingdang {
+		5%,25%,45% {
+			transform: rotate(8deg);
+		}
+		0%,10%,30%,50% {
+			transform: rotate(-8deg);
+		}
+		15%,35%,55% {
+			transform: rotate(4deg);
+		}
+		20%,40%,60% {
+			transform: rotate(-4deg);
+		}
+		65%,100% {
+			transform: rotate(0deg);
+		}
+	}
+    </style>
+        <div class="flex" style="margin-right: 20px; margin-left: 20px;">
+                <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+                    <a href="/subscribe/"><i class="fa-regular fa-bell ld"></i></a>
+                </div>
+        </div>
+        <div class="flex">
+            <div class="search-container relative pt-4 md:pt-0">
+                <div class="search">
+                    <form role="search" class="search-form" action="/search.html" method="get">
+                    <label>
+                        <input name="q" type="text" placeholder="搜索 ..." class="search-field">
+                    </label>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default" id="is-open-mobile" style="z-index: -1;">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      style="box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.128);"
+    >
+      <article class="prose">
+  <h1 class="mb-4">【论文笔记】Deep Learning with Differential Privacy</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >Saturday, January 13, 2024</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fa-solid fa-file-pen"></i>
+    <span>本文共3234字</span>
+  </div>
+
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>7分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://peterliuzhi.top/categories/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/" class="hover:text-eureka"
+          >隐私保护</a
+        >
+      
+        
+          <span>, </span>
+        <a href="https://peterliuzhi.top/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="hover:text-eureka"
+          >论文笔记</a
+        >
+      
+    </div>
+  
+
+    
+    <div class="me-6 my-2">
+      <i class="fa-solid fa-tag"></i>
+      
+        <a href="https://peterliuzhi.top/tags/%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81/" class="hover:text-eureka"
+          >差分隐私</a
+        >
+      
+    </div>
+  
+
+  
+  <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
+        <a href="/subscribe/"><i class="fa-solid fa-bell"></i>&nbsp;订阅</a>
+      </div>
+</div>
+
+
+  
+  
+  
+  <b><p>⚠️本文是<a href="https://github.com/PeterLiu-all">作者P3troL1er</a>原创，首发于<a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/" id="ThisURL">https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</a>。商业转载请联系作者获得授权，非商业转载请注明出处！</p></b>
+  <script>
+    var turl = document.getElementById("ThisURL");
+    turl.innerText = decodeURIComponent(turl.innerText);
+  </script>
+
+  <h1 id="简介">简介</h1>
+<p>开创了通过向深度学习模型的梯度进行加噪从而实现差分隐私的方法</p>
+<h1 id="什么是差分隐私">什么是差分隐私</h1>
+<p>差分隐私就是对两个相邻数据库有如下定义：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141320.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141320.png" />
+        
+        </a>
+    </p>
+<p>简单来说，假设有两个数据库，两个数据库之间只有一个数据点不同，这样的一对数据集称为相邻数据库。而差分隐私就是保证通过向相邻数据库查询结果，不能通过查询结果来区分两个数据集。
+而差分隐私通常通过加噪实现增加随机性，而其中一种加噪机制就是高斯噪声机制：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141347.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141347.png" />
+        
+        </a>
+    </p>
+<p>其中$S_f$表示敏感性，敏感性表示当数据库中的一个条目发生变化时，函数的输出变化的最大量。而在此式中，敏感性是高斯噪声的标准差的一个因子，这意味着敏感性越高，高斯噪声的方差越大，从而向数据库添加的噪声的不确定性越大。
+对于差分隐私而言，差分隐私具有以下性质：</p>
+<ul>
+<li>Composability可组合性：多个差分隐私算法可以组合在一起，而整体隐私损失是各个算法隐私损失的总和</li>
+<li>Group Privacy群体隐私：差分隐私的保护不仅适用于单个数据记录，而且可以扩展到保护一组数据</li>
+<li>Robustness to Auxiliary Information附加信息鲁棒性：差分隐私保护的效力不会因为攻击者可能拥有的其他附加信息而降低</li>
+</ul>
+<h1 id="为什么要用差分隐私">为什么要用差分隐私</h1>
+<p>因为传统的公开数据的方法容易受到各种攻击，从而泄露隐私</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141404.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141404.png" />
+        
+        </a>
+    </p>
+<p>其中，深度学习模型的隐私问题是，深度学习模型会更容易记住训练集中的内容，从而在推理阶段对见过的数据（训练集的内容）的反应更加敏感，从而泄露隐私。</p>
+<h1 id="如何在深度学习模型中实现差分隐私">如何在深度学习模型中实现差分隐私</h1>
+<h2 id="算法流程">算法流程</h2>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141418.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141418.png" />
+        
+        </a>
+    </p>
+<p>在模型训练的过程中，按照一定的抽样概率从数据集中抽出一些数据点（实际上就是数据集的一个batch，这里称为lot，概念上比常规的batch更大。如果由于资源限制无法处理一个lot，可以将lot切分为更小的batch），对每个数据点首先计算它的梯度，然后使用Norm Clipping对梯度进行裁剪，然后向梯度增加高斯噪声得到新的梯度，用这个新的梯度更新模型</p>
+<p>注意，其中对多层模型来说，可以对每一层设置不同的C和σ，对训练的不同step也是如此（t表示step）。由于差分隐私的可组合性，对不同层和不同step计算的隐私损失，只需要简单地加起来就可以了。</p>
+<h2 id="norm-clipping">Norm Clipping</h2>
+<p>Norm Clipping的公式如下：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141430.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141430.png" />
+        
+        </a>
+    </p>
+<p>二范数的定义如下：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141441.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141441.png" />
+        
+        </a>
+    </p>
+<p>从而，这个公式的含义是，如果梯度的二范数小于阈值，就不改变梯度；如果梯度的二范数大于阈值，就将梯度缩减到阈值。之所以要这么做有以下原因：</p>
+<ul>
+<li>大梯度可能导致模型在个别数据点上过度拟合，Norm Clipping 有助于防止这种情况，从而提高模型的泛化能力</li>
+<li>通过控制梯度的大小，可以限制个别数据点对模型的影响，这有助于确保模型输出不能用来推断出其训练数据的敏感信息</li>
+<li>在应用差分隐私时，通常需要在保护隐私和保持模型准确性之间找到平衡。Norm clipping 通过减少单个数据点对模型的影响，帮助实现这一平衡</li>
+</ul>
+<p>这种方法在不考虑差分隐私的情况下也经常被使用（梯度裁剪）</p>
+<h2 id="moments-accountant-矩会计">Moments Accountant 矩会计</h2>
+<h3 id="基本组合定理basic-composition-theorem">基本组合定理（Basic Composition Theorem）</h3>
+<p>基本组合定理指出，如果我们有多个算法，每个都满足 (ε,δ)-差分隐私，那么将这些算法顺序执行的整体过程满足 (kε,kδ)-差分隐私，其中 k 是算法的数量。这个定理给出了一个保守的隐私损失估计。</p>
+<h3 id="强组合定理strong-composition-theorem">强组合定理（Strong Composition Theorem）</h3>
+<p>强组合定理是对基本组合定理的一个改进。它提供了一个更紧凑的隐私损失上界。强组合定理表明，如果多个算法每个都满足 (<em>ε</em>,<em>δ</em>)-差分隐私，那么整个序列的隐私损失可以用更小的上界来估计。具体来说，对于一系列的 (<em>ε</em>,<em>δ</em>)-差分隐私算法，整体过程满足(<em>ε</em>′,<em>kδ</em>+<em>δ</em>′)-差分隐私，其中 <em>ε</em>′ 通常远小于_kε_。</p>
+<h4 id="强组合定理的局限性">强组合定理的局限性</h4>
+<ol>
+<li><strong>一般性的上界</strong>：强组合定理提供了一个一般性的隐私损失上界，适用于各种不同的差分隐私操作。然而，这个上界可能不是针对特定情况或特定噪声分布最紧致的。</li>
+<li><strong>不考虑特定噪声分布</strong>：强组合定理的一个关键局限是它没有考虑噪声分布的具体形式。不同类型的噪声（如高斯噪声、拉普拉斯噪声等）对于隐私保护的效果可能有显著差异，而强组合定理并没有区分这些差异。</li>
+</ol>
+<h3 id="_ε__δ_的含义">(<em>ε</em>,<em>δ</em>)的含义</h3>
+<p>他们是差分隐私的定义中的两个参数</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141457.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141457.png" />
+        
+        </a>
+    </p>
+<ol>
+<li><strong><em>ε</em>（epsilon）</strong>：这个参数描述了隐私保护的强度。较小的 <em>ε</em> 值意味着更强的隐私保护，因为它保证算法的输出对单个数据项的改变不敏感。具体来说，<em>ε</em> 控制了算法对于邻近数据集（只相差一个数据项的两个数据集）给出不同结果的概率。当 <em>ε</em> 较小时，这种概率差异较小，从而更难从输出结果中推断出任何个人信息。</li>
+<li><strong><em>δ</em>（delta）</strong>：这是一个小概率事件，在该事件中，<em>ε</em> 定义的隐私保护可能会失败。较小的 <em>δ</em> 表示这种失败的概率很低。理想情况下，<em>δ</em> 应该小到足以被忽略（例如，远小于数据集中单个个体的倒数）。</li>
+</ol>
+<h3 id="论文中的定理一">论文中的定理一</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141510.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141510.png" />
+        
+        </a>
+    </p>
+<p>该定理说明了σ应该如何选择才能获取更精确的隐私损失估计，并考虑到了高斯噪声的分布特征。</p>
+<p>其中，</p>
+<ul>
+<li><em>σ</em> 是高斯噪声的标准差。</li>
+<li>$c_2$ 是一个常数，它取决于证明中使用的不等式和假设。</li>
+<li><em>q</em> 是每次迭代中随机抽取的样本与总体样本数量的比例。</li>
+<li><em>T</em> 是总的训练迭代次数。</li>
+<li><em>ε</em> 是差分隐私中的隐私损失参数。</li>
+<li><em>δ</em> 是允许的隐私保护失败概率。</li>
+</ul>
+<h3 id="隐私损失定义">隐私损失定义</h3>
+<p>隐私损失度量了在给定的输出结果下，一个观察者能够从算法的执行中区分两个相邻数据库的能力</p>
+<p>而为了获得更紧致的隐私损失定义，论文提出了计算隐私损失对数矩（log moments）的方法</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141524.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141524.png" />
+        
+        </a>
+    </p>
+<h3 id="λ阶矩对数矩的定义">λ阶矩/对数矩的定义</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141539.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141539.png" />
+        
+        </a>
+    </p>
+<p>对于给定的机制 M ，相邻数据库d, d&rsquo;，以及辅助输入 aux ，$\alpha_M(\lambda; aux, d, d&rsquo;)$被定义为隐私损失的对数矩生成函数在值 λ 处的对数。</p>
+<p>$\alpha_M(\lambda; aux, d, d&rsquo;) = \log \mathbb{E}_{o \sim M(aux,d)}[\exp(\lambda c(o; M, aux, d, d&rsquo;))]$</p>
+<p>这里：</p>
+<ul>
+<li>$\mathbb{E}_{o \sim M(aux,d)}$表示对于随机变量o，其分布由给定数据库d和辅助输入aux下的机制M确定的期望值。</li>
+<li>$\exp(\lambda c(o; M, aux, d, d&rsquo;))$是隐私损失$c(o; M, aux, d, d&rsquo;)$的指数函数放大λ倍的结果。</li>
+<li>$c(o; M, aux, d, d&rsquo;)$是给定输出o时，从d到d&rsquo;数据库变化的隐私损失。</li>
+</ul>
+<h4 id="对数矩和统计学中的高阶矩的联系">对数矩和统计学中的高阶矩的联系</h4>
+<p>在统计学中，一个随机变量X的k阶原始矩是$E[X^k]$，即X的k次幂的期望值。而一个随机变量的k阶中心矩是$E[(X - E[X])^k]$，即X减去其期望值（均值）的k次幂的期望值。中心矩提供了关于随机变量分布形状的信息。例如，二阶中心矩是方差，它衡量了随机变量的离散程度；三阶中心矩与数据的偏斜（skewness）有关；四阶中心矩与数据的峰度（kurtosis）有关，等等。</p>
+<p>矩生成函数（MGF）$M_X(t)$是所有原始矩的无穷级数，定义为$M_X(t) = E[e^{tX}]$，其中t是实数。实际上，如果对M_X(t)关于 (t) 进行泰勒级数展开，你会得到X的所有原始矩。即：</p>
+<p>$M_X(t) = E[e^{tX}] = 1 + \frac{tE[X]}{1!} + \frac{t^2E[X^2]}{2!} + \frac{t^3E[X^3]}{3!} + \cdots$</p>
+<p>在差分隐私中，对数矩生成函数（log-MGF）定义为 $M_X(t)$的对数。对于差分隐私中的隐私损失随机变量L，log-MGF 记为$\alpha_L(\lambda) = \log E[e^{\lambda L}]$。这个函数对于任何正数λ，给出了$e^{\lambda L}$ 的期望值的对数。通过对$\alpha_L(\lambda)$进行泰勒级数展开可以得到关于隐私损失L的所有原始矩的信息。</p>
+<h3 id="论文中的定理二">论文中的定理二</h3>
+<p>对于上面定义的对数矩，有如下特性：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141552.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141552.png" />
+        
+        </a>
+    </p>
+<ol>
+<li><strong>可组合性</strong>：如果我们有一系列机制 $\mathcal{M}_1,\cdots,\mathcal{M}_k$
+<ul>
+<li>则总的对数矩 $\alpha_{\mathcal{M}}(\lambda)$ 可以通过对每个机制的对数矩求和来估计。</li>
+</ul>
+</li>
+<li><strong>尾部界限</strong>：通过尾部界限能够计算δ，保证总体机制$\mathcal{M}$保持 (<em>ε</em>,<em>δ</em>)-差分隐私。</li>
+</ol>
+<h3 id="如何估计对数矩alpha_mathcalmlambda">如何估计对数矩$\alpha_{\mathcal{M}}(\lambda)$</h3>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141628.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141628.png" />
+        
+        </a>
+    </p>
+<p>通过两个高斯分布的概率密度函数合成一个新的概率密度函数，然后使用这三个概率密度函数计算两个期望。而在实际的实现中，论文使用数值积分来计算。</p>
+<p>同时，作者给出了对数矩的一个渐进界：</p>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141638.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141638.png" />
+        
+        </a>
+    </p>
+<h3 id="如何实际应用">如何实际应用</h3>
+<p>假设正在训练一个深度学习模型，并在每次迭代中使用高斯噪声来保持(<em>ε</em>,<em>δ</em>)-差分隐私</p>
+<ul>
+<li>在每一步计算每个参数更新的隐私损失。</li>
+<li>使用对数矩来跟踪这些损失。</li>
+<li>应用定理 2 来确保累积的隐私损失保持在(<em>ε</em>,<em>δ</em>) 范围内。</li>
+<li>根据上述累积损失来调整高斯噪声水平。</li>
+</ul>
+<p>
+        <a data-fancybox="gallery" href="/image/Pasted%20image%2020240113141646.png">
+        
+            <img class="mx-auto img-float" alt="文内图片" src="/image/Pasted%20image%2020240113141646.png" />
+        
+        </a>
+    </p>
+
+  <style>
+  .button {
+            font-family: 宋体,'Comic Sans MS', cursive;
+            color: #FFFFFF;
+            background-color: #333333;
+            display: inline-block;
+            white-space: nowrap;
+            height: 40px;
+            min-width: 230px;
+            line-height: 42px;
+            margin: 0 5px 0 0;
+            padding: 0 22px;
+            text-decoration: none;
+             
+            text-align: center;
+            font-weight: medium;
+            font-style: normal;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+    .button:hover {
+        cursor: pointer;
+        animation: jelly 0.7s;
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(0.1, 0.1);
+        }
+ 
+        33% {
+            transform: scale(0.05, 0.15);
+        }
+ 
+        66% {
+            transform: scale(0.15, 0.05);
+        }
+    }
+ 
+    @keyframes jelly {
+ 
+        0%,
+        100% {
+            transform: scale(1, 1);
+        }
+ 
+        25%,
+        75% {
+            transform: scale(0.9, 1.1);
+        }
+ 
+        50% {
+            transform: scale(1.1, 0.9);
+        }
+    }
+    i.invite_icon{
+      height: 5vh;
+      width: 5vh;
+      display: block;
+      font-size: 30px;
+      transition: all 1.5s;
+      position: fixed;
+      right: 1vh;
+      bottom: 7vh;
+      z-index: 100;
+      background: transparent;
+      transition: 0.1s;
+  }
+  i.invite_icon:active{
+    transform:rotate(-45deg);
+  }
+
+  i.sub_icon{
+    height: 5vh;
+    width: 5vh;
+    display: block;
+    font-size: 30px;
+    transition: all 1.5s;
+    position: fixed;
+    right: 1vh;
+    bottom: 13vh;
+    z-index: 100;
+    background: transparent;
+}
+</style>
+<a href="/subscribe/"><button class="button">点此订阅P3troL1er的博客！</button></a> 
+
+<script type="text/javascript">
+
+function displayImg(trans) {
+    var img = document.getElementById("qrcode");
+
+    var x = event.clientX + document.body.scrollLeft + 20 - trans;
+    var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.display = "block";
+}
+
+
+function vanishImg(){
+    var img = document.getElementById("qrcode");
+    img.style.display = "none";
+}
+function displayText(trans) {
+  var img = document.getElementById("sub_text");
+
+  var x = event.clientX + document.body.scrollLeft + 20 - trans;
+  var y = event.clientY + document.body.scrollTop - 5 - trans; 
+
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.display = "block";
+}
+
+
+function vanishText(){
+  var img = document.getElementById("sub_text");
+  img.style.display = "none";
+}
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享信息！";
+    }, 1000);
+  }
+  
+  const message = "在吗？👀有篇博文写的挺好的，标题是 【论文笔记】Deep Learning with Differential Privacy ，值得一读👍\n详情点击" + window.location.href + "\n\n\n🤝著作权归作者所有。\n" +
+    "商业转载请联系作者获得授权，非商业转载请注明出处。\n" +
+    "作者：P3troL1er\n主页链接：https://peterliuzhi.top/\n";
+  
+  function basic_copy(){
+    navigator.clipboard.writeText(message);
+  }
+
+  function copy_invite_message(){
+    const msgbtn = document.querySelector("#copy_invite_msg");
+    
+    navigator.clipboard.writeText(message)
+        .then(
+          () => {
+            flashCopyMessage(msgbtn, "已复制分享信息！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(msgbtn, "复制分享信息失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+}
+  
+</script>
+
+<button id="copy_qrcode" class="button" onmouseover="displayImg(0);" onmouseout="vanishImg()" onmousemove="displayImg(0);">点此复制分享二维码！</button> 
+
+<button id="copy_invite_msg" class="button" onclick="copy_invite_message();">点此复制分享信息！</button>
+
+<a><i id="invite_icon" class="fa-solid fa-share invite_icon" onmouseover="displayImg(330);" onmouseout="vanishImg()" onmousemove="displayImg(330);" onclick="basic_copy();"></i></a>
+
+<a href="/subscribe/" onmouseover="displayText(60);" onmouseout="vanishText()" onmousemove="displayText(60);"><i class="fa-solid fa-bell ld sub_icon"></i></a>
+
+<div id="qrcode" style="width: 300px;height: 300px;display:none;position: fixed; z-index:100;">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3a%2f%2fpeterliuzhi.top%2fposts%2f%25E8%25AE%25BA%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2fai%25E5%25AE%2589%25E5%2585%25A8%2f%25E9%259A%2590%25E7%25A7%2581%25E4%25BF%259D%25E6%258A%25A4%2f%25E8%25AE%25BA%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0deep-learning-with-differential-privacy%2f&size=300x300&ecc=M&margin=2&format=png" alt="生成二维码失败！检查检查网络？" style="background-color: rgba(255, 255, 255, 0.904); margin:0;" id="qrcode_img">
+  <div style="width: 300px;height: fit-content; background-color: rgba(255, 255, 255, 0.582);">
+    <h3 style="text-align: center; margin:0;">扫码阅读此文章 <br /> 点击按钮复制分享信息</h2>
+  </div>
+</div>
+<div style="position:fixed; margin:0; display:none; background-color: transparent; z-index:100;" id="sub_text"><b>点击订阅</b></div>
+<script>
+const testImg = document.querySelector("#qrcode_img");
+const btn = document.querySelector("#copy_qrcode");
+function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function () {
+      el.textContent = "点此复制分享二维码！";
+    }, 1000);
+  }
+function handleCopyImg() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+  const img = new Image();
+
+  canvas.width = testImg.width;
+  canvas.height = testImg.height;
+  img.crossOrigin = "Anonymous";
+  img.src = testImg.src;
+  
+  img.onload = () => {
+    ctx.clearRect(0, 0, testImg.width, testImg.height);
+    ctx.drawImage(img, 0, 0);
+    
+    canvas.toBlob(async blob => {
+      console.log(blob);
+      const data = [
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ];
+      
+      await navigator.clipboard.write(data)
+        .then(
+          () => {
+            flashCopyMessage(btn, "已复制分享二维码！");
+            console.log("Copied to clipboard successfully!");
+          },
+          () => {
+            flashCopyMessage(btn, "复制分享二维码失败:(");
+            console.error("Unable to write to clipboard.");
+          }
+        );
+      });
+  }
+}
+
+btn.addEventListener("click", handleCopyImg, false);
+
+</script>
+
+<br />
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://peterliuzhi.top/tags/%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#差分隐私</a>
+    
+</div>
+      
+
+      
+  <div class="flex md:justify-end my-4">
+
+    <a href="https://github.com/PeterLiu-all/peterliu-all.github.io/content/posts/%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0/AI%e5%ae%89%e5%85%a8/%e9%9a%90%e7%a7%81%e4%bf%9d%e6%8a%a4/%e3%80%90%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%e3%80%91Deep%20Learning%20with%20Differential%20Privacy.md" title="Edit this page">
+      <i class="fas fa-edit me-1"></i>
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/" class="block">【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0pre-activation-distributions-expose-backdoor-neurons/" class="block">【论文笔记】Pre-activation Distributions Expose Backdoor Neurons</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="utterances" src="https://utteranc.es/client.js"
+            issue-term=pathname
+            repo=PeterLiu-all/peterliu-all.github.io
+              theme=preferred-color-scheme
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+      document.getElementById('utterances').setAttribute('theme', 'boxy-light')
+    } else if (storageColorScheme == "Dark") {
+      document.getElementById('utterances').setAttribute('theme', 'github-dark-orange')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          
+
+<div
+  class="sticky-toc hidden lg:block"
+  id="nav"
+>
+<b><h2 style="font-size: larger;">本页内容</h2></b>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#什么是差分隐私">什么是差分隐私</a></li>
+    <li><a href="#为什么要用差分隐私">为什么要用差分隐私</a></li>
+    <li><a href="#如何在深度学习模型中实现差分隐私">如何在深度学习模型中实现差分隐私</a>
+      <ul>
+        <li><a href="#算法流程">算法流程</a></li>
+        <li><a href="#norm-clipping">Norm Clipping</a></li>
+        <li><a href="#moments-accountant-矩会计">Moments Accountant 矩会计</a>
+          <ul>
+            <li><a href="#基本组合定理basic-composition-theorem">基本组合定理（Basic Composition Theorem）</a></li>
+            <li><a href="#强组合定理strong-composition-theorem">强组合定理（Strong Composition Theorem）</a>
+              <ul>
+                <li><a href="#强组合定理的局限性">强组合定理的局限性</a></li>
+              </ul>
+            </li>
+            <li><a href="#_ε__δ_的含义">(<em>ε</em>,<em>δ</em>)的含义</a></li>
+            <li><a href="#论文中的定理一">论文中的定理一</a></li>
+            <li><a href="#隐私损失定义">隐私损失定义</a></li>
+            <li><a href="#λ阶矩对数矩的定义">λ阶矩/对数矩的定义</a>
+              <ul>
+                <li><a href="#对数矩和统计学中的高阶矩的联系">对数矩和统计学中的高阶矩的联系</a></li>
+              </ul>
+            </li>
+            <li><a href="#论文中的定理二">论文中的定理二</a></li>
+            <li><a href="#如何估计对数矩alpha_mathcalmlambda">如何估计对数矩$\alpha_{\mathcal{M}}(\lambda)$</a></li>
+            <li><a href="#如何实际应用">如何实际应用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+        
+      </div>
+    
+
+    
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2023 <a href="https://github.com/PeterLiu-all">Peter Liu</a>
+
+        &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
+            class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io"
+            class="hover:text-eureka">Hugo</a></p>
+        <p class="text-sm text-tertiary-text">本博客已有<span id="since" style="color: var(--color-eureka);">0</span>天的历史</p>
+</div>
+<link rel="stylesheet" href="https://peterliuzhi.top/css/copy-btn.css">
+<script language="javascript" type="text/javascript" charset="utf-8" src="https://peterliuzhi.top/js/add-copy-btn.js"></script>
+<style>
+    .black-circle {
+        height: 5vh;
+        width: 5vh;
+        display: block;
+        font-size: 30px;
+        transition: all 1.5s;
+        position: fixed;
+        right: 1vh;
+        bottom: 1vh;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .black-circle:hover {
+        transform: translateY(-10px);
+    }
+
+    
+</style>
+<script>
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+
+        
+        var x = Math.max(x1, Math.max(x2, x3));
+        
+        var y = Math.max(y1, Math.max(y2, y3));
+
+        
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        
+        if (x > 0 || y > 0) {
+            var invokeFunction = goTop(acceleration, time);
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    
+    function show_date_time () {
+        var BirthDay = new Date("10/26/2022 0:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+
+</script>
+<a><i id="return-top" class="fa-solid fa-circle-up black-circle" onclick="goTop(0.1, 16)"></i></a>
+
+<script>
+    function is_weixn(){
+      var ua = navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if(is_weixn()){
+    alert("检测到您使用的浏览器是微信内置浏览器，渲染会出现严重问题，极度影响阅读体验，建议使用其他浏览器打开本网址。\n请复制本网址到剪切板，然后前往手机浏览器内打开：\nhttps:\/\/peterliuzhi.top\/posts\/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0\/ai%E5%AE%89%E5%85%A8\/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4\/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy\/（或者右上角用浏览器打开）");
+  }else{
+    window.alert = function(msg1, msg2, msg3){
+        swal(msg1+"", msg2+"", msg3+"");
+      }
+  }
+  
+  </script></div>
+    </footer>
+  </body>
+</html>

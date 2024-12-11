@@ -8,9 +8,9 @@
     <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sat, 13 Jan 2024 14:07:43 +0800</lastBuildDate>
     <item>
       <title>【论文笔记】Deep Learning with Differential Privacy</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</link>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</link>
       <pubDate>Sat, 13 Jan 2024 14:07:43 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</guid>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</guid>
       
       
       <description>简介 开创了通过向深度学习模型的梯度进行加噪从而实现差分隐私的方法 什么是差分隐私 差分隐私就是对两个相邻数据库有如下定义： 简单来说，假设有两个数据库，两个</description>

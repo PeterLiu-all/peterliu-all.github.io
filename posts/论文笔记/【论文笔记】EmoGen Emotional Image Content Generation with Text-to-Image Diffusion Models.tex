@@ -1,0 +1,182 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={【论文笔记】EmoGen Emotional Image Content Generation with Text-to-Image Diffusion Models},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{【论文笔记】EmoGen Emotional Image Content Generation with
+Text-to-Image Diffusion Models}
+\author{}
+\date{2024-10-02T17:18:23+08:00}
+
+\begin{document}
+\maketitle
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\hypertarget{abstract}{%
+\subsection{Abstract}\label{abstract}}
+
+\begin{itemize}
+\tightlist
+\item
+  这是一篇关于图像生成的论文
+\item
+  提出了Emotional Image Content Generation
+  (EICG)用于生成semantic-clear和emotion-faithful的图片
+
+  \begin{itemize}
+  \tightlist
+  \item
+    提出了情感空间emotion space
+  \item
+    使用了一个映射网络将emotion space和CLIP space对齐
+  \item
+    使用了Attribute loss和emotion confidence
+  \end{itemize}
+\item
+  使用了三种指标：emotion accuracy, semantic clarity and semantic
+  diversity
+\end{itemize}
+
+\hypertarget{motivation}{%
+\subsection{Motivation}\label{motivation}}
+
+\begin{itemize}
+\tightlist
+\item
+  在CV中，情感很重要，有很多相关应用
+\item
+  扩散模型的发展提供了text-to-image的有力工具，但是在生成一些抽象的东西（比如情感）上有困难
+\item
+  以往的解决方案不能准确、显著地生成带情绪的图片
+\item
+  不能只从颜色和样式的角度生成情感
+\item
+  Emoset提供了与情感相关的数据集支撑
+\item
+  提出EICG
+\end{itemize}
+
+\hypertarget{method}{%
+\subsection{Method}\label{method}}
+
+\hypertarget{emotion-space}{%
+\subsubsection{Emotion space}\label{emotion-space}}
+
+\begin{itemize}
+\tightlist
+\item
+  相似的emotion的点聚集，不相似的远离
+\item
+  使用resnet-50作为捕捉emotion表示的网络结构，使用emoset进行监督学习
+\item
+  使用交叉熵作为loss函数{}
+\item
+  在推理阶段，每个emotion
+  cluster都由从对应的高斯分布中随机抽取，保证了有效性和多样性
+\end{itemize}
+
+\begin{quote}
+emotion space的思想有点类似MLP中的embedding
+vector，是否只要单独预训练好了，其他模型也可以即插即用？
+\end{quote}
+
+\begin{quote}
+如果输入数据同时包含多种复杂情感应该怎么办呢？目前的这个使用resnet的解决方案看起来是一个分类的方法，面对复杂的情感，是否可以选取top
+k的类别？
+\end{quote}
+
+\hypertarget{mapping-network}{%
+\subsubsection{Mapping Network}\label{mapping-network}}
+
+\begin{itemize}
+\tightlist
+\item
+  使用一个映射网络将emotion space转换到CLIP space
+\item
+  因为在emotion space中的点在CLIP
+  space中可能是分散的，因此我们不能用线性变换，因此使用了MLP进行非线性变换
+\item
+  然后再通过CLIP transformer
+\item
+  最后通过全连接层转换到CLIP space
+\item
+  为了更好地利用CLIP空间的知识，后两者是冻结参数的
+\item
+  上面三个转换步骤合在一起称为mapping network，其实只有第一层MLP需要训练
+\item
+  映射后的结果输入到扩散模型后的U-net中进行下游任务
+\end{itemize}
+
+\hypertarget{loss}{%
+\subsubsection{loss}\label{loss}}
+
+{}是噪声，{}是去噪网络，{}表示表示对时间{}的潜在噪声
+
+但是，只用LDM
+loss是不够的，因为同样的情感的语义可能是多样的，而只使用LDM会使一个抽象的情感坍缩为一个具体的事物，使其丧失多样性
+
+因此，基于Emoset，提出了{}
+
+其中{}是余弦相似性
+
+\hypertarget{confidence}{%
+\subsubsection{confidence}\label{confidence}}
+
+因为不是所有图片都有情感，所以我们可以动态调整LDM loss和attr loss的占比
+
+其中，{}是emotion confidence
+
+其中{}是emotion space中的emotion
+vector，{}是输入图片，{}是第i个emotion，{}是属于这个attribute的图片数量
+
+\end{document}

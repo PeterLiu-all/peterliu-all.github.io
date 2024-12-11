@@ -305,7 +305,7 @@ div#nav::-webkit-scrollbar {
     },
     "headline": "关于栈的一些基础知识 - P3troL1er 的个人博客","datePublished": "2022-10-26T19:05:28+08:00",
     "dateModified": "2022-10-26T19:05:28+08:00",
-    "wordCount":  3110 ,
+    "wordCount":  3073 ,
     "publisher": {
         "@type": "Person",
         "name": "Peter Liu",
@@ -535,7 +535,7 @@ div#nav::-webkit-scrollbar {
   </div>
   <div class="me-6 my-2">
     <i class="fa-solid fa-file-pen"></i>
-    <span>本文共3110字</span>
+    <span>本文共3073字</span>
   </div>
 
   <div class="me-6 my-2">
@@ -703,7 +703,6 @@ for example:
     </p>
 <p>接着，看到vuln函数的指令第一句：push rbp，将rbp当前的值压入栈中，在栈中保存rbp原来的值(<strong>用C语言去理解就是新建了一个变量来保存rbp原来的值</strong>)，</p>
 <p>紧接着下一句：mov rbp, rsp，将rsp当前的值传入rbp，用rbp保存rsp原有的值，所以说<strong>rbp是给rsp做备份用的</strong>。</p>
-<p>而有趣的是，当前的rbp所存储的地址，它这里的数据是什么呢，<strong>就是原rbp</strong>。</p>
 <p>call除了改变rip，还将call所在的位置的下一条指令的地址压入了栈中，<strong>也就是：返回地址。</strong> 也就是说，函数调用第一个压入返回地址，第二个压入原rbp的值。当函数返回的时候，执行leave和ret两条指令，（leave等同于：mov rsp, rbp; pop rbp），<strong>两条语句把之前的rsp和rbp的值都恢复了</strong>，接着执行ret，作用是：pop rip（可能只是因为用得多，而且都用于返回，才写成ret，<strong>实际上与pop rip完全等价</strong>。），那么pop rip，就是将函数调用前保存的返回地址送进rip寄存器，下一句指令就会到那里执行，于是可以看到在函数返回的时候，<strong>栈结构被恢复成函数被调用前的样子了。</strong></p>
 <blockquote>
 <p>在leave（mov rsp, rbp; pop rbp）时，这里在执行pop rbp时，rsp因为已经被赋值为rbp当前值，而之前就提到过rbp所指位置存储的数据时原rbp，<strong>所以pop rbp就会将当前rsp所指，也是rbp所指的数据弹到rbp，恢复rbp原有值</strong>，然后rsp指向了rbp原有的值，紧接着又pop了一次，那么在上次pop了栈顶上保存的原rbp后，新的栈顶数据是什么呢？没错，<strong>比原rbp早一步被压入的：返回地址</strong></p>

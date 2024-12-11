@@ -5,7 +5,47 @@
     <link>https://peterliuzhi.top/posts/</link>
       <atom:link href="https://peterliuzhi.top/posts/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Thu, 18 Jul 2024 13:23:56 +0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Wed, 02 Oct 2024 17:18:23 +0800</lastBuildDate>
+    <item>
+      <title>【论文笔记】EmoGen Emotional Image Content Generation with Text-to-Image Diffusion Models</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0emogen-emotional-image-content-generation-with-text-to-image-diffusion-models/</link>
+      <pubDate>Wed, 02 Oct 2024 17:18:23 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0emogen-emotional-image-content-generation-with-text-to-image-diffusion-models/</guid>
+      
+      <description>【论文笔记】EmoGen Emotional Image Content Generation with Text-to-Image Diffusion Models</description>
+      
+    </item>
+    
+    <item>
+      <title>【论文笔记】SoK Security and Privacy Risks of Medical AI</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0sok-security-and-privacy-risks-of-medical-ai/</link>
+      <pubDate>Sun, 29 Sep 2024 14:13:29 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0sok-security-and-privacy-risks-of-medical-ai/</guid>
+      
+      <description>【论文笔记】SoK Security and Privacy Risks of Medical AI</description>
+      
+    </item>
+    
+    <item>
+      <title>一键将Open with VScode加入鼠标右键</title>
+      <link>https://peterliuzhi.top/posts/%E8%87%AA%E5%88%B6os%E6%97%A5%E5%BF%97/%E4%B8%80%E9%94%AE%E5%B0%86open-with-vscode%E5%8A%A0%E5%85%A5%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE/</link>
+      <pubDate>Fri, 09 Aug 2024 14:18:09 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%87%AA%E5%88%B6os%E6%97%A5%E5%BF%97/%E4%B8%80%E9%94%AE%E5%B0%86open-with-vscode%E5%8A%A0%E5%85%A5%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE/</guid>
+      
+      <description>一键将Open with VScode加入鼠标右键</description>
+      
+    </item>
+    
+    <item>
+      <title>【论文笔记】GNNCERT DETERMINISTIC CERTIFICATION OF GRAPH NEURAL NETWORKS AGAINST ADVERSARIAL  PERTURBATIONS</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0gnncert-deterministic-certification-of-graph-neural-networks-against-adversarial-perturbations/</link>
+      <pubDate>Wed, 24 Jul 2024 15:49:21 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0gnncert-deterministic-certification-of-graph-neural-networks-against-adversarial-perturbations/</guid>
+      
+      <description>【论文笔记】GNNCERT DETERMINISTIC CERTIFICATION OF GRAPH NEURAL NETWORKS AGAINST ADVERSARIAL  PERTURBATIONS</description>
+      
+    </item>
+    
     <item>
       <title>一键将Open with Code加入鼠标右键-BAT脚本</title>
       <link>https://peterliuzhi.top/posts/%E4%B8%80%E9%94%AE%E5%B0%86open-with-code%E5%8A%A0%E5%85%A5%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE-bat%E8%84%9A%E6%9C%AC/</link>
@@ -48,9 +88,9 @@
     
     <item>
       <title>【论文笔记】Backdooring Multimodal Learning</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdooring-multimodal-learning/</link>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdooring-multimodal-learning/</link>
       <pubDate>Thu, 16 May 2024 18:39:59 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdooring-multimodal-learning/</guid>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdooring-multimodal-learning/</guid>
       
       <description>【论文笔记】Backdooring Multimodal Learning</description>
       
@@ -88,9 +128,9 @@
     
     <item>
       <title>【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/</link>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/</link>
       <pubDate>Thu, 25 Jan 2024 21:47:43 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/</guid>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0fedml-he_an-efficient-homomorphic-encryption-based-privacy-preserving-federated-learning-system/</guid>
       
       <description>【论文笔记】FEDML-HE_AN EFFICIENT HOMOMORPHIC-ENCRYPTION-BASED PRIVACY-PRESERVING FEDERATED LEARNING SYSTEM</description>
       
@@ -98,9 +138,9 @@
     
     <item>
       <title>【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</link>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</link>
       <pubDate>Sat, 13 Jan 2024 16:01:35 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</guid>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0data-free-backdoor-removal-based-on-channel-lipschitzness/</guid>
       
       <description>【论文笔记】Data-free Backdoor Removal based on Channel Lipschitzness</description>
       
@@ -108,53 +148,13 @@
     
     <item>
       <title>【论文笔记】Deep Learning with Differential Privacy</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</link>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</link>
       <pubDate>Sat, 13 Jan 2024 14:07:43 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</guid>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0deep-learning-with-differential-privacy/</guid>
       
       
       <description>简介 开创了通过向深度学习模型的梯度进行加噪从而实现差分隐私的方法 什么是差分隐私 差分隐私就是对两个相邻数据库有如下定义： 简单来说，假设有两个数据库，两个</description>
       
-      
-    </item>
-    
-    <item>
-      <title>【论文笔记】Pre-activation Distributions Expose Backdoor Neurons</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0pre-activation-distributions-expose-backdoor-neurons/</link>
-      <pubDate>Fri, 12 Jan 2024 01:10:38 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0pre-activation-distributions-expose-backdoor-neurons/</guid>
-      
-      <description>【论文笔记】Pre-activation Distributions Expose Backdoor Neurons</description>
-      
-    </item>
-    
-    <item>
-      <title>NeurIPS近年关于BackdoorAttack的文章</title>
-      <link>https://peterliuzhi.top/posts/neurips%E8%BF%91%E5%B9%B4%E5%85%B3%E4%BA%8Ebackdoorattack%E7%9A%84%E6%96%87%E7%AB%A0/</link>
-      <pubDate>Thu, 11 Jan 2024 23:29:10 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/neurips%E8%BF%91%E5%B9%B4%E5%85%B3%E4%BA%8Ebackdoorattack%E7%9A%84%E6%96%87%E7%AB%A0/</guid>
-      
-      <description>NeurIPS近年关于BackdoorAttack的文章</description>
-      
-    </item>
-    
-    <item>
-      <title>【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/</link>
-      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0backdoor-attack-in-the-physical-world/</guid>
-      
-      <description>【论文笔记】BACKDOOR ATTACK IN THE PHYSICAL WORLD</description>
-      
-    </item>
-    
-    <item>
-      <title>【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击</title>
-      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</link>
-      <pubDate>Sun, 03 Dec 2023 23:45:35 +0800</pubDate>
-      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0baddet-backdoor-attacks-on-object-detection-%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8E%E9%97%A8%E6%94%BB%E5%87%BB/</guid>
-      
-      <description>【论文笔记】BadDet Backdoor Attacks on Object Detection 对目标检测模型的后门攻击</description>
       
     </item>
     

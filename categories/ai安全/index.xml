@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI安全 | P3troL1er 的个人博客</title>
+    <link>https://peterliuzhi.top/categories/ai%E5%AE%89%E5%85%A8/</link>
+      <atom:link href="https://peterliuzhi.top/categories/ai%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <description>AI安全</description>
+    <generator>Hugo -- gohugo.io AND <a href="https://github.com/wangchucheng/hugo-eureka/">Eureka</a></generator><language>zh</language><copyright>© 2023 Peter Liu </copyright><lastBuildDate>Sun, 29 Sep 2024 14:13:29 +0800</lastBuildDate>
+    <item>
+      <title>【论文笔记】SoK Security and Privacy Risks of Medical AI</title>
+      <link>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0sok-security-and-privacy-risks-of-medical-ai/</link>
+      <pubDate>Sun, 29 Sep 2024 14:13:29 +0800</pubDate>
+      <guid>https://peterliuzhi.top/posts/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/ai%E5%AE%89%E5%85%A8/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0sok-security-and-privacy-risks-of-medical-ai/</guid>
+      
+      <description>【论文笔记】SoK Security and Privacy Risks of Medical AI</description>
+      
+    </item>
+    
+  </channel>
+</rss>
